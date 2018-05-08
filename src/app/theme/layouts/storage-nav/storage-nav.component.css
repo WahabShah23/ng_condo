@@ -1,0 +1,27 @@
+/*#c-storage-menu {*/
+    /*background: #ffffff;*/
+    /*color: #068ace;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*width: 100%;*/
+    /*height: 20%;*/
+    /*min-height: 300px;*/
+    /*min-width: 100%;*/
+    /*z-index: 1002;*/
+/*}*/
+
+
+#c-storage-menu {
+    background: #ffffff;
+    color: #068ace;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 330px;
+    z-index: 1002;
+}
+
+.m-content {
+    padding: 30px 30px;
+}
