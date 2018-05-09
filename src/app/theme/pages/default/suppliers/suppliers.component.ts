@@ -2,13 +2,13 @@ import { Component, OnInit , AfterViewInit} from '@angular/core';
 import { Helpers } from '../../../../helpers';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
 @Component({
-  selector: 'app-customers',
-  templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.css'],
+  selector: 'app-suppliers',
+  templateUrl: './suppliers.component.html',
+  styleUrls: ['./suppliers.component.css'],
   
   
 })
-export class CustomersComponent implements OnInit , AfterViewInit {
+export class SuppliersComponent implements OnInit , AfterViewInit {
   isGridView=true;
   viewName= "List View";
   customerType = "All"; 
@@ -20,13 +20,13 @@ export class CustomersComponent implements OnInit , AfterViewInit {
 
   }
   ngAfterViewInit() {
-    this._script.loadScripts('app-customers',
-        ['//www.amcharts.com/lib/3/plugins/tools/polarScatter/polarScatter.min.js',
-        '//www.amcharts.com/lib/3/plugins/export/export.min.js',
-        'assets/app/js/customer.js']);
+    this._script.loadScripts('app-suppliers',
+    ['//www.amcharts.com/lib/3/plugins/tools/polarScatter/polarScatter.min.js',
+    '//www.amcharts.com/lib/3/plugins/export/export.min.js',
+    'assets/app/js/customer.js']);
 
-        Helpers.loadStyles('app-customers', [
-        '//www.amcharts.com/lib/3/plugins/export/export.css']);
+    Helpers.loadStyles('app-suppliers', [
+    '//www.amcharts.com/lib/3/plugins/export/export.css']);
     }
 
   changeView()

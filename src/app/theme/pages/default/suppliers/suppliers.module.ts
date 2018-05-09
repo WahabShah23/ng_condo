@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutModule } from '../../../layouts/layout.module';
 import { DefaultComponent } from '../default.component';
-import { CustomersComponent } from "./customers.component";
+import { SuppliersComponent } from "./suppliers.component";
 
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
         'children': [
             {
                 'path': '',
-                'component': CustomersComponent,
+                'component': SuppliersComponent,
             },
         ],
     },
@@ -26,9 +26,9 @@ const routes: Routes = [
     ], exports: [
         RouterModule,
     ], declarations: [
-        CustomersComponent,
+        SuppliersComponent,
     ],
   
 })
-export class CustomersModule {
+export class SuppliersModule {
 }
