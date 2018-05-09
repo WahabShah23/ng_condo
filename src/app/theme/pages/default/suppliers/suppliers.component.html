@@ -124,7 +124,7 @@
     
     <div class="row" style="padding: 0px 10px;" [style.display]="isGridView ? 'flex' : 'none'">
 
-        <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Owners')">
+        <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
             <div class="body organ1" >
                 <div class="row" style="margin:0px;">    
                 <div id="" class="card-left col-lg-3">
@@ -216,7 +216,7 @@
                   </div>
         </div>
     
-          <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Tenants')">
+          <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Tenants')">
           <div class="body organ1"  >
               <div class="row" style="margin:0px;">
                 <div id="" class="card-left col-lg-3">
@@ -260,7 +260,7 @@
               </div>
           </div>
     
-           <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Owners')">
+           <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
               <div class="body organ1"  >
                 <div class="row" style="margin:0px;">    
                 <div id="" class="card-left col-lg-3">
@@ -446,7 +446,7 @@
 
                 </div>
     
-              <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Tenants')">
+              <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Tenants')">
                   <div class="body organ1"  >
                       <div class="row" style="margin:0px;">
                         <div id="" class="card-left col-lg-3">
@@ -596,7 +596,7 @@
 
 
 
-              <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Owners')">
+              <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
                 <div class="body organ1"  >
                   <div class="row" style="margin:0px;">    
                   <div id="" class="card-left col-lg-3">
@@ -664,8 +664,8 @@
 
 
 
-                  <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Owners')">
-                    <div class="body organ1"  >
+                  <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
+                    <div class="body organ1">
                       <div class="row" style="margin:0px;">    
                       <div id="" class="card-left col-lg-3">
                             <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">

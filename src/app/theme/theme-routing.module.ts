@@ -35,6 +35,7 @@ const routes: Routes = [
                 "path": "services",
                 "loadChildren": ".\/pages\/default\/services\/services.module#ServicesModule"
             },
+
             {
                 "path": "suppliers",
                 "loadChildren": ".\/pages\/default\/suppliers\/suppliers.module#SuppliersModule"

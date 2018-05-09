@@ -124,7 +124,7 @@
     
     <div class="row" style="padding: 0px 10px;" [style.display]="isGridView ? 'flex' : 'none'">
 
-        <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Owners')">
+        <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
             <div class="body organ1" >
                 <div class="row" style="margin:0px;">    
                 <div id="" class="card-left col-lg-3">
@@ -132,13 +132,18 @@
                         <input type="checkbox" class="chkboxes">
                         <span></span>
                       </label>
-                      <div class="row onepersonrow">
+                      <div class="row twopersonrow">
                            
-                        <div class="col-md-12">
+                        <div class="col-md-5">
                               <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
                               <p  class="personname">Can Dealers</p>
-                              <p  class="persontype">Building</p>
+                              <p  class="persontype">Owner</p>
                         </div> 
+                        <div class="col-md-5">
+                            <img  class="personimage" src="assets/app/media/img/users/300_8.jpg">
+                            <p  class="personname">Goldberg Man</p>
+                            <p  class="persontype">Tenant</p>
+                      </div> 
                   </div>
                            <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
                            <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
@@ -216,7 +221,7 @@
                   </div>
         </div>
     
-          <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Tenants')">
+          <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Tenants')">
           <div class="body organ1"  >
               <div class="row" style="margin:0px;">
                 <div id="" class="card-left col-lg-3">
@@ -267,7 +272,7 @@
               </div>
           </div>
     
-           <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Owners')">
+           <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
               <div class="body organ1"  >
                 <div class="row" style="margin:0px;">    
                 <div id="" class="card-left col-lg-3">
@@ -276,13 +281,22 @@
                         <span></span>
                       </label>
                       
-                      <div class="row onepersonrow" >
+                      <div class="row towpersonrow" >
                            
-                          <div class="col-md-12">
+
+
+                          <div class="col-md-5">
                                 <img class="personimage" src="assets/app/media/img/users/user1HD.jpg">
                                 <p class="personname">Shuxer</p>
                                 <p class="persontype">Owner</p>
-                          </div> 
+                          </div>
+                          
+                          
+                          <div class="col-md-5">
+                            <img class="personimage" src="assets/app/media/img/users/300_12.jpg">
+                            <p class="personname">Stafford</p>
+                            <p class="persontype">Tenant</p>
+                      </div> 
                     </div>
                      
                       
@@ -453,7 +467,7 @@
 
                 </div>
     
-              <div class="col-md-6" *ngIf="(customerType=='All') || (customerType=='Tenants')">
+              <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Tenants')">
                   <div class="body organ1"  >
                       <div class="row" style="margin:0px;">
                         <div id="" class="card-left col-lg-3">
