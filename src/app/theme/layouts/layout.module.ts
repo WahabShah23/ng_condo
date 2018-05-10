@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { HrefPreventDefaultDirective } from '../../_directives/href-prevent-default.directive';
 import { UnwrapTagDirective } from '../../_directives/unwrap-tag.directive';
 import { StorageNavComponent } from './storage-nav/storage-nav.component';
+import { GlobalNavComponent } from './global-nav/global-nav.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { StorageNavComponent } from './storage-nav/storage-nav.component';
         HrefPreventDefaultDirective,
         UnwrapTagDirective,
         StorageNavComponent,
+        GlobalNavComponent,
     ],
     exports: [
         LayoutComponent,

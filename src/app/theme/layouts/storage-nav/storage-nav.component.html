@@ -2,16 +2,16 @@
     <div class="m-subheader">
         <div class="d-flex align-items-center">
             <div class="mr-auto">
-                <h3 class="m-subheader__title m-subheader__title--separator">
+                <h3 class="m-subheader__title ">  <!-- m-subheader__title--separator -->
                     Storage Nav
                 </h3>
-                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
-                    <li class="m-nav__item m-nav__item--home">
-                        <a routerLink="/dashboard" class="m-nav__link m-nav__link--icon">
-                            <i class="m-nav__link-icon la la-home"></i>
-                        </a>
-                    </li>
-                </ul>
+                <!--<ul class="m-subheader__breadcrumbs m-nav m-nav&#45;&#45;inline">-->
+                    <!--<li class="m-nav__item m-nav__item&#45;&#45;home">-->
+                        <!--<a routerLink="/dashboard" class="m-nav__link m-nav__link&#45;&#45;icon">-->
+                            <!--<i class="m-nav__link-icon la la-home"></i>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
             </div>
             <div>
                 <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
@@ -83,7 +83,48 @@
 
     <div class="m-content">
         <div class="col-md-12">
-            Storage Works!
+
+            <div class="m-portlet m-portlet--tabs">
+                <div class="m-portlet__head">
+                    <div class="m-portlet__head-tools">
+                        <ul class="nav nav-tabs m-tabs-line m-tabs-line--primary m-tabs-line--2x" role="tablist">
+                            <li class="nav-item m-tabs__item">
+                                <a class="nav-link m-tabs__link active show" data-toggle="tab" href="#m_tabs_6_1" role="tab" ng-reflect-href="#m_tabs_6_1" aria-selected="true">
+                                    <i class="la la-cog"></i>
+                                    Storage Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item m-tabs__item">
+                                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_2" role="tab" ng-reflect-href="#m_tabs_6_2" aria-selected="false">
+                                    <i class="la la-briefcase"></i>
+                                    Workspace
+                                </a>
+                            </li>
+                            <li class="nav-item m-tabs__item">
+                                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_3" role="tab" ng-reflect-href="#m_tabs_6_3" aria-selected="false">
+                                    <i class="la la-bell-o"></i>
+                                    External Storages
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="m-portlet__body">
+                    <div class="tab-content">
+                        <div class="tab-pane active show" id="m_tabs_6_1" role="tabpanel">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </div>
+                        <div class="tab-pane" id="m_tabs_6_2" role="tabpanel">
+                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </div>
+                        <div class="tab-pane" id="m_tabs_6_3" role="tabpanel">
+                            <h2> Storage Information </h2>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 

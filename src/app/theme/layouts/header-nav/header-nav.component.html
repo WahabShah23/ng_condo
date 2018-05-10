@@ -1,5 +1,7 @@
 <!-- BEGIN: Header -->
+<app-global-nav *ngIf="display_global" (hideGlobal)="closeGlobal()"></app-global-nav>
 <app-storage-nav *ngIf="display_storage" (hideStorage)="closeStorage()"></app-storage-nav>
+
 <header class="m-grid__item    m-header"  data-minimize-offset="200" data-minimize-mobile-offset="200" appunwraptag="" >
 	<div class="m-container m-container--fluid m-container--full-height">
 		<div class="m-stack m-stack--ver m-stack--desktop">
@@ -455,13 +457,13 @@
 								<!--</div>-->
 							<!--</div>-->
 						<!--</li>-->
-						<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
-							<a  href="#" class="m-menu__link m-menu__toggle">
+						<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  >  <!-- data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true" -->
+							<a  href="javascript:;" (click)="display_global=!display_global;" class="m-menu__link m-menu__toggle">
 								<i class="m-menu__link-icon flaticon-paper-plane"></i>
 								<span class="m-menu__link-title">
 									<span class="m-menu__link-wrap">
 										<span class="m-menu__link-text">
-											Apps
+											CitZen Social
 										</span>
 										<span class="m-menu__link-badge">
 											<span class="m-badge m-badge--brand m-badge--wide">
@@ -473,156 +475,176 @@
 								<i class="m-menu__hor-arrow la la-angle-down"></i>
 								<i class="m-menu__ver-arrow la la-angle-right"></i>
 							</a>
-							<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
-								<span class="m-menu__arrow m-menu__arrow--adjust"></span>
-								<ul class="m-menu__subnav">
-									<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-										<a  routerLink="/header/actions" class="m-menu__link">
-											<i class="m-menu__link-icon flaticon-business"></i>
-											<span class="m-menu__link-text">
-												eCommerce
-											</span>
-										</a>
-									</li>
-									<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
-										<a  routerLink="/crud/datatable_v1" class="m-menu__link m-menu__toggle">
-											<i class="m-menu__link-icon flaticon-computer"></i>
-											<span class="m-menu__link-text">
-												Audience
-											</span>
-											<i class="m-menu__hor-arrow la la-angle-right"></i>
-											<i class="m-menu__ver-arrow la la-angle-right"></i>
-										</a>
-										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
-											<span class="m-menu__arrow"></span>
-											<ul class="m-menu__subnav">
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/header/actions" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-users"></i>
-														<span class="m-menu__link-text">
-															Active Users
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/header/actions" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-interface-1"></i>
-														<span class="m-menu__link-text">
-															User Explorer
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/header/actions" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-lifebuoy"></i>
-														<span class="m-menu__link-text">
-															Users Flows
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/header/actions" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-graphic-1"></i>
-														<span class="m-menu__link-text">
-															Market Segments
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/header/actions" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-graphic"></i>
-														<span class="m-menu__link-text">
-															User Reports
-														</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-										<a  routerLink="/header/actions" class="m-menu__link">
-											<i class="m-menu__link-icon flaticon-map"></i>
-											<span class="m-menu__link-text">
-												Marketing
-											</span>
-										</a>
-									</li>
-									<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-										<a  routerLink="/header/actions" class="m-menu__link">
-											<i class="m-menu__link-icon flaticon-graphic-2"></i>
-											<span class="m-menu__link-title">
-												<span class="m-menu__link-wrap">
-													<span class="m-menu__link-text">
-														Campaigns
-													</span>
-													<span class="m-menu__link-badge">
-														<span class="m-badge m-badge--success">
-															3
-														</span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</li>
-									<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
-										<a  href="#" class="m-menu__link m-menu__toggle">
-											<i class="m-menu__link-icon flaticon-infinity"></i>
-											<span class="m-menu__link-text">
-												Cloud Manager
-											</span>
-											<i class="m-menu__hor-arrow la la-angle-right"></i>
-											<i class="m-menu__ver-arrow la la-angle-right"></i>
-										</a>
-										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
-											<span class="m-menu__arrow"></span>
-											<ul class="m-menu__subnav">
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/header/actions" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-add"></i>
-														<span class="m-menu__link-title">
-															<span class="m-menu__link-wrap">
-																<span class="m-menu__link-text">
-																	File Upload
-																</span>
-																<span class="m-menu__link-badge">
-																	<span class="m-badge m-badge--danger">
-																		3
-																	</span>
-																</span>
-															</span>
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/header/actions" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-signs-1"></i>
-														<span class="m-menu__link-text">
-															File Attributes
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/header/actions" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-folder"></i>
-														<span class="m-menu__link-text">
-															Folders
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/header/actions" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-cogwheel-2"></i>
-														<span class="m-menu__link-text">
-															System Settings
-														</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
 						</li>
+						<!--<li class="m-menu__item  m-menu__item&#45;&#45;submenu m-menu__item&#45;&#45;rel"  data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">-->
+							<!--<a  href="#" class="m-menu__link m-menu__toggle">-->
+								<!--<i class="m-menu__link-icon flaticon-paper-plane"></i>-->
+								<!--<span class="m-menu__link-title">-->
+									<!--<span class="m-menu__link-wrap">-->
+										<!--<span class="m-menu__link-text">-->
+											<!--Apps-->
+										<!--</span>-->
+										<!--<span class="m-menu__link-badge">-->
+											<!--<span class="m-badge m-badge&#45;&#45;brand m-badge&#45;&#45;wide">-->
+												<!--new-->
+											<!--</span>-->
+										<!--</span>-->
+									<!--</span>-->
+								<!--</span>-->
+								<!--<i class="m-menu__hor-arrow la la-angle-down"></i>-->
+								<!--<i class="m-menu__ver-arrow la la-angle-right"></i>-->
+							<!--</a>-->
+							<!--<div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;left">-->
+								<!--<span class="m-menu__arrow m-menu__arrow&#45;&#45;adjust"></span>-->
+								<!--<ul class="m-menu__subnav">-->
+									<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+										<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+											<!--<i class="m-menu__link-icon flaticon-business"></i>-->
+											<!--<span class="m-menu__link-text">-->
+												<!--eCommerce-->
+											<!--</span>-->
+										<!--</a>-->
+									<!--</li>-->
+									<!--<li class="m-menu__item  m-menu__item&#45;&#45;submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">-->
+										<!--<a  routerLink="/crud/datatable_v1" class="m-menu__link m-menu__toggle">-->
+											<!--<i class="m-menu__link-icon flaticon-computer"></i>-->
+											<!--<span class="m-menu__link-text">-->
+												<!--Audience-->
+											<!--</span>-->
+											<!--<i class="m-menu__hor-arrow la la-angle-right"></i>-->
+											<!--<i class="m-menu__ver-arrow la la-angle-right"></i>-->
+										<!--</a>-->
+										<!--<div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;right">-->
+											<!--<span class="m-menu__arrow"></span>-->
+											<!--<ul class="m-menu__subnav">-->
+												<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+													<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+														<!--<i class="m-menu__link-icon flaticon-users"></i>-->
+														<!--<span class="m-menu__link-text">-->
+															<!--Active Users-->
+														<!--</span>-->
+													<!--</a>-->
+												<!--</li>-->
+												<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+													<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+														<!--<i class="m-menu__link-icon flaticon-interface-1"></i>-->
+														<!--<span class="m-menu__link-text">-->
+															<!--User Explorer-->
+														<!--</span>-->
+													<!--</a>-->
+												<!--</li>-->
+												<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+													<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+														<!--<i class="m-menu__link-icon flaticon-lifebuoy"></i>-->
+														<!--<span class="m-menu__link-text">-->
+															<!--Users Flows-->
+														<!--</span>-->
+													<!--</a>-->
+												<!--</li>-->
+												<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+													<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+														<!--<i class="m-menu__link-icon flaticon-graphic-1"></i>-->
+														<!--<span class="m-menu__link-text">-->
+															<!--Market Segments-->
+														<!--</span>-->
+													<!--</a>-->
+												<!--</li>-->
+												<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+													<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+														<!--<i class="m-menu__link-icon flaticon-graphic"></i>-->
+														<!--<span class="m-menu__link-text">-->
+															<!--User Reports-->
+														<!--</span>-->
+													<!--</a>-->
+												<!--</li>-->
+											<!--</ul>-->
+										<!--</div>-->
+									<!--</li>-->
+									<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+										<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+											<!--<i class="m-menu__link-icon flaticon-map"></i>-->
+											<!--<span class="m-menu__link-text">-->
+												<!--Marketing-->
+											<!--</span>-->
+										<!--</a>-->
+									<!--</li>-->
+									<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+										<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+											<!--<i class="m-menu__link-icon flaticon-graphic-2"></i>-->
+											<!--<span class="m-menu__link-title">-->
+												<!--<span class="m-menu__link-wrap">-->
+													<!--<span class="m-menu__link-text">-->
+														<!--Campaigns-->
+													<!--</span>-->
+													<!--<span class="m-menu__link-badge">-->
+														<!--<span class="m-badge m-badge&#45;&#45;success">-->
+															<!--3-->
+														<!--</span>-->
+													<!--</span>-->
+												<!--</span>-->
+											<!--</span>-->
+										<!--</a>-->
+									<!--</li>-->
+									<!--<li class="m-menu__item  m-menu__item&#45;&#45;submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">-->
+										<!--<a  href="#" class="m-menu__link m-menu__toggle">-->
+											<!--<i class="m-menu__link-icon flaticon-infinity"></i>-->
+											<!--<span class="m-menu__link-text">-->
+												<!--Cloud Manager-->
+											<!--</span>-->
+											<!--<i class="m-menu__hor-arrow la la-angle-right"></i>-->
+											<!--<i class="m-menu__ver-arrow la la-angle-right"></i>-->
+										<!--</a>-->
+										<!--<div class="m-menu__submenu m-menu__submenu&#45;&#45;classic m-menu__submenu&#45;&#45;left">-->
+											<!--<span class="m-menu__arrow"></span>-->
+											<!--<ul class="m-menu__subnav">-->
+												<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+													<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+														<!--<i class="m-menu__link-icon flaticon-add"></i>-->
+														<!--<span class="m-menu__link-title">-->
+															<!--<span class="m-menu__link-wrap">-->
+																<!--<span class="m-menu__link-text">-->
+																	<!--File Upload-->
+																<!--</span>-->
+																<!--<span class="m-menu__link-badge">-->
+																	<!--<span class="m-badge m-badge&#45;&#45;danger">-->
+																		<!--3-->
+																	<!--</span>-->
+																<!--</span>-->
+															<!--</span>-->
+														<!--</span>-->
+													<!--</a>-->
+												<!--</li>-->
+												<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+													<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+														<!--<i class="m-menu__link-icon flaticon-signs-1"></i>-->
+														<!--<span class="m-menu__link-text">-->
+															<!--File Attributes-->
+														<!--</span>-->
+													<!--</a>-->
+												<!--</li>-->
+												<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+													<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+														<!--<i class="m-menu__link-icon flaticon-folder"></i>-->
+														<!--<span class="m-menu__link-text">-->
+															<!--Folders-->
+														<!--</span>-->
+													<!--</a>-->
+												<!--</li>-->
+												<!--<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">-->
+													<!--<a  routerLink="/header/actions" class="m-menu__link">-->
+														<!--<i class="m-menu__link-icon flaticon-cogwheel-2"></i>-->
+														<!--<span class="m-menu__link-text">-->
+															<!--System Settings-->
+														<!--</span>-->
+													<!--</a>-->
+												<!--</li>-->
+											<!--</ul>-->
+										<!--</div>-->
+									<!--</li>-->
+								<!--</ul>-->
+							<!--</div>-->
+						<!--</li>-->
+
 					</ul>
 				</div>
 				<!-- END: Horizontal Menu -->								<!-- BEGIN: Topbar -->

@@ -10,6 +10,7 @@ declare let mLayout: any;
 export class HeaderNavComponent implements OnInit, AfterViewInit {
 
     display_storage = false;
+    display_global = false;
 
     constructor() {
 
@@ -25,6 +26,9 @@ export class HeaderNavComponent implements OnInit, AfterViewInit {
 
     closeStorage() {
         this.display_storage = false;
+    }
+    closeGlobal() {
+        this.display_global = false;
     }
 
 }
