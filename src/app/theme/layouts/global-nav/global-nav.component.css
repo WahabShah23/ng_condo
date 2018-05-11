@@ -14,3 +14,17 @@
 .m-content {
 	padding: 30px 30px;
 }
+
+.m-btn--icon.m-btn--icon-only.btn-lg.btn-custom {
+	width: 75px;
+	height:75px;
+}
+
+.fa-custom {
+	font-size: 35px !important;
+}
+
+.c-label-air {
+	padding: 10px !important;
+	cursor: pointer;
+}
