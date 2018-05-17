@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ThemeComponent } from './theme.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth/_guards/auth.guard';
-import {WizardComponent} from "../components/wizard/wizard.component";
+import { WizardComponent } from "../components/wizard/wizard.component";
 
 const routes: Routes = [
     {
@@ -29,7 +29,6 @@ const routes: Routes = [
             {
                 "path": "customers",
                 "loadChildren": ".\/pages\/default\/customers\/customers.module#CustomersModule"
-                // "component": CustomersComponent
             },
             {
                 "path": "services",
@@ -39,9 +38,35 @@ const routes: Routes = [
             {
                 "path": "suppliers",
                 "loadChildren": ".\/pages\/default\/suppliers\/suppliers.module#SuppliersModule"
+            },
+            {
+                "path": "faq",
+                "loadChildren": ".\/pages\/default\/snippets\/faq\/faq-faq-1\/faq-faq-1.module#FaqFaq1Module"
+            },
+            {
+                "path": "404",
+                "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"
             }
+
         ]
     },
+
+    {
+        "path": "connect",
+        component: ThemeComponent,
+        "canActivate": [AuthGuard],
+        "children": [
+
+            {
+                "path": "support",
+                "loadChildren": ".\/pages\/custom_components\/connect\/support\/support.module#SupportModule"
+
+            }
+
+        ]
+    },
+
+
     // {
     //     'path': 'dashboard',
     //     'component': ThemeComponent,
@@ -62,12 +87,19 @@ const routes: Routes = [
         "path": "index",
         component: WizardComponent,
         "canActivate": [AuthGuard]
-    }
+    },
     // {
-    //     'path': '**',
-    //     'redirectTo': 'index',
-    //     'pathMatch': 'full',
-    // }
+    //     "path": "connect",
+    //     // "loadChildren": ".\/pages\/default\/connect\/connect.module#ConnectModule"
+    //     component: ConnectComponent,
+    //     outlet: "connect-bar"
+    //
+    // },
+    {
+        'path': '**',
+        'redirectTo': '404',
+        'pathMatch': 'full',
+    }
 ];
 
 @NgModule({

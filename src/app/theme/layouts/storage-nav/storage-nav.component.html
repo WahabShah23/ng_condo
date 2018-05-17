@@ -1,131 +1,243 @@
 <div id="c-storage-menu">
-    <div class="m-subheader">
-        <div class="d-flex align-items-center">
-            <div class="mr-auto">
-                <h3 class="m-subheader__title ">  <!-- m-subheader__title--separator -->
-                    Storage Nav
-                </h3>
-                <!--<ul class="m-subheader__breadcrumbs m-nav m-nav&#45;&#45;inline">-->
-                    <!--<li class="m-nav__item m-nav__item&#45;&#45;home">-->
-                        <!--<a routerLink="/dashboard" class="m-nav__link m-nav__link&#45;&#45;icon">-->
-                            <!--<i class="m-nav__link-icon la la-home"></i>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            </div>
-            <div>
-                <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
-                    <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
-                        <i class="la la-plus m--hide"></i>
-                        <i class="la la-ellipsis-h"></i>
-                    </a>
-                    <div class="m-dropdown__wrapper">
-                        <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
-                        <div class="m-dropdown__inner">
-                            <div class="m-dropdown__body">
-                                <div class="m-dropdown__content">
-                                    <ul class="m-nav">
-                                        <li class="m-nav__section m-nav__section--first m--hide">
-                                            <span class="m-nav__section-text">
-                                                Quick Actions
-                                            </span>
-                                        </li>
-                                        <li class="m-nav__item">
-                                            <a href="" class="m-nav__link">
-                                                <i class="m-nav__link-icon fa fa-plus"></i>
-                                                <span class="m-nav__link-text">
-                                                    New Customer
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="m-nav__item">
-                                            <a href="" class="m-nav__link">
-                                                <i class="m-nav__link-icon flaticon-chat-1"></i>
-                                                <span class="m-nav__link-text">
-                                                    Messages
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="m-nav__item">
-                                            <a href="" class="m-nav__link">
-                                                <i class="m-nav__link-icon flaticon-info"></i>
-                                                <span class="m-nav__link-text">
-                                                    FAQ
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="m-nav__item">
-                                            <a href="" class="m-nav__link">
-                                                <i class="m-nav__link-icon flaticon-lifebuoy"></i>
-                                                <span class="m-nav__link-text">
-                                                    Support
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="m-nav__separator m-nav__separator--fit"></li>
-                                        <li class="m-nav__item">
-                                            <a href="javascript:;" (click)="closeStorage()" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
-                                                Close
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--<div class="m-subheader">-->
+        <!--<div class="d-flex align-items-center">-->
+            <!--<div class="mr-auto">-->
+                <!--<h3 class="m-subheader__title ">  &lt;!&ndash; m-subheader__title&#45;&#45;separator &ndash;&gt;-->
+                    <!--Storage Nav-->
+                <!--</h3>-->
+                <!--&lt;!&ndash;<ul class="m-subheader__breadcrumbs m-nav m-nav&#45;&#45;inline">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li class="m-nav__item m-nav__item&#45;&#45;home">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a routerLink="/dashboard" class="m-nav__link m-nav__link&#45;&#45;icon">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="m-nav__link-icon la la-home"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<div class="m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push" data-dropdown-toggle="hover" aria-expanded="true">-->
+                    <!--<a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn&#45;&#45;outline-2x m-btn&#45;&#45;air m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;pill  m-dropdown__toggle">-->
+                        <!--<i class="la la-plus m&#45;&#45;hide"></i>-->
+                        <!--<i class="la la-ellipsis-h"></i>-->
+                    <!--</a>-->
+                    <!--<div class="m-dropdown__wrapper">-->
+                        <!--<span class="m-dropdown__arrow m-dropdown__arrow&#45;&#45;right m-dropdown__arrow&#45;&#45;adjust"></span>-->
+                        <!--<div class="m-dropdown__inner">-->
+                            <!--<div class="m-dropdown__body">-->
+                                <!--<div class="m-dropdown__content">-->
+                                    <!--<ul class="m-nav">-->
+                                        <!--<li class="m-nav__section m-nav__section&#45;&#45;first m&#45;&#45;hide">-->
+                                            <!--<span class="m-nav__section-text">-->
+                                                <!--Quick Actions-->
+                                            <!--</span>-->
+                                        <!--</li>-->
+                                        <!--<li class="m-nav__item">-->
+                                            <!--<a href="" class="m-nav__link">-->
+                                                <!--<i class="m-nav__link-icon fa fa-plus"></i>-->
+                                                <!--<span class="m-nav__link-text">-->
+                                                    <!--New Customer-->
+                                                <!--</span>-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                        <!--<li class="m-nav__item">-->
+                                            <!--<a href="" class="m-nav__link">-->
+                                                <!--<i class="m-nav__link-icon flaticon-chat-1"></i>-->
+                                                <!--<span class="m-nav__link-text">-->
+                                                    <!--Messages-->
+                                                <!--</span>-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                        <!--<li class="m-nav__item">-->
+                                            <!--<a href="" class="m-nav__link">-->
+                                                <!--<i class="m-nav__link-icon flaticon-info"></i>-->
+                                                <!--<span class="m-nav__link-text">-->
+                                                    <!--FAQ-->
+                                                <!--</span>-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                        <!--<li class="m-nav__item">-->
+                                            <!--<a href="" class="m-nav__link">-->
+                                                <!--<i class="m-nav__link-icon flaticon-lifebuoy"></i>-->
+                                                <!--<span class="m-nav__link-text">-->
+                                                    <!--Support-->
+                                                <!--</span>-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                        <!--<li class="m-nav__separator m-nav__separator&#45;&#45;fit"></li>-->
+                                        <!--<li class="m-nav__item">-->
+                                            <!--<a href="javascript:;" (click)="closeStorage()" class="btn btn-outline-danger m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;wide btn-sm">-->
+                                                <!--Close-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 <!-- END: Subheader -->
 
 <!-- Content Begins-->
 
     <div class="m-content">
-        <div class="col-md-12">
 
             <div class="m-portlet m-portlet--tabs">
                 <div class="m-portlet__head">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text">
+                                <ul class="nav nav-tabs m-tabs-line m-tabs-line--primary m-tabs-line--2x" role="tablist">
+                                    <li class="nav-item m-tabs__item">
+                                        <a class="nav-link m-tabs__link active show" data-toggle="tab" href="#m_tabs_6_1" role="tab" ng-reflect-href="#m_tabs_6_1" aria-selected="true">
+                                            <i class="la la-info"></i>
+                                            Storage Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="nav-item m-tabs__item">
+                                        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_2" role="tab" ng-reflect-href="#m_tabs_6_2" aria-selected="false">
+                                            <i class="la la-folder"></i>
+                                            Workspace
+                                        </a>
+                                    </li>
+                                    <li class="nav-item m-tabs__item">
+                                        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_3" role="tab" ng-reflect-href="#m_tabs_6_3" aria-selected="false">
+                                            <i class="la la-cloud"></i>
+                                            External Storages
+                                        </a>
+                                    </li>
+                                </ul>
+                            </h3>
+                        </div>
+                    </div>
                     <div class="m-portlet__head-tools">
-                        <ul class="nav nav-tabs m-tabs-line m-tabs-line--primary m-tabs-line--2x" role="tablist">
-                            <li class="nav-item m-tabs__item">
-                                <a class="nav-link m-tabs__link active show" data-toggle="tab" href="#m_tabs_6_1" role="tab" ng-reflect-href="#m_tabs_6_1" aria-selected="true">
-                                    <i class="la la-cog"></i>
-                                    Storage Dashboard
-                                </a>
-                            </li>
-                            <li class="nav-item m-tabs__item">
-                                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_2" role="tab" ng-reflect-href="#m_tabs_6_2" aria-selected="false">
-                                    <i class="la la-briefcase"></i>
-                                    Workspace
-                                </a>
-                            </li>
-                            <li class="nav-item m-tabs__item">
-                                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_3" role="tab" ng-reflect-href="#m_tabs_6_3" aria-selected="false">
-                                    <i class="la la-bell-o"></i>
-                                    External Storages
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+                            <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+                                <i class="la la-plus m--hide"></i>
+                                <i class="la la-ellipsis-h"></i>
+                            </a>
+                            <div class="m-dropdown__wrapper">
+                                <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                                <div class="m-dropdown__inner">
+                                    <div class="m-dropdown__body">
+                                        <div class="m-dropdown__content">
+                                            <ul class="m-nav">
+                                                <li class="m-nav__section m-nav__section--first m--hide">
+                                            <span class="m-nav__section-text">
+                                                Quick Actions
+                                            </span>
+                                                </li>
+                                                <li class="m-nav__item">
+                                                    <a href="" class="m-nav__link">
+                                                        <i class="m-nav__link-icon fa fa-plus"></i>
+                                                        <span class="m-nav__link-text">
+                                                    New Customer
+                                                </span>
+                                                    </a>
+                                                </li>
+                                                <li class="m-nav__item">
+                                                    <a href="" class="m-nav__link">
+                                                        <i class="m-nav__link-icon flaticon-chat-1"></i>
+                                                        <span class="m-nav__link-text">
+                                                    Messages
+                                                </span>
+                                                    </a>
+                                                </li>
+                                                <li class="m-nav__item">
+                                                    <a href="" class="m-nav__link">
+                                                        <i class="m-nav__link-icon flaticon-info"></i>
+                                                        <span class="m-nav__link-text">
+                                                    FAQ
+                                                </span>
+                                                    </a>
+                                                </li>
+                                                <li class="m-nav__item">
+                                                    <a href="" class="m-nav__link">
+                                                        <i class="m-nav__link-icon flaticon-lifebuoy"></i>
+                                                        <span class="m-nav__link-text">
+                                                    Support
+                                                </span>
+                                                    </a>
+                                                </li>
+                                                <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                <li class="m-nav__item">
+                                                    <a href="javascript:;" (click)="closeStorage()" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
+                                                        Close
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="m-portlet__body">
                     <div class="tab-content">
                         <div class="tab-pane active show" id="m_tabs_6_1" role="tabpanel">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            <h2 class="c-margin-btm-25"> Storage Information </h2>
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                    <a class="btn btn-outline-primary btn-lg btn-custom  m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air"
+                                       href="#" ng-reflect-href="#">
+                                        <i class="fa fa-hdd-o  fa-custom"></i>
+                                        <small class="hhd-space"> 50 GB </small>
+                                    </a>
+                                    <div class="c-label-air"> Space Used </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <a class="btn btn-outline-primary btn-lg btn-custom  m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air"
+                                       href="#" ng-reflect-href="#">
+                                        <i class="fa fa-hdd-o  fa-custom"></i>
+                                        <small class="hhd-space"> 250 GB </small>
+                                    </a>
+                                    <div class="c-label-air"> Space Allocated </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <a class="btn btn-outline-primary btn-lg btn-custom  m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air"
+                                       href="#" ng-reflect-href="#">
+                                        <i class="fa fa-hdd-o  fa-custom"></i>
+                                        <small class="hhd-space"> 200 GB </small>
+                                    </a>
+                                    <div class="c-label-air"> Space Remaining </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="tab-pane" id="m_tabs_6_2" role="tabpanel">
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            <h2 class="c-margin-btm-25"> Storage Workspace </h2>
+                            <div id="createFolder" class="itemFolder">
+                                <i class="fa fa-plus"></i>
+                                <p> Create New Folder</p>
+                            </div>
+                            <div class="ffolder medium yellow">
+                                <span>10 Files</span>
+                            </div>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+
                         </div>
                         <div class="tab-pane" id="m_tabs_6_3" role="tabpanel">
-                            <h2> Storage Information </h2>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+                            <h2 class="c-margin-btm-25"> Storage External </h2>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                            a galley of type and scrambled it to make a type specimen book. It has survived not only
+                            five centuries, but also the leap into electronic typesetting, remaining essentially
+                            unchanged.
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
     </div>
 
 </div>

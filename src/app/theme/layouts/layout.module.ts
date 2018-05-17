@@ -14,6 +14,8 @@ import { HrefPreventDefaultDirective } from '../../_directives/href-prevent-defa
 import { UnwrapTagDirective } from '../../_directives/unwrap-tag.directive';
 import { StorageNavComponent } from './storage-nav/storage-nav.component';
 import { GlobalNavComponent } from './global-nav/global-nav.component';
+import { AsideNavConnectComponent } from './aside-nav-connect/aside-nav-connect.component';
+import { ConnectComponent } from "../pages/custom_components/connect/connect.component";
 
 @NgModule({
     declarations: [
@@ -21,7 +23,9 @@ import { GlobalNavComponent } from './global-nav/global-nav.component';
 
         HeaderNavComponent,
         DefaultComponent,
+        ConnectComponent,
         AsideNavComponent,
+        AsideNavConnectComponent,
         FooterComponent,
         QuickSidebarComponent,
         ScrollTopComponent,
@@ -29,14 +33,16 @@ import { GlobalNavComponent } from './global-nav/global-nav.component';
         HrefPreventDefaultDirective,
         UnwrapTagDirective,
         StorageNavComponent,
-        GlobalNavComponent,
+        GlobalNavComponent
     ],
     exports: [
         LayoutComponent,
 
         HeaderNavComponent,
         DefaultComponent,
+        ConnectComponent,
         AsideNavComponent,
+        AsideNavConnectComponent,
         FooterComponent,
         QuickSidebarComponent,
         ScrollTopComponent,
