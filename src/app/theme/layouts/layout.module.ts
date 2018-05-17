@@ -15,10 +15,10 @@ import { UnwrapTagDirective } from '../../_directives/unwrap-tag.directive';
 import { StorageNavComponent } from './storage-nav/storage-nav.component';
 import { GlobalNavComponent } from './global-nav/global-nav.component';
 
+
 @NgModule({
     declarations: [
         LayoutComponent,
-
         HeaderNavComponent,
         DefaultComponent,
         AsideNavComponent,

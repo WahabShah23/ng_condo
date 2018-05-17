@@ -761,6 +761,12 @@ jQuery(document).ready(function() {
         return new Chart(src, config);
     }
 
+
+    $('#carouselExampleIndicators').carousel({
+        interval: 2000
+    });
+
+
     _initSparklineChart($('#m_chart_quick_stats_1'), [10, 14, 18, 11, 9, 12, 14, 17, 18, 14], mUtil.getColor('brand'), 3);
     _initSparklineChart($('#m_chart_quick_stats_2'), [11, 12, 18, 13, 11, 12, 15, 13, 19, 15], mUtil.getColor('danger'), 3);
     _initSparklineChart($('#m_chart_quick_stats_3'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);
@@ -768,6 +774,37 @@ jQuery(document).ready(function() {
     _initSparklineChart($('#m_chart_quick_stats_5'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);  
     _initSparklineChart($('#m_chart_quick_stats_6'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
 
+
+
+
+    _initSparklineChart($('#m_chart_quick_stats_7'), [10, 14, 18, 11, 9, 12, 14, 17, 18, 14], mUtil.getColor('brand'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_8'), [11, 12, 18, 13, 11, 12, 15, 13, 19, 15], mUtil.getColor('danger'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_9'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_10'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('danger'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_11'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_12'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+
+
+    _initSparklineChart($('#m_chart_quick_stats_13'), [10, 14, 18, 11, 9, 12, 14, 17, 18, 14], mUtil.getColor('brand'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_14'), [11, 12, 18, 13, 11, 12, 15, 13, 19, 15], mUtil.getColor('danger'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_15'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_16'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('danger'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_17'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_18'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+    
+    _initSparklineChart($('#m_chart_quick_stats_19'), [10, 14, 18, 11, 9, 12, 14, 17, 18, 14], mUtil.getColor('brand'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_20'), [11, 12, 18, 13, 11, 12, 15, 13, 19, 15], mUtil.getColor('danger'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_21'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_22'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('danger'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_23'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_24'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+
+    _initSparklineChart($('#m_chart_quick_stats_form1'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+
+
+    _initSparklineChart($('#m_chart_quick_stats_form2'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_form3'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_form4'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
     //Widget Charts Ends
     
 });

@@ -1,15 +1,24 @@
 import { Component, OnInit , AfterViewInit} from '@angular/core';
 import { Helpers } from '../../../../helpers';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
+
+
+
+
+
+
+
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css'],
   
   
+  
 })
 export class CustomersComponent implements OnInit , AfterViewInit {
-  isGridView=true;
+   
+    isGridView=true;
   viewName= "List View";
   customerType = "All"; 
   isDisplayDetail = false; 
@@ -17,7 +26,7 @@ export class CustomersComponent implements OnInit , AfterViewInit {
 
   ngOnInit() 
   {
-
+    
   }
   ngAfterViewInit() {
     this._script.loadScripts('app-customers',
@@ -28,6 +37,9 @@ export class CustomersComponent implements OnInit , AfterViewInit {
         Helpers.loadStyles('app-customers', [
         '//www.amcharts.com/lib/3/plugins/export/export.css']);
     }
+
+
+ 
 
   changeView()
   {

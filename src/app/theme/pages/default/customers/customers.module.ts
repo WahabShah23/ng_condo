@@ -7,6 +7,11 @@ import { DefaultComponent } from '../default.component';
 import { CustomersComponent } from "./customers.component";
 
 
+
+
+
+
+
 const routes: Routes = [
     {
         'path': '',

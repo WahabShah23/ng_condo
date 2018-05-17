@@ -63,6 +63,19 @@ const routes: Routes = [
         component: WizardComponent,
         "canActivate": [AuthGuard]
     }
+    /*
+    { 
+        "path": "support",
+         component: ThemeComponent,
+        "canActivate": [AuthGuard],
+            "children": [
+               
+                {
+                    "path": "",
+                    "loadChildren": ".\/pages\/support\/blank\/blank.module#BlankModule"
+                }]
+    }
+    */
     // {
     //     'path': '**',
     //     'redirectTo': 'index',
