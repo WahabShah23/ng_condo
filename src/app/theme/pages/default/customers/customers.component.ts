@@ -4,7 +4,7 @@ import { ScriptLoaderService } from '../../../../_services/script-loader.service
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.css'],
+  styleUrls: ['./customers.component.css']
   
   
 })
