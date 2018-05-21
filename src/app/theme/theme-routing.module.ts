@@ -65,29 +65,26 @@ const routes: Routes = [
                 "path": "connect",
                 "loadChildren": ".\/pages\/custom_components\/connect\/dashboard-connect\/dashboard-connect.module#DashboardConnectModule"
             }
-
-
-
         ]
     },
 
 
-    // {
-    //     'path': 'dashboard',
-    //     'component': ThemeComponent,
-    //     'canActivate': [AuthGuard],
-    //     'children': [
-    //         {
-    //             'path': 'dashboard',
-    //             'loadChildren': '.\/pages\/default\/blank\/blank.module#BlankModule',
-    //         },
-    //         {
-    //             'path': '',
-    //             'redirectTo': 'index',
-    //             'pathMatch': 'full',
-    //         },
-    //     ],
-    // },
+    {
+        'path': '',
+        'component': ThemeComponent,
+        'canActivate': [AuthGuard],
+        'children': [
+            {
+                'path': 'storage',
+                'loadChildren': ".\/pages\/custom_components\/storage\/dashboard-storage\/dashboard-storage.module#DashboardStorageModule",
+            },
+            {
+                'path': 'storage\/workspace',
+                'loadChildren': ".\/pages\/custom_components\/storage\/workspace-storage\/workspace-storage.module#WorkspaceStorageModule",
+                'pathMatch': 'full'
+            }
+        ],
+    },
     {
         "path": "index",
         component: WizardComponent,

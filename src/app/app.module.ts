@@ -15,7 +15,6 @@ import { AuthModule } from "./auth/auth.module";
 import { WizardComponent } from './components/wizard/wizard.component';
 
 import { DemoService } from "./services/demo.service";
-
 @NgModule({
     declarations: [
         ThemeComponent,

@@ -16,6 +16,8 @@ import { StorageNavComponent } from './storage-nav/storage-nav.component';
 import { GlobalNavComponent } from './global-nav/global-nav.component';
 import { AsideNavConnectComponent } from './aside-nav-connect/aside-nav-connect.component';
 import { ConnectComponent } from "../pages/custom_components/connect/connect.component";
+import { AsideNavStorageComponent } from './aside-nav-storage/aside-nav-storage.component';
+import {StorageComponent} from "../pages/custom_components/storage/storage.component";
 
 @NgModule({
     declarations: [
@@ -24,8 +26,10 @@ import { ConnectComponent } from "../pages/custom_components/connect/connect.com
         HeaderNavComponent,
         DefaultComponent,
         ConnectComponent,
+        StorageComponent,
         AsideNavComponent,
         AsideNavConnectComponent,
+        AsideNavStorageComponent,
         FooterComponent,
         QuickSidebarComponent,
         ScrollTopComponent,
@@ -41,8 +45,10 @@ import { ConnectComponent } from "../pages/custom_components/connect/connect.com
         HeaderNavComponent,
         DefaultComponent,
         ConnectComponent,
+        StorageComponent,
         AsideNavComponent,
         AsideNavConnectComponent,
+        AsideNavStorageComponent,
         FooterComponent,
         QuickSidebarComponent,
         ScrollTopComponent,

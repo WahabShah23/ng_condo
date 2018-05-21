@@ -9,14 +9,26 @@
 			<div class="m-stack__item m-brand  m-brand--skin-dark">
 				<div class="m-stack m-stack--ver m-stack--general">
 					<div class="m-stack__item m-stack__item--middle m-brand__logo">
-						<a routerLink="/dashboard" class="m-brand__logo-wrapper">
+						<a *ngIf="router == '/dashboard'" routerLink="/dashboard" class="m-brand__logo-wrapper">
 							<!--<img alt="" src="./assets/app/media/img/logos/logo-citzen.png"/> -->
 							<img alt="" src="./assets/app/media/img/logos/condo.png"/>
+						</a>
+						<a *ngIf="router =='/connect'" routerLink="/connect" class="m-brand__logo-wrapper">
+							<img alt="" src="./assets/app/media/img/logos/support_desk.png"/>
+						</a>
+						<a *ngIf="router =='/storage'" routerLink="/storage" class="m-brand__logo-wrapper">
+							<img alt="" src="./assets/app/media/img/logos/storage.png"/>
 						</a>
 					</div>
 					<div class="m-stack__item m-stack__item--middle m-brand__tools">
 						<!-- BEGIN: Left Aside Minimize Toggle -->
-						<a href="javascript:;" id="m_aside_left_minimize_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-desktop-inline-block">
+						<a *ngIf="router == '/dashboard'" routerLink="/dashboard" id="m_aside_left_minimize_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-desktop-inline-block">
+							<span></span>
+						</a>
+						<a *ngIf="router =='/connect'" routerLink="/connect" id="m_aside_left_minimize_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-desktop-inline-block">
+							<span></span>
+						</a>
+						<a *ngIf="router =='/storage'" routerLink="/storage" id="m_aside_left_minimize_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-desktop-inline-block">
 							<span></span>
 						</a>
 						<!-- END --> 			 							<!-- BEGIN: Responsive Aside Left Menu Toggler -->
@@ -740,6 +752,14 @@
 								<a href="javascript:;" (click)="display_storage=!display_storage;" class="m-nav__link m-dropdown__toggle">
 									<span class="m-nav__link-icon">
 										<i class="la la-folder"></i>
+									</span>
+								</a>
+							</li>
+
+							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light"  	data-dropdown-toggle="click" data-dropdown-persistent="true" id="m_quicksearch" data-search-type="dropdown">
+								<a routerLink="/storage" class="m-nav__link m-dropdown__toggle">
+									<span class="m-nav__link-icon">
+										<i class="fa fa-folder"></i>
 									</span>
 								</a>
 							</li>
