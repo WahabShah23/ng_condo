@@ -52,16 +52,21 @@ const routes: Routes = [
     },
 
     {
-        "path": "connect",
+        "path": "",
         component: ThemeComponent,
         "canActivate": [AuthGuard],
         "children": [
-
             {
-                "path": "support",
-                "loadChildren": ".\/pages\/custom_components\/connect\/support\/support.module#SupportModule"
-
+                "path": "connect\/support",
+                "loadChildren": ".\/pages\/custom_components\/connect\/support\/support.module#SupportModule",
+                'pathMatch': 'full'
+            },
+            {
+                "path": "connect",
+                "loadChildren": ".\/pages\/custom_components\/connect\/dashboard-connect\/dashboard-connect.module#DashboardConnectModule"
             }
+
+
 
         ]
     },

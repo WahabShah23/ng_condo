@@ -8,11 +8,11 @@
         <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow">
             <li class="m-menu__item  " routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
                 <a  routerLink="/dashboard" class="m-menu__link">
-                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <i class="m-menu__link-icon la la-angle-left"></i>
                     <span class="m-menu__link-title">
 						<span class="m-menu__link-wrap">
 							<span class="m-menu__link-text">
-								Dashboard
+								Back
 							</span>
 							<span class="m-menu__link-badge">
 								<span class="m-badge m-badge--danger">
@@ -29,8 +29,8 @@
                 </h4>
                 <i class="m-menu__section-icon flaticon-more-v3"></i>
             </li>
-            <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
-                <a  routerLink="/dashboard" class="m-menu__link">
+            <li class="m-menu__item" routerLinkActive="m-menu__item--active" [routerLinkActiveOptions]="{ exact: true }"  aria-haspopup="true" >
+                <a  routerLink="/connect" class="m-menu__link">
                     <i class="m-menu__link-icon fa fa-dashboard"></i>
                     <span class="m-menu__link-text">
 						Connect Dashboard
@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
-                <a  routerLink="/dashboard" class="m-menu__link">
+                <a  href="#" class="m-menu__link">
                     <i class="m-menu__link-icon fa fa-grav"></i>
                     <span class="m-menu__link-text">
 						Challenges
@@ -46,15 +46,15 @@
                 </a>
             </li>
             <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
-                <a  routerLink="/customers" class="m-menu__link">
+                <a  href="#" class="m-menu__link">
                     <i class="m-menu__link-icon fa fa-lightbulb-o"></i>
                     <span class="m-menu__link-text">
 						Idea
 					</span>
                 </a>
             </li>
-            <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
-                <a  routerLink="/connect/support" class="m-menu__link">
+            <li class="m-menu__item" routerLinkActive="m-menu__item--active" [routerLinkActiveOptions]="{ exact: true }"  aria-haspopup="true" >
+                <a  [routerLink]="['/connect/support']" class="m-menu__link">
                     <i class="m-menu__link-icon fa fa-support"></i>
                     <span class="m-menu__link-text">
 						Support
@@ -62,7 +62,7 @@
                 </a>
             </li>
             <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
-                <a  routerLink="/services" class="m-menu__link">
+                <a  href="#" class="m-menu__link">
                     <i class="m-menu__link-icon fa fa-question-circle-o"></i>
                     <span class="m-menu__link-text">
 						Q &amp; A
@@ -82,6 +82,14 @@
                     <i class="m-menu__link-icon fa fa-line-chart"></i>
                     <span class="m-menu__link-text">
 						Survey
+					</span>
+                </a>
+            </li>
+            <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
+                <a  href="javascript:;" class="m-menu__link">
+                    <i class="m-menu__link-icon fa fa-users"></i>
+                    <span class="m-menu__link-text">
+						Communication
 					</span>
                 </a>
             </li>
