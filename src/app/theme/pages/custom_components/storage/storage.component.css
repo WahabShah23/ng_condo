@@ -21,9 +21,33 @@
 }
 
 
-/* ------------------------------------------FFolders Css Starts---------------------------------------------------- */
+/*------------------------------------------ Custom Folder Styles  Starts--------------------------------------*/
+.folder-title {
+	font-size: 14px;
+	font-weight: 500;
+	position: absolute;
+	top: 6px;
+	left: 10px;
+}
 
-/*Custom Css Start*/
+.folder-details {
+	font-size: 12px;
+	position: absolute;
+	top: 40px;
+	left: 13px;
+}
+
+.folder-details a {
+	display: block;
+}
+
+.folder-details a:hover {
+	color: #fff !important;
+	bold: 500;
+	cursor: pointer;
+}
+
+/*Add Icon area Folder Start*/
 #createFolder {
 	display: inline-block;
 	padding: 35px;
@@ -34,7 +58,75 @@
 	vertical-align: top;
 	margin-top: 7px;
 }
-/*Custom Css End*/
+/*Add Icon area Folder End*/
+
+/*Add Icon area File Start*/
+#createFile {
+	display: inline-block;
+	position: relative;
+	padding: 35px;
+	text-align: center;
+	border: 3px dashed #555;
+	margin-right: 20px;
+	cursor: pointer;
+	vertical-align: top;
+	margin-top: 7px;
+	width: 204px;
+	height: 132px;
+}
+/*Add Icon area File End*/
+
+/*File Input Styling*/
+#fileInput {
+	opacity: 0;
+	position: absolute;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right:0;
+	width: 100%;
+	height:100%;
+}
+/*File Input Styling*/
+
+/* Folder Wrapper Starts*/
+.folders-wrapper {
+	display: inline-block;
+	width: 100%;
+	margin-top: 5px;
+}
+/*Folder Wrapper Ends*/
+
+/*folder Container Start*/
+.folder-container{
+	max-height: 138px;
+	overflow: hidden;
+	float: left;
+	margin-left: 10px;
+}
+/*folder continer End*/
+
+.folder-container .hidden-folder {
+	display: none;
+}
+
+.folder-container:hover .hidden-folder {
+	position: absolute;
+	margin-top: -122px !important;
+	display: block;
+}
+
+/*---------------------------------------------Custom Folder Styles  Ends -------------------------------------*/
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------FFolders Css Starts---------------------------------------------------- */
 
 /* original Css*/
 .ffolder{

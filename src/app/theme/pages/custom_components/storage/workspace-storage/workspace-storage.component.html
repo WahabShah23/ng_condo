@@ -8,7 +8,7 @@
             </h3>
         </div>
         <div>
-			<span class="m-subheader__daterange" id="m_dashboard_daterangepicker">
+			<span class="m-subheader__daterange" id="m_storage_dashboard_daterangepicker">
 				<span class="m-subheader__daterange-label">
 					<span class="m-subheader__daterange-title"></span>
 					<span class="m-subheader__daterange-date m--font-brand"></span>
@@ -23,11 +23,78 @@
 <!-- END: Subheader -->
 
 <div class="m-content">
-    <div id="createFolder" class="itemFolder">
+    <div id="createFolder" data-target="#m_modal_5" data-toggle="modal" class="itemFolder">
         <i class="fa fa-plus"></i>
         <p> Create New Folder</p>
     </div>
-    <div class="ffolder medium yellow">
-        <span>10 Files</span>
+    <div id="createFile" class="itemFolder">
+        <i class="fa fa-plus"></i>
+        <p> Create New File</p>
+        <input type="file" id="fileInput">
+    </div>
+    <div class="folders-wrapper">
+        <div class="folder-container">
+            <div class="ffolder medium yellow main-folder">
+                <small class="folder-title"> Folder 1 </small>
+                <br/>
+                <span>10 Files</span>
+            </div>
+            <div class="ffolder medium cyan hidden-folder">
+                <small class="folder-title"> Details </small>
+                <div class="folder-details">
+                    <a class="text-left"> Open </a>
+                    <a class="text-left"> Edit </a>
+                    <a class="text-left"> Delete </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
+<!--Modals Begin-->
+
+    <!--Folder Modal Add Starts-->
+<div aria-labelledby="exampleModalLabel" class="modal fade show" id="m_modal_5" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    New message
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+						<span aria-hidden="true">
+							×
+						</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form lpformnum="2">
+                    <div class="form-group">
+                        <label class="form-control-label" for="recipient-name">
+                            Folder Name:
+                        </label>
+                        <input class="form-control" id="recipient-name" type="text" ([ngModel])="folderName">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="message-text" ([ngModel])="folderDesc">
+                            Message:
+                        </label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Close
+                </button>
+                <button class="btn btn-primary" (click)="addFolder()" type="button">
+                    Send message
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--Folder modal Add Ends-->
+
+<!--Modals End-->

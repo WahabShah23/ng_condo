@@ -1331,55 +1331,6 @@ var Dashboard = function() {
         cb(start, end, '');
     }
 
-
-    // Storage Page DateRange Picker Start
-    var daterangepickerstorageInit = function() {
-        if ($('#m_storage_dashboard_daterangepicker').length == 0) {
-            return;
-        }
-
-        var picker = $('#m_storage_dashboard_daterangepicker');
-        var start = moment();
-        var end = moment();
-
-        function cb(start, end, label) {
-            var title = '';
-            var range = '';
-
-            if ((end - start) < 100) {
-                title = 'Today:';
-                range = start.format('MMM D');
-            } else if (label == 'Yesterday') {
-                title = 'Yesterday:';
-                range = start.format('MMM D');
-            } else {
-                range = start.format('MMM D') + ' - ' + end.format('MMM D');
-            }
-
-            picker.find('.m-subheader__daterange-date').html(range);
-            picker.find('.m-subheader__daterange-title').html(title);
-        }
-
-        picker.daterangepicker({
-            startDate: start,
-            endDate: end,
-            opens: 'left',
-            ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            }
-        }, cb);
-
-        cb(start, end, '');
-    }
-    //Storage Page DateRange Picker Ends
-
-
-
     var datatableLatestOrders = function() {
         if ($('#m_datatable_latest_orders').length === 0) {
             return;
@@ -1390,7 +1341,7 @@ var Dashboard = function() {
                 type: 'remote',
                 source: {
                     read: {
-                        url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
+                        url: 'inc/api/datatables/demos/default.php'
                     }
                 },
                 pageSize: 10,
@@ -1435,14 +1386,14 @@ var Dashboard = function() {
                 template: '{{OrderID}} - {{ShipCountry}}'
             }, {
                 field: "ShipName",
-                title: "Name",
+                title: "Ship Name",
                 width: 150,
                 responsive: {
                     visible: 'lg'
                 }
             }, {
                 field: "ShipDate",
-                title: "Start Date"
+                title: "Ship Date"
             }, {
                 field: "Status",
                 title: "Status",
@@ -1715,7 +1666,6 @@ var Dashboard = function() {
 
             // init daterangepicker
             daterangepickerInit();
-            daterangepickerstorageInit();
 
             // datatables
             datatableLatestOrders();
@@ -1728,6 +1678,5 @@ var Dashboard = function() {
 
 //== Class initialization on page load
 jQuery(document).ready(function() {
-    
     Dashboard.init();
 });
