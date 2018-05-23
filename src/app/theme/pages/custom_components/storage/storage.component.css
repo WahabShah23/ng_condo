@@ -1,3 +1,22 @@
+.m-subheader {
+	 padding: 10px 30px 0 30px;
+ }
+.breadcrumb-header {
+	margin-top: -15px !important;
+}
+.breadcrumb-header li a span {
+	font-size: 11px;
+}
+.stats-icons {
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+.m-content {
+	padding-top: 10px !important;
+}
+
+
+
 .m-btn--icon.m-btn--icon-only.btn-lg.btn-custom {
 	width: 100px;
 	height:100px;
@@ -26,14 +45,15 @@
 	font-size: 14px;
 	font-weight: 500;
 	position: absolute;
-	top: 6px;
+	top: 2px;
 	left: 10px;
+	border-bottom: 1px dashed #fff ;
 }
 
 .folder-details {
 	font-size: 12px;
 	position: absolute;
-	top: 40px;
+	top: 25px;
 	left: 13px;
 }
 
@@ -62,30 +82,30 @@
 
 /*Add Icon area File Start*/
 #createFile {
-	display: inline-block;
+	/*display: inline-block;*/
 	position: relative;
-	padding: 35px;
-	text-align: center;
-	border: 3px dashed #555;
-	margin-right: 20px;
-	cursor: pointer;
-	vertical-align: top;
-	margin-top: 7px;
-	width: 204px;
-	height: 132px;
+	/*padding: 35px;*/
+	/*text-align: center;*/
+	/*border: 3px dashed #555;*/
+	/*margin-right: 20px;*/
+	/*cursor: pointer;*/
+	/*vertical-align: top;*/
+	/*margin-top: 7px;*/
+	/*width: 204px;*/
+	/*height: 132px;*/
 }
 /*Add Icon area File End*/
 
 /*File Input Styling*/
 #fileInput {
-	opacity: 0;
-	position: absolute;
-	top:0;
-	left: 0;
-	bottom: 0;
-	right:0;
-	width: 100%;
-	height:100%;
+	/*opacity: 0;*/
+	/*position: absolute;*/
+	/*top:0;*/
+	/*left: 0;*/
+	/*bottom: 0;*/
+	/*right:11.5%;
+	/*width: 77%;*/
+	/*height:100%;*/
 }
 /*File Input Styling*/
 
@@ -97,12 +117,13 @@
 }
 /*Folder Wrapper Ends*/
 
-/*folder Container Start*/
+/*folder Container Start actual folder yellow*/
 .folder-container{
 	max-height: 138px;
 	overflow: hidden;
 	float: left;
 	margin-left: 10px;
+	margin-bottom: 10px;
 }
 /*folder continer End*/
 

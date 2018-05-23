@@ -1,12 +1,16 @@
-
 <!-- BEGIN: Subheader -->
 <div class="m-subheader" appunwraptag="">
     <div class="d-flex align-items-center">
         <div class="mr-auto">
             <h3 class="m-subheader__title">
                 Storage Workspace
+                <small class="fa fa-gear text-muted stats-icons"></small>
+                <small class="fa fa-bar-chart text-muted stats-icons"></small>
+                <small class="fa fa-search text-muted stats-icons"></small>
             </h3>
         </div>
+        <button class="btn btn-link pull-right" data-target="#m_modal_5" data-toggle="modal" ><i class="fa fa-plus"></i> Add Folder </button>
+        <button class="btn btn-link pull-right"><i class="fa fa-plus"></i> Add File</button>
         <div>
 			<span class="m-subheader__daterange" id="m_storage_dashboard_daterangepicker">
 				<span class="m-subheader__daterange-label">
@@ -20,19 +24,20 @@
         </div>
     </div>
 </div>
+<hr class="customhr">
 <!-- END: Subheader -->
 
 <div class="m-content">
-    <div id="createFolder" data-target="#m_modal_5" data-toggle="modal" class="itemFolder">
-        <i class="fa fa-plus"></i>
-        <p> Create New Folder</p>
-    </div>
-    <div id="createFile" class="itemFolder">
-        <i class="fa fa-plus"></i>
-        <p> Create New File</p>
-        <input type="file" id="fileInput">
-    </div>
-    <div class="folders-wrapper">
+    <!--<div id="createFolder" data-target="#m_modal_5" data-toggle="modal" class="itemFolder">-->
+        <!--<i class="fa fa-plus"></i>-->
+        <!--<p> Create New Folder</p>-->
+    <!--</div>-->
+    <!--<div id="createFile" class="itemFolder">-->
+        <!--<i class="fa fa-plus"></i>-->
+        <!--<p> Create New File</p>-->
+        <!--<input type="file" id="fileInput">-->
+    <!--</div>-->
+    <div class="folders-wrapper" *ngIf="!display">
         <div class="folder-container">
             <div class="ffolder medium yellow main-folder">
                 <small class="folder-title"> Folder 1 </small>
@@ -42,13 +47,42 @@
             <div class="ffolder medium cyan hidden-folder">
                 <small class="folder-title"> Details </small>
                 <div class="folder-details">
-                    <a class="text-left"> Open </a>
+                    <a class="text-left" (click)="display = !display"> Open </a>
                     <a class="text-left"> Edit </a>
                     <a class="text-left"> Delete </a>
+                    <a class="text-left"> Option 1 </a>
+                    <a class="text-left"> Option 2 </a>
+                </div>
+            </div>
+        </div>
+        <div class="folder-container">
+            <div class="ffolder medium yellow main-folder">
+                <small class="folder-title"> Folder 2 </small>
+                <br/>
+                <span>2 Files</span>
+            </div>
+            <div class="ffolder medium cyan hidden-folder">
+                <small class="folder-title"> Details </small>
+                <div class="folder-details">
+                    <a class="text-left" (click)="display = !display"> Open </a>
+                    <a class="text-left"> Edit </a>
+                    <a class="text-left"> Delete </a>
+                    <a class="text-left"> Option 1 </a>
+                    <a class="text-left"> Option 2 </a>
                 </div>
             </div>
         </div>
     </div>
+
+    <div *ngIf="display" [@enterAnimation]>
+        <div (click)="display = !display"> <i class="fa fa-arrow-circle-left"> Back </i></div>
+        <div class="ffolder medium cyan">
+            <small class="folder-title"> Sub Folder </small>
+            <br/>
+            <span>New Files</span>
+        </div>
+    </div>
+
 </div>
 
 
@@ -74,22 +108,22 @@
                         <label class="form-control-label" for="recipient-name">
                             Folder Name:
                         </label>
-                        <input class="form-control" id="recipient-name" type="text" ([ngModel])="folderName">
+                        <input class="form-control" id="recipient-name" type="text" >
                     </div>
-                    <div class="form-group">
-                        <label class="form-control-label" for="message-text" ([ngModel])="folderDesc">
-                            Message:
-                        </label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<label class="form-control-label" for="message-text" >-->
+                            <!--Message:-->
+                        <!--</label>-->
+                        <!--<textarea class="form-control" id="message-text"></textarea>-->
+                    <!--</div>-->
                 </form>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">
                     Close
                 </button>
-                <button class="btn btn-primary" (click)="addFolder()" type="button">
-                    Send message
+                <button class="btn btn-primary" id="add-folder" data-dismiss="modal" type="button">
+                    Add Folder
                 </button>
             </div>
         </div>
