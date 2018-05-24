@@ -1,0 +1,56 @@
+.m-subheader {
+	padding: 10px 30px 0 30px;
+}
+.breadcrumb-header {
+	margin-top: -15px !important;
+}
+.breadcrumb-header li a span {
+	font-size: 11px;
+}
+.stats-icons {
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+.m-content {
+	padding-top: 10px;
+}
+.m-content {
+	padding-top: 10px;
+}
+
+.topbar{
+	box-shadow: 0 0 0 0 !important;
+}
+/*.tp-info,*/
+/*.tp-title {*/
+	/*margin-top: 80px;*/
+	/*opacity: 0.97;*/
+	/*color: #000;*/
+/*}*/
+
+#tp-grid {
+	margin-left: 0px !important;
+}
+
+#close {
+	display: none;
+}
+.back {
+	box-shadow: 1px 1px 1px 3px #cacaca;
+}
+
+.tp-info,
+.tp-title {
+	position: absolute;
+	background: #fff;
+	line-height: 20px;
+	color: #333;
+	top: 40%;
+	width: 75%;
+	padding: 10px;
+	font-weight: 700;
+	text-align: right;
+	left: 0% !important;
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.1), 5px 0 5px -3px rgba(0,0,0,0.4), inset 0 0 5px rgba(0,0,0,0.04);
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.1), 5px 0 5px -3px rgba(0,0,0,0.4), inset 0 0 5px rgba(0,0,0,0.04);
+}

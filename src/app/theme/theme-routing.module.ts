@@ -27,6 +27,10 @@ const routes: Routes = [
                  "loadChildren": ".\/pages\/default\/index\/index.module#IndexModule"
             },
             {
+                "path": "global",
+                "loadChildren": ".\/pages\/default\/global\/global.module#GlobalModule"
+            },
+            {
                 "path": "customers",
                 "loadChildren": ".\/pages\/default\/customers\/customers.module#CustomersModule"
             },

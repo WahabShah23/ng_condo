@@ -9,7 +9,7 @@
 			<div class="m-stack__item m-brand  m-brand--skin-dark">
 				<div class="m-stack m-stack--ver m-stack--general">
 					<div class="m-stack__item m-stack__item--middle m-brand__logo">
-						<a *ngIf="router == '/dashboard'" routerLink="/dashboard" class="m-brand__logo-wrapper">
+						<a *ngIf="router == '/dashboard' || '/global' " routerLink="/dashboard" class="m-brand__logo-wrapper">
 							<!--<img alt="" src="./assets/app/media/img/logos/logo-citzen.png"/> -->
 							<img alt="" src="./assets/app/media/img/logos/condo.png"/>
 						</a>
@@ -715,7 +715,7 @@
 								</a>
 							</li>
 							<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light"  	data-dropdown-toggle="click" data-dropdown-persistent="true" id="m_quicksearch" data-search-type="dropdown">
-								<a href="#" class="m-nav__link m-dropdown__toggle">
+								<a routerLink="/global" class="m-nav__link m-dropdown__toggle">
 									<span class="m-nav__link-icon">
 										<i class="la la-globe"></i>
 									</span>
