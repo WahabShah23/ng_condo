@@ -1,4 +1,5 @@
 <!-- BEGIN: Subheader -->
+<app-custom-right-sidebar [@slideInOut]="menuState"></app-custom-right-sidebar>
 <div class="m-subheader" appunwraptag="">
     <div class="d-flex align-items-center">
         <div class="mr-auto">
@@ -50,7 +51,7 @@
                     <a class="text-left" (click)="display = !display"> Open </a>
                     <a class="text-left"> Edit </a>
                     <a class="text-left"> Delete </a>
-                    <a class="text-left"> Option 1 </a>
+                    <a class="text-left" (click)="toggleMenu()"> Move </a>
                     <a class="text-left"> Option 2 </a>
                 </div>
             </div>
@@ -67,7 +68,7 @@
                     <a class="text-left" (click)="display = !display"> Open </a>
                     <a class="text-left"> Edit </a>
                     <a class="text-left"> Delete </a>
-                    <a class="text-left"> Option 1 </a>
+                    <a class="text-left" (click)="toggleMenu()"> Move </a>
                     <a class="text-left"> Option 2 </a>
                 </div>
             </div>

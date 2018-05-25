@@ -17,7 +17,8 @@ import { GlobalNavComponent } from './global-nav/global-nav.component';
 import { AsideNavConnectComponent } from './aside-nav-connect/aside-nav-connect.component';
 import { ConnectComponent } from "../pages/custom_components/connect/connect.component";
 import { AsideNavStorageComponent } from './aside-nav-storage/aside-nav-storage.component';
-import {StorageComponent} from "../pages/custom_components/storage/storage.component";
+import { StorageComponent } from "../pages/custom_components/storage/storage.component";
+import { CustomRightSidebarComponent } from './custom-right-sidebar/custom-right-sidebar.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import {StorageComponent} from "../pages/custom_components/storage/storage.compo
         HrefPreventDefaultDirective,
         UnwrapTagDirective,
         StorageNavComponent,
-        GlobalNavComponent
+        GlobalNavComponent,
+        CustomRightSidebarComponent
     ],
     exports: [
         LayoutComponent,
@@ -54,6 +56,7 @@ import {StorageComponent} from "../pages/custom_components/storage/storage.compo
         ScrollTopComponent,
         TooltipsComponent,
         HrefPreventDefaultDirective,
+        CustomRightSidebarComponent
     ],
     imports: [
         CommonModule,

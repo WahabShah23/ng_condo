@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ScriptLoaderService} from "../../../../../_services/script-loader.service";
-import { trigger, style, animate, transition } from '@angular/animations';
+import { trigger, style, animate, transition, state } from '@angular/animations';
 
 declare var $:any;
 
@@ -10,8 +10,7 @@ declare var $:any;
   styleUrls: ['../storage.component.css'],
     animations: [
         trigger(
-            'enterAnimation',
-            [
+            'enterAnimation',[
                 transition(
                     ':enter', [
                         style({transform: 'translateX(100%)', opacity: 0}),
@@ -25,13 +24,29 @@ declare var $:any;
 
                     ]
                 )]
-        )
+        ),
+        trigger('slideInOut', [
+            state('in', style({
+                transform: 'translate3d(0, 0, 0)'
+            })),
+            state('out', style({
+                transform: 'translate3d(100%, 0, 0)'
+            })),
+            transition(
+                'in => out',
+                animate('400ms ease-in-out')),
+            transition(
+                'out => in',
+                animate('400ms ease-in-out'))
+        ])
+
     ],
     encapsulation: ViewEncapsulation.None
 })
 export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
 
     display:boolean = false;
+    menuState:string = 'out';
 
   constructor(private _script: ScriptLoaderService) { }
 
@@ -68,6 +83,13 @@ export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
         this._script.loadScripts('app-workspace-storage',
             ['assets/app/js/dashboard.js']);
 
+    }
+
+
+
+    toggleMenu() {
+        // 1-line if statement that toggles the value:
+        this.menuState = this.menuState === 'out' ? 'in' : 'out';
     }
 
 }
