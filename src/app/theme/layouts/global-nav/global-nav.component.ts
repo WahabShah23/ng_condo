@@ -1,19 +1,19 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-global-nav',
-  templateUrl: './global-nav.component.html',
-  styleUrls: ['./global-nav.component.css']
+    selector: 'app-global-nav',
+    templateUrl: './global-nav.component.html',
+    styleUrls: ['./global-nav.component.css']
 })
 export class GlobalNavComponent implements OnInit {
 
-  @Output() hideGlobal : EventEmitter<any> = new EventEmitter();
-  constructor() { }
+    @Output() hideGlobal: EventEmitter<any> = new EventEmitter();
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  closeGlobal() {
-    this.hideGlobal.emit(null);
-  }
+    closeGlobal() {
+        this.hideGlobal.emit(null);
+    }
 }

@@ -23,8 +23,8 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/default\/blank\/blank.module#BlankModule"
             },
             {
-                 "path": "dashboard",
-                 "loadChildren": ".\/pages\/default\/index\/index.module#IndexModule"
+                "path": "dashboard",
+                "loadChildren": ".\/pages\/default\/index\/index.module#IndexModule"
             },
             {
                 "path": "global",
@@ -47,37 +47,8 @@ const routes: Routes = [
                 "path": "faq",
                 "loadChildren": ".\/pages\/default\/snippets\/faq\/faq-faq-1\/faq-faq-1.module#FaqFaq1Module"
             },
-            {
-                "path": "404",
-                "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"
-            }
 
-        ]
-    },
-
-    {
-        "path": "",
-        component: ThemeComponent,
-        "canActivate": [AuthGuard],
-        "children": [
-            {
-                "path": "connect\/support",
-                "loadChildren": ".\/pages\/custom_components\/connect\/support\/support.module#SupportModule",
-                'pathMatch': 'full'
-            },
-            {
-                "path": "connect",
-                "loadChildren": ".\/pages\/custom_components\/connect\/dashboard-connect\/dashboard-connect.module#DashboardConnectModule"
-            }
-        ]
-    },
-
-
-    {
-        'path': '',
-        'component': ThemeComponent,
-        'canActivate': [AuthGuard],
-        'children': [
+            // STORAGE Starts---------------------------------------
             {
                 'path': 'storage',
                 'loadChildren': ".\/pages\/custom_components\/storage\/dashboard-storage\/dashboard-storage.module#DashboardStorageModule",
@@ -86,9 +57,62 @@ const routes: Routes = [
                 'path': 'storage\/workspace',
                 'loadChildren': ".\/pages\/custom_components\/storage\/workspace-storage\/workspace-storage.module#WorkspaceStorageModule",
                 'pathMatch': 'full'
+            },
+            // STORAGE Ends---------------------------------------
+
+            // CONNECT Starts---------------------------------------
+            {
+                "path": "connect\/support",
+                "loadChildren": ".\/pages\/custom_components\/connect\/support\/support.module#SupportModule",
+                'pathMatch': 'full'
+            },
+            {
+                "path": "connect",
+                "loadChildren": ".\/pages\/custom_components\/connect\/dashboard-connect\/dashboard-connect.module#DashboardConnectModule"
+            },
+            // CONNECT Ends---------------------------------------
+            {
+                "path": "404",
+                "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"
             }
-        ],
+
+        ]
     },
+
+    // {
+    //     "path": "",
+    //     component: ThemeComponent,
+    //     "canActivate": [AuthGuard],
+    //     "children": [
+    //         {
+    //             "path": "connect\/support",
+    //             "loadChildren": ".\/pages\/custom_components\/connect\/support\/support.module#SupportModule",
+    //             'pathMatch': 'full'
+    //         },
+    //         {
+    //             "path": "connect",
+    //             "loadChildren": ".\/pages\/custom_components\/connect\/dashboard-connect\/dashboard-connect.module#DashboardConnectModule"
+    //         }
+    //     ]
+    // },
+
+
+    // {
+    //     'path': '',
+    //     'component': ThemeComponent,
+    //     'canActivate': [AuthGuard],
+    //     'children': [
+    //         {
+    //             'path': 'storage',
+    //             'loadChildren': ".\/pages\/custom_components\/storage\/dashboard-storage\/dashboard-storage.module#DashboardStorageModule",
+    //         },
+    //         {
+    //             'path': 'storage\/workspace',
+    //             'loadChildren': ".\/pages\/custom_components\/storage\/workspace-storage\/workspace-storage.module#WorkspaceStorageModule",
+    //             'pathMatch': 'full'
+    //         }
+    //     ],
+    // },
     {
         "path": "index",
         component: WizardComponent,

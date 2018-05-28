@@ -1,26 +1,26 @@
-import {AfterViewInit, Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {ScriptLoaderService} from "../../../../../_services/script-loader.service";
+import { AfterViewInit, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ScriptLoaderService } from "../../../../../_services/script-loader.service";
 import { trigger, style, animate, transition, state } from '@angular/animations';
 
-declare var $:any;
+declare var $: any;
 
 @Component({
-  selector: 'app-workspace-storage',
-  templateUrl: './workspace-storage.component.html',
-  styleUrls: ['../storage.component.css'],
+    selector: 'app-workspace-storage',
+    templateUrl: './workspace-storage.component.html',
+    styleUrls: ['../storage.component.css'],
     animations: [
         trigger(
-            'enterAnimation',[
+            'enterAnimation', [
                 transition(
                     ':enter', [
-                        style({transform: 'translateX(100%)', opacity: 0}),
-                        animate('500ms', style({transform: 'translateX(0)',opacity: 1}))
+                        style({ transform: 'translateX(100%)', opacity: 0 }),
+                        animate('500ms', style({ transform: 'translateX(0)', opacity: 1 }))
                     ]
                 ),
                 transition(
                     ':leave', [
-                        style({transform: 'translateX(0)', 'opacity': 1}),
-                        animate('500ms', style({transform: 'translateX(100%)',opacity: 0}))
+                        style({ transform: 'translateX(0)', 'opacity': 1 }),
+                        animate('500ms', style({ transform: 'translateX(100%)', opacity: 0 }))
 
                     ]
                 )]
@@ -45,17 +45,17 @@ declare var $:any;
 })
 export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
 
-    display:boolean = false;
-    menuState:string = 'out';
+    display: boolean = false;
+    menuState: string = 'out';
 
-  constructor(private _script: ScriptLoaderService) { }
+    constructor(private _script: ScriptLoaderService) { }
 
-  ngOnInit() {
+    ngOnInit() {
 
-      $(document).on('click', '#add-folder', function (){
-          var folderName = $('#recipient-name').val();
-          folderName = (folderName == '') ? 'New Folder' : folderName;
-          $(this).closest('#m_modal_5').prev().find('.folders-wrapper').append(`
+        $(document).on('click', '#add-folder', function() {
+            var folderName = $('#recipient-name').val();
+            folderName = (folderName == '') ? 'New Folder' : folderName;
+            $(this).closest('#m_modal_5').prev().find('.folders-wrapper').append(`
                 <div class="folder-container">
                     <div class="ffolder medium yellow main-folder">
                         <small class="folder-title">` + folderName + `</small>
@@ -74,10 +74,10 @@ export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
                     </div>
                 </div>
           `);
-          $('#recipient-name').val('');
-      });
+            $('#recipient-name').val('');
+        });
 
-  }
+    }
 
     ngAfterViewInit() {
         this._script.loadScripts('app-workspace-storage',
@@ -88,6 +88,11 @@ export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
 
 
     toggleMenu() {
+        // 1-line if statement that toggles the value:
+        this.menuState = this.menuState === 'out' ? 'in' : 'out';
+    }
+
+    hideRightMenu() {
         // 1-line if statement that toggles the value:
         this.menuState = this.menuState === 'out' ? 'in' : 'out';
     }

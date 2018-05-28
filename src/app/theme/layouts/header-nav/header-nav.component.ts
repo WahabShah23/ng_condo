@@ -14,7 +14,7 @@ export class HeaderNavComponent implements OnInit, AfterViewInit {
     display_global = false;
     router: string;
 
-    constructor( _router: Router) {
+    constructor(_router: Router) {
         this.router = _router.url;
     }
     ngOnInit() {

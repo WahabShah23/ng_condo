@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {Observable} from 'rxjs/Observable';
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { Observable } from 'rxjs/Observable';
 
 const httpOptions = {
     // headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -10,13 +10,13 @@ const httpOptions = {
 @Injectable()
 export class DemoService {
 
-    constructor(private http:HttpClient) {}
+    constructor(private http: HttpClient) { }
 
     // Uses http.get() to load data from a single API endpoint
     getData() {
-       //  return this.http.get('https://address-book-demo.herokuapp.com/api/contacts');
+        //  return this.http.get('https://address-book-demo.herokuapp.com/api/contacts');
         return this.http.get('http://www.sharjeelkhan.ca/veaseapp/vease-app/api/get-user');
-       // return this.http.get('https://www.sharjeelkhan.ca/veaseapp/vease-app/api/login');
+        // return this.http.get('https://www.sharjeelkhan.ca/veaseapp/vease-app/api/login');
     }
 
     // Uses http.Post to load data

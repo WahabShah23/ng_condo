@@ -22,13 +22,13 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule,  FormsModule
+        CommonModule, RouterModule.forChild(routes), LayoutModule, FormsModule
     ], exports: [
         RouterModule,
     ], declarations: [
         CustomersComponent,
     ],
-  
+
 })
 export class CustomersModule {
 }

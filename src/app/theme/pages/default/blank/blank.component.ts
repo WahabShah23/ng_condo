@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {DemoService} from "../../../../services/demo.service";
-import {Observable} from 'rxjs/Rx';
+import { DemoService } from "../../../../services/demo.service";
+import { Observable } from 'rxjs/Rx';
 
 @Component({
     selector: 'app-blank',
@@ -21,9 +21,9 @@ export class BlankComponent implements OnInit {
         // );
 
         this._demoService.postData().subscribe(
-            data => { this.theData = data},
-            err =>  console.error(err),
-            () =>  console.log((this.theData))
+            data => { this.theData = data },
+            err => console.error(err),
+            () => console.log((this.theData))
         );
 
     }

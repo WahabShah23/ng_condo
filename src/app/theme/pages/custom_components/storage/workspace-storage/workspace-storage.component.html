@@ -1,5 +1,5 @@
 <!-- BEGIN: Subheader -->
-<app-custom-right-sidebar [@slideInOut]="menuState"></app-custom-right-sidebar>
+<app-custom-right-sidebar [@slideInOut]="menuState" (toggle_rbar)="hideRightMenu()"></app-custom-right-sidebar>
 <div class="m-subheader" appunwraptag="">
     <div class="d-flex align-items-center">
         <div class="mr-auto">
@@ -83,6 +83,7 @@
             <span>New Files</span>
         </div>
     </div>
+
 
 </div>
 

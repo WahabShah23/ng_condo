@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutModule } from '../../../layouts/layout.module';
 import { DefaultComponent } from '../default.component';
-import {GlobalComponent} from "./global.component";
+import { GlobalComponent } from "./global.component";
 
 const routes: Routes = [
     {
