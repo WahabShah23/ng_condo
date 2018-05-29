@@ -11,6 +11,7 @@ export class GlobalComponent implements OnInit, AfterViewInit {
     constructor(private _script: ScriptLoaderService) { }
 
     ngOnInit() {
+
     }
 
     ngAfterViewInit() {
