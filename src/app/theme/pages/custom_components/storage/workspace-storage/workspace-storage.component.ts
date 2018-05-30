@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ScriptLoaderService } from "../../../../../_services/script-loader.service";
 import { trigger, style, animate, transition, state } from '@angular/animations';
-import {Folder} from "../../../../../models/Folder.model";
 
 declare var $: any;
 
@@ -44,33 +43,14 @@ declare var $: any;
     ],
     encapsulation: ViewEncapsulation.None
 })
-/*
-class Folder
-{
-    id: string;
-    folderName: string;
-    childrenfolders: Folder[];
-    parentFolder : Folder;
-    constructor(id , name , parent:Folder)
-    {
-        this.id = undefined;
-        this.parentFolder = undefined;
-    }
-   
-}
-*/
-
 export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
 
-    id:number = 0;
     display: boolean = false;
     menuState: string = 'out';
-    folders : Folder[] = [new Folder(++this.id, "First Folder" , undefined)];
-    
 
     constructor(private _script: ScriptLoaderService) { }
 
-    ngOnInit() {/*
+    ngOnInit() {
 
         $(document).on('click', '#add-folder', function() {
             var folderName = $('#recipient-name').val();
@@ -96,7 +76,6 @@ export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
           `);
             $('#recipient-name').val('');
         });
-        */
 
     }
 
@@ -116,11 +95,6 @@ export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
     hideRightMenu() {
         // 1-line if statement that toggles the value:
         this.menuState = this.menuState === 'out' ? 'in' : 'out';
-    }
-
-    addFolder(folderName : string)
-    {
-        this.folders.push(new Folder(1, folderName , undefined));
     }
 
 }
