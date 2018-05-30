@@ -253,6 +253,9 @@
 .ffolder.big i{ font-size: 53px;}
 
 
+
+
+
 /*Available colors*/
 .ffolder.cyan{ background-color: #23CBF4;}
 .ffolder.cyan:before, .ffolder.cyan span{ background-color: #06BAEE;}
@@ -285,3 +288,13 @@
 .ffolder.gray i{color: #687F8C;}
 
 /* ------------------------------------------FFolders Css Ends---------------------------------------------------- */
+.folder-container:hover .hidden-folder 
+{
+    position: absolute;
+    margin-top: -61px !important;
+	display: block;
+}
+
+.ffolder .folder-title {
+	font-size: 12px;
+}
