@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 
 @Component({
     selector: 'app-custom-right-sidebar',
@@ -6,7 +6,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     styleUrls: ['./custom-right-sidebar.component.css']
 })
 export class CustomRightSidebarComponent implements OnInit {
+    @Input() isSubFolder;
     @Output() toggle_rbar: EventEmitter<any> = new EventEmitter();
+
+
     constructor() { }
 
     ngOnInit() {

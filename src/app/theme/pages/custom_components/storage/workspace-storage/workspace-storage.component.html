@@ -1,5 +1,5 @@
 <!-- BEGIN: Subheader -->
-<app-custom-right-sidebar [@slideInOut]="menuState" (toggle_rbar)="hideRightMenu()"></app-custom-right-sidebar>
+<app-custom-right-sidebar [@slideInOut]="menuState" (toggle_rbar)="hideRightMenu()" [isSubFolder]="isRoot"></app-custom-right-sidebar>
 <div class="m-subheader" appunwraptag="">
     <div class="d-flex align-items-center">
         <div class="mr-auto">
@@ -38,7 +38,7 @@
         <!--<p> Create New File</p>-->
         <!--<input type="file" id="fileInput">-->
     <!--</div>-->
-    <div class="folders-wrapper" *ngIf="!display">
+    <div class="folders-wrapper" *ngIf="isRoot">
         <!--div class="folder-container">
             <div class="ffolder medium yellow main-folder">
                 <small class="folder-title"> Folder 1 </small>
@@ -84,84 +84,128 @@
         </div>
     </div-->
 
-
-    <div class="folder-container" *ngFor="let folder of folders">
-        <div class="ffolder small yellow main-folder">
-            <small class="folder-title"> {{folder.folderName}} </small>
-            <br/>
-            <span> {{folder.childrenfolders.length}}  </span>
-        </div>
-        <div class="ffolder small cyan hidden-folder">
-            <small class="folder-title"> Details </small>
-            <div class="folder-details">
-                <a class="text-left" (click)="display = !display"> Open </a>
-                <!-- <a class="text-left"> Edit </a>
-                <a class="text-left"> Delete </a> -->
-                <a class="text-left" (click)="toggleMenu()"> Move </a>
-                <!-- <a class="text-left"> Option 2 </a> -->
+        <div class="folder-container" *ngFor="let folder of folders; let i = index">
+            <div class="ffolder small yellow main-folder">
+                <small class="folder-title"> {{folder.folderName}}, {{i}} </small>
+                <br/>
+                <span> <b class="count_files">{{subFolder.length}}</b> File(s) </span>
+            </div>
+            <div class="ffolder small cyan hidden-folder">
+                <small class="folder-title"> Details </small>
+                <div class="folder-details">
+                    <a class="text-left" (click)="isRoot = !isRoot"> Open </a>
+                    <a class="text-left" data-target="#m_modal_edit" data-toggle="modal" (click)="selectedFolderName(folder.folderName)"> Edit </a>
+                    <a class="text-left" (click)="deleteItem(i)"> Delete </a>
+                    <a class="text-left" (click)="toggleMenu()"> Move </a>
+                     <!--<a class="text-left"> Move Files </a> -->
+                </div>
             </div>
         </div>
-    </div>
 
     
 
 
-</div>
-
-<div *ngIf="display" [@enterAnimation]>
-    <div (click)="display = !display"> <i class="fa fa-arrow-circle-left"> Back </i></div>
-    <div class="ffolder small cyan">
-        <small class="folder-title"> Sub Folder </small>
-        <br/>
-        <span>New Files</span>
     </div>
-</div>
+
+    <div *ngIf="!isRoot" [@enterAnimation]>
+        <div (click)="isRoot = !isRoot"> <i class="fa fa-arrow-circle-left"> Back </i></div>
+        <div *ngIf="subFolder.length <= 0" class="noFilesFound text-muted">
+            <h3>No files in directory...</h3>
+        </div>
+        <div class="ffolder small cyan child-folder c--padding-top-15" *ngFor="let f of subFolder; let i = index">
+            <small class="folder-title"> {{f.folderName}}, {{i}} </small>
+            <br/>
+            <span> <b class="count_files">0</b> File(s)</span>
+            <small class="folderActionMove" (click)="moveFiles(i)"> <b class="fa fa-arrow-circle-o-up"></b> Move Up </small>
+        </div>
+    </div>
+
+
+
+
 </div>
 
 
 <!--Modals Begin-->
 
     <!--Folder Modal Add Starts-->
-<div aria-labelledby="exampleModalLabel" class="modal fade show" id="m_modal_5" role="dialog" tabindex="-1">
+        <div aria-labelledby="exampleModalLabel" class="modal fade show" id="m_modal_5" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            New message
+                        </h5>
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span aria-hidden="true">
+                                    ×
+                                </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form lpformnum="2">
+                            <div class="form-group">
+                                <label class="form-control-label" for="new-folder-name" >
+                                    Folder Name:
+                                </label>
+                                <input class="form-control" id="new-folder-name" type="text" #newfoldername>
+                            </div>
+                            <!--<div class="form-group">-->
+                                <!--<label class="form-control-label" for="message-text" >-->
+                                    <!--Message:-->
+                                <!--</label>-->
+                                <!--<textarea class="form-control" id="message-text"></textarea>-->
+                            <!--</div>-->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                        <button class="btn btn-primary" id="add-folder" data-dismiss="modal" type="button" (click)="addFolder(newfoldername.value)">
+                            Add Folder
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--Folder modal Add Ends-->
+
+<!--Folder Modal Add Starts-->
+<div aria-labelledby="editModalLabel" class="modal fade show" id="m_modal_edit" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                    New message
+                <h5 class="modal-title" id="editModalLabel">
+                    Edit Name
                 </h5>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-						<span aria-hidden="true">
-							×
-						</span>
+                                <span aria-hidden="true">
+                                    ×
+                                </span>
                 </button>
             </div>
             <div class="modal-body">
                 <form lpformnum="2">
                     <div class="form-group">
-                        <label class="form-control-label" for="recipient-name" >
+                        <label class="form-control-label" for="edit-name" >
                             Folder Name:
                         </label>
-                        <input class="form-control" id="recipient-name" type="text" #newfoldername>
+                        <input class="form-control" id="edit-name" type="text" name="edit-name" #editfoldername [(ngModel)]="editName">
                     </div>
-                    <!--<div class="form-group">-->
-                        <!--<label class="form-control-label" for="message-text" >-->
-                            <!--Message:-->
-                        <!--</label>-->
-                        <!--<textarea class="form-control" id="message-text"></textarea>-->
-                    <!--</div>-->
                 </form>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">
                     Close
                 </button>
-                <button class="btn btn-primary" id="add-folder" data-dismiss="modal" type="button" (click)="addFolder(newfoldername.value)">
-                    Add Folder
+                <button class="btn btn-primary" id="edit-folder" data-dismiss="modal" type="button">
+                    Edit &amp; Save
                 </button>
             </div>
         </div>
     </div>
 </div>
-    <!--Folder modal Add Ends-->
+<!--Folder modal Edit Ends-->
 
 <!--Modals End-->

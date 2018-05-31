@@ -42,23 +42,24 @@
 
 /*------------------------------------------ Custom Folder Styles  Starts--------------------------------------*/
 .folder-title {
-	font-size: 14px;
+	font-size: 11px;
 	font-weight: 500;
 	position: absolute;
 	top: 2px;
 	left: 10px;
-	border-bottom: 1px dashed #fff ;
+	/*border-bottom: 1px dashed #fff ;*/
 }
 
 .folder-details {
-	font-size: 12px;
+	font-size: 10px;
 	position: absolute;
-	top: 25px;
-	left: 13px;
+	top: 20px;
+	left: 7px;
 }
 
 .folder-details a {
-	display: block;
+	display: inline-block;
+	padding: 3px 7px 0px 0px;
 }
 
 .folder-details a:hover {
@@ -131,10 +132,26 @@
 	display: none;
 }
 
+.child-folder{
+	margin-right: 15px;
+}
+
 .folder-container:hover .hidden-folder {
 	position: absolute;
 	margin-top: -122px !important;
 	display: block;
+}
+
+.ffolder span {
+	font-size: 11px !important;
+}
+.folderActionMove {
+	position: absolute;
+	top: 72%;
+	right: 10%;
+}
+.noFilesFound {
+	padding-top: 15px;
 }
 
 /*---------------------------------------------Custom Folder Styles  Ends -------------------------------------*/

@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, OnInit, ViewEncapsulation } from '@angular/core';
+
 import { ScriptLoaderService } from "../../../../../_services/script-loader.service";
 import { trigger, style, animate, transition, state } from '@angular/animations';
-import {Folder} from "../../../../../models/Folder.model";
+import { Folder } from "../../../../../models/Folder.model";
+
 
 declare var $: any;
 
@@ -44,33 +46,28 @@ declare var $: any;
     ],
     encapsulation: ViewEncapsulation.None
 })
-/*
-class Folder
-{
-    id: string;
-    folderName: string;
-    childrenfolders: Folder[];
-    parentFolder : Folder;
-    constructor(id , name , parent:Folder)
-    {
-        this.id = undefined;
-        this.parentFolder = undefined;
-    }
-   
-}
-*/
 
 export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
 
+    isRoot: boolean = true;
     id:number = 0;
-    display: boolean = false;
+    editName: string = '';
     menuState: string = 'out';
-    folders : Folder[] = [new Folder(++this.id, "First Folder" , undefined)];
-    
+    folders : Folder[] = [new Folder(this.id, "Folder")];
+    subFolder: Folder[] = [new Folder(this.id, "Sub 1"),
+                            new Folder(this.id, "Sub 2")];
+
 
     constructor(private _script: ScriptLoaderService) { }
 
-    ngOnInit() {/*
+    ngOnInit() {
+
+        $(document).on('click', '#edit-folder', function(){
+            let changedValue = $(this).closest('.modal-footer').prev().find('#edit-name').val();
+            alert(changedValue);
+            $(this).closest('#m_modal_edit').prev().prev().find('.main-folder').children('.folder-title').text(changedValue);
+        });
+        /*
 
         $(document).on('click', '#add-folder', function() {
             var folderName = $('#recipient-name').val();
@@ -97,30 +94,58 @@ export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
             $('#recipient-name').val('');
         });
         */
-
     }
 
     ngAfterViewInit() {
         this._script.loadScripts('app-workspace-storage',
             ['assets/app/js/dashboard.js']);
-
     }
 
-
-
+    // Toggle right Menu on move button click
     toggleMenu() {
         // 1-line if statement that toggles the value:
         this.menuState = this.menuState === 'out' ? 'in' : 'out';
     }
-
+    // Toggle right Menu on close or move button click
     hideRightMenu() {
         // 1-line if statement that toggles the value:
         this.menuState = this.menuState === 'out' ? 'in' : 'out';
     }
 
+    //   Adds a new file element(folder) to the array
     addFolder(folderName : string)
     {
-        this.folders.push(new Folder(1, folderName , undefined));
+        this.id++;
+        if(this.isRoot == true){
+            this.folders.push(new Folder(0, folderName));
+        }
+        else {
+            this.subFolder.push(new Folder(1,folderName))
+        }
     }
+
+    //Deletes the file element
+    deleteItem(id:number) {
+        this.folders.splice(id, 1);
+    }
+
+    // editFolderName(id:number, editName:string){
+    //     alert(editName + " " + this.folders[id]);
+    //     console.log(this.folders[id].folderName + " " + editName);
+    // }
+
+    // This gets the selected folder's name to the edit modal input field
+    selectedFolderName(name:string) {
+        this.editName = name;
+    }
+
+    //This moves files up to the parent folder
+    moveFiles(id:number){
+        this.folders.push(this.subFolder[id]);
+        this.subFolder.splice(id, 1);
+
+    }
+
+
 
 }

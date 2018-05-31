@@ -3,8 +3,8 @@
         <i class="la la-close"></i>
     </span>
     <ul>
-        <li>Menu Item</li>
-        <li>Menu Item</li>
+        <li *ngIf="isSubFolder != true "> <i class="fa fa-arrow-circle-o-up" ></i> Move to parent</li>
+        <li *ngIf="isSubFolder == true" > <i class="fa fa-arrow-circle-o-down"></i> Move to sub</li>
         <li>Menu Item</li>
         <li>Menu Item</li>
         <li>Menu Item</li>
