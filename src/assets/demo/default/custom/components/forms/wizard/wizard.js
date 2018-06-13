@@ -45,6 +45,15 @@ var WizardDemo = function () {
                 phone: {
                     required: true,
                     phoneUS: true 
+                },
+                password: {
+                    required: true
+                },
+                password: {
+                    required: true
+                }, 
+                c_password: {
+                    required: true
                 },     
 
                 //== Mailing address

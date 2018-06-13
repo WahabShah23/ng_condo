@@ -31,7 +31,59 @@
         Skeleton page
     </div>
 
+    <div class="panel-body">
+        <div class="form-group m-form__group row">
+            <div class="col-lg-6 m-form__group-sub">
+                <label class="form-control-label">
+                    * Location:
+                </label>
+                <!--<input placeholder="search for location" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search>-->
+                <input type="text" placeholder="Search for Location" autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" #search [formControl]="searchControl">
+                <span class="m-form__help">
+                    your location on google maps
+                </span>
+            </div>
+            <div class="col-lg-6 m-form__group-sub">
+                <label class="form-control-label">
+                    City:
+                </label>
+                <input type="text" name="city" class="form-control m-input" placeholder="City" value="">
+                <span class="m-form__help">
+                    City your corporation is located in
+                </span>
+            </div>
+            <div class="col-lg-6 m-form__group-sub">
+                <label class="form-control-label">
+                    State/Province:
+                </label>
+                <input type="text" name="state" class="form-control m-input" placeholder="State" value="">
+                <span class="m-form__help">
+                    City your corporation is located in
+                </span>
+            </div>
+            <div class="col-lg-6 m-form__group-sub">
+                <label class="form-control-label">
+                    Country:
+                </label>
+                <input type="text" name="account_corp_country" class="form-control m-input" placeholder="Country" value="">
+                <span class="m-form__help">
+                    Country your corporation is located in
+                </span>
+            </div>
+        </div>
+
+    </div>
+
     <hr>
+
+
+    <agm-map [latitude]="lat" [longitude]="lng" style="height: 300px;">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+
+    <br>
+
+
     <h3> Contact List</h3>
     <div class="row">
         <div class="col-md-3">

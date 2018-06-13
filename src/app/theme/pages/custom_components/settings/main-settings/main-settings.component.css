@@ -1,0 +1,98 @@
+.m-content
+{
+    padding: 0px;
+    height: 100%;
+}
+.verticals {
+    width:265px !important; 
+    background-color:#eeeeee; 
+    box-shadow: 0px 0px 15px 1px rgba(69, 65, 78, 0.2);
+}
+
+#vertical_1 {
+    height: 100%;
+    z-index: 999;
+    margin-left: 10px;
+}
+#vertical_2 {
+    z-index: 998;
+    height: 100%;
+}
+#vertical_3 {
+    z-index: 997;
+    height: 100%;
+}
+#vertical_4 {
+    z-index: 996;
+    height: 100%;
+}
+
+
+#card1 {
+    top: 43%;
+    padding: 10px;
+}
+#card2 {
+    top: 10%;
+    padding: 10px;
+}
+#card3 {
+    top: 14%;
+    padding: 10px;
+}
+
+.stackEffect {
+    box-shadow: 5px 6px 4px -5px #999;
+}
+
+/*-------------- Smaller Cards Inside Verticals BEGIN--------------*/
+/*Card Design*/
+.innerCards {
+    width: 90%;
+    z-index: 1000;
+    height: 100px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: #f5f5f5;
+    background-color: #fff;
+    margin: 0px 5px;
+    padding: 0;
+    font-size: 12px;
+    position: relative;
+    margin-top: -10px;
+    left: 3.4%;
+    top: 4%;
+}
+/*Card Title*/
+.innerCardsTitle {
+    float: left;
+}
+/*Expand card icon*/
+.c-expand-icon {
+    cursor: pointer;
+}
+
+/* After & Before Lines */
+.innerCards::after {
+    content: " " !important;
+    display: block !important;
+    position: absolute !important;
+    height: 3px !important;
+    background: grey !important;
+    width: 13px !important;
+    left: 100% !important;
+    top: calc(50% - 2px) !important;
+    opacity: 0.3;
+}
+.innerCards::before {
+    content: " " !important;
+    display: block !important;
+    position: absolute !important;
+    height: 3px !important;
+    background: grey !important;
+    width: 13px !important;
+    right: 100% !important;
+    top: calc(50% - 2px) !important;
+    opacity: 0.4;
+}
+/*-------------- Smaller Cards Inside Verticals END--------------*/

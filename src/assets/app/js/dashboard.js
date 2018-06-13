@@ -1,4 +1,3 @@
-//== Class definition
 var Dashboard = function() {
 
     //== Sparkline Chart helper function

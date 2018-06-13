@@ -71,6 +71,13 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/custom_components\/connect\/dashboard-connect\/dashboard-connect.module#DashboardConnectModule"
             },
             // CONNECT Ends---------------------------------------
+
+            // Settings Starts---------------------------------------
+            {
+                "path": "settings",
+                "loadChildren": ".\/pages\/custom_components\/settings\/main-settings\/main-settings.module#MainSettingsModule"
+            },
+            // Settings Ends---------------------------------------
             {
                 "path": "404",
                 "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"

@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { ThemeComponent } from './theme/theme.component';
 import { LayoutModule } from './theme/layouts/layout.module';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AgmCoreModule } from '@agm/core';
+
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
 
@@ -29,7 +32,13 @@ import { DemoService } from "./services/demo.service";
         HttpClientModule,
         AppRoutingModule,
         ThemeRoutingModule,
-        AuthModule
+        AuthModule,
+        ReactiveFormsModule,
+        FormsModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyB95P4UOlcThWmtfkx7g4rGmzmKtomZoAc',
+            libraries: ['places']
+          })
     ],
     providers: [ScriptLoaderService, DemoService],
     bootstrap: [AppComponent]

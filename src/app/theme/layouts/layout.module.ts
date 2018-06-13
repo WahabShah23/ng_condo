@@ -19,6 +19,8 @@ import { ConnectComponent } from "../pages/custom_components/connect/connect.com
 import { AsideNavStorageComponent } from './aside-nav-storage/aside-nav-storage.component';
 import { StorageComponent } from "../pages/custom_components/storage/storage.component";
 import { CustomRightSidebarComponent } from './custom-right-sidebar/custom-right-sidebar.component';
+import { AsideNavSettingsComponent } from './aside-nav-settings/aside-nav-settings.component';
+import { SettingsComponent } from "../pages/custom_components/settings/settings.component";
 
 @NgModule({
     declarations: [
@@ -28,6 +30,7 @@ import { CustomRightSidebarComponent } from './custom-right-sidebar/custom-right
         DefaultComponent,
         ConnectComponent,
         StorageComponent,
+        SettingsComponent,
         AsideNavComponent,
         AsideNavConnectComponent,
         AsideNavStorageComponent,
@@ -39,7 +42,8 @@ import { CustomRightSidebarComponent } from './custom-right-sidebar/custom-right
         UnwrapTagDirective,
         StorageNavComponent,
         GlobalNavComponent,
-        CustomRightSidebarComponent
+        CustomRightSidebarComponent,
+        AsideNavSettingsComponent
     ],
     exports: [
         LayoutComponent,
@@ -51,6 +55,7 @@ import { CustomRightSidebarComponent } from './custom-right-sidebar/custom-right
         AsideNavComponent,
         AsideNavConnectComponent,
         AsideNavStorageComponent,
+        AsideNavSettingsComponent,
         FooterComponent,
         QuickSidebarComponent,
         ScrollTopComponent,

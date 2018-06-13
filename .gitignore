@@ -59,8 +59,12 @@ typings/
 
 node_modules
 dist.zip
+dist
 *.zip
  #workspace folder
 .idea
 .idea/workspace.xml
 *.zip
+.idea/workspace.xml
+dist.zip
+.idea/workspace.xml
