@@ -23,7 +23,8 @@ export class MainSettingsComponent implements OnInit {
     
     // animations state variable 
     state = 'normal';
-    
+    className: string;
+    locationExist = false;
     constructor() { }
 
     ngOnInit() {
@@ -31,6 +32,15 @@ export class MainSettingsComponent implements OnInit {
 
     onAnimate(){
         this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal';
+    }
+
+    // myFunction() {
+    //     let x = document.getElementById("item1").nextSibling;
+    //     document.getElementById("demo").innerHTML = x;
+    // }
+
+    expandCard(name) {
+        this.className = name;
     }
 
 }

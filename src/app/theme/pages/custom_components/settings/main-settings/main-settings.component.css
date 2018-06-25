@@ -11,19 +11,19 @@
 
 #vertical_1 {
     height: 100%;
-    z-index: 999;
+    z-index: 99;
     margin-left: 10px;
 }
 #vertical_2 {
-    z-index: 998;
+    z-index: 98;
     height: 100%;
 }
 #vertical_3 {
-    z-index: 997;
+    z-index: 97;
     height: 100%;
 }
 #vertical_4 {
-    z-index: 996;
+    z-index: 96;
     height: 100%;
 }
 
@@ -33,11 +33,15 @@
     padding: 10px;
 }
 #card2 {
-    top: 10%;
+    top: 4%;
     padding: 10px;
 }
 #card3 {
-    top: 14%;
+    top: 8%;
+    padding: 10px;
+}
+#card4 {
+    top: 12%;
     padding: 10px;
 }
 

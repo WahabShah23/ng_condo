@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+
+import { FileUploadModule, SidebarModule } from 'primeng/primeng';
+
 import { LayoutModule } from '../../../../layouts/layout.module';
 import { SettingsComponent } from "../settings.component";
 import { MainSettingsComponent } from "./main-settings.component"
@@ -21,7 +24,9 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule
+        CommonModule, RouterModule.forChild(routes), LayoutModule,
+        FileUploadModule,
+        SidebarModule
     ], exports: [
         RouterModule,
     ], declarations: [

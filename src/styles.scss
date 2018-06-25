@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+// PrimeNG full screen scroll
+.ui-sidebar-full {
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+
+/*-------------------- Custom Scroll Bar -----------------------*/
+
+/* SCROLLBAR */
+/* Let's get this party started */
+.ui-sidebar-full::-webkit-scrollbar {
+  width: 7px;
+  //display: none;
+}
+
+/* Track */
+.ui-sidebar-full::-webkit-scrollbar-track {
+  background: rgb(0,0,0);
+  border: 4px solid transparent;
+  background-clip: content-box;  /* This is Important*/
+
+}
+
+/* Handle */
+.ui-sidebar-full::-webkit-scrollbar-thumb {
+  background: rgb(42,180,192);
+  border: 1px solid rgb(0,0,0);
+}
