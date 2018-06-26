@@ -1,0 +1,10 @@
+.custom-tab-height {
+	height: 800px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+h3.m-form__section,
+h3.m-form__heading-title {
+	font-size: 1.5rem !important;
+}

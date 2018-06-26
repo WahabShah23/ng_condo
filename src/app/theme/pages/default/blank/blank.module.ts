@@ -7,6 +7,29 @@ import { LayoutModule } from '../../../layouts/layout.module';
 import { DefaultComponent } from '../default.component';
 import { BlankComponent } from './blank.component';
 
+import {
+    AccordionModule,
+    ButtonModule,
+    CheckboxModule,
+    ChipsModule,
+    CodeHighlighterModule,
+    ColorPickerModule,
+    InputMaskModule,
+    FieldsetModule,
+    ContextMenuModule,
+    GrowlModule,
+    InputTextModule,
+    MultiSelectModule,
+    PanelModule,
+    RadioButtonModule,
+    SelectButtonModule,
+    SplitButtonModule,
+    TabViewModule,
+    FileUploadModule,
+    SidebarModule
+} from 'primeng/primeng';
+
+
 const routes: Routes = [
     {
         'path': '',
@@ -28,7 +51,29 @@ const routes: Routes = [
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyB95P4UOlcThWmtfkx7g4rGmzmKtomZoAc',
             libraries: ['places']
-        })
+        }),
+
+        // primeng modules
+        ButtonModule,
+        CheckboxModule,
+        ChipsModule,
+        CodeHighlighterModule,
+        ColorPickerModule,
+        InputMaskModule,
+        GrowlModule,
+        ContextMenuModule,
+        InputTextModule,
+        MultiSelectModule,
+        RadioButtonModule,
+        SelectButtonModule,
+        SplitButtonModule,
+        TabViewModule,
+        AccordionModule,
+        PanelModule,
+        FieldsetModule,
+        FileUploadModule,
+        SidebarModule
+
     ], exports: [
         RouterModule,
     ], declarations: [
