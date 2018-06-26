@@ -25,6 +25,10 @@ export class MainSettingsComponent implements OnInit {
     state = 'normal';
     className: string;
     locationExist = false;
+
+    public nonActiveCard = 'non_active_card';
+    public activeCard = 'active_card';
+
     constructor() { }
 
     ngOnInit() {
