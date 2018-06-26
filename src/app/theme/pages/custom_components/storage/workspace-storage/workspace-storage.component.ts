@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ScriptLoaderService } from "../../../../../_services/script-loader.service";
 import { trigger, style, animate, transition, state } from '@angular/animations';
-import {Folder} from "../../../../../models/Folder.model";
+import { Folder } from "../../../../../models/Folder.model";
 
 declare var $: any;
 
@@ -62,11 +62,11 @@ class Folder
 
 export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
 
-    id:number = 0;
+    id: number = 0;
     display: boolean = false;
     menuState: string = 'out';
-    folders : Folder[] = [new Folder(++this.id, "First Folder" , undefined)];
-    
+    folders: Folder[] = [new Folder(++this.id, "First Folder", undefined)];
+
 
     constructor(private _script: ScriptLoaderService) { }
 
@@ -118,9 +118,8 @@ export class WorkspaceStorageComponent implements OnInit, AfterViewInit {
         this.menuState = this.menuState === 'out' ? 'in' : 'out';
     }
 
-    addFolder(folderName : string)
-    {
-        this.folders.push(new Folder(1, folderName , undefined));
+    addFolder(folderName: string) {
+        this.folders.push(new Folder(1, folderName, undefined));
     }
 
 }

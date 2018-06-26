@@ -582,6 +582,9 @@ jQuery(document).ready(function() {
     });
 
 
+   
+
+
     chart6.on('draw', function(data) {
         if (data.type === 'slice') {
             // Get the total path length in order to use for dash array animation
@@ -623,6 +626,457 @@ jQuery(document).ready(function() {
             data.element.animate(animationDefinition, false);
         }
     });
+
+
+    var chart7 = new Chartist.Pie('#customerPieChart7', {
+        series: [{
+                value: 100,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('brand')
+                }
+            },
+            {
+                value: 20,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('accent')
+                }
+            },
+            {
+                value: 40,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('warning')
+                }
+            }
+        ],
+        labels: [1, 2, 3]
+    }, {
+        donut: true,
+        donutWidth: 10,
+        showLabel: false
+    });
+
+
+    chart7.on('draw', function(data) {
+        if (data.type === 'slice') {
+            // Get the total path length in order to use for dash array animation
+            var pathLength = data.element._node.getTotalLength();
+
+            // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+            data.element.attr({
+                'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+            });
+
+            // Create animation definition while also assigning an ID to the animation for later sync usage
+            var animationDefinition = {
+                'stroke-dashoffset': {
+                    id: 'anim' + data.index,
+                    dur: 1000,
+                    from: -pathLength + 'px',
+                    to: '0px',
+                    easing: Chartist.Svg.Easing.easeOutQuint,
+                    // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                    fill: 'freeze',
+                    'stroke': data.meta.color
+                }
+            };
+
+            // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+            if (data.index !== 0) {
+                animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+            }
+
+            // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+            data.element.attr({
+                'stroke-dashoffset': -pathLength + 'px',
+                'stroke': data.meta.color
+            });
+
+            // We can't use guided mode as the animations need to rely on setting begin manually
+            // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+            data.element.animate(animationDefinition, false);
+        }
+    });
+
+
+
+    var chart8 = new Chartist.Pie('#customerPieChart8', {
+        series: [{
+                value: 100,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('brand')
+                }
+            },
+            {
+                value: 20,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('accent')
+                }
+            },
+            {
+                value: 40,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('warning')
+                }
+            }
+        ],
+        labels: [1, 2, 3]
+    }, {
+        donut: true,
+        donutWidth: 10,
+        showLabel: false
+    });
+
+
+    chart8.on('draw', function(data) {
+        if (data.type === 'slice') {
+            // Get the total path length in order to use for dash array animation
+            var pathLength = data.element._node.getTotalLength();
+
+            // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+            data.element.attr({
+                'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+            });
+
+            // Create animation definition while also assigning an ID to the animation for later sync usage
+            var animationDefinition = {
+                'stroke-dashoffset': {
+                    id: 'anim' + data.index,
+                    dur: 1000,
+                    from: -pathLength + 'px',
+                    to: '0px',
+                    easing: Chartist.Svg.Easing.easeOutQuint,
+                    // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                    fill: 'freeze',
+                    'stroke': data.meta.color
+                }
+            };
+
+            // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+            if (data.index !== 0) {
+                animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+            }
+
+            // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+            data.element.attr({
+                'stroke-dashoffset': -pathLength + 'px',
+                'stroke': data.meta.color
+            });
+
+            // We can't use guided mode as the animations need to rely on setting begin manually
+            // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+            data.element.animate(animationDefinition, false);
+        }
+    });
+
+
+
+
+    var chart9 = new Chartist.Pie('#customerPieChart9', {
+        series: [{
+                value: 80,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('brand')
+                }
+            },
+            {
+                value: 30,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('accent')
+                }
+            },
+            {
+                value: 30,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('warning')
+                }
+            }
+        ],
+        labels: [1, 2, 3]
+    }, {
+        donut: true,
+        donutWidth: 10,
+        showLabel: false
+    });
+
+
+    chart9.on('draw', function(data) {
+        if (data.type === 'slice') {
+            // Get the total path length in order to use for dash array animation
+            var pathLength = data.element._node.getTotalLength();
+
+            // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+            data.element.attr({
+                'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+            });
+
+            // Create animation definition while also assigning an ID to the animation for later sync usage
+            var animationDefinition = {
+                'stroke-dashoffset': {
+                    id: 'anim' + data.index,
+                    dur: 1000,
+                    from: -pathLength + 'px',
+                    to: '0px',
+                    easing: Chartist.Svg.Easing.easeOutQuint,
+                    // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                    fill: 'freeze',
+                    'stroke': data.meta.color
+                }
+            };
+
+            // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+            if (data.index !== 0) {
+                animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+            }
+
+            // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+            data.element.attr({
+                'stroke-dashoffset': -pathLength + 'px',
+                'stroke': data.meta.color
+            });
+
+            // We can't use guided mode as the animations need to rely on setting begin manually
+            // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+            data.element.animate(animationDefinition, false);
+        }
+    });
+
+
+    var chart10 = new Chartist.Pie('#customerPieChart10', {
+        series: [{
+                value: 80,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('brand')
+                }
+            },
+            {
+                value: 30,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('accent')
+                }
+            },
+            {
+                value: 30,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('warning')
+                }
+            }
+        ],
+        labels: [1, 2, 3]
+    }, {
+        donut: true,
+        donutWidth: 10,
+        showLabel: false
+    });
+
+
+    chart10.on('draw', function(data) {
+        if (data.type === 'slice') {
+            // Get the total path length in order to use for dash array animation
+            var pathLength = data.element._node.getTotalLength();
+
+            // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+            data.element.attr({
+                'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+            });
+
+            // Create animation definition while also assigning an ID to the animation for later sync usage
+            var animationDefinition = {
+                'stroke-dashoffset': {
+                    id: 'anim' + data.index,
+                    dur: 1000,
+                    from: -pathLength + 'px',
+                    to: '0px',
+                    easing: Chartist.Svg.Easing.easeOutQuint,
+                    // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                    fill: 'freeze',
+                    'stroke': data.meta.color
+                }
+            };
+
+            // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+            if (data.index !== 0) {
+                animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+            }
+
+            // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+            data.element.attr({
+                'stroke-dashoffset': -pathLength + 'px',
+                'stroke': data.meta.color
+            });
+
+            // We can't use guided mode as the animations need to rely on setting begin manually
+            // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+            data.element.animate(animationDefinition, false);
+        }
+    });
+
+
+    var chart11 = new Chartist.Pie('#customerPieChart11', {
+        series: [{
+                value: 80,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('brand')
+                }
+            },
+            {
+                value: 30,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('accent')
+                }
+            },
+            {
+                value: 30,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('warning')
+                }
+            }
+        ],
+        labels: [1, 2, 3]
+    }, {
+        donut: true,
+        donutWidth: 10,
+        showLabel: false
+    });
+
+
+    chart11.on('draw', function(data) {
+        if (data.type === 'slice') {
+            // Get the total path length in order to use for dash array animation
+            var pathLength = data.element._node.getTotalLength();
+
+            // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+            data.element.attr({
+                'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+            });
+
+            // Create animation definition while also assigning an ID to the animation for later sync usage
+            var animationDefinition = {
+                'stroke-dashoffset': {
+                    id: 'anim' + data.index,
+                    dur: 1000,
+                    from: -pathLength + 'px',
+                    to: '0px',
+                    easing: Chartist.Svg.Easing.easeOutQuint,
+                    // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                    fill: 'freeze',
+                    'stroke': data.meta.color
+                }
+            };
+
+            // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+            if (data.index !== 0) {
+                animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+            }
+
+            // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+            data.element.attr({
+                'stroke-dashoffset': -pathLength + 'px',
+                'stroke': data.meta.color
+            });
+
+            // We can't use guided mode as the animations need to rely on setting begin manually
+            // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+            data.element.animate(animationDefinition, false);
+        }
+    });
+
+
+    var chart12 = new Chartist.Pie('#customerPieChart12', {
+        series: [{
+                value: 90,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('accent')
+                }
+            },
+            {
+                value: 50,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('brand')
+                }
+            },
+            {
+                value: 10,
+                className: 'custom',
+                meta: {
+                    color: mUtil.getColor('warning')
+                }
+            }
+        ],
+        labels: [1, 2, 3]
+    }, {
+        donut: true,
+        donutWidth: 10,
+        showLabel: false
+    });
+
+
+    chart12.on('draw', function(data) {
+        if (data.type === 'slice') {
+            // Get the total path length in order to use for dash array animation
+            var pathLength = data.element._node.getTotalLength();
+
+            // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+            data.element.attr({
+                'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+            });
+
+            // Create animation definition while also assigning an ID to the animation for later sync usage
+            var animationDefinition = {
+                'stroke-dashoffset': {
+                    id: 'anim' + data.index,
+                    dur: 1000,
+                    from: -pathLength + 'px',
+                    to: '0px',
+                    easing: Chartist.Svg.Easing.easeOutQuint,
+                    // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                    fill: 'freeze',
+                    'stroke': data.meta.color
+                }
+            };
+
+            // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+            if (data.index !== 0) {
+                animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+            }
+
+            // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+
+            data.element.attr({
+                'stroke-dashoffset': -pathLength + 'px',
+                'stroke': data.meta.color
+            });
+
+            // We can't use guided mode as the animations need to rely on setting begin manually
+            // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+            data.element.animate(animationDefinition, false);
+        }
+    });
+
+
+
+
 
     //Donut Charts End
 
@@ -767,6 +1221,16 @@ jQuery(document).ready(function() {
     _initSparklineChart($('#m_chart_quick_stats_4'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('danger'), 3);  
     _initSparklineChart($('#m_chart_quick_stats_5'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);  
     _initSparklineChart($('#m_chart_quick_stats_6'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
+
+
+
+
+    _initSparklineChart($('#m_chart_quick_stats_7'), [10, 14, 18, 11, 9, 12, 14, 17, 18, 14], mUtil.getColor('brand'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_8'), [11, 12, 18, 13, 11, 12, 15, 13, 19, 15], mUtil.getColor('danger'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_9'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);
+    _initSparklineChart($('#m_chart_quick_stats_10'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('danger'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_11'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('success'), 3);  
+    _initSparklineChart($('#m_chart_quick_stats_12'), [12, 12, 18, 11, 15, 12, 13, 16, 11, 18], mUtil.getColor('brand'), 3);  
 
     //Widget Charts Ends
     

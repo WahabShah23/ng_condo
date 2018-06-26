@@ -28,7 +28,7 @@ export class WizardComponent implements OnInit, AfterViewInit, AfterContentCheck
     @ViewChild('search') public searchElementRef: ElementRef;
     @ViewChild('countrySearch') public searchElementRefCountry: ElementRef;
     @ViewChild('ownCountrySearch') public searchElementRefOwnCountry: ElementRef;
-    
+
     ownCountrySearch
     corpPlaces: any;
     corpCity = '';
@@ -46,7 +46,7 @@ export class WizardComponent implements OnInit, AfterViewInit, AfterContentCheck
     // Own Address
     ownCity = '';
     ownCountry = '';
-    ownState = '';    
+    ownState = '';
     ownPostalCode = '';
 
 
@@ -89,7 +89,7 @@ export class WizardComponent implements OnInit, AfterViewInit, AfterContentCheck
                     for (let ac = 0; ac < address_components.length; ac++) {
 
                         var component = address_components[ac];
-                            // for city
+                        // for city
                         if (component.types.includes('locality')) {
                             this.corpCity = component.long_name;
                         }
@@ -101,14 +101,15 @@ export class WizardComponent implements OnInit, AfterViewInit, AfterContentCheck
                         // console.log("In side for city");
                         if (component.types.includes('street_number')) {
                             this.corpAddress1 = component.long_name;
-                        // console.log(this.corpAddress1);
-                            
+                            // console.log(this.corpAddress1);
+
                         }
                         // for town Address
                         if (component.types.includes('route')) {
                             this.corpAddress2 = component.long_name;
-                        // console.log( this.corpAddress2);
-                    } };
+                            // console.log( this.corpAddress2);
+                        }
+                    };
 
                     // for address
                     // for (let ac = 0; ac < address_components.length; ac++) {
@@ -118,12 +119,12 @@ export class WizardComponent implements OnInit, AfterViewInit, AfterContentCheck
                     //     if (component.types.includes('street_number')) {
                     //         this.corpAddress1 = component.long_name;
                     //     console.log(this.corpAddress1);
-                            
+
                     //     }
                     //     if (component.types.includes('route')) {
                     //         this.corpAddress2 = component.long_name;
                     //     console.log( this.corpAddress2);
-                            
+
                     //     }
                     // };
 
@@ -158,7 +159,7 @@ export class WizardComponent implements OnInit, AfterViewInit, AfterContentCheck
                     var address_components = autocomplete.getPlace().address_components;
                     // console.log(address_components);
                     for (let j = 0; j < address_components.length; j++) {
-                        
+
                         if (address_components[j].types[0] == 'country') {
                             this.registeredCountryLocation = address_components[j].long_name;
                         }
@@ -203,7 +204,7 @@ export class WizardComponent implements OnInit, AfterViewInit, AfterContentCheck
                         if (address_components[j].types[0] == 'administrative_area_level_1') {
                             this.ownState = address_components[j].long_name;
                         }
-                        if (address_components[j].types[0] == 'postal_code' ) {
+                        if (address_components[j].types[0] == 'postal_code') {
                             this.ownPostalCode = address_components[j].long_name;
                         }
                     }
@@ -226,20 +227,20 @@ export class WizardComponent implements OnInit, AfterViewInit, AfterContentCheck
 
     }
 
-   ngAfterContentChecked(){
+    ngAfterContentChecked() {
 
-   }
+    }
 
     ngAfterViewInit() {
         this._script.loadScripts('app-wizard',
             ['assets/demo/default/custom/components/forms/wizard/wizard.js']);
     }
-    
-    toggle_class(){
-        if(this.my_Class=="d-none"){
-            this.my_Class='d-block';
-        }else{
-            this.my_Class='d-none';
+
+    toggle_class() {
+        if (this.my_Class == "d-none") {
+            this.my_Class = 'd-block';
+        } else {
+            this.my_Class = 'd-none';
         }
     }
 

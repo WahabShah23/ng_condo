@@ -38,7 +38,7 @@ import { DemoService } from "./services/demo.service";
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyB95P4UOlcThWmtfkx7g4rGmzmKtomZoAc',
             libraries: ['places']
-          })
+        })
     ],
     providers: [ScriptLoaderService, DemoService],
     bootstrap: [AppComponent]

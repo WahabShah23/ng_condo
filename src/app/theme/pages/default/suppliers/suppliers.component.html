@@ -1,4 +1,4 @@
-<div class="m-subheader">
+<div class="m-subheader" *ngIf="!isWizard;">
     <div class="d-flex align-items-center">
         <div class="mr-auto">
             <h3 class="m-subheader__title m-subheader__title--separator">
@@ -91,7 +91,7 @@
         </div>
     </div>
 </div>
-<div class="m-subheader breadcrumb-header">
+<div class="m-subheader breadcrumb-header" *ngIf="!isWizard;">
     <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
         <li class="m-nav__item m-nav__item--home">
             <a class="m-nav__link m-nav__link--icon" routerLink="/dashboard" ng-reflect-href="#">
@@ -112,7 +112,7 @@
         </li>
     </ul>
 </div>
-<hr class="customhr">
+<hr class="customhr" *ngIf="!isWizard;">
 <!-- END: Subheader -->
 
 <div class="m-content">
@@ -122,7 +122,7 @@
         </div>
     </div-->
     
-    <div class="row" style="padding: 0px 10px;" [style.display]="isGridView ? 'flex' : 'none'">
+    <div class="row" style="padding: 0px 30px;" [style.display]="(isGridView && !isWizard) ? 'flex' : 'none'">
 
         <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
             <div class="body organ1" >
@@ -148,7 +148,7 @@
                     </div>
                     <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                             <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
-                            <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+                            <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
                             <div class="clearfix"></div>
                       <div class="row">
                           <div class="col-sm-4">
@@ -243,6 +243,72 @@
                        
                 </div>
                 <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                    <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
+                    <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
+                    <div class="clearfix"></div>
+              <div class="row">
+                  <div class="col-sm-4">
+                        <div id="customerPieChart7"  class="m-widget14__chart" style="height: 100px">
+                                <div class="m-widget14__stat">
+                                    45
+                                </div>
+                        </div>
+                        <h6  class="text-center">Invoice</h6>
+                  </div>
+                  <div class="col-sm-4">
+                        <div id="customerPieChart8" class="m-widget14__chart" style="height: 100px">
+                                <div class="m-widget14__stat">
+                                    70
+                                </div>
+                        </div>
+                        <h6 class="text-center">Expense</h6>
+                  </div>
+
+                  <div class="col-sm-4">
+                        <div id="customerPieChart9" class="m-widget14__chart" style="height: 100px">
+                                <div class="m-widget14__stat">
+                                    220
+                                </div>
+                        </div>
+                        <h6 class="text-center">Payment</h6>
+                  </div>
+
+                  <div class="col-sm-4">
+                        <div id="customerPieChart10" class="m-widget14__chart" style="height: 100px">
+                                <div class="m-widget14__stat">
+                                    100
+                                </div>
+                        </div>
+                        <h6 class="text-center">Remaining</h6>
+                  </div>
+
+
+                  <div class="col-sm-4">
+                        <div id="customerPieChart11" class="m-widget14__chart" style="height: 100px">
+                                <div class="m-widget14__stat">
+                                    300
+                                </div>
+                        </div>
+                        <h6 class="text-center">Services</h6>
+                  </div>
+
+                  <div class="col-sm-4">
+                        <div id="customerPieChart12" class="m-widget14__chart" style="height: 100px">
+                                <div class="m-widget14__stat">
+                                    88
+                                </div>
+                        </div>
+                        <h6 class="text-center">Product</h6>
+                  </div>
+                 
+
+                  
+                  
+                  
+              </div>   
+              
+            </div>
+                <!-- <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                         <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
                         <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
                         <div class="clearfix"></div>
@@ -255,7 +321,7 @@
                       
                   </div>   
                   
-                </div>
+                </div> -->
               </div>
               </div>
           </div>
@@ -288,9 +354,122 @@
                     </div>
                     <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                             <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
-                            <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+                            <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
                             <div class="clearfix"></div>
-                        <div class="row" style="position:relative;">
+                            <div class="row">
+                              
+
+                                <div class="col-sm-4">
+                                        <div class="m-widget26">
+                                               
+                                                <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                                    <canvas id="m_chart_quick_stats_1"></canvas>
+                                                </div>
+                                                <div class="m-widget26__number">
+                                                    690
+                                                    <small>
+                                                        All Orders
+                                                    </small>
+                                                </div>
+                                            </div>
+
+
+                                </div>
+
+                                <div class="col-sm-4">
+                                        <div class="m-widget26">
+                                               
+                                                <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                                    <canvas id="m_chart_quick_stats_2"></canvas>
+                                                </div>
+                                                <div class="m-widget26__number">
+                                                    690
+                                                    <small>
+                                                        All Orders
+                                                    </small>
+                                                </div>
+                                            </div>
+
+
+                                </div>
+
+                                <div class="col-sm-4">
+                                        <div class="m-widget26">
+                                                
+                                                <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                                    <canvas id="m_chart_quick_stats_3"></canvas>
+                                                </div>
+                                                <div class="m-widget26__number">
+                                                    690
+                                                    <small>
+                                                        All Orders
+                                                    </small>
+                                                </div>
+                                            </div>
+
+
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="m-widget26">
+                                            
+                                            <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                                <canvas id="m_chart_quick_stats_4"></canvas>
+                                            </div>
+                                            <div class="m-widget26__number">
+                                                690
+                                                <small>
+                                                    All Orders
+                                                </small>
+                                            </div>
+                                        </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+                                        
+                                        <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                            <canvas id="m_chart_quick_stats_5"></canvas>
+                                        </div>
+                                        <div class="m-widget26__number">
+                                            690
+                                            <small>
+                                                All Orders
+                                            </small>
+                                        </div>
+                                    </div>
+
+
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="m-widget26">
+                                    
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_6"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                            All Orders
+                                        </small>
+                                    </div>
+                                </div>
+
+
+                    </div>
+                    <div class="col-sm-12">
+                        <button (click)="isDisplayDetail=!isDisplayDetail;" style="display:block; margin: 0 auto;" class="btn btn-link">Display Details</button>
+
+                  </div>
+                             
+            
+                              
+                              
+                              
+                          </div> 
+                        <!-- <div class="row" style="position:relative;">
                           <div class="col-sm-6">
                                 <div class="m-widget14__chart"  id="m_chart_person1_chart1" style="height: 160px; margin-left: 13px;">
                                       
@@ -318,7 +497,7 @@
                           
                           
                           
-                      </div>   
+                      </div>    -->
                       
                     </div>
 
@@ -443,9 +622,8 @@
                 </div>
                   </div -->
 
-
                 </div>
-    
+                <!-- _________________________-Chart 1 Start______________________________________- -->
               <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Tenants')">
                   <div class="body organ1"  >
                       <div class="row" style="margin:0px;">
@@ -475,7 +653,7 @@
                         </div>
                         <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                                 <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
-                                <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+                                <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
                                 <div class="clearfix"></div>
                           <div class="row">
                               
@@ -484,7 +662,7 @@
                                         <div class="m-widget26">
                                                
                                                 <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                    <canvas id="m_chart_quick_stats_1"></canvas>
+                                                    <canvas id="m_chart_quick_stats_7"></canvas>
                                                 </div>
                                                 <div class="m-widget26__number">
                                                     690
@@ -501,7 +679,7 @@
                                         <div class="m-widget26">
                                                
                                                 <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                    <canvas id="m_chart_quick_stats_2"></canvas>
+                                                    <canvas id="m_chart_quick_stats_8"></canvas>
                                                 </div>
                                                 <div class="m-widget26__number">
                                                     690
@@ -518,7 +696,7 @@
                                         <div class="m-widget26">
                                                 
                                                 <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                    <canvas id="m_chart_quick_stats_3"></canvas>
+                                                    <canvas id="m_chart_quick_stats_9"></canvas>
                                                 </div>
                                                 <div class="m-widget26__number">
                                                     690
@@ -535,7 +713,7 @@
                                     <div class="m-widget26">
                                             
                                             <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                <canvas id="m_chart_quick_stats_4"></canvas>
+                                                <canvas id="m_chart_quick_stats_10"></canvas>
                                             </div>
                                             <div class="m-widget26__number">
                                                 690
@@ -552,7 +730,7 @@
                                 <div class="m-widget26">
                                         
                                         <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                            <canvas id="m_chart_quick_stats_5"></canvas>
+                                            <canvas id="m_chart_quick_stats_11"></canvas>
                                         </div>
                                         <div class="m-widget26__number">
                                             690
@@ -568,7 +746,7 @@
                             <div class="m-widget26">
                                     
                                     <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                        <canvas id="m_chart_quick_stats_6"></canvas>
+                                        <canvas id="m_chart_quick_stats_12"></canvas>
                                     </div>
                                     <div class="m-widget26__number">
                                         690
@@ -732,7 +910,7 @@
     </div>
     
    
-    <div class="row" style="padding: 0px 10px;"   [style.display]="!isGridView ? 'flex' : 'none'">
+    <div class="row" style="padding: 0px 10px;"   [style.display]="(!isGridView && !isWizard) ? 'flex' : 'none'">
         <div class="col-sm-12">
             <div class="m-portlet m-portlet--mobile">
               
@@ -743,6 +921,22 @@
                </div>   
     
         </div>
+    </div>
+    </div>
+
+
+
+    <div class="row" *ngIf="isWizard">
+        <div class="col-md-12">
+            <div class="m-portlet">
+                           
+            <div class="m-portlet__body">
+                <button (click)="isWizard=false;" style="padding-left:0px;" class="btn btn-link" ><i class="fa fa-chevron-left"></i> Back</button>
+                <app-wizard-wizard-3></app-wizard-wizard-3>
+          
+            </div>
+
+    </div>
     </div>
     </div>
 

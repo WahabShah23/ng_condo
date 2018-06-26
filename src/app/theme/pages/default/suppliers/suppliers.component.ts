@@ -13,6 +13,7 @@ export class SuppliersComponent implements OnInit, AfterViewInit {
     viewName = "List View";
     customerType = "All";
     isDisplayDetail = false;
+    isWizard = false;
     constructor(private _script: ScriptLoaderService) { }
 
     ngOnInit() {

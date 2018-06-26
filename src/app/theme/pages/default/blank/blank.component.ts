@@ -4,12 +4,12 @@ import { MenuItem } from "primeng/components/common/api";
 import { MapsAPILoader } from '@agm/core';
 import { } from 'googlemaps';
 import { Observable } from 'rxjs/Rx';
-import {FormControl} from "@angular/forms";
+import { FormControl } from "@angular/forms";
 
 @Component({
     selector: 'app-blank',
     templateUrl: './blank.component.html',
-    styleUrls: [ './blank.component.css' ],
+    styleUrls: ['./blank.component.css'],
     encapsulation: ViewEncapsulation.None,
 })
 export class BlankComponent implements OnInit {
@@ -32,12 +32,12 @@ export class BlankComponent implements OnInit {
         this.searchControl = new FormControl();
         this.mapsAPILoader.load().then(
             () => {
-                var autocomplete = new google.maps.places.Autocomplete(this.searchElement.nativeElement, {types: ['address']});
+                var autocomplete = new google.maps.places.Autocomplete(this.searchElement.nativeElement, { types: ['address'] });
                 console.log(autocomplete);
                 autocomplete.addListener("place_changed", () => {
                     this.ngZone.run(() => {
                         let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-                        if(place.geometry === undefined || place.geometry === null ){
+                        if (place.geometry === undefined || place.geometry === null) {
                             return;
                         }
                     });
@@ -65,20 +65,20 @@ export class BlankComponent implements OnInit {
                     label: 'New',
                     icon: 'fa fa-fw fa-plus',
                     items: [
-                        {label: 'Project'},
-                        {label: 'Other'},
+                        { label: 'Project' },
+                        { label: 'Other' },
                     ]
                 },
-                    {label: 'Open'},
-                    {label: 'Quit'}
+                { label: 'Open' },
+                { label: 'Quit' }
                 ]
             },
             {
                 label: 'Edit',
                 icon: 'fa fa-fw fa-edit',
                 items: [
-                    {label: 'Undo', icon: 'fa fa-fw fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa fa-fw fa-mail-reply'}
+                    { label: 'Undo', icon: 'fa fa-fw fa-mail-forward' },
+                    { label: 'Redo', icon: 'fa fa-fw fa-mail-reply' }
                 ]
             }
         ];

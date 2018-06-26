@@ -11,16 +11,16 @@ import { trigger, style, animate, transition, state } from '@angular/animations'
                 'background-color': '#cacaca',
                 transform: 'translateX(0px)'
             })),
-            state('highlighted',style({
-                'background-color':'#fffff',
+            state('highlighted', style({
+                'background-color': '#fffff',
                 transform: 'translateX(255px)'
             }))
-            
+
         ])
     ]
 })
 export class MainSettingsComponent implements OnInit {
-    
+
     // animations state variable 
     state = 'normal';
     className: string;
@@ -30,7 +30,7 @@ export class MainSettingsComponent implements OnInit {
     ngOnInit() {
     }
 
-    onAnimate(){
+    onAnimate() {
         this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal';
     }
 
