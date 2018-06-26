@@ -32,35 +32,51 @@
     </a> -->
     <div class="row" style="height: 100%;">
             <div class="verticals" id="vertical_1">
-                <div class="innerCards stackEffect" id="card1">
+                <div class="innerCards stackEffect active_card" id="card1">
                     <h6 class="innerCardsTitle m-menu__link-text">My Settings</h6>
                 </div>
             </div>
 
             <div class="verticals" id="vertical_2">
-                <div class="innerCards stackEffect" id="card2">
+                <div class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
                     <h6 class="innerCardsTitle m-menu__link-text">Account Settings</h6>
                     <!--<i class="fa fa-expand text-muted pull-right c-expand-icon"></i>-->
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('account'); visibleSidebar5 = true" ></i>
                 </div>
 
-                <div class="innerCards stackEffect" id="card3">
+                <div class="innerCards stackEffect" id="card3" [ngClass]="className === 'security' ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Security Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('security'); visibleSidebar5 = true" ></i>
                 </div>
 
-                <div class="innerCards stackEffect" id="card4">
+                <div class="innerCards stackEffect" id="card4" [ngClass]="className === 'system_wide' ? 'active_card': 'non_active_card'">
+                    <h6 class="innerCardsTitle m-menu__link-text">System Wide Settings</h6>
+                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('system_wide'); visibleSidebar5 = true" ></i>
+                </div>
+
+                <div class="innerCards stackEffect" id="card5" [ngClass]="(className === 'building' || className == 'floor' || className == 'apartment') ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Building Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('building'); visibleSidebar5 = true" ></i>
                     <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
                 </div>
             </div>
 
-            <div class="verticals" id="vertical_3">
-            
+            <div class="verticals" id="vertical_3" *ngIf="(className == 'building' || className == 'floor' || className == 'apartment')">
+                <div class="innerCards stackEffect" id="card6">
+                    <h6 class="innerCardsTitle m-menu__link-text">Floor Settings</h6>
+                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('floor'); visibleSidebar5 = true" ></i>
+                    <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
+                </div>
+                <div class="innerCards stackEffect" id="card7">
+                    <h6 class="innerCardsTitle m-menu__link-text">Apartment Settings</h6>
+                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('apartment'); visibleSidebar5 = true" ></i>
+                    <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
+                </div>
+
             </div>
-            <div class="verticals" id="vertical_4">
-    </div>
+            <div class="verticals" id="vertical_4" *ngIf="(className == 'building' || className == 'floor' || className == 'apartment')">
+
+            </div>
 
     </div>
 </div>
@@ -89,18 +105,18 @@
                                             Corporation Information
                                         </a>
                                     </li>
-                                    <li class="nav-item m-tabs__item">
-                                        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_3" role="tab">
-                                            <i class="la la-bell-o"></i>
-                                            Profile Information
-                                        </a>
-                                    </li>
-                                    <li class="nav-item m-tabs__item">
-                                        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_4" role="tab">
-                                            <i class="la la-bell-o"></i>
-                                            Building Setup
-                                        </a>
-                                    </li>
+                                    <!--<li class="nav-item m-tabs__item">-->
+                                        <!--<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_3" role="tab">-->
+                                            <!--<i class="la la-bell-o"></i>-->
+                                            <!--Profile Information-->
+                                        <!--</a>-->
+                                    <!--</li>-->
+                                    <!--<li class="nav-item m-tabs__item">-->
+                                        <!--<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_6_4" role="tab">-->
+                                            <!--<i class="la la-bell-o"></i>-->
+                                            <!--Building Setup-->
+                                        <!--</a>-->
+                                    <!--</li>-->
                                 </ul>
                             </div>
                         </div>
@@ -564,310 +580,310 @@
 
                                 </div>
 
-                                <div class="tab-pane" id="m_tabs_6_3" role="tabpanel">
+                                <!--<div class="tab-pane" id="m_tabs_6_3" role="tabpanel">-->
 
-                                    <form class="m-form m-form--fit m-form--label-align-right">
-                                        <div class="m-portlet__body">
-                                            <div class="form-group m-form__group m--margin-top-10 m--hide">
-                                                <div class="alert m-alert m-alert--default" role="alert">
-                                                    The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <div class="col-10 ml-auto">
-                                                    <h3 class="m-form__section">
-                                                        1. Personal Details
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Full Name
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="Mark Andre">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Occupation
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="CTO">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Company Name
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="Keenthemes">
-                                                    <span class="m-form__help">
-											If you want your invoices addressed to a company. Leave blank to use your full name.
-										</span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Phone No.
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="+456669067890">
-                                                </div>
-                                            </div>
-                                            <div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
-                                            <div class="form-group m-form__group row">
-                                                <div class="col-10 ml-auto">
-                                                    <h3 class="m-form__section">
-                                                        2. Address
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Address
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="L-12-20 Vertex, Cybersquare">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    City
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="San Francisco">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    State
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="California">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Postcode
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="45000">
-                                                </div>
-                                            </div>
-                                            <div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
-                                            <div class="form-group m-form__group row">
-                                                <div class="col-10 ml-auto">
-                                                    <h3 class="m-form__section">
-                                                        3. Social Links
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Linkedin
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="www.linkedin.com/Mark.Andre">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Facebook
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="www.facebook.com/Mark.Andre">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Twitter
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="www.twitter.com/Mark.Andre">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Instagram
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="www.instagram.com/Mark.Andre">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="m-portlet__foot m-portlet__foot--fit">
-                                            <div class="m-form__actions">
-                                                <div class="row">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-7">
-                                                        <button type="reset" class="btn btn-accent m-btn m-btn--air m-btn--custom">
-                                                            Save changes
-                                                        </button>
-                                                        &nbsp;&nbsp;
-                                                        <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">
-                                                            Cancel
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <!--<form class="m-form m-form&#45;&#45;fit m-form&#45;&#45;label-align-right">-->
+                                        <!--<div class="m-portlet__body">-->
+                                            <!--<div class="form-group m-form__group m&#45;&#45;margin-top-10 m&#45;&#45;hide">-->
+                                                <!--<div class="alert m-alert m-alert&#45;&#45;default" role="alert">-->
+                                                    <!--The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<div class="col-10 ml-auto">-->
+                                                    <!--<h3 class="m-form__section">-->
+                                                        <!--1. Personal Details-->
+                                                    <!--</h3>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Full Name-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="Mark Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Occupation-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="CTO">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Company Name-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="Keenthemes">-->
+                                                    <!--<span class="m-form__help">-->
+											<!--If you want your invoices addressed to a company. Leave blank to use your full name.-->
+										<!--</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Phone No.-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="+456669067890">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="m-form__seperator m-form__seperator&#45;&#45;dashed m-form__seperator&#45;&#45;space-2x"></div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<div class="col-10 ml-auto">-->
+                                                    <!--<h3 class="m-form__section">-->
+                                                        <!--2. Address-->
+                                                    <!--</h3>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Address-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="L-12-20 Vertex, Cybersquare">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--City-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="San Francisco">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--State-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="California">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Postcode-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="45000">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="m-form__seperator m-form__seperator&#45;&#45;dashed m-form__seperator&#45;&#45;space-2x"></div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<div class="col-10 ml-auto">-->
+                                                    <!--<h3 class="m-form__section">-->
+                                                        <!--3. Social Links-->
+                                                    <!--</h3>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Linkedin-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="www.linkedin.com/Mark.Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Facebook-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="www.facebook.com/Mark.Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Twitter-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="www.twitter.com/Mark.Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Instagram-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="www.instagram.com/Mark.Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="m-portlet__foot m-portlet__foot&#45;&#45;fit">-->
+                                            <!--<div class="m-form__actions">-->
+                                                <!--<div class="row">-->
+                                                    <!--<div class="col-2"></div>-->
+                                                    <!--<div class="col-7">-->
+                                                        <!--<button type="reset" class="btn btn-accent m-btn m-btn&#45;&#45;air m-btn&#45;&#45;custom">-->
+                                                            <!--Save changes-->
+                                                        <!--</button>-->
+                                                        <!--&nbsp;&nbsp;-->
+                                                        <!--<button type="reset" class="btn btn-secondary m-btn m-btn&#45;&#45;air m-btn&#45;&#45;custom">-->
+                                                            <!--Cancel-->
+                                                        <!--</button>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</form>-->
 
 
-                                </div>
+                                <!--</div>-->
 
-                                <div class="tab-pane" id="m_tabs_6_4" role="tabpanel">
+                                <!--<div class="tab-pane" id="m_tabs_6_4" role="tabpanel">-->
 
-                                    <form class="m-form m-form--fit m-form--label-align-right">
-                                        <div class="m-portlet__body">
-                                            <div class="form-group m-form__group m--margin-top-10 m--hide">
-                                                <div class="alert m-alert m-alert--default" role="alert">
-                                                    The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <div class="col-10 ml-auto">
-                                                    <h3 class="m-form__section">
-                                                        1. Building Setup
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Full Name
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="Mark Andre">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Occupation
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="CTO">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Company Name
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="Keenthemes">
-                                                    <span class="m-form__help">
-											If you want your invoices addressed to a company. Leave blank to use your full name.
-										</span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Phone No.
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="+456669067890">
-                                                </div>
-                                            </div>
-                                            <div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
-                                            <div class="form-group m-form__group row">
-                                                <div class="col-10 ml-auto">
-                                                    <h3 class="m-form__section">
-                                                        2. Floor Setup
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Address
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="L-12-20 Vertex, Cybersquare">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    City
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="San Francisco">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    State
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="California">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Postcode
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="45000">
-                                                </div>
-                                            </div>
-                                            <div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
-                                            <div class="form-group m-form__group row">
-                                                <div class="col-10 ml-auto">
-                                                    <h3 class="m-form__section">
-                                                        3. Amenities
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Linkedin
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="www.linkedin.com/Mark.Andre">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Facebook
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="www.facebook.com/Mark.Andre">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Twitter
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="www.twitter.com/Mark.Andre">
-                                                </div>
-                                            </div>
-                                            <div class="form-group m-form__group row">
-                                                <label for="example-text-input" class="col-2 col-form-label">
-                                                    Instagram
-                                                </label>
-                                                <div class="col-7">
-                                                    <input class="form-control m-input" type="text" value="www.instagram.com/Mark.Andre">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="m-portlet__foot m-portlet__foot--fit">
-                                            <div class="m-form__actions">
-                                                <div class="row">
-                                                    <div class="col-2"></div>
-                                                    <div class="col-7">
-                                                        <button type="reset" class="btn btn-accent m-btn m-btn--air m-btn--custom">
-                                                            Save changes
-                                                        </button>
-                                                        &nbsp;&nbsp;
-                                                        <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">
-                                                            Cancel
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <!--<form class="m-form m-form&#45;&#45;fit m-form&#45;&#45;label-align-right">-->
+                                        <!--<div class="m-portlet__body">-->
+                                            <!--<div class="form-group m-form__group m&#45;&#45;margin-top-10 m&#45;&#45;hide">-->
+                                                <!--<div class="alert m-alert m-alert&#45;&#45;default" role="alert">-->
+                                                    <!--The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<div class="col-10 ml-auto">-->
+                                                    <!--<h3 class="m-form__section">-->
+                                                        <!--1. Building Setup-->
+                                                    <!--</h3>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Full Name-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="Mark Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Occupation-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="CTO">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Company Name-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="Keenthemes">-->
+                                                    <!--<span class="m-form__help">-->
+											<!--If you want your invoices addressed to a company. Leave blank to use your full name.-->
+										<!--</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Phone No.-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="+456669067890">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="m-form__seperator m-form__seperator&#45;&#45;dashed m-form__seperator&#45;&#45;space-2x"></div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<div class="col-10 ml-auto">-->
+                                                    <!--<h3 class="m-form__section">-->
+                                                        <!--2. Floor Setup-->
+                                                    <!--</h3>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Address-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="L-12-20 Vertex, Cybersquare">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--City-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="San Francisco">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--State-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="California">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Postcode-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="45000">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="m-form__seperator m-form__seperator&#45;&#45;dashed m-form__seperator&#45;&#45;space-2x"></div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<div class="col-10 ml-auto">-->
+                                                    <!--<h3 class="m-form__section">-->
+                                                        <!--3. Amenities-->
+                                                    <!--</h3>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Linkedin-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="www.linkedin.com/Mark.Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Facebook-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="www.facebook.com/Mark.Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Twitter-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="www.twitter.com/Mark.Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="form-group m-form__group row">-->
+                                                <!--<label for="example-text-input" class="col-2 col-form-label">-->
+                                                    <!--Instagram-->
+                                                <!--</label>-->
+                                                <!--<div class="col-7">-->
+                                                    <!--<input class="form-control m-input" type="text" value="www.instagram.com/Mark.Andre">-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="m-portlet__foot m-portlet__foot&#45;&#45;fit">-->
+                                            <!--<div class="m-form__actions">-->
+                                                <!--<div class="row">-->
+                                                    <!--<div class="col-2"></div>-->
+                                                    <!--<div class="col-7">-->
+                                                        <!--<button type="reset" class="btn btn-accent m-btn m-btn&#45;&#45;air m-btn&#45;&#45;custom">-->
+                                                            <!--Save changes-->
+                                                        <!--</button>-->
+                                                        <!--&nbsp;&nbsp;-->
+                                                        <!--<button type="reset" class="btn btn-secondary m-btn m-btn&#45;&#45;air m-btn&#45;&#45;custom">-->
+                                                            <!--Cancel-->
+                                                        <!--</button>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</form>-->
 
-                                </div>
+                                <!--</div>-->
 
                             </div>
                         </div>
@@ -890,6 +906,43 @@
             </div>
         </div>
         <!-- -------------------------------------Security Settings End------------------------------------- -->
+
+        <!-- ----------------------------------------System Wide Settings Start---------------------------------------- -->
+        <div class="building-settings" *ngIf="className == 'system_wide'">
+            <h1 style="font-weight:normal">System Wide Settings</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2> Building </h2>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="m-list-badge__items">
+                                <a class="fa fa-building" href="#">
+                                    Yoga
+                                </a>
+                                <a class="m-list-badge__item" href="#">
+                                    Cooking
+                                </a>
+                                <a class="m-list-badge__item" href="#">
+                                    Dance
+                                </a>
+                                <a class="m-list-badge__item" href="#">
+                                    Gym
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2> Option 2 </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------------------------System Wide Settings End---------------------------------------- -->
 
         <!-- ----------------------------------------Building Start---------------------------------------- -->
         <div class="building-settings" *ngIf="className == 'building'">

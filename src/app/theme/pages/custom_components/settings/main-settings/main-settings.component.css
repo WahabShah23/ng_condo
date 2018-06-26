@@ -44,9 +44,33 @@
     top: 12%;
     padding: 10px;
 }
+#card5 {
+    top: 16%;
+    padding: 10px;
+}
+
+/*Vertical 3 Cards*/
+#card6 {
+    top: 4%;
+    padding: 10px;
+}
+#card7 {
+    top: 8%;
+    padding: 10px;
+}
 
 .stackEffect {
     box-shadow: 5px 6px 4px -5px #999;
+}
+
+.active_card {
+    background-color: lightyellow !important;
+    opacity: 1;
+}
+
+.non_active_card {
+    opacity: 0.5;
+    background-color: #fff !important;
 }
 
 /*-------------- Smaller Cards Inside Verticals BEGIN--------------*/
@@ -67,6 +91,11 @@
     left: 3.4%;
     top: 4%;
 }
+.innerCards:hover{
+    background-color: lightyellow !important;
+    opacity: 1;
+}
+
 /*Card Title*/
 .innerCardsTitle {
     float: left;
