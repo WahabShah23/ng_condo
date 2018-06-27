@@ -58,6 +58,10 @@
     top: 8%;
     padding: 10px;
 }
+#card8 {
+    top: 12%;
+    padding: 10px;
+}
 
 .stackEffect {
     box-shadow: 5px 6px 4px -5px #999;
@@ -129,3 +133,5 @@
     opacity: 0.4;
 }
 /*-------------- Smaller Cards Inside Verticals END--------------*/
+
+

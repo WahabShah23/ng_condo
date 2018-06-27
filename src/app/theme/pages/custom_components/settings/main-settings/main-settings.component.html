@@ -54,14 +54,15 @@
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('system_wide'); visibleSidebar5 = true" ></i>
                 </div>
 
-                <div class="innerCards stackEffect" id="card5" [ngClass]="(className === 'building' || className == 'floor' || className == 'apartment') ? 'active_card': 'non_active_card'">
+                <div class="innerCards stackEffect" id="card5"
+                     [ngClass]="(className === 'building' || className == 'floor' || className == 'apartment' || className == 'amenities') ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Building Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('building'); visibleSidebar5 = true" ></i>
                     <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
                 </div>
             </div>
 
-            <div class="verticals" id="vertical_3" *ngIf="(className == 'building' || className == 'floor' || className == 'apartment')">
+            <div class="verticals" id="vertical_3" *ngIf="(className == 'building' || className == 'floor' || className == 'apartment' || className == 'amenities')">
                 <div class="innerCards stackEffect" id="card6">
                     <h6 class="innerCardsTitle m-menu__link-text">Floor Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('floor'); visibleSidebar5 = true" ></i>
@@ -73,8 +74,14 @@
                     <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
                 </div>
 
+                <div class="innerCards stackEffect" id="card8">
+                    <h6 class="innerCardsTitle m-menu__link-text">Amenities Settings</h6>
+                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('amenities'); visibleSidebar5 = true" ></i>
+                    <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
+                </div>
+
             </div>
-            <div class="verticals" id="vertical_4" *ngIf="(className == 'building' || className == 'floor' || className == 'apartment')">
+            <div class="verticals" id="vertical_4" *ngIf="(className == 'building' || className == 'floor' || className == 'apartment' || className == 'amenities')">
 
             </div>
 
@@ -911,25 +918,30 @@
         <div class="building-settings" *ngIf="className == 'system_wide'">
             <h1 style="font-weight:normal">System Wide Settings</h1>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 offset-md-2">
                     <div class="row">
                         <div class="col-md-12">
                             <h2> Building </h2>
                         </div>
                         <div class="col-md-12">
-                            <div class="m-list-badge__items">
-                                <a class="fa fa-building" href="#">
-                                    Yoga
-                                </a>
-                                <a class="m-list-badge__item" href="#">
-                                    Cooking
-                                </a>
-                                <a class="m-list-badge__item" href="#">
-                                    Dance
-                                </a>
-                                <a class="m-list-badge__item" href="#">
-                                    Gym
-                                </a>
+                            <div class="m-list-badge m--margin-top-15">
+                                <div class="m-list-badge__label m--font-success">
+                                    14:00
+                                </div>
+                                <div class="m-list-badge__items">
+                                    <a href="#" class="m-list-badge__item">
+                                        Yoga
+                                    </a>
+                                    <a href="#" class="m-list-badge__item">
+                                        Cooking
+                                    </a>
+                                    <a href="#" class="m-list-badge__item">
+                                        Dance
+                                    </a>
+                                    <a href="#" class="m-list-badge__item">
+                                        Gym
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -946,10 +958,25 @@
 
         <!-- ----------------------------------------Building Start---------------------------------------- -->
         <div class="building-settings" *ngIf="className == 'building'">
-            <h1 style="font-weight:normal">Building Settings</h1>
+            <h3 class="m-subheader__title" style="font-weight:normal">Building Settings</h3>
+            <!--<div>-->
+                <!--<i class="fa fa-plus" (click)="addForm != addForm"> Add Building</i>-->
+            <!--</div>-->
+
             <div class="row">
                 <div class="col-md-12">
-                    building Setup
+                    <app-wizard-building></app-wizard-building>
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------------------------Building End---------------------------------------- -->
+
+        <!-- ----------------------------------------Building Start---------------------------------------- -->
+        <div class="building-settings" *ngIf="className == 'amenities'">
+            <h2 style="font-weight:normal">Amenities Settings</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    Amenities Setup
                 </div>
             </div>
         </div>
