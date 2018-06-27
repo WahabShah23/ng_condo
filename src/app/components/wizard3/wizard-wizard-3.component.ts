@@ -11,7 +11,25 @@ import { ScriptLoaderService } from '../../_services/script-loader.service';
 export class WizardWizard3Component implements OnInit, AfterViewInit {
 
     staffForm: FormGroup;
+    
+    isInvoiceGridView = true;
+    invoiceViewName = "List View";
+    
+    isPaymentGridView = true;
+    paymentViewName = "List View";
 
+    isProposalGridView = true;
+    proposalViewName = "List View";
+
+
+    isEstimateGridView = true;
+    estimateViewName = "List View";
+
+
+    isExpenseGridView = true;
+    expenseViewName = "List View";
+
+    
     
 
   
@@ -59,6 +77,87 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
     handleFileInput(files: FileList) {
         this.fileToUpload = files.item(0);
     }
+
+
+
+    changeInvoiceView()
+    {
+        if(this.isInvoiceGridView)
+        {
+            this.isInvoiceGridView = false;
+            this.invoiceViewName = "Grid View";
+        }
+        else
+        {
+            this.isInvoiceGridView = true;
+            this.invoiceViewName = "List View";
+        }
+        
+    }
+
+
+    changePaymentView()
+    {
+        if(this.isPaymentGridView)
+        {
+            this.isPaymentGridView = false;
+            this.paymentViewName = "Grid View";
+        }
+        else
+        {
+            this.isPaymentGridView = true;
+            this.paymentViewName = "List View";
+        }
+        
+    }
+
+    changeProposalView()
+    {
+        if(this.isProposalGridView)
+        {
+            this.isProposalGridView = false;
+            this.proposalViewName = "Grid View";
+        }
+        else
+        {
+            this.isProposalGridView = true;
+            this.proposalViewName = "List View";
+        }
+        
+    }
+
+
+
+    changeEstimateView()
+    {
+        if(this.isEstimateGridView)
+        {
+            this.isEstimateGridView = false;
+            this.estimateViewName = "Grid View";
+        }
+        else
+        {
+            this.isEstimateGridView = true;
+            this.estimateViewName = "List View";
+        }
+        
+    }
+
+    changeExpenseView()
+    {
+        if(this.isExpenseGridView)
+        {
+            this.isExpenseGridView = false;
+            this.expenseViewName = "Grid View";
+        }
+        else
+        {
+            this.isExpenseGridView = true;
+            this.expenseViewName = "List View";
+        }
+        
+    }
+
 
     // uploadFileToActivity() {
     //     // this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {

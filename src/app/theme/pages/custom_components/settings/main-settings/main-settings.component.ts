@@ -19,12 +19,14 @@ import { trigger, style, animate, transition, state } from '@angular/animations'
         ])
     ]
 })
+
 export class MainSettingsComponent implements OnInit {
 
     // animations state variable 
     state = 'normal';
     className: string;
     locationExist = false;
+    visibleSidebar5;
 
     public nonActiveCard = 'non_active_card';
     public activeCard = 'active_card';

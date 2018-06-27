@@ -162,11 +162,26 @@ input.ng-invalid.ng-touched {
 {
     position: absolute;
     top: 30%;
-    left: 39%;
+    left: 32%;
     font-size: 18px;
 }
 
 .m-content
 {
     padding: 0px !important; 
+}
+.invoicenumber
+{
+    margin-top: 15px;
+    color: #6f727d !important;
+}
+
+.m-form__section.m-form__section--first
+{
+    margin-bottom: 0px;
+}
+
+thead tr th
+{
+    vertical-align: top;
 }

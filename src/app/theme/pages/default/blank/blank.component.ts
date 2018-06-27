@@ -22,8 +22,14 @@ export class BlankComponent implements OnInit {
 
     lat: number = 51.678418;
     lng: number = 7.809007;
+    
+    visibleSidebar1;
+    visibleSidebar2;
+    visibleSidebar3;
+    visibleSidebar4;
+    visibleSidebar5;
 
-    private items: MenuItem[];
+     items: MenuItem[];
 
     constructor(private _demoService: DemoService, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {
     }
