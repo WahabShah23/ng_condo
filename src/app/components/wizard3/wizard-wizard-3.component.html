@@ -288,10 +288,17 @@
                                                 <h3 class="m-form__heading-title float-left" >
                                                     Invoices
                                                 </h3>
-                                                <button class="btn btn-link float-right" (click)="changeInvoiceView()"><i class="fa"    [ngClass]="{'fa-list' : isInvoiceGridView , 'fa-th' : !isInvoiceGridView}" ></i> {{invoiceViewName}} </button>
+                                                <div class=" float-right">
+                                            
+                                                <button class="btn btn-link" (click)="changeInvoiceView()"><i class="fa"    [ngClass]="{'fa-list' : isInvoiceGridView , 'fa-th' : !isInvoiceGridView}" ></i> {{invoiceViewName}} </button>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row" *ngIf="!isInvoiceGridView">
+                                        
+
+                                      
+
+                                        <div class="row" *ngIf="!isInvoiceGridView ">
                                             <div class="col-sm-12">
                                                 <div class="table-responsive">
                                                         <table class="table table-striped">
@@ -356,7 +363,7 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="row" *ngIf="isInvoiceGridView">
+                                        <div class="row" *ngIf="isInvoiceGridView ">
                                                 <div  class="col-md-6">
                                                         <div  class="body organ1">
                                                             <div  class="row" style="margin:0px;">    
@@ -496,10 +503,34 @@
                                                 <h3 class="m-form__heading-title float-left">
                                                     Payments
                                                 </h3>
+                                                <div class="float-right">
                                                 <button class="btn btn-link float-right" (click)="changePaymentView()"><i class="fa"    [ngClass]="{'fa-list' : isPaymentGridView , 'fa-th' : !isPaymentGridView}" ></i> {{paymentViewName}} </button>
+                                                <button class="btn btn-link" (click)="isZipPaymentForm=!isZipPaymentForm">Zip Payments</button>    
+                                            </div>
                                             </div>
                                         </div>
-                                        <div class="row" *ngIf="!isPaymentGridView">
+
+                                        <div class="row" *ngIf="isZipPaymentForm">
+                                                <div class="col-sm-12">
+                                                <button class="btn btn-link" style="padding-left:0px;" (click)="isZipPaymentForm=false;"><i class="fa fa-chevron-left"></i> Back</button>
+                                                <div class="form-group">
+                                                    <label>Select Admin</label>
+                                                  <select class="form-control">
+                                                    <option value=""></option>
+                                                    <option value="Germany">Germany</option>
+                                                    <option value="France">France</option>
+                                                  </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label > Select date </label>
+                                                  <input class="form-control" type="date"  placeholder="select date">
+                                               
+                                                </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="row" *ngIf="!isPaymentGridView && !isZipPaymentForm">
                                             <div class="table-responsive">
                                                 <table class="table table-striped">
                                                         <thead>
@@ -561,7 +592,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row" *ngIf="isPaymentGridView">
+                                        <div class="row" *ngIf="isPaymentGridView && !isZipPaymentForm">
                                                 <div  class="col-md-6">
                                                         <div  class="body organ1">
                                                             <div  class="row" style="margin:0px;">    
@@ -722,11 +753,284 @@
                                                 <h3 class="m-form__heading-title float-left">
                                                     Proposals
                                                 </h3>
-                                                <button class="btn btn-link float-right" (click)="changeProposalView()"><i class="fa"    [ngClass]="{'fa-list' : isProposalGridView , 'fa-th' : !isProposalGridView}" ></i> {{proposalViewName}} </button>
+                                                <div class="float-right">
+                                                        <button class="btn btn-link" (click)="isProposalForm = !isProposalForm;">Add New Proposal</button>
+                                                <button class="btn btn-link" (click)="changeProposalView()"><i class="fa"    [ngClass]="{'fa-list' : isProposalGridView , 'fa-th' : !isProposalGridView}" ></i> {{proposalViewName}} </button>
+                                                
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <div class="row" *ngIf="!isProposalGridView">
+                                        <div class="row" *ngIf="isProposalForm">
+
+                                            <div class="col-sm-12">
+                                                    <button class="btn btn-link" (click)="isProposalForm = false" style="padding-left:0px;"><i class="fa fa-chevron-left"></i> Back</button>
+                                                  
+                                            </div>
+                                            <div class="col-sm-6">
+
+
+                                                  <div class="form-group">
+                                                            <label>Subject</label>
+                                                            <input type="text" class="form-control" placeholder="">
+                                                            
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                            <label>Related</label>
+                                                            <select class="form-control">
+                                                              <option></option>
+                                                              <option>Option 1</option>
+                                                              <option>Option 2</option>
+                                                              <option>Option 3</option>
+                                                              <option>Option 4</option>
+                                                            </select>
+                                                            
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                            
+                                                            <label>Customer</label>
+                                                            <select id="span_small2" class="form-control" >
+                                                                   <optgroup label="Addresses">
+                                                                     <option value="address1">ABC sfjdfkj, street 2</option>
+                                                                     <option value="address2">XYZ sfjdfkj, street 2</option>
+                                                                   </optgroup>
+               
+                                                                    <optgroup label="New">
+                                                                      <option value="#addressAddModal">Add New</option>
+                                                                    </optgroup>
+                                                            </select>
+                                                            
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                            <!--  -->
+                                                            <label>Date</label>
+                                                            <input class="form-control" type="date" value="">
+                                            
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                            <!-- <label>Open Till</label> -->
+                                                            <label> Open Till</label>
+                                                            <input class="form-control" type="date" value="">
+                                                            
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                            <label>Currency</label>
+                                                            <select class="form-control edited">
+                                                              <option></option>
+                                                              <option>Option 1</option>
+                                                              <option>Option 2</option>
+                                                              <option>Option 3</option>
+                                                              <option>Option 4</option>
+                                                            </select>
+                                                           
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                            <label>Discount Type</label>
+                                                            <select class="form-control">
+                                                              <option></option>
+                                                              <option>Option 1</option>
+                                                              <option>Option 2</option>
+                                                              <option>Option 3</option>
+                                                              <option>Option 4</option>
+                                                            </select>
+                                                            
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                            <label>Tags</label>
+                                                      <input type="text" class="form-control" placeholder="">
+                                                     
+                                                    </div>
+
+                                                    <label class="m-checkbox m-checkbox--square">
+                                                            <input type="checkbox">
+                                                            Allow Comments
+                                                            <span></span>
+                                                    </label>
+
+
+                                                    
+                                            </div>
+
+
+                                            <div class="col-md-6">
+                                                  
+                                                    <div class="mt-checkbox-inline">
+
+                                                      <div class="form-group">
+                                                        <label>Status</label>
+                                                        <select class="form-control">
+                                                          <option></option>
+                                                          <option>Option 1</option>
+                                                          <option>Option 2</option>
+                                                          <option>Option 3</option>
+                                                          <option>Option 4</option>
+                                                        </select>
+                                                        
+                                                      </div>
+
+                                                      <div class="form-group">
+                                                        <label>Assigned</label>
+                                                        <select class="form-control">
+         
+                                                               <optgroup label="">
+                                                                 <option value="SA1">Option 1</option>
+                                                                 <option value="SA2">Option 2</option>
+                                                                 <option value="SA3">Option 3</option>
+                                                               </optgroup>
+                                                        </select>
+         
+                                                      </div>
+                                                    </div>
+                                                    <div class="form-group" >
+                                                            <label>To</label>
+                                                      <input type="text" class="form-control" placeholder="" >
+                                                      
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <label>Address</label>
+                                                      <input type="text" class="form-control" placeholder="">
+                                                    
+                                                    </div>
+                                                    <div>
+                                                      <div class="form-group" >
+                                                            <label>City</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                        
+                                                      </div>
+                                                      <div class="form-group">
+         
+                                                        <label>State</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                        
+                                                      </div>
+                                                    </div>
+                                                    <div class="mt-checkbox-inline" style="clear: both;">
+                                                      <div class="form-group" style="width: 48%; float: left; padding-top: 10px; padding-right: 5px;">
+                                                            <label>Country</label>
+                                                        <select class="form-control">
+                                                          <option></option>
+                                                          <option>Option 1</option>
+                                                          <option>Option 2</option>
+                                                          <option>Option 3</option>
+                                                          <option>Option 4</option>
+                                                        </select>
+                                                      
+                                                      </div>
+                                                      <div class="form-group" style="width: 48%; float: right; padding-top: 10px; padding-left: 5px;">
+                                                            <label>Zip Code</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                      
+                                                      </div>
+                                                    </div>
+                                                    <div style="clear: both;">
+                                                      <div class="form-group" style="width: 48%; float: left; padding-top: 10px; padding-right: 5px;">
+                                                            <label>Email</label>
+                                                        <input type="email" class="form-control" placeholder="">
+                                                        
+                                                      </div>
+                                                      <div class="form-group" style="width: 48%; float : right; padding-top: 10px; padding-left: 5px;">
+                                                            <label>Phone</label>
+                                                        <input type="number" class="form-control" placeholder="">
+                                                        
+                                                      </div>
+                                                    </div>
+                                                  </div>
+
+                                                  <div class="col-sm-12">
+                                                      <hr>
+                                                      <div class="form-group">
+                                                      <label>Add Item</label>
+                                                       <select class="form-control">
+                                                           <option>Product 1</option>
+                                                           <option>Product 2</option>
+                                                           <option>Product 3</option>
+                                                           <option>Product 4</option>
+                                                           <option>Product 5</option>
+                                                           <option>Service 1</option>
+                                                           <option>Service 2</option>
+                                                       </select>
+                                                      </div>
+
+
+                                                      <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th> # </th>
+                                                                    <th> Item </th>
+                                                                    <th class="hidden-xs"> Description </th>
+                                                                    <th class="hidden-xs"> Quantity </th>
+                                                                    <th class="hidden-xs"> Unit Cost </th>
+                                                                    <th class="hidden-xs"> Unit Type </th>
+                                                                    <th> Total </th>
+                                                                    <th style="width:20px"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr id="tr_0">
+                                                                    <td> 1 </td>
+                                                                      <td>
+                                                                        <select class="form-control">
+                                                                            <optgroup label="Saloon">
+                                                                                <option value="mani">manicure</option>
+                                                                                <option value="faci">facial</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Grocery">
+                                                                                <option value="pul">Pulses</option>
+                                                                                <option value="veg">Vegetables</option>
+                                                                            </optgroup>
+                                                                        </select>
+                                                                       </td>
+                                                                    <td class="hidden-xs"> <input id="bootstrap-input-md" class="form-control" placeholder="Description here..">       </td>
+                                                                    <td class="hidden-xs"> <input id="qty" class="form-control" placeholder="3" style="width:50px;">    </td>
+                                                                    <td class="hidden-xs"> <input id="unit-cost" class="form-control" placeholder="$15" style="width:65px;">  </td>
+                                                                    <td>
+                                                                      <select class="form-control">
+                                                                              <option value="qty">Qty</option>
+                                                                              <option value="hours">Hours</option>
+                                                                              <option value="qtyHours">Qty/Hours</option>
+                                                                      </select>
+                                                                    </td>
+                                                                    <td class="hidden-xs"> <input id="total-cost" class="form-control input-md" placeholder="$45" style="width:60px;">  </td>
+                                                                    <td><span class="glyphicon glyphicon-plus addBtn"></span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        
+                                                        <div class="row">
+                                                        <div class="col-sm-12">
+                                                                <ul class="list-unstyled amounts pull-right">
+                                                                    <li>
+                                                                        <strong class="pull-left">Sub - Total amount: </strong> <strong class="m--margin-left-5">$200</strong> </li>
+                                                                    <li>
+                                                                        <strong class="pull-left">Discount: <a class="fa fa-plus" ></a></strong ><span class="m--margin-left-5"> 12.9%</span> </li>
+                                                                    <li>
+                                                                      <strong class="pull-left">Tax: &nbsp; GST <a class="fa fa-plus" ></a></strong>
+                                                                      <span class="m--margin-left-5">$100</span></li>
+                                                                    <li>
+                                                                        <strong class="pull-left" >Grand Total:</strong> <span class="m--margin-left-5"> $12489 </span> </li>
+                                                                </ul>
+                                                                <br>
+                                                                <div class="clearfix">
+                
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                  </div>
+                                        </div>
+
+                                        <div class="row" *ngIf="!isProposalGridView && !isProposalForm">
                                         <div class="table-responsive">
                                                 <table class="table table-striped">
                                                         <thead>
@@ -795,7 +1099,7 @@
                                         </div>
 
 
-                                        <div class="row" *ngIf="isProposalGridView">
+                                        <div class="row" *ngIf="isProposalGridView && !isProposalForm">
                                                 <div class="col-md-6">
                                                         <div  class="body organ1">
                                                             <div  class="row" style="margin:0px;">    
@@ -955,10 +1259,160 @@
                                                     <h3 class="m-form__heading-title float-left">
                                                        Estimates
                                                     </h3>
-                                                    <button class="btn btn-link float-right" (click)="changeEstimateView()"><i class="fa"    [ngClass]="{'fa-list' : isEstimateGridView , 'fa-th' : !isEstimateGridView}" ></i> {{estimateViewName}} </button>
+                                                    <div class="float-right">
+                                                    <button class="btn btn-link" (click)="isEstimateForm = !isEstimateForm;">Add New Estimate</button>
+                                                    <button class="btn btn-link" (click)="changeEstimateView()"><i class="fa"    [ngClass]="{'fa-list' : isEstimateGridView , 'fa-th' : !isEstimateGridView}" ></i> {{estimateViewName}} </button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="row" *ngIf="!isEstimateGridView">
+                                            <div class="row" *ngIf="isEstimateForm">
+                                                <div class="col-md-12">
+                                                    <button class="btn btn-link" (click)="isEstimateForm=false;" style="padding-left:0px"><i class="fa fa-chevron-left"></i> Back</button>
+                                                </div>
+                                                    <div class="col-md-6">
+                                                      <h6>General Options</h6>
+                                                      <hr>
+           
+                                                       <div class="form-group">
+                                                         <div class="">
+                                                           <label>Customer</label>
+                                                         <select  class="form-control" tabindex="-1" aria-hidden="true">
+                                                                <optgroup label="Addresses">
+                                                                  <option value="address1">ABC sfjdfkj, street 2</option>
+                                                                  <option value="address2">XYZ sfjdfkj, street 2</option>
+                                                                </optgroup>
+           
+                                                                 <optgroup label="New">
+                                                                   <option value="#addressAddModal">Add New</option>
+                                                                 </optgroup>
+                                                         </select>
+                                                         </div>
+                                                       </div>
+           
+                                                      <div class="form-group ">
+                                                        <label>Project</label>
+                                                        <select  class="form-control" >
+                                                               <optgroup label="Addresses">
+                                                                 <option value="address1">ABC sfjdfkj, street 2</option>
+                                                                 <option value="address2">XYZ sfjdfkj, street 2</option>
+                                                               </optgroup>
+                                                        </select>
+                                                      </div>
+           
+                                                      <div class="row">
+                                                        <div class="col-sm-6" >
+                                                            <h6><b>Bill To</b>&nbsp; &nbsp;<i class="fa fa-edit" id="address-edit-modal" data-toggle="modal" data-target="#addressEditModal" style="cursor:pointer;"></i></h6>
+                                                            <address>
+                                                              John Doe2 <br>
+                                                              Mr Nilson Otto <br>
+                                                              FoodMaster Ltd <br>
+                                                              Madrid, Spain, 1982 OOP <br>
+                                                            </address>
+                                                        </div>
+                                                        <div class="col-sm-6" >
+                                                            <h6><b>Ship To</b></h6>
+                                                          <address>
+                                                            John Doe2 <br>
+                                                            Mr Nilson Otto <br>
+                                                            FoodMaster Ltd <br>
+                                                            Madrid, Spain, 1982 OOP
+                                                          </address>
+                                                        </div>
+                                                      </div>
+           
+                                                      <div class="form-group" style="clear: both;">
+                                                            <label>Estimate Number</label>
+                                                          <input type="text" class="form-control" placeholder="">
+                                                    
+                                                      </div>
+                                                      <div class="form-group" style="clear: both;">
+                                                        <label>Reference #</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                       
+                                                      </div>
+                                                      <div>
+                                                        <div class="form-group" style="width: 48%; float: left; padding-top: 10px; padding-right: 5px;">
+                                                            <label>Estimate Date</label>
+                                                          <input class="form-control date-picker" size="16" type="date" >
+                                                         
+                                                         
+                                                        </div>
+                                                        <div class="form-group" style="width: 48%; float: right; padding-top: 10px; padding-left: 5px;">
+                                                            <label>Expiry Date</label>
+                                                          <input class="form-control " size="16" type="date">
+                                                          
+                                                          
+                                                        </div>
+                                                      </div>
+                                                      <div style="clear: both;"></div>
+                                                    </div>
+           
+                                                    <div class="col-md-6">
+                                                      <h6>Advanced Options</h6>
+                                                      <hr>
+           
+                                                      <div class="form-group" style="clear: both;">
+                                                        <label>Tags</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                        
+                                                      </div>
+                                                      <div>
+                                                        <div class="form-group" style="width: 48%; float: left; padding-top: 18px; padding-right: 5px; margin-top:-2%;">
+                                                        <label>Status</label>
+                                                          <select class="form-control">
+                                                            <option></option>
+                                                            <option>Option 1</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                            <option>Option 4</option>
+           
+                                                          </select>
+                                                          
+                                                        </div>
+                                                        <div class="form-group" style="width: 48%; float: right; padding-top: 18px; padding-right: 5px; margin-top:-2%;">
+                                                            <label>Currency</label>
+                                                          <select class="form-control">
+                                                            <option></option>
+                                                            <option>Option 1</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                            <option>Option 4</option>
+                                                          </select>
+                                                          
+                                                        </div>
+                                                      </div>
+                                                      <div style="clear: both;">
+                                                        <div class="form-group" style="width: 48%; float: left; padding-top: 18px; padding-right: 5px;">
+                                                          <label>Sale Agent</label>
+                                                          <select id="span_small" class="form-control" tabindex="-1" aria-hidden="true">
+           
+                                                                 <optgroup label="">
+                                                                   <option value="SA1">Option 1</option>
+                                                                   <option value="SA2">Option 2</option>
+                                                                 </optgroup>
+                                                          </select>
+           
+                                                        </div>
+                                                        <div class="form-group" style="width: 48%; float: right; padding-top: 18px; padding-right: 5px;">
+                                                            <label>Admin Note</label>
+                                                          <select class="form-control">
+                                                            <option></option>
+                                                            <option>Option 1</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                            <option>Option 4</option>
+                                                          </select>
+                                                         
+                                                        </div>
+                                                        <div class="form-group" style="clear: both;">
+                                                          <label>Description</label>
+                                                          <textarea class="form-control" placeholder="" rows="4"></textarea>
+                                                         
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                            <div class="row" *ngIf="!isEstimateGridView && !isEstimateForm">
                                                 <div class="table-responsive">
                                                         <table class="table table-striped">
                                                                 <thead>
@@ -1033,7 +1487,7 @@
                                                                               </table>
                                                               </div>
                                                          </div>
-                                                          <div class="row" *ngIf="isEstimateGridView">
+                                                          <div class="row" *ngIf="isEstimateGridView && !isEstimateForm">
                                                           <div class="col-md-6">
                                                             <div  class="body organ1">
                                                                 <div  class="row" style="margin:0px;">    
@@ -1382,18 +1836,182 @@
 
 
                                             <div class="m-wizard__form-step" id="m_wizard_form_step_7">
-                                                    <div class="m-form__section m-form__section--first">
+                                                    <div class="m-form__section m-form__section--first clearfix">
                                                         <div class="m-form__heading">
-                                                            <h3 class="m-form__heading-title">
+                                                            <h3 class="m-form__heading-title float-left">
                                                                Contracts
                                                             </h3>
+                                                            <button class="btn btn-link float-right" (click)="changeContractView()"><i class="fa"    [ngClass]="{'fa-list' : isContractGridView , 'fa-th' : !isContractGridView}" ></i> {{contractViewName}} </button>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                  
+                                                    <div class="row" *ngIf="isContractGridView">
                                                         <div class="col-md-6">
-                                                           
-                                                        </div>
-                                                    </div>
+                                                          <div  class="body organ1">
+                                                              <div  class="row" style="margin:0px;">    
+                                                              <div  class="card-left col-lg-3" id="">
+                                                                    <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                                      <input  class="chkboxes" type="checkbox">
+                                                                      <span ></span>
+                                                                    </label>
+                                                                    <div  class="row onepersonrow">
+                                                                         
+                                                                      <div  class="col-md-12">
+                                                                            <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
+                                                                            <p  class="personname">Shuxer</p>
+                                                                            <p class="invoicenumber"><i class="fa fa-phone"></i> 987 3673 387 </p>
+                                                                      </div> 
+                                                                </div>
+                                                                         <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
+                                                                         <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
+                                                                         <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
+                                                                          
+                                                                         
+                                                                  </div>
+                                                                  <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                                                                          <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Contract Details</h6>
+                                                                           <div  class="clearfix"></div>
+                                                                  
+                                                                    <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                    <p>Permission to close your file?</p>
+                                                                            </div>
+                                                                          <div class="col-md-6">
+                                                                              <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> Start: 12-10-2017</p>
+                                                                          </div>
+    
+                                                                          <div class="col-md-6">
+                                                                                <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> End: 12-11-2017</p>
+                                                                            </div>
+    
+                                                                           
+                                                                            
+                                                                          </div>   
+                                                                    
+                                                                  </div>
+                                                              </div>
+                                                                </div>
+                                                      </div>
+  
+  
+  
+                                                      <div  class="col-md-6">
+                                                              <div  class="body organ1">
+                                                                  <div  class="row" style="margin:0px;">    
+                                                                  <div  class="card-left col-lg-3" id="">
+                                                                        <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                                          <input  class="chkboxes" type="checkbox">
+                                                                          <span ></span>
+                                                                        </label>
+                                                                        <div  class="row onepersonrow">
+                                                                             
+                                                                          <div  class="col-md-12">
+                                                                                <img  class="personimage" src="assets/app/media/img/logos/logo-1.png">
+                                                                                <p  class="personname">Looper</p>
+                                                                                <p class="invoicenumber"><i class="fa fa-phone"></i> 987 3673 387</p>
+                                                                          </div> 
+                                                                    </div>
+                                                                             <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
+                                                                             <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
+                                                                             <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
+                                                                              
+                                                                             
+                                                                      </div>
+                                                                      <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                                                                              <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Expense Details</h6>
+                                                                               <div  class="clearfix"></div>
+                                                                      
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                    <p>Diverse uniform framework</p>
+                                                                            </div>
+                                                                              <div class="col-md-6">
+                                                                                  <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> Start: 12-10-2017</p>
+                                                                              </div>
+        
+                                                                              <div class="col-md-6">
+                                                                                    <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> End: 12-10-2017</p>
+                                                                                </div>
+        
+                                                                               
+                                                                                
+                                                                              </div>   
+  
+  
+                                                                        
+                                                                      </div>
+                                                                  </div>
+                                                                    </div>
+                                                          </div>
+                                          </div>
+
+
+                                          <div class="row" *ngIf="!isContractGridView">
+                                              <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                            <thead>
+                                                              <tr style="background: #555;color: #fff"><th  aria-label="
+                                                                  
+                                                                    
+                                                                    
+                                                                  
+                                                                : activate to sort column descending" style="width: 0px;">
+                                                                  <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline f">
+                                                                    <input type="checkbox" class="group-checkable">
+                                                                    <span style="border-color: #fff !important;"></span>
+                                                                  </label>
+                                                                </th><th class="sorting" tabindex="0" aria-controls="ContractsTable" rowspan="1" colspan="1" aria-label=" # : activate to sort column ascending" style="width: 0px;"> # </th><th class="sorting" tabindex="0" aria-controls="ContractsTable" rowspan="1" colspan="1" aria-label=" Subject : activate to sort column ascending" style="width: 0px;"> Subject </th><th class="sorting" tabindex="0" aria-controls="ContractsTable" rowspan="1" colspan="1" aria-label=" Contract Type : activate to sort column ascending" style="width: 0px;"> Contract Type </th><th class="sorting" tabindex="0" aria-controls="ContractsTable" rowspan="1" colspan="1" aria-label=" Start Date : activate to sort column ascending" style="width: 0px;"> Start Date </th><th class="sorting" tabindex="0" aria-controls="ContractsTable" rowspan="1" colspan="1" aria-label=" End Date : activate to sort column ascending" style="width: 0px;"> End Date </th><th class="sorting" tabindex="0" aria-controls="ContractsTable" rowspan="1" colspan="1" aria-label=" Options : activate to sort column ascending" style="width: 0px;"> Options </th></tr>
+                                                            </thead>
+                                                            <tbody>
+                                                              
+                                                                
+                                                              <tr role="row" class="odd">
+                                                                <td class="sorting_1">
+                                                                  <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                                    <input type="checkbox" class="chkboxes1">
+                                                                    <span></span>
+                                                                  </label>
+                                                                </td>
+                                                                <td> 1 </td>
+                                                                <td class="center"> Diverse uniform framework </td>
+                                                                <td class="center"> Employee </td>
+                                                                <td class="center"> 12 Jan 2017 </td>
+                                                                <td class="center"> 19 Jan 2017 </td>
+                                                                <td class="center">
+                                                                        <span  class="m-switch m-switch--sm m-switch--icon m-switch--success">
+                                                                                <label >
+                                                                                    <input checked="checked" name="" type="checkbox">
+                                                                                    <span ></span>
+                                                                                </label>
+                                                                            </span>
+                                                                </td>
+        
+                                                                </tr><tr role="row" class="even">
+                                                                <td class="sorting_1">
+                                                                  <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                                    <input type="checkbox" class="chkboxes1">
+                                                                    <span></span>
+                                                                  </label>
+                                                                </td>
+                                                                <td> 2 </td>
+                                                                <td class="center">Permission to close your file? </td>
+                                                                <td class="center"> Employee </td>
+                                                                <td class="center"> 12 Feb 2017</td>
+                                                                <td class="center"> 19 Feb 2017 </td>
+                                                                <td class="center">
+                                                                        <span  class="m-switch m-switch--sm m-switch--icon m-switch--success">
+                                                                                <label >
+                                                                                    <input  checked="checked" name="" type="checkbox">
+                                                                                    <span ></span>
+                                                                                </label>
+                                                                            </span>
+                                                                </td>
+        
+                                                                </tr></tbody>
+                                                            </table>
+                                              </div>
+
+                                          </div>
             
                                             </div>
                                                 <!--end: Form Wizard Step 7-->

@@ -14,20 +14,31 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
     
     isInvoiceGridView = true;
     invoiceViewName = "List View";
+   
     
     isPaymentGridView = true;
     paymentViewName = "List View";
+    isZipPaymentForm = false;
 
     isProposalGridView = true;
     proposalViewName = "List View";
+    isProposalForm = false;
 
 
     isEstimateGridView = true;
     estimateViewName = "List View";
+    isEstimateForm = false;
 
 
     isExpenseGridView = true;
     expenseViewName = "List View";
+
+
+    isContractGridView = true;
+    contractViewName = "List View";
+
+
+    
 
     
     
@@ -92,6 +103,7 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
             this.isInvoiceGridView = true;
             this.invoiceViewName = "List View";
         }
+       
         
     }
 
@@ -108,7 +120,7 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
             this.isPaymentGridView = true;
             this.paymentViewName = "List View";
         }
-        
+        this.isZipPaymentForm = false;
     }
 
     changeProposalView()
@@ -123,6 +135,8 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
             this.isProposalGridView = true;
             this.proposalViewName = "List View";
         }
+
+        this.isProposalForm = false;
         
     }
 
@@ -140,6 +154,8 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
             this.isEstimateGridView = true;
             this.estimateViewName = "List View";
         }
+
+        this.isEstimateForm = false;
         
     }
 
@@ -154,6 +170,22 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
         {
             this.isExpenseGridView = true;
             this.expenseViewName = "List View";
+        }
+        
+    }
+
+
+    changeContractView()
+    {
+        if(this.isContractGridView)
+        {
+            this.isContractGridView = false;
+            this.contractViewName = "Grid View";
+        }
+        else
+        {
+            this.isContractGridView = true;
+            this.contractViewName = "List View";
         }
         
     }
