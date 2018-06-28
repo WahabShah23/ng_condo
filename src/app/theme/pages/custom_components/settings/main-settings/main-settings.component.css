@@ -48,17 +48,21 @@
     top: 16%;
     padding: 10px;
 }
+#card6 {
+    top: 20%;
+    padding: 10px;
+}
 
 /*Vertical 3 Cards*/
-#card6 {
+#card11 {
     top: 4%;
     padding: 10px;
 }
-#card7 {
+#card12 {
     top: 8%;
     padding: 10px;
 }
-#card8 {
+#card13 {
     top: 12%;
     padding: 10px;
 }

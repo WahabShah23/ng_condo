@@ -54,7 +54,12 @@
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('system_wide'); visibleSidebar5 = true" ></i>
                 </div>
 
-                <div class="innerCards stackEffect" id="card5"
+                <div class="innerCards stackEffect" id="card5" [ngClass]="className === 'amenities_global' ? 'active_card': 'non_active_card'">
+                    <h6 class="innerCardsTitle m-menu__link-text">Amenities Settings</h6>
+                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('amenities_global'); visibleSidebar5 = true" ></i>
+                </div>
+
+                <div class="innerCards stackEffect" id="card6"
                      [ngClass]="(className === 'building' || className == 'floor' || className == 'apartment' || className == 'amenities') ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Building Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('building'); visibleSidebar5 = true" ></i>
@@ -63,18 +68,18 @@
             </div>
 
             <div class="verticals" id="vertical_3" *ngIf="(className == 'building' || className == 'floor' || className == 'apartment' || className == 'amenities')">
-                <div class="innerCards stackEffect" id="card6">
+                <div class="innerCards stackEffect" id="card11">
                     <h6 class="innerCardsTitle m-menu__link-text">Floor Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('floor'); visibleSidebar5 = true" ></i>
                     <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
                 </div>
-                <div class="innerCards stackEffect" id="card7">
+                <div class="innerCards stackEffect" id="card12">
                     <h6 class="innerCardsTitle m-menu__link-text">Apartment Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('apartment'); visibleSidebar5 = true" ></i>
                     <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
                 </div>
 
-                <div class="innerCards stackEffect" id="card8">
+                <div class="innerCards stackEffect" id="card13">
                     <h6 class="innerCardsTitle m-menu__link-text">Amenities Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('amenities'); visibleSidebar5 = true" ></i>
                     <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
@@ -903,7 +908,7 @@
 
         <!-- -------------------------------------Security Settings Start------------------------------------- -->
         <div class="security-settings" *ngIf="className == 'security'">
-            <h1 style="font-weight:normal">Security Settings</h1>
+            <h3 class="m-subheader__title" style="font-weight:normal">Security Settings</h3>
             <div class="security-settings">
                 <div class="row">
                     <div class="col-md-12">
@@ -915,8 +920,8 @@
         <!-- -------------------------------------Security Settings End------------------------------------- -->
 
         <!-- ----------------------------------------System Wide Settings Start---------------------------------------- -->
-        <div class="building-settings" *ngIf="className == 'system_wide'">
-            <h1 style="font-weight:normal">System Wide Settings</h1>
+        <div class="system_wide-settings" *ngIf="className == 'system_wide'">
+            <h3 class="m-subheader__title" style="font-weight:normal">System Wide Settings</h3>
             <div class="row">
                 <div class="col-md-12 offset-md-2">
                     <div class="row">
@@ -956,6 +961,19 @@
         </div>
         <!-- ----------------------------------------System Wide Settings End---------------------------------------- -->
 
+
+        <!-- ----------------------------------------Amenities Global Start---------------------------------------- -->
+        <div class="amenities_global-settings" *ngIf="className == 'amenities_global'">
+            <h3 class="m-subheader__title" style="font-weight:normal">Amenities Settings</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    Amenities Global Setup
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------------------------Amenities Global End---------------------------------------- -->
+
+
         <!-- ----------------------------------------Building Start---------------------------------------- -->
         <div class="building-settings" *ngIf="className == 'building'">
             <h3 class="m-subheader__title" style="font-weight:normal">Building Settings</h3>
@@ -971,7 +989,7 @@
         </div>
         <!-- ----------------------------------------Building End---------------------------------------- -->
 
-        <!-- ----------------------------------------Building Start---------------------------------------- -->
+        <!-- ----------------------------------------Amenities Start---------------------------------------- -->
         <div class="building-settings" *ngIf="className == 'amenities'">
             <h2 style="font-weight:normal">Amenities Settings</h2>
             <div class="row">
@@ -980,7 +998,7 @@
                 </div>
             </div>
         </div>
-        <!-- ----------------------------------------Building End---------------------------------------- -->
+        <!-- ----------------------------------------Amenities End---------------------------------------- -->
 
         <button pButton type="button" (click)="visibleSidebar5 = false" label="Save" class="ui-button-success"></button>
         <button pButton type="button" (click)="visibleSidebar5 = false" label="Cancel" class="ui-button-secondary"></button>

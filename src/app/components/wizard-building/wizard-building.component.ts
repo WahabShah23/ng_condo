@@ -12,6 +12,13 @@ export class WizardBuildingComponent implements OnInit, AfterViewInit {
 
     staffForm: FormGroup;
     addForm = false;
+
+    isBuildingGridView = true;
+    BuildingViewName = 'List View';
+
+    addFloorForm = false;
+    isFloorGridView = true;
+    FloorViewName = 'List View';
     
 
   
@@ -59,6 +66,29 @@ export class WizardBuildingComponent implements OnInit, AfterViewInit {
     handleFileInput(files: FileList) {
         this.fileToUpload = files.item(0);
     }
+
+    changeBuildingView() {
+        this.isBuildingGridView = !this.isBuildingGridView;
+        if (this.isBuildingGridView) {
+            this.BuildingViewName = 'List View';
+        }
+        else {
+            this.BuildingViewName = 'Grid View';
+        }
+        this.addForm = false;
+    }
+
+    changeFloorView() {
+        this.isFloorGridView = !this.isFloorGridView;
+        if (this.isFloorGridView) {
+            this.FloorViewName = 'List View';
+        }
+        else {
+            this.FloorViewName = 'Grid View';
+        }
+        this.addFloorForm = false;
+    }
+
 
     // uploadFileToActivity() {
     //     // this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
