@@ -505,7 +505,7 @@
                                                 </h3>
                                                 <div class="float-right">
                                                 <button class="btn btn-link float-right" (click)="changePaymentView()"><i class="fa"    [ngClass]="{'fa-list' : isPaymentGridView , 'fa-th' : !isPaymentGridView}" ></i> {{paymentViewName}} </button>
-                                                <button class="btn btn-link" (click)="isZipPaymentForm=!isZipPaymentForm">Zip Payments</button>    
+                                                <button class="btn btn-link" (click)="isZipPaymentForm=!isZipPaymentForm"><i class="fa fa-plus"></i> Zip Payments</button>    
                                             </div>
                                             </div>
                                         </div>
@@ -754,7 +754,7 @@
                                                     Proposals
                                                 </h3>
                                                 <div class="float-right">
-                                                        <button class="btn btn-link" (click)="isProposalForm = !isProposalForm;">Add New Proposal</button>
+                                                        <button class="btn btn-link" (click)="isProposalForm = !isProposalForm;"><i class="fa fa-plus"></i>  New Proposal Request</button>
                                                 <button class="btn btn-link" (click)="changeProposalView()"><i class="fa"    [ngClass]="{'fa-list' : isProposalGridView , 'fa-th' : !isProposalGridView}" ></i> {{proposalViewName}} </button>
                                                 
                                                 </div>
@@ -1260,7 +1260,7 @@
                                                        Estimates
                                                     </h3>
                                                     <div class="float-right">
-                                                    <button class="btn btn-link" (click)="isEstimateForm = !isEstimateForm;">Add New Estimate</button>
+                                                    <button class="btn btn-link" (click)="isEstimateForm = !isEstimateForm;"><i class="fa fa-plus"></i>  New Estimate Request</button>
                                                     <button class="btn btn-link" (click)="changeEstimateView()"><i class="fa"    [ngClass]="{'fa-list' : isEstimateGridView , 'fa-th' : !isEstimateGridView}" ></i> {{estimateViewName}} </button>
                                                     </div>
                                                 </div>
@@ -1635,11 +1635,167 @@
                                                         <h3 class="m-form__heading-title float-left">
                                                            Expenses
                                                         </h3>
-                                                        <button class="btn btn-link float-right" (click)="changeExpenseView()"><i class="fa"    [ngClass]="{'fa-list' : isExpenseGridView , 'fa-th' : !isExpenseGridView}" ></i> {{expenseViewName}} </button>
+                                                        <div class="float-right">
+                                                                <button class="btn btn-link" (click)="isExpenseForm = !isExpenseForm;"><i class="fa fa-plus"></i>  New Expense Request</button>
+                                                                <button class="btn btn-link float-right" (click)="changeExpenseView()"><i class="fa"    [ngClass]="{'fa-list' : isExpenseGridView , 'fa-th' : !isExpenseGridView}" ></i> {{expenseViewName}} </button>
+                                                        </div>
+                                                       
                                                     </div>
                                                 </div>
 
-                                                <div class="row" *ngIf="!isExpenseGridView">
+                                                <div class="row" *ngIf="isExpenseForm">
+
+                                                           <div class="col-md-12">
+                                                               <button class="btn btn-link" (click)="isExpenseForm=false;" style="padding-left:0px;"><i class="fa fa-chevron-left"></i> Back</button>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                              <h6>Add New Expense</h6>
+                                                              <hr>
+                                                              <div class="form-group">
+                                                                    <label for="exampleInputFile">Upload File</label>
+                                                                    <input type="file" class="form-control-file" >
+                                                                  </div>
+
+                                                           
+
+                                                              <div class="form-group">
+                                                                <label>Subject</label>
+                                                                <input type="text" class="form-control" placeholder="">
+                                                              </div>
+                                                              
+                                                              <div class="form-group ">
+                                                                <label>Expense Category</label>
+                                                                <select class="form-control edited">
+                                                                  <option>Option 1</option>
+                                                                  <option>Option 2</option>
+                                                                  <option>Option 3</option>
+                                                                  <option>Option 4</option>
+                                                                  <option>Option 5</option>
+                                                                </select>
+                                                              </div>
+
+                                                              <div class="form-group">
+                                                                <!-- <label>Date</label> -->
+                                                                <label > Select date </label>
+                                                                <input class="form-control" type="date">
+                                                               
+                                                              </div>
+                                                              <br>
+                                                              <div class="form-group">
+                                                                    <label class="m-checkbox">
+                                                                            <input type="checkbox">
+                                                                           Billable 
+                                                                            <span></span>
+                                                                        </label>
+                                                              </div>
+                                                              <div class="form-group">
+                                                                    <label>Customer</label>
+                                                                <select class="form-control edited">
+                                                                  <option>Option 1</option>
+                                                                  <option>Option 2</option>
+                                                                  <option>Option 3</option>
+                                                                  <option>Option 4</option>
+                                                                  <option>Option 5</option>
+                                                                </select>
+                                                             
+                                                              </div>
+                                                              <div class="form-group">
+                                                                    <label>Project</label>
+                                                                <select class="form-control edited">
+                                                                  <option>Option 1</option>
+                                                                  <option>Option 2</option>
+                                                                  <option>Option 3</option>
+                                                                  <option>Option 4</option>
+                                                                  <option>Option 5</option>
+                                                                </select>
+                                                              
+                                                              </div>
+                                                            </div>
+  
+                                                            <div class="col-md-6">
+                                                              <h6>Advanced Options</h6>
+                                                              <hr>
+                                                              <div class="form-group">
+                                                                    <label>Currency</label>
+                                                                <select class="form-control edited">
+                                                                  <option>Option 1</option>
+                                                                  <option>Option 2</option>
+                                                                  <option>Option 3</option>
+                                                                  <option>Option 4</option>
+                                                                  <option>Option 5</option>
+                                                                </select>
+                                                              
+                                                              </div>
+
+                                                              <div class="form-group">
+                                                                    <label>Reference #</label>
+                                                                <input type="text" class="form-control" placeholder="">
+                                                              </div>
+
+                                                              <div class="mt-checkbox-inline">
+                                                                <div class="form-group" >
+                                                                    <label>Payment Mode</label>
+                                                                  <select class="form-control edited">
+                                                                    <option>Option 1</option>
+                                                                    <option>Option 2</option>
+                                                                    <option>Option 3</option>
+                                                                    <option>Option 4</option>
+                                                                    <option>Option 5</option>
+                                                                  </select>
+                                                                 
+                                                                </div>
+                                                                <div class="form-group">
+                                                                        <label>Tax</label>
+                                                                  <select class="form-control edited">
+                                                                    <option>Option 1</option>
+                                                                    <option>Option 2</option>
+                                                                    <option>Option 3</option>
+                                                                    <option>Option 4</option>
+                                                                    <option>Option 5</option>
+                                                                  </select>
+                                                                  
+                                                                </div>
+                                                              </div>
+                                                              <div class="form-group" >
+                                                                    <label>Repeat Every</label>
+                                                                <select class="form-control edited">
+                                                                    
+                                                                  <option>Option 1</option>
+                                                                  <option>Option 2</option>
+                                                                  <option>Option 3</option>
+                                                                  <option>Option 4</option>
+                                                                  <option>Option 5</option>
+                                                                </select>
+                                                                
+                                                              </div>
+                                                              
+                                                              <div class="form-group">
+                                                                    <label>Description</label>
+                                                                    <textarea class="form-control" rows="3"></textarea>
+                                                                </div>
+
+                                                              <div  class="form-group">
+                                                                    <label  class="m-checkbox">
+                                                                            <input  type="checkbox">
+                                                                            Auto Create Invoice
+                                                                            <span></span>
+                                                                        </label>
+                                                              </div>
+
+                                                              <div  class="form-group">
+                                                                    <label  class="m-checkbox">
+                                                                            <input  type="checkbox">
+                                                                            Send the invoice to customer email when expense repeated
+                                                                            <span></span>
+                                                                        </label>
+                                                              </div>
+                                                            </div>
+                                                         
+  
+                                                      </div>
+
+                                                <div class="row" *ngIf="!isExpenseGridView && !isExpenseForm">
                                                     <div class="table-responsive">
                                                             <table class="table table-striped">
                                                                     <thead>
@@ -1695,7 +1851,7 @@
                                                 </div>
 
 
-                                                <div class="row" *ngIf="isExpenseGridView">
+                                                <div class="row" *ngIf="isExpenseGridView && !isExpenseForm">
                                                         <div class="col-md-6">
                                                           <div  class="body organ1">
                                                               <div  class="row" style="margin:0px;">    
@@ -1841,112 +1997,196 @@
                                                             <h3 class="m-form__heading-title float-left">
                                                                Contracts
                                                             </h3>
-                                                            <button class="btn btn-link float-right" (click)="changeContractView()"><i class="fa"    [ngClass]="{'fa-list' : isContractGridView , 'fa-th' : !isContractGridView}" ></i> {{contractViewName}} </button>
+                                                            <div class="float-right">
+                                                                    <button class="btn btn-link float-right" (click)="changeContractView()"><i class="fa"    [ngClass]="{'fa-list' : isContractGridView , 'fa-th' : !isContractGridView}" ></i> {{contractViewName}} </button>
+                                                                    <button class="btn btn-link" (click)="isContactForm = !isContactForm;"><i class="fa fa-plus"></i>  New Contract Request</button>
+                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
-                                                  
-                                                    <div class="row" *ngIf="isContractGridView">
-                                                        <div class="col-md-6">
-                                                          <div  class="body organ1">
-                                                              <div  class="row" style="margin:0px;">    
-                                                              <div  class="card-left col-lg-3" id="">
-                                                                    <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                                                      <input  class="chkboxes" type="checkbox">
-                                                                      <span ></span>
-                                                                    </label>
-                                                                    <div  class="row onepersonrow">
-                                                                         
-                                                                      <div  class="col-md-12">
-                                                                            <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
-                                                                            <p  class="personname">Shuxer</p>
-                                                                            <p class="invoicenumber"><i class="fa fa-phone"></i> 987 3673 387 </p>
-                                                                      </div> 
-                                                                </div>
-                                                                         <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
-                                                                         <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
-                                                                         <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
-                                                                          
-                                                                         
-                                                                  </div>
-                                                                  <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                                                                          <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Contract Details</h6>
-                                                                           <div  class="clearfix"></div>
-                                                                  
-                                                                    <div class="row">
-                                                                            <div class="col-md-12">
-                                                                                    <p>Permission to close your file?</p>
-                                                                            </div>
-                                                                          <div class="col-md-6">
-                                                                              <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> Start: 12-10-2017</p>
-                                                                          </div>
-    
-                                                                          <div class="col-md-6">
-                                                                                <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> End: 12-11-2017</p>
-                                                                            </div>
-    
-                                                                           
-                                                                            
-                                                                          </div>   
-                                                                    
-                                                                  </div>
-                                                              </div>
-                                                                </div>
-                                                      </div>
-  
-  
-  
-                                                      <div  class="col-md-6">
-                                                              <div  class="body organ1">
-                                                                  <div  class="row" style="margin:0px;">    
-                                                                  <div  class="card-left col-lg-3" id="">
-                                                                        <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                                                          <input  class="chkboxes" type="checkbox">
-                                                                          <span ></span>
+
+                                                    <div class="row" *ngIf="isContactForm">
+
+
+                                                            <div class="col-md-12">
+                                                                    <button class="btn btn-link" (click)="isContactForm=false;" style="padding-left:0px;"><i class="fa fa-chevron-left"></i> Back</button>
+                                                                 </div>
+
+                                                        <div class="col-sm-12">
+                                                                <div class="m-checkbox-inline">
+                                                                        <label class="m-checkbox">
+                                                                            <input type="checkbox">
+                                                                            Trash
+                                                                            <span></span>
                                                                         </label>
-                                                                        <div  class="row onepersonrow">
-                                                                             
-                                                                          <div  class="col-md-12">
-                                                                                <img  class="personimage" src="assets/app/media/img/logos/logo-1.png">
-                                                                                <p  class="personname">Looper</p>
-                                                                                <p class="invoicenumber"><i class="fa fa-phone"></i> 987 3673 387</p>
-                                                                          </div> 
+                                                                        <label class="m-checkbox">
+                                                                            <input type="checkbox">
+                                                                            Hide From Supplier
+                                                                            <span></span>
+                                                                        </label>
                                                                     </div>
-                                                                             <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
-                                                                             <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
-                                                                             <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
-                                                                              
-                                                                             
-                                                                      </div>
-                                                                      <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                                                                              <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Expense Details</h6>
-                                                                               <div  class="clearfix"></div>
-                                                                      
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">
-                                                                                    <p>Diverse uniform framework</p>
-                                                                            </div>
-                                                                              <div class="col-md-6">
-                                                                                  <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> Start: 12-10-2017</p>
-                                                                              </div>
-        
-                                                                              <div class="col-md-6">
-                                                                                    <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> End: 12-10-2017</p>
-                                                                                </div>
-        
-                                                                               
-                                                                                
-                                                                              </div>   
-  
-  
-                                                                        
-                                                                      </div>
-                                                                  </div>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <label>Supplier</label>
+                                                          <select class="form-control">
+                                                            <option></option>
+                                                            <option>Option 1</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                            <option>Option 4</option>
+                                                          </select>
+                                                         
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Subject</label>
+                                                          <input type="text" class="form-control" placeholder="">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                                <label>Contract Value</label>
+                                                          <input type="number" class="form-control" placeholder="">
+                                                         
+                                                        </div>
+
+                                                        
+
+                                                  </div>
+
+                                                  <div class="col-md-6">
+                                                        <div class="form-group">
+                                                                <label>Contract Type</label>
+                                                                <select class="form-control">
+                                                                  <option></option>
+                                                                  <option>Option 1</option>
+                                                                  <option>Option 2</option>
+                                                                  <option>Option 3</option>
+                                                                  <option>Option 4</option>
+                                                                </select>
+                                                             
+                                                              </div>
+                                                          <div class="form-group">
+                                                                <label>Date Range</label>
+                                                            <div class="input-group" style="width: 100%;">
+                                                              <input type="date" class="form-control" name="from">
+                                                              <span class="input-group-addon" style="margin-top: 10px;padding: 0px 12px;"> TO </span>
+                                                              <input type="date" class="form-control" name="to">
+                                                            </div>
                                                           </div>
+                                                          <div class="form-group">
+                                                                <label>Description</label>
+                                                            <textarea class="form-control" rows="3"></textarea>
+                                                           
+                                                          </div>
+                                                  </div>
+                                                  
+                                                    
                                           </div>
 
 
-                                          <div class="row" *ngIf="!isContractGridView">
+                                          <div class="row" *ngIf="isContractGridView && !isContactForm">
+                                                <div class="col-md-6">
+                                                  <div  class="body organ1">
+                                                      <div  class="row" style="margin:0px;">    
+                                                      <div  class="card-left col-lg-3" id="">
+                                                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                              <input  class="chkboxes" type="checkbox">
+                                                              <span ></span>
+                                                            </label>
+                                                            <div  class="row onepersonrow">
+                                                                 
+                                                              <div  class="col-md-12">
+                                                                    <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
+                                                                    <p  class="personname">Shuxer</p>
+                                                                    <p class="invoicenumber"><i class="fa fa-phone"></i> 987 3673 387 </p>
+                                                              </div> 
+                                                        </div>
+                                                                 <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
+                                                                 <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
+                                                                 <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
+                                                                  
+                                                                 
+                                                          </div>
+                                                          <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                                                                  <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Contract Details</h6>
+                                                                   <div  class="clearfix"></div>
+                                                          
+                                                            <div class="row">
+                                                                    <div class="col-md-12">
+                                                                            <p>Permission to close your file?</p>
+                                                                    </div>
+                                                                  <div class="col-md-6">
+                                                                      <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> Start: 12-10-2017</p>
+                                                                  </div>
+
+                                                                  <div class="col-md-6">
+                                                                        <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> End: 12-11-2017</p>
+                                                                    </div>
+
+                                                                   
+                                                                    
+                                                                  </div>   
+                                                            
+                                                          </div>
+                                                      </div>
+                                                        </div>
+                                              </div>
+
+
+
+                                              <div  class="col-md-6">
+                                                      <div  class="body organ1">
+                                                          <div  class="row" style="margin:0px;">    
+                                                          <div  class="card-left col-lg-3" id="">
+                                                                <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                                  <input  class="chkboxes" type="checkbox">
+                                                                  <span ></span>
+                                                                </label>
+                                                                <div  class="row onepersonrow">
+                                                                     
+                                                                  <div  class="col-md-12">
+                                                                        <img  class="personimage" src="assets/app/media/img/logos/logo-1.png">
+                                                                        <p  class="personname">Looper</p>
+                                                                        <p class="invoicenumber"><i class="fa fa-phone"></i> 987 3673 387</p>
+                                                                  </div> 
+                                                            </div>
+                                                                     <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
+                                                                     <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
+                                                                     <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
+                                                                      
+                                                                     
+                                                              </div>
+                                                              <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                                                                      <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Expense Details</h6>
+                                                                       <div  class="clearfix"></div>
+                                                              
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                            <p>Diverse uniform framework</p>
+                                                                    </div>
+                                                                      <div class="col-md-6">
+                                                                          <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> Start: 12-10-2017</p>
+                                                                      </div>
+
+                                                                      <div class="col-md-6">
+                                                                            <p class="contact-para"><i class="fa fa-calendar" aria-hidden="true"></i> End: 12-10-2017</p>
+                                                                        </div>
+
+                                                                       
+                                                                        
+                                                                      </div>   
+
+
+                                                                
+                                                              </div>
+                                                          </div>
+                                                            </div>
+                                                  </div>
+                                            </div>
+
+
+                                          <div class="row" *ngIf="!isContractGridView && !isContactForm">
                                               <div class="table-responsive">
                                                     <table class="table table-striped">
                                                             <thead>

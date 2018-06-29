@@ -32,10 +32,12 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
 
     isExpenseGridView = true;
     expenseViewName = "List View";
+    isExpenseForm = false;
 
 
     isContractGridView = true;
     contractViewName = "List View";
+    isContactForm = false;
 
 
     
@@ -171,6 +173,8 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
             this.isExpenseGridView = true;
             this.expenseViewName = "List View";
         }
+
+        this.isExpenseForm = false;
         
     }
 
@@ -188,6 +192,8 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
             this.contractViewName = "List View";
         }
         
+        this.isContactForm = false;
+
     }
 
 
