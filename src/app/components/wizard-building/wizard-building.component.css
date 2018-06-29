@@ -170,3 +170,10 @@ input.ng-invalid.ng-touched {
 {
     padding: 0px !important; 
 }
+
+.m-widget14__stat[_ngcontent-c7] {
+    position: absolute;
+    top: 30%;
+    left: 27%;
+    font-size: 18px;
+}

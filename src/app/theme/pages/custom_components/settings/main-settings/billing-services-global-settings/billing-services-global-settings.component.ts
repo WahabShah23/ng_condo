@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillingServicesGlobalSettingsComponent implements OnInit {
 
+
+  addBillingForm = false;
+
+  isBillingGridView = true;
+  billingViewName = 'List View';
   constructor() { }
 
   ngOnInit() {
   }
+
+
+  changeBillingView() {
+    this.isBillingGridView = !this.isBillingGridView;
+    if (this.isBillingGridView) {
+        this.billingViewName = 'List View';
+    }
+    else {
+        this.billingViewName = 'Grid View';
+    }
+    this.addBillingForm = false;
+}
 
 }
