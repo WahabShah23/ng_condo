@@ -55,11 +55,16 @@
                 </div>
 
                 <div class="innerCards stackEffect" id="card5" [ngClass]="className === 'amenities_global' ? 'active_card': 'non_active_card'">
-                    <h6 class="innerCardsTitle m-menu__link-text">Amenities Settings</h6>
+                    <h6 class="innerCardsTitle m-menu__link-text">Amenities Global Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('amenities_global'); visibleSidebar5 = true" ></i>
                 </div>
 
-                <div class="innerCards stackEffect" id="card6"
+                <div class="innerCards stackEffect" id="card6" [ngClass]="className === 'billing-services_global' ? 'active_card': 'non_active_card'">
+                    <h6 class="innerCardsTitle m-menu__link-text">Billing/Services Global Settings</h6>
+                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('billing-services_global'); visibleSidebar5 = true" ></i>
+                </div>
+
+                <div class="innerCards stackEffect" id="card7"
                      [ngClass]="(className === 'building' || className == 'floor' || className == 'apartment' || className == 'amenities') ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Building Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('building'); visibleSidebar5 = true" ></i>
@@ -967,7 +972,18 @@
             <h3 class="m-subheader__title" style="font-weight:normal">Amenities Settings</h3>
             <div class="row">
                 <div class="col-md-12">
-                    Amenities Global Setup
+                    <app-amenities-global-settings></app-amenities-global-settings>
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------------------------Amenities Global End---------------------------------------- -->
+
+        <!-- ----------------------------------------Billing/Services Global Start---------------------------------------- -->
+        <div class="billing-services-settings" *ngIf="className == 'billing-services_global'">
+            <h3 class="m-subheader__title" style="font-weight:normal">Billing/Services Settings</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <app-billing-services-global-settings></app-billing-services-global-settings>
                 </div>
             </div>
         </div>
@@ -991,7 +1007,7 @@
 
         <!-- ----------------------------------------Amenities Start---------------------------------------- -->
         <div class="building-settings" *ngIf="className == 'amenities'">
-            <h2 style="font-weight:normal">Amenities Settings</h2>
+            <h2 style="font-weight:normal">Amenities Local Settings</h2>
             <div class="row">
                 <div class="col-md-12">
                     Amenities Setup
