@@ -1,4 +1,331 @@
-<p>
-    amenities-global-settings works!
-</p>
+<div class="m-content">
+
+    <div class="m-form__section m-form__section--first">
+        <div class="m-form__heading">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <!--<h3 class="m-form__heading-title">-->
+                        <!--Amenities-->
+                    <!--</h3>-->
+                </div>
+                <button class="btn btn-link">
+                    <i class="fa fa-plus" (click)="addAmenitiesForm = true"> Add Amenities</i>
+                </button>
+                <button class="btn btn-link" (click)="changeAmenityView()">
+                    <i class="fa" [ngClass]="{'fa-list': isAmenityGridView, 'fa-th' : !isAmenityGridView}"></i>
+                    <small>{{AmenityViewName}}</small>
+                </button>
+            </div>
+        </div>
+
+        <!-- ---------------------------Buildings Cards Start---------------------------------- -->
+
+        <div class="row" *ngIf="!addAmenityForm && isAmenityGridView">
+            <div  class="col-md-3">
+                <div  class="body organ1">
+                    <div  class="row" style="margin:0px;">
+                        <div  class="card-left col-lg-3" id="">
+                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                <input  class="chkboxes" type="checkbox">
+                                <span ></span>
+                            </label>
+                            <div  class="row onepersonrow">
+
+                                <div  class="col-md-12">
+                                    <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
+                                    <p  class="personname">ABC Amenity</p>
+                                    <p  class="persontype">Water Suppliers</p>
+                                </div>
+                            </div>
+                            <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
+                            <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
+                            <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
+
+
+                        </div>
+                        <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Amenity Details</h6>
+                            <div  class="clearfix"></div>
+                            <div  class="row">
+                                <div  class="col-sm-6">
+                                    <div class="m-widget14__chart" id="customerPieChart7" style="height: 100px">
+                                        <div  class="m-widget14__stat">
+                                            10
+                                        </div>
+                                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                    <h6  class="text-center">Floors</h6>
+                                </div>
+                                <div  class="col-sm-6">
+                                    <div  class="m-widget14__chart" id="customerPieChart7" style="height: 100px">
+                                        <div  class="m-widget14__stat">
+                                            100
+                                        </div>
+                                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                    <h6  class="text-center">Apartments</h6>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div  class="col-md-3">
+                <div  class="body organ1">
+                    <div  class="row" style="margin:0px;">
+                        <div  class="card-left col-lg-3" id="">
+                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                <input  class="chkboxes" type="checkbox">
+                                <span ></span>
+                            </label>
+                            <div  class="row onepersonrow">
+
+                                <div  class="col-md-12">
+                                    <img  class="personimage" src="assets/app/media/img/logos/logo-1.png">
+                                    <p  class="personname">Xyz Amenity</p>
+                                    <p  class="persontype">Sanitory Works</p>
+                                </div>
+                            </div>
+                            <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
+                            <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
+                            <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
+
+
+                        </div>
+                        <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Amenity Details</h6>
+                            <div  class="clearfix"></div>
+                            <div  class="row">
+                                <div  class="col-sm-6">
+                                    <div class="m-widget14__chart" id="customerPieChart7" style="height: 100px">
+                                        <div  class="m-widget14__stat">
+                                            15
+                                        </div>
+                                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                    <h6  class="text-center">Floors</h6>
+                                </div>
+                                <div  class="col-sm-6">
+                                    <div  class="m-widget14__chart" id="customerPieChart7" style="height: 100px">
+                                        <div  class="m-widget14__stat">
+                                            150
+                                        </div>
+                                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                    <h6  class="text-center">Apartments</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------------------Amenities Cards End---------------------------------- -->
+
+        <!-- ---------------------------Amenities List Start---------------------------------- -->
+        <div *ngIf="!addAmenityForm && !isAmenityGridView">
+            <div class="cold-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr style="background: #555;color: #fff" role="row"><th>
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline f">
+                                <input type="checkbox" class="group-checkable">
+                                <span style="border-color: #fff !important;"></span>
+                            </label>
+                        </th>
+                            <th > Building # </th>
+                            <th> Building Name </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Building Type </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Invoice Date </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Due Date : activate to sort column ascending" style="width: 0px;"> Due Date </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Sales Order : activate to sort column ascending" style="width: 0px;"> Sales Order </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Total Tax : activate to sort column ascending" style="width: 0px;"> Total Tax </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Amount : activate to sort column ascending" style="width: 0px;"> Amount </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending" style="width: 0px;"> Status</th></tr>
+                        </thead>
+                        <tfoot>
+                        </tfoot>
+                        <tbody>
+                        <tr role="row">
+                            <td >
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="chkboxes1">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td> ABC Building</td>
+                            <td class="center">
+                                Condo Style A
+                            </td>
+                            <td class="center"> 98 5674 8785 </td>
+                            <td class="center"> 12 march 2017 </td>
+                            <td class="center"> 19 march 2017 </td>
+                            <td class="center">Service</td>
+                            <td class="center"> $400 </td>
+                            <td class="center"> $100</td>
+                            <td><span class="label label-sm label-success"> Approved </span></td>
+                        </tr><tr role="row" class="even">
+                            <td class="sorting_1">
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="chkboxes1-inv">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td> XYZ Building </td>
+                            <td class="center">
+                                Condo Style 2
+                            </td>
+                            <td class="center"> 98 5674 8785 </td>
+                            <td class="center"> 11 march 2017 </td>
+                            <td class="center"> 17 march 2017 </td>
+                            <td class="center">Product</td>
+                            <td class="center"> $350 </td>
+                            <td class="center"> $100 </td>
+                            <td><span class="label label-sm label-warning"> Pending </span></td>
+
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------------Amenities List End---------------------------------- -->
+
+        <!-- ----------------------------- Add Form Start------------------------------- -->
+        <div class="row" *ngIf="addAmenityForm">
+            <div class="col-md-6">
+                <div class="form-group m-form__group">
+                    <label for="input1">
+                        Building Name:
+                    </label>
+                    <input  aria-describedby="input1" class="form-control form-control-sm m-input m-input--air"
+                            placeholder="Building Name" type="text" formControlName="firstname">
+                </div>
+                <div class="form-group m-form__group">
+                    <label>
+                        Building Type:
+                    </label>
+                    <select class="form-control m-input m-input--air" type="text"  formControlName="companyLocation">
+                        <option *ngFor="let item of companyLocations" [value]="item">{{item}}</option>
+                    </select>
+                    <!--<select class="form-control form-control-sm m-input" type="text"  formControlName="companyLocation">-->
+                    <!--<option *ngFor="let item of companyLocations" [value]="item">{{item}}</option>-->
+                    <!--</select>-->
+                </div>
+                <div class="form-group m-form__group">
+                    <label for="floorSelect">
+                        Number of floors
+                    </label>
+                    <select class="form-control m-input m-input--air" id="floorSelect">
+                        <option>
+
+                        </option>
+                        <option>
+                            5
+                        </option>
+                        <option>
+                            10
+                        </option>
+                        <option>
+                            15
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group m-form__group">
+                    <label for="exampleTextarea">
+                        Contact Number:
+                    </label>
+                    <input class="form-control-sm form-control m-input m-input--air" type="tel" value="1-(555)-555-5555" formControlName="contactNo">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group m-form__group">
+                    <label for="input2">
+                        Location:
+                    </label>
+                    <input class="form-control form-control-sm m-input m-input--air" placeholder="Location" type="text" formControlName="lastname">
+                </div>
+                <div class="form-group m-form__group">
+                    <label for="exampleSelect1">
+                        Choose Amenities
+                    </label>
+                    <select class="form-control m-input m-input--air" id="exampleSelect1">
+                        <option>
+
+                        </option>
+                        <option>
+                            Swimming Pool
+                        </option>
+                        <option>
+                            Parking
+                        </option>
+                        <option>
+                            Gym
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group m-form__group">
+                    <label for="apartmentSelect">
+                        Number of apartments
+                    </label>
+                    <select class="form-control m-input m-input--air" id="apartmentSelect">
+                        <option>
+
+                        </option>
+                        <option>
+                            10
+                        </option>
+                        <option>
+                            15
+                        </option>
+                        <option>
+                            20
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group m-form__group">
+                    <label>
+                        Apartment Type:
+                    </label>
+                    <select class="form-control m-input m-input--air" type="text"  formControlName="companyLocation">
+                        <option>
+
+                        </option>
+                        <option>
+                            2 Bed Studio
+                        </option>
+                        <option>
+                            3 Bed Studio
+                        </option>
+                        <option>
+                            Master Studio
+                        </option>
+                    </select>
+                    <!--<select class="form-control form-control-sm m-input" type="text"  formControlName="companyLocation">-->
+                    <!--<option *ngFor="let item of companyLocations" [value]="item">{{item}}</option>-->
+                    <!--</select>-->
+                </div>
+                <!--<div class="form-group m-form__group">-->
+                <!--<label for="label3">-->
+                <!--Address:-->
+                <!--</label>-->
+                <!--<textarea class="form-control m-input" rows="1" formControlName="address"></textarea>-->
+                <!--</div>-->
+
+                <div class="form-group m-form__group">
+                    <label for="exampleTextarea">
+                        Description:
+                    </label>
+                    <textarea class="form-control m-input" rows="" formControlName="discription"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------------Add Amenity Form Start---------------------------------- -->
+
+    </div>
+
+</div>
 
