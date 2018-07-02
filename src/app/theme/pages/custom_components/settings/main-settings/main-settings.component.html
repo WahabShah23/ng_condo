@@ -59,6 +59,8 @@
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('amenities_global'); visibleSidebar5 = true" ></i>
                 </div>
 
+            
+
                 <div class="innerCards stackEffect" id="card6" [ngClass]="className === 'billing-services_global' ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Billing/Services Global Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('billing-services_global'); visibleSidebar5 = true" ></i>
@@ -70,6 +72,11 @@
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('building'); visibleSidebar5 = true" ></i>
                     <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
                 </div>
+
+                <div class="innerCards stackEffect" id="card8" [ngClass]="className === 'common-services_global' ? 'active_card': 'non_active_card'">
+                        <h6 class="innerCardsTitle m-menu__link-text">Common Services Global Settings</h6>
+                        <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('common-services_global'); visibleSidebar5 = true" ></i>
+                    </div>
             </div>
 
             <div class="verticals" id="vertical_3" *ngIf="(className == 'building' || className == 'floor' || className == 'apartment' || className == 'amenities')">
@@ -1015,6 +1022,15 @@
             </div>
         </div>
         <!-- ----------------------------------------Amenities End---------------------------------------- -->
+
+        <div class="commom-services" *ngIf="className == 'common-services_global'">
+                <h2 style="font-weight:normal">Common Services Settings</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                     <app-common-services-global-settings></app-common-services-global-settings>
+                    </div>
+                </div>
+            </div>
 
         <button pButton type="button" (click)="visibleSidebar5 = false" label="Save" class="ui-button-success"></button>
         <button pButton type="button" (click)="visibleSidebar5 = false" label="Cancel" class="ui-button-secondary"></button>

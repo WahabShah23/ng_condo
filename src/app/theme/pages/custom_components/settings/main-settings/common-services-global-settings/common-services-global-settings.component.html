@@ -6,7 +6,7 @@
                 </h3> -->
             </div>
             <button class="btn btn-link">
-                    <i class="fa fa-plus" (click)="addBillingForm = true"> Add Billing</i>
+                    <i class="fa fa-plus" (click)="addBillingForm = true"> Add Service</i>
                 </button>
                 <button class="btn btn-link" (click)="changeBillingView()">
                     <i class="fa" [ngClass]="{'fa-list': isBillingGridView, 'fa-th' : !isBillingGridView}"></i>
@@ -29,8 +29,8 @@
 
                             <div  class="col-md-12">
                                 <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
-                                <p  class="personname">Maintenance</p>
-                                <p  class="persontype">Air Conditioner Maintenance</p>
+                                <p  class="personname">AC Maintenance</p>
+                                <p  class="persontype">Central Air Conditioner</p>
                             </div>
                         </div>
                         <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -40,7 +40,7 @@
 
                     </div>
                     <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                        <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Billing Details</h6>
+                        <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Service Details</h6>
                         <div  class="clearfix"></div>
                         <div  class="row">
                             <div  class="col-sm-6">
@@ -79,8 +79,8 @@
 
                             <div  class="col-md-12">
                                 <img  class="personimage" src="assets/app/media/img/logos/logo-1.png">
-                                <p  class="personname">Tax</p>
-                                <p  class="persontype">Land Tax</p>
+                                <p  class="personname">Heating System Installation</p>
+                                <p  class="persontype">Heating</p>
                             </div>
                         </div>
                         <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -90,7 +90,7 @@
 
                     </div>
                     <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                        <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Billing Details</h6>
+                        <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Service Details</h6>
                         <div  class="clearfix"></div>
                         <div  class="row">
                             <div  class="col-sm-6">
@@ -119,7 +119,7 @@
     <!-- ---------------------------Services Cards End---------------------------------- -->
 
 <div class="row" *ngIf="!isBillingGridView && !addBillingForm">
-    <div class="col-sm-12">
+        <div class="col-sm-12">
     <div  class="table-responsive">
             <table  class="table table-striped">
                 <thead >
@@ -129,9 +129,9 @@
                         <span  style="border-color: #fff !important;"></span>
                     </label>
                 </th>
-                    <th > Billing # </th>
-                    <th  aria-controls="InvoicesTable" aria-label=" Invoice Type : activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 0px;" tabindex="0"> Billing Type </th>
-                    <th  aria-controls="InvoicesTable" aria-label=" Invoice Date : activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 0px;" tabindex="0"> Billing Subtype </th>
+                    <th > Services # </th>
+                    <th  aria-controls="InvoicesTable" aria-label=" Invoice Type : activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 0px;" tabindex="0"> Service Name </th>
+                    <th  aria-controls="InvoicesTable" aria-label=" Invoice Date : activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 0px;" tabindex="0"> Service Type </th>
                     <th  aria-controls="InvoicesTable" aria-label=" Due Date : activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 0px;" tabindex="0"> Charges </th>
                     <th  aria-controls="InvoicesTable" aria-label=" Sales Order : activate to sort column ascending" class="sorting" colspan="1" rowspan="1" style="width: 0px;" tabindex="0"> Others </th>
                 </thead>
@@ -147,9 +147,9 @@
                     </td>
                     <td >1 </td>
                     <td  class="center">
-                            Maintenance
+                            AC Maintenance
                     </td>
-                    <td  class="center">Air Conditioner Maintenance</td>
+                    <td  class="center">Central Air Conditioner</td>
                     <td  class="center"> $10 </td>
                     <td  class="center"> $100 </td>
                 </tr>
@@ -162,9 +162,9 @@
                         </td>
                         <td >2 </td>
                         <td  class="center">
-                                Tax
+                                Heating System Installation
                         </td>
-                        <td  class="center">Land Tax</td>
+                        <td  class="center">Heating</td>
                         <td  class="center"> $15 </td>
                         <td  class="center"> $150 </td>
                     </tr>    
@@ -172,7 +172,7 @@
 
             </table>
         </div>
-    </div>
+        </div>
 </div>
 
 
@@ -186,7 +186,7 @@
                 <label  for="input1">
                     Service Name:
                 </label>
-                <input  class="form-control m-input m-input--air"  placeholder="Service Name" type="text">
+                <input  class="form-control  m-input m-input--air"  placeholder="Service Name" type="text">
             </div>
 
             <div  class="form-group m-form__group">
@@ -205,21 +205,25 @@
                 </label>
                 <select  class="form-control m-input m-input--air" id="apartmentSelect">
                         <option >
-                            Tax
+                            Cabin
                         </option>
                         <option >
-                            Repairing
+                            Insurance
                         </option>
                         <option >
-                            Maintenance
-                        </option>
-
-                        <option >
-                            Cable
+                            Central Air Conditioner
                         </option>
 
                         <option >
-                           Dish
+                            Hyrdro
+                        </option>
+
+                        <option >
+                           Water
+                        </option>
+
+                        <option >
+                          Heating
                         </option>
 
                     </select>

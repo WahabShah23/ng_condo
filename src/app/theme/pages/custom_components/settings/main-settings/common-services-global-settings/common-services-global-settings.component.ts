@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-billing-services-global-settings',
-  templateUrl: './billing-services-global-settings.component.html',
-  styleUrls: ['./billing-services-global-settings.component.css']
+  selector: 'app-common-services-global-settings',
+  templateUrl: './common-services-global-settings.component.html',
+  styleUrls: ['./common-services-global-settings.component.css']
 })
-export class BillingServicesGlobalSettingsComponent implements OnInit {
+export class CommonServicesGlobalSettingsComponent implements OnInit {
 
 
   addBillingForm = false;
