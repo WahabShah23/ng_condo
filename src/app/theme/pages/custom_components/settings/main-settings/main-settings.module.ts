@@ -12,6 +12,7 @@ import { WizardBuildingComponent } from "../../../../../components/wizard-buildi
 import { AmenitiesGlobalSettingsComponent } from './amenities-global-settings/amenities-global-settings.component';
 import { BillingServicesGlobalSettingsComponent } from './billing-services-global-settings/billing-services-global-settings.component';
 import { BuildingSettingsComponent } from './building-settings/building-settings.component';
+import { CommonServicesGlobalSettingsComponent } from './common-services-global-settings/common-services-global-settings.component';
 
 
 
@@ -39,7 +40,8 @@ const routes: Routes = [
         WizardBuildingComponent,
         AmenitiesGlobalSettingsComponent,
         BillingServicesGlobalSettingsComponent,
-        BuildingSettingsComponent
+        BuildingSettingsComponent,
+        CommonServicesGlobalSettingsComponent
     ],
 
 })
