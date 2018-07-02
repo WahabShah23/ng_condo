@@ -12,8 +12,7 @@
                     <i class="fa fa-plus" (click)="addAmenityForm = true"> Add Amenities</i>
                 </button>
                 <button class="btn btn-link" (click)="changeAmenityView()">
-                    <i class="fa" [ngClass]="{'fa-list': isAmenityGridView, 'fa-th' : !isAmenityGridView}"></i>
-                    <small>{{AmenityViewName}}</small>
+                    <i class="fa" [ngClass]="{'fa-list': isAmenityGridView, 'fa-th' : !isAmenityGridView}"> {{AmenityViewName}} </i>
                 </button>
             </div>
         </div>
@@ -32,9 +31,9 @@
                             <div  class="row onepersonrow">
 
                                 <div  class="col-md-12">
-                                    <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
-                                    <p  class="personname">ABC Amenity</p>
-                                    <p  class="persontype">Water Suppliers</p>
+                                    <img  class="cardimage" src="assets/app/media/img/logos/logo-3.png">
+                                    <p  class="cardname">ABC Amenity</p>
+                                    <p  class="cardtype">Water Suppliers</p>
                                 </div>
                             </div>
                             <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -82,9 +81,9 @@
                             <div  class="row onepersonrow">
 
                                 <div  class="col-md-12">
-                                    <img  class="personimage" src="assets/app/media/img/logos/logo-1.png">
-                                    <p  class="personname">Xyz Amenity</p>
-                                    <p  class="persontype">Sanitory Works</p>
+                                    <img  class="cardimage" src="assets/app/media/img/logos/logo-1.png">
+                                    <p  class="cardname">Xyz Amenity</p>
+                                    <p  class="cardtype">Sanitory Works</p>
                                 </div>
                             </div>
                             <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -119,7 +118,6 @@
                 </div>
             </div>
         </div>
-
         <!-- ---------------------------Amenities Cards End---------------------------------- -->
 
         <!-- ---------------------------Amenities List Start---------------------------------- -->
@@ -134,14 +132,10 @@
                                 <span style="border-color: #fff !important;"></span>
                             </label>
                         </th>
-                            <th > Building # </th>
-                            <th> Building Name </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Building Type </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Invoice Date </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Due Date : activate to sort column ascending" style="width: 0px;"> Due Date </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Sales Order : activate to sort column ascending" style="width: 0px;"> Sales Order </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Total Tax : activate to sort column ascending" style="width: 0px;"> Total Tax </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Amount : activate to sort column ascending" style="width: 0px;"> Amount </th>
+                            <th > Amenity # </th>
+                            <th> Amenity Name </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Amenity Type </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Amenity For </th>
                             <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending" style="width: 0px;"> Status</th></tr>
                         </thead>
                         <tfoot>
@@ -154,17 +148,14 @@
                                     <span></span>
                                 </label>
                             </td>
-                            <td> ABC Building</td>
+                            <td> 1 </td>
                             <td class="center">
-                                Condo Style A
+                                Swimming Area
                             </td>
-                            <td class="center"> 98 5674 8785 </td>
-                            <td class="center"> 12 march 2017 </td>
-                            <td class="center"> 19 march 2017 </td>
-                            <td class="center">Service</td>
-                            <td class="center"> $400 </td>
-                            <td class="center"> $100</td>
-                            <td><span class="label label-sm label-success"> Approved </span></td>
+                            <td class="center"> Swimming Pool </td>
+                            <td class="center"> Building </td>
+
+                            <td><span class="label label-sm label-success"> In-Active </span></td>
                         </tr><tr role="row" class="even">
                             <td class="sorting_1">
                                 <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
@@ -172,18 +163,13 @@
                                     <span></span>
                                 </label>
                             </td>
-                            <td> XYZ Building </td>
+                            <td> 2 </td>
                             <td class="center">
-                                Condo Style 2
+                                Parking
                             </td>
-                            <td class="center"> 98 5674 8785 </td>
-                            <td class="center"> 11 march 2017 </td>
-                            <td class="center"> 17 march 2017 </td>
-                            <td class="center">Product</td>
-                            <td class="center"> $350 </td>
-                            <td class="center"> $100 </td>
-                            <td><span class="label label-sm label-warning"> Pending </span></td>
-
+                            <td class="center"> Parking Lot </td>
+                            <td class="center"> Building </td>
+                            <td><span class="label label-sm label-warning"> Active </span></td>
                         </tr>
                         </tbody>
 
@@ -197,129 +183,44 @@
         <div class="row" *ngIf="addAmenityForm">
             <div class="col-md-6">
                 <div class="form-group m-form__group">
-                    <label for="input1">
-                        Building Name:
+                    <label for="amenity_name">
+                        Amenity Name (optional):
                     </label>
-                    <input  aria-describedby="input1" class="form-control form-control-sm m-input m-input--air"
-                            placeholder="Building Name" type="text" formControlName="firstname">
+                    <input  aria-describedby="amenity_name" id="amenity_name" class="form-control form-control-md m-input m-input--air"
+                            placeholder="Amenity Name" type="text">
                 </div>
                 <div class="form-group m-form__group">
-                    <label>
-                        Building Type:
+                    <label for="amenity_type">
+                        Amenity Type:
                     </label>
-                    <select class="form-control m-input m-input--air" type="text"  formControlName="companyLocation">
-                        <option *ngFor="let item of companyLocations" [value]="item">{{item}}</option>
+                    <select class="form-control m-input m-input--air" type="text" id="amenity_type">
+                        <option> </option>
+                        <option> Swimming Pool </option>
+                        <option> Parking </option>
+                        <option> Gym </option>
                     </select>
                     <!--<select class="form-control form-control-sm m-input" type="text"  formControlName="companyLocation">-->
                     <!--<option *ngFor="let item of companyLocations" [value]="item">{{item}}</option>-->
                     <!--</select>-->
-                </div>
-                <div class="form-group m-form__group">
-                    <label for="floorSelect">
-                        Number of floors
-                    </label>
-                    <select class="form-control m-input m-input--air" id="floorSelect">
-                        <option>
-
-                        </option>
-                        <option>
-                            5
-                        </option>
-                        <option>
-                            10
-                        </option>
-                        <option>
-                            15
-                        </option>
-                    </select>
-                </div>
-                <div class="form-group m-form__group">
-                    <label for="exampleTextarea">
-                        Contact Number:
-                    </label>
-                    <input class="form-control-sm form-control m-input m-input--air" type="tel" value="1-(555)-555-5555" formControlName="contactNo">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group m-form__group">
-                    <label for="input2">
-                        Location:
+                    <label for="amenity_for">
+                        Amenity For
                     </label>
-                    <input class="form-control form-control-sm m-input m-input--air" placeholder="Location" type="text" formControlName="lastname">
-                </div>
-                <div class="form-group m-form__group">
-                    <label for="exampleSelect1">
-                        Choose Amenities
-                    </label>
-                    <select class="form-control m-input m-input--air" id="exampleSelect1">
-                        <option>
-
-                        </option>
-                        <option>
-                            Swimming Pool
-                        </option>
-                        <option>
-                            Parking
-                        </option>
-                        <option>
-                            Gym
-                        </option>
+                    <select class="form-control m-input m-input--air" id="amenity_for">
+                        <option> </option>
+                        <option> Building </option>
+                        <option> Floor </option>
+                        <option> Apartment </option>
                     </select>
                 </div>
                 <div class="form-group m-form__group">
-                    <label for="apartmentSelect">
-                        Number of apartments
-                    </label>
-                    <select class="form-control m-input m-input--air" id="apartmentSelect">
-                        <option>
-
-                        </option>
-                        <option>
-                            10
-                        </option>
-                        <option>
-                            15
-                        </option>
-                        <option>
-                            20
-                        </option>
-                    </select>
-                </div>
-
-                <div class="form-group m-form__group">
-                    <label>
-                        Apartment Type:
-                    </label>
-                    <select class="form-control m-input m-input--air" type="text"  formControlName="companyLocation">
-                        <option>
-
-                        </option>
-                        <option>
-                            2 Bed Studio
-                        </option>
-                        <option>
-                            3 Bed Studio
-                        </option>
-                        <option>
-                            Master Studio
-                        </option>
-                    </select>
-                    <!--<select class="form-control form-control-sm m-input" type="text"  formControlName="companyLocation">-->
-                    <!--<option *ngFor="let item of companyLocations" [value]="item">{{item}}</option>-->
-                    <!--</select>-->
-                </div>
-                <!--<div class="form-group m-form__group">-->
-                <!--<label for="label3">-->
-                <!--Address:-->
-                <!--</label>-->
-                <!--<textarea class="form-control m-input" rows="1" formControlName="address"></textarea>-->
-                <!--</div>-->
-
-                <div class="form-group m-form__group">
-                    <label for="exampleTextarea">
+                    <label for="amenity_description">
                         Description:
                     </label>
-                    <textarea class="form-control m-input" rows="" formControlName="discription"></textarea>
+                    <textarea class="form-control m-input m-input--air" id="amenity_description" rows="2"></textarea>
                 </div>
             </div>
         </div>
