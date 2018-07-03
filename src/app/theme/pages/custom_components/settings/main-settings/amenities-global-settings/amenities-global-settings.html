@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <!-- ---------------------------Buildings Cards Start---------------------------------- -->
+        <!-- ---------------------------Amenities Cards Start---------------------------------- -->
 
         <div class="row" *ngIf="!addAmenityForm && isAmenityGridView">
             <div  class="col-md-4">
@@ -195,9 +195,20 @@
                     </label>
                     <select class="form-control m-input m-input--air" type="text" id="amenity_type">
                         <option> </option>
-                        <option> Swimming Pool </option>
+                        <option> Pool </option>
                         <option> Parking </option>
                         <option> Gym </option>
+                        <option> Rooftop Terrace </option>
+                        <option> Party Room </option>
+                        <option> Games Room </option>
+                        <option> Library </option>
+                        <option> Basketball or Squash Court </option>
+                        <option> Bowling </option>
+                        <option> Virtual Golf &amp; Batting Cages</option>
+                        <option> Movie Theatre </option>
+                        <option> Lounge </option>
+                        <option> Guest Suites </option>
+                        <option> Business Center </option>
                     </select>
                     <!--<select class="form-control form-control-sm m-input" type="text"  formControlName="companyLocation">-->
                     <!--<option *ngFor="let item of companyLocations" [value]="item">{{item}}</option>-->
@@ -211,7 +222,7 @@
                     </label>
                     <select class="form-control m-input m-input--air" id="amenity_for">
                         <option> </option>
-                        <option> Building </option>
+                        <option selected> Building </option>
                         <option> Floor </option>
                         <option> Apartment </option>
                     </select>

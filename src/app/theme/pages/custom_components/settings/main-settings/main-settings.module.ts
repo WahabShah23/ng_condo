@@ -13,6 +13,8 @@ import { AmenitiesGlobalSettingsComponent } from './amenities-global-settings/am
 import { BillingServicesGlobalSettingsComponent } from './billing-services-global-settings/billing-services-global-settings.component';
 import { BuildingSettingsComponent } from './building-settings/building-settings.component';
 import { CommonServicesGlobalSettingsComponent } from './common-services-global-settings/common-services-global-settings.component';
+import { FloorSettingsComponent } from './building-settings/floor-settings/floor-settings.component';
+import { ApartmentSettingsComponent } from './building-settings/apartment-settings/apartment-settings.component';
 
 
 
@@ -41,7 +43,9 @@ const routes: Routes = [
         AmenitiesGlobalSettingsComponent,
         BillingServicesGlobalSettingsComponent,
         BuildingSettingsComponent,
-        CommonServicesGlobalSettingsComponent
+        CommonServicesGlobalSettingsComponent,
+        FloorSettingsComponent,
+        ApartmentSettingsComponent
     ],
 
 })

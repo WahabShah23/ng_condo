@@ -16,12 +16,6 @@ export class WizardBuildingComponent implements OnInit, AfterViewInit {
     isBuildingGridView = true;
     BuildingViewName = 'List View';
 
-    addFloorForm = false;
-    isFloorGridView = true;
-    FloorViewName = 'List View';
-    
-
-  
     constructor(private _script: ScriptLoaderService) {
 
     }
@@ -50,15 +44,14 @@ export class WizardBuildingComponent implements OnInit, AfterViewInit {
         });
 
     }
+
     ngAfterViewInit() {
         this._script.loadScripts('app-wizard-building',
             ['assets/demo/default/custom/components/forms/wizard/wizard.js']);
 
     }
 
-   
     onSubmit() {
-      
 
     }
     fileToUpload: File = null;
@@ -77,18 +70,6 @@ export class WizardBuildingComponent implements OnInit, AfterViewInit {
         }
         this.addForm = false;
     }
-
-    changeFloorView() {
-        this.isFloorGridView = !this.isFloorGridView;
-        if (this.isFloorGridView) {
-            this.FloorViewName = 'List View';
-        }
-        else {
-            this.FloorViewName = 'Grid View';
-        }
-        this.addFloorForm = false;
-    }
-
 
     // uploadFileToActivity() {
     //     // this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {
