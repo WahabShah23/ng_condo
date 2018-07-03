@@ -38,21 +38,21 @@
             </div>
 
             <div class="verticals" id="vertical_2">
-                <div class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
+                 <div class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
                     <h6 class="innerCardsTitle m-menu__link-text">Account Settings</h6>
-                    <!--<i class="fa fa-expand text-muted pull-right c-expand-icon"></i>-->
+                 
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('account'); visibleSidebar5 = true" ></i>
-                </div>
+                </div> 
 
-                <div class="innerCards stackEffect" id="card3" [ngClass]="className === 'security' ? 'active_card': 'non_active_card'">
+                <!-- <div class="innerCards stackEffect" id="card3" [ngClass]="className === 'security' ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Security Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('security'); visibleSidebar5 = true" ></i>
-                </div>
+                </div> -->
 
-                <div class="innerCards stackEffect" id="card4" [ngClass]="className === 'system_wide' ? 'active_card': 'non_active_card'">
+                <!-- <div class="innerCards stackEffect" id="card4" [ngClass]="className === 'system_wide' ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">System Wide Settings</h6>
                     <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('system_wide'); visibleSidebar5 = true" ></i>
-                </div>
+                </div> -->
 
                 <div class="innerCards stackEffect" id="card5" [ngClass]="className === 'amenities_global' ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Amenities Global Settings</h6>
