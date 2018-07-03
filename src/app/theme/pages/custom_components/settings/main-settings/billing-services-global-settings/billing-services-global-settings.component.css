@@ -176,3 +176,10 @@
     left: 38%;
    
 }
+
+.providername
+{
+    font-size:11px;
+    color: #6f727d !important;
+    margin-top: 15px;
+}

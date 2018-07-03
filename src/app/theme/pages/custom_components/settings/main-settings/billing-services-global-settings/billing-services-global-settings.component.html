@@ -10,7 +10,7 @@
                 </button>
                 <button class="btn btn-link" (click)="changeBillingView()">
                     <i class="fa" [ngClass]="{'fa-list': isBillingGridView, 'fa-th' : !isBillingGridView}"></i>
-                    <small>{{billingViewName}}</small>
+                    {{billingViewName}}
                 </button>
         </div>
     </div>
@@ -29,8 +29,10 @@
 
                             <div  class="col-md-12">
                                 <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
-                                <p  class="personname">Maintenance</p>
-                                <p  class="persontype">Air Conditioner Maintenance</p>
+                                <p  class="personname">Repairing Service</p>
+                                <p  class="persontype">Repairing</p>
+                                <p  class="providername">John Repairs</p>
+                               
                             </div>
                         </div>
                         <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -81,6 +83,8 @@
                                 <img  class="personimage" src="assets/app/media/img/logos/logo-1.png">
                                 <p  class="personname">Tax</p>
                                 <p  class="persontype">Land Tax</p>
+                                <p  class="providername">Tax Department</p>
+                                
                             </div>
                         </div>
                         <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -189,6 +193,36 @@
                 <input  class="form-control m-input m-input--air"  placeholder="Service Name" type="text">
             </div>
 
+
+            <div  class="form-group m-form__group">
+                    <label  for="input1">
+                        Manufacturer/Supplier:
+                    </label>
+                    <select #manufacturerDropdown  class="form-control m-input m-input--air" id="apartmentSelect">
+                            <option >
+                                Tax Department
+                            </option>
+                            <option >
+                                John Repairs
+                            </option>
+                            <option >
+                                K Maintenance
+                            </option>
+        
+                            <option >
+                                Fast Cables
+                            </option>
+        
+                            <option >
+                               Speed Dishes
+                            </option>
+        
+                        </select>
+    
+                </div>
+                <button (click)="addselected='manufacturer'" data-toggle="modal" data-target="#addModal" class="btn btn-link" >Add Manufacturer</button>
+    
+
             <div  class="form-group m-form__group">
                         <label  for="exampleTextarea">
                             Description:
@@ -225,5 +259,74 @@
                     </select>
             </div>
 
+
+            <div  class="form-group m-form__group">
+                    <label  for="input1">
+                        Provider/Supplier:
+                    </label>
+                    <select  #providerDropdown class="form-control m-input m-input--air" id="apartmentSelect">
+                            <option >
+                                    Tax Department
+                                </option>
+                                <option >
+                                    John Repairs
+                                </option>
+                                <option >
+                                    K Maintenance
+                                </option>
+            
+                                <option >
+                                    Fast Cables
+                                </option>
+            
+                                <option >
+                                   Speed Dishes
+                                </option>
+                        </select>
+                </div>
+    
+                <button (click)="addselected='provider'" data-toggle="modal" data-target="#addModal" class="btn btn-link">Add Provider</button>
+    
+
  </div>
 </div>
+
+
+
+<div  aria-labelledby="bookingModalLabel" class="modal fade" id="addModal" role="dialog" tabindex="-1">
+        <div  class="modal-dialog" role="document">
+            <div  class="modal-content">
+                <div  class="modal-header">
+                    <h5  class="modal-title" id="exampleModalLabel">
+                        Add
+                    </h5>
+                    <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span  aria-hidden="true">
+                            ×
+                        </span>
+                    </button>
+                </div>
+                <div  class="modal-body">
+    
+                    <div  class="row">
+                        <div  class="col-md-12">
+                                <div class="form-group m-form__group">
+                                        <label _ for="input1" >
+                                            Name:
+                                        </label>
+                                        <input #addField  class="form-control m-input m-input--air" type="text">
+                                    </div>
+                        </div>
+                    </div>
+                    <div  class="modal-footer">
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                        <button (click)="onAdd()"  class="btn btn-primary" type="button">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
