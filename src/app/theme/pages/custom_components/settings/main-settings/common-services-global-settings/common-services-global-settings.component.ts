@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { SelectDropDownComponent } from 'ngx-select-dropdown/dist/components';
 
 @Component({
   selector: 'app-common-services-global-settings',
@@ -15,7 +16,8 @@ export class CommonServicesGlobalSettingsComponent implements OnInit {
 
 dataModel = "";
 dropdownOptions = ["Cabin" , "Insurance" , "Central Air Conditioner" , "Hyrdro" ,"Water" , "Heating"];
-
+suppliers = ["GoInsurance" , "John Cabins" , "K AirConditioners" , "Water Company" , "Cave Heating Systems" , "TheHyrdros"];
+providors = ["GoInsurance" , "John Cabins" , "K AirConditioners" , "Water Company" , "Cave Heating Systems" , "TheHyrdros"];
 
   addBillingForm = false;
 
@@ -24,12 +26,11 @@ dropdownOptions = ["Cabin" , "Insurance" , "Central Air Conditioner" , "Hyrdro" 
   addselected = "manufacturer";
 
   @ViewChild('addField') addField : ElementRef;
-  @ViewChild('manufacturerDropdown') manufacturerDropdown : ElementRef;
-  @ViewChild('providerDropdown') providerDropdown : ElementRef;
-
+  
   constructor() { }
 
   ngOnInit() {
+  
   }
 
 
@@ -50,15 +51,15 @@ onAdd()
     option.value = this.addField.nativeElement.value;
     option.text = this.addField.nativeElement.value;
   if(this.addselected=='manufacturer')
-  {
-    (<HTMLSelectElement>this.manufacturerDropdown.nativeElement).options.add(option , (<HTMLSelectElement>this.manufacturerDropdown.nativeElement).options.length);
+  { 
+    this.suppliers.push(option.text); 
   }
   else if(this.addselected=='provider')
   {
-    (<HTMLSelectElement>this.providerDropdown.nativeElement).options.add(option , (<HTMLSelectElement>this.providerDropdown.nativeElement).options.length);
+    this.providors.push(option.text);
   }
 
-  this.addField.nativeElement.value = "";
+  
 }
 
 }

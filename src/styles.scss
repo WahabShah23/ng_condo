@@ -28,3 +28,25 @@
   background: rgb(42,180,192);
   border: 1px solid rgb(0,0,0);
 }
+
+
+.side-button-no-padding
+{
+  margin-top:25px;
+  padding-right:0px;
+  float: right
+}
+
+
+.ngx-dropdown-button
+{
+  border: none;
+  box-shadow: 0px 3px 20px 0px rgba(113, 106, 202, 0.11);
+    border: 1px solid #ebedf2 !important;
+    height: 40px;
+}
+
+.ngx-dropdown-button:focus , .ngx-dorpdown-container:focus
+{
+  border-color: purple !important;
+}
