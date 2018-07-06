@@ -8,6 +8,15 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class CommonServicesGlobalSettingsComponent implements OnInit {
 
 
+  config = {
+    displayKey:"description", //if objects array passed which key to be displayed defaults to description,
+    search:true //enables the search plugin to search in the list
+    }
+
+dataModel = "";
+dropdownOptions = ["Cabin" , "Insurance" , "Central Air Conditioner" , "Hyrdro" ,"Water" , "Heating"];
+
+
   addBillingForm = false;
 
   isBillingGridView = true;

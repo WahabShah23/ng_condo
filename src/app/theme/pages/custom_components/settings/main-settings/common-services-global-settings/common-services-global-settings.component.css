@@ -183,3 +183,18 @@
     color: #6f727d !important;
     margin-top: 15px;
 }
+
+.ngx-dorpdown-container
+{
+    box-shadow: 0px 3px 20px 0px rgba(113, 106, 202, 0.11) !important;
+    width: 100%;
+ 
+}
+
+.ngx-dorpdown-container .ngx-dropdown-button
+{
+    padding: 0.65rem 1rem;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    height: 36px !important;
+}

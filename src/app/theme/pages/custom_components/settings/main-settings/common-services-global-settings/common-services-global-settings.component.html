@@ -302,8 +302,13 @@
             </div>
 
             <button (click)="addselected='provider'" data-toggle="modal" data-target="#addModal" class="btn btn-link">Add Provider</button>
-
-
+            
+            <div class="searchable-dropdown">
+            <label>Service Type:</label>
+            
+            <ngx-select-dropdown [config]="config" [options]="dropdownOptions" 
+            [(value)]="dataModel" [multiple]="true" ></ngx-select-dropdown>
+            </div>
         
  </div>
 

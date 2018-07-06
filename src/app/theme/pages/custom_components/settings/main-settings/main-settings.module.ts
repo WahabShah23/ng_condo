@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from "@angular/forms";
 
 import { FileUploadModule, SidebarModule } from 'primeng/primeng';
+import { SelectDropDownModule } from 'ngx-select-dropdown'
+
 
 import { LayoutModule } from '../../../../layouts/layout.module';
 import { SettingsComponent } from "../settings.component";
@@ -34,9 +36,9 @@ const routes: Routes = [
 @NgModule({
     imports: [
         CommonModule, RouterModule.forChild(routes), LayoutModule,
-        FileUploadModule, SidebarModule, ReactiveFormsModule
+        FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule
     ], exports: [
-        RouterModule,
+        RouterModule
     ], declarations: [
         MainSettingsComponent,
         WizardBuildingComponent,
