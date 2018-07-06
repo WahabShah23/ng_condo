@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { SelectDropDownComponent } from 'ngx-select-dropdown/dist/components';
 
 @Component({
     selector: 'app-common-services-global-settings',
@@ -13,9 +14,10 @@ export class CommonServicesGlobalSettingsComponent implements OnInit {
         search: true //enables the search plugin to search in the list
     }
 
-    dataModel = "";
-    dropdownOptions = ["Cabin", "Insurance", "Central Air Conditioner", "Hyrdro", "Water", "Heating"];
-
+dataModel = "";
+dropdownOptions = ["Cabin" , "Insurance" , "Central Air Conditioner" , "Hyrdro" ,"Water" , "Heating"];
+suppliers = ["GoInsurance" , "John Cabins" , "K AirConditioners" , "Water Company" , "Cave Heating Systems" , "TheHyrdros"];
+providors = ["GoInsurance" , "John Cabins" , "K AirConditioners" , "Water Company" , "Cave Heating Systems" , "TheHyrdros"];
 
     addBillingForm = false;
 
@@ -23,14 +25,13 @@ export class CommonServicesGlobalSettingsComponent implements OnInit {
     billingViewName = 'List View';
     addselected = "manufacturer";
 
-    @ViewChild('addField') addField: ElementRef;
-    @ViewChild('manufacturerDropdown') manufacturerDropdown: ElementRef;
-    @ViewChild('providerDropdown') providerDropdown: ElementRef;
+  @ViewChild('addField') addField : ElementRef;
+  
+  constructor() { }
 
-    constructor() { }
-
-    ngOnInit() {
-    }
+  ngOnInit() {
+  
+  }
 
 
     changeBillingView() {
@@ -44,18 +45,21 @@ export class CommonServicesGlobalSettingsComponent implements OnInit {
         this.addBillingForm = false;
     }
 
-    onAdd() {
-        var option = document.createElement('option');
-        option.value = this.addField.nativeElement.value;
-        option.text = this.addField.nativeElement.value;
-        if (this.addselected == 'manufacturer') {
-            (<HTMLSelectElement>this.manufacturerDropdown.nativeElement).options.add(option, (<HTMLSelectElement>this.manufacturerDropdown.nativeElement).options.length);
-        }
-        else if (this.addselected == 'provider') {
-            (<HTMLSelectElement>this.providerDropdown.nativeElement).options.add(option, (<HTMLSelectElement>this.providerDropdown.nativeElement).options.length);
-        }
+onAdd()
+{
+    var option = document.createElement('option');
+    option.value = this.addField.nativeElement.value;
+    option.text = this.addField.nativeElement.value;
+  if(this.addselected=='manufacturer')
+  { 
+    this.suppliers.push(option.text); 
+  }
+  else if(this.addselected=='provider')
+  {
+    this.providors.push(option.text);
+  }
 
-        this.addField.nativeElement.value = "";
-    }
+  
+}    
 
 }
