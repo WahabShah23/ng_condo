@@ -73,10 +73,11 @@
 
 .cardimage
 {
-	width: 30px;
-	height:30px;
+	width: 45px;
+	height:45px;
 	z-index:999;
 }
+
 
 .cardtype , .cardname
 {
@@ -107,4 +108,10 @@
 	top: 30%;
 	left: 30%;
 	font-size: 18px;
+}
+
+.onepersonrow {
+	text-align: center;
+	margin-top: -10px;
+	margin-bottom: 10px;
 }

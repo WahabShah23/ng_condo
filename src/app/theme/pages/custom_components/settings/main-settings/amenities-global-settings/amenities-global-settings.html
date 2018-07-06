@@ -20,27 +20,22 @@
         <!-- ---------------------------Amenities Cards Start---------------------------------- -->
 
         <div class="row" *ngIf="!addAmenityForm && isAmenityGridView">
-            <div  class="col-md-4">
+            <div  class="col-md-4" *ngFor='let amenity of Amenities'>
                 <div  class="body organ1">
                     <div  class="row" style="margin:0px;">
-                        <div  class="card-left col-lg-3" id="">
+                        <div  class="card-left col-lg-3">
                             <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                 <input  class="chkboxes" type="checkbox">
                                 <span ></span>
                             </label>
                             <div  class="row onepersonrow">
-
                                 <div  class="col-md-12">
-                                    <img  class="cardimage" src="assets/app/media/img/logos/logo-3.png">
-                                    <p  class="cardname">ABC Amenity</p>
-                                    <p  class="cardtype">Water Suppliers</p>
+                                    <img  class="cardimage" [src]="amenity.img">
+                                    <p  class="cardname">{{amenity.name}}</p>
+                                    <p  class="cardtype">{{amenity.amenitytype}}</p>
+                                    <p  class="cardtype"> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>
                                 </div>
                             </div>
-                            <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
-                            <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
-                            <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
-
-
                         </div>
                         <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                             <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Amenity Details</h6>
@@ -52,7 +47,7 @@
                                             10
                                         </div>
                                         <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                    <h6  class="text-center">Floors</h6>
+                                    <h6  class="text-center">{{amenity.name}}</h6>
                                 </div>
                                 <div  class="col-sm-6">
                                     <div  class="m-widget14__chart" id="customerPieChart7" style="height: 100px">
@@ -60,63 +55,14 @@
                                             100
                                         </div>
                                         <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                    <h6  class="text-center">Apartments</h6>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div  class="col-md-4">
-                <div  class="body organ1">
-                    <div  class="row" style="margin:0px;">
-                        <div  class="card-left col-lg-3" id="">
-                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                <input  class="chkboxes" type="checkbox">
-                                <span ></span>
-                            </label>
-                            <div  class="row onepersonrow">
-
-                                <div  class="col-md-12">
-                                    <img  class="cardimage" src="assets/app/media/img/logos/logo-1.png">
-                                    <p  class="cardname">Xyz Amenity</p>
-                                    <p  class="cardtype">Sanitory Works</p>
-                                </div>
-                            </div>
-                            <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
-                            <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
-                            <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
-
-
-                        </div>
-                        <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Amenity Details</h6>
-                            <div  class="clearfix"></div>
-                            <div  class="row">
-                                <div  class="col-sm-6">
-                                    <div class="m-widget14__chart" id="customerPieChart7" style="height: 100px">
-                                        <div  class="m-widget14__stat">
-                                            15
-                                        </div>
-                                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                    <h6  class="text-center">Floors</h6>
-                                </div>
-                                <div  class="col-sm-6">
-                                    <div  class="m-widget14__chart" id="customerPieChart7" style="height: 100px">
-                                        <div  class="m-widget14__stat">
-                                            150
-                                        </div>
-                                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                    <h6  class="text-center">Apartments</h6>
+                                    <h6  class="text-center">{{amenity.amenityfor}}</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
         <!-- ---------------------------Amenities Cards End---------------------------------- -->
 
@@ -210,10 +156,34 @@
                         <option> Guest Suites </option>
                         <option> Business Center </option>
                     </select>
-                    <!--<select class="form-control form-control-sm m-input" type="text"  formControlName="companyLocation">-->
-                    <!--<option *ngFor="let item of companyLocations" [value]="item">{{item}}</option>-->
-                    <!--</select>-->
                 </div>
+
+                <div class="m-form__group form-group">
+                    <label for="">
+                        Entry Option
+                    </label>
+                    <div class="m-radio-inline">
+                        <label class="m-radio m-radio--solid m-radio--brand">
+                            <input name="example_3" type="radio" (change)="isWalkIn = true" value="walkin" checked>
+                            Walk In
+                            <span></span>
+                        </label>
+                        <label class="m-radio m-radio--solid m-radio--brand">
+                            <input name="example_3" type="radio" (change)="isWalkIn = false" value="bookable">
+                            Bookable
+                            <span></span>
+                        </label>
+                    </div>
+                    <br/>
+                    <div *ngIf="isWalkIn">
+                        Walk In
+                    </div>
+                    <div *ngIf="!isWalkIn">
+                        Bookable
+                    </div>
+                    <br/>
+                </div>
+
             </div>
             <div class="col-md-6">
                 <div class="form-group m-form__group">

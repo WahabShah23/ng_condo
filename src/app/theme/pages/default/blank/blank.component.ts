@@ -5,6 +5,7 @@ import { MapsAPILoader } from '@agm/core';
 import { } from 'googlemaps';
 import { Observable } from 'rxjs/Rx';
 import { FormControl } from "@angular/forms";
+import { SelectItem } from "primeng/primeng";
 
 @Component({
     selector: 'app-blank',
@@ -22,19 +23,40 @@ export class BlankComponent implements OnInit {
 
     lat: number = 51.678418;
     lng: number = 7.809007;
-    
+
     visibleSidebar1;
     visibleSidebar2;
     visibleSidebar3;
     visibleSidebar4;
     visibleSidebar5;
 
-     items: MenuItem[];
+    items: MenuItem[];
+
+    cars: SelectItem[];
+
+    selectedCars1: string[] = [];
+
+    selectedCars2: string[] = [];
 
     constructor(private _demoService: DemoService, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {
     }
 
     ngOnInit() {
+
+        this.cars = [
+            { label: 'Audi', value: 'Audi' },
+            { label: 'BMW', value: 'BMW' },
+            { label: 'Fiat', value: 'Fiat' },
+            { label: 'Ford', value: 'Ford' },
+            { label: 'Honda', value: 'Honda' },
+            { label: 'Jaguar', value: 'Jaguar' },
+            { label: 'Mercedes', value: 'Mercedes' },
+            { label: 'Renault', value: 'Renault' },
+            { label: 'VW', value: 'VW' },
+            { label: 'Volvo', value: 'Volvo' }
+        ];
+
+
         this.searchControl = new FormControl();
         this.mapsAPILoader.load().then(
             () => {

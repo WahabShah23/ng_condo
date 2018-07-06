@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-floor-settings',
-  templateUrl: './floor-settings.component.html',
-  styleUrls: ['./floor-settings.component.css']
+    selector: 'app-floor-settings',
+    templateUrl: './floor-settings.component.html',
+    styleUrls: ['./floor-settings.component.css']
 })
 export class FloorSettingsComponent implements OnInit {
 
@@ -11,20 +11,20 @@ export class FloorSettingsComponent implements OnInit {
     isFloorGridView = true;
     FloorViewName = 'List View';
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  changeFloorView() {
-    this.isFloorGridView = !this.isFloorGridView;
-    if (this.isFloorGridView) {
-      this.FloorViewName = 'List View';
+    changeFloorView() {
+        this.isFloorGridView = !this.isFloorGridView;
+        if (this.isFloorGridView) {
+            this.FloorViewName = 'List View';
+        }
+        else {
+            this.FloorViewName = 'Grid View';
+        }
+        this.addFloorForm = false;
     }
-    else {
-      this.FloorViewName = 'Grid View';
-    }
-    this.addFloorForm = false;
-  }
 
 }

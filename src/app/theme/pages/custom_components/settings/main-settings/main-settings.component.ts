@@ -22,7 +22,7 @@ import { trigger, style, animate, transition, state } from '@angular/animations'
 
 export class MainSettingsComponent implements OnInit {
 
-   
+
     // animations state variable 
     state = 'normal';
     className: string;

@@ -27,6 +27,7 @@ import {
     TabViewModule,
     FileUploadModule,
     SidebarModule
+
 } from 'primeng/primeng';
 
 

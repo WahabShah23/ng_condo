@@ -11,11 +11,11 @@ import { ScriptLoaderService } from '../../_services/script-loader.service';
 export class WizardWizard3Component implements OnInit, AfterViewInit {
 
     staffForm: FormGroup;
-    
+
     isInvoiceGridView = true;
     invoiceViewName = "List View";
-   
-    
+
+
     isPaymentGridView = true;
     paymentViewName = "List View";
     isZipPaymentForm = false;
@@ -40,12 +40,12 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
     isContactForm = false;
 
 
-    
 
-    
-    
 
-  
+
+
+
+
     constructor(private _script: ScriptLoaderService/*, private staffServices: Staff_Services*/) {
 
     }
@@ -80,9 +80,9 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
 
     }
 
-   
+
     onSubmit() {
-      
+
 
     }
     fileToUpload: File = null;
@@ -93,105 +93,87 @@ export class WizardWizard3Component implements OnInit, AfterViewInit {
 
 
 
-    changeInvoiceView()
-    {
-        if(this.isInvoiceGridView)
-        {
+    changeInvoiceView() {
+        if (this.isInvoiceGridView) {
             this.isInvoiceGridView = false;
             this.invoiceViewName = "Grid View";
         }
-        else
-        {
+        else {
             this.isInvoiceGridView = true;
             this.invoiceViewName = "List View";
         }
-       
-        
+
+
     }
 
 
-    changePaymentView()
-    {
-        if(this.isPaymentGridView)
-        {
+    changePaymentView() {
+        if (this.isPaymentGridView) {
             this.isPaymentGridView = false;
             this.paymentViewName = "Grid View";
         }
-        else
-        {
+        else {
             this.isPaymentGridView = true;
             this.paymentViewName = "List View";
         }
         this.isZipPaymentForm = false;
     }
 
-    changeProposalView()
-    {
-        if(this.isProposalGridView)
-        {
+    changeProposalView() {
+        if (this.isProposalGridView) {
             this.isProposalGridView = false;
             this.proposalViewName = "Grid View";
         }
-        else
-        {
+        else {
             this.isProposalGridView = true;
             this.proposalViewName = "List View";
         }
 
         this.isProposalForm = false;
-        
+
     }
 
 
 
-    changeEstimateView()
-    {
-        if(this.isEstimateGridView)
-        {
+    changeEstimateView() {
+        if (this.isEstimateGridView) {
             this.isEstimateGridView = false;
             this.estimateViewName = "Grid View";
         }
-        else
-        {
+        else {
             this.isEstimateGridView = true;
             this.estimateViewName = "List View";
         }
 
         this.isEstimateForm = false;
-        
+
     }
 
-    changeExpenseView()
-    {
-        if(this.isExpenseGridView)
-        {
+    changeExpenseView() {
+        if (this.isExpenseGridView) {
             this.isExpenseGridView = false;
             this.expenseViewName = "Grid View";
         }
-        else
-        {
+        else {
             this.isExpenseGridView = true;
             this.expenseViewName = "List View";
         }
 
         this.isExpenseForm = false;
-        
+
     }
 
 
-    changeContractView()
-    {
-        if(this.isContractGridView)
-        {
+    changeContractView() {
+        if (this.isContractGridView) {
             this.isContractGridView = false;
             this.contractViewName = "Grid View";
         }
-        else
-        {
+        else {
             this.isContractGridView = true;
             this.contractViewName = "List View";
         }
-        
+
         this.isContactForm = false;
 
     }

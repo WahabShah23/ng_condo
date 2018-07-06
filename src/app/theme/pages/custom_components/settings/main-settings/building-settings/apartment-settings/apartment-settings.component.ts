@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-apartment-settings',
-  templateUrl: './apartment-settings.component.html',
-  styleUrls: ['./apartment-settings.component.css']
+    selector: 'app-apartment-settings',
+    templateUrl: './apartment-settings.component.html',
+    styleUrls: ['./apartment-settings.component.css']
 })
 export class ApartmentSettingsComponent implements OnInit {
 
     addApartmentForm = false;
     isApartmentGridView = true;
     ApartmentViewName = 'List View';
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
     changeApartmentView() {
         this.isApartmentGridView = !this.isApartmentGridView;

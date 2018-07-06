@@ -3,9 +3,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ScriptLoaderService } from '../../../../../../_services/script-loader.service';
 
 @Component({
-  selector: 'app-building-settings',
-  templateUrl: './building-settings.component.html',
-  styleUrls: ['./building-settings.component.css']
+    selector: 'app-building-settings',
+    templateUrl: './building-settings.component.html',
+    styleUrls: ['./building-settings.component.css']
 })
 export class BuildingSettingsComponent implements OnInit, AfterViewInit {
 
@@ -14,18 +14,20 @@ export class BuildingSettingsComponent implements OnInit, AfterViewInit {
     BuildingViewName = 'List View';
     buildingWizard = false;
 
-  constructor( private _script: ScriptLoaderService ) { }
+    isWalkIn = true;
 
-  ngOnInit() {
-  }
+    constructor(private _script: ScriptLoaderService) { }
 
-  ngAfterViewInit() {
+    ngOnInit() {
+    }
+
+    ngAfterViewInit() {
         this._script.loadScripts('app-wizard-building',
-        ['assets/demo/default/custom/components/forms/wizard/wizard.js']);
-  }
+            ['assets/demo/default/custom/components/forms/wizard/wizard.js']);
+    }
 
 
-  changeBuildingView() {
+    changeBuildingView() {
         this.isBuildingGridView = !this.isBuildingGridView;
         if (this.isBuildingGridView) {
             this.BuildingViewName = 'List View';
@@ -35,7 +37,7 @@ export class BuildingSettingsComponent implements OnInit, AfterViewInit {
         }
         this.addBuildingForm = false;
         this.buildingWizard = false;
-  }
+    }
 
     editBuildingInfo() {
         this.buildingWizard = true;
