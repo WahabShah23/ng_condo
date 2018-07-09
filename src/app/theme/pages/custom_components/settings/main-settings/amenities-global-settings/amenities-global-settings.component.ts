@@ -14,7 +14,7 @@ export class AmenitiesGlobalSettingsComponent implements OnInit {
 
     Amenities=[
         {
-            name: 'Gym', img: 'assets/app/media/img/custom/amenities/gym.jpg', amenityfor: 'Building', amenitytype: 'Gymnasium', desc: 'desc'
+            name: "Gold's Gym", img: 'assets/app/media/img/custom/amenities/gym.jpg', amenityfor: 'Building', amenitytype: 'Gymnasium', desc: 'desc'
         },
         {
             name: 'Laundry', img: 'assets/app/media/img/custom/amenities/laundry.jpg', amenityfor: 'Building', amenitytype: 'Laundry', desc: 'desc'
