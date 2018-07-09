@@ -16,6 +16,10 @@ export class WizardBuildingComponent implements OnInit, AfterViewInit {
     isBuildingGridView = true;
     BuildingViewName = 'List View';
 
+    addRoomForm = false;
+    isRoomGridView = true;
+    RoomViewName = 'List View';
+
     constructor(private _script: ScriptLoaderService) {
 
     }
@@ -78,5 +82,18 @@ export class WizardBuildingComponent implements OnInit, AfterViewInit {
     //     //     console.log(error);
     //     //   });
     //   }
+
+
+
+    changeRoomView() {
+        this.isRoomGridView = !this.isRoomGridView;
+        if (this.isRoomGridView) {
+            this.RoomViewName = 'List View';
+        }
+        else {
+            this.RoomViewName = 'Grid View';
+        }
+        this.addRoomForm = false;
+    }
 
 }

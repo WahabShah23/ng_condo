@@ -20,37 +20,7 @@
                             <!--begin: Form Wizard Nav -->
                             <div class="m-wizard__nav">
                                 <div class="m-wizard__steps">
-                                    <!--<div class="m-wizard__step m-wizard__step&#45;&#45;current staff-steps step-margin-top " data-wizard-target="#m_wizard_form_step_1">-->
-                                        <!--<div class="m-wizard__step-info">-->
-                                            <!--<a href="#" class="m-wizard__step-number">-->
-                                                <!--<span class="step-staff">-->
-                                                    <!--<span class="step-staff-icon">-->
-                                                        <!--<i class="fa fa-user"></i>-->
-                                                    <!--</span>-->
-                                                <!--</span>-->
-                                            <!--</a>-->
-                                          <!---->
-                                            <!--<div class="m-wizard__step-label">-->
-                                                <!--Building-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-
-                                    <!--<div class="m-wizard__step" data-wizard-target="#m_wizard_form_step_2">-->
-                                        <!--<div class="m-wizard__step-info">-->
-                                            <!--<a href="#" class="m-wizard__step-number">-->
-                                                <!--<span class="step-staff">-->
-                                                    <!--<span class="step-staff-icon">-->
-                                                        <!--<i class="fa fa-calendar"></i>-->
-                                                    <!--</span>-->
-                                                <!--</span>-->
-                                            <!--</a>-->
-                                      <!---->
-                                            <!--<div class="m-wizard__step-label">-->
-                                                <!--Stakeholders-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
+                                
                                     <div class="m-wizard__step" data-wizard-target="#m_wizard_form_step_3">
                                         <div class="m-wizard__step-info">
                                             <a href="#" class="m-wizard__step-number">
@@ -93,7 +63,7 @@
                                                 </a>
                                              
                                                 <div class="m-wizard__step-label">
-                                                    Option 1
+                                                    Rooms
                                                 </div>
                                             </div>
                                         </div>
@@ -307,17 +277,238 @@
                                     <!--begin: Form Wizard Step 5-->
                                     <div class="m-wizard__form-step" id="m_wizard_form_step_5">
                                             <div class="m-form__section m-form__section--first">
-                                                <div class="m-form__heading">
-                                                    <h3 class="m-form__heading-title">
-                                                       Estimates
-                                                    </h3>
+                                                <div  class="m-form__heading">
+                                                    <div  class="d-flex align-items-center">
+                                                        <div  class="mr-auto">
+                                                            <h3  class="m-form__heading-title">
+                                                                Rooms
+                                                            </h3>
+                                                        </div>
+                                                        <button  class="btn btn-link">
+                                                            <i  class="fa fa-plus" (click)="addRoomForm = true"> Add Room</i>
+                                                        </button>
+
+                                                        <button class="btn btn-link" (click)="changeRoomView()">
+                                                            <i class="fa" [ngClass]="{'fa-list': isRoomGridView, 'fa-th' : !isRoomGridView}"></i>
+                                                            <small>{{RoomViewName}}</small>
+                                                        </button>
+
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                   
+                                            <div class="row" *ngIf="!addRoomForm && isRoomGridView">
+                                                <div  class="col-md-6">
+                                                    <div  class="body organ1">
+                                                        <div  class="row" style="margin:0px;">
+                                                            <div  class="card-left col-lg-3" id="">
+                                                                <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                                    <input  class="chkboxes" type="checkbox">
+                                                                    <span ></span>
+                                                                </label>
+                                                                <div  class="row onepersonrow">
+    
+                                                                    <div  class="col-md-12">
+                                                                        <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
+                                                                        <p  class="personname">1</p>
+                                                                        <p  class="persontype">Masterbed</p>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
+                                                                <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
+                                                                <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
+    
+    
+                                                            </div>
+                                                            <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                                                                <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Room Details</h6>
+                                                                <div  class="clearfix"></div>
+                                                                <div  class="row">
+                                                                    <div  class="col-sm-6">
+                                                                        <p>
+                                                                            <i class="fa fa-bed"></i> 3
+                                                                        </p>
+                                                                    </div>
+                                                                    <div  class="col-sm-6">
+                                                                        <p>
+                                                                            <i class="fa fa-shower"></i> 2
+                                                                        </p>    
+                                                                    </div>
+                                                                    <div  class="col-sm-6">
+                                                                            <p>
+                                                                                <i class="fa fa-area-chart"></i> 200 sq/m
+                                                                            </p>    
+                                                                        </div>
+
+                                                                </div>
+    
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+    
+    
+                                                <div  class="col-md-6">
+                                                    <div  class="body organ1">
+                                                        <div  class="row" style="margin:0px;">
+                                                            <div  class="card-left col-lg-3" id="">
+                                                                <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                                    <input  class="chkboxes" type="checkbox">
+                                                                    <span ></span>
+                                                                </label>
+                                                                <div  class="row onepersonrow">
+    
+                                                                    <div  class="col-md-12">
+                                                                        <img  class="personimage" src="assets/app/media/img/logos/logo-1.png">
+                                                                        <p  class="personname">2</p>
+                                                                        <p  class="persontype">Single Bed</p>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
+                                                                <p  class="personbuildingname"><i  class="fa fa-building"></i> Burj Canada</p>
+                                                                <p  class="personaddress"><i  class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p> -->
+    
+    
+                                                            </div>
+                                                            <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                                                                <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Room Details</h6>
+                                                                <div  class="clearfix"></div>
+                                                                <div  class="row">
+                                                                        <div  class="col-sm-6">
+                                                                            <p>
+                                                                                <i class="fa fa-bed"></i> 3
+                                                                            </p>
+                                                                        </div>
+                                                                        <div  class="col-sm-6">
+                                                                            <p>
+                                                                                <i class="fa fa-shower"></i> 2
+                                                                            </p>    
+                                                                        </div>
+                                                                        <div  class="col-sm-6">
+                                                                                <p>
+                                                                                    <i class="fa fa-area-chart"></i> 200 sq/m
+                                                                                </p>    
+                                                                            </div>
+    
+                                                                    </div>
+    
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+
+
+                                            
+<!-- ---------------------------Room List Start---------------------------------- -->
+<div class="row" *ngIf="!addRoomForm && !isRoomGridView">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr style="background: #555;color: #fff" role="row"><th>
+                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline f">
+                        <input type="checkbox" class="group-checkable">
+                        <span style="border-color: #fff !important;"></span>
+                    </label>
+                </th>
+                    <th > Room # </th>
+                    <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Type </th>
+                    <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Beds </th>
+                    <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Baths </th>
+                    <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Due Date : activate to sort column ascending" style="width: 0px;"> Area </th>
+                </thead>
+                <tfoot>
+                </tfoot>
+                <tbody>
+                <tr role="row">
+                    <td>
+                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                            <input type="checkbox" class="chkboxes1">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td> 1</td>
+                    <td> Masterbed</td>
+                    <td class="center">
+                            3
+                    </td>
+                    <td class="center">
+                            2
+                    </td>
+                    <td class="center"> 200 sq/m</td>
+                  
+                </tr>
+                <tr>
+                <td>
+                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                            <input type="checkbox" class="chkboxes1">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td> 2</td>
+                    <td> Single Bed</td>
+                    <td class="center">
+                        
+                            3
+                    </td>
+                    <td class="center">
+                            2
+                    </td>
+                    <td class="center"> 200 sq/m</td>
+                  
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+<!-- ---------------------------Room List End---------------------------------- -->
+
+<!-- ----------------------------- Add Room Form Start------------------------------- -->
+<div class="row" *ngIf="addRoomForm">
+    <div class="col-md-6">
+        <div class="form-group m-form__group">
+            <label >
+                Room Number:
+            </label>
+            <input  aria-describedby="input1" class="form-control form-control-sm m-input m-input--air"
+                    placeholder="Room Number" type="text">
+        </div>
+        <div class="form-group m-form__group">
+            <label>
+                Room Type:
+            </label>
+            <select class="form-control m-input m-input--air" type="text"  >
+                <option  value="item">MasterBed</option>
+                <option  value="item">DoubleBed/option>
+                <option  value="item">SingleBed</option>
+            </select>
+        </div>
+      
+    </div>
+    <div class="col-md-6">
+        
+        <div class="form-group m-form__group">
+            <label>
+                Number of Baths
+            </label>
+            <input type="number" min="0" class="form-control m-input m-input--air" >
+        </div>
+
+        <div class="form-group m-form__group">
+                <label for="floorCount">
+                    Number of Rooms
+                </label>
+                <input type="number" min="0" class="form-control m-input m-input--air" >
+            </div>
+    </div>
+</div>
+<!-- ---------------------------Add Room Form End---------------------------------- -->
+
+
     
                                         </div>
                                         <!--end: Form Wizard Step 5-->
