@@ -13,6 +13,7 @@ export class BuildingSettingsComponent implements OnInit, AfterViewInit {
     isBuildingGridView = true;
     BuildingViewName = 'List View';
     buildingWizard = false;
+    time = '08:00:50';
 
     isWalkIn = true;
 
@@ -41,6 +42,11 @@ export class BuildingSettingsComponent implements OnInit, AfterViewInit {
 
     editBuildingInfo() {
         this.buildingWizard = true;
+    }
+
+
+    print(time) {
+        console.log(time);
     }
 
 }

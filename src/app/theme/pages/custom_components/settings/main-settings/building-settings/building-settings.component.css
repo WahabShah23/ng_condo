@@ -115,3 +115,16 @@ cardtype , .cardname
 	left: 27%;
 	font-size: 18px;
 }
+
+.m-accordion.m-accordion--section .m-accordion__item {
+    margin-bottom: 0.2rem;
+}
+
+.m-accordion.m-accordion--section .m-accordion__item .m-accordion__item-head.collapsed {
+	padding: 5px 25px;
+	font-size: 12px;
+}
+.m-accordion .m-accordion__item .m-accordion__item-head .m-accordion__item-title 
+{
+	font-size: 1rem;
+}

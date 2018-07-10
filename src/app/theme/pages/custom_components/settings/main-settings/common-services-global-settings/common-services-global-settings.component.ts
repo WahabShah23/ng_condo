@@ -14,10 +14,10 @@ export class CommonServicesGlobalSettingsComponent implements OnInit {
         search: true //enables the search plugin to search in the list
     }
 
-dataModel = "";
-dropdownOptions = ["Cabin" , "Insurance" , "Central Air Conditioner" , "Hyrdro" ,"Water" , "Heating"];
-suppliers = ["GoInsurance" , "John Cabins" , "K AirConditioners" , "Water Company" , "Cave Heating Systems" , "TheHyrdros"];
-providors = ["GoInsurance" , "John Cabins" , "K AirConditioners" , "Water Company" , "Cave Heating Systems" , "TheHyrdros"];
+    dataModel = "";
+    dropdownOptions = ["Cabin", "Insurance", "Central Air Conditioner", "Hyrdro", "Water", "Heating"];
+    suppliers = ["GoInsurance", "John Cabins", "K AirConditioners", "Water Company", "Cave Heating Systems", "TheHyrdros"];
+    providors = ["GoInsurance", "John Cabins", "K AirConditioners", "Water Company", "Cave Heating Systems", "TheHyrdros"];
 
     addBillingForm = false;
 
@@ -25,13 +25,13 @@ providors = ["GoInsurance" , "John Cabins" , "K AirConditioners" , "Water Compan
     billingViewName = 'List View';
     addselected = "manufacturer";
 
-  @ViewChild('addField') addField : ElementRef;
-  
-  constructor() { }
+    @ViewChild('addField') addField: ElementRef;
 
-  ngOnInit() {
-  
-  }
+    constructor() { }
+
+    ngOnInit() {
+
+    }
 
 
     changeBillingView() {
@@ -45,21 +45,18 @@ providors = ["GoInsurance" , "John Cabins" , "K AirConditioners" , "Water Compan
         this.addBillingForm = false;
     }
 
-onAdd()
-{
-    var option = document.createElement('option');
-    option.value = this.addField.nativeElement.value;
-    option.text = this.addField.nativeElement.value;
-  if(this.addselected=='manufacturer')
-  { 
-    this.suppliers.push(option.text); 
-  }
-  else if(this.addselected=='provider')
-  {
-    this.providors.push(option.text);
-  }
+    onAdd() {
+        var option = document.createElement('option');
+        option.value = this.addField.nativeElement.value;
+        option.text = this.addField.nativeElement.value;
+        if (this.addselected == 'manufacturer') {
+            this.suppliers.push(option.text);
+        }
+        else if (this.addselected == 'provider') {
+            this.providors.push(option.text);
+        }
 
-  
-}    
+
+    }
 
 }

@@ -246,51 +246,330 @@
                 <br/>
                 <div *ngIf="isWalkIn">
                         <div class="m-form__group form-group row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label >
                                     Walk-In Days
                                 </label>
 
-                                <div class="m-checkbox-list" >
-                                        <label class="m-checkbox">
-                                            <input type="checkbox">
-                                             Monday
-                                            <span></span>
-                                        </label>
-                                        <label class="m-checkbox">
-                                            <input type="checkbox">
-                                            Tuesday
-                                            <span></span>
-                                        </label>
-                                        <label class="m-checkbox">
-                                            <input checked="checked" type="checkbox">
-                                            Wednesday
-                                            <span></span>
-                                        </label>
-                                        <label class="m-checkbox">
-                                            <input  type="checkbox">
-                                            Thursday
-                                            <span></span>
-                                        </label>
-                                        <label class="m-checkbox">
-                                                <input  type="checkbox">
-                                                Friday
-                                                <span></span>
-                                        </label>
-                                        <label class="m-checkbox">
-                                                <input  type="checkbox">
-                                                Saturday
-                                                <span></span>
-                                        </label>
-                                        <label class="m-checkbox">
-                                                <input  type="checkbox">
-                                                Sunday
-                                                <span></span>
-                                        </label>
+
+                                <div class="m-accordion m-accordion--default m-accordion--solid m-accordion--section  m-accordion--toggle-arrow" id="m_accordion_7" role="tablist">
+						
+                                        <div class="m-accordion__item">
+                                            <div aria-expanded="false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_monday_body" id="m_accordion_walkin_monday_1_head" role="tab" ng-reflect-href="#m_accordion_walkin_monday_body">
+                                           
+                                                <span class="m-accordion__item-title">
+                                                   Monday
+                                                </span>
+                                                <span class="m-accordion__item-mode"></span>
+                                            </div>
+                                            <div aria-labelledby="m_accordion_walkin_monday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_monday_body" role="tabpanel" style="">
+                                                <div class="m-accordion__item-content">
+                                                        
+                                                    <div><label  class="m-checkbox">
+                                                                <input  checked="checked" type="checkbox">
+                                                                 On
+                                                                <span ></span>
+                                                        </label>
+                                                    </div>
+
+                                                        <label>
+                                                                1st Timing:
+                                                            </label>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                    </div>
+                    
+                                                                    <div class="col-md-6">
+                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                    </div>
+                                                                </div>
+                                                                <label>
+                                                                        2nd Timing:
+                                                                    </label>
+                                                                <div class="row">
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                        
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                                                                </div>
+                                                                  
+                                                                   
+                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                                             
+                                        <div class="m-accordion__item">
+                                            <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_tuesday_body" id="m_accordion_walkin_tuesday_head" role="tab" ng-reflect-href="#m_accordion_walkin_tuesday_body">
+                                                    <span class="m-accordion__item-title">
+                                                            Tuesday
+                                                         </span>
+                                                         <span class="m-accordion__item-mode"></span>
+                                            </div>
+                                            <div aria-labelledby="m_accordion_walkin_tuesday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_tuesday_body" role="tabpanel">
+                                                <div class="m-accordion__item-content">
+                                                        <div><label  class="m-checkbox">
+                                                                <input  checked="checked" type="checkbox">
+                                                                 On
+                                                                <span ></span>
+                                                        </label>
+                                                    </div>
+                                                        <label>
+                                                                1st Timing:
+                                                            </label>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                    </div>
+                    
+                                                                    <div class="col-md-6">
+                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                    </div>
+                                                                </div>
+                                                                <label>
+                                                                        2nd Timing:
+                                                                    </label>
+                                                                <div class="row">
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                        
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                             
+                                        <div class="m-accordion__item">
+                                                <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_wednesday_body" id="m_accordion_walkin_tuesday_head" role="tab" ng-reflect-href="#m_accordion_walkin_wednesday_body">
+                                                        <span class="m-accordion__item-title">
+                                                                Wednesday
+                                                             </span>
+                                                             <span class="m-accordion__item-mode"></span>
+                                                </div>
+                                                <div aria-labelledby="m_accordion_walkin_wednesday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_wednesday_body" role="tabpanel">
+                                                    <div class="m-accordion__item-content">
+                                                            <div><label  class="m-checkbox">
+                                                                    <input  checked="checked" type="checkbox">
+                                                                     On
+                                                                    <span ></span>
+                                                            </label>
+                                                        </div>
+                                                            <label>
+                                                                    1st Timing:
+                                                                </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                        
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                                                                    </div>
+                                                                    <label>
+                                                                            2nd Timing:
+                                                                        </label>
+                                                                    <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                            
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="m-accordion__item">
+                                                    <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_thursday_body" id="m_accordion_walkin_thursday_head" role="tab" ng-reflect-href="#m_accordion_walkin_thursday_body">
+                                                            <span class="m-accordion__item-title">
+                                                                    Thursday
+                                                                 </span>
+                                                                 <span class="m-accordion__item-mode"></span>
+                                                    </div>
+                                                    <div aria-labelledby="m_accordion_walkin_thursday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_thursday_body" role="tabpanel">
+                                                        <div class="m-accordion__item-content">
+                                                                <div><label  class="m-checkbox">
+                                                                        <input  checked="checked" type="checkbox">
+                                                                         On
+                                                                        <span ></span>
+                                                                </label>
+                                                            </div>
+                                                                <label>
+                                                                        1st Timing:
+                                                                    </label>
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                            
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                                                                        </div>
+                                                                        <label>
+                                                                                2nd Timing:
+                                                                            </label>
+                                                                        <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                </div>
+                                
+                                                                                <div class="col-md-6">
+                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                </div>
+                                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="m-accordion__item">
+                                                        <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_friday_body" id="m_accordion_walkin_friday_head" role="tab" ng-reflect-href="#m_accordion_walkin_friday_body">
+                                                                <span class="m-accordion__item-title">
+                                                                        Friday
+                                                                     </span>
+                                                                     <span class="m-accordion__item-mode"></span>
+                                                        </div>
+                                                        <div aria-labelledby="m_accordion_walkin_friday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_friday_body" role="tabpanel">
+                                                            <div class="m-accordion__item-content">
+                                                                    <div><label  class="m-checkbox">
+                                                                            <input  checked="checked" type="checkbox">
+                                                                             On
+                                                                            <span ></span>
+                                                                    </label>
+                                                                </div>
+                                                                    <label>
+                                                                            1st Timing:
+                                                                        </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                </div>
+                                
+                                                                                <div class="col-md-6">
+                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                </div>
+                                                                            </div>
+                                                                            <label>
+                                                                                    2nd Timing:
+                                                                                </label>
+                                                                            <div class="row">
+                                                                                    <div class="col-md-6">
+                                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                    </div>
+                                    
+                                                                                    <div class="col-md-6">
+                                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                    </div>
+                                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="m-accordion__item">
+                                                            <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_saturday_body" id="m_accordion_walkin_saturday_head" role="tab" ng-reflect-href="#m_accordion_walkin_saturday_body">
+                                                                    <span class="m-accordion__item-title">
+                                                                            Saturday
+                                                                         </span>
+                                                                         <span class="m-accordion__item-mode"></span>
+                                                            </div>
+                                                            <div aria-labelledby="m_accordion_walkin_saturday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_saturday_body" role="tabpanel">
+                                                                <div class="m-accordion__item-content">
+                                                                        <div><label  class="m-checkbox">
+                                                                                <input type="checkbox">
+                                                                                 On
+                                                                                <span ></span>
+                                                                        </label>
+                                                                    </div>
+                                                                        <label>
+                                                                                1st Timing:
+                                                                            </label>
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6">
+                                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                    </div>
+                                    
+                                                                                    <div class="col-md-6">
+                                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <label>
+                                                                                        2nd Timing:
+                                                                                    </label>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                        </div>
+                                        
+                                                                                        <div class="col-md-6">
+                                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                        </div>
+                                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="m-accordion__item">
+                                                                <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_sunday_body" id="m_accordion_walkin_sunday_head" role="tab" ng-reflect-href="#m_accordion_walkin_sunday_body">
+                                                                        <span class="m-accordion__item-title">
+                                                                                Sunday
+                                                                             </span>
+                                                                             <span class="m-accordion__item-mode"></span>
+                                                                </div>
+                                                                <div aria-labelledby="m_accordion_walkin_sunday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_sunday_body" role="tabpanel">
+                                                                    <div class="m-accordion__item-content">
+                                                                            <div><label  class="m-checkbox">
+                                                                                    <input type="checkbox">
+                                                                                     On
+                                                                                    <span ></span>
+                                                                            </label>
+                                                                        </div>
+                                                                            <label>
+                                                                                    1st Timing:
+                                                                                </label>
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                        </div>
+                                        
+                                                                                        <div class="col-md-6">
+                                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <label>
+                                                                                            2nd Timing:
+                                                                                        </label>
+                                                                                    <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                            </div>
+                                            
+                                                                                            <div class="col-md-6">
+                                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                            </div>
+                                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
                                     </div>
+
                             </div>
 
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                     <div class="form-group">
                                             <label for="example-time-input">
                                                 Opening Time
@@ -307,7 +586,7 @@
                                                 <input class="form-control m-input" id="example-time-input2" type="time" value="19:00:00">        
                                     </div>
 
-                            </div>
+                            </div> -->
 
                             
                                 
@@ -323,51 +602,330 @@
                 </div>
                 <div *ngIf="!isWalkIn">
                         <div class="m-form__group form-group row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label >
                                         Bookable Days
                                     </label>
 
-                                    <div class="m-checkbox-list" >
-                                            <label class="m-checkbox">
-                                                <input checked="checked" type="checkbox">
-                                                 Monday
-                                                <span></span>
-                                            </label>
-                                            <label class="m-checkbox">
-                                                <input checked="checked" type="checkbox">
-                                                Tuesday
-                                                <span></span>
-                                            </label>
-                                            <label class="m-checkbox">
-                                                <input checked="checked" type="checkbox">
-                                                Wednesday
-                                                <span></span>
-                                            </label>
-                                            <label class="m-checkbox">
-                                                <input  type="checkbox">
-                                                Thursday
-                                                <span></span>
-                                            </label>
-                                            <label class="m-checkbox">
-                                                    <input  type="checkbox">
-                                                    Friday
-                                                    <span></span>
-                                            </label>
-                                            <label class="m-checkbox">
-                                                    <input  type="checkbox">
-                                                    Saturday
-                                                    <span></span>
-                                            </label>
-                                            <label class="m-checkbox">
-                                                    <input  type="checkbox">
-                                                    Sunday
-                                                    <span></span>
-                                            </label>
+                                    <div class="m-accordion m-accordion--default m-accordion--solid m-accordion--section  m-accordion--toggle-arrow" id="m_accordion_7" role="tablist">
+						
+                                            <div class="m-accordion__item">
+                                                <div aria-expanded="false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_monday_body" id="m_accordion_walkin_monday_1_head" role="tab" ng-reflect-href="#m_accordion_walkin_monday_body">
+                                               
+                                                    <span class="m-accordion__item-title">
+                                                       Monday
+                                                    </span>
+                                                    <span class="m-accordion__item-mode"></span>
+                                                </div>
+                                                <div aria-labelledby="m_accordion_walkin_monday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_monday_body" role="tabpanel" style="">
+                                                    <div class="m-accordion__item-content">
+                                                            
+                                                        <div><label  class="m-checkbox">
+                                                                    <input  checked="checked" type="checkbox">
+                                                                     On
+                                                                    <span ></span>
+                                                            </label>
+                                                        </div>
+    
+                                                            <label>
+                                                                    1st Timing:
+                                                                </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                        
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                                                                    </div>
+                                                                    <label>
+                                                                            2nd Timing:
+                                                                        </label>
+                                                                    <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                            
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                                                                    </div>
+                                                                      
+                                                                       
+                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                 
+                                            <div class="m-accordion__item">
+                                                <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_tuesday_body" id="m_accordion_walkin_tuesday_head" role="tab" ng-reflect-href="#m_accordion_walkin_tuesday_body">
+                                                        <span class="m-accordion__item-title">
+                                                                Tuesday
+                                                             </span>
+                                                             <span class="m-accordion__item-mode"></span>
+                                                </div>
+                                                <div aria-labelledby="m_accordion_walkin_tuesday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_tuesday_body" role="tabpanel">
+                                                    <div class="m-accordion__item-content">
+                                                            <div><label  class="m-checkbox">
+                                                                    <input  checked="checked" type="checkbox">
+                                                                     On
+                                                                    <span ></span>
+                                                            </label>
+                                                        </div>
+                                                            <label>
+                                                                    1st Timing:
+                                                                </label>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                        
+                                                                        <div class="col-md-6">
+                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                        </div>
+                                                                    </div>
+                                                                    <label>
+                                                                            2nd Timing:
+                                                                        </label>
+                                                                    <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                            
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                 
+                                            <div class="m-accordion__item">
+                                                    <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_wednesday_body" id="m_accordion_walkin_tuesday_head" role="tab" ng-reflect-href="#m_accordion_walkin_wednesday_body">
+                                                            <span class="m-accordion__item-title">
+                                                                    Wednesday
+                                                                 </span>
+                                                                 <span class="m-accordion__item-mode"></span>
+                                                    </div>
+                                                    <div aria-labelledby="m_accordion_walkin_wednesday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_wednesday_body" role="tabpanel">
+                                                        <div class="m-accordion__item-content">
+                                                                <div><label  class="m-checkbox">
+                                                                        <input  checked="checked" type="checkbox">
+                                                                         On
+                                                                        <span ></span>
+                                                                </label>
+                                                            </div>
+                                                                <label>
+                                                                        1st Timing:
+                                                                    </label>
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                            
+                                                                            <div class="col-md-6">
+                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                            </div>
+                                                                        </div>
+                                                                        <label>
+                                                                                2nd Timing:
+                                                                            </label>
+                                                                        <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                </div>
+                                
+                                                                                <div class="col-md-6">
+                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                </div>
+                                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+    
+                                                <div class="m-accordion__item">
+                                                        <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_thursday_body" id="m_accordion_walkin_thursday_head" role="tab" ng-reflect-href="#m_accordion_walkin_thursday_body">
+                                                                <span class="m-accordion__item-title">
+                                                                        Thursday
+                                                                     </span>
+                                                                     <span class="m-accordion__item-mode"></span>
+                                                        </div>
+                                                        <div aria-labelledby="m_accordion_walkin_thursday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_thursday_body" role="tabpanel">
+                                                            <div class="m-accordion__item-content">
+                                                                    <div><label  class="m-checkbox">
+                                                                            <input  checked="checked" type="checkbox">
+                                                                             On
+                                                                            <span ></span>
+                                                                    </label>
+                                                                </div>
+                                                                    <label>
+                                                                            1st Timing:
+                                                                        </label>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                </div>
+                                
+                                                                                <div class="col-md-6">
+                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                </div>
+                                                                            </div>
+                                                                            <label>
+                                                                                    2nd Timing:
+                                                                                </label>
+                                                                            <div class="row">
+                                                                                    <div class="col-md-6">
+                                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                    </div>
+                                    
+                                                                                    <div class="col-md-6">
+                                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                    </div>
+                                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+    
+                                                    <div class="m-accordion__item">
+                                                            <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_friday_body" id="m_accordion_walkin_friday_head" role="tab" ng-reflect-href="#m_accordion_walkin_friday_body">
+                                                                    <span class="m-accordion__item-title">
+                                                                            Friday
+                                                                         </span>
+                                                                         <span class="m-accordion__item-mode"></span>
+                                                            </div>
+                                                            <div aria-labelledby="m_accordion_walkin_friday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_friday_body" role="tabpanel">
+                                                                <div class="m-accordion__item-content">
+                                                                        <div><label  class="m-checkbox">
+                                                                                <input  checked="checked" type="checkbox">
+                                                                                 On
+                                                                                <span ></span>
+                                                                        </label>
+                                                                    </div>
+                                                                        <label>
+                                                                                1st Timing:
+                                                                            </label>
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6">
+                                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                    </div>
+                                    
+                                                                                    <div class="col-md-6">
+                                                                                            <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <label>
+                                                                                        2nd Timing:
+                                                                                    </label>
+                                                                                <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                        </div>
+                                        
+                                                                                        <div class="col-md-6">
+                                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                        </div>
+                                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+    
+                                                        <div class="m-accordion__item">
+                                                                <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_saturday_body" id="m_accordion_walkin_saturday_head" role="tab" ng-reflect-href="#m_accordion_walkin_saturday_body">
+                                                                        <span class="m-accordion__item-title">
+                                                                                Saturday
+                                                                             </span>
+                                                                             <span class="m-accordion__item-mode"></span>
+                                                                </div>
+                                                                <div aria-labelledby="m_accordion_walkin_saturday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_saturday_body" role="tabpanel">
+                                                                    <div class="m-accordion__item-content">
+                                                                            <div><label  class="m-checkbox">
+                                                                                    <input type="checkbox">
+                                                                                     On
+                                                                                    <span ></span>
+                                                                            </label>
+                                                                        </div>
+                                                                            <label>
+                                                                                    1st Timing:
+                                                                                </label>
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                        </div>
+                                        
+                                                                                        <div class="col-md-6">
+                                                                                                <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <label>
+                                                                                            2nd Timing:
+                                                                                        </label>
+                                                                                    <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                            </div>
+                                            
+                                                                                            <div class="col-md-6">
+                                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                            </div>
+                                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+    
+    
+                                                            <div class="m-accordion__item">
+                                                                    <div aria-expanded="    false" class="m-accordion__item-head collapsed" data-toggle="collapse" href="#m_accordion_walkin_sunday_body" id="m_accordion_walkin_sunday_head" role="tab" ng-reflect-href="#m_accordion_walkin_sunday_body">
+                                                                            <span class="m-accordion__item-title">
+                                                                                    Sunday
+                                                                                 </span>
+                                                                                 <span class="m-accordion__item-mode"></span>
+                                                                    </div>
+                                                                    <div aria-labelledby="m_accordion_walkin_sunday_head" class="m-accordion__item-body collapse" data-parent="#m_accordion_7" id="m_accordion_walkin_sunday_body" role="tabpanel">
+                                                                        <div class="m-accordion__item-content">
+                                                                                <div><label  class="m-checkbox">
+                                                                                        <input type="checkbox">
+                                                                                         On
+                                                                                        <span ></span>
+                                                                                </label>
+                                                                            </div>
+                                                                                <label>
+                                                                                        1st Timing:
+                                                                                    </label>
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                            </div>
+                                            
+                                                                                            <div class="col-md-6">
+                                                                                                    <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <label>
+                                                                                                2nd Timing:
+                                                                                            </label>
+                                                                                        <div class="row">
+                                                                                                <div class="col-md-6">
+                                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                                </div>
+                                                
+                                                                                                <div class="col-md-6">
+                                                                                                        <input class="form-control m-input" id="example-time-input" type="time" value="13:45:00">
+                                                                                                </div>
+                                                                                        </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                            
                                         </div>
+
+                                   
                                 </div>
 
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                         <div class="form-group">
                                                 <label for="example-time-input-bookable">
                                                     Opening Time
@@ -384,7 +942,7 @@
                                                     <input class="form-control m-input" id="example-time-input-bookable2" type="time" value="20:00:00">        
                                         </div>
 
-                                </div>
+                                </div> -->
                                     
                                         
                                     
@@ -470,7 +1028,7 @@
                 <label for="exampleTextarea">
                     Description:
                 </label>
-                <textarea class="form-control m-input" rows="" ></textarea>
+                <textarea class="form-control m-input" rows="10" ></textarea>
             </div>
         </div>
     </div>
