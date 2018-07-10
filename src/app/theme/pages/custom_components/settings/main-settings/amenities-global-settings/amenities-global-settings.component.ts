@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Folder} from "../../../../../../models/Folder.model";
 
 @Component({
     selector: 'app-amenities-global-settings',
@@ -11,6 +12,9 @@ export class AmenitiesGlobalSettingsComponent implements OnInit {
     isWalkIn = true;
     isAmenityGridView = true;
     AmenityViewName = 'List View';
+    default_imgUrl = 'assets/app/media/img/custom/amenities/placeholder.png';
+
+    selectedAmenities=[];
 
     Amenities=[
         {
@@ -62,4 +66,18 @@ export class AmenitiesGlobalSettingsComponent implements OnInit {
         this.addAmenityForm = false;
     }
 
+    addAmenity(name: string, img: string, amenityFor: string, amenityType: string, desc?: string) {
+        this.Amenities.push({name: name, img:img, amenityfor: amenityFor, amenitytype: amenityType, desc: desc });
+        this.isAmenityGridView = !this.isAmenityGridView;
+        this.changeAmenityView();
+    }
+
+    // selectedItem(){
+    //     this.selectedAmenities.push()
+    // }
+
+    deleteAmenity(id){
+        console.log(id);
+        this.Amenities.splice(id,1);
+    }
 }
