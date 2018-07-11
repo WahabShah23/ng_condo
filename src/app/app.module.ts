@@ -18,6 +18,7 @@ import { AuthModule } from "./auth/auth.module";
 import { WizardComponent } from './components/wizard/wizard.component';
 
 import { DemoService } from "./services/demo.service";
+import { AmenitiesService } from "./services/amenities.service";
 
 @NgModule({
     declarations: [
@@ -40,7 +41,7 @@ import { DemoService } from "./services/demo.service";
             libraries: ['places']
         })
     ],
-    providers: [ScriptLoaderService, DemoService],
+    providers: [ScriptLoaderService, DemoService, AmenitiesService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
