@@ -69,7 +69,7 @@
                 <div class="innerCards stackEffect" id="card7"
                      [ngClass]="(className === 'building' || className == 'floor' || className == 'apartment' || className == 'amenities') ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Building Settings</h6>
-                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('building'); visibleSidebar5 = true" ></i>
+                   <a routerLink="buildings"> <i class="fa fa-expand text-muted pull-right c-expand-icon"  ></i> </a>
                     <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
                 </div>
 
@@ -1031,21 +1031,7 @@
         <!-- ----------------------------------------Amenities Global End---------------------------------------- -->
 
 
-        <!-- ----------------------------------------Building Start---------------------------------------- -->
-        <div class="building-settings" *ngIf="className == 'building'">
-            <h3 class="m-subheader__title" style="font-weight:normal">Building Settings</h3>
-            <!--<div>-->
-                <!--<i class="fa fa-plus" (click)="addForm != addForm"> Add Building</i>-->
-            <!--</div>-->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <app-building-settings></app-building-settings>
-                </div>
-            </div>
-        </div>
-        <!-- ----------------------------------------Building End---------------------------------------- -->
-
+       
         <!-- ----------------------------------------Amenities Start---------------------------------------- -->
         <div class="building-settings" *ngIf="className == 'amenities'">
             <h2 style="font-weight:normal">Amenities Local Settings</h2>

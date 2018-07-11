@@ -1,26 +1,73 @@
-<div class="m-form__section m-form__section--first">
-    <div class="m-form__heading">
+<div class="m-subheader">
         <div class="d-flex align-items-center">
-            <div class="mr-auto">
-                <h3 class="m-form__heading-title">
-                    Floors
-                </h3>
+                <div class="mr-auto">
+                    <h3 class="m-form__heading-title">
+                        Floors
+                    </h3>
+                </div>
+                <button class="btn btn-link">
+                    <i class="fa fa-plus" (click)="addFloorForm = true"> Add Floors</i>
+                </button>
+                <button class="btn btn-link" (click)="changeFloorView()">
+                    <i class="fa" [ngClass]="{'fa-list': isFloorGridView, 'fa-th' : !isFloorGridView}"></i>
+                    {{FloorViewName}}
+                </button>
             </div>
-            <button class="btn btn-link">
-                <i class="fa fa-plus" (click)="addFloorForm = true"> Add Floors</i>
-            </button>
-            <button class="btn btn-link" (click)="changeFloorView()">
-                <i class="fa" [ngClass]="{'fa-list': isFloorGridView, 'fa-th' : !isFloorGridView}"></i>
-                <small>{{FloorViewName}}</small>
-            </button>
-        </div>
-    </div>
 </div>
+<div class="m-subheader breadcrumb-header">
+        <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+            <li  class="m-nav__item m-nav__item--home">
+                <a  class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
+                    <i  class="m-nav__link-icon la la-home"></i>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                -
+            </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Settings
+                    </span>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                    -
+                </li>
+               
+               
+                <li  class="m-nav__item">
+                    <a  routerLink="/settings/buildings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text">
+                            Buildings     
+                        </span>
+                    </a>
+                </li>
+                <li  class="m-nav__separator">
+                        -
+                    </li>
+                   
+                   
+                    <li  class="m-nav__item">
+                        <a  class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                            <span  class="m-nav__link-text">
+                                Floors     
+                            </span>
+                        </a>
+                    </li>
+        </ul>
+    </div>
+    <hr  class="customhr">
+
+<div class="m-content">
+
 
 <!-- ---------------------------Floors Cards Start---------------------------------- -->
 
 <div class="row" *ngIf="!addFloorForm && isFloorGridView">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div  class="body organ1">
             <div  class="row" style="margin:0px;">
                 <div  class="card-left col-lg-3" id="">
@@ -91,7 +138,7 @@
             </div>
         </div>
     </div>
-    <div  class="col-md-6">
+    <div  class="col-md-4">
         <div  class="body organ1">
             <div  class="row" style="margin:0px;">
                 <div  class="card-left col-lg-3" id="">
@@ -320,3 +367,4 @@
     </div>
 </div>
 <!-- ---------------------------Add Floor Form End---------------------------------- -->
+</div>
