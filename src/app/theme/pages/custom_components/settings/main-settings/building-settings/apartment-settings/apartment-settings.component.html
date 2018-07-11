@@ -1,25 +1,74 @@
-<div class="m-form__section m-form__section--first">
-    <div class="m-form__heading">
-        <div class="d-flex align-items-center">
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
             <div class="mr-auto">
-                <h3 class="m-form__heading-title">
-                    Condo/Apart
-                </h3>
-            </div>
-            <button class="btn btn-link">
-                <i class="fa fa-plus" (click)="addApartmentForm = true"> Add Apartments</i>
-            </button>
-            <button class="btn btn-link" (click)="changeApartmentView()">
-                <i class="fa" [ngClass]="{'fa-list': isApartmentGridView, 'fa-th' : !isApartmentGridView}"></i>
-                <small>{{ApartmentViewName}}</small>
-            </button>
-        </div>
+                    <h3 class="m-form__heading-title">
+                        Condo/Apart
+                    </h3>
+                </div>
+                <button class="btn btn-link">
+                    <i class="fa fa-plus" (click)="addApartmentForm = true"> Add Apartments</i>
+                </button>
+                <button class="btn btn-link" (click)="changeApartmentView()">
+                    <i class="fa" [ngClass]="{'fa-list': isApartmentGridView, 'fa-th' : !isApartmentGridView}"></i>
+                      {{ApartmentViewName}}
+                </button>
     </div>
 </div>
 
+<div class="m-subheader breadcrumb-header">
+        <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+            <li  class="m-nav__item m-nav__item--home">
+                <a  class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
+                    <i  class="m-nav__link-icon la la-home"></i>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                -
+            </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Settings
+                    </span>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                    -
+                </li>
+               
+               
+                <li  class="m-nav__item">
+                    <a  routerLink="/settings/buildings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text">
+                            Buildings     
+                        </span>
+                    </a>
+                </li>
+                <li  class="m-nav__separator">
+                        -
+                    </li>
+                   
+                   
+                    <li  class="m-nav__item">
+                        <a  class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                            <span  class="m-nav__link-text">
+                                Condos     
+                            </span>
+                        </a>
+                    </li>
+        </ul>
+    </div>
+    <hr  class="customhr">
+    
+
+<div class="m-content">
+
+
 <!-- ---------------------------Apartment Cards Start---------------------------------- -->
 <div class="row" *ngIf="!addApartmentForm && isApartmentGridView">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div  class="body organ1">
             <div  class="row" style="margin:0px;">
                 <div  class="card-left col-lg-3" id="">
@@ -82,7 +131,7 @@
             </div>
         </div>
     </div>
-    <div  class="col-md-6">
+    <div  class="col-md-4">
         <div  class="body organ1">
             <div  class="row" style="margin:0px;">
                 <div  class="card-left col-lg-3" id="">
@@ -301,3 +350,4 @@
     </div>
 </div>
 <!-- ---------------------------Add Apartment Form End---------------------------------- -->
+</div>

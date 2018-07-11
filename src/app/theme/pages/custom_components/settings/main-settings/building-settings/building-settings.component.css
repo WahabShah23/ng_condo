@@ -106,7 +106,7 @@ cardtype , .cardname
 
 .m-content
 {
-	padding: 0px !important;
+	padding: 20px !important;
 }
 
 .m-widget14__stat[_ngcontent-c7] {
@@ -127,4 +127,22 @@ cardtype , .cardname
 .m-accordion .m-accordion__item .m-accordion__item-head .m-accordion__item-title 
 {
 	font-size: 1rem;
+}
+
+
+.m-subheader {
+    padding: 0px 30px 0 30px;
+}
+.m-subheader:not(.breadcrumb-header)
+{
+	margin-top: 15px;
+}
+.customhr
+{
+	margin-top: 0.0rem;
+    margin-bottom: -1.4rem;
+}
+.breadcrumb-header li:not(.m-nav__item--home) a span 
+{
+  font-size: 11px;
 }

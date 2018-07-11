@@ -21,6 +21,7 @@ import { StorageComponent } from "../pages/custom_components/storage/storage.com
 import { CustomRightSidebarComponent } from './custom-right-sidebar/custom-right-sidebar.component';
 import { AsideNavSettingsComponent } from './aside-nav-settings/aside-nav-settings.component';
 import { SettingsComponent } from "../pages/custom_components/settings/settings.component";
+import { AsideNavBuildingComponent } from './aside-nav-building/aside-nav-building.component';
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import { SettingsComponent } from "../pages/custom_components/settings/settings.
         StorageNavComponent,
         GlobalNavComponent,
         CustomRightSidebarComponent,
-        AsideNavSettingsComponent
+        AsideNavSettingsComponent,
+        AsideNavBuildingComponent
     ],
     exports: [
         LayoutComponent,
@@ -61,7 +63,8 @@ import { SettingsComponent } from "../pages/custom_components/settings/settings.
         ScrollTopComponent,
         TooltipsComponent,
         HrefPreventDefaultDirective,
-        CustomRightSidebarComponent
+        CustomRightSidebarComponent,
+        AsideNavBuildingComponent
     ],
     imports: [
         CommonModule,

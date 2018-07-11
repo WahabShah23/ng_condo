@@ -1,23 +1,63 @@
-<div class="m-form__section m-form__section--first">
-    <div class="m-form__heading">
+<div class="m-subheader">
         <div class="d-flex align-items-center">
-            <div class="mr-auto">
-                <!--<h3 class="m-form__heading-title">-->
-                <!--Amenities-->
-                <!--</h3>-->
+                <div class="mr-auto">
+                    <!--<h3 class="m-form__heading-title">-->
+                    <!--Amenities-->
+                    <!--</h3>-->
+                    <h3 class="m-subheader__title">
+                         Buildings
+                    </h3>
+                </div>
+                <button class="btn btn-link">
+                    <i class="fa fa-plus" (click)="addBuildingForm = true; buildingWizard = false;"> Add Building</i>
+                </button>
+                <button class="btn btn-link" (click)="changeBuildingView()">
+                    <i class="fa" [ngClass]="{'fa-list': isBuildingGridView, 'fa-th' : !isBuildingGridView}"> {{BuildingViewName}} </i>
+                </button>
             </div>
-            <button class="btn btn-link">
-                <i class="fa fa-plus" (click)="addBuildingForm = true; buildingWizard = false;"> Add Building</i>
-            </button>
-            <button class="btn btn-link" (click)="changeBuildingView()">
-                <i class="fa" [ngClass]="{'fa-list': isBuildingGridView, 'fa-th' : !isBuildingGridView}"> {{BuildingViewName}} </i>
-            </button>
-        </div>
+</div>
+<div class="m-subheader breadcrumb-header">
+        <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+            <li  class="m-nav__item m-nav__item--home">
+                <a  class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
+                    <i  class="m-nav__link-icon la la-home"></i>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                -
+            </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Settings
+                    </span>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                    -
+                </li>
+               
+               
+                <li  class="m-nav__item">
+                    <a  routerLink="/settings/buildings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text">
+                            Buildings     
+                        </span>
+                    </a>
+                </li>
+             
+        </ul>
     </div>
+    <hr  class="customhr">
+
+<div class="m-content">
+
 
     <!-- ---------------------------Buildings Cards Start---------------------------------- -->
 
-    <div class="row" *ngIf="!addBuildingForm && isBuildingGridView && !buildingWizard">
+    <div class="row" *ngIf="!addBuildingForm && isBuildingGridView ">
         <div  class="col-md-4">
             <div  class="body organ1">
                 <div  class="row" style="margin:0px;">
@@ -40,7 +80,8 @@
 
                     </div>
                     <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                        <h6  class="text-muted pull-left" (click)="editBuildingInfo()"><i class="fa fa-cog"></i> Building Details</h6>
+                        <h6  class="text-muted pull-left"><i class="fa fa-cog"></i> Building Details</h6>
+                        <a class="pull-right" routerLink="1/floors">Details</a>
                         <div  class="clearfix"></div>
                         <div  class="row">
                             <div  class="col-sm-6">
@@ -88,6 +129,7 @@
                     </div>
                     <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                         <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Building Details</h6>
+                        <a class="pull-right" routerLink="2/floors">Details</a>
                         <div  class="clearfix"></div>
                         <div  class="row">
                             <div  class="col-sm-6">
@@ -1036,4 +1078,3 @@
 
 </div>
 
-<app-wizard-building *ngIf="buildingWizard"></app-wizard-building>

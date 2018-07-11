@@ -1,3 +1,4 @@
+import { SettingsBuildingsComponent } from './../settings-building.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -29,8 +30,27 @@ const routes: Routes = [
                 'path': '',
                 'component': MainSettingsComponent,
             },
+            {
+                'path': 'buildings',
+                component: BuildingSettingsComponent
+            }
         ],
     },
+    {
+        'path': 'buildings/:id',
+        component: SettingsBuildingsComponent,
+        'children': [
+            {
+                'path': 'floors',
+                'component': FloorSettingsComponent,
+            },
+            {
+                'path': 'condos',
+                'component': ApartmentSettingsComponent,
+            },
+
+        ]
+    }
 ];
 
 @NgModule({
@@ -47,7 +67,8 @@ const routes: Routes = [
         BuildingSettingsComponent,
         CommonServicesGlobalSettingsComponent,
         FloorSettingsComponent,
-        ApartmentSettingsComponent
+        ApartmentSettingsComponent,
+        SettingsBuildingsComponent
     ],
 
 })
