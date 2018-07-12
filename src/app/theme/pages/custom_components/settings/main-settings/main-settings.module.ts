@@ -1,7 +1,7 @@
+import { MainSettingsRouting } from './main-settings-routing.module';
 import { SettingsBuildingsComponent } from './../settings-building.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from "@angular/forms";
 
 import { FileUploadModule, SidebarModule } from 'primeng/primeng';
@@ -18,47 +18,16 @@ import { BuildingSettingsComponent } from './building-settings/building-settings
 import { CommonServicesGlobalSettingsComponent } from './common-services-global-settings/common-services-global-settings.component';
 import { FloorSettingsComponent } from './building-settings/floor-settings/floor-settings.component';
 import { ApartmentSettingsComponent } from './building-settings/apartment-settings/apartment-settings.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
-const routes: Routes = [
-    {
-        'path': '',
-        'component': SettingsComponent,
-        'children': [
-            {
-                'path': '',
-                'component': MainSettingsComponent,
-            },
-            {
-                'path': 'buildings',
-                component: BuildingSettingsComponent
-            }
-        ],
-    },
-    {
-        'path': 'buildings/:id',
-        component: SettingsBuildingsComponent,
-        'children': [
-            {
-                'path': 'floors',
-                'component': FloorSettingsComponent,
-            },
-            {
-                'path': 'condos',
-                'component': ApartmentSettingsComponent,
-            },
-
-        ]
-    }
-];
 
 @NgModule({
     imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule,
-        FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule
+        CommonModule, LayoutModule,
+        FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule , MainSettingsRouting
     ], exports: [
-        RouterModule
     ], declarations: [
         MainSettingsComponent,
         WizardBuildingComponent,
@@ -68,7 +37,8 @@ const routes: Routes = [
         CommonServicesGlobalSettingsComponent,
         FloorSettingsComponent,
         ApartmentSettingsComponent,
-        SettingsBuildingsComponent
+        SettingsBuildingsComponent,
+        AccountSettingsComponent
     ],
 
 })

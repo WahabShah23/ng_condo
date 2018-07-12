@@ -9,7 +9,7 @@
                     </h3>
                 </div>
                 <button class="btn btn-link">
-                    <i class="fa fa-plus" (click)="addBuildingForm = true; buildingWizard = false;"> Add Building</i>
+                    <i class="fa fa-plus" (click)="addBuildingForm = true;"> Add Building</i>
                 </button>
                 <button class="btn btn-link" (click)="changeBuildingView()">
                     <i class="fa" [ngClass]="{'fa-list': isBuildingGridView, 'fa-th' : !isBuildingGridView}"> {{BuildingViewName}} </i>
