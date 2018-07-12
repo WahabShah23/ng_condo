@@ -161,14 +161,9 @@
 {
     width:100%;
 }
-.breadcrumb-header
-{
-    margin-top: -30px;
-    margin-bottom: -15px;
-}
 
 
-.m-widget14__stat[_ngcontent-c6] {
+.m-widget14__stat {
     font-size: 1.8rem;
     font-weight: 500;
     position: absolute;
@@ -182,4 +177,23 @@
     font-size:11px;
     color: #6f727d !important;
     margin-top: 15px;
+}
+
+
+
+.m-subheader {
+    padding: 0px 30px 0 30px;
+}
+.m-subheader:not(.breadcrumb-header)
+{
+	margin-top: 15px;
+}
+.customhr
+{
+	margin-top: 0.0rem;
+    margin-bottom: -2.1rem;
+}
+.breadcrumb-header li:not(.m-nav__item--home) a span 
+{
+  font-size: 11px;
 }

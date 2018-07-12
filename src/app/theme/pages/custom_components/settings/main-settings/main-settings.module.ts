@@ -1,3 +1,4 @@
+import { SettingsCondosComponent } from './../settings-condos.component';
 import { MainSettingsRouting } from './main-settings-routing.module';
 import { SettingsBuildingsComponent } from './../settings-building.component';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ import { CommonServicesGlobalSettingsComponent } from './common-services-global-
 import { FloorSettingsComponent } from './building-settings/floor-settings/floor-settings.component';
 import { ApartmentSettingsComponent } from './building-settings/apartment-settings/apartment-settings.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
 
 
 
@@ -38,7 +40,9 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
         FloorSettingsComponent,
         ApartmentSettingsComponent,
         SettingsBuildingsComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        RoomSettingsComponent,
+        SettingsCondosComponent
     ],
 
 })

@@ -1,3 +1,5 @@
+import { SettingsCondosComponent } from './../settings-condos.component';
+import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -55,7 +57,16 @@ const routes: Routes = [
                 'path': 'condos',
                 'component': ApartmentSettingsComponent,
             },
-
+        ]
+    },
+    {
+        'path': 'buildings/:id/condos/:condoid',
+        'component': SettingsCondosComponent,
+        'children': [
+            {
+                'path': 'rooms',
+                'component': RoomSettingsComponent,
+            }
         ]
     },
 

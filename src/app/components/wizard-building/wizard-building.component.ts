@@ -85,7 +85,8 @@ export class WizardBuildingComponent implements OnInit, AfterViewInit {
 
 
 
-    changeRoomView() {
+    changeRoomView() 
+    {
         this.isRoomGridView = !this.isRoomGridView;
         if (this.isRoomGridView) {
             this.RoomViewName = 'List View';
