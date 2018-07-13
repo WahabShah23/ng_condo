@@ -1,3 +1,4 @@
+import { InventorySettingsComponent } from './building-settings/apartment-settings/inventory-settings/inventory-settings.component';
 import { SettingsCondosComponent } from './../settings-condos.component';
 import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
 import { NgModule } from '@angular/core';
@@ -66,6 +67,10 @@ const routes: Routes = [
             {
                 'path': 'rooms',
                 'component': RoomSettingsComponent,
+            },
+            {
+                'path': 'inventory',
+                'component': InventorySettingsComponent,
             }
         ]
     },

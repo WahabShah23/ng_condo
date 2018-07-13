@@ -1,3 +1,4 @@
+import { InventorySettingsComponent } from './building-settings/apartment-settings/inventory-settings/inventory-settings.component';
 import { SettingsCondosComponent } from './../settings-condos.component';
 import { MainSettingsRouting } from './main-settings-routing.module';
 import { SettingsBuildingsComponent } from './../settings-building.component';
@@ -36,6 +37,7 @@ import { RoomSettingsComponent } from './building-settings/apartment-settings/ro
         AmenitiesGlobalSettingsComponent,
         BillingServicesGlobalSettingsComponent,
         BuildingSettingsComponent,
+        InventorySettingsComponent,
         CommonServicesGlobalSettingsComponent,
         FloorSettingsComponent,
         ApartmentSettingsComponent,

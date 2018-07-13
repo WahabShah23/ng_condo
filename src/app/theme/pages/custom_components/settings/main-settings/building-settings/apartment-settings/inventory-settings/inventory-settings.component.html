@@ -4,11 +4,11 @@
         <div class="d-flex align-items-center">
             <div class="mr-auto">
                 <h3 class="m-form__heading-title">
-                    Rooms
+                    Inventory
                 </h3>
             </div>
             <button class="btn btn-link">
-                <i class="fa fa-plus" (click)="addRoomForm = true"> Add Room</i>
+                <i class="fa fa-plus" (click)="addRoomForm = true"> Add Inventory</i>
             </button>
 
             <button class="btn btn-link" (click)="changeRoomView()">
@@ -31,9 +31,9 @@
                     <div class="row onepersonrow">
 
                         <div class="col-md-12">
-                            <img class="personimage" src="assets/app/media/img/logos/logo-3.png">
-                            <p class="personname">1</p>
-                            <p class="persontype">Masterbed</p>
+                            <img class="personimage" src="assets/app/media/img/inventory/refridgerator.jpg">
+                            <p class="personname">Refrigerator</p>
+                            <p class="persontype">Electronics</p>
                         </div>
                     </div>
                     <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -44,22 +44,22 @@
                 </div>
                 <div class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                     <h6 class="text-muted pull-left">
-                        <i class="fa fa-cog"></i> Room Details</h6>
+                        <i class="fa fa-cog"></i> Inventory Details</h6>
                     <div class="clearfix"></div>
                     <div class="row">
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-bed"></i> 3
+                                <i class="fa fa-usd"></i> 1000
                             </p>
                         </div>
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-shower"></i> 2
+                                <i class="fa fa-list-alt"></i> Haier
                             </p>
                         </div>
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-area-chart"></i> 200 sq/m
+                                <i class="fa fa-hashtag	"></i> 3
                             </p>
                         </div>
 
@@ -83,9 +83,9 @@
                     <div class="row onepersonrow">
 
                         <div class="col-md-12">
-                            <img class="personimage" src="assets/app/media/img/logos/logo-1.png">
-                            <p class="personname">2</p>
-                            <p class="persontype">Single Bed</p>
+                            <img class="personimage" src="assets/app/media/img/inventory/bed.jpg">
+                            <p class="personname">Bed</p>
+                            <p class="persontype">Furniture</p>
                         </div>
                     </div>
                     <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -96,22 +96,22 @@
                 </div>
                 <div class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                     <h6 class="text-muted pull-left">
-                        <i class="fa fa-cog"></i> Room Details</h6>
+                        <i class="fa fa-cog"></i> Inventory Details</h6>
                     <div class="clearfix"></div>
                     <div class="row">
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-bed"></i> 3
+                                <i class="fa fa-usd"></i> 2000
                             </p>
                         </div>
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-shower"></i> 2
+                                <i class="fa fa-list-alt"></i> Woodies
                             </p>
                         </div>
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-area-chart"></i> 200 sq/m
+                                <i class="fa fa-hashtag	"></i> 1
                             </p>
                         </div>
 
@@ -138,15 +138,17 @@
                                 <span style="border-color: #fff !important;"></span>
                             </label>
                         </th>
-                        <th> Room # </th>
+                        <th> Item # </th>
                         <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending"
-                            style="width: 0px;"> Type </th>
+                            style="width: 0px;"> Name </th>
                         <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending"
-                            style="width: 0px;"> Beds </th>
+                            style="width: 0px;"> Category </th>
                         <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending"
-                            style="width: 0px;"> Baths </th>
+                            style="width: 0px;"> Price </th>
                         <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Due Date : activate to sort column ascending"
-                            style="width: 0px;"> Area </th>
+                            style="width: 0px;"> Brand </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Due Date : activate to sort column ascending"
+                            style="width: 0px;"> Number </th>
                 </thead>
                 <tfoot>
                 </tfoot>
@@ -159,35 +161,40 @@
                             </label>
                         </td>
                         <td> 1</td>
-                        <td> Masterbed</td>
+                        <td> Refridgerator</td>
+                        <td> Electronics</td>
                         <td class="center">
+                            1000
+                        </td>
+                        <td class="center">
+                            Haier
+                        </td>
+                        <td class="center"> 
                             3
                         </td>
-                        <td class="center">
-                            2
-                        </td>
-                        <td class="center"> 200 sq/m</td>
 
                     </tr>
-                    <tr>
-                        <td>
-                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                <input type="checkbox" class="chkboxes1">
-                                <span></span>
-                            </label>
-                        </td>
-                        <td> 2</td>
-                        <td> Single Bed</td>
-                        <td class="center">
-
-                            3
-                        </td>
-                        <td class="center">
-                            2
-                        </td>
-                        <td class="center"> 200 sq/m</td>
-
-                    </tr>
+                    <tr role="row">
+                            <td>
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="chkboxes1">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td> 2</td>
+                            <td> Bed</td>
+                            <td> Furniture</td>
+                            <td class="center">
+                                2000
+                            </td>
+                            <td class="center">
+                                Woodies
+                            </td>
+                            <td class="center"> 
+                                1
+                            </td>
+    
+                        </tr>
 
                 </tbody>
 
@@ -199,43 +206,9 @@
 
 <!-- ----------------------------- Add Room Form Start------------------------------- -->
 <div class="row" *ngIf="addRoomForm">
-    <!-- <div class="col-md-6">
-        <div class="form-group m-form__group">
-            <label>
-                Room Number:
-            </label>
-            <input aria-describedby="input1" class="form-control form-control-sm m-input m-input--air" placeholder="Room Number" type="text">
-        </div>
-        <div class="form-group m-form__group">
-            <label>
-                Room Type:
-            </label>
-            <select class="form-control m-input m-input--air" type="text">
-                <option value="item">MasterBed</option>
-                <option value="item">DoubleBed/option>
-                    <option value="item">SingleBed</option>
-            </select>
-        </div>
-
-    </div>
-    <div class="col-md-6">
-
-        <div class="form-group m-form__group">
-            <label>
-                Number of Baths
-            </label>
-            <input type="number" min="0" class="form-control m-input m-input--air">
-        </div>
-
-        <div class="form-group m-form__group">
-            <label for="floorCount">
-                Number of Rooms
-            </label>
-            <input type="number" min="0" class="form-control m-input m-input--air">
-        </div>
-    </div> -->
+  
     <div class="col-sm-12">
-    <h5>Add Room <button class="btn btn-link" (click)="addNewRoomRow()"><i class="fa fa-plus"></i></button> </h5>
+    <h5>Add Inventory <button class="btn btn-link" (click)="addNewRoomRow()"><i class="fa fa-plus"></i></button> </h5>
     
     </div>
     
@@ -247,34 +220,23 @@
                 </div>
 
                 <div class="col-sm-2">
-                        <label>Room Area (sq/m):</label>
+                        <label>Category:</label>
                         <input type="text" class="form-control">
                   </div>
 
                   <div class="col-sm-2">
-                        <label>Attachment Type:</label>
-                        <select class="form-control" >
-                                <option>
-                                    None
-                                </option>
-                                <option>
-                                    Washroom
-                                </option>
-                                <option>
-                                    Toilet
-                                </option>
-                                <option>
-                                    Bathroom
-                                </option>
-                                <option>
-                                    Restroom
-                                </option>
-                            </select>
+                        <label>Price:</label>
+                        <input type="number" class="form-control">
                   </div>
 
                   <div class="col-sm-2">
-                        <label>Area (sq/m):</label>
+                        <label>Brand:</label>
                         <input type="text" class="form-control">
+                  </div>
+
+                  <div class="col-sm-2">
+                        <label>Number:</label>
+                        <input type="number" class="form-control">
                   </div>
                  
                   <div class="col-sm-1">
@@ -286,7 +248,7 @@
 
     <div class="col-md-12">
       
-        <button class="btn btn-primary">Add Room</button>
+        <button class="btn btn-primary">Add Inventory</button>
 
     </div>
 </div>

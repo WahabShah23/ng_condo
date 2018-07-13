@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-room-settings',
-  templateUrl: "./room-settings.component.html",
-  styleUrls: ["./room-settings.component.css"]
+  selector: 'app-inventory-settings',
+  templateUrl: "./inventory-settings.component.html",
+  styleUrls: ["./inventory-settings.component.css"]
 })
-export class RoomSettingsComponent implements OnInit {
+export class InventorySettingsComponent implements OnInit {
 
   addRoomForm = false;
   isRoomGridView = true;
