@@ -19,6 +19,7 @@ import { WizardComponent } from './components/wizard/wizard.component';
 
 import { DemoService } from "./services/demo.service";
 import { AmenitiesService } from "./services/amenities.service";
+import { InventoriesService } from "./services/inventories.service";
 
 @NgModule({
     declarations: [
@@ -41,7 +42,7 @@ import { AmenitiesService } from "./services/amenities.service";
             libraries: ['places']
         })
     ],
-    providers: [ScriptLoaderService, DemoService, AmenitiesService],
+    providers: [ScriptLoaderService, DemoService, AmenitiesService, InventoriesService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

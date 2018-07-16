@@ -1,0 +1,250 @@
+
+<div class="m-subheader">
+    <div  class="d-flex align-items-center">
+        <div  class="mr-auto">
+            <h3  class="m-subheader__title">
+                Inventory Settings
+            </h3>
+        </div>
+        <button class="btn btn-link">
+            <i class="fa fa-plus" (click)="addInventoryForm = true"> Add Inventory</i>
+        </button>
+        <button class="btn btn-link" (click)="changeInventoryView()">
+            <i class="fa" [ngClass]="{'fa-list': isInventoryGridView, 'fa-th' : !isInventoryGridView}"> {{InventoryViewName}} </i>
+        </button>
+
+    </div>
+</div>
+<div  class="m-subheader breadcrumb-header">
+    <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li  class="m-nav__item m-nav__item--home">
+            <a  class="m-nav__link m-nav__link--icon" routerLink="/dashboard" ng-reflect-href="/dashboard" ng-reflect-router-link="/dashboard" routerlink="/dashboard">
+                <i  class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+
+
+        <li  class="m-nav__item">
+            <a  class="m-nav__link" routerLink="/settings" ng-reflect-href="javascript:;" routerlink="/settings" ng-reflect-router-link="/settings">
+                    <span  class="m-nav__link-text">
+                        Settings
+                    </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+
+
+        <li  class="m-nav__item">
+            <a  class="m-nav__link" routerLink="/settings/amenities" ng-reflect-href="javascript:;" routerlink="/settings/buildings" ng-reflect-router-link="/settings/buildings">
+                <span  class="m-nav__link-text">
+                    Inventory
+                </span>
+            </a>
+        </li>
+
+    </ul>
+</div>
+<hr class="customhr">
+<div class="m-content">
+    <div class="m-form__section m-form__section--first">
+
+
+        <!-- ---------------------------Inventory Cards Start---------------------------------- -->
+
+        <div class="row" *ngIf="!addInventoryForm && isInventoryGridView">
+
+            <div  class="col-sm-12 col-md-3 col-xl-3" *ngFor='let inventory of Inventories; let i = index;'>
+                <div  class="body organ1">
+                    <div  class="row" style="margin:0px;">
+                        <div  class="card-left col-lg-3">
+                            <!--<label  class="m-checkbox m-checkbox&#45;&#45;solid m-checkbox&#45;&#45;single m-checkbox&#45;&#45;brand">-->
+                            <!--<input  class="chkboxes" type="checkbox">-->
+                            <!--<span ></span>-->
+                            <!--</label>-->
+                            <div  class="row onepersonrow">
+                                <div  class="col-md-12">
+                                    <img  class="cardimage" [src]="inventory.img">
+                                    <!--<p  class="cardname">{{amenity.name}}</p>-->
+                                    <!--<p  class="cardtype">{{amenity.amenitytype}}</p>-->
+                                    <!--<p  class="cardtype"> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Inventory Details</h6>
+                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteInventory(i)"></i>
+                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
+                                <input  class="chkboxes" type="checkbox">
+                                <span ></span>
+                            </label>
+                            <div  class="clearfix"></div>
+                            <div  class="row">
+                                <div class="col-sm-6">
+                                    <p  class="cardname"><b>Name:</b> {{inventory.name}}</p>
+                                    <!--<p  class="cardtype">{{amenity.amenitytype}}</p>-->
+                                    <!--<p  class="cardtype"> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>-->
+                                </div>
+                                <div  class="col-sm-6">
+                                    <p class="text-left"><strong>Category:</strong>  {{inventory.inventoryCat}}</p>
+                                </div>
+                                <div  class="col-sm-6">
+                                    <p class="text-left"><strong>Sub-Cat:</strong>{{inventory.inventorySubCat}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ---------------------------Inventories Cards End---------------------------------- -->
+
+        <!-- ---------------------------Inventories List Start---------------------------------- -->
+        <div *ngIf="!addInventoryForm && !isInventoryGridView">
+            <div class="cold-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr style="background: #555;color: #fff" role="row"><th>
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline f">
+                                <input type="checkbox" class="group-checkable">
+                                <span style="border-color: #fff !important;"></span>
+                            </label>
+                        </th>
+                            <th > Inventory # </th>
+                            <th> Inventory Name </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Category </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Sub Category </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending" style="width: 0px;"> Brand </th></tr>
+                        </thead>
+                        <tfoot>
+                        </tfoot>
+                        <tbody>
+                        <tr role="row">
+                            <td >
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="chkboxes1">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td> 1 </td>
+                            <td class="center">
+                                Swimming Area
+                            </td>
+                            <td class="center"> Swimming Pool </td>
+                            <td class="center"> Building </td>
+
+                            <td><span class="label label-sm label-success"> PEL </span></td>
+                        </tr><tr role="row" class="even">
+                            <td class="sorting_1">
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="chkboxes1-inv">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td> 2 </td>
+                            <td class="center">
+                                Parking
+                            </td>
+                            <td class="center"> Wooden </td>
+                            <td class="center"> Double Bed </td>
+                            <td><span class="label label-sm label-warning"> GREE </span></td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------------Inventories List End---------------------------------- -->
+
+        <!-- ----------------------------- Add Form Start------------------------------- -->
+        <div class="row" *ngIf="addInventoryForm">
+            <div class="col-md-6">
+                <div class="form-group m-form__group">
+                    <label for="inventory_name">
+                        Inventory Name (optional):
+                    </label>
+                    <input  aria-describedby="inventory_name" id="inventory_name" class="form-control form-control-md m-input m-input--air"
+                            placeholder="Inventory Name" #inventoryName type="text">
+                </div>
+                <div class="form-group m-form__group">
+                    <label for="inventory_cat">
+                        Inventory Category:
+                    </label>
+                    <select class="form-control m-input m-input--air" type="text" #inventoryCat id="inventory_cat">
+                        <option> </option>
+                        <option value="appliances"> Electrical Appliances </option>
+                        <option value="parking"> Parking </option>
+                        <option value="gym"> Gym </option>
+                    </select>
+                </div>
+
+                <div class="m-form__group form-group">
+                    <label for="">
+                        Entry Options
+                    </label>
+                    <div class="m-checkbox-inline">
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                            <input type="checkbox">
+                            Walk In
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                            <input type="checkbox">
+                            Bookable
+                            <span></span>
+                        </label>
+                    </div>
+                    <span class="m-form__help">
+                       <small> Enable/Disable for global access</small>
+                    </span>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group m-form__group">
+                    <label for="inventory_subCat">
+                        Inventory Sub Category
+                    </label>
+                    <select class="form-control m-input m-input--air" #inventorySubCat id="inventory_subCat">
+                        <option> </option>
+                        <option value="ac"> Air Conditioner </option>
+                        <option value="microwave"> Microwave Oven </option>
+                        <option value="kettle"> Kettle </option>
+                    </select>
+                </div>
+                <div class="form-group m-form__group">
+                    <label for="inventory_subCat">
+                        Inventory Brand
+                    </label>
+                    <select class="form-control m-input m-input--air" #inventoryBrand id="inventory_brand">
+                        <option> </option>
+                        <option value="pel"> Pel </option>
+                        <option value="samsung"> Samsung </option>
+                        <option value="orient"> Orient </option>
+                    </select>
+                </div>
+                <div class="form-group m-form__group">
+                    <label for="amenity_description">
+                        Description:
+                    </label>
+                    <textarea class="form-control m-input m-input--air" id="amenity_description" #inventoryDesc rows="2"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button class="btn btn-info pull-right" type="button" (click)="addInventory(inventoryName.value, default_imgUrl , inventoryCat.value, inventorySubCat.value, inventoryBrand.value)">
+                    Add Inventory
+                </button>
+            </div>
+        </div>
+        <!-- ---------------------------Add Inventory Form Start---------------------------------- -->
+
+    </div>
+
+</div>

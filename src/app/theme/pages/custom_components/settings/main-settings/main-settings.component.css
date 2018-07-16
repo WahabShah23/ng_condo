@@ -31,51 +31,50 @@
 
 #card1 {
     top: 43%;
-    padding: 10px;
 }
-#card2 {
-    top: 4%;
-    padding: 10px;
-}
-#card3 {
-    top: 8%;
-    padding: 10px;
-}
-#card4 {
-    top: 12%;
-    padding: 10px;
-}
-#card5 {
-    top: 16%;
-    padding: 10px;
-}
-#card6 {
-    top: 20%;
-    padding: 10px;
-}
-#card7 {
-    top: 24%;
-    padding: 10px;
-}
+        /*#card2 {*/
+            /*top: 4%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card3 {*/
+            /*top: 8%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card4 {*/
+            /*top: 12%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card5 {*/
+            /*top: 16%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card6 {*/
+            /*top: 20%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card7 {*/
+            /*top: 24%;*/
+            /*padding: 10px;*/
+        /*}*/
 
-#card8 {
-    top: 28%;
-    padding: 10px;
-}
+        /*#card8 {*/
+            /*top: 28%;*/
+            /*padding: 10px;*/
+        /*}*/
 
 /*Vertical 3 Cards*/
-#card11 {
-    top: 4%;
-    padding: 10px;
-}
-#card12 {
-    top: 8%;
-    padding: 10px;
-}
-#card13 {
-    top: 12%;
-    padding: 10px;
-}
+        /*#card11 {*/
+            /*top: 4%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card12 {*/
+            /*top: 8%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card13 {*/
+            /*top: 12%;*/
+            /*padding: 10px;*/
+        /*}*/
 
 .stackEffect {
     box-shadow: 5px 6px 4px -5px #999;
@@ -101,13 +100,12 @@
     border-right: 1px solid;
     border-color: #f5f5f5;
     background-color: #fff;
-    margin: 0px 5px;
-    padding: 0;
+    margin: 15px 5px;
+    padding: 10px;
     font-size: 12px;
-    position: relative;
-    margin-top: -10px;
+    position: relative !important;
     left: 3.4%;
-    top: 4%;
+    top: 2%;
 }
 .innerCards:hover{
     background-color: lightyellow !important;

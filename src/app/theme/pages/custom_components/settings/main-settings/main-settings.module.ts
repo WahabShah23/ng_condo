@@ -22,6 +22,7 @@ import { FloorSettingsComponent } from './building-settings/floor-settings/floor
 import { ApartmentSettingsComponent } from './building-settings/apartment-settings/apartment-settings.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
+import { InventoryGlobalSettingsComponent } from './inventory-global-settings/inventory-global-settings.component';
 
 
 
@@ -44,7 +45,8 @@ import { RoomSettingsComponent } from './building-settings/apartment-settings/ro
         SettingsBuildingsComponent,
         AccountSettingsComponent,
         RoomSettingsComponent,
-        SettingsCondosComponent
+        SettingsCondosComponent,
+        InventoryGlobalSettingsComponent
     ],
 
 })
