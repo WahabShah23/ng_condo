@@ -24,6 +24,8 @@ import { ApartmentSettingsComponent } from './building-settings/apartment-settin
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
 import { StructureSettingsComponent } from './building-settings/apartment-settings/structure-settings/structure-settings.component';
+import { InventoryGlobalSettingsComponent } from './inventory-global-settings/inventory-global-settings.component';
+
 
 
 
@@ -48,6 +50,7 @@ import { StructureSettingsComponent } from './building-settings/apartment-settin
         RoomSettingsComponent,
         SettingsCondosComponent,
         StructureSettingsComponent
+        InventoryGlobalSettingsComponent
     ],
 
 })

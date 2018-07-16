@@ -16,6 +16,7 @@ import { BillingServicesGlobalSettingsComponent } from './billing-services-globa
 import { CommonServicesGlobalSettingsComponent } from './common-services-global-settings/common-services-global-settings.component';
 import { BuildingSettingsComponent } from './building-settings/building-settings.component';
 import { MainSettingsComponent } from './main-settings.component';
+import { InventoryGlobalSettingsComponent } from "./inventory-global-settings/inventory-global-settings.component";
 
 const routes: Routes = [
     {
@@ -28,7 +29,7 @@ const routes: Routes = [
             },
             {
                 'path': 'buildings',
-                component: BuildingSettingsComponent
+                'component': BuildingSettingsComponent
             },
             {
                 'path': 'common-services-global',
@@ -43,8 +44,12 @@ const routes: Routes = [
                 'component': AmenitiesGlobalSettingsComponent
             },
             {
-            'path': 'accounts',
-            'component': AccountSettingsComponent
+                'path': 'accounts',
+                'component': AccountSettingsComponent
+            },
+            {
+                'path': 'inventory',
+                'component': InventoryGlobalSettingsComponent
             }
         ],
     },
