@@ -10,6 +10,7 @@ export class FloorSettingsComponent implements OnInit {
     addFloorForm = false;
     isFloorGridView = true;
     FloorViewName = 'List View';
+    buildingName = "ABC Building";
 
     constructor() { }
 

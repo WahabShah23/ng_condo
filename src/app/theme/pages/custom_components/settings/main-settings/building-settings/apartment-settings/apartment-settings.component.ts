@@ -10,6 +10,7 @@ export class ApartmentSettingsComponent implements OnInit {
     addApartmentForm = false;
     isApartmentGridView = true;
     ApartmentViewName = 'List View';
+    buildingName = "ABC Building";
     constructor() { }
 
     ngOnInit() {

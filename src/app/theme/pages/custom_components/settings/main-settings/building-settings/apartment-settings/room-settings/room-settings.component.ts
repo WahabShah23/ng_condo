@@ -12,6 +12,7 @@ export class RoomSettingsComponent implements OnInit {
   RoomViewName = 'List View';
   rows :[number] = [1];
   lastRowNumber = 1;
+  buildingName = "ABC Building"
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,5 @@
+import { StructureSettingsComponent } from './building-settings/apartment-settings/structure-settings/structure-settings.component';
+
 import { InventorySettingsComponent } from './building-settings/apartment-settings/inventory-settings/inventory-settings.component';
 import { SettingsCondosComponent } from './../settings-condos.component';
 import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
@@ -71,6 +73,10 @@ const routes: Routes = [
             {
                 'path': 'inventory',
                 'component': InventorySettingsComponent,
+            },
+            {
+                'path': 'structure',
+                'component': StructureSettingsComponent
             }
         ]
     },

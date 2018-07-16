@@ -1,3 +1,4 @@
+
 import { InventorySettingsComponent } from './building-settings/apartment-settings/inventory-settings/inventory-settings.component';
 import { SettingsCondosComponent } from './../settings-condos.component';
 import { MainSettingsRouting } from './main-settings-routing.module';
@@ -22,6 +23,7 @@ import { FloorSettingsComponent } from './building-settings/floor-settings/floor
 import { ApartmentSettingsComponent } from './building-settings/apartment-settings/apartment-settings.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
+import { StructureSettingsComponent } from './building-settings/apartment-settings/structure-settings/structure-settings.component';
 
 
 
@@ -44,7 +46,8 @@ import { RoomSettingsComponent } from './building-settings/apartment-settings/ro
         SettingsBuildingsComponent,
         AccountSettingsComponent,
         RoomSettingsComponent,
-        SettingsCondosComponent
+        SettingsCondosComponent,
+        StructureSettingsComponent
     ],
 
 })

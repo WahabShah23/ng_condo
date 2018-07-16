@@ -1,24 +1,81 @@
-<div class="m-content">
-<div class="m-form__section m-form__section--first">
-    <div class="m-form__heading">
-        <div class="d-flex align-items-center">
-            <div class="mr-auto">
-                <h3 class="m-form__heading-title">
-                    Inventory
-                </h3>
-            </div>
-            <button class="btn btn-link">
-                <i class="fa fa-plus" (click)="addRoomForm = true"> Add Inventory</i>
-            </button>
-
-            <button class="btn btn-link" (click)="changeRoomView()">
-                <i class="fa" [ngClass]="{'fa-list': isRoomGridView, 'fa-th' : !isRoomGridView}"></i>
-                {{RoomViewName}}
-            </button>
-
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-form__heading-title">
+                ABC Condo - Ground Floor
+            </h3>
         </div>
+        <button class="btn btn-link">
+            <i class="fa fa-plus" (click)="addRoomForm = true"> Add Inventory</i>
+        </button>
+
+        <button class="btn btn-link" (click)="changeRoomView()">
+            <i class="fa" [ngClass]="{'fa-list': isRoomGridView, 'fa-th' : !isRoomGridView}"></i>
+            {{RoomViewName}}
+        </button>
+
     </div>
 </div>
+
+<div class="m-subheader breadcrumb-header">
+        <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+            <li  class="m-nav__item m-nav__item--home">
+                <a  class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
+                    <i  class="m-nav__link-icon la la-home"></i>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                -
+            </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Settings
+                    </span>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                    -
+                </li>
+               
+               
+                <li  class="m-nav__item">
+                    <a  routerLink="/settings/buildings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text">
+                            Buildings     
+                        </span>
+                    </a>
+                </li>
+                <li  class="m-nav__separator">
+                        -
+                    </li>
+                   
+                   
+                    <li  class="m-nav__item">
+                        <a  class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                            <span  class="m-nav__link-text">
+                                Condos     
+                            </span>
+                        </a>
+                    </li>
+                    <li  class="m-nav__separator">
+                        -
+                    </li>
+                   
+                   
+                    <li  class="m-nav__item">
+                        <a  class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                            <span  class="m-nav__link-text">
+                                Inventory     
+                            </span>
+                        </a>
+                    </li>
+        </ul>
+    </div>
+    <hr  class="customhr">
+<div class="m-content">
 <div class="row" *ngIf="!addRoomForm && isRoomGridView">
     <div class="col-md-4">
         <div class="body organ1">
@@ -32,8 +89,9 @@
 
                         <div class="col-md-12">
                             <img class="personimage" src="assets/app/media/img/inventory/refridgerator.jpg">
-                            <p class="personname">Refrigerator</p>
+                            <p class="personname">My Refrigerator</p>
                             <p class="persontype">Electronics</p>
+                            <p class="persontype">Refridgerator</p>
                         </div>
                     </div>
                     <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -49,17 +107,22 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-usd"></i> 1000
+                                Price: 1000
                             </p>
                         </div>
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-list-alt"></i> Haier
+                                Brand: Haier
                             </p>
                         </div>
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-hashtag	"></i> 3
+                                Count: 3
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                Placement: Kitchen
                             </p>
                         </div>
 
@@ -84,8 +147,9 @@
 
                         <div class="col-md-12">
                             <img class="personimage" src="assets/app/media/img/inventory/bed.jpg">
-                            <p class="personname">Bed</p>
+                            <p class="personname">My Bed</p>
                             <p class="persontype">Furniture</p>
+                            <p class="persontype">Bed</p>
                         </div>
                     </div>
                     <!-- <p  class="personappartmentno"><i  class="fa fa-bed"></i> 20-B</p>
@@ -101,17 +165,22 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-usd"></i> 2000
+                                Price: 2000
                             </p>
                         </div>
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-list-alt"></i> Woodies
+                                Brand: Woodies
                             </p>
                         </div>
                         <div class="col-sm-6">
                             <p>
-                                <i class="fa fa-hashtag	"></i> 1
+                                Count: 1
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                Placement: Room
                             </p>
                         </div>
 
@@ -143,6 +212,8 @@
                             style="width: 0px;"> Name </th>
                         <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending"
                             style="width: 0px;"> Category </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending"
+                            style="width: 0px;"> Sub-Category </th>
                         <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending"
                             style="width: 0px;"> Price </th>
                         <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Due Date : activate to sort column ascending"
@@ -161,8 +232,9 @@
                             </label>
                         </td>
                         <td> 1</td>
-                        <td> Refridgerator</td>
+                        <td> My Refridgerator</td>
                         <td> Electronics</td>
+                        <td> Refridgerator</td>
                         <td class="center">
                             1000
                         </td>
@@ -182,8 +254,9 @@
                                 </label>
                             </td>
                             <td> 2</td>
-                            <td> Bed</td>
+                            <td> My Bed</td>
                             <td> Furniture</td>
+                            <td> Bed</td>
                             <td class="center">
                                 2000
                             </td>
@@ -208,13 +281,13 @@
 <div class="row" *ngIf="addRoomForm">
   
     <div class="col-sm-12">
-    <h5>Add Inventory <button class="btn btn-link" (click)="addNewRoomRow()"><i class="fa fa-plus"></i></button> </h5>
+    <h5><button class="btn btn-link" (click)="addNewRoomRow()"><i class="fa fa-plus"></i></button> Add Inventory  </h5>
     
     </div>
     
     <div class="col-sm-12" *ngFor="let row of rows; let i = index;">
             <div class="form-group m-form__group row">
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                       <label>Name:</label>
                       <input type="text" class="form-control">
                 </div>
@@ -225,22 +298,29 @@
                   </div>
 
                   <div class="col-sm-2">
+                    <label>Sub-Category:</label>
+                    <input type="text" class="form-control">
+              </div>
+
+              <div class="col-sm-2">
+                <label>Brand:</label>
+                <input type="text" class="form-control">
+           </div>
+
+                  <div class="col-sm-2">
                         <label>Price:</label>
                         <input type="number" class="form-control">
                   </div>
 
-                  <div class="col-sm-2">
-                        <label>Brand:</label>
-                        <input type="text" class="form-control">
-                  </div>
+               
 
-                  <div class="col-sm-2">
+                  <div class="col-sm-1">
                         <label>Number:</label>
                         <input type="number" class="form-control">
                   </div>
                  
                   <div class="col-sm-1">
-                        <button class="btn btn-link" style="margin-top:20px;" [disabled]="i==0 && rows.length==1" (click)="onDeleteRow(i)"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-link" style="margin-top: 26px;" [disabled]="i==0 && rows.length==1" (click)="onDeleteRow(i)"><i class="fa fa-minus"></i></button>
                    </div>
 
             </div>
