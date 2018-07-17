@@ -49,7 +49,7 @@ import { InventoryGlobalSettingsComponent } from './inventory-global-settings/in
         AccountSettingsComponent,
         RoomSettingsComponent,
         SettingsCondosComponent,
-        StructureSettingsComponent
+        StructureSettingsComponent,
         InventoryGlobalSettingsComponent
     ],
 

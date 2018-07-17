@@ -3,11 +3,11 @@
     <div  class="d-flex align-items-center">
         <div  class="mr-auto">
             <h3  class="m-subheader__title">
-                Inventory Settings
+                Item Settings
             </h3>
         </div>
         <button class="btn btn-link">
-            <i class="fa fa-plus" (click)="addInventoryForm = true"> Add Inventory</i>
+            <i class="fa fa-plus" (click)="addInventoryForm = true"> Add Item</i>
         </button>
         <button class="btn btn-link" (click)="changeInventoryView()">
             <i class="fa" [ngClass]="{'fa-list': isInventoryGridView, 'fa-th' : !isInventoryGridView}"> {{InventoryViewName}} </i>
@@ -42,7 +42,7 @@
         <li  class="m-nav__item">
             <a  class="m-nav__link" routerLink="/settings/amenities" ng-reflect-href="javascript:;" routerlink="/settings/buildings" ng-reflect-router-link="/settings/buildings">
                 <span  class="m-nav__link-text">
-                    Inventory
+                    Item
                 </span>
             </a>
         </li>
@@ -76,7 +76,7 @@
                             </div>
                         </div>
                         <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Inventory Details</h6>
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Item Details</h6>
                             <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteInventory(i)"></i>
                             <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
                                 <input  class="chkboxes" type="checkbox">
@@ -116,11 +116,11 @@
                                 <span style="border-color: #fff !important;"></span>
                             </label>
                         </th>
-                            <th > Inventory # </th>
-                            <th> Inventory Name </th>
+                            <th > Item # </th>
+                            <th> Item Name </th>
                             <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Category </th>
                             <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Sub Category </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending" style="width: 0px;"> Brand </th></tr>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending" style="width: 0px;"> Brand/Supplier </th></tr>
                         </thead>
                         <tfoot>
                         </tfoot>
@@ -168,78 +168,113 @@
             <div class="col-md-6">
                 <div class="form-group m-form__group">
                     <label for="inventory_name">
-                        Inventory Name (optional):
+                        Item Name (optional):
                     </label>
                     <input  aria-describedby="inventory_name" id="inventory_name" class="form-control form-control-md m-input m-input--air"
-                            placeholder="Inventory Name" #inventoryName type="text">
+                            placeholder="Item Name" #inventoryName type="text">
                 </div>
+
                 <div class="form-group m-form__group">
-                    <label for="inventory_cat">
-                        Inventory Category:
+                    <label for="item_type">
+                        Item Type:
                     </label>
-                    <select class="form-control m-input m-input--air" type="text" #inventoryCat id="inventory_cat">
-                        <option> </option>
-                        <option value="appliances"> Electrical Appliances </option>
-                        <option value="parking"> Parking </option>
-                        <option value="gym"> Gym </option>
+                    <select class="form-control m-input m-input--air" type="text" #itemType id="item_type">
+                        <option selected disabled> Choose Option </option>
+                        <option value="appliances"> Inventory </option>
+                        <option value="parking"> Stock </option>
                     </select>
                 </div>
 
-                <div class="m-form__group form-group">
-                    <label for="">
-                        Entry Options
-                    </label>
-                    <div class="m-checkbox-inline">
-                        <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
-                            <input type="checkbox">
-                            Walk In
-                            <span></span>
+                <div class="d-flex align-items-center">
+                    <div class="form-group m-form__group mr-auto custom-width-100">
+                        <label class="m-subheader__title" for="inventory_cat">
+                            Item Category:
                         </label>
-                        <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
-                            <input type="checkbox">
-                            Bookable
-                            <span></span>
-                        </label>
+                        <select class="form-control m-input m-input--air" type="text" #inventoryCat id="inventory_cat">
+                            <option selected disabled> Choose Option </option>
+                            <option value="appliances"> Electrical Appliances </option>
+                            <option value="toiletries"> Toiletries </option>
+                            <option value="furniture"> Furniture </option>
+                        </select>
                     </div>
-                    <span class="m-form__help">
-                       <small> Enable/Disable for global access</small>
-                    </span>
+                    <button class="btn btn-link m--margin-top-15" data-target="#addCategory" data-toggle="modal">
+                        <i class="fa fa-plus" (click)="addInventoryForm = true"> Add Category </i>
+                    </button>
                 </div>
+
+
+
+                <!--<div class="m-form__group form-group">-->
+                    <!--<label for="">-->
+                        <!--Entry Options-->
+                    <!--</label>-->
+                    <!--<div class="m-checkbox-inline">-->
+                        <!--<label class="m-checkbox m-checkbox&#45;&#45;solid m-checkbox&#45;&#45;brand">-->
+                            <!--<input type="checkbox">-->
+                            <!--Walk In-->
+                            <!--<span></span>-->
+                        <!--</label>-->
+                        <!--<label class="m-checkbox m-checkbox&#45;&#45;solid m-checkbox&#45;&#45;brand">-->
+                            <!--<input type="checkbox">-->
+                            <!--Bookable-->
+                            <!--<span></span>-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <!--<span class="m-form__help">-->
+                       <!--<small> Enable/Disable for global access</small>-->
+                    <!--</span>-->
+                <!--</div>-->
 
             </div>
             <div class="col-md-6">
-                <div class="form-group m-form__group">
-                    <label for="inventory_subCat">
-                        Inventory Sub Category
-                    </label>
-                    <select class="form-control m-input m-input--air" #inventorySubCat id="inventory_subCat">
-                        <option> </option>
-                        <option value="ac"> Air Conditioner </option>
-                        <option value="microwave"> Microwave Oven </option>
-                        <option value="kettle"> Kettle </option>
-                    </select>
+
+                <div class="d-flex align-items-center">
+                    <div class="form-group m-form__group mr-auto custom-width-100">
+                        <label for="inventory_subCat">
+                            Item Sub Category
+                        </label>
+                        <select class="form-control m-input m-input--air" #inventorySubCat id="inventory_subCat">
+                            <option selected disabled> Choose Option </option>
+                            <option value="ac"> Air Conditioner </option>
+                            <option value="microwave"> Microwave Oven </option>
+                            <option value="kettle"> Kettle </option>
+                        </select>
+                    </div>
+                    <button class="btn btn-link m--margin-top-15">
+                        <i class="fa fa-plus" (click)="addInventoryForm = true"> Add Sub-Cat </i>
+                    </button>
                 </div>
-                <div class="form-group m-form__group">
-                    <label for="inventory_subCat">
-                        Inventory Brand
-                    </label>
-                    <select class="form-control m-input m-input--air" #inventoryBrand id="inventory_brand">
-                        <option> </option>
-                        <option value="pel"> Pel </option>
-                        <option value="samsung"> Samsung </option>
-                        <option value="orient"> Orient </option>
-                    </select>
+
+                <div class="d-flex align-items-center">
+                    <div class="form-group m-form__group mr-auto custom-width-100">
+                        <label for="inventory_subCat">
+                            Item Brand
+                        </label>
+                        <!--<select class="form-control m-input m-input&#45;&#45;air" #inventoryBrand id="inventory_brand">-->
+                            <!--<option selected disabled> Choose Option </option>-->
+                            <!--<option value="pel"> Pel </option>-->
+                            <!--<option value="samsung"> Samsung </option>-->
+                            <!--<option value="orient"> Orient </option>-->
+                        <!--</select>-->
+                        <ngx-select-dropdown #brandDropdown [config]="config" [options]="brands" [(value)]="dataModel" [multiple]="true" >
+
+                        </ngx-select-dropdown>
+                    </div>
+                    <button class="btn btn-link m--margin-top-15" data-target="#addCategory" data-toggle="modal">
+                        <i class="fa fa-plus" (click)="addInventoryForm = true"> Add Brand/Supplier </i>
+                    </button>
                 </div>
+
                 <div class="form-group m-form__group">
-                    <label for="amenity_description">
+                    <label for="inventory_description">
                         Description:
                     </label>
-                    <textarea class="form-control m-input m-input--air" id="amenity_description" #inventoryDesc rows="2"></textarea>
+                    <textarea class="form-control m-input m-input--air" id="inventory_description" #inventoryDesc rows="2"></textarea>
                 </div>
             </div>
             <div class="col-md-12">
                 <button class="btn btn-info pull-right" type="button" (click)="addInventory(inventoryName.value, default_imgUrl , inventoryCat.value, inventorySubCat.value, inventoryBrand.value)">
-                    Add Inventory
+                    Add Item
                 </button>
             </div>
         </div>
@@ -248,3 +283,80 @@
     </div>
 
 </div>
+
+<!-- MODAL Category BEGINS -->
+<div aria-labelledby="exampleModalLabel" class="modal fade show" id="addCategory" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    New Category
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+						<span aria-hidden="true">
+							×
+						</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-control-label" for="category-name">
+                        Category Name
+                    </label>
+                    <input class="form-control" #categoryName id="category-name" type="text">
+                </div>
+                <!--<div class="form-group">-->
+                <!--<label class="form-control-label" for="message-text">-->
+                <!--Message:-->
+                <!--</label>-->
+                <!--<textarea class="form-control" id="message-text"></textarea>-->
+                <!--</div>-->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Close
+                </button>
+                <button class="btn btn-primary" (click)="getCat(categoryName.value); categoryName.value='';" data-dismiss="modal" type="button">
+                    Add Category
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL Category ENDS -->
+
+<!-- MODAL Brand BEGINS -->
+<div aria-labelledby="brandLabel" class="modal fade show" id="addBrand" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="b4randLabel">
+                    New Brand
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+						<span aria-hidden="true">
+							×
+						</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-control-label" for="brand-name">
+                        Brand Name
+                    </label>
+                    <input class="form-control" #categoryName id="brand-name" type="text">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Close
+                </button>
+                <button class="btn btn-primary" (click)="addBrand(brandDropdown.value); brandDropdown.value='';" data-dismiss="modal" type="button">
+                    Add Brand
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL Brand ENDS -->
+
