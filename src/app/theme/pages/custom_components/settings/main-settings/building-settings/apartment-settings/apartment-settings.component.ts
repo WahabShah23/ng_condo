@@ -11,6 +11,8 @@ export class ApartmentSettingsComponent implements OnInit {
     isApartmentGridView = true;
     ApartmentViewName = 'List View';
     buildingName = "ABC Building";
+    isRental =true;
+
     constructor() { }
 
     ngOnInit() {
@@ -25,6 +27,12 @@ export class ApartmentSettingsComponent implements OnInit {
             this.ApartmentViewName = 'Grid View';
         }
         this.addApartmentForm = false;
+    }
+
+
+    changeApartmentType()
+    {
+        this.isRental = ! this.isRental;
     }
 
 }

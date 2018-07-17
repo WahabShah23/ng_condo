@@ -25,6 +25,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
 import { StructureSettingsComponent } from './building-settings/apartment-settings/structure-settings/structure-settings.component';
 import { InventoryGlobalSettingsComponent } from './inventory-global-settings/inventory-global-settings.component';
+import { InventoryBuildingComponent } from './building-settings/inventory-building/inventory-building.component';
+import { StockBuildingComponent } from './building-settings/stock-building/stock-building.component';
 
 
 
@@ -49,8 +51,10 @@ import { InventoryGlobalSettingsComponent } from './inventory-global-settings/in
         AccountSettingsComponent,
         RoomSettingsComponent,
         SettingsCondosComponent,
-        StructureSettingsComponent
-        InventoryGlobalSettingsComponent
+        StructureSettingsComponent,
+        InventoryGlobalSettingsComponent,
+        InventoryBuildingComponent,
+        StockBuildingComponent
     ],
 
 })

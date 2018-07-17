@@ -12,7 +12,7 @@ export class StructureSettingsComponent implements OnInit {
   constructor(private _script: ScriptLoaderService) { }
 
   ngOnInit() {
-    this._script.loadScripts('app-structure-settings', ['assets/app/js/custom_JS/3DMallMap/classie.js', 'assets/app/js/custom_JS/3DMallMap/list.min.js' , 'assets/app/js/custom_JS/3DMallMap/main.js' , 'assets/app/js/custom_JS/3DMallMap/modernizr-custom.js'], true)
+    this._script.loadScripts('app-structure-settings', ['assets/app/js/custom_JS/3DMallMap/classie.js', 'assets/app/js/custom_JS/3DMallMap/list.min.js' ,'assets/app/js/custom_JS/3DMallMap/modernizr-custom.js', 'assets/app/js/custom_JS/3DMallMap/main.js'  ], true)
     .then(result => {
         Helpers.setLoading(false);
         // optional js to be loaded once

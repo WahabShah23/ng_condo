@@ -960,4 +960,29 @@ button:focus {
 
 .main{
 	width: 100% !important;
+	position:relative;
 }   
+
+.container
+{
+	width: 100%;
+	padding:0px;
+}
+
+.spaces-list.spaces-list--open
+{
+	width: 100%;
+}
+
+.search
+{
+	width: 100%;
+	top: 0px;
+    left: 0;
+    position: absolute;
+}
+
+.boxbutton.boxbutton--dark.open-search
+{
+	z-index:1;
+}

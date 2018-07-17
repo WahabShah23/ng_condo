@@ -1,3 +1,5 @@
+import { StockBuildingComponent } from './building-settings/stock-building/stock-building.component';
+
 import { StructureSettingsComponent } from './building-settings/apartment-settings/structure-settings/structure-settings.component';
 
 import { InventorySettingsComponent } from './building-settings/apartment-settings/inventory-settings/inventory-settings.component';
@@ -17,6 +19,7 @@ import { CommonServicesGlobalSettingsComponent } from './common-services-global-
 import { BuildingSettingsComponent } from './building-settings/building-settings.component';
 import { MainSettingsComponent } from './main-settings.component';
 import { InventoryGlobalSettingsComponent } from "./inventory-global-settings/inventory-global-settings.component";
+import { InventoryBuildingComponent } from './building-settings/inventory-building/inventory-building.component';
 
 const routes: Routes = [
     {
@@ -65,6 +68,14 @@ const routes: Routes = [
                 'path': 'condos',
                 'component': ApartmentSettingsComponent,
             },
+            {
+                'path': 'inventory',
+                'component': InventoryBuildingComponent,
+            },
+            {
+                'path': 'stock',
+                'component': StockBuildingComponent
+            }
         ]
     },
     {
