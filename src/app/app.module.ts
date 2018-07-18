@@ -23,11 +23,13 @@ import { InventoriesService } from "./services/inventories.service";
 
 
 
+
 @NgModule({
     declarations: [
         ThemeComponent,
         AppComponent,
-        WizardComponent
+        WizardComponent,
+        
     ],
     imports: [
         LayoutModule,

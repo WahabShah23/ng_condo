@@ -1,3 +1,4 @@
+import { SettingsSpecializedComponent } from './../settings-specialized.component';
 
 import { InventorySettingsComponent } from './building-settings/apartment-settings/inventory-settings/inventory-settings.component';
 import { SettingsCondosComponent } from './../settings-condos.component';
@@ -27,6 +28,7 @@ import { StructureSettingsComponent } from './building-settings/apartment-settin
 import { InventoryGlobalSettingsComponent } from './inventory-global-settings/inventory-global-settings.component';
 import { InventoryBuildingComponent } from './building-settings/inventory-building/inventory-building.component';
 import { StockBuildingComponent } from './building-settings/stock-building/stock-building.component';
+import { SpecializedRoomsComponent } from './building-settings/specialized-rooms/specialized-rooms.component';
 
 
 
@@ -54,7 +56,9 @@ import { StockBuildingComponent } from './building-settings/stock-building/stock
         StructureSettingsComponent,
         InventoryGlobalSettingsComponent,
         InventoryBuildingComponent,
-        StockBuildingComponent
+        StockBuildingComponent,
+        SpecializedRoomsComponent,
+        SettingsSpecializedComponent
     ],
 
 })

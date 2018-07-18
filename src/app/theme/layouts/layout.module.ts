@@ -1,3 +1,4 @@
+import { AsideNavSpecializedComponent } from './aside-nav-specialized/aside-nav-specialized.component';
 import { AsideNavApartmentComponent } from './aside-nav-apartment/aside-nav-apartment.component';
 import { NgModule } from '@angular/core';
 import { LayoutComponent } from './layout/layout.component';
@@ -47,7 +48,8 @@ import { AsideNavBuildingComponent } from './aside-nav-building/aside-nav-buildi
         CustomRightSidebarComponent,
         AsideNavSettingsComponent,
         AsideNavBuildingComponent,
-        AsideNavApartmentComponent
+        AsideNavApartmentComponent,
+        AsideNavSpecializedComponent
     ],
     exports: [
         LayoutComponent,
@@ -67,7 +69,8 @@ import { AsideNavBuildingComponent } from './aside-nav-building/aside-nav-buildi
         HrefPreventDefaultDirective,
         CustomRightSidebarComponent,
         AsideNavBuildingComponent,
-        AsideNavApartmentComponent
+        AsideNavApartmentComponent,
+        AsideNavSpecializedComponent
     ],
     imports: [
         CommonModule,

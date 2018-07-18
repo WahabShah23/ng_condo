@@ -1,3 +1,4 @@
+import { SpecializedRoomsComponent } from './building-settings/specialized-rooms/specialized-rooms.component';
 import { StockBuildingComponent } from './building-settings/stock-building/stock-building.component';
 
 import { StructureSettingsComponent } from './building-settings/apartment-settings/structure-settings/structure-settings.component';
@@ -20,6 +21,8 @@ import { BuildingSettingsComponent } from './building-settings/building-settings
 import { MainSettingsComponent } from './main-settings.component';
 import { InventoryGlobalSettingsComponent } from "./inventory-global-settings/inventory-global-settings.component";
 import { InventoryBuildingComponent } from './building-settings/inventory-building/inventory-building.component';
+import { InventoriesService } from '../../../../../services/inventories.service';
+import { SettingsSpecializedComponent } from '../settings-specialized.component';
 
 const routes: Routes = [
     {
@@ -96,6 +99,24 @@ const routes: Routes = [
             }
         ]
     },
+    {
+        'path': 'buildings/:id/specialized-rooms',
+        'component': SettingsSpecializedComponent,
+        'children': [
+            {
+                'path': '',
+                redirectTo: 'inventory'
+            },
+            {
+                'path': 'inventory',
+                'component': InventoryBuildingComponent
+            },
+            {
+                'path': 'stock',
+                'component': StockBuildingComponent
+            }
+        ]
+    }
 
    
     

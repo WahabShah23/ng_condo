@@ -15,10 +15,10 @@ export class InventoryBuildingComponent implements OnInit {
   default_imgUrl = 'assets/app/media/img/custom/inventories/placeholder.png';
   Inventories = [
     {
-        name: "Treadmill", img: 'assets/app/media/img/custom/inventories/treadmill.jpg', inventoryCat: 'Fitness', inventorySubCat: 'Treadmill', brand: 'PEL', desc: 'desc'
+        name: "Treadmill", img: 'assets/app/media/img/custom/inventories/treadmill-icon.png', inventoryCat: 'Fitness', inventorySubCat: 'Treadmill', brand: 'PEL', desc: 'desc'
     },
     {
-        name: 'Aid Kit', img: 'assets/app/media/img/custom/inventories/first aid.jpg', inventoryCat: 'Health', inventorySubCat: 'First Aid Kit', brand: 'GREE', desc: 'desc'
+        name: 'Aid Kit', img: 'assets/app/media/img/custom/inventories/aid-kit.png', inventoryCat: 'Health', inventorySubCat: 'First Aid Kit', brand: 'GREE', desc: 'desc'
     }
    ];
 
