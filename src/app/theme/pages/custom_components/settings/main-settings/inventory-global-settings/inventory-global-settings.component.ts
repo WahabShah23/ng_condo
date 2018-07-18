@@ -1,5 +1,6 @@
 import {Component, OnInit, Renderer2, ElementRef, ViewChild} from '@angular/core';
 import { InventoriesService } from "../../../../../../services/inventories.service";
+import { SelectDropDownComponent } from "ngx-select-dropdown";
 
 @Component({
   selector: 'app-inventory-global-settings',
@@ -13,15 +14,23 @@ export class InventoryGlobalSettingsComponent implements OnInit {
         search: true //enables the search plugin to search in the list
     }
 
-    @ViewChild('inventoryCat')  inventoryCat: ElementRef;
-    @ViewChild('brandDropdown')  brandDropdown: ElementRef;
+    // @ViewChild('inventoryCat')  inventoryCat: ElementRef;
+    @ViewChild('itemCat')  itemCat: SelectDropDownComponent;
+    @ViewChild('itemSubCat')  itemSubCat: SelectDropDownComponent;
+    @ViewChild('brandDropdown')  brandDropdown: SelectDropDownComponent;
+
 
     addInventoryForm = false;
     isInventoryGridView = true;
     InventoryViewName = 'List View';
     default_imgUrl = 'assets/app/media/img/custom/inventories/placeholder.png';
 
+
+    categories = ["Electrical Appliances", "Toiletries", "Furniture"];
+    subCategories = ["Air Conditioner", "Microwave Oven", "Kettle"];
     brands = ["Pel", "Samsung", "Orient"];
+
+
     Inventories;  // Inventories property for inventory service implementation
 
     constructor( inventory_service: InventoriesService, private renderer: Renderer2, private el: ElementRef) {
@@ -43,8 +52,8 @@ export class InventoryGlobalSettingsComponent implements OnInit {
         this.addInventoryForm = false;
     }
 
-    addInventory(name: string, img: string, inventory_Cat: string, inventory_SubCat: string, inventory_brand: string, desc?: string) {
-        this.Inventories.push({name: name, img:img, inventoryCat: inventory_Cat, inventorySubCat: inventory_SubCat, brand: inventory_brand, desc: desc });
+    addItem(name: string, img: string, item_Cat: string, item_SubCat: string, item_brand: string, desc?: string) {
+        this.Inventories.push({name: name, img:img, inventoryCat: item_Cat, inventorySubCat: item_SubCat, brand: item_brand, desc: desc });
         this.isInventoryGridView = !this.isInventoryGridView;
         this.changeInventoryView();
     }
@@ -54,24 +63,32 @@ export class InventoryGlobalSettingsComponent implements OnInit {
         this.Inventories.splice(id,1);
     }
 
-    getCat(name: string) {
+    addCat(name: string) {
         console.log(name);
-        const option = this.renderer.createElement('option');
-        const text = this.renderer.createText(name);
+        this.categories.push(name);
+        this.itemCat.availableItems.push(name);
 
-        this.renderer.appendChild(option, text);
-        this.renderer.appendChild(this.inventoryCat.nativeElement, option);
+        // const option = this.renderer.createElement('option');
+        // const text = this.renderer.createText(name);
+        //
+        // this.renderer.appendChild(option, text);
+        // this.renderer.appendChild(this.inventoryCat.nativeElement, option);
 
     }
 
+    addSubCategory(name:string){
+        this.subCategories.push(name);
+        this.itemSubCat.availableItems.push(name);
+    }
+
     addBrand(name: string) {
-        console.log(name);
-        const option = this.renderer.createElement('option');
-        const text = this.renderer.createText(name);
+        this.brands.push(name);
+        this.brandDropdown.availableItems.push(name);
 
-        this.renderer.appendChild(option, text);
-        this.renderer.appendChild(this.brandDropdown.nativeElement, option);
-
+        // const option = this.renderer.createElement('option');
+        // const text = this.renderer.createText(name);
+        // this.renderer.appendChild(option, text);
+        // this.renderer.appendChild(this.brandDropdown.nativeElement, option);
     }
 
 }
