@@ -13,8 +13,8 @@ export class InventoryGlobalSettingsComponent implements OnInit {
         search: true //enables the search plugin to search in the list
     }
 
-    @ViewChild('inventoryCat') private inventoryCat: ElementRef;
-    @ViewChild('brandDropdown') private brandDropdown: ElementRef;
+    @ViewChild('inventoryCat')  inventoryCat: ElementRef;
+    @ViewChild('brandDropdown')  brandDropdown: ElementRef;
 
     addInventoryForm = false;
     isInventoryGridView = true;
