@@ -1,0 +1,270 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-form__heading-title">
+                {{buildingName}}
+                </h3>
+            </div>
+
+            <div  class="form-group m-form__group">
+                <label  for="inventory_subCat">
+                    Parking Floor
+                </label>
+                <select  class="form-control m-input m-input--air" >
+                    <option  value="B1"> B1 </option>
+                    <option  value="B2" > B2 </option>
+                    <option  value="B3"> B3 </option>
+                </select>
+            </div>
+            
+        <button class="btn btn-link">
+            <i class="fa fa-plus" (click)="addParkingForm = true"> Add Parking</i>
+        </button>
+
+        <button class="btn btn-link" (click)="changeParkingView()">
+            <i class="fa" [ngClass]="{'fa-list': isParkingGridView, 'fa-th' : !isParkingGridView}"> {{ParkingViewName}} </i>
+        </button>
+        </div>
+</div>
+<div class="m-subheader breadcrumb-header">
+    <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li  class="m-nav__item m-nav__item--home">
+            <a  class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
+                <i  class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+       
+       
+        <li  class="m-nav__item">
+            <a  routerLink="/settings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                <span  class="m-nav__link-text">
+                    Settings
+                </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+                -
+            </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings/buildings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Buildings     
+                    </span>
+                </a>
+            </li>
+          
+                <li  class="m-nav__separator">
+                        -
+                    </li>
+               
+               
+                <li  class="m-nav__item">
+                    <a  class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text">
+                            Parking     
+                        </span>
+                    </a>
+                </li>
+    </ul>
+</div>
+<hr class="customhr">
+<div class="m-content">
+    <div class="m-form__section m-form__section--first">
+
+
+        <!-- ---------------------------Inventory Cards Start---------------------------------- -->
+
+        <div class="row" *ngIf="!addParkingForm && isParkingGridView">
+
+            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let parking of Parkings; let i = index;'>
+                <div  class="body organ1">
+                    <div  class="row" style="margin:0px;">
+                        <div  class="card-left col-lg-3">
+                            <!--<label  class="m-checkbox m-checkbox&#45;&#45;solid m-checkbox&#45;&#45;single m-checkbox&#45;&#45;brand">-->
+                            <!--<input  class="chkboxes" type="checkbox">-->
+                            <!--<span ></span>-->
+                            <!--</label>-->
+                            <div  class="row onepersonrow">
+                                <div  class="col-md-12">
+                                    <img  class="cardimage" [src]="parking.img">
+                                    <!--<p  class="cardname">{{amenity.name}}</p>-->
+                                    <!--<p  class="cardtype">{{amenity.amenitytype}}</p>-->
+                                    <!--<p  class="cardtype"> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Parking Details</h6>
+                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteParking(i)"></i>
+                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
+                                <input  class="chkboxes" type="checkbox">
+                                <span ></span>
+                            </label>
+                            <div  class="clearfix"></div>
+                            <div  class="row">
+                                    <div class="col-sm-12">
+                                            <div class="row">
+                                                    <div class="col-sm-4 cardName">
+                                                            Parking No:
+                                                    </div>
+            
+                                                    <div class="col-sm-8 carddetail">
+                                                            {{parking.number}}
+                                                        </div>
+            
+                                                </div>
+                                        <div class="row">
+                                            <div class="col-sm-4 cardName">
+                                                    Apartment:
+                                            </div>
+    
+                                            <div class="col-sm-8 carddetail">
+                                                    {{parking.apartment}}
+                                                </div>
+    
+                                        </div>
+    
+                                        <div class="row">
+                                                <div class="col-sm-4 cardName">
+                                                        Area:
+                                                </div>
+        
+                                                <div class="col-sm-8 carddetail">
+                                                        {{parking.area}}
+                                                    </div>
+        
+                                            </div>
+    
+                                            <div class="row">
+                                                    <div class="col-sm-4 cardName">
+                                                            Location:
+                                                    </div>
+            
+                                                    <div class="col-sm-8 carddetail">
+                                                            {{parking.location}}
+                                                        </div>
+            
+                                                </div>
+    
+                                             
+                                            
+                                      
+                                    </div>
+                                  
+                                </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ---------------------------Inventories Cards End---------------------------------- -->
+
+        <!-- ---------------------------Inventories List Start---------------------------------- -->
+        <div *ngIf="!addParkingForm && !isParkingGridView">
+            <div class="cold-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr style="background: #555;color: #fff" role="row"><th>
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline f">
+                                <input type="checkbox" class="group-checkable">
+                                <span style="border-color: #fff !important;"></span>
+                            </label>
+                        </th>
+                            <th > Parking # </th>
+                            <th> Apartment Name </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Area </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Location </th>
+                        </thead>
+                        <tfoot>
+                        </tfoot>
+                        <tbody>
+                        <tr role="row">
+                            <td >
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="chkboxes1">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td> 1 </td>
+                            <td class="center">
+                                20-B
+                            </td>
+                            <td class="center"> 20 sq/m </td>
+                            <td class="center"> East </td>
+
+                        </tr><tr role="row" class="even">
+                            <td class="sorting_1">
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="chkboxes1-inv">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td> 2 </td>
+                            <td class="center">
+                                21-C
+                            </td>
+                            <td class="center"> 30 sq/m </td>
+                            <td class="center"> North-West  </td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------------Inventories List End---------------------------------- -->
+
+        <!-- ----------------------------- Add Form Start------------------------------- -->
+        <div class="row" *ngIf="addParkingForm">
+            <div class="col-md-6">
+                <div class="form-group m-form__group">
+                    <label for="inventory_name">
+                        Parking Number:
+                    </label>
+                    <input id="parking_number" class="form-control form-control-md m-input m-input--air"
+                            placeholder="e.g. 1,2,3" #parkingNumber type="text">
+                </div>
+                <div class="form-group m-form__group">
+                        <label for="inventory_name">
+                            Apartment Name:
+                        </label>
+                        <input   id="apartment_name" class="form-control form-control-md m-input m-input--air"
+                                placeholder="Apartment Name" #parkingName type="text">
+                    </div>
+           
+            </div>
+            <div class="col-md-6">
+                    <div class="form-group m-form__group">
+                            <label >
+                                Area:
+                            </label>
+                            <input    class="form-control form-control-md m-input m-input--air"
+                                    placeholder="e.g. 20 sq/m" #parkingArea type="text">
+                        </div>
+                        <div class="form-group m-form__group">
+                                <label for="inventory_name">
+                                    Location:
+                                </label>
+                                <input  placeholder="e.g. North-West" id="parking_location" class="form-control form-control-md m-input m-input--air"
+                                        #parkingLocation type="text">
+                            </div>
+            </div>
+            <div class="col-md-12">
+                <button class="btn btn-info pull-right" type="button" (click)="addParking(parkingNumber.value, default_imgUrl , parkingName.value, parkingArea.value, parkingLocation.value)">
+                    Add Parking
+                </button>
+            </div>
+        </div>
+        <!-- ---------------------------Add Inventory Form Start---------------------------------- -->
+
+    </div>
+
+</div>

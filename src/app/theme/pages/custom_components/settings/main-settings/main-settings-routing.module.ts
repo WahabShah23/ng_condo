@@ -1,3 +1,6 @@
+import { PartyRoomsComponent } from './building-settings/specialized-rooms/party-rooms/party-rooms.component';
+import { GymComponent } from './building-settings/specialized-rooms/gym/gym.component';
+import { ParkingComponent } from './building-settings/parking/parking.component';
 import { SpecializedRoomsComponent } from './building-settings/specialized-rooms/specialized-rooms.component';
 import { StockBuildingComponent } from './building-settings/stock-building/stock-building.component';
 
@@ -78,6 +81,10 @@ const routes: Routes = [
             {
                 'path': 'stock',
                 'component': StockBuildingComponent
+            },
+            {
+                'path': 'parking',
+                'component': ParkingComponent
             }
         ]
     },
@@ -114,6 +121,14 @@ const routes: Routes = [
             {
                 'path': 'stock',
                 'component': StockBuildingComponent
+            },
+            {
+                'path': 'gym',
+                'component': GymComponent
+            },
+            {
+                'path': 'party-rooms',
+                'component': PartyRoomsComponent
             }
         ]
     }

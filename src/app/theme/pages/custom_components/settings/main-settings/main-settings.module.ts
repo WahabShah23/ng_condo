@@ -29,6 +29,9 @@ import { InventoryGlobalSettingsComponent } from './inventory-global-settings/in
 import { InventoryBuildingComponent } from './building-settings/inventory-building/inventory-building.component';
 import { StockBuildingComponent } from './building-settings/stock-building/stock-building.component';
 import { SpecializedRoomsComponent } from './building-settings/specialized-rooms/specialized-rooms.component';
+import { ParkingComponent } from './building-settings/parking/parking.component';
+import { GymComponent } from './building-settings/specialized-rooms/gym/gym.component';
+import { PartyRoomsComponent } from './building-settings/specialized-rooms/party-rooms/party-rooms.component';
 
 
 
@@ -58,7 +61,10 @@ import { SpecializedRoomsComponent } from './building-settings/specialized-rooms
         InventoryBuildingComponent,
         StockBuildingComponent,
         SpecializedRoomsComponent,
-        SettingsSpecializedComponent
+        SettingsSpecializedComponent,
+        ParkingComponent,
+        GymComponent,
+        PartyRoomsComponent
     ],
 
 })
