@@ -25,13 +25,14 @@ import { ApartmentSettingsComponent } from './building-settings/apartment-settin
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
 import { StructureSettingsComponent } from './building-settings/apartment-settings/structure-settings/structure-settings.component';
-import { InventoryGlobalSettingsComponent } from './inventory-global-settings/inventory-global-settings.component';
+import { ItemGlobalSettingsComponent } from './item-global-settings/item-global-settings.component';
 import { InventoryBuildingComponent } from './building-settings/inventory-building/inventory-building.component';
 import { StockBuildingComponent } from './building-settings/stock-building/stock-building.component';
 import { SpecializedRoomsComponent } from './building-settings/specialized-rooms/specialized-rooms.component';
 import { ParkingComponent } from './building-settings/parking/parking.component';
 import { GymComponent } from './building-settings/specialized-rooms/gym/gym.component';
 import { PartyRoomsComponent } from './building-settings/specialized-rooms/party-rooms/party-rooms.component';
+import { RulesGlobalSettingsComponent } from './rules-global-settings/rules-global-settings.component';
 
 
 
@@ -57,14 +58,18 @@ import { PartyRoomsComponent } from './building-settings/specialized-rooms/party
         RoomSettingsComponent,
         SettingsCondosComponent,
         StructureSettingsComponent,
-        InventoryGlobalSettingsComponent,
+        ItemGlobalSettingsComponent,
         InventoryBuildingComponent,
         StockBuildingComponent,
         SpecializedRoomsComponent,
         SettingsSpecializedComponent,
+<<<<<<< HEAD
         ParkingComponent,
         GymComponent,
         PartyRoomsComponent
+=======
+        RulesGlobalSettingsComponent
+>>>>>>> 9927a9c5be5a8595d01d5e5f138a55e86d5db9b4
     ],
 
 })

@@ -4,10 +4,10 @@ import { SelectDropDownComponent } from "ngx-select-dropdown";
 
 @Component({
   selector: 'app-inventory-global-settings',
-  templateUrl: './inventory-global-settings.component.html',
-  styleUrls: ['./inventory-global-settings.component.css']
+  templateUrl: './item-global-settings.component.html',
+  styleUrls: ['./item-global-settings.component.css']
 })
-export class InventoryGlobalSettingsComponent implements OnInit {
+export class ItemGlobalSettingsComponent implements OnInit {
 
     config = {
         displayKey: "description", //if objects array passed which key to be displayed defaults to description,
