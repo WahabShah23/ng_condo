@@ -63,13 +63,10 @@ import { RulesGlobalSettingsComponent } from './rules-global-settings/rules-glob
         StockBuildingComponent,
         SpecializedRoomsComponent,
         SettingsSpecializedComponent,
-<<<<<<< HEAD
         ParkingComponent,
         GymComponent,
-        PartyRoomsComponent
-=======
+        PartyRoomsComponent,
         RulesGlobalSettingsComponent
->>>>>>> 9927a9c5be5a8595d01d5e5f138a55e86d5db9b4
     ],
 
 })
