@@ -19,10 +19,11 @@ import { BillingServicesGlobalSettingsComponent } from './billing-services-globa
 import { CommonServicesGlobalSettingsComponent } from './common-services-global-settings/common-services-global-settings.component';
 import { BuildingSettingsComponent } from './building-settings/building-settings.component';
 import { MainSettingsComponent } from './main-settings.component';
-import { InventoryGlobalSettingsComponent } from "./inventory-global-settings/inventory-global-settings.component";
+import { ItemGlobalSettingsComponent } from "./item-global-settings/item-global-settings.component";
 import { InventoryBuildingComponent } from './building-settings/inventory-building/inventory-building.component';
 import { InventoriesService } from '../../../../../services/inventories.service';
 import { SettingsSpecializedComponent } from '../settings-specialized.component';
+import {RulesGlobalSettingsComponent} from "./rules-global-settings/rules-global-settings.component";
 
 const routes: Routes = [
     {
@@ -54,8 +55,12 @@ const routes: Routes = [
                 'component': AccountSettingsComponent
             },
             {
-                'path': 'inventory',
-                'component': InventoryGlobalSettingsComponent
+                'path': 'item',
+                'component': ItemGlobalSettingsComponent
+            },
+            {
+                'path': 'rules',
+                'component': RulesGlobalSettingsComponent
             }
         ],
     },

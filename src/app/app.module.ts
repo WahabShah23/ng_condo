@@ -20,6 +20,7 @@ import { WizardComponent } from './components/wizard/wizard.component';
 import { DemoService } from "./services/demo.service";
 import { AmenitiesService } from "./services/amenities.service";
 import { InventoriesService } from "./services/inventories.service";
+import {RulesService} from "./services/rules.service";
 
 
 
@@ -46,7 +47,7 @@ import { InventoriesService } from "./services/inventories.service";
             libraries: ['places']
         })
     ],
-    providers: [ScriptLoaderService, DemoService, AmenitiesService, InventoriesService],
+    providers: [ScriptLoaderService, DemoService, AmenitiesService, InventoriesService, RulesService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
