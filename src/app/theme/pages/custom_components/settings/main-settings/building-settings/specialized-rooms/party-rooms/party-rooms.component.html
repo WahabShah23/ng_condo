@@ -129,7 +129,7 @@
         
                                                     <div class="row">
                                                             <div class="col-sm-4 cardName">
-                                                                    Participants:
+                                                                    Capacity:
                                                             </div>
                     
                                                             <div class="col-sm-8 carddetail">
@@ -137,6 +137,18 @@
                                                                 </div>
                     
                                                         </div>
+
+                                                        <div class="row">
+                                                            <div class="col-sm-4 cardName">
+                                                                    Description:
+                                                            </div>
+                    
+                                                            <div class="col-sm-8 carddetail">
+                                                                    {{partyRoom.description}}
+                                                                </div>
+                    
+                                                        </div>
+                                                        
                                         </div>
                                       
                                     </div>
@@ -163,7 +175,8 @@
                                 <th > Room # </th>
                                 <th> Room Name </th>
                                 <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Category </th>
-                                <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Participants </th>
+                                <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Capacity </th>
+                                <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Description </th>
                             </thead>
                             <tfoot>
                             </tfoot>
@@ -181,7 +194,7 @@
                                 </td>
                                 <td class="center"> All </td>
                                 <td class="center"> 100</td>
-    
+                                <td class="center"> Party Room for all occasions</td>
                               
                             </tr>   <tr role="row">
                                     <td >
@@ -196,6 +209,7 @@
                                     </td>
                                     <td class="center"> Birthday Party </td>
                                     <td class="center"> 80</td>
+                                    <td class="center"> Room for bithday celebrations</td>
                                 </tr>
                             </tbody>
     
@@ -234,18 +248,27 @@
                 <div class="col-md-6">
                         <div class="form-group m-form__group">
                                 <label >
-                                    No. Of Participants:
+                                    Max Capacity:
                                 </label>
                                 <input  class="form-control form-control-md m-input m-input--air"
                                         placeholder="e.g. 4, 5 ,6"  type="number" #partyRoomPatricipants>
                             </div>
+
+                            <div class="form-group m-form__group">
+                                <label >
+                                    Description:
+                                </label>
+                                <textarea  class="form-control form-control-md m-input m-input--air" #partyRoomDescription></textarea>
+                            </div>
                
-                <div class="col-md-12">
-                    <button class="btn btn-info pull-right" type="button" (click)="addParty(partyRoomName.value, default_imgUrl , partyRoomCategory.value, partyRoomPatricipants.value)">
-                        Add Room
-                    </button>
-                </div>
+               
+               </div>
+            <div class="col-md-12">
+                <button class="btn btn-info pull-right" type="button" (click)="addParty(partyRoomName.value, default_imgUrl , partyRoomCategory.value, partyRoomPatricipants.value , partyRoomDescription.value)">
+                    Add Room
+                </button>
             </div>
+
             <!-- ---------------------------Add Inventory Form Start---------------------------------- -->
     
         </div>

@@ -17,10 +17,10 @@ export class PartyRoomsComponent implements OnInit {
   default_imgUrl = 'assets/app/media/img/custom/party-rooms/1.jpg';
   partyRooms = [
     {
-        name: "Party Room 1", img: 'assets/app/media/img/custom/party-rooms/1.jpg', category: 'All', allowed: 100
+        name: "Party Room 1", img: 'assets/app/media/img/custom/party-rooms/1.jpg', category: 'All', allowed: 100 , description: "Party Room for all occasions"
     },
     {
-        name: 'Birthday Party Room', img: 'assets/app/media/img/custom/party-rooms/2.jpg', category: 'Birthday Party', allowed:80
+        name: 'Birthday Party Room', img: 'assets/app/media/img/custom/party-rooms/2.jpg', category: 'Birthday Party', allowed:80 , description: "Room for bithday celebrations"
     }
    ];
 
@@ -37,9 +37,9 @@ export class PartyRoomsComponent implements OnInit {
     this.addPartyForm = false;
 }
 
-addParty(partyName, img , partyCategory, numberOfParticipants) {
+addParty(partyName, img , partyCategory, numberOfParticipants, roomDescription) {
   console.log(numberOfParticipants);
-    this.partyRooms.push({name: partyName, img:img, category: partyCategory, allowed: numberOfParticipants});
+    this.partyRooms.push({name: partyName, img:img, category: partyCategory, allowed: numberOfParticipants , description:roomDescription});
     this.isPartyGridView = !this.isPartyGridView;
     this.changePartyView();
 }

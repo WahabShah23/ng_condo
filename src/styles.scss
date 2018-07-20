@@ -60,3 +60,18 @@
   font-weight: 500 !important;
 }
 
+select.form-control.m-input.m-input--air.TopFilterSelect
+{
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #6F727D;
+  padding: 0px;
+  height: 26px;
+}
+
+select.form-control.m-input.m-input--air.TopFilterSelect:hover
+{
+  background-color: transparent;
+}

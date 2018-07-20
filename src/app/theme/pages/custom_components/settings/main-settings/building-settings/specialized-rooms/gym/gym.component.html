@@ -134,11 +134,11 @@
         
                                                     <div class="row">
                                                             <div class="col-sm-4 cardName">
-                                                                    Placement:
+                                                                    Sub-Category:
                                                             </div>
                     
                                                             <div class="col-sm-8 carddetail">
-                                                                    {{gymItem.placement}}
+                                                                    {{gymItem.subcategory}}
                                                                 </div>
                     
                                                         </div>
@@ -168,7 +168,8 @@
                                 <th > Item # </th>
                                 <th> Item Name </th>
                                 <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Category </th>
-                                <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Placement </th>
+                                <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Sub-Category </th>
+                                <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Description </th>
                             </thead>
                             <tfoot>
                             </tfoot>
@@ -186,7 +187,7 @@
                                 </td>
                                 <td class="center"> Lifting </td>
                                 <td class="center"> Weight Lifting</td>
-    
+                                <td class="center"> Very High Quality Dumbbells For Building Muscles </td>
                               
                             </tr>   <tr role="row">
                                     <td >
@@ -201,6 +202,7 @@
                                     </td>
                                     <td class="center"> Lifting </td>
                                     <td class="center"> Chest Workout</td>
+                                    <td class="center"> Intense Chest Building Instrument</td>
                                 </tr>
                             </tbody>
     
@@ -237,20 +239,29 @@
                 <div class="col-md-6">
                     <div class="form-group m-form__group">
                         <label >
-                            Item Placement
+                            Item Sub-category
                         </label>
-                        <select class="form-control m-input m-input--air" #itemPlacement id="item_placement">
+                        <select class="form-control m-input m-input--air" #itemSubcategory id="item_placement">
                             <option value="Weight Lifting"> Weight Lifting </option>
                             <option value="Chest Workout"> Chest Workout </option>
                             <option value="Cardio"> Cardio </option>
                         </select>
                     </div>
+
+                    <div class="form-group m-form__group">
+                        <label >
+                            Description
+                        </label>
+                        <textarea class="form-control" #itemDescription></textarea>
+                    </div>
                
-                <div class="col-md-12">
-                    <button class="btn btn-info pull-right" type="button" (click)="addGym(itemName.value, default_imgUrl , itemCategory.value, itemPlacement.value)">
-                        Add Gym Item
-                    </button>
-                </div>
+               
+            </div>
+
+            <div class="col-md-12">
+                <button class="btn btn-info pull-right" type="button" (click)="addGym(itemName.value, default_imgUrl , itemCategory.value, itemSubcategory.value , itemDescription.value)">
+                    Add Gym Item
+                </button>
             </div>
             <!-- ---------------------------Add Inventory Form Start---------------------------------- -->
     

@@ -291,9 +291,18 @@
                 Choose Type:
             </label>
             <select class="form-control m-input m-input--air" type="text"  formControlName="companyLocation">
-                <option *ngFor="let item of companyLocations" [value]="item">{{item}}</option>
+                <option value="Normal">Normal</option>
+                <option value="Parking">Parking</option>
             </select>
         </div>
+
+        <div class="form-group m-form__group">
+            <label for="floorCount">
+                Number of Parking Lots
+            </label>
+            <input type="number" min="0" class="form-control m-input m-input--air" #parkingLots>
+        </div>
+
         <div class="form-group m-form__group">
             <label for="floorCount">
                 Number of Amenities

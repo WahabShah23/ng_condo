@@ -18,10 +18,10 @@ export class GymComponent implements OnInit {
   default_imgUrl = 'assets/app/media/img/custom/gym/dumbbell.jpg';
   GymItems = [
     {
-        name: "Dumbbells", img: 'assets/app/media/img/custom/gym/dumbbell.jpg', category: 'Lifting', placement: 'Weight Lifting'
+        name: "Dumbbells", img: 'assets/app/media/img/custom/gym/dumbbell.jpg', category: 'Lifting', subcategory: 'Weight Lifting', description: 'Very High Quality Dumbbells For Building Muscles'
     },
     {
-        name: 'Bench', img: 'assets/app/media/img/custom/gym/bench.png', category: 'Lifting', placement: 'Chest Workout'
+        name: 'Bench', img: 'assets/app/media/img/custom/gym/bench.png', category: 'subcategory', subcategory: 'Chest Workout' , description: 'Intense Chest Building Instrument'
     }
    ];
 
@@ -38,8 +38,8 @@ export class GymComponent implements OnInit {
     this.addGymForm = false;
 }
 
-addGym(itemName, img , itemCategory, itemPlacement) {
-    this.GymItems.push({name: itemName, img:img, category: itemCategory, placement: itemPlacement});
+addGym(itemName, img , itemCategory, itemSubcategory, itemDescription) {
+    this.GymItems.push({name: itemName, img:img, category: itemCategory, subcategory: itemSubcategory , description:itemDescription});
     this.isGymGridView = !this.isGymGridView;
     this.changeGymView();
 }

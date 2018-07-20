@@ -33,6 +33,7 @@ import { ParkingComponent } from './building-settings/parking/parking.component'
 import { GymComponent } from './building-settings/specialized-rooms/gym/gym.component';
 import { PartyRoomsComponent } from './building-settings/specialized-rooms/party-rooms/party-rooms.component';
 import { RulesGlobalSettingsComponent } from './rules-global-settings/rules-global-settings.component';
+import { GuestSuitesComponent } from './building-settings/guest-suites/guest-suites.component';
 
 
 
@@ -66,7 +67,8 @@ import { RulesGlobalSettingsComponent } from './rules-global-settings/rules-glob
         ParkingComponent,
         GymComponent,
         PartyRoomsComponent,
-        RulesGlobalSettingsComponent
+        RulesGlobalSettingsComponent,
+        GuestSuitesComponent
     ],
 
 })

@@ -1,21 +1,23 @@
 <div class="m-subheader">
     <div class="d-flex align-items-center">
-            <div class="mr-auto">
-                <h3 class="m-form__heading-title">
+            <div class="mr-auto" >
+                <h3 class="m-form__heading-title" style="display:inline-block">
                 {{buildingName}}
                 </h3>
+
+                <div  class="form-group m-form__group" style="display:inline-block; margin-left:25px;">
+                    <label  for="inventory_subCat">
+                        Parking Floor
+                    </label>
+                    <select  class="form-control m-input m-input--air TopFilterSelect" >
+                        <option  value="B1"> B1 </option>
+                        <option  value="B2" > B2 </option>
+                        <option  value="B3"> B3 </option>
+                    </select>
+                </div>
             </div>
 
-            <div  class="form-group m-form__group">
-                <label  for="inventory_subCat">
-                    Parking Floor
-                </label>
-                <select  class="form-control m-input m-input--air" >
-                    <option  value="B1"> B1 </option>
-                    <option  value="B2" > B2 </option>
-                    <option  value="B3"> B3 </option>
-                </select>
-            </div>
+        
             
         <button class="btn btn-link">
             <i class="fa fa-plus" (click)="addParkingForm = true"> Add Parking</i>
@@ -225,20 +227,70 @@
         <!-- ----------------------------- Add Form Start------------------------------- -->
         <div class="row" *ngIf="addParkingForm">
             <div class="col-md-6">
-                <div class="form-group m-form__group">
+                <!-- <div class="form-group m-form__group">
                     <label for="inventory_name">
                         Parking Number:
                     </label>
                     <input id="parking_number" class="form-control form-control-md m-input m-input--air"
                             placeholder="e.g. 1,2,3" #parkingNumber type="text">
-                </div>
-                <div class="form-group m-form__group">
+                                                        
+                </div> -->
+
+                <div  class="form-group m-form__group">
+                    <label  for="inventory_subCat">
+                      Parking Floor
+                    </label>
+                    <select #parkingFloor  class="form-control m-input m-input--air" >
+                        <option value="B1" > B1 </option>
+                        <option  value="B2" > B2 </option>
+                        <option  value="B3" > B3 </option>
+                    </select>
+                </div> 
+
+                <div  class="form-group m-form__group">
+                    <label  >
+                      Parking Number
+                    </label>
+                    <select #parkingNumber  class="form-control m-input m-input--air" >
+                        <option value="1_B1" > 1_B1 </option>
+                        <option  value="2_B1" > 2_B1 </option>
+                        <option  value="3_B1" > 3_B1 </option>
+                    </select>
+                </div> 
+
+
+                <div  class="form-group m-form__group">
+                    <label  >
+                      Apartment Owner/Cusomer
+                    </label>
+                    <select #apartmentOwner  class="form-control m-input m-input--air" >
+                        <option value="Jabe" > Jabe </option>
+                        <option  value="Chris" > Chris </option>
+                        <option  value="Jelly" > Jelly </option>
+                    </select>
+                </div> 
+
+                
+
+                <!-- <div class="form-group m-form__group">
                         <label for="inventory_name">
                             Apartment Name:
                         </label>
                         <input   id="apartment_name" class="form-control form-control-md m-input m-input--air"
                                 placeholder="Apartment Name" #parkingName type="text">
-                    </div>
+                    </div> -->
+
+
+                    <div  class="form-group m-form__group">
+                        <label  >
+                          Apartment
+                        </label>
+                        <select #apartment  class="form-control m-input m-input--air" >
+                            <option value="20-B" > 20-B </option>
+                            <option  value="80-D" > 80-D </option>
+                            <option  value="30-A" > 30-A </option>
+                        </select>
+                    </div> 
            
             </div>
             <div class="col-md-6">
@@ -255,6 +307,13 @@
                                 </label>
                                 <input  placeholder="e.g. North-West" id="parking_location" class="form-control form-control-md m-input m-input--air"
                                         #parkingLocation type="text">
+                            </div>
+
+                            <div class="form-group m-form__group">
+                                <label for="inventory_name">
+                                     Description:
+                                </label>
+                                <textarea class="form-control" #parkingDescritpion></textarea>
                             </div>
             </div>
             <div class="col-md-12">

@@ -27,6 +27,7 @@ import { InventoryBuildingComponent } from './building-settings/inventory-buildi
 import { InventoriesService } from '../../../../../services/inventories.service';
 import { SettingsSpecializedComponent } from '../settings-specialized.component';
 import {RulesGlobalSettingsComponent} from "./rules-global-settings/rules-global-settings.component";
+import { GuestSuitesComponent } from './building-settings/guest-suites/guest-suites.component';
 
 const routes: Routes = [
     {
@@ -90,6 +91,10 @@ const routes: Routes = [
             {
                 'path': 'parking',
                 'component': ParkingComponent
+            },
+            {
+                'path': 'guest-suites',
+                'component': GuestSuitesComponent
             }
         ]
     },

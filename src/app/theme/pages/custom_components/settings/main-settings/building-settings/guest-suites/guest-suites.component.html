@@ -1,0 +1,273 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-form__heading-title">
+                {{buildingName}}
+                </h3>
+            </div>
+            
+        <button class="btn btn-link">
+            <i class="fa fa-plus" (click)="addSuiteForm = true"> Add Guest Room</i>
+        </button>
+        <button class="btn btn-link" (click)="changeSuiteView()">
+            <i class="fa" [ngClass]="{'fa-list': isSuiteGridView, 'fa-th' : !isSuiteGridView}"> {{SuiteViewName}} </i>
+        </button>
+        </div>
+</div>
+<div class="m-subheader breadcrumb-header">
+    <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li  class="m-nav__item m-nav__item--home">
+            <a  class="m-nav__link m-nav__link--icon"  routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
+                <i  class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+       
+       
+        <li  class="m-nav__item">
+            <a  routerLink="/settings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                <span  class="m-nav__link-text">
+                    Settings
+                </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+                -
+            </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings/buildings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Buildings     
+                    </span>
+                </a>
+            </li>
+          
+
+                <li  class="m-nav__separator">
+                    -
+                </li>
+
+                <li  class="m-nav__item">
+                    <a  routerLink="/settings/buildings/1/guest-suites" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text active_breadcrumb">
+                            Guest Suites 
+                        </span>
+                    </a>
+                </li>
+              
+    </ul>
+</div>
+<hr class="customhr">
+<div class="m-content">
+    <div class="m-form__section m-form__section--first">
+
+
+        <!-- ---------------------------Inventory Cards Start---------------------------------- -->
+
+        <div class="row" *ngIf="!addSuiteForm && isSuiteGridView">
+
+            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let suite of suites; let i = index;'>
+                <div  class="body organ1">
+                    <div  class="row" style="margin:0px;">
+                        <div  class="card-left col-lg-3">
+                           
+                            <div  class="row onepersonrow">
+                                <div  class="col-md-12">
+                                    <img  class="cardimage" [src]="suite.img">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Suite Details</h6>
+                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteGuestSuite(i)"></i>
+                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
+                                <input  class="chkboxes" type="checkbox">
+                                <span ></span>
+                            </label>
+                            <div  class="clearfix"></div>
+                            <div  class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-4 cardName">
+                                                    Name:
+                                            </div>
+    
+                                            <div class="col-sm-8 carddetail">
+                                                    {{suite.name}}
+                                                </div>
+    
+                                        </div>
+    
+                                        <div class="row">
+                                                <div class="col-sm-4 cardName">
+                                                        Category:
+                                                </div>
+        
+                                                <div class="col-sm-8 carddetail">
+                                                        {{suite.category}}
+                                                    </div>
+        
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-4 cardName">
+                                                        Sub-Cat:
+                                                </div>
+        
+                                                <div class="col-sm-8 carddetail">
+                                                        {{suite.subCategory}}
+                                                    </div>
+        
+                                            </div>
+    
+                                                <div class="row">
+                                                        <div class="col-sm-4 cardName">
+                                                                Capacity:
+                                                        </div>
+                
+                                                        <div class="col-sm-8 carddetail">
+                                                                {{suite.allowed}}
+                                                            </div>
+                
+                                                    </div>
+                                                    
+                                    </div>
+                                  
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ---------------------------Inventories Cards End---------------------------------- -->
+
+        <!-- ---------------------------Inventories List Start---------------------------------- -->
+        <div *ngIf="!addSuiteForm && !isSuiteGridView">
+            <div class="cold-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr style="background: #555;color: #fff" role="row"><th>
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline f">
+                                <input type="checkbox" class="group-checkable">
+                                <span style="border-color: #fff !important;"></span>
+                            </label>
+                        </th>
+                            <th > Room # </th>
+                            <th> Room Name </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Category </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Sub-Category </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Capacity </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Description </th>
+                        </thead>
+                        <tfoot>
+                        </tfoot>
+                        <tbody>
+                        <tr role="row">
+                            <td >
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="chkboxes1">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td> 1 </td>
+                            <td class="center">
+                                Small Suite
+                            </td>
+                            <td class="center"> Economy </td>
+                            <td class="center"> One Bed </td>
+                            <td class="center"> 100</td>
+                            <td class="center"> Party Room for all occasions</td>
+                          
+                        </tr>   <tr role="row">
+                                <td >
+                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        <input type="checkbox" class="chkboxes1">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td> 2 </td>
+                                <td class="center">
+                                    Moderate Suite
+                                </td>
+                                <td class="center"> Business </td>
+                                <td class="center"> Three Bed</td>
+                                <td class="center"> 80</td>
+                                <td class="center"> Room for bithday celebrations</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------------Inventories List End---------------------------------- -->
+
+        <!-- ----------------------------- Add Form Start------------------------------- -->
+        <div class="row" *ngIf="addSuiteForm">
+            <div class="col-md-6">
+                <div class="form-group m-form__group">
+                    <label for="inventory_name">
+                         Room Name:
+                    </label>
+                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Birthday Room" #guestSuiteName type="text">
+                </div>
+
+                <div class="form-group m-form__group">
+                    <label >
+                         Category:
+                    </label>
+                    <select class="form-control m-input m-input--air" type="text" #guestSuiteCategory id="guestSuiteCategory">
+                        <option value="Economy">Economy</option>
+                        <option value="Business">Business</option>
+                    </select>
+                </div>
+
+                <div class="form-group m-form__group">
+                    <label >
+                        Sub-Category:
+                    </label>
+                    <select class="form-control m-input m-input--air" type="text" #guestSuiteSubCategory id="guestSuiteSubCategory">
+                        <option value="One Bed">One Bed</option>
+                        <option value="Two Bed">Two Bed</option>
+                        <option value="Three Bed">Three Bed</option>
+                    </select>
+                </div>
+
+             
+            </div>
+            <div class="col-md-6">
+                    <div class="form-group m-form__group">
+                            <label >
+                                Max Capacity:
+                            </label>
+                            <input  class="form-control form-control-md m-input m-input--air"
+                                    placeholder="e.g. 4, 5 ,6"  type="number" #guestSuiteCapacity>
+                        </div>
+
+                        <div class="form-group m-form__group">
+                            <label >
+                                Description:
+                            </label>
+                            <textarea  class="form-control form-control-md m-input m-input--air" #GuestSuiteDescription></textarea>
+                        </div>
+           
+           
+           </div>
+        <div class="col-md-12">
+            <button class="btn btn-info pull-right" type="button" (click)="addSuite(guestSuiteName.value, default_imgUrl , guestSuiteCategory.value, guestSuiteSubCategory.value, guestSuiteCapacity.value , GuestSuiteDescription.value)">
+                Add Room
+            </button>
+        </div>
+
+        <!-- ---------------------------Add Inventory Form Start---------------------------------- -->
+
+    </div>
+
+</div>
