@@ -1,9 +1,21 @@
 <div class="m-subheader">
     <div class="d-flex align-items-center">
             <div class="mr-auto">
-                <h3 class="m-form__heading-title">
-                {{buildingName}}
-                </h3>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="m-form__heading-title float-left">
+                                {{buildingName}}
+                                <a href="#" style="color:grey;" (click)="onSearchClicked()"><i class="fa fa-search"></i></a>
+                                </h3>
+                               
+                                <div  class="form-group m-form__group " *ngIf="searchField" style="display:inline-block; margin-left:25px;">
+                                        <!-- <label  for="inventory_subCat">
+                                            Parking Floor
+                                        </label> -->
+                                        <input type="text" class="form-control TopFilterSelect" />
+                                    </div>
+                    </div>
+                </div>
             </div>
             
         <button class="btn btn-link">
@@ -135,6 +147,16 @@
                                                             </div>
                 
                                                     </div>
+                                                    <div class="row">
+                                                            <div class="col-sm-4 cardName">
+                                                                    Entry:
+                                                            </div>
+                    
+                                                            <div class="col-sm-8 carddetail">
+                                                                    {{suite.bookable}}
+                                                                </div>
+                    
+                                                        </div>
                                                     
                                     </div>
                                   
@@ -250,6 +272,69 @@
                             <input  class="form-control form-control-md m-input m-input--air"
                                     placeholder="e.g. 4, 5 ,6"  type="number" #guestSuiteCapacity>
                         </div>
+
+                        <div class="m-form__group form-group">
+                                <!-- <label for="">
+                                    Inline Radios
+                                </label> -->
+                                <div class="m-radio-inline">
+                                    <label class="m-radio m-radio--brand">
+                                        <input (change)="bookType='Bookable'" class="" name="bookType" type="radio" value="Bookable" >
+                                        Bookable
+                                        <span></span>
+                                    </label>
+                                    <label class="m-radio m-radio--brand">
+                                        <input name="bookType" (change)="bookType='Non-Bookable'" type="radio" value="Non-Bookable" checked>
+                                        Non-Bookable
+                                        <span></span>
+                                    </label>
+                                   
+                                </div>
+                             
+                            </div>
+
+                            <div class="m-form__group form-group" *ngIf="bookType=='Bookable'">
+                                    <label for="">Book Days</label>
+                                        <div class="m-checkbox-list">
+                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                                    <input type="checkbox">
+                                                    Monday
+                                                    <span></span>
+                                                </label>
+                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                                    <input  type="checkbox">
+                                                    Tuesday
+                                                    <span></span>
+                                                </label>
+                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                                    <input checked="checked" type="checkbox">
+                                                    Wednesday
+                                                    <span></span>
+                                                </label>
+                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                                    <input checked="checked" type="checkbox">
+                                                    Thursday
+                                                    <span></span>
+                                                </label>
+                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                                    <input checked="checked" type="checkbox">
+                                                    Friday
+                                                    <span></span>
+                                                </label>
+    
+                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                                        <input checked="checked" type="checkbox">
+                                                        Saturday
+                                                        <span></span>
+                                                    </label>
+    
+                                                    <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                                            <input checked="checked" type="checkbox">
+                                                            Sunday
+                                                            <span></span>
+                                                        </label>
+                                            </div>
+                                </div>
 
                         <div class="form-group m-form__group">
                             <label >

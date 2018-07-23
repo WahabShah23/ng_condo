@@ -13,10 +13,11 @@ export class ParkingComponent implements OnInit {
   {
 
   }
-
+  bookType="Non-Bookable";
   addParkingForm = false;
   isParkingGridView = true;
   ParkingViewName = 'List View';
+  showSearch = false;
   default_imgUrl = 'assets/app/media/img/custom/parking/parking.gif';
   Parkings = [
     {
@@ -49,6 +50,11 @@ addParking(parkingNumber: number, img , parkingName : string, parkingArea: strin
 deleteParking(id){
     console.log(id);
     this.Parkings.splice(id,1);
+}
+
+onSearchClicked()
+{
+    this.showSearch = !this.showSearch;
 }
 
 }

@@ -12,16 +12,18 @@ export class GuestSuitesComponent implements OnInit {
   ngOnInit() {
   }
 
+  searchField= false;
   addSuiteForm = false;
   isSuiteGridView = true;
   SuiteViewName = 'List View';
+  bookType="Non-Bookable";
   default_imgUrl = 'assets/app/media/img/custom/guest-suites/1.jpg';
   suites = [
     {
-        name: "Small Suite", img: 'assets/app/media/img/custom/guest-suites/1.jpg', category: 'Economy' , subCategory: "One Bed", allowed: 100 , description: "A Cheap and Good Guest Suite"
+        name: "Small Suite", img: 'assets/app/media/img/custom/guest-suites/1.jpg', category: 'Economy' , subCategory: "One Bed", allowed: 100 , description: "A Cheap and Good Guest Suite", bookable:"Non-Bookable"
     },
     {
-        name: 'Moderate Suite', img: 'assets/app/media/img/custom/guest-suites/1.jpg', category: 'Business', subCategory:"Three Bed", allowed:80 , description: "A Cheap and Good Guest Suite"
+        name: 'Moderate Suite', img: 'assets/app/media/img/custom/guest-suites/1.jpg', category: 'Business', subCategory:"Three Bed", allowed:80 , description: "A Cheap and Good Guest Suite", bookable:"Bookable"
     }
    ];
 
@@ -40,7 +42,7 @@ export class GuestSuitesComponent implements OnInit {
 
 addSuite(guestSuiteName, img , guestSuiteCategory, guestSuiteSubCategory, guestSuiteCapacity , GuestSuiteDescription) {
 
-    this.suites.push({name: guestSuiteName, img:img, category: guestSuiteCategory, subCategory: guestSuiteSubCategory ,allowed: guestSuiteCapacity , description:GuestSuiteDescription});
+    this.suites.push({name: guestSuiteName, img:img, category: guestSuiteCategory, subCategory: guestSuiteSubCategory ,allowed: guestSuiteCapacity , description:GuestSuiteDescription , bookable:"Non-bookable"});
     this.isSuiteGridView = !this.isSuiteGridView;
     this.changeSuiteView();
 }
@@ -48,6 +50,11 @@ addSuite(guestSuiteName, img , guestSuiteCategory, guestSuiteSubCategory, guestS
 deleteGuestSuite(id){
     console.log(id);
     this.suites.splice(id,1);
+}
+
+onSearchClicked()
+{
+    this.searchField = !this.searchField;
 }
 
 

@@ -11,6 +11,7 @@ export class FloorSettingsComponent implements OnInit {
     isFloorGridView = true;
     FloorViewName = 'List View';
     buildingName = "ABC Building";
+    floorType="Normal";
 
     constructor() { }
 
@@ -26,6 +27,12 @@ export class FloorSettingsComponent implements OnInit {
             this.FloorViewName = 'Grid View';
         }
         this.addFloorForm = false;
+    }
+
+    onFloorChanged(floor:string)
+    {
+        this.floorType = floor;
+        console.log(floor=='Normal');
     }
 
 }

@@ -6,7 +6,7 @@ import { MainSettingsRouting } from './main-settings-routing.module';
 import { SettingsBuildingsComponent } from './../settings-building.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { FileUploadModule, SidebarModule } from 'primeng/primeng';
 import { SelectDropDownModule } from 'ngx-select-dropdown'
@@ -42,7 +42,7 @@ import { GuestSuitesComponent } from './building-settings/guest-suites/guest-sui
 @NgModule({
     imports: [
         CommonModule, LayoutModule,
-        FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule , MainSettingsRouting
+        FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule , MainSettingsRouting, FormsModule
     ], exports: [
     ], declarations: [
         MainSettingsComponent,
