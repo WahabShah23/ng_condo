@@ -86,10 +86,8 @@ const routes: Routes = [
                         'component': AddRulesComponent
                     }
                 ]
-            },
-            {
-
             }
+            
 
         ],
     },
