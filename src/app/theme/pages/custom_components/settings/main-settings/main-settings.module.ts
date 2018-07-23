@@ -34,6 +34,9 @@ import { GymComponent } from './building-settings/specialized-rooms/gym/gym.comp
 import { PartyRoomsComponent } from './building-settings/specialized-rooms/party-rooms/party-rooms.component';
 import { RulesGlobalSettingsComponent } from './rules-global-settings/rules-global-settings.component';
 import { GuestSuitesComponent } from './building-settings/guest-suites/guest-suites.component';
+import { AddRulesComponent } from './rules-global-settings/add-rules/add-rules.component';
+import { GridViewRulesComponent } from './rules-global-settings/grid-view-rules/grid-view-rules.component';
+import { ListViewRulesComponent } from './rules-global-settings/list-view-rules/list-view-rules.component';
 
 
 
@@ -68,7 +71,10 @@ import { GuestSuitesComponent } from './building-settings/guest-suites/guest-sui
         GymComponent,
         PartyRoomsComponent,
         RulesGlobalSettingsComponent,
-        GuestSuitesComponent
+        GuestSuitesComponent,
+        AddRulesComponent,
+        GridViewRulesComponent,
+        ListViewRulesComponent
     ],
 
 })

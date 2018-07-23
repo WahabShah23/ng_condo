@@ -1,0 +1,54 @@
+<div class="row" > <!-- *ngIf="!addRuleForm && isRuleGridView" -->
+    <div  class="col-sm-12 col-md-3 col-xl-3" *ngFor='let rule of rules; let i = index;'>
+        <div  class="body organ1">
+            <div  class="row" style="margin:0px;">
+                <div  class="card-left col-lg-3">
+                    <div  class="row onepersonrow">
+                        <div  class="col-md-12">
+                            <img  class="cardimage" [src]="rule.img">
+                            <!--<p  class="cardname">{{amenity.name}}</p>-->
+                            <!--<p  class="cardtype">{{amenity.amenitytype}}</p>-->
+                            <!--<p  class="cardtype"> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>-->
+                        </div>
+                    </div>
+                </div>
+                <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                    <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Rule Details</h6>
+                    <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteRule(i)"></i>
+                    <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
+                        <input  class="chkboxes" type="checkbox">
+                        <span ></span>
+                    </label>
+                    <div  class="clearfix"></div>
+                    <div  class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-md-4 cardname">
+                                    Name:
+                                </div>
+                                <div class="col-md-8">
+                                    {{rule.name}}
+                                </div>
+                            </div>
+
+                            <!--<p  class="cardtype">{{amenity.amenitytype}}</p>-->
+                            <!--<p  class="cardtype"> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>-->
+                        </div>
+
+                        <div  class="col-sm-12">
+                            <div class="row">
+                                <div class="col-md-4 cardname">
+                                    Type:
+                                </div>
+                                <div class="col-md-8">
+                                    {{"NA"}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

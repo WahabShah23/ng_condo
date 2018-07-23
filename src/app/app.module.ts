@@ -20,7 +20,7 @@ import { WizardComponent } from './components/wizard/wizard.component';
 import { DemoService } from "./services/demo.service";
 import { AmenitiesService } from "./services/amenities.service";
 import { InventoriesService } from "./services/inventories.service";
-import {RulesService} from "./services/rules.service";
+import { RulesService } from "./services/rules.service";
 
 
 
