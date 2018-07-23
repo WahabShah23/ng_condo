@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import { ScriptLoaderService } from '../../../../../../_services/script-loader.service';
 import { RulesService } from "../../../../../../services/rules.service";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-rules-global',
@@ -9,6 +10,7 @@ import { RulesService } from "../../../../../../services/rules.service";
 })
 export class RulesGlobalSettingsComponent implements OnInit, AfterViewInit {
 
+    @ViewChild('allowed') allowed : ElementRef;
     addRuleForm = false;
     isRuleGridView = true;
     RuleViewName = 'List View';
@@ -16,7 +18,7 @@ export class RulesGlobalSettingsComponent implements OnInit, AfterViewInit {
 
     rules;  // rule property for rule service implementation
 
-  constructor( public rules_service: RulesService, public _script: ScriptLoaderService ) {
+  constructor( public rules_service: RulesService, private router: Router, private activatedRoute: ActivatedRoute, public _script: ScriptLoaderService, private renderer: Renderer2 ) {
       this.rules = this.rules_service.getRules();
   }
 
@@ -26,30 +28,22 @@ export class RulesGlobalSettingsComponent implements OnInit, AfterViewInit {
     ngAfterViewInit()  {
         this._script.loadScripts('app-rules-global',
             ['assets/demo/default/custom/components/forms/widgets/summernote.js',
-                    'assets/demo/default/custom/components/forms/widgets/bootstrap-markdown.js']);
-                (<any>$('[data-provide="markdown"]')).markdown();
+                    'assets/demo/default/custom/components/forms/widgets/select2.js']);
     }
 
   changeRuleView() {
       this.isRuleGridView = !this.isRuleGridView;
       if (this.isRuleGridView) {
           this.RuleViewName = 'List View';
+          this.router.navigate(["grid"],{relativeTo: this.activatedRoute });
       }
       else {
           this.RuleViewName = 'Grid View';
+          this.router.navigate(["list"], {relativeTo: this.activatedRoute });
+
       }
       this.addRuleForm = false;
   }
 
-    addRule(rule_name: string, rule_img: string, rule_desc?: string) {
-        this.rules.push({name: rule_name, img: rule_img, desc: rule_desc });
-        this.isRuleGridView = !this.isRuleGridView;
-        this.changeRuleView();
-    }
-
-  deleteRule(id){
-      console.log(id);
-      this.rules.splice(id,1);
-  }
 
 }

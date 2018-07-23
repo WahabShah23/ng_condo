@@ -28,6 +28,9 @@ import { InventoriesService } from '../../../../../services/inventories.service'
 import { SettingsSpecializedComponent } from '../settings-specialized.component';
 import {RulesGlobalSettingsComponent} from "./rules-global-settings/rules-global-settings.component";
 import { GuestSuitesComponent } from './building-settings/guest-suites/guest-suites.component';
+import {AddRulesComponent} from "./rules-global-settings/add-rules/add-rules.component";
+import {ListViewRulesComponent} from "./rules-global-settings/list-view-rules/list-view-rules.component";
+import {GridViewRulesComponent} from "./rules-global-settings/grid-view-rules/grid-view-rules.component";
 
 const routes: Routes = [
     {
@@ -64,8 +67,30 @@ const routes: Routes = [
             },
             {
                 'path': 'rules',
-                'component': RulesGlobalSettingsComponent
+                'component': RulesGlobalSettingsComponent,
+                'children': [
+                    {
+                        'path': '',
+                        'component': GridViewRulesComponent
+                    },
+                    {
+                        'path': 'grid',
+                        'component': GridViewRulesComponent
+                    },
+                    {
+                        'path': 'list',
+                        'component': ListViewRulesComponent
+                    },
+                    {
+                        'path': 'add',
+                        'component': AddRulesComponent
+                    }
+                ]
+            },
+            {
+
             }
+
         ],
     },
     {
