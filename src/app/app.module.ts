@@ -1,3 +1,4 @@
+import { RoomsService } from './services/roomsServices.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ThemeComponent } from './theme/theme.component';
@@ -47,7 +48,8 @@ import { RulesService } from "./services/rules.service";
             libraries: ['places']
         })
     ],
-    providers: [ScriptLoaderService, DemoService, AmenitiesService, InventoriesService, RulesService],
+    providers: [ScriptLoaderService, DemoService, AmenitiesService, InventoriesService, RulesService,
+    RoomsService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

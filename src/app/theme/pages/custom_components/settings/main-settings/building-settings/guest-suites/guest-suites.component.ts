@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-guest-suites',
@@ -56,6 +56,7 @@ onSearchClicked()
 {
     this.searchField = !this.searchField;
 }
+
 
 
 }

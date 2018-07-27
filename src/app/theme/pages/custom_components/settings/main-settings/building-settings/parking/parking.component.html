@@ -276,21 +276,30 @@
                     <label  >
                       Parking Type:
                     </label>
-                    <select #parkingType  class="form-control m-input m-input--air" >
+                    <select #parkingType (click)="onParkingTypeChanged(parkingType.value)"  class="form-control m-input m-input--air" >
                         <option value="Resident" > Resident </option>
                         <option  value="Guest" > Guest </option>
                     </select>
                 </div> 
 
-                
-
-                <!-- <div class="form-group m-form__group">
-                        <label for="inventory_name">
-                            Apartment Name:
+                <div  class="form-group m-form__group" *ngIf="!isResidantParking">
+                        <label  >
+                          Guest Parking Type:
                         </label>
-                        <input   id="apartment_name" class="form-control form-control-md m-input m-input--air"
-                                placeholder="Apartment Name" #parkingName type="text">
-                    </div> -->
+                        <select #parkingType  class="form-control m-input m-input--air" >
+                            <option value="Overnight" >Overnight</option>
+                            <option  value="Day">Day</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group m-form__group" *ngIf="!isResidantParking">
+                                <label  for="inventory_name">
+                                 Rate/Hour ($):
+                                </label>
+                                <input class="form-control form-control-md m-input m-input--air" placeholder="e.g. 24.5" type="text">
+                    </div> 
+
+                
 
 
                     <div  class="form-group m-form__group">

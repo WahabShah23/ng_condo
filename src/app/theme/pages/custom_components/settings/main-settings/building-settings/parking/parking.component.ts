@@ -19,6 +19,7 @@ export class ParkingComponent implements OnInit {
   ParkingViewName = 'List View';
   showSearch = false;
   default_imgUrl = 'assets/app/media/img/custom/parking/parking.gif';
+  isResidantParking = true;
   Parkings = [
     {
         number:1 , apartment: "20-B", img: 'assets/app/media/img/custom/parking/parking.gif', area: '20 sq/m', location: 'East'
@@ -55,6 +56,12 @@ deleteParking(id){
 onSearchClicked()
 {
     this.showSearch = !this.showSearch;
+}
+
+
+onParkingTypeChanged(parkingType: string)
+{
+    (parkingType=="Resident") ? this.isResidantParking=true : this.isResidantParking=false;
 }
 
 }

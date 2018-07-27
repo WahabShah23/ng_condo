@@ -303,6 +303,38 @@
             <input type="number" min="0" class="form-control m-input m-input--air" #parkingLots>
         </div>
 
+        <div class="row" *ngIf="floorType=='Parking'">
+            <div class="col-sm-6">
+                    <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                            <input type="checkbox" #guestCheckbox value="guest" (change)="checkchanged(guestCheckbox)">
+                             Guest
+                            <span></span>
+                        </label>
+
+                    <div class="form-group m-form__group" *ngIf="guestParking">
+                            <label for="floorCount">
+                                Number of Guest Parking
+                            </label>
+                            <input type="number" min="0"  class="form-control m-input m-input--air" #guestParking>
+                        </div>
+            </div>
+
+            <div class="col-sm-6">
+                    <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                            <input type="checkbox" #ownerCheckbox value="owner"  (change)="checkchanged(ownerCheckbox)">
+                            Owner
+                            <span></span>
+                        </label>
+
+                    <div *ngIf="ownerParking" class="form-group m-form__group" >
+                            <label for="floorCount">
+                                Number of Ownner Parking
+                            </label>
+                            <input type="number"  min="0" class="form-control m-input m-input--air" #ownerParking>
+                        </div>
+            </div>
+        </div>
+
         <div class="form-group m-form__group" *ngIf="floorType=='Normal'">
             <label for="floorCount">
                 Number of Amenities
@@ -311,25 +343,20 @@
         </div>
     </div>
     <div class="col-md-6">
-        <div class="form-group m-form__group" *ngIf="floorType=='Normal'">
-            <label for="exampleSelect1">
-                Choose Amenities
-            </label>
-            <select class="form-control m-input m-input--air" id="exampleSelect1">
-                <option>
 
-                </option>
-                <option>
-                    Swimming Pool
-                </option>
-                <option>
-                    Laundry
-                </option>
-                <option>
-                    Gym
-                </option>
-            </select>
-        </div>
+    <div class="d-flex align-items-center">
+    <div class="form-group m-form__group mr-auto custom-width-100">
+        <label class="m-subheader__title" for="item_cat">
+            Amenities:
+            </label>
+            <ngx-select-dropdown #amenitiesDropdown [config]="config" [options]="amenities" [(value)]="amneityDropdownModel" [multiple]="true" >
+
+            </ngx-select-dropdown>
+
+    </div>
+    <button class="btn btn-link" data-target="#addAmenity" data-toggle="modal"><i class="fa fa-plus"></i> Add </button> 
+    </div>
+
         <div class="form-group m-form__group" *ngIf="floorType=='Normal'">
             <label for="apartmentCount">
                 Number of apartments
@@ -337,25 +364,31 @@
             <input type="number" min="0" class="form-control m-input m-input--air" id="apartmentCount">
         </div>
 
-        <div class="form-group m-form__group" *ngIf="floorType=='Normal'">
-            <label>
-                Apartment Type:
-            </label>
-            <select class="form-control m-input m-input--air" type="text" >
-                <option>
 
-                </option>
-                <option>
-                    2 Bed Studio
-                </option>
-                <option>
-                    3 Bed Studio
-                </option>
-                <option>
-                    Master Studio
-                </option>
-            </select>
-        </div>
+        <div class="d-flex align-items-center"  *ngIf="floorType=='Normal'">
+                <div class="form-group m-form__group custom-width-100">
+            
+                        <label>
+                            Apartment Type:
+                        </label>
+                        <select class="form-control m-input m-input--air" type="text" >
+                            <option>
+            
+                            </option>
+                            <option>
+                                2 Bed Studio
+                            </option>
+                            <option>
+                                3 Bed Studio
+                            </option>
+                            <option>
+                                Master Studio
+                            </option>
+                        </select>
+                        
+                        </div>
+                        <button class="btn btn-link"><i class="fa fa-plus"></i> Add </button> 
+            </div>
 
         <div class="form-group m-form__group">
             <label for="exampleTextarea">
@@ -367,3 +400,39 @@
 </div>
 <!-- ---------------------------Add Floor Form End---------------------------------- -->
 </div>
+
+
+<!-- MODAL Category BEGINS -->
+<div aria-labelledby="exampleModalLabel" class="modal fade show" id="addAmenity" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        New Amenity
+                    </h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">
+                                ×
+                    </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-control-label" for="category-name">
+                            Amenity Name
+                        </label>
+                        <input class="form-control" #AmenityName id="category-name" type="text">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                        Close
+                    </button>
+                    <button class="btn btn-primary" (click)="addAmenity(AmenityName.value); AmenityName.value='';" type="button">
+                        Add Amenity
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL Category ENDS -->

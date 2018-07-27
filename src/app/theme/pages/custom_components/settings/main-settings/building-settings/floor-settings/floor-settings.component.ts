@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { SelectDropDownComponent } from 'ngx-select-dropdown/dist/components';
 
 @Component({
     selector: 'app-floor-settings',
@@ -7,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FloorSettingsComponent implements OnInit {
 
+    @ViewChild('amenitiesDropdown')  amenitiesDropdown: SelectDropDownComponent;
     addFloorForm = false;
     isFloorGridView = true;
     FloorViewName = 'List View';
     buildingName = "ABC Building";
     floorType="Normal";
+    ownerParking;
+    guestParking;
+
+    amenities = ["Swimming Pool", "Gym" , "Laundry"];
+    amneityDropdownModel;
+    config = {
+        displayKey: "description", //if objects array passed which key to be displayed defaults to description,
+        search: true //enables the search plugin to search in the list
+    }
 
     constructor() { }
 
@@ -32,7 +43,24 @@ export class FloorSettingsComponent implements OnInit {
     onFloorChanged(floor:string)
     {
         this.floorType = floor;
-        console.log(floor=='Normal');
     }
+    checkchanged(checkbox: HTMLInputElement)
+    {
+        if(checkbox.value=="owner")
+        {
+          (checkbox.checked) ?  this.ownerParking=true:  this.ownerParking=false; 
+        }
+        else
+        {
+            (checkbox.checked) ?  this.guestParking=true:  this.guestParking=false; 
+        }
+    }
+
+    addAmenity(name: string) {
+        this.amenities.push(name);
+        this.amenitiesDropdown.availableItems.push(name);
+
+    }
+
 
 }

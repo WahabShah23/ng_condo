@@ -37,6 +37,8 @@ import { GuestSuitesComponent } from './building-settings/guest-suites/guest-sui
 import { AddRulesComponent } from './rules-global-settings/add-rules/add-rules.component';
 import { GridViewRulesComponent } from './rules-global-settings/grid-view-rules/grid-view-rules.component';
 import { ListViewRulesComponent } from './rules-global-settings/list-view-rules/list-view-rules.component';
+import { RoomTypesComponent } from './building-settings/specialized-rooms/room-types/room-types.component';
+import { RoomsComponent } from './building-settings/specialized-rooms/room-types/rooms/rooms.component';
 
 
 
@@ -74,7 +76,9 @@ import { ListViewRulesComponent } from './rules-global-settings/list-view-rules/
         GuestSuitesComponent,
         AddRulesComponent,
         GridViewRulesComponent,
-        ListViewRulesComponent
+        ListViewRulesComponent,
+        RoomTypesComponent,
+        RoomsComponent
     ],
 
 })

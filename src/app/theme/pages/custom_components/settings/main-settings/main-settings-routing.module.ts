@@ -1,3 +1,5 @@
+import { RoomsComponent } from './building-settings/specialized-rooms/room-types/rooms/rooms.component';
+import { RoomTypesComponent } from './building-settings/specialized-rooms/room-types/room-types.component';
 import { PartyRoomsComponent } from './building-settings/specialized-rooms/party-rooms/party-rooms.component';
 import { GymComponent } from './building-settings/specialized-rooms/gym/gym.component';
 import { ParkingComponent } from './building-settings/parking/parking.component';
@@ -87,7 +89,6 @@ const routes: Routes = [
                     }
                 ]
             }
-            
 
         ],
     },
@@ -140,13 +141,35 @@ const routes: Routes = [
         ]
     },
     {
-        'path': 'buildings/:id/specialized-rooms',
+             'path': 'buildings/:id/specialized-facility',
+             'component': SettingsSpecializedComponent,
+             'children': [
+                 {
+                     'path': '',
+                     'component': RoomTypesComponent
+ 
+                 }
+            ]
+    },
+    {
+        'path': 'buildings/:id/specialized-facility/:id',
         'component': SettingsSpecializedComponent,
         'children': [
             {
                 'path': '',
-                redirectTo: 'inventory'
-            },
+                'component': RoomsComponent
+
+            }
+       ]
+  },
+    {
+        'path': 'buildings/:id/specialized-rooms',
+        'component': SettingsSpecializedComponent,
+        'children': [
+            // {
+            //     'path': '',
+            //     redirectTo: 'inventory'
+            // },
             {
                 'path': 'inventory',
                 'component': InventoryBuildingComponent

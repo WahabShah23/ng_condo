@@ -15,7 +15,7 @@ export class ItemGlobalSettingsComponent implements OnInit {
     }
 
     // @ViewChild('inventoryCat')  inventoryCat: ElementRef;
-    @ViewChild('itemCat')  itemCat: SelectDropDownComponent;
+    @ViewChild('amenitiesDropdown')  itemCat: SelectDropDownComponent;
     @ViewChild('itemSubCat')  itemSubCat: SelectDropDownComponent;
     @ViewChild('brandDropdown')  brandDropdown: SelectDropDownComponent;
 
