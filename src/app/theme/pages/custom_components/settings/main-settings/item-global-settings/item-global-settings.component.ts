@@ -18,6 +18,7 @@ export class ItemGlobalSettingsComponent implements OnInit {
     @ViewChild('itemCat')  itemCat: SelectDropDownComponent;
     @ViewChild('itemSubCat')  itemSubCat: SelectDropDownComponent;
     @ViewChild('brandDropdown')  brandDropdown: SelectDropDownComponent;
+    @ViewChild('providerDropdown')  providerDropdown: SelectDropDownComponent;
 
 
     addInventoryForm = false;
@@ -28,9 +29,10 @@ export class ItemGlobalSettingsComponent implements OnInit {
 
     categories = ["Electrical Appliances", "Toiletries", "Furniture"];
     subCategories = ["Air Conditioner", "Microwave Oven", "Kettle"];
-    brands = ["Pel", "Samsung", "Orient"];
+    brands = ["Pel", "Samsung", "Orient"];  // Suppliers/manufactures
+    providers = []; // providers/vendors
 
-
+    value :string = 'Item';
     Inventories;  // Inventories property for inventory service implementation
 
     constructor( inventory_service: InventoriesService, private renderer: Renderer2, private el: ElementRef) {
@@ -90,5 +92,14 @@ export class ItemGlobalSettingsComponent implements OnInit {
         // this.renderer.appendChild(option, text);
         // this.renderer.appendChild(this.brandDropdown.nativeElement, option);
     }
+
+    addProvider(name:string){
+        this.providers.push(name);
+        this.providerDropdown.availableItems.push(name);
+    }
+
+    // onItemChange(changeValue :string){
+    //     this.value = changeValue;
+    // }
 
 }
