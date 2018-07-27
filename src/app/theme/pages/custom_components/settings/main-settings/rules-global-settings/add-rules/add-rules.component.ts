@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import { ScriptLoaderService } from "../../../../../../../_services/script-loader.service";
 import { RulesService } from "../../../../../../../services/rules.service";
+import {SelectDropDownComponent} from "ngx-select-dropdown";
 
 @Component({
   selector: 'app-add-rules',
@@ -9,12 +10,15 @@ import { RulesService } from "../../../../../../../services/rules.service";
 })
 export class AddRulesComponent implements OnInit, AfterViewInit {
 
+    @ViewChild('tagsInput') tagsInput: ElementRef ;
+
     addRuleForm = false;
     isRuleGridView = true;
     RuleViewName = 'List View';
     default_imgUrl = 'assets/app/media/img/custom/inventories/placeholder.png';
 
     rules;  // rule property for rule service implementation
+    notAllowed;
 
     constructor( public rules_service: RulesService, public _script: ScriptLoaderService, private renderer: Renderer2 ) {
         this.rules = this.rules_service.getRules();

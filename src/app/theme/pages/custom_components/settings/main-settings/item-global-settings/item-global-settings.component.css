@@ -98,8 +98,8 @@
 {
 	width: 22px;
 }
-.personname {
-	font-weight: 600;
+.cardname {
+	font-weight: 500;
 	font-size: 12px;
 }
 .m-widget14__chart .text-center
@@ -147,4 +147,27 @@
 }
 .custom-width-100 {
 	width: 100%;
+}
+
+.custom_searchBox> input {
+	background-color: transparent;
+	border: 0px;
+	border-bottom: 1px solid #999;
+}
+
+/*.custom_searchBox> input:focus {*/
+	/*outline: blue;*/
+/*}*/
+
+/*outline: none !important;*/
+/*border:1px solid red;*/
+/*box-shadow: 0 0 10px #719ECE;*/
+
+.custom_searchBox> input[type=text] {
+	width: 50px;
+	-webkit-transition: width .35s ease-in-out;
+	transition: width .35s ease-in-out;
+}
+.custom_searchBox> input[type=text]:focus {
+	width: 200px;
 }

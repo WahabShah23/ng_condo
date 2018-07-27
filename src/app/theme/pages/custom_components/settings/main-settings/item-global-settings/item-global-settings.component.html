@@ -4,7 +4,11 @@
         <div  class="mr-auto">
             <h3  class="m-subheader__title">
                 Item Settings
-            </h3>
+                <small class="text-muted"><i class="fa fa-search"></i> </small>
+                <small class="custom_searchBox">
+                    <input type="text">
+                </small>
+             </h3>
         </div>
         <button class="btn btn-link">
             <i class="fa fa-plus" (click)="addInventoryForm = true"> Add Item</i>
@@ -84,17 +88,40 @@
                             </label>
                             <div  class="clearfix"></div>
                             <div  class="row">
-                                <div class="col-sm-6">
-                                    <p  class="cardname"><b>Name:</b> {{inventory.name}}</p>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-md-4 cardname">
+                                            Name:
+                                        </div>
+                                        <div class="col-md-8">
+                                            {{inventory.name}}
+                                        </div>
+                                    </div>
                                     <!--<p  class="cardtype">{{amenity.amenitytype}}</p>-->
                                     <!--<p  class="cardtype"> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>-->
                                 </div>
-                                <div  class="col-sm-6">
-                                    <p class="text-left"><strong>Category:</strong>  {{inventory.inventoryCat}}</p>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-md-4 cardname">
+                                            Category:
+                                        </div>
+                                        <div class="col-md-8">
+                                            {{inventory.inventoryCat}}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div  class="col-sm-6">
-                                    <p class="text-left"><strong>Sub-Cat:</strong>{{inventory.inventorySubCat}}</p>
+
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-md-4 cardname">
+                                            Sub-Cat:
+                                        </div>
+                                        <div class="col-md-8">
+                                            {{inventory.inventorySubCat}}
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -168,7 +195,7 @@
             <div class="col-md-6">
                 <div class="form-group m-form__group">
                     <label for="inventory_name">
-                        Item Name (optional):
+                        {{value}} Name (optional):
                     </label>
                     <input  aria-describedby="inventory_name" id="inventory_name" class="form-control form-control-md m-input m-input--air"
                             placeholder="Item Name" #itemName type="text">
@@ -176,27 +203,41 @@
 
                 <div class="form-group m-form__group">
                     <label for="item_type">
-                        Item Type:
+                        {{value}} Type:
                     </label>
-                    <select class="form-control m-input m-input--air" type="text" #itemType id="item_type">
+                    <select class="form-control m-input m-input--air" type="text" #itemType (change)="value=itemType.value;" id="item_type"> <!-- onItemChange(itemType.value)-->
                         <option selected disabled> Choose Option </option>
-                        <option value="appliances"> Inventory </option>
-                        <option value="parking"> Stock </option>
+                        <option value="Inventory"> Inventory </option>
+                        <option value="Stock"> Stock </option>
                     </select>
                 </div>
 
                 <div class="d-flex align-items-center">
                     <div class="form-group m-form__group mr-auto custom-width-100">
                         <label class="m-subheader__title" for="item_cat">
-                            Item Category:
+                            {{value}} Category:
                         </label>
-                        <ngx-select-dropdown #itemCat id="item_cat" [config]="config" [options]="categories" [(value)]="dataModel" [multiple]="true" >
+                        <ngx-select-dropdown #itemCat id="item_cat" [config]="config" [options]="categories" [(value)]="dataModel" >
 
                         </ngx-select-dropdown>
 
                     </div>
                     <button class="btn btn-link m--margin-top-15" data-target="#addCategory" data-toggle="modal">
                         <i class="fa fa-plus"> Add Category </i>
+                    </button>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="form-group m-form__group mr-auto custom-width-100">
+                        <label for="item_subCat">
+                            {{value}} Sub Category
+                        </label>
+                        <ngx-select-dropdown #itemSubCat id="item_subCat" [config]="config" [options]="subCategories" [(value)]="dataModel2" [multiple]="true" >
+
+                        </ngx-select-dropdown>
+                    </div>
+                    <button class="btn btn-link m--margin-top-15" data-target="#addSubCat" data-toggle="modal">
+                        <i class="fa fa-plus" > Add Sub-Cat </i>
                     </button>
                 </div>
 
@@ -208,22 +249,8 @@
 
                 <div class="d-flex align-items-center">
                     <div class="form-group m-form__group mr-auto custom-width-100">
-                        <label for="item_subCat">
-                            Item Sub Category
-                        </label>
-                        <ngx-select-dropdown #itemSubCat id="item_subCat" [config]="config" [options]="subCategories" [(value)]="dataModel2" [multiple]="true" >
-
-                        </ngx-select-dropdown>
-                    </div>
-                    <button class="btn btn-link m--margin-top-15" data-target="#addSubCat" data-toggle="modal">
-                        <i class="fa fa-plus" > Add Sub-Cat </i>
-                    </button>
-                </div>
-
-                <div class="d-flex align-items-center">
-                    <div class="form-group m-form__group mr-auto custom-width-100">
                         <label for="item_brand">
-                            Item Brand
+                            {{value}} Brand/Supplier
                         </label>
                         <!--<select class="form-control m-input m-input&#45;&#45;air" #inventoryBrand id="inventory_brand">-->
                             <!--<option selected disabled> Choose Option </option>-->
@@ -240,11 +267,25 @@
                     </button>
                 </div>
 
+                <div class="d-flex align-items-center">
+                    <div class="form-group m-form__group mr-auto custom-width-100">
+                        <label for="item_provider">
+                            {{value}} Provider/Vendor
+                        </label>
+                        <ngx-select-dropdown #providerDropdown id="item_provider" [config]="config" [options]="providers" [(value)]="dataModel4" >
+
+                        </ngx-select-dropdown>
+                    </div>
+                    <button class="btn btn-link m--margin-top-15" data-target="#addProvider" data-toggle="modal">
+                        <i class="fa fa-plus" > Add Provider </i>
+                    </button>
+                </div>
+
                 <div class="form-group m-form__group">
                     <label for="inventory_description">
                         Description:
                     </label>
-                    <textarea class="form-control m-input m-input--air" id="inventory_description" #inventoryDesc rows="2"></textarea>
+                    <textarea class="form-control m-input m-input--air" id="inventory_description" #inventoryDesc rows="6"></textarea>
                 </div>
             </div>
             <div class="col-md-12">
@@ -369,4 +410,40 @@
     </div>
 </div>
 <!-- MODAL Brand ENDS -->
+
+<!-- MODAL Provider BEGINS -->
+<div aria-labelledby="providerLabel" class="modal fade show" id="addProvider" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="providerLabel">
+                    New Provider
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+						<span aria-hidden="true">
+							×
+						</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-control-label" for="provider-name">
+                        Provider Name
+                    </label>
+                    <input class="form-control" #providerName id="provider-name" type="text">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Close
+                </button>
+                <button class="btn btn-primary" (click)="addProvider(providerName.value); providerName.value='';" type="button">
+                    Add Provider
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL Provider ENDS -->
+
 
