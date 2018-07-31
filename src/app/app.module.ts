@@ -32,6 +32,7 @@ import { RulesService } from "./services/rules.service";
         AppComponent,
         WizardComponent,
         
+        
     ],
     imports: [
         LayoutModule,

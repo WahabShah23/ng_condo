@@ -1,3 +1,6 @@
+import { GamesComponent } from './building-settings/specialized-rooms/games/games.component';
+import { HotelsComponent } from './building-settings/hotels/hotels.component';
+import { ShopsComponent } from './building-settings/shops/shops.component';
 import { RoomsComponent } from './building-settings/specialized-rooms/room-types/rooms/rooms.component';
 import { RoomTypesComponent } from './building-settings/specialized-rooms/room-types/room-types.component';
 import { PartyRoomsComponent } from './building-settings/specialized-rooms/party-rooms/party-rooms.component';
@@ -119,6 +122,14 @@ const routes: Routes = [
             {
                 'path': 'guest-suites',
                 'component': GuestSuitesComponent
+            },
+            {
+                'path': 'shops',
+                'component': ShopsComponent
+            },
+            {
+                'path': 'hotels',
+                'component': HotelsComponent
             }
         ]
     },
@@ -166,10 +177,10 @@ const routes: Routes = [
         'path': 'buildings/:id/specialized-rooms',
         'component': SettingsSpecializedComponent,
         'children': [
-            // {
-            //     'path': '',
-            //     redirectTo: 'inventory'
-            // },
+            {
+                'path': '',
+                redirectTo: 'inventory'
+            },
             {
                 'path': 'inventory',
                 'component': InventoryBuildingComponent
@@ -185,6 +196,10 @@ const routes: Routes = [
             {
                 'path': 'party-rooms',
                 'component': PartyRoomsComponent
+            },
+            {
+                'path': 'games',
+                'component': GamesComponent
             }
         ]
     }

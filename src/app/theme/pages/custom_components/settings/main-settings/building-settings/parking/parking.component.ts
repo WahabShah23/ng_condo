@@ -31,6 +31,14 @@ export class ParkingComponent implements OnInit {
 
    buildingName = "ABC Building";
 
+    owners = ["Jabe", "Chris" , "Jelly"];
+    ownerDropdownModel;
+    config = {
+        displayKey: "description", //if objects array passed which key to be displayed defaults to description,
+        search: true //enables the search plugin to search in the list
+    }
+
+
    changeParkingView() {
     this.isParkingGridView = !this.isParkingGridView;
     if (this.isParkingGridView) {

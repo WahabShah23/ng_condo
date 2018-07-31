@@ -261,7 +261,7 @@
                 </div> 
 
 
-                <div  class="form-group m-form__group">
+                <!-- <div  class="form-group m-form__group">
                     <label  >
                       Apartment Owner/Cusomer
                     </label>
@@ -270,7 +270,17 @@
                         <option  value="Chris" > Chris </option>
                         <option  value="Jelly" > Jelly </option>
                     </select>
-                </div> 
+                </div>  -->
+
+                <div class="form-group m-form__group mr-auto custom-width-100">
+                    <label class="m-subheader__title" for="item_cat">
+                        Apartment Owner/Cusomer:
+                        </label>
+                        <ngx-select-dropdown #ownerDropdown [config]="config" [options]="owners" [(value)]="ownerDropdownModel"  >
+            
+                        </ngx-select-dropdown>
+            
+                </div>
 
                 <div  class="form-group m-form__group">
                     <label  >

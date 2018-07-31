@@ -1,3 +1,6 @@
+import { HotelsComponent } from './building-settings/hotels/hotels.component';
+import { ShopsComponent } from './building-settings/shops/shops.component';
+
 import { SettingsSpecializedComponent } from './../settings-specialized.component';
 
 import { InventorySettingsComponent } from './building-settings/apartment-settings/inventory-settings/inventory-settings.component';
@@ -39,6 +42,8 @@ import { GridViewRulesComponent } from './rules-global-settings/grid-view-rules/
 import { ListViewRulesComponent } from './rules-global-settings/list-view-rules/list-view-rules.component';
 import { RoomTypesComponent } from './building-settings/specialized-rooms/room-types/room-types.component';
 import { RoomsComponent } from './building-settings/specialized-rooms/room-types/rooms/rooms.component';
+import { GamesComponent } from './building-settings/specialized-rooms/games/games.component';
+
 
 
 
@@ -78,7 +83,10 @@ import { RoomsComponent } from './building-settings/specialized-rooms/room-types
         GridViewRulesComponent,
         ListViewRulesComponent,
         RoomTypesComponent,
-        RoomsComponent
+        RoomsComponent,
+        ShopsComponent,
+        HotelsComponent,
+        GamesComponent
     ],
 
 })

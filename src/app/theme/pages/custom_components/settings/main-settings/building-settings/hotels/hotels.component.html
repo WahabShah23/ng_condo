@@ -19,7 +19,7 @@
             </div>
             
         <button class="btn btn-link">
-            <i class="fa fa-plus" (click)="addSuiteForm = true"> Add Guest Room</i>
+            <i class="fa fa-plus" (click)="addSuiteForm = true"> Add Hotel Room</i>
         </button>
         <button class="btn btn-link" (click)="changeSuiteView()">
             <i class="fa" [ngClass]="{'fa-list': isSuiteGridView, 'fa-th' : !isSuiteGridView}"> {{SuiteViewName}} </i>
@@ -64,9 +64,9 @@
                 </li>
 
                 <li  class="m-nav__item">
-                    <a  routerLink="/settings/buildings/1/guest-suites" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <a  routerLink="/settings/buildings/1/shops" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
                         <span  class="m-nav__link-text active_breadcrumb">
-                            Guest Suites 
+                            Hotels 
                         </span>
                     </a>
                 </li>
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Suite Details</h6>
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Hotel Room</h6>
                             <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteGuestSuite(i)"></i>
                             <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
                                 <input  class="chkboxes" type="checkbox">
@@ -114,30 +114,32 @@
                                                 </div>
     
                                         </div>
-    
+
                                         <div class="row">
                                                 <div class="col-sm-4 cardName">
-                                                        Category:
+                                                        Type:
                                                 </div>
         
                                                 <div class="col-sm-8 carddetail">
-                                                        {{suite.category}}
+                                                        {{suite.type}}
+                                                    </div>
+        
+                                            </div>
+    
+                                        <div class="row">
+                                                <div class="col-sm-4 cardName">
+                                                        Area:
+                                                </div>
+        
+                                                <div class="col-sm-8 carddetail">
+                                                        {{suite.area}}
                                                     </div>
         
                                             </div>
 
-                                            <div class="row">
-                                                <div class="col-sm-4 cardName">
-                                                        Sub-Cat:
-                                                </div>
-        
-                                                <div class="col-sm-8 carddetail">
-                                                        {{suite.subCategory}}
-                                                    </div>
-        
-                                            </div>
+                                         
     
-                                                <div class="row">
+                                                <!-- <div class="row">
                                                         <div class="col-sm-4 cardName">
                                                                 Capacity:
                                                         </div>
@@ -146,10 +148,11 @@
                                                                 {{suite.allowed}}
                                                             </div>
                 
-                                                    </div>
+                                                    </div> -->
+                                                    
                                                     <div class="row">
                                                             <div class="col-sm-4 cardName">
-                                                                    Entry:
+                                                                    Status:
                                                             </div>
                     
                                                             <div class="col-sm-8 carddetail">
@@ -181,11 +184,10 @@
                                 <span style="border-color: #fff !important;"></span>
                             </label>
                         </th>
-                            <th > Room # </th>
-                            <th> Room Name </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Category </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Sub-Category </th>
-                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Capacity </th>
+                            <th > Hotel # </th>
+                            <th> Hotel Name </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Area </th>
+                            <!-- <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Capacity </th> -->
                             <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Description </th>
                         </thead>
                         <tfoot>
@@ -200,11 +202,10 @@
                             </td>
                             <td> 1 </td>
                             <td class="center">
-                                Small Suite
+                                Hotel 1
                             </td>
-                            <td class="center"> Economy </td>
-                            <td class="center"> One Bed </td>
-                            <td class="center"> 100</td>
+                            <td class="center"> 300 sq/m </td>
+                            <!-- <td class="center"> 100</td> -->
                             <td class="center"> Party Room for all occasions</td>
                           
                         </tr>   <tr role="row">
@@ -216,11 +217,11 @@
                                 </td>
                                 <td> 2 </td>
                                 <td class="center">
-                                    Moderate Suite
+                                    Hotel 2
                                 </td>
-                                <td class="center"> Business </td>
-                                <td class="center"> Three Bed</td>
-                                <td class="center"> 80</td>
+                                <td class="center"> 200 sq/m </td>
+                               
+                                <!-- <td class="center"> 80</td> -->
                                 <td class="center"> Room for bithday celebrations</td>
                             </tr>
                         </tbody>
@@ -236,35 +237,82 @@
             <div class="col-md-6">
                 <div class="form-group m-form__group">
                     <label for="inventory_name">
-                         Room Name:
+                         Hotel Room Name:
                     </label>
-                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Birthday Room" #guestSuiteName type="text">
+                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Hotel ABC" #guestSuiteName type="text">
                 </div>
 
                 <div class="form-group m-form__group">
-                    <label >
-                         Category:
-                    </label>
-                    <select class="form-control m-input m-input--air" type="text" #guestSuiteCategory id="guestSuiteCategory">
-                        <option value="Economy">Economy</option>
-                        <option value="Business">Business</option>
-                    </select>
-                </div>
+                        <label >
+                             Room Type:
+                        </label>
+                        <select  class="form-control form-control-md m-input m-input--air"  #hotelType type="text">
+                        <option value="Single Storey">Single Storey</option>
+                        <option value="Double Storey">Double Storey</option>
+                        <option value="Other">Other</option>
+                        </select>
+                    </div>
 
-                <div class="form-group m-form__group">
-                    <label >
-                        Sub-Category:
-                    </label>
-                    <select class="form-control m-input m-input--air" type="text" #guestSuiteSubCategory id="guestSuiteSubCategory">
-                        <option value="One Bed">One Bed</option>
-                        <option value="Two Bed">Two Bed</option>
-                        <option value="Three Bed">Three Bed</option>
-                    </select>
-                </div>
+                    <div class="m-form__group form-group">
+                            <label for="">
+                                Hotel Status:
+                            </label>
+                            <div class="m-radio-inline">
+                                <label class="m-radio m-radio--solid m-radio--brand">
+                                    <input (change)="bookType='Sellable'" class="" name="bookType" type="radio" value="Bookable" >
+                                    Sellable
+                                    <span></span>
+                                </label>
+                                <label class="m-radio m-radio--solid m-radio--brand">
+                                    <input name="bookType" (change)="bookType='Rentable'" type="radio" value="Rentable" checked>
+                                    Rentable
+                                    <span></span>
+                                </label>
+                               
+                            </div>
+                         
+                    </div>
 
-             
+
+                    <div class="d-flex align-items-center"  *ngIf="bookType=='Sellable'">
+                            <div class="form-group m-form__group mr-auto custom-width-100">
+                                    <label class="m-subheader__title">
+                                        Sold To (if Sold):
+                                        </label>
+                                        <ngx-select-dropdown #ownerDropdown [config]="config" [options]="owners" [(value)]="ownerDropdownModel"  >
+                            
+                                        </ngx-select-dropdown>
+                            
+                            </div>
+                            <button class="btn btn-link"><i class="fa fa-plus"></i> Add</button>
+                    </div>
+    
+                   
+    
+                    <div class="d-flex align-items-center"  *ngIf="bookType=='Rentable'">
+                            <div class="form-group m-form__group mr-auto custom-width-100">
+                                    <label class="m-subheader__title">
+                                        Rented To (if Rented):
+                                        </label>
+                                        <ngx-select-dropdown #denantDropdown [config]="config" [options]="owners" [(value)]="tenantDropdownModel"  >
+                            
+                                        </ngx-select-dropdown>
+                            
+                            </div>
+                            <button class="btn btn-link"><i class="fa fa-plus"></i> Add</button>
+                    </div>
+
+              
+
             </div>
             <div class="col-md-6">
+                    <div class="form-group m-form__group">
+                            <label >
+                                 Area:
+                            </label>
+                            <input class="form-control m-input m-input--air" type="text" #guestArea />
+                        </div>
+
                     <div class="form-group m-form__group">
                             <label >
                                 Max Capacity:
@@ -273,68 +321,9 @@
                                     placeholder="e.g. 4, 5 ,6"  type="number" #guestSuiteCapacity>
                         </div>
 
-                        <div class="m-form__group form-group">
-                                <!-- <label for="">
-                                    Inline Radios
-                                </label> -->
-                                <div class="m-radio-inline">
-                                    <label class="m-radio m-radio--solid m-radio--brand">
-                                        <input (change)="bookType='Bookable'" class="" name="bookType" type="radio" value="Bookable" >
-                                        Bookable
-                                        <span></span>
-                                    </label>
-                                    <label class="m-radio m-radio--brand">
-                                        <input name="bookType" (change)="bookType='Non-Bookable'" type="radio" value="Non-Bookable" checked>
-                                        Non-Bookable
-                                        <span></span>
-                                    </label>
-                                   
-                                </div>
-                             
-                            </div>
+                        
 
-                            <div class="m-form__group form-group" *ngIf="bookType=='Bookable'">
-                                    <label for="">Book Days</label>
-                                        <div class="m-checkbox-list">
-                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
-                                                    <input type="checkbox">
-                                                    Monday
-                                                    <span></span>
-                                                </label>
-                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
-                                                    <input  type="checkbox">
-                                                    Tuesday
-                                                    <span></span>
-                                                </label>
-                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
-                                                    <input checked="checked" type="checkbox">
-                                                    Wednesday
-                                                    <span></span>
-                                                </label>
-                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
-                                                    <input checked="checked" type="checkbox">
-                                                    Thursday
-                                                    <span></span>
-                                                </label>
-                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
-                                                    <input checked="checked" type="checkbox">
-                                                    Friday
-                                                    <span></span>
-                                                </label>
-    
-                                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
-                                                        <input checked="checked" type="checkbox">
-                                                        Saturday
-                                                        <span></span>
-                                                    </label>
-    
-                                                    <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
-                                                            <input checked="checked" type="checkbox">
-                                                            Sunday
-                                                            <span></span>
-                                                        </label>
-                                            </div>
-                                </div>
+                            
 
                         <div class="form-group m-form__group">
                             <label >
@@ -346,8 +335,8 @@
            
            </div>
         <div class="col-md-12">
-            <button class="btn btn-info pull-right" type="button" (click)="addSuite(guestSuiteName.value, default_imgUrl , guestSuiteCategory.value, guestSuiteSubCategory.value, guestSuiteCapacity.value , GuestSuiteDescription.value)">
-                Add Room
+            <button class="btn btn-info pull-right" type="button" (click)="addSuite(guestSuiteName.value, default_imgUrl , hotelType.value, guestArea.value, guestSuiteCapacity.value , GuestSuiteDescription.value)">
+                Add Hotel
             </button>
         </div>
 
