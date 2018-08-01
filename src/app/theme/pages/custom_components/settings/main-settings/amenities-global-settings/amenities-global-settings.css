@@ -78,9 +78,18 @@
 .cardimage
 {
 	width: 100%;
-	height: 97px;
+	height: 99px;
 	z-index: 999;
 }
+
+/*.cardimage*/
+/*{*/
+	/*width: 100%;*/
+	/*height: 100px;*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: 50% 50%;*/
+	/*z-index: 999;*/
+/*}*/
 
 
 .cardtype , .cardname
@@ -98,8 +107,8 @@
 {
 	width: 22px;
 }
-.personname {
-	font-weight: 600;
+.cardname {
+	font-weight: 500;
 	font-size: 12px;
 }
 .m-widget14__chart .text-center
@@ -144,4 +153,34 @@
 .breadcrumb-header li:not(.m-nav__item--home) a span 
 {
   font-size: 11px;
+}
+
+.custom_searchBox > input {
+	margin-bottom: -1px;
+	position: relative;
+	top: -3px;
+}
+
+.custom-css {
+	cursor: pointer;
+	font-size: 11px;
+}
+
+.custom_pointer {
+	cursor: pointer;
+}
+
+.hideSearch {
+	display: none;
+}
+
+.showSearch {
+	display: inline-block;
+	margin-bottom: -1px;
+	-webkit-transition: width .35s ease-in-out;
+	transition: width .35s ease-in-out;
+}
+
+.showSearch> input[type=text]:focus {
+	border: none;
 }

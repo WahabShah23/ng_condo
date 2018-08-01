@@ -99,3 +99,9 @@ select.form-control.m-input.m-input--air.TopFilterSelect:hover
 .m-nav-sticky {
   display: none;
 }
+
+.custom_searchBox> input {
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 1px solid #999;
+}

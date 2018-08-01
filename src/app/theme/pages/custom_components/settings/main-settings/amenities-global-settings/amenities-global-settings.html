@@ -4,6 +4,15 @@
                 <div  class="mr-auto">
                     <h3  class="m-subheader__title">
                          Amenity Settings
+                        <!--<small class="text-muted custom_pointer" (click)="toggle_class()"><i class="fa fa-search"></i> </small>-->
+                        <!--<small class="custom_searchBox" [ngClass]="{'hideSearch': !isSearchBoxVisible, 'showSearch': isSearchBoxVisible}">-->
+                            <!--<input type="text">-->
+                        <!--</small>-->
+                        <small class="text-muted custom_pointer" (click)="toggleSearchBox()"><i class="fa fa-search"></i> </small>
+                        <small class="custom_searchBox">
+                            <input type="text" placeholder="search..."  [@slideRightLeft]="searchBox">
+                        </small>
+
                     </h3>
                 </div>
                 <button class="btn btn-link">
@@ -61,13 +70,14 @@
             <div  class="col-sm-12 col-md-3 col-xl-3" *ngFor='let amenity of Amenities; let i = index;'>
                 <div  class="body organ1">
                     <div  class="row" style="margin:0px;">
-                        <div  class="card-left col-lg-3">
+                        <div  class="card-left col-lg-4">
                             <!--<label  class="m-checkbox m-checkbox&#45;&#45;solid m-checkbox&#45;&#45;single m-checkbox&#45;&#45;brand">-->
                                 <!--<input  class="chkboxes" type="checkbox">-->
                                 <!--<span ></span>-->
                             <!--</label>-->
                             <div  class="row onepersonrow">
-                                <div  class="col-md-12">
+                                <div  class="col-md-12" >  <!-- [ngStyle]="{'background-image': 'url(' + amenity.img + ')'}" -->
+
                                     <img  class="cardimage" [src]="amenity.img">
                                     <!--<p  class="cardname">{{amenity.name}}</p>-->
                                     <!--<p  class="cardtype">{{amenity.amenitytype}}</p>-->
@@ -75,8 +85,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Amenity Details</h6>
+                        <div  class="card-right col-lg-8" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                            <h6  class="text-muted pull-left btn-link custom-css"><i class="fa fa-info-circle"></i> Amenity Details</h6>
                             <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteAmenity(i)"></i>
                             <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
                                 <input  class="chkboxes" type="checkbox" (change)="selectedItem()">
@@ -84,17 +94,28 @@
                             </label>
                             <div  class="clearfix"></div>
                             <div  class="row">
-                                <div class="col-sm-6">
-                                    <p  class="cardname"><b>Name:</b> {{amenity.name}}</p>
-                                    <!--<p  class="cardtype">{{amenity.amenitytype}}</p>-->
-                                    <!--<p  class="cardtype"> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>-->
+                                <div class="col-sm-12">
+
+                                    <div class="row">
+                                        <div class="col-md-4 cardname"> Name : </div>
+                                        <div class="col-md-8"> {{amenity.name}} </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 cardname"> Type: </div>
+                                        <div class="col-md-8"> {{amenity.amenitytype}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 cardname"> For: </div>
+                                        <div class="col-md-8"> <i class='fa fa-building'></i> {{amenity.amenityfor}} </div>
+                                    </div>
+                                    <!--<p  class="cardname"><b>Name:</b> {{amenity.name}}</p>-->
                                 </div>
-                                <div  class="col-sm-6">
-                                    <p class="text-left"><strong>Type:</strong>  {{amenity.amenitytype}}</p>
-                                </div>
-                                <div  class="col-sm-6">
-                                    <p class="text-left"><strong>For:</strong> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>
-                                </div>
+                                <!--<div  class="col-sm-12">-->
+                                    <!--<p class="text-left"><strong>Type:</strong>  {{amenity.amenitytype}}</p>-->
+                                <!--</div>-->
+                                <!--<div  class="col-sm-12">-->
+                                    <!--<p class="text-left"><strong>For:</strong> <i class='fa fa-building'></i> {{amenity.amenityfor}}</p>-->
+                                <!--</div>-->
                             </div>
                         </div>
                     </div>
