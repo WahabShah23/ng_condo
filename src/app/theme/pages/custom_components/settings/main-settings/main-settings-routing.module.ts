@@ -1,3 +1,6 @@
+import { LoungeComponent } from './building-settings/specialized-rooms/lounge/lounge.component';
+import { MovieTheatreComponent } from './building-settings/specialized-rooms/movie-theatre/movie-theatre.component';
+import { PoolComponent } from './building-settings/specialized-rooms/pool/pool.component';
 import { GamesComponent } from './building-settings/specialized-rooms/games/games.component';
 import { HotelsComponent } from './building-settings/hotels/hotels.component';
 import { ShopsComponent } from './building-settings/shops/shops.component';
@@ -200,7 +203,20 @@ const routes: Routes = [
             {
                 'path': 'games',
                 'component': GamesComponent
+            },
+            {
+                'path': 'pools',
+                'component': PoolComponent
+            },
+            {
+                'path': 'movie-theatre',
+                'component': MovieTheatreComponent
+            },
+            {
+                'path': 'lounge',
+                'component': LoungeComponent
             }
+            
         ]
     }
 

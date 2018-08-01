@@ -19,10 +19,10 @@
             </div>
             
         <button class="btn btn-link">
-            <i class="fa fa-plus" (click)="addSuiteForm = true"> Add Shop</i>
+            <i class="fa fa-plus" (click)="addShopForm = true"> Add Shop</i>
         </button>
-        <button class="btn btn-link" (click)="changeSuiteView()">
-            <i class="fa" [ngClass]="{'fa-list': isSuiteGridView, 'fa-th' : !isSuiteGridView}"> {{SuiteViewName}} </i>
+        <button class="btn btn-link" (click)="changeShopView()">
+            <i class="fa" [ngClass]="{'fa-list': isShopGridView, 'fa-th' : !isShopGridView}"> {{ShopViewName}} </i>
         </button>
         </div>
 </div>
@@ -80,23 +80,23 @@
 
         <!-- ---------------------------Inventory Cards Start---------------------------------- -->
 
-        <div class="row" *ngIf="!addSuiteForm && isSuiteGridView">
+        <div class="row" *ngIf="!addShopForm && isShopGridView">
 
-            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let suite of suites; let i = index;'>
+            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let shop of shops; let i = index;'>
                 <div  class="body organ1">
                     <div  class="row" style="margin:0px;">
                         <div  class="card-left col-lg-3">
                            
                             <div  class="row onepersonrow">
                                 <div  class="col-md-12">
-                                    <img  class="cardimage" [src]="suite.img">
+                                    <img  class="cardimage" [src]="shop.img">
                                    
                                 </div>
                             </div>
                         </div>
                         <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                             <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Shops Details</h6>
-                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteGuestSuite(i)"></i>
+                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteShop(i)"></i>
                             <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
                                 <input  class="chkboxes" type="checkbox">
                                 <span ></span>
@@ -110,7 +110,7 @@
                                             </div>
     
                                             <div class="col-sm-8 carddetail">
-                                                    {{suite.name}}
+                                                    {{shop.name}}
                                                 </div>
     
                                         </div>
@@ -121,7 +121,7 @@
                                                 </div>
         
                                                 <div class="col-sm-8 carddetail">
-                                                        {{suite.type}}
+                                                        {{shop.type}}
                                                     </div>
         
                                             </div>
@@ -132,7 +132,7 @@
                                                 </div>
         
                                                 <div class="col-sm-8 carddetail">
-                                                        {{suite.area}}
+                                                        {{shop.area}}
                                                     </div>
         
                                             </div>
@@ -158,7 +158,7 @@
                                                             </div>
                     
                                                             <div class="col-sm-8 carddetail">
-                                                                    {{suite.bookable}}
+                                                                    {{shop.bookable}}
                                                                 </div>
                     
                                                         </div>
@@ -175,7 +175,7 @@
         <!-- ---------------------------Inventories Cards End---------------------------------- -->
 
         <!-- ---------------------------Inventories List Start---------------------------------- -->
-        <div *ngIf="!addSuiteForm && !isSuiteGridView">
+        <div *ngIf="!addShopForm && !isShopGridView">
             <div class="cold-md-12">
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -238,13 +238,13 @@
         <!-- ---------------------------Inventories List End---------------------------------- -->
 
         <!-- ----------------------------- Add Form Start------------------------------- -->
-        <div class="row" *ngIf="addSuiteForm">
+        <div class="row" *ngIf="addShopForm">
             <div class="col-md-6">
                 <div class="form-group m-form__group">
                     <label >
                          Shop Name:
                     </label>
-                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. ABC Shop" #guestSuiteName type="text">
+                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. ABC Shop" #shopName type="text">
                 </div>
 
                 <div class="form-group m-form__group">
@@ -292,6 +292,20 @@
                         <button class="btn btn-link"><i class="fa fa-plus"></i> Add</button>
                 </div>
 
+
+                <div class="d-flex align-items-center"  *ngIf="bookType=='Sellable'">
+                    <div class="form-group m-form__group mr-auto custom-width-100">
+                            <label class="m-subheader__title">
+                                Rented To (if Rented):
+                                </label>
+                                <ngx-select-dropdown #ownerDropdown [config]="config" [options]="owners" [(value)]="ownerDropdownModel"  >
+                    
+                                </ngx-select-dropdown>
+                    
+                    </div>
+                    <button class="btn btn-link"><i class="fa fa-plus"></i> Add</button>
+            </div>
+
                
 
                 <div class="d-flex align-items-center"  *ngIf="bookType=='Rentable'">
@@ -306,6 +320,69 @@
                         </div>
                         <button class="btn btn-link"><i class="fa fa-plus"></i> Add</button>
                 </div>
+
+                <!-- <div class="m-form__group form-group">
+                    <label for="">
+                        
+                    </label>
+                    <div class="m-radio-inline">
+                        <label class="m-radio m-radio--brand">
+                            <input (change)="visitType='Bookable'" class="" name="bookType" type="radio" value="Bookable" >
+                            Bookable
+                            <span></span>
+                        </label>
+                        <label class="m-radio m-radio--brand">
+                            <input name="bookType" (change)="visitType='Walkin'" type="radio" value="Walkin" checked>
+                            Walkin
+                            <span></span>
+                        </label>
+                       
+                    </div>
+                 
+                </div>
+
+                <div class="m-form__group form-group" *ngIf="visitType=='Bookable'">
+                    <label for="">Book Days</label>
+                        <div class="m-checkbox-list">
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input type="checkbox">
+                                    Monday
+                                    <span></span>
+                                </label>
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input  type="checkbox">
+                                    Tuesday
+                                    <span></span>
+                                </label>
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input checked="checked" type="checkbox">
+                                    Wednesday
+                                    <span></span>
+                                </label>
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input checked="checked" type="checkbox">
+                                    Thursday
+                                    <span></span>
+                                </label>
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input checked="checked" type="checkbox">
+                                    Friday
+                                    <span></span>
+                                </label>
+
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                        <input checked="checked" type="checkbox">
+                                        Saturday
+                                        <span></span>
+                                    </label>
+
+                                    <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                            <input checked="checked" type="checkbox">
+                                            Sunday
+                                            <span></span>
+                                        </label>
+                            </div>
+                </div> -->
 
                 
 
@@ -324,7 +401,7 @@
                             <label >
                                  Area:
                             </label>
-                            <input class="form-control m-input m-input--air" type="text" #guestArea />
+                            <input class="form-control m-input m-input--air" type="text" #shopArea />
                         </div>
 
                     <div class="form-group m-form__group">
@@ -332,7 +409,7 @@
                                 Max Capacity:
                             </label>
                             <input  class="form-control form-control-md m-input m-input--air"
-                                    placeholder="e.g. 4, 5 ,6"  type="number" #guestSuiteCapacity>
+                                    placeholder="e.g. 4, 5 ,6"  type="number" #shopCapacity>
                         </div>
 
                    
@@ -343,13 +420,13 @@
                             <label >
                                 Description:
                             </label>
-                            <textarea  class="form-control form-control-md m-input m-input--air" #GuestSuiteDescription></textarea>
+                            <textarea  class="form-control form-control-md m-input m-input--air" #shopDescription></textarea>
                         </div>
            
            
            </div>
         <div class="col-md-12">
-            <button class="btn btn-info pull-right" type="button" (click)="addSuite(guestSuiteName.value, default_imgUrl , shopType.value , guestArea.value, guestSuiteCapacity.value , GuestSuiteDescription.value)">
+            <button class="btn btn-info pull-right" type="button" (click)="addShop(shopName.value, default_imgUrl , shopType.value , shopArea.value, shopCapacity.value , shopDescription.value)">
                 Add Room
             </button>
         </div>

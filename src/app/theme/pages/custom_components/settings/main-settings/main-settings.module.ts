@@ -43,6 +43,9 @@ import { ListViewRulesComponent } from './rules-global-settings/list-view-rules/
 import { RoomTypesComponent } from './building-settings/specialized-rooms/room-types/room-types.component';
 import { RoomsComponent } from './building-settings/specialized-rooms/room-types/rooms/rooms.component';
 import { GamesComponent } from './building-settings/specialized-rooms/games/games.component';
+import { PoolComponent } from './building-settings/specialized-rooms/pool/pool.component';
+import { MovieTheatreComponent } from './building-settings/specialized-rooms/movie-theatre/movie-theatre.component';
+import { LoungeComponent } from './building-settings/specialized-rooms/lounge/lounge.component';
 
 
 
@@ -86,7 +89,10 @@ import { GamesComponent } from './building-settings/specialized-rooms/games/game
         RoomsComponent,
         ShopsComponent,
         HotelsComponent,
-        GamesComponent
+        GamesComponent,
+        PoolComponent,
+        MovieTheatreComponent,
+        LoungeComponent
     ],
 
 })

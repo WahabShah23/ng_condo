@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-games',
-  templateUrl: "./games.component.html",
-  styleUrls: ["./games.component.css"]
+  selector: 'app-pool',
+  templateUrl: "./pool.component.html",
+  styleUrls: ["./pool.component.css"]
 })
-export class GamesComponent implements OnInit {
+export class PoolComponent implements OnInit {
 
   constructor() { }
 
@@ -15,14 +15,14 @@ export class GamesComponent implements OnInit {
   addGameForm = false;
   isGameGridView = true;
   GameViewName = 'List View';
-  visitType='Walkin';
+  visitType='SplashBased';
   default_imgUrl = 'assets/app/media/img/custom/party-rooms/1.jpg';
   gameRooms = [
     {
-        name: "Table Tennis", img: 'assets/app/media/img/custom/games/1.jpg', category: 'indoor', allowed: 4 , visitType:"Walking", description: "Table Tennis Room"
+        name: "Pool 1", img: 'assets/app/media/img/custom/pools/1.jpg', allowed: 4 , visitType:"Laned Based", description: "The Swimming Pool"
     },
     {
-        name: 'Squash', img: 'assets/app/media/img/custom/games/2.jpg', category: 'indoor', allowed:5 , visitType:"Bookable", description: "Squash Room"
+        name: 'Pool 2', img: 'assets/app/media/img/custom/pools/2.jpg', allowed:5 , visitType:"Splash Based", description: "The Swimming Poolssss"
     }
    ];
 
@@ -39,8 +39,8 @@ export class GamesComponent implements OnInit {
     this.addGameForm = false;
 }
 
-addGame(gameName, img , gameCategory, numberOfParticipants, gameDescription) {
-    this.gameRooms.push({name: gameName, img:img, category: gameCategory, allowed: numberOfParticipants , visitType:this.visitType, description:gameDescription});
+addGame(gameName, img , numberOfParticipants, gameDescription) {
+    this.gameRooms.push({name: gameName, img:img,  allowed: numberOfParticipants , visitType:this.visitType, description:gameDescription});
     this.isGameGridView = !this.isGameGridView;
     this.changeGameView();
     this.visitType = "Walkin";

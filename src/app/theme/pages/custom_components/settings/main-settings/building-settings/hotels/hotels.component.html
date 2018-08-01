@@ -19,10 +19,10 @@
             </div>
             
         <button class="btn btn-link">
-            <i class="fa fa-plus" (click)="addSuiteForm = true"> Add Hotel Room</i>
+            <i class="fa fa-plus" (click)="addHotelForm = true"> Add Hotel Room</i>
         </button>
-        <button class="btn btn-link" (click)="changeSuiteView()">
-            <i class="fa" [ngClass]="{'fa-list': isSuiteGridView, 'fa-th' : !isSuiteGridView}"> {{SuiteViewName}} </i>
+        <button class="btn btn-link" (click)="changeHotelView()">
+            <i class="fa" [ngClass]="{'fa-list': isHotelGridView, 'fa-th' : !isHotelGridView}"> {{hotelViewName}} </i>
         </button>
         </div>
 </div>
@@ -80,23 +80,23 @@
 
         <!-- ---------------------------Inventory Cards Start---------------------------------- -->
 
-        <div class="row" *ngIf="!addSuiteForm && isSuiteGridView">
+        <div class="row" *ngIf="!addHotelForm && isHotelGridView">
 
-            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let suite of suites; let i = index;'>
+            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let hotel of hotels; let i = index;'>
                 <div  class="body organ1">
                     <div  class="row" style="margin:0px;">
                         <div  class="card-left col-lg-3">
                            
                             <div  class="row onepersonrow">
                                 <div  class="col-md-12">
-                                    <img  class="cardimage" [src]="suite.img">
+                                    <img  class="cardimage" [src]="hotel.img">
                                    
                                 </div>
                             </div>
                         </div>
                         <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                             <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Hotel Room</h6>
-                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteGuestSuite(i)"></i>
+                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteHotel(i)"></i>
                             <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
                                 <input  class="chkboxes" type="checkbox">
                                 <span ></span>
@@ -110,7 +110,7 @@
                                             </div>
     
                                             <div class="col-sm-8 carddetail">
-                                                    {{suite.name}}
+                                                    {{hotel.name}}
                                                 </div>
     
                                         </div>
@@ -121,7 +121,7 @@
                                                 </div>
         
                                                 <div class="col-sm-8 carddetail">
-                                                        {{suite.type}}
+                                                        {{hotel.type}}
                                                     </div>
         
                                             </div>
@@ -132,7 +132,7 @@
                                                 </div>
         
                                                 <div class="col-sm-8 carddetail">
-                                                        {{suite.area}}
+                                                        {{hotel.area}}
                                                     </div>
         
                                             </div>
@@ -156,7 +156,7 @@
                                                             </div>
                     
                                                             <div class="col-sm-8 carddetail">
-                                                                    {{suite.bookable}}
+                                                                    {{hotel.bookable}}
                                                                 </div>
                     
                                                         </div>
@@ -173,7 +173,7 @@
         <!-- ---------------------------Inventories Cards End---------------------------------- -->
 
         <!-- ---------------------------Inventories List Start---------------------------------- -->
-        <div *ngIf="!addSuiteForm && !isSuiteGridView">
+        <div *ngIf="!addHotelForm && !isHotelGridView">
             <div class="cold-md-12">
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -233,13 +233,13 @@
         <!-- ---------------------------Inventories List End---------------------------------- -->
 
         <!-- ----------------------------- Add Form Start------------------------------- -->
-        <div class="row" *ngIf="addSuiteForm">
+        <div class="row" *ngIf="addHotelForm">
             <div class="col-md-6">
                 <div class="form-group m-form__group">
                     <label for="inventory_name">
                          Hotel Room Name:
                     </label>
-                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Hotel ABC" #guestSuiteName type="text">
+                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Hotel ABC" #hotelName type="text">
                 </div>
 
                 <div class="form-group m-form__group">
@@ -286,6 +286,20 @@
                             </div>
                             <button class="btn btn-link"><i class="fa fa-plus"></i> Add</button>
                     </div>
+
+
+                    <div class="d-flex align-items-center"  *ngIf="bookType=='Sellable'">
+                        <div class="form-group m-form__group mr-auto custom-width-100">
+                                <label class="m-subheader__title">
+                                    Rented To (if Rented):
+                                    </label>
+                                    <ngx-select-dropdown #ownerDropdown [config]="config" [options]="owners" [(value)]="ownerDropdownModel"  >
+                        
+                                    </ngx-select-dropdown>
+                        
+                        </div>
+                        <button class="btn btn-link"><i class="fa fa-plus"></i> Add</button>
+                </div>
     
                    
     
@@ -310,7 +324,7 @@
                             <label >
                                  Area:
                             </label>
-                            <input class="form-control m-input m-input--air" type="text" #guestArea />
+                            <input class="form-control m-input m-input--air" type="text" #hotelArea />
                         </div>
 
                     <div class="form-group m-form__group">
@@ -318,7 +332,7 @@
                                 Max Capacity:
                             </label>
                             <input  class="form-control form-control-md m-input m-input--air"
-                                    placeholder="e.g. 4, 5 ,6"  type="number" #guestSuiteCapacity>
+                                    placeholder="e.g. 4, 5 ,6"  type="number" #hotelCapacity>
                         </div>
 
                         
@@ -329,13 +343,13 @@
                             <label >
                                 Description:
                             </label>
-                            <textarea  class="form-control form-control-md m-input m-input--air" #GuestSuiteDescription></textarea>
+                            <textarea  class="form-control form-control-md m-input m-input--air" #hotelDescription></textarea>
                         </div>
            
            
            </div>
         <div class="col-md-12">
-            <button class="btn btn-info pull-right" type="button" (click)="addSuite(guestSuiteName.value, default_imgUrl , hotelType.value, guestArea.value, guestSuiteCapacity.value , GuestSuiteDescription.value)">
+            <button class="btn btn-info pull-right" type="button" (click)="addHotel(hotelName.value, default_imgUrl , hotelType.value, hotelArea.value, hotelCapacity.value , hotelDescription.value)">
                 Add Hotel
             </button>
         </div>

@@ -12,14 +12,14 @@ export class ShopsComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  visitType="Walkin";
   searchField= false;
-  addSuiteForm = false;
-  isSuiteGridView = true;
-  SuiteViewName = 'List View';
+  addShopForm = false;
+  isShopGridView = true;
+  ShopViewName = 'List View';
   bookType="Rentable";
   default_imgUrl = 'assets/app/media/img/custom/guest-suites/1.jpg';
-  suites = [
+  shops= [
     {
         name: "Shop 1", type:"Shopping Mall", img: 'assets/app/media/img/custom/guest-suites/1.jpg', area: '400 sq/m' , allowed: 100 , description: "A Cheap and Good Guest Suite", bookable:"Rentable"
     },
@@ -41,27 +41,27 @@ export class ShopsComponent implements OnInit {
 
 
 
-   changeSuiteView() {
-    this.isSuiteGridView = !this.isSuiteGridView;
-    if (this.isSuiteGridView) {
-        this.SuiteViewName = 'List View';
+   changeShopView() {
+    this.isShopGridView = !this.isShopGridView;
+    if (this.isShopGridView) {
+        this.ShopViewName = 'List View';
     }
     else {
-        this.SuiteViewName = 'Grid View';
+        this.ShopViewName = 'Grid View';
     }
-    this.addSuiteForm = false;
+    this.addShopForm = false;
 }
 
-addSuite(guestSuiteName, img , guestType , guestSuiteCategory, guestSuiteSubCategory, guestSuiteCapacity , GuestSuiteDescription) {
+addShop(guestSuiteName, img , guestType , guestSuiteCategory, guestSuiteSubCategory, guestSuiteCapacity , GuestSuiteDescription) {
 
-    this.suites.push({name: guestSuiteName, type:guestType, img:img, area: guestSuiteCategory ,allowed: guestSuiteCapacity , description:GuestSuiteDescription , bookable:this.bookType});
-    this.isSuiteGridView = !this.isSuiteGridView;
-    this.changeSuiteView();
+    this.shops.push({name: guestSuiteName, type:guestType, img:img, area: guestSuiteCategory ,allowed: guestSuiteCapacity , description:GuestSuiteDescription , bookable:this.bookType});
+    this.isShopGridView = !this.isShopGridView;
+    this.changeShopView();
 }
 
-deleteGuestSuite(id)
+deleteShop(id)
 {
-    this.suites.splice(id,1);
+    this.shops.splice(id,1);
 }
 
 onSearchClicked()

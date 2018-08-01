@@ -14,12 +14,12 @@ export class HotelsComponent implements OnInit {
 
 
   searchField= false;
-  addSuiteForm = false;
-  isSuiteGridView = true;
-  SuiteViewName = 'List View';
+  addHotelForm = false;
+  isHotelGridView = true;
+  hotelViewName = 'List View';
   bookType="Rentable";
   default_imgUrl = 'assets/app/media/img/custom/guest-suites/1.jpg';
-  suites = [
+  hotels= [
     {
         name: "Hotel Room 1", type:"Single Storey", img: 'assets/app/media/img/custom/guest-suites/1.jpg', area: '400 sq/m' , allowed: 100 , description: "A Cheap and Good Guest Suite", bookable:"Rentable"
     },
@@ -40,27 +40,27 @@ export class HotelsComponent implements OnInit {
    tenants = ["Jabe", "Chris" , "Jelly"];
    tenantsDropdownModel;
 
-   changeSuiteView() {
-    this.isSuiteGridView = !this.isSuiteGridView;
-    if (this.isSuiteGridView) {
-        this.SuiteViewName = 'List View';
+   changeHotelView() {
+    this.isHotelGridView = !this.isHotelGridView;
+    if (this.isHotelGridView) {
+        this.hotelViewName = 'List View';
     }
     else {
-        this.SuiteViewName = 'Grid View';
+        this.hotelViewName = 'Grid View';
     }
-    this.addSuiteForm = false;
+    this.addHotelForm = false;
 }
 
-addSuite(guestSuiteName, img , hotelType, guestSuiteCategory, guestSuiteSubCategory, guestSuiteCapacity , GuestSuiteDescription) {
+addHotel(hotelName, img , hotelType, hotelCategory, hotelSubCategory, hotelCapacity , hotelDescription) {
 
-    this.suites.push({name: guestSuiteName, img:img, type:hotelType, area: guestSuiteCategory ,allowed: guestSuiteCapacity , description:GuestSuiteDescription , bookable:this.bookType});
-    this.isSuiteGridView = !this.isSuiteGridView;
-    this.changeSuiteView();
+    this.hotels.push({name: hotelName, img:img, type:hotelType, area: hotelCategory ,allowed: hotelCapacity , description:hotelDescription , bookable:this.bookType});
+    this.isHotelGridView = !this.isHotelGridView;
+    this.changeHotelView();
 }
 
-deleteGuestSuite(id){
-    console.log(id);
-    this.suites.splice(id,1);
+deleteHotel(id)
+{
+    this.hotels.splice(id,1);
 }
 
 onSearchClicked()

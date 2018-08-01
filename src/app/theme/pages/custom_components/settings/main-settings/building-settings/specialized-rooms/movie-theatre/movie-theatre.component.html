@@ -1,0 +1,297 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-form__heading-title">
+                {{buildingName}}
+                </h3>
+            </div>
+            
+        <button class="btn btn-link">
+            <i class="fa fa-plus" (click)="addGameForm = true"> Add Theatre Room</i>
+        </button>
+        <button class="btn btn-link" (click)="changeGameView()">
+            <i class="fa" [ngClass]="{'fa-list': isGameGridView, 'fa-th' : !isGameGridView}"> {{GameViewName}} </i>
+        </button>
+        </div>
+</div>
+<div class="m-subheader breadcrumb-header">
+    <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li  class="m-nav__item m-nav__item--home">
+            <a  class="m-nav__link m-nav__link--icon"  routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
+                <i  class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+       
+       
+        <li  class="m-nav__item">
+            <a  routerLink="/settings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                <span  class="m-nav__link-text">
+                    Settings
+                </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+                -
+            </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings/buildings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Buildings     
+                    </span>
+                </a>
+            </li>
+          
+
+                <li  class="m-nav__separator">
+                    -
+                </li>
+
+                <li  class="m-nav__item">
+                    <a  routerLink="/settings/buildings/1/specialized-rooms" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text">
+                            Specialized Rooms     
+                        </span>
+                    </a>
+                </li>
+                <li  class="m-nav__separator">
+                        -
+                    </li>
+               
+               
+                <li  class="m-nav__item">
+                    <a  class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text active_breadcrumb" >
+                            Movie Theatre 
+                        </span>
+                    </a>
+                </li>
+    </ul>
+</div>
+<hr class="customhr">
+<div class="m-content">
+    <div class="m-form__section m-form__section--first">
+
+
+        <!-- ---------------------------Inventory Cards Start---------------------------------- -->
+
+        <div class="row" *ngIf="!addGameForm && isGameGridView">
+
+            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let gameRoom of gameRooms; let i = index;'>
+                <div  class="body organ1">
+                    <div  class="row" style="margin:0px;">
+                        <div  class="card-left col-lg-3">
+                           
+                            <div  class="row onepersonrow">
+                                <div  class="col-md-12">
+                                    <img  class="cardimage" [src]="gameRoom.img">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Theatre Room</h6>
+                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteGame(i)"></i>
+                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
+                                <input  class="chkboxes" type="checkbox">
+                                <span ></span>
+                            </label>
+                            <div  class="clearfix"></div>
+                            <div  class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-4 cardName">
+                                                    Name:
+                                            </div>
+    
+                                            <div class="col-sm-8 carddetail">
+                                                    {{gameRoom.name}}
+                                                </div>
+    
+                                        </div>
+    
+                                        
+    
+                                                <div class="row">
+                                                        <div class="col-sm-4 cardName">
+                                                                Capacity:
+                                                        </div>
+                
+                                                        <div class="col-sm-8 carddetail">
+                                                                {{gameRoom.allowed}} Max
+                                                            </div>
+                
+                                                    </div>
+
+                                              
+                                                    <div class="row">
+                                                        <div class="col-sm-4 cardName">
+                                                                Description:
+                                                        </div>
+                
+                                                        <div class="col-sm-8 carddetail">
+                                                                {{gameRoom.description}}
+                                                            </div>
+                
+                                                    </div>
+                                                    
+                                    </div>
+                                  
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ---------------------------Inventories Cards End---------------------------------- -->
+
+        <!-- ---------------------------Inventories List Start---------------------------------- -->
+        <div *ngIf="!addGameForm && !isGameGridView">
+            <div class="cold-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr style="background: #555;color: #fff" role="row"><th>
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline f">
+                                <input type="checkbox" class="group-checkable">
+                                <span style="border-color: #fff !important;"></span>
+                            </label>
+                        </th>
+                            <th > Room # </th>
+                            <th> Room Name </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Capacity </th>
+                            <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Description </th>
+                        </thead>
+                        <tfoot>
+                        </tfoot>
+                        <tbody>
+                        <tr role="row">
+                            <td >
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="chkboxes1">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td> 1 </td>
+                            <td class="center">
+                                    Theatre Room 1
+                            </td>
+                            <td class="center"> 4 </td>
+                            <td class="center"> Theatre Room for Movies </td>
+                          
+                        </tr>   <tr role="row">
+                                <td >
+                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        <input type="checkbox" class="chkboxes1">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td> 2 </td>
+                                <td class="center">
+                                    Theatre Room 2 
+                                </td>
+                                <td class="center"> 6</td>
+                                <td class="center"> Theatre Room for Documentaries</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------------Inventories List End---------------------------------- -->
+
+        <!-- ----------------------------- Add Form Start------------------------------- -->
+        <div class="row" *ngIf="addGameForm">
+            <div class="col-md-6">
+                <div class="form-group m-form__group">
+                    <label for="inventory_name">
+                        Theatre Room Name:
+                    </label>
+                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Theatre Room ABC" #gameRoomName type="text">
+                </div>
+
+               
+
+             
+
+                <div class="m-form__group form-group" >
+                    <label for="">Book Days</label>
+                        <div class="m-checkbox-list">
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input type="checkbox">
+                                    Monday
+                                    <span></span>
+                                </label>
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input  type="checkbox">
+                                    Tuesday
+                                    <span></span>
+                                </label>
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input checked="checked" type="checkbox">
+                                    Wednesday
+                                    <span></span>
+                                </label>
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input checked="checked" type="checkbox">
+                                    Thursday
+                                    <span></span>
+                                </label>
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <input checked="checked" type="checkbox">
+                                    Friday
+                                    <span></span>
+                                </label>
+
+                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                        <input checked="checked" type="checkbox">
+                                        Saturday
+                                        <span></span>
+                                    </label>
+
+                                    <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                            <input checked="checked" type="checkbox">
+                                            Sunday
+                                            <span></span>
+                                        </label>
+                            </div>
+                </div>
+
+
+             
+            </div>
+            <div class="col-md-6">
+                    <div class="form-group m-form__group">
+                            <label >
+                                Max Capacity:
+                            </label>
+                            <input  class="form-control form-control-md m-input m-input--air"
+                                    placeholder="e.g. 4, 5 ,6"  type="number" #gameRoomPatricipants>
+                        </div>
+
+                        <div class="form-group m-form__group">
+                            <label >
+                                Description:
+                            </label>
+                            <textarea  class="form-control form-control-md m-input m-input--air" #gameRoomDescription></textarea>
+                        </div>
+           
+           
+           </div>
+        <div class="col-md-12">
+            <button class="btn btn-info pull-right" type="button" (click)="addGame(gameRoomName.value, default_imgUrl, gameRoomPatricipants.value , gameRoomDescription.value)">
+                Add Room
+            </button>
+        </div>
+
+        <!-- ---------------------------Add Inventory Form Start---------------------------------- -->
+
+    </div>
+
+</div>
