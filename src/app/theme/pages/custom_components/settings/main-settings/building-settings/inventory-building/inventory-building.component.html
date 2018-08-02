@@ -63,7 +63,7 @@
                
                 <li  class="m-nav__item">
                     <a  class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
-                        <span  class="m-nav__link-text">
+                        <span  class="m-nav__link-text active_breadcrumb">
                             Inventory     
                         </span>
                     </a>
@@ -234,7 +234,7 @@
                     <input  aria-describedby="inventory_name" id="inventory_name" class="form-control form-control-md m-input m-input--air"
                             placeholder="Inventory Name" #inventoryName type="text">
                 </div>
-                <div class="form-group m-form__group">
+                <!-- <div class="form-group m-form__group">
                     <label for="inventory_cat">
                         Inventory Category:
                     </label>
@@ -244,9 +244,33 @@
                         <option value="parking"> Parking </option>
                         <option value="gym"> Gym </option>
                     </select>
+                </div> -->
+
+                <div class="d-flex align-items-center" >
+                        <div class="form-group m-form__group mr-auto custom-width-100">
+                                <label class="m-subheader__title">
+                                    Category:
+                                    </label>
+                                    <ngx-select-dropdown #inventoryCategoryDropdown [config]="config" [options]="inventoryCategories" [(value)]="inventoryCategoryDropdownModel"  >
+                                    </ngx-select-dropdown>
+                        
+                        </div>
+                        <button  (click)="addSectionSelected='Category'" class="btn btn-link" data-toggle="modal" data-target="#addModal"><i class="fa fa-plus"></i> Add</button>
                 </div>
 
-                <div class="form-group m-form__group">
+                <div class="d-flex align-items-center" >
+                        <div class="form-group m-form__group mr-auto custom-width-100">
+                                <label class="m-subheader__title">
+                                    Sub-Category:
+                                    </label>
+                                    <ngx-select-dropdown #inventorySubCategoryDropdown [config]="config" [options]="inventorySubCategories" [(value)]="inventorySubCategoryDropdownModel"  >
+                                    </ngx-select-dropdown>
+                        
+                        </div>
+                        <button class="btn btn-link"  (click)="addSectionSelected='Subcategory'" data-toggle="modal" data-target="#addModal"><i class="fa fa-plus"></i> Add</button>
+                </div>
+
+                <!-- <div class="form-group m-form__group">
                         <label for="inventory_subCat">
                             Inventory Sub Category
                         </label>
@@ -256,7 +280,7 @@
                             <option value="microwave"> Microwave Oven </option>
                             <option value="kettle"> Kettle </option>
                         </select>
-                    </div>
+                    </div> -->
 
         
 
@@ -270,8 +294,20 @@
                             <input  id="placement_name" class="form-control form-control-md m-input m-input--air"
                                     placeholder="Placement Name" #placementName type="text">
                         </div>
+
+                        <div class="d-flex align-items-center" >
+                                <div class="form-group m-form__group mr-auto custom-width-100">
+                                        <label class="m-subheader__title">
+                                            Inventory Brand:
+                                            </label>
+                                            <ngx-select-dropdown #inventoryBrandDropdown [config]="config" [options]="inventoryBrands" [(value)]="inventoryBrandDropdownModel"  >
+                                            </ngx-select-dropdown>
+                                
+                                </div>
+                                <button class="btn btn-link" (click)="addSectionSelected='Brand'" data-toggle="modal" data-target="#addModal"><i class="fa fa-plus"></i> Add</button>
+                        </div>
                
-                <div class="form-group m-form__group">
+                <!-- <div class="form-group m-form__group">
                     <label for="inventory_subCat">
                         Inventory Brand
                     </label>
@@ -281,7 +317,7 @@
                         <option value="samsung"> Samsung </option>
                         <option value="orient"> Orient </option>
                     </select>
-                </div>
+                </div> -->
                 <div class="form-group m-form__group">
                     <label for="amenity_description">
                         Description:
@@ -290,7 +326,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <button class="btn btn-info pull-right" type="button" (click)="addInventory(inventoryName.value, default_imgUrl , inventoryCat.value, inventorySubCat.value, inventoryBrand.value)">
+                <button class="btn btn-info pull-right" type="button" (click)="addInventory(inventoryName.value, default_imgUrl , inventoryDesc.value)">
                     Add Inventory
                 </button>
             </div>
@@ -303,7 +339,7 @@
                                      Name (optional):
                                 </label>
                                 <input  aria-describedby="inventory_name" id="inventory_name" class="form-control form-control-md m-input m-input--air"
-                                        placeholder="Inventory Name" #inventoryName type="text">
+                                        placeholder="Inventory Name"  type="text">
                             </div>
                 </div>
 
@@ -312,7 +348,7 @@
                                 <label for="inventory_cat">
                                      Category:
                                 </label>
-                                <select class="form-control m-input m-input--air" type="text" #inventoryCat id="inventory_cat">
+                                <select class="form-control m-input m-input--air" type="text"  id="inventory_cat">
                                     <option> </option>
                                     <option value="appliances"> Electrical Appliances </option>
                                     <option value="parking"> Parking </option>
@@ -326,7 +362,7 @@
                                 <label for="inventory_subCat">
                                      Sub Category
                                 </label>
-                                <select class="form-control m-input m-input--air" #inventorySubCat id="inventory_subCat">
+                                <select class="form-control m-input m-input--air"  id="inventory_subCat">
                                     <option> </option>
                                     <option value="ac"> Air Conditioner </option>
                                     <option value="microwave"> Microwave Oven </option>
@@ -341,7 +377,7 @@
                                     Placement:
                                 </label>
                                 <input  id="placement_name" class="form-control form-control-md m-input m-input--air"
-                                        placeholder="Placement Name" #placementName type="text">
+                                        placeholder="Placement Name"  type="text">
                             </div>
                 </div>
 
@@ -350,7 +386,7 @@
                                 <label for="inventory_subCat">
                                      Brand
                                 </label>
-                                <select class="form-control m-input m-input--air" #inventoryBrand id="inventory_brand">
+                                <select class="form-control m-input m-input--air"  id="inventory_brand">
                                     <option> </option>
                                     <option value="pel"> Pel </option>
                                     <option value="samsung"> Samsung </option>
@@ -365,5 +401,44 @@
         <!-- ---------------------------Add Inventory Form Start---------------------------------- -->
 
     </div>
+
+
+    <div  aria-labelledby="bookingModalLabel" class="modal fade" id="addModal" role="dialog" tabindex="-1">
+            <div  class="modal-dialog" role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="exampleModalLabel">
+                            Add {{addSectionSelected}}
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span  aria-hidden="true">
+                                ×
+                            </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body">
+        
+                        <div  class="row">
+                            <div  class="col-md-12">
+                                    <div class="form-group m-form__group">
+                                            <label _ for="input1" >
+                                                Name:
+                                            </label>
+                                            <input #addField  class="form-control m-input m-input--air" type="text">
+                                        </div>
+                            </div>
+                        </div>
+                        <div  class="modal-footer">
+                            <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                                Close
+                            </button>
+                            <button (click)="onAdd(addField.value)"  class="btn btn-primary" type="button">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </div>

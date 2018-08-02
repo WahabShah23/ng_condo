@@ -7,10 +7,10 @@
             </div>
             
         <button class="btn btn-link">
-            <i class="fa fa-plus" (click)="addLoungeForm = true"> Add Lounge</i>
+            <i class="fa fa-plus" (click)="addMeetingRoomForm = true"> Add Meeting Room</i>
         </button>
         <button class="btn btn-link" (click)="changeGameView()">
-            <i class="fa" [ngClass]="{'fa-list': isLoungeGridView, 'fa-th' : !isLoungeGridView}"> {{LoungeViewName}} </i>
+            <i class="fa" [ngClass]="{'fa-list': isMeetingRoomGridView, 'fa-th' : !isMeetingRoomGridView}"> {{meetingRoomViewName}} </i>
         </button>
         </div>
 </div>
@@ -66,7 +66,7 @@
                 <li  class="m-nav__item">
                     <a  class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
                         <span  class="m-nav__link-text active_breadcrumb">
-                            Lounge    
+                            Meeitng Rooms    
                         </span>
                     </a>
                 </li>
@@ -79,23 +79,23 @@
 
         <!-- ---------------------------Inventory Cards Start---------------------------------- -->
 
-        <div class="row" *ngIf="!addLoungeForm && isLoungeGridView">
+        <div class="row" *ngIf="!addMeetingRoomForm && isMeetingRoomGridView">
 
-            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let lounge of lounges; let i = index;'>
+            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let meetingRoom of meetingRooms; let i = index;'>
                 <div  class="body organ1">
                     <div  class="row" style="margin:0px;">
                         <div  class="card-left col-lg-3">
                            
                             <div  class="row onepersonrow">
                                 <div  class="col-md-12">
-                                    <img  class="cardimage" [src]="lounge.img">
+                                    <img  class="cardimage" [src]="meetingRoom.img">
                                    
                                 </div>
                             </div>
                         </div>
                         <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Lounge Details</h6>
-                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteLounge(i)"></i>
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Meeting Room</h6>
+                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteMeetingRoom(i)"></i>
                             <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
                                 <input  class="chkboxes" type="checkbox">
                                 <span ></span>
@@ -109,7 +109,7 @@
                                             </div>
     
                                             <div class="col-sm-8 carddetail">
-                                                    {{lounge.name}}
+                                                    {{meetingRoom.name}}
                                                 </div>
     
                                         </div>
@@ -122,7 +122,7 @@
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{lounge.allowed}} Max
+                                                                {{meetingRoom.allowed}} Max
                                                             </div>
                 
                                                     </div>
@@ -133,7 +133,7 @@
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{lounge.floor}}
+                                                                {{meetingRoom.floor}}
                                                             </div>
                 
                                                     </div>
@@ -144,7 +144,7 @@
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{lounge.area}} 
+                                                                {{meetingRoom.area}} 
                                                             </div>
                 
                                                     </div>
@@ -156,7 +156,7 @@
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{lounge.location}} 
+                                                                {{meetingRoom.location}} 
                                                             </div>
                 
                                                     </div>
@@ -169,7 +169,7 @@
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{lounge.description}}
+                                                                {{meetingRoom.description}}
                                                             </div>
                 
                                                     </div>
@@ -186,7 +186,7 @@
         <!-- ---------------------------Inventories Cards End---------------------------------- -->
 
         <!-- ---------------------------Inventories List Start---------------------------------- -->
-        <div *ngIf="!addLoungeForm && !isLoungeGridView">
+        <div *ngIf="!addMeetingRoomForm && !isMeetingRoomGridView">
             <div class="cold-md-12">
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -198,7 +198,7 @@
                             </label>
                         </th>
                             <th > Room # </th>
-                            <th> Lounge Name </th>
+                            <th> Room Name </th>
                             <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Capacity </th>
                             <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Description </th>
                         </thead>
@@ -214,10 +214,10 @@
                             </td>
                             <td> 1 </td>
                             <td class="center">
-                                    Eating Lounge
+                             Long Meetings Rooms
                             </td>
                             <td class="center"> 4 </td>
-                            <td class="center">The Lounge 1 </td>
+                            <td class="center"> It Is The Long Meetings Rooms </td>
                           
                         </tr>   <tr role="row">
                                 <td >
@@ -228,10 +228,10 @@
                                 </td>
                                 <td> 2 </td>
                                 <td class="center">
-                                    Lounge 2
+                                    Short Meetings Rooms
                                 </td>
                                 <td class="center"> 6</td>
-                                <td class="center"> The Lounge 2</td>
+                                <td class="center"> It Is The Long Meetings Rooms</td>
                             </tr>
                         </tbody>
 
@@ -242,13 +242,13 @@
         <!-- ---------------------------Inventories List End---------------------------------- -->
 
         <!-- ----------------------------- Add Form Start------------------------------- -->
-        <div class="row" *ngIf="addLoungeForm">
+        <div class="row" *ngIf="addMeetingRoomForm">
             <div class="col-md-6">
                 <div class="form-group m-form__group">
                     <label for="inventory_name">
-                       Lounge Name:
+                       Meetin Room Name:
                     </label>
-                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Loungle Room ABC" #loungeName type="text">
+                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Loungle Room ABC" #meetingRoomName type="text">
                 </div>
 
                 <div class="d-flex align-items-center"  >
@@ -267,14 +267,14 @@
                 <label >
                    Area:
                 </label>
-                <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. 100 m/sq" type="text" #areaLoungle >
+                <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. 100 m/sq" type="text" #areaMeetingRoom >
             </div>
 
             <div class="form-group m-form__group">
                 <label for="inventory_name">
                  Location:
                 </label>
-                <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. North West"  type="text" #locationLounge>
+                <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. North West"  type="text" #locationMeetingRoom>
             </div>
  
             </div>
@@ -284,21 +284,21 @@
                                 Max Capacity:
                             </label>
                             <input  class="form-control form-control-md m-input m-input--air"
-                                    placeholder="e.g. 4, 5 ,6"  type="number" #loungePatricipants>
+                                    placeholder="e.g. 4, 5 ,6"  type="number" #meetingRoomPatricipants>
                         </div>
 
                         <div class="form-group m-form__group">
                             <label >
                                 Description:
                             </label>
-                            <textarea  class="form-control form-control-md m-input m-input--air" #loungeDescription></textarea>
+                            <textarea  class="form-control form-control-md m-input m-input--air" #meetingRoomDescription></textarea>
                         </div>
            
            
            </div>
         <div class="col-md-12">
-            <button class="btn btn-info pull-right" type="button" (click)="addLounge(loungeName.value, default_imgUrl, loungePatricipants.value ,areaLoungle.value , locationLounge.value , loungeDescription.value)">
-                Add Lounge
+            <button class="btn btn-info pull-right" type="button" (click)="addMeetingRoom(meetingRoomName.value, default_imgUrl, meetingRoomPatricipants.value ,areaMeetingRoom.value , locationMeetingRoom.value , meetingRoomDescription.value)">
+                Add Meeting Room
             </button>
         </div>
 

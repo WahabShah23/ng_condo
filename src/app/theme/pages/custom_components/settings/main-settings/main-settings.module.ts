@@ -46,6 +46,7 @@ import { GamesComponent } from './building-settings/specialized-rooms/games/game
 import { PoolComponent } from './building-settings/specialized-rooms/pool/pool.component';
 import { MovieTheatreComponent } from './building-settings/specialized-rooms/movie-theatre/movie-theatre.component';
 import { LoungeComponent } from './building-settings/specialized-rooms/lounge/lounge.component';
+import { MeetingRoomsComponent } from './building-settings/meeting-rooms/meeting-rooms.component';
 
 
 
@@ -92,7 +93,8 @@ import { LoungeComponent } from './building-settings/specialized-rooms/lounge/lo
         GamesComponent,
         PoolComponent,
         MovieTheatreComponent,
-        LoungeComponent
+        LoungeComponent,
+        MeetingRoomsComponent
     ],
 
 })

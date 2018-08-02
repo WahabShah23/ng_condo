@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { SelectDropDownComponent } from 'ngx-select-dropdown/dist/components';
 
 @Component({
   selector: 'app-stock-building',
@@ -11,6 +12,7 @@ export class StockBuildingComponent implements OnInit {
 
   ngOnInit() {
   }
+  addSectionSelected='';
   addStockForm = false;
   isStockGridView = true;
   StockViewName = 'List View';
@@ -26,6 +28,25 @@ export class StockBuildingComponent implements OnInit {
 
    buildingName = "ABC Building";
 
+
+   config = {
+    displayKey: "description", //if objects array passed which key to be displayed defaults to description,
+    search: true //enables the search plugin to search in the list
+};
+
+stockCategories = ["Electrical Appliances", "Parking" , "Gym"];
+stockCategoryDropdownModel;
+
+stockSubCategories = ["Air Conditioner", "Microwave Oven" , "Kettle"];
+stockSubCategoryDropdownModel;
+
+stockBrands = ["Orient", "Pel" , "Mitsubishi"];
+stockBrandDropdownModel;
+
+@ViewChild('stockCategoryDropdown')  stockCategoryDropdown: SelectDropDownComponent;
+@ViewChild('stockSubCategoryDropdown')  stockSubCategoryDropdown: SelectDropDownComponent;
+@ViewChild('stockBrandDropdown')  stockBrandDropdown: SelectDropDownComponent;
+
    changeStockView() {
     this.isStockGridView = !this.isStockGridView;
     if (this.isStockGridView) {
@@ -37,8 +58,8 @@ export class StockBuildingComponent implements OnInit {
     this.addStockForm = false;
 }
 
-addStock(name: string, img: string, stock_Cat: string, stock_SubCat: string, stock_brand: string, desc?: string) {
-    this.Stocks.push({name: name, img:img, stockCat: stock_Cat, stockSubCat: stock_SubCat, brand: stock_brand, desc: desc });
+addStock(name: string, img: string, desc?: string) {
+    this.Stocks.push({name: name, img:img, stockCat: this.stockCategoryDropdownModel, stockSubCat: this.stockSubCategoryDropdownModel, brand: this.stockBrandDropdownModel, desc: desc });
     this.isStockGridView = !this.isStockGridView;
     this.changeStockView();
 }
@@ -46,6 +67,28 @@ addStock(name: string, img: string, stock_Cat: string, stock_SubCat: string, sto
 deleteStock(id){
     console.log(id);
     this.Stocks.splice(id,1);
+}
+
+
+onAdd(name:string)
+{
+    if(this.addSectionSelected=='Brand')
+    {
+     this.stockBrands.push(name);
+     this.stockBrandDropdown.availableItems.push(name);   
+    }
+    else if(this.addSectionSelected=='Category')
+    {
+        this.stockCategories.push(name);
+        this.stockCategoryDropdown.availableItems.push(name);   
+    }
+    else if(this.addSectionSelected=='Subcategory')
+    {
+
+     this.stockSubCategories.push(name);
+     this.stockSubCategoryDropdown.availableItems.push(name);   
+    }
+
 }
 
 }

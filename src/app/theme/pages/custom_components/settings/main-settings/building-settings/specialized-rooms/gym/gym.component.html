@@ -134,7 +134,7 @@
         
                                                     <div class="row">
                                                             <div class="col-sm-4 cardName">
-                                                                    Sub-Category:
+                                                                    SubCat:
                                                             </div>
                     
                                                             <div class="col-sm-8 carddetail">
@@ -223,30 +223,34 @@
                                 placeholder="e.g. Dumbbell" #itemName type="text">
                     </div>
 
-                    <div class="form-group m-form__group">
-                        <label >
-                            Item Category:
-                        </label>
-                        <select class="form-control m-input m-input--air" type="text" #itemCategory id="gym_item_category">
-                            <option value="Lifting">Lifting</option>
-                            <option value="Electrical"> Electrical </option>
-                            <option value="Mechanical"> Mechanical </option>
-                        </select>
+                    <div class="d-flex align-items-center" >
+                            <div class="form-group m-form__group mr-auto custom-width-100">
+                                    <label class="m-subheader__title">
+                                        Category:
+                                        </label>
+                                        <ngx-select-dropdown #gymCategoryDropdown [config]="config" [options]="gymCategories" [(value)]="gymCategoryDropdownModel"  >
+                                        </ngx-select-dropdown>
+                            
+                            </div>
+                            <button  (click)="addSectionSelected='Category'" class="btn btn-link" data-toggle="modal" data-target="#addModal"><i class="fa fa-plus"></i> Add</button>
                     </div>
-    
                  
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group m-form__group">
-                        <label >
-                            Item Sub-category
-                        </label>
-                        <select class="form-control m-input m-input--air" #itemSubcategory id="item_placement">
-                            <option value="Weight Lifting"> Weight Lifting </option>
-                            <option value="Chest Workout"> Chest Workout </option>
-                            <option value="Cardio"> Cardio </option>
-                        </select>
-                    </div>
+
+                        <div class="d-flex align-items-center" >
+                                <div class="form-group m-form__group mr-auto custom-width-100">
+                                        <label class="m-subheader__title">
+                                            Sub-Category:
+                                            </label>
+                                            <ngx-select-dropdown #gymSubCategoryDropdown [config]="config" [options]="gymSubCategories" [(value)]="gymSubCategoryDropdownModel"  >
+                                            </ngx-select-dropdown>
+                                
+                                </div>
+                                <button class="btn btn-link"  (click)="addSectionSelected='Subcategory'" data-toggle="modal" data-target="#addModal"><i class="fa fa-plus"></i> Add</button>
+                        </div>
+        
+                 
 
                     <div class="form-group m-form__group">
                         <label >
@@ -259,13 +263,53 @@
             </div>
 
             <div class="col-md-12">
-                <button class="btn btn-info pull-right" type="button" (click)="addGym(itemName.value, default_imgUrl , itemCategory.value, itemSubcategory.value , itemDescription.value)">
+                <button class="btn btn-info pull-right" type="button" (click)="addGym(itemName.value, default_imgUrl , itemDescription.value)">
                     Add Gym Item
                 </button>
             </div>
             <!-- ---------------------------Add Inventory Form Start---------------------------------- -->
     
         </div>
+
+
+
+        <div  aria-labelledby="bookingModalLabel" class="modal fade" id="addModal" role="dialog" tabindex="-1">
+                <div  class="modal-dialog" role="document">
+                    <div  class="modal-content">
+                        <div  class="modal-header">
+                            <h5  class="modal-title" id="exampleModalLabel">
+                                Add {{addSectionSelected}}
+                            </h5>
+                            <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                                </span>
+                            </button>
+                        </div>
+                        <div  class="modal-body">
+            
+                            <div  class="row">
+                                <div  class="col-md-12">
+                                        <div class="form-group m-form__group">
+                                                <label _ for="input1" >
+                                                    Name:
+                                                </label>
+                                                <input #addField  class="form-control m-input m-input--air" type="text">
+                                            </div>
+                                </div>
+                            </div>
+                            <div  class="modal-footer">
+                                <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                                    Close
+                                </button>
+                                <button (click)="onAdd(addField.value)"  class="btn btn-primary" type="button">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     
     </div>
     

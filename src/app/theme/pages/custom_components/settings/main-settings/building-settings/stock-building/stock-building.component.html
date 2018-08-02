@@ -53,7 +53,7 @@
 
                 <li  class="m-nav__item">
                     <a  routerLink="/settings/buildings/1/specialized-rooms" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
-                        <span  class="m-nav__link-text">
+                        <span  class="m-nav__link-text ">
                             Specialized Rooms     
                         </span>
                     </a>
@@ -65,7 +65,7 @@
                
                 <li  class="m-nav__item">
                     <a  class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
-                        <span  class="m-nav__link-text">
+                        <span  class="m-nav__link-text active_breadcrumb">
                             Stock     
                         </span>
                     </a>
@@ -140,6 +140,17 @@
                                                         </div>
             
                                                 </div>
+
+                                                <div class="row">
+                                                        <div class="col-sm-4 cardName">
+                                                                Brand:
+                                                        </div>
+                
+                                                        <div class="col-sm-8 carddetail">
+                                                                {{stock.brand}}
+                                                            </div>
+                
+                                                    </div>
     
                                                 <div class="row">
                                                         <div class="col-sm-4 cardName">
@@ -240,7 +251,21 @@
                     <input  aria-describedby="inventory_name" id="inventory_name" class="form-control form-control-md m-input m-input--air"
                             placeholder="Inventory Name" #stockName type="text">
                 </div>
-                <div class="form-group m-form__group">
+
+                <div class="d-flex align-items-center" >
+                        <div class="form-group m-form__group mr-auto custom-width-100">
+                                <label class="m-subheader__title">
+                                    Category:
+                                    </label>
+                                    <ngx-select-dropdown #stockCategoryDropdown [config]="config" [options]="stockCategories" [(value)]="stockCategoryDropdownModel"  >
+                                    </ngx-select-dropdown>
+                        
+                        </div>
+                        <button  (click)="addSectionSelected='Category'" class="btn btn-link" data-toggle="modal" data-target="#addModal"><i class="fa fa-plus"></i> Add</button>
+                </div>
+
+             
+                <!-- <div class="form-group m-form__group">
                     <label for="inventory_cat">
                         Stock Category:
                     </label>
@@ -250,32 +275,12 @@
                         <option value="parking"> Parking </option>
                         <option value="gym"> Gym </option>
                     </select>
-                </div>
-
-                <!-- <div class="m-form__group form-group">
-                    <label for="">
-                        Entry Options
-                    </label>
-                    <div class="m-checkbox-inline">
-                        <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
-                            <input type="checkbox">
-                            Walk In
-                            <span></span>
-                        </label>
-                        <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
-                            <input type="checkbox">
-                            Bookable
-                            <span></span>
-                        </label>
-                    </div>
-                    <span class="m-form__help">
-                       <small> Enable/Disable for global access</small>
-                    </span>
                 </div> -->
+
 
             </div>
             <div class="col-md-6">
-                <div class="form-group m-form__group">
+                <!-- <div class="form-group m-form__group">
                     <label for="inventory_subCat">
                         Stock Sub Category
                     </label>
@@ -285,8 +290,34 @@
                         <option value="microwave"> Microwave Oven </option>
                         <option value="kettle"> Kettle </option>
                     </select>
+                </div> -->
+
+                <div class="d-flex align-items-center" >
+                        <div class="form-group m-form__group mr-auto custom-width-100">
+                                <label class="m-subheader__title">
+                                    Sub-Category:
+                                    </label>
+                                    <ngx-select-dropdown #stockSubCategoryDropdown [config]="config" [options]="stockSubCategories" [(value)]="stockSubCategoryDropdownModel"  >
+                                    </ngx-select-dropdown>
+                        
+                        </div>
+                        <button class="btn btn-link"  (click)="addSectionSelected='Subcategory'" data-toggle="modal" data-target="#addModal"><i class="fa fa-plus"></i> Add</button>
                 </div>
-                <div class="form-group m-form__group">
+
+                <div class="d-flex align-items-center" >
+                        <div class="form-group m-form__group mr-auto custom-width-100">
+                                <label class="m-subheader__title">
+                                     Brand:
+                                    </label>
+                                    <ngx-select-dropdown #stockBrandDropdown [config]="config" [options]="stockBrands" [(value)]="stockBrandDropdownModel"  >
+                                    </ngx-select-dropdown>
+                        
+                        </div>
+                        <button class="btn btn-link" (click)="addSectionSelected='Brand'" data-toggle="modal" data-target="#addModal"><i class="fa fa-plus"></i> Add</button>
+                </div>
+
+
+                <!-- <div class="form-group m-form__group">
                     <label for="inventory_subCat">
                         Stock Brand
                     </label>
@@ -296,7 +327,7 @@
                         <option value="samsung"> Samsung </option>
                         <option value="orient"> Orient </option>
                     </select>
-                </div>
+                </div> -->
                 <div class="form-group m-form__group">
                     <label for="amenity_description">
                         Description:
@@ -305,7 +336,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <button class="btn btn-info pull-right" type="button" (click)="addStock(stockName.value, default_imgUrl , stockCat.value, stockSubCat.value, stockBrand.value)">
+                <button class="btn btn-info pull-right" type="button" (click)="addStock(stockName.value, default_imgUrl , stockDesc.value)">
                     Add Stock
                 </button>
             </div>
@@ -313,5 +344,44 @@
         <!-- ---------------------------Add Inventory Form Start---------------------------------- -->
 
     </div>
+
+
+    <div  aria-labelledby="bookingModalLabel" class="modal fade" id="addModal" role="dialog" tabindex="-1">
+            <div  class="modal-dialog" role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="exampleModalLabel">
+                            Add {{addSectionSelected}}
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span  aria-hidden="true">
+                                ×
+                            </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body">
+        
+                        <div  class="row">
+                            <div  class="col-md-12">
+                                    <div class="form-group m-form__group">
+                                            <label _ for="input1" >
+                                                Name:
+                                            </label>
+                                            <input #addField  class="form-control m-input m-input--air" type="text">
+                                        </div>
+                            </div>
+                        </div>
+                        <div  class="modal-footer">
+                            <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                                Close
+                            </button>
+                            <button (click)="onAdd(addField.value)"  class="btn btn-primary" type="button">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </div>

@@ -13,11 +13,11 @@ export class MovieTheatreComponent implements OnInit {
   }
 
   
-  addGameForm = false;
-  isGameGridView = true;
-  GameViewName = 'List View';
+  addMovieTheatreForm = false;
+  isMovieThreatreGridView = true;
+  TheatreViewName = 'List View';
   default_imgUrl = 'assets/app/media/img/custom/movie-theatre/1.jpg';
-  gameRooms = [
+  movieTheatres = [
     {
         name: "Movie Theatre 1", img: 'assets/app/media/img/custom/movie-theatre/1.jpg', allowed: 4 , description: "Theatre Room for movies"
     },
@@ -29,26 +29,26 @@ export class MovieTheatreComponent implements OnInit {
    buildingName = "ABC Building";
 
    changeGameView() {
-    this.isGameGridView = !this.isGameGridView;
-    if (this.isGameGridView) {
-        this.GameViewName = 'List View';
+    this.isMovieThreatreGridView = !this.isMovieThreatreGridView;
+    if (this.isMovieThreatreGridView) {
+        this.TheatreViewName = 'List View';
     }
     else {
-        this.GameViewName = 'Grid View';
+        this.TheatreViewName = 'Grid View';
     }
-    this.addGameForm = false;
+    this.addMovieTheatreForm = false;
 }
 
-addGame(gameName, img , numberOfParticipants, gameDescription) {
-    this.gameRooms.push({name: gameName, img:img,  allowed: numberOfParticipants , description:gameDescription});
-    this.isGameGridView = !this.isGameGridView;
+addTheatre(theatreName, img , theatreParticipants, theatreDescription) {
+    this.movieTheatres.push({name: theatreName, img:img,  allowed: theatreParticipants , description:theatreDescription});
+    this.isMovieThreatreGridView = !this.isMovieThreatreGridView;
     this.changeGameView();
     
 }
 
-deleteGame(id)
+deleteTheatre(id)
 {
-    this.gameRooms.splice(id,1);
+    this.movieTheatres.splice(id,1);
 }
 
 }

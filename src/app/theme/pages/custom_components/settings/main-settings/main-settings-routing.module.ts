@@ -1,3 +1,4 @@
+import { MeetingRoomsComponent } from './building-settings/meeting-rooms/meeting-rooms.component';
 import { LoungeComponent } from './building-settings/specialized-rooms/lounge/lounge.component';
 import { MovieTheatreComponent } from './building-settings/specialized-rooms/movie-theatre/movie-theatre.component';
 import { PoolComponent } from './building-settings/specialized-rooms/pool/pool.component';
@@ -133,6 +134,10 @@ const routes: Routes = [
             {
                 'path': 'hotels',
                 'component': HotelsComponent
+            },
+            {
+                'path': 'meeting-rooms',
+                'component': MeetingRoomsComponent
             }
         ]
     },

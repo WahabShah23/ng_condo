@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { SelectDropDownComponent } from 'ngx-select-dropdown';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-inventory-building',
@@ -9,6 +10,7 @@ export class InventoryBuildingComponent implements OnInit {
 
   constructor() { }
 
+  addSectionSelected='';
   addInventoryForm = false;
   isInventoryGridView = true;
   InventoryViewName = 'List View';
@@ -24,6 +26,26 @@ export class InventoryBuildingComponent implements OnInit {
 
    buildingName = "ABC Building";
 
+
+   config = {
+       displayKey: "description", //if objects array passed which key to be displayed defaults to description,
+       search: true //enables the search plugin to search in the list
+   };
+
+   inventoryCategories = ["Electrical Appliances", "Parking" , "Gym"];
+   inventoryCategoryDropdownModel;
+
+   inventorySubCategories = ["Air Conditioner", "Microwave Oven" , "Kettle"];
+   inventorySubCategoryDropdownModel;
+
+   inventoryBrands = ["Orient", "Pel" , "Mitsubishi"];
+   inventoryBrandDropdownModel;
+
+   @ViewChild('inventoryCategoryDropdown')  inventoryCategoryDropdown: SelectDropDownComponent;
+    @ViewChild('inventorySubCategoryDropdown')  inventorySubCategoryDropdown: SelectDropDownComponent;
+    @ViewChild('inventoryBrandDropdown')  inventoryBrandDropdown: SelectDropDownComponent;
+
+
   ngOnInit() {
   }
   changeInventoryView() {
@@ -37,8 +59,9 @@ export class InventoryBuildingComponent implements OnInit {
     this.addInventoryForm = false;
 }
 
-addInventory(name: string, img: string, inventory_Cat: string, inventory_SubCat: string, inventory_brand: string, desc?: string) {
-    this.Inventories.push({name: name, img:img, inventoryCat: inventory_Cat, inventorySubCat: inventory_SubCat, brand: inventory_brand, desc: desc });
+addInventory(name: string, img: string, desc: string) 
+{
+    this.Inventories.push({name: name, img:img, inventoryCat: this.inventoryCategoryDropdownModel, inventorySubCat: this.inventorySubCategoryDropdownModel, brand: this.inventoryBrandDropdownModel, desc: desc });
     this.isInventoryGridView = !this.isInventoryGridView;
     this.changeInventoryView();
 }
@@ -46,6 +69,28 @@ addInventory(name: string, img: string, inventory_Cat: string, inventory_SubCat:
 deleteInventory(id){
     console.log(id);
     this.Inventories.splice(id,1);
+}
+
+
+onAdd(name:string)
+{
+    if(this.addSectionSelected=='Brand')
+    {
+     this.inventoryBrands.push(name);
+     this.inventoryBrandDropdown.availableItems.push(name);   
+    }
+    else if(this.addSectionSelected=='Category')
+    {
+        this.inventoryCategories.push(name);
+        this.inventoryCategoryDropdown.availableItems.push(name);   
+    }
+    else if(this.addSectionSelected=='Subcategory')
+    {
+
+     this.inventorySubCategories.push(name);
+     this.inventorySubCategoryDropdown.availableItems.push(name);   
+    }
+
 }
 
 }

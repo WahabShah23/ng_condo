@@ -7,10 +7,10 @@
             </div>
             
         <button class="btn btn-link">
-            <i class="fa fa-plus" (click)="addGameForm = true"> Add Pool</i>
+            <i class="fa fa-plus" (click)="addPoolForm = true; visitType='Splash Based'"> Add Pool</i>
         </button>
         <button class="btn btn-link" (click)="changeGameView()">
-            <i class="fa" [ngClass]="{'fa-list': isGameGridView, 'fa-th' : !isGameGridView}"> {{GameViewName}} </i>
+            <i class="fa" [ngClass]="{'fa-list': isPoolGridView, 'fa-th' : !isPoolGridView}"> {{PoolViewName}} </i>
         </button>
         </div>
 </div>
@@ -79,23 +79,23 @@
 
         <!-- ---------------------------Inventory Cards Start---------------------------------- -->
 
-        <div class="row" *ngIf="!addGameForm && isGameGridView">
+        <div class="row" *ngIf="!addPoolForm && isPoolGridView">
 
-            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let gameRoom of gameRooms; let i = index;'>
+            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let pool of pools; let i = index;'>
                 <div  class="body organ1">
                     <div  class="row" style="margin:0px;">
                         <div  class="card-left col-lg-3">
                            
                             <div  class="row onepersonrow">
                                 <div  class="col-md-12">
-                                    <img  class="cardimage" [src]="gameRoom.img">
+                                    <img  class="cardimage" [src]="pool.img">
                                    
                                 </div>
                             </div>
                         </div>
                         <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                             <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Pool Details</h6>
-                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteGame(i)"></i>
+                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deletePool(i)"></i>
                             <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
                                 <input  class="chkboxes" type="checkbox">
                                 <span ></span>
@@ -109,7 +109,7 @@
                                             </div>
     
                                             <div class="col-sm-8 carddetail">
-                                                    {{gameRoom.name}}
+                                                    {{pool.name}}
                                                 </div>
     
                                         </div>
@@ -133,18 +133,18 @@
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{gameRoom.allowed}} Max
+                                                                {{pool.allowed}} Max
                                                             </div>
                 
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-sm-4 cardName">
-                                                                Visit Type:
+                                                                Pool Type:
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{gameRoom.visitType}}
+                                                                {{pool.visitType}}
                                                             </div>
                 
                                                     </div>
@@ -155,7 +155,7 @@
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{gameRoom.description}}
+                                                                {{pool.description}}
                                                             </div>
                 
                                                     </div>
@@ -172,7 +172,7 @@
         <!-- ---------------------------Inventories Cards End---------------------------------- -->
 
         <!-- ---------------------------Inventories List Start---------------------------------- -->
-        <div *ngIf="!addGameForm && !isGameGridView">
+        <div *ngIf="!addPoolForm && !isPoolGridView">
             <div class="cold-md-12">
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -231,13 +231,13 @@
         <!-- ---------------------------Inventories List End---------------------------------- -->
 
         <!-- ----------------------------- Add Form Start------------------------------- -->
-        <div class="row" *ngIf="addGameForm">
+        <div class="row" *ngIf="addPoolForm">
             <div class="col-md-6">
                 <div class="form-group m-form__group">
                     <label for="inventory_name">
                        Pool Name:
                     </label>
-                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. ABC Pool" #gameRoomName type="text">
+                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. ABC Pool" #poolName type="text">
                 </div>
 
                 <!-- <div class="form-group m-form__group">
@@ -261,8 +261,14 @@
                             <span></span>
                         </label>
                         <label class="m-radio m-radio--solid m-radio--brand">
-                            <input name="bookType" (change)="visitType='Splash Based'" type="radio" value="Walkin" checked>
+                            <input name="bookType" (change)="visitType='Splash Based'" type="radio" value="Splash Based" checked>
                             Splash Based
+                            <span></span>
+                        </label>
+
+                        <label class="m-radio m-radio--solid m-radio--brand">
+                            <input name="bookType" (change)="visitType='Both'" type="radio" value="Both" >
+                             Both
                             <span></span>
                         </label>
                        
@@ -270,7 +276,7 @@
                  
                 </div>
 
-                <div class="m-form__group form-group" *ngIf="visitType=='Lane Based'">
+                <!-- <div class="m-form__group form-group" *ngIf="visitType=='Lane Based'">
                     <label for="">Book Days</label>
                         <div class="m-checkbox-list">
                                 <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
@@ -311,7 +317,7 @@
                                             <span></span>
                                         </label>
                             </div>
-                </div>
+                </div> -->
 
 
              
@@ -322,20 +328,20 @@
                                 Max Capacity:
                             </label>
                             <input  class="form-control form-control-md m-input m-input--air"
-                                    placeholder="e.g. 4, 5 ,6"  type="number" #gameRoomPatricipants>
+                                    placeholder="e.g. 4, 5 ,6"  type="number" #poolPatricipants>
                         </div>
 
                         <div class="form-group m-form__group">
                             <label >
                                 Description:
                             </label>
-                            <textarea  class="form-control form-control-md m-input m-input--air" #gameRoomDescription></textarea>
+                            <textarea  class="form-control form-control-md m-input m-input--air" #poolDescription></textarea>
                         </div>
            
            
            </div>
         <div class="col-md-12">
-            <button class="btn btn-info pull-right" type="button" (click)="addGame(gameRoomName.value, default_imgUrl , gameRoomPatricipants.value , gameRoomDescription.value)">
+            <button class="btn btn-info pull-right" type="button" (click)="addPool(poolName.value, default_imgUrl , poolPatricipants.value , poolDescription.value)">
                 Add Pool
             </button>
         </div>

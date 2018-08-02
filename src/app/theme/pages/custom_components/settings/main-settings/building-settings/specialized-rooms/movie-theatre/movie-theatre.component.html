@@ -7,10 +7,10 @@
             </div>
             
         <button class="btn btn-link">
-            <i class="fa fa-plus" (click)="addGameForm = true"> Add Theatre Room</i>
+            <i class="fa fa-plus" (click)="addMovieTheatreForm = true"> Add Theatre Room</i>
         </button>
         <button class="btn btn-link" (click)="changeGameView()">
-            <i class="fa" [ngClass]="{'fa-list': isGameGridView, 'fa-th' : !isGameGridView}"> {{GameViewName}} </i>
+            <i class="fa" [ngClass]="{'fa-list': isMovieThreatreGridView, 'fa-th' : !isMovieThreatreGridView}"> {{TheatreViewName}} </i>
         </button>
         </div>
 </div>
@@ -79,23 +79,23 @@
 
         <!-- ---------------------------Inventory Cards Start---------------------------------- -->
 
-        <div class="row" *ngIf="!addGameForm && isGameGridView">
+        <div class="row" *ngIf="!addMovieTheatreForm && isMovieThreatreGridView">
 
-            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let gameRoom of gameRooms; let i = index;'>
+            <div  class="col-sm-12 col-md-3 col-xl-4" *ngFor='let theatre of movieTheatres; let i = index;'>
                 <div  class="body organ1">
                     <div  class="row" style="margin:0px;">
                         <div  class="card-left col-lg-3">
                            
                             <div  class="row onepersonrow">
                                 <div  class="col-md-12">
-                                    <img  class="cardimage" [src]="gameRoom.img">
+                                    <img  class="cardimage" [src]="theatre.img">
                                    
                                 </div>
                             </div>
                         </div>
                         <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                             <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Theatre Room</h6>
-                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteGame(i)"></i>
+                            <i class="fa fa-trash pull-left" style="padding-left: 10px;" (click)="deleteTheatre(i)"></i>
                             <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand pull-right checkbox-position">
                                 <input  class="chkboxes" type="checkbox">
                                 <span ></span>
@@ -109,7 +109,7 @@
                                             </div>
     
                                             <div class="col-sm-8 carddetail">
-                                                    {{gameRoom.name}}
+                                                    {{theatre.name}}
                                                 </div>
     
                                         </div>
@@ -122,7 +122,7 @@
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{gameRoom.allowed}} Max
+                                                                {{theatre.allowed}} Max
                                                             </div>
                 
                                                     </div>
@@ -134,7 +134,7 @@
                                                         </div>
                 
                                                         <div class="col-sm-8 carddetail">
-                                                                {{gameRoom.description}}
+                                                                {{theatre.description}}
                                                             </div>
                 
                                                     </div>
@@ -151,7 +151,7 @@
         <!-- ---------------------------Inventories Cards End---------------------------------- -->
 
         <!-- ---------------------------Inventories List Start---------------------------------- -->
-        <div *ngIf="!addGameForm && !isGameGridView">
+        <div *ngIf="!addMovieTheatreForm && !isMovieThreatreGridView">
             <div class="cold-md-12">
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -207,13 +207,13 @@
         <!-- ---------------------------Inventories List End---------------------------------- -->
 
         <!-- ----------------------------- Add Form Start------------------------------- -->
-        <div class="row" *ngIf="addGameForm">
+        <div class="row" *ngIf="addMovieTheatreForm">
             <div class="col-md-6">
                 <div class="form-group m-form__group">
                     <label for="inventory_name">
                         Theatre Room Name:
                     </label>
-                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Theatre Room ABC" #gameRoomName type="text">
+                    <input  class="form-control form-control-md m-input m-input--air" placeholder="e.g. Theatre Room ABC" #theatreName type="text">
                 </div>
 
                
@@ -223,39 +223,39 @@
                 <div class="m-form__group form-group" >
                     <label for="">Book Days</label>
                         <div class="m-checkbox-list">
-                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input type="checkbox">
                                     Monday
                                     <span></span>
                                 </label>
-                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input  type="checkbox">
                                     Tuesday
                                     <span></span>
                                 </label>
-                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input checked="checked" type="checkbox">
                                     Wednesday
                                     <span></span>
                                 </label>
-                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input checked="checked" type="checkbox">
                                     Thursday
                                     <span></span>
                                 </label>
-                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                     <input checked="checked" type="checkbox">
                                     Friday
                                     <span></span>
                                 </label>
 
-                                <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                         <input checked="checked" type="checkbox">
                                         Saturday
                                         <span></span>
                                     </label>
 
-                                    <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand">
+                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                             <input checked="checked" type="checkbox">
                                             Sunday
                                             <span></span>
@@ -272,20 +272,20 @@
                                 Max Capacity:
                             </label>
                             <input  class="form-control form-control-md m-input m-input--air"
-                                    placeholder="e.g. 4, 5 ,6"  type="number" #gameRoomPatricipants>
+                                    placeholder="e.g. 4, 5 ,6"  type="number" #theatrePatricipants>
                         </div>
 
                         <div class="form-group m-form__group">
                             <label >
                                 Description:
                             </label>
-                            <textarea  class="form-control form-control-md m-input m-input--air" #gameRoomDescription></textarea>
+                            <textarea  class="form-control form-control-md m-input m-input--air" #theatreDescription></textarea>
                         </div>
            
            
            </div>
         <div class="col-md-12">
-            <button class="btn btn-info pull-right" type="button" (click)="addGame(gameRoomName.value, default_imgUrl, gameRoomPatricipants.value , gameRoomDescription.value)">
+            <button class="btn btn-info pull-right" type="button" (click)="addTheatre(theatreName.value, default_imgUrl, theatrePatricipants.value , theatreDescription.value)">
                 Add Room
             </button>
         </div>

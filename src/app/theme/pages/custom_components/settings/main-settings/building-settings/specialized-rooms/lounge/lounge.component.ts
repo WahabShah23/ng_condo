@@ -13,11 +13,11 @@ export class LoungeComponent implements OnInit {
   }
 
 
-  addGameForm = false;
-  isGameGridView = true;
-  GameViewName = 'List View';
+  addLoungeForm = false;
+  isLoungeGridView = true;
+  LoungeViewName = 'List View';
   default_imgUrl = 'assets/app/media/img/custom/lounges/1.jpg';
-  gameRooms = [
+  lounges = [
     {
         name: "Eating Lounge", img: 'assets/app/media/img/custom/lounges/1.jpg', allowed: 4 , floor:"4th", area:"10 sq/m", location:"North-East", description: "The Lounge 1"
     },
@@ -37,27 +37,27 @@ export class LoungeComponent implements OnInit {
 
 changeGameView() 
 {
-    this.isGameGridView = !this.isGameGridView;
-    if (this.isGameGridView) {
-        this.GameViewName = 'List View';
+    this.isLoungeGridView = !this.isLoungeGridView;
+    if (this.isLoungeGridView) {
+        this.LoungeViewName = 'List View';
     }
     else {
-        this.GameViewName = 'Grid View';
+        this.LoungeViewName = 'Grid View';
     }
-    this.addGameForm = false;
+    this.addLoungeForm = false;
 }
 
-addGame(gameName, img , numberOfParticipants, area, location, gameDescription) 
+addLounge(loungeName, img , loungeParticipants, area, location, loungeDescription) 
 {
-    this.gameRooms.push({name: gameName, img:img,  allowed: numberOfParticipants , floor:this.floorDropdownModel, area:area, location:location, description:gameDescription});
-    this.isGameGridView = !this.isGameGridView;
+    this.lounges.push({name: loungeName, img:img,  allowed: loungeParticipants , floor:this.floorDropdownModel, area:area, location:location, description:loungeDescription});
+    this.isLoungeGridView = !this.isLoungeGridView;
     this.changeGameView();
     
 }
 
-deleteGame(id)
+deleteLounge(id)
 {
-    this.gameRooms.splice(id,1);
+    this.lounges.splice(id,1);
 }
 
 }

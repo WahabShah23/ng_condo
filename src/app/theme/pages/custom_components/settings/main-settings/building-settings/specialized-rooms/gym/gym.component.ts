@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { SelectDropDownComponent } from 'ngx-select-dropdown';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-gym',
@@ -11,7 +12,7 @@ export class GymComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  addSectionSelected='';
   addGymForm = false;
   isGymGridView = true;
   GymViewName = 'List View';
@@ -27,6 +28,16 @@ export class GymComponent implements OnInit {
 
    buildingName = "ABC Building";
 
+
+    gymCategories = ["Lifting", "Electrical" , "Mechancical"];
+    gymCategoryDropdownModel;
+    
+    gymSubCategories = ["Weight Lifting", "Chest Workout" , "Cardio"];
+    gymSubCategoryDropdownModel;
+
+    @ViewChild('gymCategoryDropdown')  gymCategoryDropdown: SelectDropDownComponent;
+    @ViewChild('gymSubCategoryDropdown')  gymSubCategoryDropdown: SelectDropDownComponent;
+
    changeGymView() {
     this.isGymGridView = !this.isGymGridView;
     if (this.isGymGridView) {
@@ -38,8 +49,8 @@ export class GymComponent implements OnInit {
     this.addGymForm = false;
 }
 
-addGym(itemName, img , itemCategory, itemSubcategory, itemDescription) {
-    this.GymItems.push({name: itemName, img:img, category: itemCategory, subcategory: itemSubcategory , description:itemDescription});
+addGym(itemName, img , itemDescription) {
+    this.GymItems.push({name: itemName, img:img, category: this.gymCategoryDropdownModel, subcategory: this.gymSubCategoryDropdownModel , description:itemDescription});
     this.isGymGridView = !this.isGymGridView;
     this.changeGymView();
 }
@@ -48,5 +59,21 @@ deleteGym(id){
     console.log(id);
     this.GymItems.splice(id,1);
 }
+
+
+onAdd(name:string)
+{
+    if(this.addSectionSelected=='Category')
+    {
+        this.gymCategories.push(name);
+        this.gymCategoryDropdown.availableItems.push(name);   
+    }
+    else if(this.addSectionSelected=='Subcategory')
+    {
+
+     this.gymSubCategories.push(name);
+     this.gymSubCategoryDropdown.availableItems.push(name);   
+    }
+
 
 }
