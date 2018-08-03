@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpecializedFacilityService } from '../../../../../../../../services/building-settings/specialized-facility.service';
 
 @Component({
   selector: 'app-games',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamesComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private specializedService: SpecializedFacilityService) 
+  {
+      this.gameRooms = this.specializedService.getGameRooms();
+   }
   ngOnInit() {
   }
 
@@ -17,14 +20,7 @@ export class GamesComponent implements OnInit {
   GameViewName = 'List View';
   visitType='Walkin';
   default_imgUrl = 'assets/app/media/img/custom/party-rooms/1.jpg';
-  gameRooms = [
-    {
-        name: "Table Tennis", img: 'assets/app/media/img/custom/games/1.jpg', category: 'indoor', allowed: 4 , visitType:"Walking", description: "Table Tennis Room"
-    },
-    {
-        name: 'Squash', img: 'assets/app/media/img/custom/games/2.jpg', category: 'indoor', allowed:5 , visitType:"Bookable", description: "Squash Room"
-    }
-   ];
+  gameRooms;
 
    buildingName = "ABC Building";
 
@@ -40,14 +36,14 @@ export class GamesComponent implements OnInit {
 }
 
 addGame(gameName, img , gameCategory, numberOfParticipants, gameDescription) {
-    this.gameRooms.push({name: gameName, img:img, category: gameCategory, allowed: numberOfParticipants , visitType:this.visitType, description:gameDescription});
+     this.specializedService.addGame(gameName , img , gameCategory , numberOfParticipants , this.visitType , gameDescription);
     this.isGameGridView = !this.isGameGridView;
     this.changeGameView();
     this.visitType = "Walkin";
 }
 
 deleteGame(id){
-    this.gameRooms.splice(id,1);
+    this.specializedService.deleteGame(id);
 }
 
 }

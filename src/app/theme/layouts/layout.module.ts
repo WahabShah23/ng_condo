@@ -2,7 +2,6 @@ import { AsideNavSpecializedComponent } from './aside-nav-specialized/aside-nav-
 import { AsideNavApartmentComponent } from './aside-nav-apartment/aside-nav-apartment.component';
 import { NgModule } from '@angular/core';
 import { LayoutComponent } from './layout/layout.component';
-
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { DefaultComponent } from '../pages/default/default.component';
 import { AsideNavComponent } from './aside-nav/aside-nav.component';
@@ -22,7 +21,7 @@ import { AsideNavStorageComponent } from './aside-nav-storage/aside-nav-storage.
 import { StorageComponent } from "../pages/custom_components/storage/storage.component";
 import { CustomRightSidebarComponent } from './custom-right-sidebar/custom-right-sidebar.component';
 import { AsideNavSettingsComponent } from './aside-nav-settings/aside-nav-settings.component';
-import { SettingsComponent } from "../pages/custom_components/settings/settings.component";
+import { SettingsComponent } from "../pages/custom_components/settings/settings/settings.component";
 import { AsideNavBuildingComponent } from './aside-nav-building/aside-nav-building.component';
 
 @NgModule({

@@ -22,6 +22,7 @@ import { DemoService } from "./services/demo.service";
 import { AmenitiesService } from "./services/amenities.service";
 import { InventoriesService } from "./services/inventories.service";
 import { RulesService } from "./services/rules.service";
+import { SpecializedFacilityService } from './services/building-settings/specialized-facility.service';
 
 
 
@@ -50,7 +51,7 @@ import { RulesService } from "./services/rules.service";
         })
     ],
     providers: [ScriptLoaderService, DemoService, AmenitiesService, InventoriesService, RulesService,
-    RoomsService],
+    RoomsService, SpecializedFacilityService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

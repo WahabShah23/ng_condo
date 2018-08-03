@@ -1,3 +1,4 @@
+import { SpecializedFacilityService } from './../../../../../../../../services/building-settings/specialized-facility.service';
 import { SelectDropDownComponent } from 'ngx-select-dropdown';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
@@ -8,21 +9,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class InventoryBuildingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private specializedService: SpecializedFacilityService) { }
 
   addSectionSelected='';
   addInventoryForm = false;
   isInventoryGridView = true;
   InventoryViewName = 'List View';
   default_imgUrl = 'assets/app/media/img/custom/inventories/placeholder.png';
-  Inventories = [
-    {
-        name: "Treadmill", img: 'assets/app/media/img/custom/inventories/treadmill-icon.png', inventoryCat: 'Fitness', inventorySubCat: 'Treadmill', brand: 'PEL', desc: 'desc'
-    },
-    {
-        name: 'Aid Kit', img: 'assets/app/media/img/custom/inventories/aid-kit.png', inventoryCat: 'Health', inventorySubCat: 'First Aid Kit', brand: 'GREE', desc: 'desc'
-    }
-   ];
+  Inventories;
 
    buildingName = "ABC Building";
 
@@ -46,7 +40,9 @@ export class InventoryBuildingComponent implements OnInit {
     @ViewChild('inventoryBrandDropdown')  inventoryBrandDropdown: SelectDropDownComponent;
 
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+      this.Inventories = this.specializedService.getInventories();
   }
   changeInventoryView() {
     this.isInventoryGridView = !this.isInventoryGridView;
@@ -61,14 +57,14 @@ export class InventoryBuildingComponent implements OnInit {
 
 addInventory(name: string, img: string, desc: string) 
 {
-    this.Inventories.push({name: name, img:img, inventoryCat: this.inventoryCategoryDropdownModel, inventorySubCat: this.inventorySubCategoryDropdownModel, brand: this.inventoryBrandDropdownModel, desc: desc });
+    this.specializedService.addInventory(name , img ,this.inventoryCategoryDropdownModel, this.inventorySubCategoryDropdownModel, this.inventoryBrandDropdownModel, desc);
     this.isInventoryGridView = !this.isInventoryGridView;
     this.changeInventoryView();
 }
 
-deleteInventory(id){
-    console.log(id);
-    this.Inventories.splice(id,1);
+deleteInventory(id)
+{
+        this.specializedService.deleteInventory(id);
 }
 
 

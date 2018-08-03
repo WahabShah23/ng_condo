@@ -1,3 +1,4 @@
+import { SpecializedFacilityService } from './../../../../../../../../services/building-settings/specialized-facility.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,24 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieTheatreComponent implements OnInit {
 
-  constructor() { }
+  constructor(private specializedService: SpecializedFacilityService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this.movieTheatres = this.specializedService.getMovieTheatre();  
   }
-
   
+
   addMovieTheatreForm = false;
   isMovieThreatreGridView = true;
   TheatreViewName = 'List View';
   default_imgUrl = 'assets/app/media/img/custom/movie-theatre/1.jpg';
-  movieTheatres = [
-    {
-        name: "Movie Theatre 1", img: 'assets/app/media/img/custom/movie-theatre/1.jpg', allowed: 4 , description: "Theatre Room for movies"
-    },
-    {
-        name: 'Movie Theatre 2', img: 'assets/app/media/img/custom/movie-theatre/1.jpg',  allowed:5 ,  description: "Theatre Room for documentaries"
-    }
-   ];
+  movieTheatres;
 
    buildingName = "ABC Building";
 
@@ -40,7 +36,8 @@ export class MovieTheatreComponent implements OnInit {
 }
 
 addTheatre(theatreName, img , theatreParticipants, theatreDescription) {
-    this.movieTheatres.push({name: theatreName, img:img,  allowed: theatreParticipants , description:theatreDescription});
+    // this.movieTheatres.push({name: theatreName, img:img,  allowed: theatreParticipants , description:theatreDescription});
+    this.specializedService.addTheatre(theatreName, img , theatreParticipants , theatreDescription);
     this.isMovieThreatreGridView = !this.isMovieThreatreGridView;
     this.changeGameView();
     
@@ -48,7 +45,7 @@ addTheatre(theatreName, img , theatreParticipants, theatreDescription) {
 
 deleteTheatre(id)
 {
-    this.movieTheatres.splice(id,1);
+    this.specializedService.deleteTheatre(id);
 }
 
 }

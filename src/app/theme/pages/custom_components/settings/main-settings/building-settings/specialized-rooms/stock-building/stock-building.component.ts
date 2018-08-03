@@ -1,3 +1,4 @@
+import { SpecializedFacilityService } from './../../../../../../../../services/building-settings/specialized-facility.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SelectDropDownComponent } from 'ngx-select-dropdown/dist/components';
 
@@ -8,23 +9,18 @@ import { SelectDropDownComponent } from 'ngx-select-dropdown/dist/components';
 })
 export class StockBuildingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private specializedService: SpecializedFacilityService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+      this.Stocks = this.specializedService.getStock();
   }
   addSectionSelected='';
   addStockForm = false;
   isStockGridView = true;
   StockViewName = 'List View';
   default_imgUrl = 'assets/app/media/img/custom/inventories/placeholder.png';
-  Stocks = [
-    {
-        name: "A4 Paper", img: 'assets/app/media/img/custom/stock/A4 Size Paper.jpg', stockCat: 'Printing Material', stockSubCat: 'A4 Size Paper.jpg', brand: 'PEL', desc: 'desc'
-    },
-    {
-        name: 'Biscuit', img: 'assets/app/media/img/custom/stock/biscuit.jpg', stockCat: 'Tuck Shop', stockSubCat: 'Buscuit', brand: 'GREE', desc: 'desc'
-    }
-   ];
+  Stocks;
 
    buildingName = "ABC Building";
 
@@ -58,15 +54,16 @@ stockBrandDropdownModel;
     this.addStockForm = false;
 }
 
-addStock(name: string, img: string, desc?: string) {
-    this.Stocks.push({name: name, img:img, stockCat: this.stockCategoryDropdownModel, stockSubCat: this.stockSubCategoryDropdownModel, brand: this.stockBrandDropdownModel, desc: desc });
+addStock(name: string, img: string, desc?: string) 
+{
+    this.specializedService.addStock(name, img, this.stockCategoryDropdownModel,  this.stockSubCategoryDropdownModel, this.stockBrandDropdownModel, desc );
     this.isStockGridView = !this.isStockGridView;
     this.changeStockView();
 }
 
-deleteStock(id){
-    console.log(id);
-    this.Stocks.splice(id,1);
+deleteStock(id)
+{
+    this.specializedService.deleteStock(id);
 }
 
 

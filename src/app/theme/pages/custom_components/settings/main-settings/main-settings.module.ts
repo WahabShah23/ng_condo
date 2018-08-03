@@ -1,22 +1,17 @@
 import { HotelsComponent } from './building-settings/hotels/hotels.component';
 import { ShopsComponent } from './building-settings/shops/shops.component';
-
-import { SettingsSpecializedComponent } from './../settings-specialized.component';
-
+import { SettingsSpecializedComponent } from '../settings-specialized/settings-specialized.component';
 import { InventorySettingsComponent } from './building-settings/apartment-settings/inventory-settings/inventory-settings.component';
-import { SettingsCondosComponent } from './../settings-condos.component';
+import { SettingsCondosComponent } from '../settings-condos/settings-condos.component';
 import { MainSettingsRouting } from './main-settings-routing.module';
-import { SettingsBuildingsComponent } from './../settings-building.component';
+import { SettingsBuildingsComponent } from '../settings-building/settings-building.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-
 import { FileUploadModule, SidebarModule } from 'primeng/primeng';
 import { SelectDropDownModule } from 'ngx-select-dropdown'
-
-
 import { LayoutModule } from '../../../../layouts/layout.module';
-import { SettingsComponent } from "../settings.component";
+import { SettingsComponent } from '../settings/settings.component';
 import { MainSettingsComponent } from "./main-settings.component"
 import { WizardBuildingComponent } from "../../../../../components/wizard-building/wizard-building.component";
 import { AmenitiesGlobalSettingsComponent } from './amenities-global-settings/amenities-global-settings.component';
@@ -29,8 +24,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
 import { StructureSettingsComponent } from './building-settings/apartment-settings/structure-settings/structure-settings.component';
 import { ItemGlobalSettingsComponent } from './item-global-settings/item-global-settings.component';
-import { InventoryBuildingComponent } from './building-settings/inventory-building/inventory-building.component';
-import { StockBuildingComponent } from './building-settings/stock-building/stock-building.component';
+import { InventoryBuildingComponent } from './building-settings/specialized-rooms/inventory-building/inventory-building.component';
+import { StockBuildingComponent } from './building-settings/specialized-rooms/stock-building/stock-building.component';
 import { SpecializedRoomsComponent } from './building-settings/specialized-rooms/specialized-rooms.component';
 import { ParkingComponent } from './building-settings/parking/parking.component';
 import { GymComponent } from './building-settings/specialized-rooms/gym/gym.component';
