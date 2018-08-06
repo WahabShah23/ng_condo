@@ -9,16 +9,16 @@
 			<div class="m-stack__item m-brand  m-brand--skin-dark">
 				<div class="m-stack m-stack--ver m-stack--general">
 					<div class="m-stack__item m-stack__item--middle m-brand__logo">
-						<a *ngIf="router == '/dashboard' || '/global' " routerLink="/dashboard" class="m-brand__logo-wrapper">
+						<a routerLink="/dashboard" class="m-brand__logo-wrapper"> <!-- [hidden]="!router == '/dashboard' || '/global' " -->
 							<!--<img alt="" src="./assets/app/media/img/logos/logo-citzen.png"/> -->
 							<img alt="" src="./assets/app/media/img/logos/condo.png"/>
 						</a>
-						<a *ngIf="router =='/connect'" routerLink="/connect" class="m-brand__logo-wrapper">
-							<img alt="" src="./assets/app/media/img/logos/support_desk.png"/>
-						</a>
-						<a *ngIf="router =='/storage'" routerLink="/storage" class="m-brand__logo-wrapper">
-							<img alt="" src="./assets/app/media/img/logos/storage.png"/>
-						</a>
+						<!--<a [hidden]="!router =='/connect'" routerLink="/connect" class="m-brand__logo-wrapper">-->
+							<!--<img alt="" src="./assets/app/media/img/logos/support_desk.png"/>-->
+						<!--</a>-->
+						<!--<a [hidden]="!router =='/storage'" routerLink="/storage" class="m-brand__logo-wrapper">-->
+							<!--<img alt="" src="./assets/app/media/img/logos/storage.png"/>-->
+						<!--</a>-->
 					</div>
 						<div class="m-stack__item m-stack__item--middle m-brand__tools">
 							<!-- BEGIN: Left Aside Minimize Toggle -->

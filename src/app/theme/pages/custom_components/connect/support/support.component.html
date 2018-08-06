@@ -530,6 +530,19 @@
                     </tr>
                     </tbody>
                 </table>
+
+                <hr>
+
+                <ul >
+                     <ng-container *ngFor="let issue of issues">
+
+
+                            <li> {{issue.name}} </li>
+                            <li> {{issue.email}} </li>
+                             <li *ngIf=""> {{issue.priority}} </li>
+                     </ng-container>
+                </ul>
+
             </div>
         </div>
     </div>
