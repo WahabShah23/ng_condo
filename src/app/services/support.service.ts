@@ -22,7 +22,7 @@ export class SupportService {
   // Uses http.Post to load data
   createTicket(email, name, subject, message, priority) {
 
-      return this.http.post('http://sharjeelkhan.ca/crm/admin/api/index_post', body.toString(), httpOptions);
+      return this.http.post('http://sharjeelkhan.ca/crm/admin/api/index_post', httpOptions); //body.toString(),
   }
 
 }

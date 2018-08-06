@@ -13,6 +13,9 @@ import { SupportService } from "../../../../../services/support.service";
 export class SupportComponent implements OnInit {
 
     public issues;
+
+    issue_count: number = 0;
+
     constructor( private _supportService: SupportService) { }
 
     ngOnInit() {
@@ -21,9 +24,10 @@ export class SupportComponent implements OnInit {
 
     getIssues() {
         this._supportService.getIssues().subscribe(
-            data => { this.issues = data, console.log(data) },
+            (data: any[]) => { this.issues = data; console.log(data); this.issue_count = data.length; },
             err => console.error(err),
             () => console.log('Done Fetching Data (i.e.Issues)')
+
         );
     }
 }

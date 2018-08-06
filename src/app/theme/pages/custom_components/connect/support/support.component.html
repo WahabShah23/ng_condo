@@ -136,7 +136,7 @@
                 <div class="col-xl-2">
                     <div class="m-widget14">
                         <div class="m-widget14__header">
-                            <h3 class="m-widget14__title m--font-danger">
+                            <h3 class="m-widget14__title m--font-accent">
                                 Open
                             </h3>
                             <span class="m-widget14__desc">
@@ -189,7 +189,7 @@
                 <div class="col-xl-2">
                     <div class="m-widget14">
                         <div class="m-widget14__header">
-                            <h3 class="m-widget14__title m--font-accent">
+                            <h3 class="m-widget14__title m--font-danger">
                                 Closed
                             </h3>
                             <span class="m-widget14__desc">
@@ -205,7 +205,7 @@
                                 Issues
                             </h3>
                             <span class="m-widget14__desc">
-								0
+								{{issue_count}}
 							</span>
                         </div>
                     </div>
@@ -535,11 +535,11 @@
 
                 <ul >
                      <ng-container *ngFor="let issue of issues">
-
-
-                            <li> {{issue.name}} </li>
-                            <li> {{issue.email}} </li>
-                             <li *ngIf=""> {{issue.priority}} </li>
+                         <li> {{issue.name}} </li>
+                         <li> {{issue.email}} </li>
+                         <li *ngIf="issue.priority == 1"> Low </li>
+                         <li *ngIf="issue.priority == 2"> Medium </li>
+                         <li *ngIf="issue.priority == 3"> High </li>
                      </ng-container>
                 </ul>
 
