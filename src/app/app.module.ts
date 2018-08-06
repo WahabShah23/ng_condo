@@ -22,6 +22,7 @@ import { DemoService } from "./services/demo.service";
 import { AmenitiesService } from "./services/amenities.service";
 import { InventoriesService } from "./services/inventories.service";
 import { RulesService } from "./services/rules.service";
+import { SupportService } from "./services/support.service";  // Our Support Service
 
 
 
@@ -49,8 +50,15 @@ import { RulesService } from "./services/rules.service";
             libraries: ['places']
         })
     ],
-    providers: [ScriptLoaderService, DemoService, AmenitiesService, InventoriesService, RulesService,
-    RoomsService],
+    providers: [
+        ScriptLoaderService,
+        DemoService,
+        AmenitiesService,
+        InventoriesService,
+        RulesService,
+        RoomsService,
+        SupportService],
+
     bootstrap: [AppComponent]
 })
 export class AppModule { }
