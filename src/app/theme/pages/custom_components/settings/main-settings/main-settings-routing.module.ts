@@ -11,20 +11,21 @@ import { PartyRoomsComponent } from './building-settings/specialized-rooms/party
 import { GymComponent } from './building-settings/specialized-rooms/gym/gym.component';
 import { ParkingComponent } from './building-settings/parking/parking.component';
 import { SpecializedRoomsComponent } from './building-settings/specialized-rooms/specialized-rooms.component';
-import { StockBuildingComponent } from './building-settings/stock-building/stock-building.component';
+import { StockBuildingComponent } from './building-settings/specialized-rooms/stock-building/stock-building.component';
 
 import { StructureSettingsComponent } from './building-settings/apartment-settings/structure-settings/structure-settings.component';
 
 import { InventorySettingsComponent } from './building-settings/apartment-settings/inventory-settings/inventory-settings.component';
-import { SettingsCondosComponent } from './../settings-condos.component';
+
+import { SettingsCondosComponent } from '../settings-condos/settings-condos.component';
 import { RoomSettingsComponent } from './building-settings/apartment-settings/room-settings/room-settings.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SettingsComponent } from './../settings.component';
+import { SettingsComponent } from '../settings/settings.component';
 import { AmenitiesGlobalSettingsComponent } from './amenities-global-settings/amenities-global-settings.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { SettingsBuildingsComponent } from './../settings-building.component';
+import { SettingsBuildingsComponent } from '../settings-building/settings-building.component';
 import { FloorSettingsComponent } from './building-settings/floor-settings/floor-settings.component';
 import { ApartmentSettingsComponent } from './building-settings/apartment-settings/apartment-settings.component';
 import { BillingServicesGlobalSettingsComponent } from './billing-services-global-settings/billing-services-global-settings.component';
@@ -32,9 +33,9 @@ import { CommonServicesGlobalSettingsComponent } from './common-services-global-
 import { BuildingSettingsComponent } from './building-settings/building-settings.component';
 import { MainSettingsComponent } from './main-settings.component';
 import { ItemGlobalSettingsComponent } from "./item-global-settings/item-global-settings.component";
-import { InventoryBuildingComponent } from './building-settings/inventory-building/inventory-building.component';
+import { InventoryBuildingComponent } from './building-settings/specialized-rooms/inventory-building/inventory-building.component';
 import { InventoriesService } from '../../../../../services/inventories.service';
-import { SettingsSpecializedComponent } from '../settings-specialized.component';
+import { SettingsSpecializedComponent } from '../settings-specialized/settings-specialized.component';
 import {RulesGlobalSettingsComponent} from "./rules-global-settings/rules-global-settings.component";
 import { GuestSuitesComponent } from './building-settings/guest-suites/guest-suites.component';
 import {AddRulesComponent} from "./rules-global-settings/add-rules/add-rules.component";

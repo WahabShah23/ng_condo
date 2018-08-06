@@ -1,3 +1,4 @@
+import { SpecializedFacilityService } from './../../../../../../../../services/building-settings/specialized-facility.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,24 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PoolComponent implements OnInit {
 
-  constructor() { }
+  constructor(private specializedService: SpecializedFacilityService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+      this.pools = this.specializedService.getPools();
   }
 
   addPoolForm = false;
   isPoolGridView = true;
   PoolViewName = 'List View';
   visitType='Splash Based';
-  default_imgUrl = 'assets/app/media/img/custom/party-rooms/1.jpg';
-  pools = [
-    {
-        name: "Pool 1", img: 'assets/app/media/img/custom/pools/1.jpg', allowed: 4 , visitType:"Lane Based", description: "The Swimming Pool"
-    },
-    {
-        name: 'Pool 2', img: 'assets/app/media/img/custom/pools/2.jpg', allowed:5 , visitType:"Splash Based", description: "The Swimming Poolssss"
-    }
-   ];
+  default_imgUrl = 'assets/app/media/img/custom/pools/1.jpg';
+  pools;
 
    buildingName = "ABC Building";
 
@@ -40,14 +36,13 @@ export class PoolComponent implements OnInit {
 }
 
 addPool(poolName, img , numberOfParticipants, poolDescription) {
-    this.pools.push({name: poolName, img:img,  allowed: numberOfParticipants , visitType:this.visitType, description:poolDescription});
+    this.specializedService.addPool(poolName , img , numberOfParticipants, this.visitType , poolDescription );
     this.isPoolGridView = !this.isPoolGridView;
-    this.changeGameView();
-    
+    this.changeGameView();    
 }
 
 deletePool(id){
-    this.pools.splice(id,1);
+    this.specializedService.deletePool(id);
 }
 
 }

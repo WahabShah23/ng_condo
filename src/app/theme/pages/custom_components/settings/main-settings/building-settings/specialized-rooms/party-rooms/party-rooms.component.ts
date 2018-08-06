@@ -1,3 +1,4 @@
+import { SpecializedFacilityService } from './../../../../../../../../services/building-settings/specialized-facility.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,22 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartyRoomsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private specializedFacility: SpecializedFacilityService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+      this.partyRooms = this.specializedFacility.getPartyRooms();
   }
   addPartyForm = false;
   isPartyGridView = true;
   PartyViewName = 'List View';
   default_imgUrl = 'assets/app/media/img/custom/party-rooms/1.jpg';
-  partyRooms = [
-    {
-        name: "Party Room 1", img: 'assets/app/media/img/custom/party-rooms/1.jpg', category: 'All', allowed: 100 , description: "Party Room for all occasions"
-    },
-    {
-        name: 'Birthday Party Room', img: 'assets/app/media/img/custom/party-rooms/2.jpg', category: 'Birthday Party', allowed:80 , description: "Room for bithday celebrations"
-    }
-   ];
+  partyRooms;
 
    buildingName = "ABC Building";
 
@@ -38,15 +34,13 @@ export class PartyRoomsComponent implements OnInit {
 }
 
 addParty(partyName, img , partyCategory, numberOfParticipants, roomDescription) {
-  console.log(numberOfParticipants);
-    this.partyRooms.push({name: partyName, img:img, category: partyCategory, allowed: numberOfParticipants , description:roomDescription});
+    this.specializedFacility.addParty(partyName ,img, partyCategory , numberOfParticipants , roomDescription);
     this.isPartyGridView = !this.isPartyGridView;
     this.changePartyView();
 }
 
 deleteParty(id){
-    console.log(id);
-    this.partyRooms.splice(id,1);
+    this.specializedFacility.deleteParty(id);
 }
 
 }

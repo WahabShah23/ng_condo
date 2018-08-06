@@ -283,7 +283,10 @@
                 Choose Floor:
             </label>
             <select class="form-control m-input m-input--air" type="text">
-                <option *ngFor="let item of floors" [value]="item">{{item}}</option>
+                <!-- <option *ngFor="let item of floors" [value]="item">{{item}}</option> -->
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
             </select>
         </div>
         <div class="form-group m-form__group">
@@ -292,25 +295,6 @@
             </label>
             <input type="number" min="0" class="form-control m-input m-input--air" id="floorCount">
         </div>
-
-        <div  class="m-form__group form-group">
-            <label for="">
-                Apartment Type:
-            </label>
-            <div  class="m-radio-inline">
-                <label  class="m-radio">
-                    <input  name="apartmentType" (change)="changeApartmentType()"  type="radio">
-                    Sellable
-                    <span ></span>
-                </label>
-                <label  class="m-radio">
-                    <input checked name="apartmentType" (change)="changeApartmentType()"   type="radio">
-                    Rentable
-                    <span ></span>
-                </label>
-            </div>
-        </div>
-
 
         <div  class="m-form__group form-group custom-width-100">
             <label>Apartment Group:</label>
@@ -321,6 +305,27 @@
             </select>
         </div>
 
+
+        <div  class="m-form__group form-group">
+            <label for="">
+                Apartment Type:
+            </label>
+            <div  class="m-radio-inline">
+                <label  class="m-radio m-radio--solid m-radio--brand">
+                    <input  name="apartmentType" (change)="changeApartmentType()"  type="radio">
+                    Sellable
+                    <span ></span>
+                </label>
+                <label  class="m-radio m-radio--solid m-radio--brand">
+                    <input checked name="apartmentType" (change)="changeApartmentType()"   type="radio">
+                    Rentable
+                    <span ></span>
+                </label>
+            </div>
+        </div>
+
+
+      
         <div  class="d-flex align-items-center" *ngIf="!isRental">
             <div  class="mr-auto m-form__group form-group custom-width-100">
                     <label>Owner:</label>
@@ -331,7 +336,7 @@
                     </select>
                 </div>
                 <button  class="btn btn-link m--margin-top-15">
-                    <i  class="fa fa-plus"> Add Ownder</i>
+                    <i  class="fa fa-plus"> Add Owner</i>
                 </button>
       </div>
 

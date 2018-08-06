@@ -1,3 +1,4 @@
+import { SpecializedFacilityService } from './../../../../../../../../services/building-settings/specialized-facility.service';
 import { SelectDropDownComponent } from 'ngx-select-dropdown';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
@@ -8,23 +9,18 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class GymComponent implements OnInit {
 
-  constructor() { }
+  constructor(private specializedService: SpecializedFacilityService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+     this.GymItems = this.specializedService.getGymItems();
   }
   addSectionSelected='';
   addGymForm = false;
   isGymGridView = true;
   GymViewName = 'List View';
   default_imgUrl = 'assets/app/media/img/custom/gym/dumbbell.jpg';
-  GymItems = [
-    {
-        name: "Dumbbells", img: 'assets/app/media/img/custom/gym/dumbbell.jpg', category: 'Lifting', subcategory: 'Weight Lifting', description: 'Very High Quality Dumbbells For Building Muscles'
-    },
-    {
-        name: 'Bench', img: 'assets/app/media/img/custom/gym/bench.png', category: 'subcategory', subcategory: 'Chest Workout' , description: 'Intense Chest Building Instrument'
-    }
-   ];
+  GymItems;
 
    buildingName = "ABC Building";
 
@@ -50,14 +46,14 @@ export class GymComponent implements OnInit {
 }
 
 addGym(itemName, img , itemDescription) {
-    this.GymItems.push({name: itemName, img:img, category: this.gymCategoryDropdownModel, subcategory: this.gymSubCategoryDropdownModel , description:itemDescription});
+    this.specializedService.addGym(itemName , img , this.gymCategoryDropdownModel, this.gymSubCategoryDropdownModel, itemDescription );
     this.isGymGridView = !this.isGymGridView;
     this.changeGymView();
 }
 
-deleteGym(id){
-    console.log(id);
-    this.GymItems.splice(id,1);
+deleteGym(id)
+{
+    this.specializedService.deleteGym(id);
 }
 
 
@@ -75,5 +71,7 @@ onAdd(name:string)
      this.gymSubCategoryDropdown.availableItems.push(name);   
     }
 
+
+}
 
 }

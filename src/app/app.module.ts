@@ -23,6 +23,7 @@ import { AmenitiesService } from "./services/amenities.service";
 import { InventoriesService } from "./services/inventories.service";
 import { RulesService } from "./services/rules.service";
 import { SupportService } from "./services/support.service";  // Our Support Service
+import { SpecializedFacilityService } from './services/building-settings/specialized-facility.service';
 
 
 
@@ -57,7 +58,9 @@ import { SupportService } from "./services/support.service";  // Our Support Ser
         InventoriesService,
         RulesService,
         RoomsService,
-        SupportService],
+        SupportService,
+        SpecializedFacilityService
+    ],
 
     bootstrap: [AppComponent]
 })
