@@ -140,7 +140,7 @@
                                 Open
                             </h3>
                             <span class="m-widget14__desc">
-								0
+								{{issue_count}}
 							</span>
                         </div>
                     </div>
@@ -202,7 +202,7 @@
                     <div class="m-widget14">
                         <div class="m-widget14__header">
                             <h3 class="m-widget14__title m--font-info">
-                                Issues
+                                All Issues
                             </h3>
                             <span class="m-widget14__desc">
 								{{issue_count}}
@@ -429,12 +429,12 @@
                     <tr>
                         <th>#</th>
                         <th>Tags</th>
-                        <th>Department</th>
-                        <th>Subject</th>
-                        <th>Tags</th>
+                        <th>Name</th>
+                        <th> Email </th>
+                        <th>Subject </th>
                         <th>Department</th>
                         <th>Service</th>
-                        <th>Customer</th>
+                        <th>Date</th>
                         <th>Status</th>
                         <th>Priority</th>
                         <!--<th>last Reply</th>-->
@@ -443,24 +443,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr role="row" class="odd">
+                    <tr role="row" *ngFor="let issue of issues; let i = index;" [ngClass]="{'even': i%2 === 0, 'odd':i%2 !== 0 }">
                         <td class="sorting_1">
-                            1
+                            {{i +1}}
                         </td>
                         <td>
                             61715-075
                         </td>
                         <td>
-                            China
+                            {{issue.name}}
                         </td>
                         <td>
-                            Tieba
+                            {{issue.email}}
                         </td>
                         <td>
-                            746 Pine View Junction
+                            {{issue.subject}}
                         </td>
                         <td>
-                            Nixie Sailor
+                            Support
                         </td>
                         <td>
                             Gleichner, Ziemann and Gutkowski
@@ -468,8 +468,19 @@
                         <td>
                             2/12/2018
                         </td>
-                        <td><span class="m-badge  m-badge--primary m-badge--wide">Canceled</span></td>
-                        <td><span class="m-badge m-badge--primary m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-primary">Retail</span></td>
+                        <td><span class="m-badge m-badge--accent m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-accent">Open</span></td>
+
+                        <!--<td><span class="m-badge  m-badge&#45;&#45;wide"-->
+                                  <!--[ngClass]="{'m-badge&#45;&#45;primary': issue.priority == 1,-->
+                                              <!--'m-badge&#45;&#45;warning': issue.priority == 2,-->
+                                              <!--'m-badge&#45;&#45;danger': issue.priority == 3 }" value="abc">{{}}</span></td>-->
+
+                        <td *ngIf="issue.priority == 1" ><span class="m-badge  m-badge--wide m-badge--primary" > Low </span></td>
+                        <td *ngIf="issue.priority == 2" ><span class="m-badge  m-badge--wide m-badge--warning" > Medium </span></td>
+                        <td *ngIf="issue.priority == 3" ><span class="m-badge  m-badge--wide m-badge--danger" > High </span></td>
+
+                        <!--<td><span class="m-badge  m-badge m-badge wide m-badge&#45;&#45;primary">Cancelled</span></td>-->
+
                         <td nowrap="">
                             <span class="dropdown">
                                 <a href="#" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" aria-expanded="true">
@@ -486,62 +497,63 @@
                             </a>
                         </td>
                     </tr>
-                    <tr role="row" class="even">
-                        <td class="sorting_1">
-                            2
-                        </td>
-                        <td>
-                            63629-4697
-                        </td>
-                        <td>
-                            Indonesia
-                        </td>
-                        <td>
-                            Cihaur
-                        </td>
-                        <td>
-                            01652 Fulton Trail
-                        </td>
-                        <td>
-                            Emelita Giraldez
-                        </td>
-                        <td>
-                            Rosenbaum-Reichel
-                        </td>
-                        <td>
-                            8/6/2017
-                        </td>
-                        <td><span class="m-badge  m-badge--danger m-badge--wide">Danger</span></td>
-                        <td><span class="m-badge m-badge--accent m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-accent">Direct</span></td>
-                        <td nowrap="">
-                            <span class="dropdown">
-                                <a href="#" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" aria-expanded="true">
-                                  <i class="la la-ellipsis-h"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="la la-edit"></i> Edit Details</a>
-                                    <a class="dropdown-item" href="#"><i class="la la-leaf"></i> Update Status</a>
-                                    <a class="dropdown-item" href="#"><i class="la la-print"></i> Generate Report</a>
-                                </div>
-                            </span>
-                            <a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
-                                <i class="la la-edit"></i>
-                            </a></td>
-                    </tr>
+                    <!--<tr role="row" class="even">-->
+                        <!--<td class="sorting_1">-->
+                            <!--2-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--63629-4697-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--Indonesia-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--Cihaur-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--01652 Fulton Trail-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--Emelita Giraldez-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--Rosenbaum-Reichel-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--8/6/2017-->
+                        <!--</td>-->
+                        <!--<td><span class="m-badge  m-badge&#45;&#45;danger m-badge&#45;&#45;wide">Danger</span></td>-->
+                        <!--<td><span class="m-badge m-badge&#45;&#45;accent m-badge&#45;&#45;dot"></span>&nbsp;<span class="m&#45;&#45;font-bold m&#45;&#45;font-accent">Direct</span></td>-->
+                        <!--<td nowrap="">-->
+                            <!--<span class="dropdown">-->
+                                <!--<a href="#" class="btn m-btn m-btn&#45;&#45;hover-brand m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;pill" data-toggle="dropdown" aria-expanded="true">-->
+                                  <!--<i class="la la-ellipsis-h"></i>-->
+                                <!--</a>-->
+                                <!--<div class="dropdown-menu dropdown-menu-right">-->
+                                    <!--<a class="dropdown-item" href="#"><i class="la la-edit"></i> Edit Details</a>-->
+                                    <!--<a class="dropdown-item" href="#"><i class="la la-leaf"></i> Update Status</a>-->
+                                    <!--<a class="dropdown-item" href="#"><i class="la la-print"></i> Generate Report</a>-->
+                                <!--</div>-->
+                            <!--</span>-->
+                            <!--<a href="#" class="m-portlet__nav-link btn m-btn m-btn&#45;&#45;hover-brand m-btn&#45;&#45;icon m-btn&#45;&#45;icon-only m-btn&#45;&#45;pill" title="View">-->
+                                <!--<i class="la la-edit"></i>-->
+                            <!--</a></td>-->
+                    <!--</tr>-->
+
                     </tbody>
                 </table>
 
-                <hr>
+                <!--<hr>-->
 
-                <ul >
-                     <ng-container *ngFor="let issue of issues">
-                         <li> {{issue.name}} </li>
-                         <li> {{issue.email}} </li>
-                         <li *ngIf="issue.priority == 1"> Low </li>
-                         <li *ngIf="issue.priority == 2"> Medium </li>
-                         <li *ngIf="issue.priority == 3"> High </li>
-                     </ng-container>
-                </ul>
+                <!--<ul >-->
+                     <!--<ng-container *ngFor="let issue of issues">-->
+                         <!--<li> {{issue.name}} </li>-->
+                         <!--<li> {{issue.email}} </li>-->
+                         <!--<li *ngIf="issue.priority == 1"> Low </li>-->
+                         <!--<li *ngIf="issue.priority == 2"> Medium </li>-->
+                         <!--<li *ngIf="issue.priority == 3"> High </li>-->
+                     <!--</ng-container>-->
+                <!--</ul>-->
 
             </div>
         </div>
@@ -567,29 +579,61 @@
                 </button>
             </div>
             <div class="modal-body">
-                <!--<form>-->
-                <!--<div class="form-group">-->
-                <!--<label class="form-control-label" for="support-recipient-name">-->
-                <!--Recipient:-->
-                <!--</label>-->
-                <!--<input class="form-control" id="support-recipient-name" type="text">-->
+                <form novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+                    <div class="form-group">
+                        <label class="form-control-label" for="support-email">
+                            Email:
+                        </label>
+                        <input class="form-control form-control-md m-input m-input--air"
+                               type="email"
+                               id="support-email"
+                               name="f_email"
+                               ngModel
+                               required
+                               pattern="[^ @]*@[^ @]*">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="support-name">
+                            Recipient Name:
+                        </label>
+                        <input class="form-control form-control-md m-input m-input--air" id="support-name" name="f_name" ngModel type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="support-subject">
+                            Subject:
+                        </label>
+                        <input class="form-control form-control-md m-input m-input--air" id="support-subject" name="f_subject" ngModel type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="support-priority">
+                            Priority:
+                        </label>
+                        <select class="form-control m-input m-input--air" type="text" name="f_priority" ngModel id="support-priority">
+                            <option selected value="1"> Low </option>
+                            <option value="2"> Medium </option>
+                            <option value="3"> High </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="support-message">
+                            Message:
+                        </label>
+                        <textarea class="form-control form-control-md m-input m-input--air" id="support-message" name="f_message" ngModel></textarea>
+                    </div>
+                    <button class="btn btn-primary" [disabled]="f.invalid" type="submit">
+                        Submit
+                    </button>
+                </form>
+
+                <!--<div class="col-md-6 col-md-offset-3">-->
+                    <!--<iframe width="600" height="850" src="http://intranet.citzen.one/crm/forms/ticket" frameborder="0" allowfullscreen></iframe>-->
                 <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<label class="form-control-label" for="support-message-text">-->
-                <!--Message:-->
-                <!--</label>-->
-                <!--<textarea class="form-control" id="support-message-text"></textarea>-->
-                <!--</div>-->
-                <!--</form>-->
-                <div class="col-md-6 col-md-offset-3">
-                    <iframe width="600" height="850" src="http://intranet.citzen.one/crm/forms/ticket" frameborder="0" allowfullscreen></iframe>
-                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">
                     Close
                 </button>
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-primary"  type="button">
                     Submit
                 </button>
             </div>

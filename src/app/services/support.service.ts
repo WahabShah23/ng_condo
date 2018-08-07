@@ -21,8 +21,14 @@ export class SupportService {
 
   // Uses http.Post to load data
   createTicket(email, name, subject, message, priority) {
+      let body = new FormData();
+      body.append('email', email);
+      body.append('name', name);
+      body.append('subject', subject);
+      body.append('message', message);
+      body.append('priority', priority);
 
-      return this.http.post('http://sharjeelkhan.ca/crm/admin/api/index_post', httpOptions); //body.toString(),
+      return this.http.post('http://sharjeelkhan.ca/crm/admin/api/index_post', body); //body.toString(),
   }
 
 }
