@@ -1,3 +1,4 @@
+import { OwnerRolesSettings } from './../owners-roles-settings/owners-roles-settings.component';
 import { HotelsComponent } from './building-settings/hotels/hotels.component';
 import { ShopsComponent } from './building-settings/shops/shops.component';
 import { SettingsSpecializedComponent } from '../settings-specialized/settings-specialized.component';
@@ -42,6 +43,8 @@ import { PoolComponent } from './building-settings/specialized-rooms/pool/pool.c
 import { MovieTheatreComponent } from './building-settings/specialized-rooms/movie-theatre/movie-theatre.component';
 import { LoungeComponent } from './building-settings/specialized-rooms/lounge/lounge.component';
 import { MeetingRoomsComponent } from './building-settings/meeting-rooms/meeting-rooms.component';
+import { RolesComponent } from './roles/roles.component';
+import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.component';
 
 
 
@@ -89,7 +92,10 @@ import { MeetingRoomsComponent } from './building-settings/meeting-rooms/meeting
         PoolComponent,
         MovieTheatreComponent,
         LoungeComponent,
-        MeetingRoomsComponent
+        MeetingRoomsComponent,
+        RolesComponent,
+        OwnerRolesSettings,
+        OwnersRolesComponent
     ],
 
 })

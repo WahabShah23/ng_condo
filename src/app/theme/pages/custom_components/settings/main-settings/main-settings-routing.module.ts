@@ -1,3 +1,6 @@
+import { OwnerRolesSettings } from './../owners-roles-settings/owners-roles-settings.component';
+import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.component';
+import { RolesComponent } from './roles/roles.component';
 import { MeetingRoomsComponent } from './building-settings/meeting-rooms/meeting-rooms.component';
 import { LoungeComponent } from './building-settings/specialized-rooms/lounge/lounge.component';
 import { MovieTheatreComponent } from './building-settings/specialized-rooms/movie-theatre/movie-theatre.component';
@@ -96,9 +99,24 @@ const routes: Routes = [
                         'component': AddRulesComponent
                     }
                 ]
-            }
-
+            },
+            //Roles
+            {
+                'path': 'roles',
+                'component': RolesComponent
+            },  
+            
         ],
+    },
+    {
+        'path': 'roles/invite',
+        'component': OwnerRolesSettings,
+        'children': [
+            {
+                'path': '',
+                'component': OwnersRolesComponent
+            }
+        ]
     },
     {
         'path': 'buildings/:id',

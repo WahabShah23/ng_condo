@@ -23,6 +23,7 @@ import { CustomRightSidebarComponent } from './custom-right-sidebar/custom-right
 import { AsideNavSettingsComponent } from './aside-nav-settings/aside-nav-settings.component';
 import { SettingsComponent } from "../pages/custom_components/settings/settings/settings.component";
 import { AsideNavBuildingComponent } from './aside-nav-building/aside-nav-building.component';
+import { AsideNavOwndersRolesSettingsComponent } from './aside-nav-owners-roles-settings/aside-nav-owners-roles-settings.component';
 
 @NgModule({
     declarations: [
@@ -48,7 +49,8 @@ import { AsideNavBuildingComponent } from './aside-nav-building/aside-nav-buildi
         AsideNavSettingsComponent,
         AsideNavBuildingComponent,
         AsideNavApartmentComponent,
-        AsideNavSpecializedComponent
+        AsideNavSpecializedComponent,
+        AsideNavOwndersRolesSettingsComponent
     ],
     exports: [
         LayoutComponent,
@@ -69,7 +71,9 @@ import { AsideNavBuildingComponent } from './aside-nav-building/aside-nav-buildi
         CustomRightSidebarComponent,
         AsideNavBuildingComponent,
         AsideNavApartmentComponent,
-        AsideNavSpecializedComponent
+        AsideNavSpecializedComponent,
+
+        AsideNavOwndersRolesSettingsComponent
     ],
     imports: [
         CommonModule,

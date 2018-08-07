@@ -1,0 +1,295 @@
+<div class="m-content">
+<div class="row "> 
+<div class="col-lg-3 col-md-12 whiteBackgroundFormCard">
+   <h3 class="text-center text-muted">Invite Member Form</h3>
+   <div class="form-group">
+        <select class="form-control edited" #inviteTypeSelect  (change)="onInviteSelect(inviteTypeSelect.value)">
+            <!-- <option></option> -->
+            <option selected="" value="individual">Invite Individual</option>
+            <option value="company">Invite Company</option>
+        </select>
+        <label class="colorBlack"></label>
+     </div>
+
+     <div  class="m-form__group form-group">
+            <label  for="">
+                Title:
+            </label>
+            <div  class="m-radio-inline">
+                <label  class="m-radio m-radio--solid m-radio--brand">
+                    <input  name="apartmentType" type="radio">
+                    Mr
+                    <span ></span>
+                </label>
+                <label  class="m-radio m-radio--solid m-radio--brand">
+                    <input  checked="" name="apartmentType" type="radio">
+                    Mrs.
+                    <span ></span>
+                </label>
+
+                <label  class="m-radio m-radio--solid m-radio--brand">
+                        <input  checked="" name="apartmentType" type="radio">
+                        Ms.
+                        <span ></span>
+                    </label>
+            </div>
+        </div>
+
+        <div class="m-form__group form-group">
+                <label>Relation</label>
+                <select class="form-control m-input m-input--air" >
+                    <option></option>
+                    <option>Father</option>
+                    <option>Son</option>
+                    <option>Mother</option>
+                    <option>Daughter</option>
+                </select>
+                
+        </div>
+
+        <div class="m-form__group form-group" *ngIf="!isIndividual">
+                <label>Company Name</label>
+                <input type="text" class="form-control m-input m-input--air" >
+        </div>
+
+        <div class="m-form__group form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control m-input m-input--air" >
+        </div>
+
+        <div class="m-form__group form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control m-input m-input--air" >
+        </div>
+
+        <div class="m-form__group form-group">
+                <label>Email</label>
+                <input type="email" class="form-control m-input m-input--air" >
+        </div>
+
+        <div class="m-form__group form-group">
+                <label>Phone</label>
+                <input type="text" class="form-control m-input m-input--air" >
+        </div>
+
+
+        <div class="m-form__group form-group">
+                <label class="colorBlack">Username</label>
+                <select class="form-control m-input m-input--air" >
+                    <option></option>
+                    <option>John Wick</option>
+                    <option>Niaz Khan</option>
+                </select>
+                
+        </div>
+
+
+        <div class="m-form__group form-group">
+                <label class="colorBlack">Family Domain Name</label>
+                <select class="form-control m-input m-input--air" >
+                    <option></option>
+                    <option>Wick</option>
+                    <option>Khan</option>
+                </select>
+                
+        </div>
+
+        <div  class="m-form__group form-group">
+                
+                <div  class="m-radio-inline">
+                    <label  class="m-radio m-radio--solid m-radio--brand">
+                        <input checked  name="roleType" type="radio">
+                        Role
+                        <span ></span>
+                    </label>
+                    <label  class="m-radio m-radio--solid m-radio--brand">
+                        <input   name="roleType" type="radio">
+                        Individual
+                        <span ></span>
+                    </label>
+                 </div>
+            </div>
+
+
+            <div class="m-form__group form-group">
+                    <!-- <label class="pull-left">Role </label>     -->
+                <input type="text" class="form-control m-input m-input--air" >
+                    <a (click)="openGroupSelectBar()"><i class="fa fa-plus pull-right"  style="cursor:pointer;margin-top: -28px;font-size: 20px;margin-right: 12px;"></i></a>
+                </div>
+                <div class="m-form__group form-group">
+                <div  class="m-checkbox-list">
+                        <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
+                            <input  type="checkbox">
+                            Set Password
+                            <span ></span>
+                        </label>
+                        <label  class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                            <input  type="checkbox">
+                            Make Member
+                            <span ></span>
+                        </label>
+                        <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
+                            <input   type="checkbox">
+                            Set Relationship
+                            <span ></span>
+                        </label>
+                        <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
+                            <input   type="checkbox">
+                            Work Location
+                            <span ></span>
+                        </label>
+                        
+                    </div>
+                </div>
+
+                    <div class="row">
+                            <div class="col-md-6">
+                                <div class="m-form__group form-group">
+                                        <label>Password </label>
+                                    <input type="text" class="form-control m-input m-input--air" >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="m-form__group form-group">
+                                        <label  >Re Password</label>
+                                    <input type="text" class="form-control m-input m-input--air">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                                <div class="col-sm-4 offset-sm-3">
+                                     <div class="btn btn-primary" >Add Member</div>
+                                </div>
+                        </div>
+
+
+</div>
+
+<div class="col-lg-4 col-md-12 whiteBackgroundFormCard" style="margin: 0px 4px;" *ngIf="isGroupSelect">
+        <button class="btn btn-link" (click)="backFromGroupSelect()" style="padding-left: 0px;" ><i class="fa fa-chevron-left" aria-hidden="true"></i><span style=" text-transform: capitalize;">Back</span></button>
+        <div class="row text-center">
+                        <div class="col-md-1">
+                            <i class="fa fa-check" ></i>
+                        </div>
+                        <div class="col-md-2">
+                         <strong> Role</strong> 
+                       </div>
+                        <div class="col-md-3">
+                            <strong>Members </strong>
+                        </div>
+                        <div class="col-md-3">
+                            <strong> Date </strong>
+                        </div>
+                        <div class="col-md-2">
+                            <strong> Access </strong>
+                        </div>
+                
+        </div>
+        <div class="row text-center">
+
+                    <div class="col-md-1">
+                            <label class="m-checkbox m-checkbox--solid  m-checkbox--brand">
+                                    <input  type="checkbox">
+                                    <span ></span>
+                            </label>
+                    </div>
+                    <div class="col-md-2">
+                            <p>Building Owners</p>
+                      </div>
+                      <div class="col-md-3">
+                         <p> <i class="fa fa-users"></i></p>
+                      </div>
+                      <div class="col-md-3">
+                          6/10/2017
+                      </div>
+                      <div class="col-md-2">
+                            <a (click)="openSectionSelectBar()"><i class="fa fa-key" ></i></a>
+                      </div>
+                
+            </div>
+
+            <div class="row text-center">
+
+                    <div class="col-md-1">
+                            <label class="m-checkbox m-checkbox--solid  m-checkbox--brand">
+                                    <input  type="checkbox">
+                                    <span ></span>
+                            </label>
+                    </div>
+                    <div class="col-md-2">
+                            <p>Building Management</p>
+                      </div>
+                      <div class="col-md-3">
+                         <p> <i class="fa fa-users"></i></p>
+                      </div>
+                      <div class="col-md-3">
+                          6/10/2017
+                      </div>
+                      <div class="col-md-2">
+                            <a (click)="openSectionSelectBar()"><i class="fa fa-key"></i></a>
+                      </div>
+                
+            </div>
+            <button class="btn btn-sm btn-info" >Make Member</button>
+</div>
+
+<div class="col-lg-3 col-md-12 whiteBackgroundFormCard"   *ngIf="isSectionSelect">
+        <button (click)="backFromSectionSelect()"  class="btn btn-link" style="padding-left: 0px;"><i  aria-hidden="true" class="fa fa-chevron-left"></i><span  style=" text-transform: capitalize;">Back</span></button>
+
+        <div class="m-form__group form-group">
+                <label>Select Section</label>
+                <select class="form-control m-input m-input--air" >
+                    <optgroup label="Building">
+                        <option>Building (whole)</option>
+                        <option>Floor</option>
+                        <option>Condo</option>
+                        <option>Parking</option>
+                        <option>Guest Suites</option>
+                        <option>Shops</option>
+                    </optgroup>
+
+                    <optgroup label="Specialized Facility">
+                            <option>Specialized Facility (whole)</option>
+                            <option>Inventory</option>
+                            <option>Stocks</option>
+                            <option>Gym</option>
+                            <option>Party Rooms</option>
+                            <option>Games</option>
+                        </optgroup>
+
+                    
+                </select>
+        </div>
+
+        <div  class="m-form__group form-group">
+                <div  class="m-checkbox-inline">
+                        <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
+                            <input type="checkbox">
+                            Edit
+                            <span ></span>
+                        </label>
+                        <label  class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                            <input type="checkbox">
+                            View
+                            <span ></span>
+                        </label>
+                        <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
+                            <input  type="checkbox">
+                            Delete
+                            <span ></span>
+                        </label>
+                    
+                        
+                    </div>
+                </div>
+
+                <button class="btn btn-sm btn-info" >Apply</button>
+</div>
+
+
+
+</div>
+
+</div>

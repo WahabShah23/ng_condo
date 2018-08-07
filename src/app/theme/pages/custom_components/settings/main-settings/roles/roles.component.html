@@ -1,0 +1,62 @@
+
+<div class="m-content">
+  
+    <!-- <a href="#" (click)='onAnimate()' class="btn btn-sm btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
+        <i class="la la-angle-down"></i>
+    </a> -->
+    <div class="row" style="height: 100%;">
+            
+            <div class="verticals" id="vertical_1" >
+                    <button routerLink="invite" class="btn btn-primary text-center" style="margin:0px 35%">Invite</button>
+                <div class="innerCards stackEffect active_card" id="card1">
+                    <h6 class="innerCardsTitle m-menu__link-text">Roles And Permissions</h6>
+                </div>
+            </div>
+
+            <div class="verticals" id="vertical_2">
+              
+                <div class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
+                    <h6 class="innerCardsTitle m-menu__link-text">Niaz Khan</h6>
+                     
+                    <a routerLink="invite"><i class="fa fa-expand text-muted pull-right c-expand-icon" ></i></a>
+                </div>
+
+                <div class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
+                        <h6 class="innerCardsTitle m-menu__link-text">Jane Khan</h6>
+                         
+                        <a routerLink="invite"><i class="fa fa-expand text-muted pull-right c-expand-icon" ></i></a>
+                    </div>
+
+                <!-- <div class="innerCards stackEffect" id="card8"
+                     [ngClass]="(className === 'building' || className == 'floor' || className == 'apartment' || className == 'amenities') ? 'active_card': 'non_active_card'">
+                    <h6 class="innerCardsTitle m-menu__link-text">Building Management(s)</h6>
+                    <a routerLink="buildings"> <i class="fa fa-expand text-muted pull-right c-expand-icon"  ></i> </a>
+                
+                </div>
+
+           
+
+                <div class="innerCards stackEffect" id="card5" [ngClass]="className === 'amenities_global' ? 'active_card': 'non_active_card'">
+                    <h6 class="innerCardsTitle m-menu__link-text">Apartment Owners(s)</h6>
+                 
+                    <a routerLink="amenities"> <i class="fa fa-expand text-muted pull-right c-expand-icon"  ></i></a>
+                </div>
+
+
+                <div class="innerCards stackEffect" id="card7" [ngClass]="className === 'billing-services_global' ? 'active_card': 'non_active_card'">
+                    <h6 class="innerCardsTitle m-menu__link-text">Apartment Tenant(s)</h6>
+                  
+                    <a routerLink="services-global"> <i class="fa fa-expand text-muted pull-right c-expand-icon"  ></i> </a>
+                </div> -->
+
+            </div>
+
+          
+           
+
+    </div>
+</div>
+
+<p-sidebar [(visible)]="visibleSidebar5" [fullScreen]="true" [baseZIndex]="10000">
+
+</p-sidebar>
