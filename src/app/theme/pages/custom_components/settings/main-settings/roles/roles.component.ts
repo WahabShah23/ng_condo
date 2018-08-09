@@ -1,3 +1,4 @@
+import { RolesService } from './../../../../../../auth/_services/roles.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RolesComponent implements OnInit {
 
-  constructor() { }
+  roles = [];
+  constructor(private rolesService: RolesService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this.roles = this.rolesService.getRoles();
   }
 
 }

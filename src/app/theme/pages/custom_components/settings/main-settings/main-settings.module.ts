@@ -45,6 +45,9 @@ import { LoungeComponent } from './building-settings/specialized-rooms/lounge/lo
 import { MeetingRoomsComponent } from './building-settings/meeting-rooms/meeting-rooms.component';
 import { RolesComponent } from './roles/roles.component';
 import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.component';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
+import { RoleDetailComponent } from './roles/role-detail/role-detail.component';
+
 
 
 
@@ -54,7 +57,8 @@ import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.componen
 @NgModule({
     imports: [
         CommonModule, LayoutModule,
-        FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule , MainSettingsRouting, FormsModule
+        FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule , MainSettingsRouting, FormsModule,
+        AngularMultiSelectModule
     ], exports: [
     ], declarations: [
         MainSettingsComponent,
@@ -95,7 +99,8 @@ import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.componen
         MeetingRoomsComponent,
         RolesComponent,
         OwnerRolesSettings,
-        OwnersRolesComponent
+        OwnersRolesComponent,
+        RoleDetailComponent
     ],
 
 })

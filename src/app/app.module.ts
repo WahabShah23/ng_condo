@@ -1,3 +1,4 @@
+import { RolesService } from './auth/_services/roles.service';
 import { RoomsService } from './services/roomsServices.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -24,6 +25,8 @@ import { InventoriesService } from "./services/inventories.service";
 import { RulesService } from "./services/rules.service";
 import { SupportService } from "./services/support.service";  // Our Support Service
 import { SpecializedFacilityService } from './services/building-settings/specialized-facility.service';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
+
 
 
 
@@ -46,6 +49,7 @@ import { SpecializedFacilityService } from './services/building-settings/special
         AuthModule,
         ReactiveFormsModule,
         FormsModule,
+        AngularMultiSelectModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyB95P4UOlcThWmtfkx7g4rGmzmKtomZoAc',
             libraries: ['places']
@@ -59,7 +63,8 @@ import { SpecializedFacilityService } from './services/building-settings/special
         RulesService,
         RoomsService,
         SupportService,
-        SpecializedFacilityService
+        SpecializedFacilityService,
+        RolesService
     ],
 
     bootstrap: [AppComponent]

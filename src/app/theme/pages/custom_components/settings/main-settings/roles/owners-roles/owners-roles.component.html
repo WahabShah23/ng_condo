@@ -11,7 +11,50 @@
         <label class="colorBlack"></label>
      </div>
 
-     <div  class="m-form__group form-group">
+   
+
+         <div class="d-flex align-items-center" *ngIf="!isIndividual">
+            <div class="form-group m-form__group mr-auto custom-width-100">
+                    <label class="m-subheader__title">
+                        Company:
+                        </label>
+                        <ngx-select-dropdown #companyNamesDropdown [config]="config" [options]="companies" [(value)]="companiesDropdownModel"  >
+                        </ngx-select-dropdown>
+            
+            </div>
+            <button  class="btn btn-link" data-toggle="modal" data-target="#addCompanyModal"><i class="fa fa-plus"></i> Add</button>
+         </div>
+
+
+        <div class="m-form__group form-group"  >
+                <label>Relation</label>
+                <select class="form-control m-input m-input--air" #relation>
+                    <ng-container *ngIf="!isIndividual">
+                            <option value=""></option>
+                            <option value="Owner">Owner</option>
+                            <option value="Manager">Manager</option>
+                    </ng-container>
+
+
+                    <ng-container *ngIf="isIndividual">
+                            <option value=""></option>
+                            <option value="Owner">Owner</option>
+                            <option value="Tenant">Tenant</option>
+                    </ng-container>
+                   
+                </select>
+                
+        </div>
+
+        <!-- <div class="m-form__group form-group"  *ngIf="isIndividual">
+            <label>Relation</label>
+            <select class="form-control m-input m-input--air" #relation>
+              
+            </select>
+            
+        </div> -->
+
+        <div  class="m-form__group form-group">
             <label  for="">
                 Title:
             </label>
@@ -36,30 +79,13 @@
         </div>
 
         <div class="m-form__group form-group">
-                <label>Relation</label>
-                <select class="form-control m-input m-input--air" >
-                    <option></option>
-                    <option>Father</option>
-                    <option>Son</option>
-                    <option>Mother</option>
-                    <option>Daughter</option>
-                </select>
-                
-        </div>
-
-        <div class="m-form__group form-group" *ngIf="!isIndividual">
-                <label>Company Name</label>
-                <input type="text" class="form-control m-input m-input--air" >
-        </div>
-
-        <div class="m-form__group form-group">
                 <label>First Name</label>
-                <input type="text" class="form-control m-input m-input--air" >
+                <input type="text" class="form-control m-input m-input--air" #firstName>
         </div>
 
         <div class="m-form__group form-group">
                 <label>Last Name</label>
-                <input type="text" class="form-control m-input m-input--air" >
+                <input type="text" class="form-control m-input m-input--air" #lastName>
         </div>
 
         <div class="m-form__group form-group">
@@ -85,7 +111,7 @@
 
 
         <div class="m-form__group form-group">
-                <label class="colorBlack">Family Domain Name</label>
+                <label class="colorBlack">Domain Name</label>
                 <select class="form-control m-input m-input--air" >
                     <option></option>
                     <option>Wick</option>
@@ -119,30 +145,21 @@
                 <div class="m-form__group form-group">
                 <div  class="m-checkbox-list">
                         <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
-                            <input  type="checkbox">
+                            <input  type="checkbox" #setPasswordCheckbox>
                             Set Password
                             <span ></span>
-                        </label>
-                        <label  class="m-checkbox m-checkbox--solid m-checkbox--brand">
-                            <input  type="checkbox">
-                            Make Member
-                            <span ></span>
-                        </label>
-                        <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
-                            <input   type="checkbox">
-                            Set Relationship
-                            <span ></span>
-                        </label>
-                        <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
-                            <input   type="checkbox">
-                            Work Location
-                            <span ></span>
-                        </label>
-                        
+                        </label>        
                     </div>
                 </div>
 
-                    <div class="row">
+
+                <div class="m-form__group form-group" *ngIf="setPasswordCheckbox.checked">
+                        <label>User ID:</label>
+                        <input type="text" class="form-control m-input m-input--air" >
+                </div>
+
+
+                    <div class="row" *ngIf="setPasswordCheckbox.checked">
                             <div class="col-md-6">
                                 <div class="m-form__group form-group">
                                         <label>Password </label>
@@ -160,15 +177,16 @@
 
                         <div class="row">
                                 <div class="col-sm-4 offset-sm-3">
-                                     <div class="btn btn-primary" >Add Member</div>
+                                     <div class="btn btn-primary" (click)="onAddMember( relation.value, firstName.value , lastName.value)">Add Member</div>
                                 </div>
                         </div>
 
 
 </div>
 
-<div class="col-lg-4 col-md-12 whiteBackgroundFormCard" style="margin: 0px 4px;" *ngIf="isGroupSelect">
+<div class="col-lg-5 col-md-12 whiteBackgroundFormCard" style="margin: 0px 4px;" *ngIf="isGroupSelect">
         <button class="btn btn-link" (click)="backFromGroupSelect()" style="padding-left: 0px;" ><i class="fa fa-chevron-left" aria-hidden="true"></i><span style=" text-transform: capitalize;">Back</span></button>
+        <h5>Make A Member</h5>
         <div class="row text-center">
                         <div class="col-md-1">
                             <i class="fa fa-check" ></i>
@@ -179,7 +197,7 @@
                         <div class="col-md-3">
                             <strong>Members </strong>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <strong> Date </strong>
                         </div>
                         <div class="col-md-2">
@@ -187,7 +205,7 @@
                         </div>
                 
         </div>
-        <div class="row text-center">
+        <div class="row text-center"  *ngFor="let role of roles ; let i=index;">
 
                     <div class="col-md-1">
                             <label class="m-checkbox m-checkbox--solid  m-checkbox--brand">
@@ -196,71 +214,76 @@
                             </label>
                     </div>
                     <div class="col-md-2">
-                            <p>Building Owners</p>
+                            <p>{{role.name}}</p>
                       </div>
                       <div class="col-md-3">
                          <p> <i class="fa fa-users"></i></p>
                       </div>
-                      <div class="col-md-3">
-                          6/10/2017
+                      <div class="col-md-2">
+                            {{role.date}}
                       </div>
                       <div class="col-md-2">
                             <a (click)="openSectionSelectBar()"><i class="fa fa-key" ></i></a>
                       </div>
-                
-            </div>
-
-            <div class="row text-center">
-
-                    <div class="col-md-1">
-                            <label class="m-checkbox m-checkbox--solid  m-checkbox--brand">
-                                    <input  type="checkbox">
-                                    <span ></span>
-                            </label>
-                    </div>
-                    <div class="col-md-2">
-                            <p>Building Management</p>
-                      </div>
-                      <div class="col-md-3">
-                         <p> <i class="fa fa-users"></i></p>
-                      </div>
-                      <div class="col-md-3">
-                          6/10/2017
-                      </div>
-                      <div class="col-md-2">
-                            <a (click)="openSectionSelectBar()"><i class="fa fa-key"></i></a>
+                      <div class="col-md-1">
+                            <a (click)="onDeleteRole(i)"><i class="fa fa-trash" ></i></a>
                       </div>
                 
             </div>
-            <button class="btn btn-sm btn-info" >Make Member</button>
+
+            <button class="btn btn-sm btn-info" *ngIf="!isAddRoleFormDisplay" (click)="isAddRoleFormDisplay=true;">Create Role</button>
+            
+            <div *ngIf="isAddRoleFormDisplay" style="margin-top:60px;">
+
+            <div class="row">
+                <div class="col-md-10">
+                    <h4>Add Role Form</h4>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-link" (click)="isAddRoleFormDisplay=false;"><i class="fa fa-times"></i></a>
+                </div>
+            </div>
+            <div class="m-form__group form-group" >
+                    <label>Role Name:</label>
+                    <input #newRoleNameInput type="text" class="form-control m-input m-input--air" >
+            </div>
+
+            <div class="m-form__group form-group" >
+                    <label>Role Description:</label>
+                    <textarea #newRoleDesc type="text" class="form-control m-input m-input--air" >
+
+                    </textarea>
+            </div>
+
+            <button class="btn btn-sm btn-info" (click)="onAddRole(newRoleNameInput.value) ; isAddRoleFormDisplay=false;">Add Role</button>
+           
+        </div>
+
 </div>
 
 <div class="col-lg-3 col-md-12 whiteBackgroundFormCard"   *ngIf="isSectionSelect">
         <button (click)="backFromSectionSelect()"  class="btn btn-link" style="padding-left: 0px;"><i  aria-hidden="true" class="fa fa-chevron-left"></i><span  style=" text-transform: capitalize;">Back</span></button>
+          
+          <div class="form-group m-form__group mr-auto custom-width-100">
+                        <label class="m-subheader__title">
+                            Building:
+                            </label>
+                            <ngx-select-dropdown #buildingNamesDropdown [config]="config" [options]="buildings" [(value)]="buildingsDropdownModel"  >
+                            </ngx-select-dropdown>
+                
+                </div>
+                
 
         <div class="m-form__group form-group">
-                <label>Select Section</label>
-                <select class="form-control m-input m-input--air" >
-                    <optgroup label="Building">
-                        <option>Building (whole)</option>
-                        <option>Floor</option>
-                        <option>Condo</option>
-                        <option>Parking</option>
-                        <option>Guest Suites</option>
-                        <option>Shops</option>
-                    </optgroup>
-
-                    <optgroup label="Specialized Facility">
-                            <option>Specialized Facility (whole)</option>
-                            <option>Inventory</option>
-                            <option>Stocks</option>
-                            <option>Gym</option>
-                            <option>Party Rooms</option>
-                            <option>Games</option>
-                        </optgroup>
-
-                    
-                </select>
+        <label for="">Select Section:</label>
+        <angular2-multiselect [data]="itemList" 
+            [(ngModel)]="selectedItems" 
+            [settings]="settings" 
+            (onSelect)="onItemSelect($event)"
+            (onDeSelect)="OnItemDeSelect($event)" 
+            (onSelectAll)="onSelectAll($event)" 
+            (onDeSelectAll)="onDeSelectAll($event)">
+        </angular2-multiselect>
         </div>
 
         <div  class="m-form__group form-group">
@@ -293,3 +316,64 @@
 </div>
 
 </div>
+
+
+
+<div  aria-labelledby="bookingModalLabel" class="modal fade" id="addCompanyModal" role="dialog" tabindex="-1">
+        <div  class="modal-dialog" role="document">
+            <div  class="modal-content">
+                <div  class="modal-header">
+                    <h5  class="modal-title" id="exampleModalLabel">
+                        Add Company
+                    </h5>
+                    <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span  aria-hidden="true">
+                            ×
+                        </span>
+                    </button>
+                </div>
+                <div  class="modal-body">
+    
+                    <div  class="row">
+                        <div  class="col-md-12">
+
+                                <div class="form-group m-form__group">
+                                        <label>
+                                            Company Number:
+                                        </label>
+                                        <input #companyNumberField  class="form-control m-input m-input--air" type="text">
+                                    </div>
+
+                                <div class="form-group m-form__group">
+                                        <label>
+                                            Company Name:
+                                        </label>
+                                        <input #companyNameField  class="form-control m-input m-input--air" type="text">
+                                    </div>
+
+                                 <div class="form-group m-form__group">
+                                            <label>
+                                                Company Description:
+                                            </label>
+                                            <textarea #companyDesc  class="form-control m-input m-input--air">
+                                            </textarea>
+                                </div>
+
+                                    
+                        </div>
+                    </div>
+                    <div  class="modal-footer">
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                        <button (click)="onAddCompany(companyNameField.value)"  class="btn btn-primary" type="button">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
