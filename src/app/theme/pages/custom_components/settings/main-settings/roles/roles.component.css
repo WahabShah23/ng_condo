@@ -144,6 +144,11 @@
     top: calc(50% - 2px) !important;
     opacity: 0.4;
 }
+
+.progress
+{
+    height: 0.3rem;
+}
 /*-------------- Smaller Cards Inside Verticals END--------------*/
 
 /*------------------Custom Scroll Bar Start------------------------*/

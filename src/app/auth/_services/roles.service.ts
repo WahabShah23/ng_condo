@@ -1,6 +1,6 @@
 export class RolesService
 {
-    roles = [{name: 'ABC Corporation' , relation:"Manager" , owner: "Niaz Khan"} ];
+    roles = [{name: 'ABC Corporation' , relation:"Management" , owner: "Niaz Khan"} ];
 
 
     getRoles()

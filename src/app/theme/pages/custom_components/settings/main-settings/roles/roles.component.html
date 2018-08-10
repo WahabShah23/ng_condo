@@ -6,9 +6,9 @@
                     <button routerLink="invite" class="btn btn-link pull-right" ><i class="fa fa-plus"></i> Invite</button>
                      <div class="clearfix"></div>                 
         
-                <div *ngFor="let role of roles" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
+                <div *ngFor="let role of roles; let i=index;" (click)="employesVertical=true;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
                     <h6 class="innerCardsTitle m-menu__link-text">{{role.name}}</h6>
-                    <a routerLink="1"><i class="fa fa-expand text-muted pull-right c-expand-icon" ></i></a>
+                    <a [routerLink]= "[ 'invite' , i]"><i class="fa fa-expand text-muted pull-right c-expand-icon" ></i></a>
                     <div class="clearfix"></div>
                     <div class="row">
                         <div class="col-sm-4">
@@ -26,6 +26,17 @@
                             <div class="col-sm-8">
                                 {{role.owner}}
                             </div>
+                    </div>
+                    <div class="progress-info">
+                            <div class="progress">
+                                <span style="width: 100%;" class="progress-bar progress-bar-success green-sharp">
+                                    <span class="sr-only">Ideation</span>
+                                </span>
+                            </div>
+                            <div class="status">
+                                <div class="status-title" style="float:left;"> Niaz Khan </div>
+                                <div class="status-number" style="float:right;"> <i class="fa fa-heart"> 0</i> &nbsp; &nbsp; <i class="fa fa-comments"></i> 0 </div>
+                            </div>
                         </div>
                     
                 </div>
@@ -33,6 +44,73 @@
                 
                   
             </div>
+
+            <div class="verticals" id="vertical_2" *ngIf="employesVertical" (click)="accessVertical = true;"> 
+                <div *ngFor="let employe of employes; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
+                    <h6 class="innerCardsTitle m-menu__link-text">{{employe.name}}</h6>
+                    <div class="clearfix"></div>
+                    
+                    <div class="row">
+                            <div class="col-sm-4">
+                                Specialized:
+                            </div>
+                            <div class="col-sm-8">
+                                {{employe.specialized}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                                <div class="col-sm-4">
+                                    Condos:
+                                </div>
+                                <div class="col-sm-8">
+                                    {{employe.condos}}
+                                </div>
+                        </div>     
+
+                        <div class="row">
+                                <div class="col-sm-4">
+                                    Parking:
+                                </div>
+                                <div class="col-sm-8">
+                                    {{employe.parking}}
+                                </div>
+                        </div>                 
+                </div>  
+            </div>
+
+
+
+
+            <div class="verticals" id="vertical_3" *ngIf="accessVertical" > 
+                    <div *ngFor="let access of accesses; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
+                    <h6 class="innerCardsTitle m-menu__link-text">{{access.name}}</h6>
+                    <div class="clearfix"></div>
+                    <div class="row" *ngIf="access.timeFrom!=''">
+                            <div class="col-sm-4">
+                                From:
+                            </div>
+                            <div class="col-sm-8">
+                                {{access.timeFrom}}
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="access.timeTo!=''">
+                                <div class="col-sm-4">
+                                    To:
+                                </div>
+                                <div class="col-sm-8">
+                                    {{access.timeTo}}
+                                </div>
+                            </div>
+                    </div>
+    
+                    
+                      
+                </div>
+
+
+
 
         
     </div>

@@ -116,6 +116,10 @@ const routes: Routes = [
             {
                 'path': '',
                 'component': OwnersRolesComponent
+            },
+            {
+                'path': ':id',
+                'component': OwnersRolesComponent
             }
         ]
     },
