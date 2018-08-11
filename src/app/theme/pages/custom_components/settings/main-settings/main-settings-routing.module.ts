@@ -1,4 +1,3 @@
-import { RoleDetailComponent } from './roles/role-detail/role-detail.component';
 import { OwnerRolesSettings } from './../owners-roles-settings/owners-roles-settings.component';
 import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.component';
 import { RolesComponent } from './roles/roles.component';
@@ -120,16 +119,6 @@ const routes: Routes = [
             {
                 'path': ':id',
                 'component': OwnersRolesComponent
-            }
-        ]
-    },
-    {
-        'path': 'roles/:id',
-        'component': OwnerRolesSettings,
-        'children': [
-            {
-                'path': '',
-                'component': RoleDetailComponent
             }
         ]
     },

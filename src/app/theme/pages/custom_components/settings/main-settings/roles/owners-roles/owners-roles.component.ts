@@ -1,7 +1,7 @@
+import { RolesService } from './../../../../../../../services/roles.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { RolesService } from './../../../../../../../auth/_services/roles.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SelectDropDownComponent } from 'ngx-select-dropdown/dist/components';
 
 @Component({
@@ -14,17 +14,19 @@ export class OwnersRolesComponent implements OnInit {
   @ViewChild('companyNamesDropdown')  companyNamesDropdown: SelectDropDownComponent;
   @ViewChild('buildingNamesDropdown')  buildingNamesDropdown: SelectDropDownComponent;
   @ViewChild('setPasswordCheckbox') setPasswordCheckbox : HTMLInputElement;
+  @ViewChild('firstName') firstNameInput : ElementRef;
+  @ViewChild('lastName') lastNameInput : ElementRef;
 
   isGroupSelect = false;
   isSectionSelect = false;
-  isIndividual = true;
+  inviteType = 'Individual';
 
   isFloor = false;
   isCondo = false;
   isParking = false;
   isGuestSuite = false;
   isShop = false;
- isEdit = false;
+  isEdit = false;
 
 
   config = 
@@ -109,10 +111,7 @@ shopsItemSelectedItems = [];
 
   ngOnInit() 
   {
-     if(this.route.snapshot.params['id'])
-     {
-       this.isEdit = true;
-     }
+   
 
     this.itemList = [
       { "id": 1, "itemName": "Floor", "category": "Building" },
@@ -220,20 +219,44 @@ this.condoSelectedItems = [];
     
     
     this.shopsItemSelectedItems = [];
+
+
+
+
+  //isEdit
+    if(this.route.snapshot.params['id'])
+    {
+      this.isEdit = true;
+      this.isSectionSelect = true;
+      this.isGroupSelect = true;
+      let role = this.roleService.getRolesbyId(this.route.snapshot.params['id']);
+      this.firstNameInput.nativeElement.value = role.name;
+      this.buildingDropdownModel = "Building ABC";
+      this.selectedItems.push(this.itemList[0]);
+     
+      //this.buildingNamesDropdown.selectedItems = ["Building A"];
+     
+    }
     
       
 
   }
 
+
+
   onInviteSelect(inviteType: string)
   {
-    if(inviteType=="individual")
+    if(inviteType=="Individual")
     {
-      this.isIndividual = true;
+      this.inviteType = 'Individual';
     }
-    else
+    else if(inviteType=='Company')
     {
-      this.isIndividual = false;
+      this.inviteType = 'Company';
+    }
+    else if(inviteType=='Employee')
+    {
+      this.inviteType= 'Employe';
     }
     
   }
@@ -289,7 +312,7 @@ this.condoSelectedItems = [];
 
   onAddMember(relation , firstName , lastName)
   {
-    this.roleService.addRole(this.companiesDropdownModel , relation , firstName+ lastName);
+    this.roleService.addRole(this.companiesDropdownModel , relation , firstName+''+lastName);
     this.router.navigate(['/settings/roles']);
   }
 
@@ -360,5 +383,17 @@ this.condoSelectedItems = [];
     this.isParking = false;
     this.isGuestSuite = false;
     this.isShop = false;  
+  }
+
+
+
+
+
+
+
+
+  selectionChanged(event , dropdown)
+  {
+    console.log(dropdown);
   }
 }

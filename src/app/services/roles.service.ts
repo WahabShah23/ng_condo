@@ -12,4 +12,9 @@ export class RolesService
     {
         this.roles.push({name: name , relation:relation , owner: owner});
     }
+
+    getRolesbyId(id:number)
+    {
+        return this.roles[id];
+    }
 }

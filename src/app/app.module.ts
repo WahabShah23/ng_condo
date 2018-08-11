@@ -1,4 +1,5 @@
-import { RolesService } from './auth/_services/roles.service';
+import { RolesService } from './services/roles.service';
+
 import { RoomsService } from './services/roomsServices.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -63,7 +64,7 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2
         RulesService,
         RoomsService,
         SupportService,
-        SpecializedFacilityService,
+        SpecializedFacilityService, 
         RolesService
     ],
 

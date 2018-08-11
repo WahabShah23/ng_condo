@@ -49,8 +49,11 @@
                 <div *ngFor="let employe of employes; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
                     <h6 class="innerCardsTitle m-menu__link-text">{{employe.name}}</h6>
                     <div class="clearfix"></div>
-                    
-                    <div class="row">
+                    <div  class="progress">
+                        <span  class="progress-bar progress-bar-success green-sharp" style="width: 100%; background-color: red;">
+                        </span>
+                    </div>
+                     <div class="row">
                             <div class="col-sm-4">
                                 Specialized:
                             </div>
@@ -86,7 +89,7 @@
                     <div *ngFor="let access of accesses; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
                     <h6 class="innerCardsTitle m-menu__link-text">{{access.name}}</h6>
                     <div class="clearfix"></div>
-                    <div class="row" *ngIf="access.timeFrom!=''">
+                    <!-- <div class="row" *ngIf="access.timeFrom!=''">
                             <div class="col-sm-4">
                                 From:
                             </div>
@@ -102,7 +105,7 @@
                                 <div class="col-sm-8">
                                     {{access.timeTo}}
                                 </div>
-                            </div>
+                            </div> -->
                     </div>
     
                     

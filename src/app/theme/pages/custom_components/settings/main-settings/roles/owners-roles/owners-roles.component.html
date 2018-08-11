@@ -6,15 +6,15 @@
    <div class="form-group">
         <select class="form-control edited" #inviteTypeSelect  (change)="onInviteSelect(inviteTypeSelect.value)">
             <!-- <option></option> -->
-            <option selected="" value="individual">Invite Individual</option>
-            <option value="company">Invite Company</option>
+            <option selected="" value="Individual">Invite Individual</option>
+            <option value="Company">Invite Company</option>
         </select>
         <label class="colorBlack"></label>
      </div>
 
    
 
-         <div class="d-flex align-items-center" *ngIf="!isIndividual">
+         <div class="d-flex align-items-center" *ngIf="inviteType=='Company'">
             <div class="form-group m-form__group mr-auto custom-width-100">
                     <label class="m-subheader__title">
                         Company:
@@ -30,30 +30,25 @@
         <div class="m-form__group form-group"  >
                 <label>Relation</label>
                 <select class="form-control m-input m-input--air" #relation>
-                    <ng-container *ngIf="!isIndividual">
+                    <ng-container *ngIf="inviteType=='Company'">
                             <option value=""></option>
                             <option value="Owner">Owner</option>
                             <option value="Manager">Management</option>
                     </ng-container>
 
 
-                    <ng-container *ngIf="isIndividual">
+                    <ng-container *ngIf="inviteType!='Company'">
                             <option value=""></option>
                             <option value="Owner">Owner</option>
                             <option value="Tenant">Tenant</option>
+                            <option value="Employee">Employee</option>
                     </ng-container>
                    
                 </select>
                 
         </div>
 
-        <!-- <div class="m-form__group form-group"  *ngIf="isIndividual">
-            <label>Relation</label>
-            <select class="form-control m-input m-input--air" #relation>
-              
-            </select>
-            
-        </div> -->
+  
 
         <div  class="m-form__group form-group">
             <label  for="">
@@ -178,14 +173,14 @@
 
                         <div class="row">
                                 <div class="col-sm-4 offset-sm-3">
-                                     <div class="btn btn-primary" (click)="onAddMember( relation.value, firstName.value , lastName.value)"> {{(!isEdit) ? 'Add' : 'Edit'}} Member</div>
+                                     <div class="btn btn-primary" (click)="onAddMember( relation.value, 'Jane' , 'Khan')"> {{(!isEdit) ? 'Add' : 'Edit'}} Member</div>
                                 </div>
                         </div>
 
 
 </div>
 
-<div class="col-lg-5 col-md-12 whiteBackgroundFormCard" style="margin: 0px 4px;" *ngIf="isGroupSelect">
+<div class="col-lg-4 col-md-12 whiteBackgroundFormCard" style="margin: 0px 4px;" *ngIf="isGroupSelect">
         <button class="btn btn-link" (click)="backFromGroupSelect()" style="padding-left: 0px;" ><i class="fa fa-chevron-left" aria-hidden="true"></i><span style=" text-transform: capitalize;">Back</span></button>
         <h5>Make A Member</h5>
         <div class="row text-center">
@@ -210,7 +205,7 @@
 
                     <div class="col-md-1">
                             <label class="m-checkbox m-checkbox--solid  m-checkbox--brand">
-                                    <input  type="checkbox">
+                                    <input [checked]="(isEdit && i==1) ? true : false"  type="checkbox">
                                     <span ></span>
                             </label>
                     </div>
@@ -262,14 +257,14 @@
 
 </div>
 
-<div class="col-lg-3 col-md-12 whiteBackgroundFormCard"   *ngIf="isSectionSelect">
+<div class="col-lg-4 col-md-12 whiteBackgroundFormCard"   *ngIf="isSectionSelect">
         <button (click)="backFromSectionSelect()"  class="btn btn-link" style="padding-left: 0px;"><i  aria-hidden="true" class="fa fa-chevron-left"></i><span  style=" text-transform: capitalize;">Back</span></button>
         <h5>Manage Access</h5>
           <div class="form-group m-form__group mr-auto custom-width-100">
                         <label class="m-subheader__title">
                             Building:
                             </label>
-                            <ngx-select-dropdown #buildingNamesDropdown [config]="config" [options]="buildings" [(value)]="buildingsDropdownModel"  >
+                            <ngx-select-dropdown #buildingNamesDropdown (change)="selectionChanged($event, buildingNamesDropdown)" [config]="config" [options]="buildings" [(value)]="buildingsDropdownModel"  >
                             </ngx-select-dropdown>
                 
                 </div>
@@ -332,12 +327,12 @@
         <div  class="m-form__group form-group">
                 <div  class="m-checkbox-inline">
                         <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
-                            <input type="checkbox">
+                            <input type="checkbox" [checked]="isEdit ? true : false">
                             Edit
                             <span ></span>
                         </label>
-                        <label  class="m-checkbox m-checkbox--solid m-checkbox--brand">
-                            <input type="checkbox">
+                        <label  class="m-checkbox m-checkbox--solid m-checkbox--brand" >
+                            <input type="checkbox" [checked]="isEdit ? true : false">
                             View
                             <span ></span>
                         </label>
@@ -356,7 +351,7 @@
                 <div  class="m-checkbox-inline">
                     <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand" >
                         <input type="checkbox" #expiryCheckbox>
-                         Yes, It Expiry
+                         Yes, It Expires
                         <span ></span>
                     </label> 
                 </div>
@@ -377,6 +372,83 @@
        </div>
 
             <button class="btn btn-sm btn-info" >Apply</button>
+            <div style="margin-top:40px;" *ngIf="isEdit">
+                    <h6>Accesses</h6>
+            <div class="row" style="margin-top:10px;" >
+                    <div class="col-sm-3">
+                        <p>Access</p>
+                    </div>
+                    <div class="col-sm-3">
+                        Permissions
+                    </div>
+                    <div class="col-sm-3">
+                        Expiry
+                    </div>
+                    <div class="col-sm-1">
+                            Edit
+                    </div>
+                    
+                    <div class="col-sm-1">
+                            Del
+                    </div>
+                </div>
+            <div class="row" style="margin-top:10px;" >
+                <div class="col-sm-3">
+                    <p>Condo</p>
+                </div>
+                <div class="col-sm-3">
+                    Add, Edit, Delete
+                </div>
+                <div class="col-sm-3">
+                    12-12-2018
+                </div>
+                <div class="col-sm-1">
+                        <i class="fa fa-edit"></i>
+                </div>
+                
+                <div class="col-sm-1">
+                        <i class="fa fa-trash"></i>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                    <div class="col-sm-3">
+                        <p>Gym</p>
+                    </div>
+                    <div class="col-sm-3">
+                        Add, Edit
+                    </div>
+                    <div class="col-sm-3">
+                        -
+                    </div>
+                    <div class="col-sm-1">
+                            <i class="fa fa-edit"></i>
+                    </div>
+                    
+                    <div class="col-sm-1">
+                            <i class="fa fa-trash"></i>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-sm-3">
+                            <p>Floors</p>
+                        </div>
+                        <div class="col-sm-3">
+                            Add, Edit
+                        </div>
+                        <div class="col-sm-3">
+                            12-11-2018
+                        </div>
+                        <div class="col-sm-1">
+                                <i class="fa fa-edit"></i>
+                        </div>
+                        
+                        <div class="col-sm-1">
+                                <i class="fa fa-trash"></i>
+                        </div>
+                    </div>
+        </div>
 </div>
 
 

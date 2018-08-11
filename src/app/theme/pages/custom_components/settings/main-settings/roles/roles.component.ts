@@ -1,4 +1,5 @@
-import { RolesService } from './../../../../../../auth/_services/roles.service';
+import { RolesService } from './../../../../../../services/roles.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -42,24 +43,16 @@ export class RolesComponent implements OnInit {
   }];
   
   accesses = [{
-    name:"Floors",
-    timeFrom:"10/08/2018 12:00",
-    timeTo:"11/08/2018 12:00"
+    name:"Floors"
   },
   {
-    name:"Condos",
-    timeFrom:"10/08/2018 12:00",
-    timeTo:"11/08/2018 23:00"
+    name:"Condos"
   },
   {
-    name:"Gym",
-    timeFrom:"10/08/2018 12:00",
-    timeTo:"11/08/2018 23:00"
+    name:"Gym"
   },
   {
-    name:"Inventory",
-    timeFrom:"",
-    timeTo:""
+    name:"Inventory"
   }
 ]
   
