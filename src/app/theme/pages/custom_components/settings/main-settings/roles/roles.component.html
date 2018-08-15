@@ -6,7 +6,7 @@
                     <button routerLink="invite" class="btn btn-link pull-right" ><i class="fa fa-plus"></i> Invite</button>
                      <div class="clearfix"></div>                 
         
-                <div *ngFor="let role of roles; let i=index;" (click)="employesVertical=true;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
+                <div *ngFor="let role of roles; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
                     <h6 class="innerCardsTitle m-menu__link-text">{{role.name}}</h6>
                     <a [routerLink]= "[ 'invite' , i]"><i class="fa fa-expand text-muted pull-right c-expand-icon" ></i></a>
                     <div class="clearfix"></div>
@@ -34,10 +34,10 @@
                                 </span>
                             </div>
                             <div class="status">
-                                <div class="status-title" style="float:left;"> Niaz Khan </div>
-                                <div class="status-number" style="float:right;"> <i class="fa fa-heart"> 0</i> &nbsp; &nbsp; <i class="fa fa-comments"></i> 0 </div>
+                                <div class="status-title" style="float:left; "> <button type="button" class="btn btn-link" data-toggle="modal" data-target="#owndersModel" style="padding:0px; color:grey"> Niaz Khan </button> </div>
+                                <div class="status-number" style="float:right;"> <a href="#" (click)="employesVertical=true;" ><i style="color:grey" class="fa fa-user"> 4</i></a> &nbsp; &nbsp; <i class="fa fa-comments"></i> 0 </div>
                             </div>
-                        </div>
+                    </div>
                     
                 </div>
 
@@ -46,9 +46,11 @@
             </div>
 
             <div class="verticals" id="vertical_2" *ngIf="employesVertical" (click)="accessVertical = true;"> 
-                <div *ngFor="let employe of employes; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
+                <div *ngFor="let employe of employes; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2" style="height: 112px;" >
                     <h6 class="innerCardsTitle m-menu__link-text">{{employe.name}}</h6>
+                    <a routerLink="invite/1"><i  class="fa fa-expand text-muted pull-right c-expand-icon"></i></a>
                     <div class="clearfix"></div>
+                    <span>{{employe.type}}</span>
                     <div  class="progress">
                         <span  class="progress-bar progress-bar-success green-sharp" style="width: 100%; background-color: red;">
                         </span>
@@ -89,23 +91,8 @@
                     <div *ngFor="let access of accesses; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
                     <h6 class="innerCardsTitle m-menu__link-text">{{access.name}}</h6>
                     <div class="clearfix"></div>
-                    <!-- <div class="row" *ngIf="access.timeFrom!=''">
-                            <div class="col-sm-4">
-                                From:
-                            </div>
-                            <div class="col-sm-8">
-                                {{access.timeFrom}}
-                            </div>
-                        </div>
-
-                        <div class="row" *ngIf="access.timeTo!=''">
-                                <div class="col-sm-4">
-                                    To:
-                                </div>
-                                <div class="col-sm-8">
-                                    {{access.timeTo}}
-                                </div>
-                            </div> -->
+                     <p *ngIf="access.name=='Floors'"> 1,2,3,6,7,8 </p>
+                     <p *ngIf="access.name=='Condos'"> 1-A , 2-B , 3-C </p>
                     </div>
     
                     
@@ -122,3 +109,47 @@
 <p-sidebar [(visible)]="visibleSidebar5" [fullScreen]="true" [baseZIndex]="10000">
 
 </p-sidebar>
+
+<div  aria-labelledby="exampleModalLabel" class="modal fade" id="owndersModel" role="dialog" tabindex="-1" >
+        <div  class="modal-dialog modal-sm" role="document">
+            <div  class="modal-content">
+                <div  class="modal-header">
+                    <h5  class="modal-title" id="exampleModalLabel">
+                        Owners
+                    </h5>
+                    <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span  aria-hidden="true">
+                                ×
+                    </span>
+                    </button>
+                </div>
+                <div  class="modal-body" >
+                    <div class="row" style="margin-bottom:15px;">
+                        <div class="col-sm-3">
+                            <img src="assets/app/media/img/users/user4.jpg" alt="" style="width:100%">
+                        </div>
+
+                        <div class="col-sm-6">
+                            Christopher 
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:15px;">
+                            <div class="col-sm-3">
+                                <img src="assets/app/media/img/users/user3.jpg" alt="" style="width:100%">
+                            </div>
+    
+                            <div class="col-sm-6">
+                                 Joseph
+                            </div>
+                        </div>
+                </div>
+
+                <div  class="modal-footer">
+                    <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>

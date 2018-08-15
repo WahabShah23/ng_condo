@@ -18,20 +18,22 @@ export class RolesComponent implements OnInit {
     name:"Chris" , 
     specialized:2,
     condos: 2, 
-    parking: 1
-    
+    parking: 1,
+    type: "permanent"   
   },
   {
     name:"Jane" , 
     specialized:1,
     condos: 0, 
-    parking: 0
+    parking: 0,
+    type: "permanent"
   },
   {
       name:"Bob" , 
      specialized:2,
      condos: 1, 
-     parking: 0
+     parking: 0,
+     type: "temporary"
   }
     ,
   {
@@ -39,7 +41,8 @@ export class RolesComponent implements OnInit {
     specialized:2,
     condos: 2, 
     
-    parking: 1
+    parking: 1,
+    type: "permanent"
   }];
   
   accesses = [{
