@@ -7,9 +7,9 @@
                 <small class="fa fa-bar-chart"></small>
                 <small class="fa fa-search"></small>
             </h3>
-          
+
             <div class="form-group m-form__group" style="display:inline-block;">
-                <select [(ngModel)]="customerType" class="form-control m-input form-control-sm" >
+                <select [(ngModel)]="customerType" class="form-control m-input form-control-sm">
                     <option value="All">
                         All
                     </option>
@@ -23,8 +23,8 @@
                 </select>
             </div>
         </div>
-        
-      
+
+
 
         <button class="btn btn-link pull-right " (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
         <div>
@@ -40,7 +40,7 @@
                             <div class="m-dropdown__content">
                                 <ul class="m-nav">
                                     <li class="m-nav__section m-nav__section--first m--hide">
-										<span class="m-nav__section-text">
+                                        <span class="m-nav__section-text">
 											Quick Actions
 										</span>
                                     </li>
@@ -101,10 +101,10 @@
         <li class="m-nav__separator">
             -
         </li>
-       
-       
+
+
         <li class="m-nav__item">
-            <a class="m-nav__link" href="javascript:;" >
+            <a class="m-nav__link" href="javascript:;">
                 <span class="m-nav__link-text">
                     Suppliers
                 </span>
@@ -121,194 +121,194 @@
                 <button class="btn btn-link pull-right " (click)="changeView()"><i class="fa"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
         </div>
     </div-->
-    
+
     <div class="row" style="padding: 0px 30px;" [style.display]="(isGridView && !isWizard) ? 'flex' : 'none'">
 
         <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
-            <div class="body organ1" >
-                <div class="row" style="margin:0px;">    
-                <div id="" class="card-left col-lg-3">
-                      <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+            <div class="body organ1">
+                <div class="row" style="margin:0px;">
+                    <div id="" class="card-left col-lg-3">
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                         <input type="checkbox" class="chkboxes">
                         <span></span>
                       </label>
-                      <div class="row onepersonrow">
-                           
-                        <div class="col-md-12">
-                              <img  class="personimage" src="assets/app/media/img/logos/logo-3.png">
-                              <p  class="personname">Spring Water</p>
-                              <p  class="persontype">Water Suppliers</p>
-                        </div> 
-                  </div>
-                           <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
-                           <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
-                           <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-                            
-                           
+                        <div class="row onepersonrow">
+
+                            <div class="col-md-12">
+                                <img class="personimage" src="assets/app/media/img/logos/logo-3.png">
+                                <p class="personname">Spring Water</p>
+                                <p class="persontype">Water Suppliers</p>
+                            </div>
+                        </div>
+                        <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
+                        <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
+                        <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+
                     </div>
                     <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                            <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
-                            <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
-                            <div class="clearfix"></div>
-                      <div class="row">
-                          <div class="col-sm-4">
-                                <div id="customerPieChart1"  class="m-widget14__chart" style="height: 100px">
-                                        <div class="m-widget14__stat">
-                                            45
-                                        </div>
+                        <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
+                        <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div id="customerPieChart1" class="m-widget14__chart" style="height: 100px">
+                                    <div class="m-widget14__stat">
+                                        45
+                                    </div>
                                 </div>
-                                <h6  class="text-center">Invoice</h6>
-                          </div>
-                          <div class="col-sm-4">
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
+                            <div class="col-sm-4">
                                 <div id="customerPieChart2" class="m-widget14__chart" style="height: 100px">
-                                        <div class="m-widget14__stat">
-                                            70
-                                        </div>
+                                    <div class="m-widget14__stat">
+                                        70
+                                    </div>
                                 </div>
                                 <h6 class="text-center">Expense</h6>
-                          </div>
+                            </div>
 
-                          <div class="col-sm-4">
+                            <div class="col-sm-4">
                                 <div id="customerPieChart3" class="m-widget14__chart" style="height: 100px">
-                                        <div class="m-widget14__stat">
-                                            220
-                                        </div>
+                                    <div class="m-widget14__stat">
+                                        220
+                                    </div>
                                 </div>
                                 <h6 class="text-center">Payment</h6>
-                          </div>
+                            </div>
 
-                          <div class="col-sm-4">
+                            <div class="col-sm-4">
                                 <div id="customerPieChart4" class="m-widget14__chart" style="height: 100px">
-                                        <div class="m-widget14__stat">
-                                            100
-                                        </div>
+                                    <div class="m-widget14__stat">
+                                        100
+                                    </div>
                                 </div>
                                 <h6 class="text-center">Remaining</h6>
-                          </div>
+                            </div>
 
 
-                          <div class="col-sm-4">
+                            <div class="col-sm-4">
                                 <div id="customerPieChart5" class="m-widget14__chart" style="height: 100px">
-                                        <div class="m-widget14__stat">
-                                            300
-                                        </div>
+                                    <div class="m-widget14__stat">
+                                        300
+                                    </div>
                                 </div>
                                 <h6 class="text-center">Services</h6>
-                          </div>
+                            </div>
 
-                          <div class="col-sm-4">
+                            <div class="col-sm-4">
                                 <div id="customerPieChart6" class="m-widget14__chart" style="height: 100px">
-                                        <div class="m-widget14__stat">
-                                            88
-                                        </div>
+                                    <div class="m-widget14__stat">
+                                        88
+                                    </div>
                                 </div>
                                 <h6 class="text-center">Product</h6>
-                          </div>
-                         
-    
-                          
-                          
-                          
-                      </div>   
-                      
+                            </div>
+
+
+
+
+
+                        </div>
+
                     </div>
                 </div>
-                  </div>
+            </div>
         </div>
-    
-          <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Tenants')">
-          <div class="body organ1"  >
-              <div class="row" style="margin:0px;">
-                <div id="" class="card-left col-lg-3">
-                  <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+
+        <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Tenants')">
+            <div class="body organ1">
+                <div class="row" style="margin:0px;">
+                    <div id="" class="card-left col-lg-3">
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                     <input type="checkbox" class="chkboxes">
                     <span></span>
                   </label>
-                  
-                  <div class="row onepersonrow">
-                           
-                    <div class="col-md-12">
-                          <img  class="personimage" src="assets/app/media/img/logos/logo-1.png">
-                          <p  class="personname">John Pipes</p>
-                          <p  class="persontype">Sanitory Works</p>
-                    </div> 
-              </div>
-                 
-                  
-                       <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
-                       <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
-                       <p class="agreementtype"><i class="fa fa fa-handshake-o"></i> Monthly</p>
-                       <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-                        
-                       
-                </div>
-                <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                    <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
-                    <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
-                    <div class="clearfix"></div>
-              <div class="row">
-                  <div class="col-sm-4">
-                        <div id="customerPieChart7"  class="m-widget14__chart" style="height: 100px">
-                                <div class="m-widget14__stat">
-                                    45
-                                </div>
-                        </div>
-                        <h6  class="text-center">Invoice</h6>
-                  </div>
-                  <div class="col-sm-4">
-                        <div id="customerPieChart8" class="m-widget14__chart" style="height: 100px">
-                                <div class="m-widget14__stat">
-                                    70
-                                </div>
-                        </div>
-                        <h6 class="text-center">Expense</h6>
-                  </div>
 
-                  <div class="col-sm-4">
-                        <div id="customerPieChart9" class="m-widget14__chart" style="height: 100px">
-                                <div class="m-widget14__stat">
-                                    220
-                                </div>
-                        </div>
-                        <h6 class="text-center">Payment</h6>
-                  </div>
+                        <div class="row onepersonrow">
 
-                  <div class="col-sm-4">
-                        <div id="customerPieChart10" class="m-widget14__chart" style="height: 100px">
-                                <div class="m-widget14__stat">
-                                    100
-                                </div>
+                            <div class="col-md-12">
+                                <img class="personimage" src="assets/app/media/img/logos/logo-1.png">
+                                <p class="personname">John Pipes</p>
+                                <p class="persontype">Sanitory Works</p>
+                            </div>
                         </div>
-                        <h6 class="text-center">Remaining</h6>
-                  </div>
 
 
-                  <div class="col-sm-4">
-                        <div id="customerPieChart11" class="m-widget14__chart" style="height: 100px">
-                                <div class="m-widget14__stat">
-                                    300
-                                </div>
-                        </div>
-                        <h6 class="text-center">Services</h6>
-                  </div>
+                        <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
+                        <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
+                        <p class="agreementtype"><i class="fa fa fa-handshake-o"></i> Monthly</p>
+                        <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
 
-                  <div class="col-sm-4">
-                        <div id="customerPieChart12" class="m-widget14__chart" style="height: 100px">
-                                <div class="m-widget14__stat">
-                                    88
-                                </div>
-                        </div>
-                        <h6 class="text-center">Product</h6>
-                  </div>
-                 
 
-                  
-                  
-                  
-              </div>   
-              
-            </div>
-                <!-- <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                    </div>
+                    <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                        <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
+                        <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div id="customerPieChart7" class="m-widget14__chart" style="height: 100px">
+                                    <div class="m-widget14__stat">
+                                        45
+                                    </div>
+                                </div>
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
+                            <div class="col-sm-4">
+                                <div id="customerPieChart8" class="m-widget14__chart" style="height: 100px">
+                                    <div class="m-widget14__stat">
+                                        70
+                                    </div>
+                                </div>
+                                <h6 class="text-center">Expense</h6>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div id="customerPieChart9" class="m-widget14__chart" style="height: 100px">
+                                    <div class="m-widget14__stat">
+                                        220
+                                    </div>
+                                </div>
+                                <h6 class="text-center">Payment</h6>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div id="customerPieChart10" class="m-widget14__chart" style="height: 100px">
+                                    <div class="m-widget14__stat">
+                                        100
+                                    </div>
+                                </div>
+                                <h6 class="text-center">Remaining</h6>
+                            </div>
+
+
+                            <div class="col-sm-4">
+                                <div id="customerPieChart11" class="m-widget14__chart" style="height: 100px">
+                                    <div class="m-widget14__stat">
+                                        300
+                                    </div>
+                                </div>
+                                <h6 class="text-center">Services</h6>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div id="customerPieChart12" class="m-widget14__chart" style="height: 100px">
+                                    <div class="m-widget14__stat">
+                                        88
+                                    </div>
+                                </div>
+                                <h6 class="text-center">Product</h6>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <!-- <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
                         <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
                         <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
                         <div class="clearfix"></div>
@@ -322,130 +322,130 @@
                   </div>   
                   
                 </div> -->
-              </div>
-              </div>
-          </div>
-    
-           <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
-              <div class="body organ1"  >
-                <div class="row" style="margin:0px;">    
-                <div id="" class="card-left col-lg-3">
-                      <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
+            <div class="body organ1">
+                <div class="row" style="margin:0px;">
+                    <div id="" class="card-left col-lg-3">
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                         <input type="checkbox" class="chkboxes">
                         <span></span>
                       </label>
-                      
-                      <div class="row onepersonrow" >
-                           
-                          <div class="col-md-12">
+
+                        <div class="row onepersonrow">
+
+                            <div class="col-md-12">
                                 <img class="personimage" src="assets/app/media/img/logos/logo-2.png">
                                 <p class="personname">Chris Security</p>
                                 <p class="persontype">Security Services</p>
-                          </div> 
-                    </div>
-                     
-                      
-                           <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
-                           <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
-                          
-                           <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-                            
-                           
+                            </div>
+                        </div>
+
+
+                        <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
+                        <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
+
+                        <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+
                     </div>
                     <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                            <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
-                            <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
-                            <div class="clearfix"></div>
-                            <div class="row">
-                              
+                        <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
+                        <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
+                        <div class="clearfix"></div>
+                        <div class="row">
 
-                                <div class="col-sm-4">
-                                        <div class="m-widget26">
-                                               
-                                                <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                    <canvas id="m_chart_quick_stats_1"></canvas>
-                                                </div>
-                                                <div class="m-widget26__number">
-                                                    690
-                                                    <small>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_1"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
                                                         All Orders
                                                     </small>
-                                                </div>
-                                            </div>
-
-
+                                    </div>
                                 </div>
-
-                                <div class="col-sm-4">
-                                        <div class="m-widget26">
-                                               
-                                                <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                    <canvas id="m_chart_quick_stats_2"></canvas>
-                                                </div>
-                                                <div class="m-widget26__number">
-                                                    690
-                                                    <small>
-                                                        All Orders
-                                                    </small>
-                                                </div>
-                                            </div>
-
-
-                                </div>
-
-                                <div class="col-sm-4">
-                                        <div class="m-widget26">
-                                                
-                                                <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                    <canvas id="m_chart_quick_stats_3"></canvas>
-                                                </div>
-                                                <div class="m-widget26__number">
-                                                    690
-                                                    <small>
-                                                        All Orders
-                                                    </small>
-                                                </div>
-                                            </div>
-
-
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="m-widget26">
-                                            
-                                            <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                <canvas id="m_chart_quick_stats_4"></canvas>
-                                            </div>
-                                            <div class="m-widget26__number">
-                                                690
-                                                <small>
-                                                    All Orders
-                                                </small>
-                                            </div>
-                                        </div>
 
 
                             </div>
 
                             <div class="col-sm-4">
                                 <div class="m-widget26">
-                                        
-                                        <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                            <canvas id="m_chart_quick_stats_5"></canvas>
-                                        </div>
-                                        <div class="m-widget26__number">
-                                            690
-                                            <small>
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_2"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                        All Orders
+                                                    </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_3"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                        All Orders
+                                                    </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_4"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                    All Orders
+                                                </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_5"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
                                                 All Orders
                                             </small>
-                                        </div>
                                     </div>
+                                </div>
 
 
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="m-widget26">
-                                    
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
                                     <div class="m-widget26__chart" style="height:90px; width: 220px;">
                                         <canvas id="m_chart_quick_stats_6"></canvas>
                                     </div>
@@ -458,17 +458,17 @@
                                 </div>
 
 
-                    </div>
-                    <div class="col-sm-12">
-                        <button (click)="isDisplayDetail=!isDisplayDetail;" style="display:block; margin: 0 auto;" class="btn btn-link">Display Details</button>
+                            </div>
+                            <div class="col-sm-12">
+                                <button (click)="isDisplayDetail=!isDisplayDetail;" style="display:block; margin: 0 auto;" class="btn btn-link">Display Details</button>
 
-                  </div>
-                             
-            
-                              
-                              
-                              
-                          </div> 
+                            </div>
+
+
+
+
+
+                        </div>
                         <!-- <div class="row" style="position:relative;">
                           <div class="col-sm-6">
                                 <div class="m-widget14__chart"  id="m_chart_person1_chart1" style="height: 160px; margin-left: 13px;">
@@ -498,75 +498,75 @@
                           
                           
                       </div>    -->
-                      
+
                     </div>
 
-                    <div class="col-md-12" >
-                           
-                               
-                                       <div class="row moreDetailSection" *ngIf="isDisplayDetail">
-                                        <div class="col-sm-4">
-                                            <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
-                                                    <div  class="m-widget14__stat" style="left: 38%;">
-                                                        45
-                                                    </div>
-                                            <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                            <h6  class="text-center">Invoice</h6>
-                                      </div>
+                    <div class="col-md-12">
 
-                                      <div class="col-sm-4">
-                                        <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
-                                                <div  class="m-widget14__stat" style="left: 38%;">
-                                                    45
-                                                </div>
-                                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                        <h6  class="text-center">Invoice</h6>
-                                  </div>
 
-                                  <div class="col-sm-4">
-                                    <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
-                                            <div  class="m-widget14__stat" style="left: 38%;">
-                                                45
-                                            </div>
-                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                    <h6  class="text-center">Invoice</h6>
-                              </div>
-                              <div class="col-sm-4">
+                        <div class="row moreDetailSection" *ngIf="isDisplayDetail">
+                            <div class="col-sm-4">
                                 <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
-                                        <div  class="m-widget14__stat" style="left: 38%;">
-                                            45
-                                        </div>
-                                <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                <h6  class="text-center">Invoice</h6>
-                          </div>
-
-                          <div class="col-sm-4">
-                            <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
-                                    <div  class="m-widget14__stat" style="left: 38%;">
+                                    <div class="m-widget14__stat" style="left: 38%;">
                                         45
                                     </div>
-                            <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                            <h6  class="text-center">Invoice</h6>
-                      </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
 
-                      <div class="col-sm-4">
-                        <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
-                                <div  class="m-widget14__stat" style="left: 38%;">
-                                    45
-                                </div>
-                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                        <h6  class="text-center">Invoice</h6>
-                  </div>
+                            <div class="col-sm-4">
+                                <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
+                                    <div class="m-widget14__stat" style="left: 38%;">
+                                        45
+                                    </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
+                                    <div class="m-widget14__stat" style="left: 38%;">
+                                        45
+                                    </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
+                                    <div class="m-widget14__stat" style="left: 38%;">
+                                        45
+                                    </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
+                                    <div class="m-widget14__stat" style="left: 38%;">
+                                        45
+                                    </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget14__chart" id="customerPieChart1" style="height: 100px">
+                                    <div class="m-widget14__stat" style="left: 38%;">
+                                        45
+                                    </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M77.904,73.918A38.164,38.164,0,0,0,48.164,11.836" class="ct-slice-donut" ct:value="39" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="85.800048828125px 85.800048828125px" stroke-dashoffset="-85.800048828125px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-85.800048828125px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M60.062,86.262A38.164,38.164,0,0,0,77.987,73.814" class="ct-slice-donut" ct:value="10" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="22.13219451904297px 22.13219451904297px" stroke-dashoffset="-22.13219451904297px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-22.13219451904297px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,1,0,60.188,86.22" class="ct-slice-donut" ct:value="60" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="132.13333129882812px 132.13333129882812px" stroke-dashoffset="-132.13333129882812px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-132.13333129882812px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
 
 
-                                       </div>
-                                        
+                        </div>
+
                     </div>
                 </div>
-                  </div>
+            </div>
 
 
-                  <!--div class="body detailbody" style="
+            <!--div class="body detailbody" style="
     position:  absolute;
     top: 89%;
     width: 94%;
@@ -622,129 +622,129 @@
                 </div>
                   </div -->
 
-                </div>
-                <!-- _________________________-Chart 1 Start______________________________________- -->
-              <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Tenants')">
-                  <div class="body organ1"  >
-                      <div class="row" style="margin:0px;">
-                        <div id="" class="card-left col-lg-3">
-                          <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+        </div>
+        <!-- _________________________-Chart 1 Start______________________________________- -->
+        <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Tenants')">
+            <div class="body organ1">
+                <div class="row" style="margin:0px;">
+                    <div id="" class="card-left col-lg-3">
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                             <input type="checkbox" class="chkboxes">
                             <span></span>
                           </label>
-                          
-                          <div class="row onepersonrow" >
-                           
+
+                        <div class="row onepersonrow">
+
                             <div class="col-md-12">
-                                  <img class="personimage" src="assets/app/media/img/logos/logo-citzen.png">
-                                  <p class="personname">Jaz Electric</p>
-                                  <p class="persontype">Electronics</p>
-                            </div> 
-                      </div>
-                       
-                         
-                          
-                               <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
-                               <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
-                               <p class="agreementtype"><i class="fa fa fa-handshake-o"></i> Yearly</p>
-                               <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-                                
-                               
+                                <img class="personimage" src="assets/app/media/img/logos/logo-citzen.png">
+                                <p class="personname">Jaz Electric</p>
+                                <p class="persontype">Electronics</p>
+                            </div>
                         </div>
-                        <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                                <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
-                                <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
-                                <div class="clearfix"></div>
-                          <div class="row">
-                              
 
-                                <div class="col-sm-4">
-                                        <div class="m-widget26">
-                                               
-                                                <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                    <canvas id="m_chart_quick_stats_7"></canvas>
-                                                </div>
-                                                <div class="m-widget26__number">
-                                                    690
-                                                    <small>
+
+
+                        <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
+                        <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
+                        <p class="agreementtype"><i class="fa fa fa-handshake-o"></i> Yearly</p>
+                        <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+
+                    </div>
+                    <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                        <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
+                        <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;" (click)="isWizard=true;">More Details</button>
+                        <div class="clearfix"></div>
+                        <div class="row">
+
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_7"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
                                                         All Orders
                                                     </small>
-                                                </div>
-                                            </div>
-
-
+                                    </div>
                                 </div>
-
-                                <div class="col-sm-4">
-                                        <div class="m-widget26">
-                                               
-                                                <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                    <canvas id="m_chart_quick_stats_8"></canvas>
-                                                </div>
-                                                <div class="m-widget26__number">
-                                                    690
-                                                    <small>
-                                                        All Orders
-                                                    </small>
-                                                </div>
-                                            </div>
-
-
-                                </div>
-
-                                <div class="col-sm-4">
-                                        <div class="m-widget26">
-                                                
-                                                <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                    <canvas id="m_chart_quick_stats_9"></canvas>
-                                                </div>
-                                                <div class="m-widget26__number">
-                                                    690
-                                                    <small>
-                                                        All Orders
-                                                    </small>
-                                                </div>
-                                            </div>
-
-
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="m-widget26">
-                                            
-                                            <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                                <canvas id="m_chart_quick_stats_10"></canvas>
-                                            </div>
-                                            <div class="m-widget26__number">
-                                                690
-                                                <small>
-                                                    All Orders
-                                                </small>
-                                            </div>
-                                        </div>
 
 
                             </div>
 
                             <div class="col-sm-4">
                                 <div class="m-widget26">
-                                        
-                                        <div class="m-widget26__chart" style="height:90px; width: 220px;">
-                                            <canvas id="m_chart_quick_stats_11"></canvas>
-                                        </div>
-                                        <div class="m-widget26__number">
-                                            690
-                                            <small>
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_8"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                        All Orders
+                                                    </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_9"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                        All Orders
+                                                    </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_10"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                    All Orders
+                                                </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_11"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
                                                 All Orders
                                             </small>
-                                        </div>
                                     </div>
+                                </div>
 
 
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="m-widget26">
-                                    
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
                                     <div class="m-widget26__chart" style="height:90px; width: 220px;">
                                         <canvas id="m_chart_quick_stats_12"></canvas>
                                     </div>
@@ -757,171 +757,171 @@
                                 </div>
 
 
-                    </div>
-                             
-            
-                              
-                              
-                              
-                          </div>   
-                          
+                            </div>
+
+
+
+
+
                         </div>
-                      </div>
-                      </div>
-              </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
 
 
-              <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
-                <div class="body organ1"  >
-                  <div class="row" style="margin:0px;">    
-                  <div id="" class="card-left col-lg-3">
+        <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
+            <div class="body organ1">
+                <div class="row" style="margin:0px;">
+                    <div id="" class="card-left col-lg-3">
                         <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                           <input type="checkbox" class="chkboxes">
                           <span></span>
                         </label>
-                        
-                        <div class="row onepersonrow" >
-                             
+
+                        <div class="row onepersonrow">
+
                             <div class="col-md-12">
-                                  <img class="personimage" src="assets/app/media/img/doctor.jpg">
-                                  <p class="personname">John Health</p>
-                                  <p class="persontype">Health Provider</p>
-                            </div> 
-                      </div>
-                       
-                        
-                             <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
-                             <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
-                            
-                             <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-                              
-                             
-                      </div>
-                      <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                              <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
-                              <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
-                              <div class="clearfix"></div>
-                          <div class="row" style="position:relative;">
-                            <div class="col-sm-6">
-                                  <div class="m-widget14__chart"  id="m_chart_person1_chart1" style="height: 160px; margin-left: 13px;">
-                                        
-                                          <div class="m-widget14__stat">
-                                              45
-                                          </div>
-                                      <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="10%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M108.31,101.192A49.773,49.773,0,0,0,63.273,30.227" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.07612609863281px 100.07612609863281px" stroke-dashoffset="-100.07612609863281px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-100.07612609863281px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M24.922,111.727A49.773,49.773,0,0,0,108.383,101.035" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.25057983398438px 100.25057983398438px" stroke-dashoffset="-100.25057983398438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-100.25057983398438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M63.273,30.227A49.773,49.773,0,0,0,25.033,111.86" class="ct-slice-donut" ct:value="36" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="112.75973510742188px 112.75973510742188px" stroke-dashoffset="-112.75973510742188px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-112.75973510742188px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                      <h6 class="text-center">Invoice</h6>
-                                 </div>
-                            <div class="col-sm-6">
-                                  <div class="m-widget14__chart" id="m_chart_person1_chart2" style="height: 160px; margin-left: 13px;">
-                                         
-                                          <div class="m-widget14__stat">
-                                              60
-                                          </div>
-                                      <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="10%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M108.31,101.192A49.773,49.773,0,0,0,63.273,30.227" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.07612609863281px 100.07612609863281px" stroke-dashoffset="-100.07612609863281px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-100.07612609863281px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M24.922,111.727A49.773,49.773,0,0,0,108.383,101.035" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.25057983398438px 100.25057983398438px" stroke-dashoffset="-100.25057983398438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-100.25057983398438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M63.273,30.227A49.773,49.773,0,0,0,25.033,111.86" class="ct-slice-donut" ct:value="36" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="112.75973510742188px 112.75973510742188px" stroke-dashoffset="-112.75973510742188px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-112.75973510742188px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                      <h6 class="text-center">Payment</h6>
-                                  </div>
-                           
-                           
-          
-                            
-                            
-                            
-                        </div>   
-                        
-                      </div>
-  
-                  </div>
+                                <img class="personimage" src="assets/app/media/img/doctor.jpg">
+                                <p class="personname">John Health</p>
+                                <p class="persontype">Health Provider</p>
+                            </div>
+                        </div>
+
+
+                        <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
+                        <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
+
+                        <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+
                     </div>
-  
-  
-  
-                  </div>
+                    <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                        <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
+                        <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+                        <div class="clearfix"></div>
+                        <div class="row" style="position:relative;">
+                            <div class="col-sm-6">
+                                <div class="m-widget14__chart" id="m_chart_person1_chart1" style="height: 160px; margin-left: 13px;">
+
+                                    <div class="m-widget14__stat">
+                                        45
+                                    </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="10%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M108.31,101.192A49.773,49.773,0,0,0,63.273,30.227" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.07612609863281px 100.07612609863281px" stroke-dashoffset="-100.07612609863281px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-100.07612609863281px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M24.922,111.727A49.773,49.773,0,0,0,108.383,101.035" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.25057983398438px 100.25057983398438px" stroke-dashoffset="-100.25057983398438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-100.25057983398438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M63.273,30.227A49.773,49.773,0,0,0,25.033,111.86" class="ct-slice-donut" ct:value="36" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="112.75973510742188px 112.75973510742188px" stroke-dashoffset="-112.75973510742188px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-112.75973510742188px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="m-widget14__chart" id="m_chart_person1_chart2" style="height: 160px; margin-left: 13px;">
+
+                                    <div class="m-widget14__stat">
+                                        60
+                                    </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="10%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M108.31,101.192A49.773,49.773,0,0,0,63.273,30.227" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.07612609863281px 100.07612609863281px" stroke-dashoffset="-100.07612609863281px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-100.07612609863281px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M24.922,111.727A49.773,49.773,0,0,0,108.383,101.035" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.25057983398438px 100.25057983398438px" stroke-dashoffset="-100.25057983398438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-100.25057983398438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M63.273,30.227A49.773,49.773,0,0,0,25.033,111.86" class="ct-slice-donut" ct:value="36" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="112.75973510742188px 112.75973510742188px" stroke-dashoffset="-112.75973510742188px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-112.75973510742188px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Payment</h6>
+                            </div>
 
 
 
-                  <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
-                    <div class="body organ1">
-                      <div class="row" style="margin:0px;">    
-                      <div id="" class="card-left col-lg-3">
-                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="col-md-6" [class.d-none]="(customerType!='All') && (customerType!='Owners')">
+            <div class="body organ1">
+                <div class="row" style="margin:0px;">
+                    <div id="" class="card-left col-lg-3">
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                               <input type="checkbox" class="chkboxes">
                               <span></span>
                             </label>
-                            
-                            <div class="row onepersonrow" >
-                                 
-                                <div class="col-md-12">
-                                      <img class="personimage" src="assets/app/media/img/lawyer.jpg">
-                                      <p class="personname">Adam Law Services</p>
-                                      <p class="persontype">Law/Legal Services</p>
-                                </div> 
-                          </div>
-                           
-                            
-                                 <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
-                                 <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
-                                
-                                 <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
-                                  
-                                 
-                          </div>
-                          <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
-                                  <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
-                                  <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
-                                  <div class="clearfix"></div>
-                              <div class="row" style="position:relative;">
-                                <div class="col-sm-6">
-                                      <div class="m-widget14__chart"  id="m_chart_person1_chart1" style="height: 160px; margin-left: 13px;">
-                                            
-                                              <div class="m-widget14__stat">
-                                                  45
-                                              </div>
-                                          <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="10%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M108.31,101.192A49.773,49.773,0,0,0,63.273,30.227" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.07612609863281px 100.07612609863281px" stroke-dashoffset="-100.07612609863281px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-100.07612609863281px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M24.922,111.727A49.773,49.773,0,0,0,108.383,101.035" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.25057983398438px 100.25057983398438px" stroke-dashoffset="-100.25057983398438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-100.25057983398438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M63.273,30.227A49.773,49.773,0,0,0,25.033,111.86" class="ct-slice-donut" ct:value="36" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="112.75973510742188px 112.75973510742188px" stroke-dashoffset="-112.75973510742188px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-112.75973510742188px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                          <h6 class="text-center">Invoice</h6>
-                                     </div>
-                                <div class="col-sm-6">
-                                      <div class="m-widget14__chart" id="m_chart_person1_chart2" style="height: 160px; margin-left: 13px;">
-                                             
-                                              <div class="m-widget14__stat">
-                                                  60
-                                              </div>
-                                          <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="10%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M108.31,101.192A49.773,49.773,0,0,0,63.273,30.227" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.07612609863281px 100.07612609863281px" stroke-dashoffset="-100.07612609863281px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-100.07612609863281px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M24.922,111.727A49.773,49.773,0,0,0,108.383,101.035" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.25057983398438px 100.25057983398438px" stroke-dashoffset="-100.25057983398438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-100.25057983398438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M63.273,30.227A49.773,49.773,0,0,0,25.033,111.86" class="ct-slice-donut" ct:value="36" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="112.75973510742188px 112.75973510742188px" stroke-dashoffset="-112.75973510742188px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-112.75973510742188px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
-                                          <h6 class="text-center">Payment</h6>
-                                      </div>
-                               
-                               
-              
-                                
-                                
-                                
-                            </div>   
-                            
-                          </div>
-      
-                      </div>
+
+                        <div class="row onepersonrow">
+
+                            <div class="col-md-12">
+                                <img class="personimage" src="assets/app/media/img/lawyer.jpg">
+                                <p class="personname">Adam Law Services</p>
+                                <p class="persontype">Law/Legal Services</p>
+                            </div>
                         </div>
-      
-      
-      
-                      </div>
-    </div>
-    
-   
-    <div class="row" style="padding: 0px 10px;"   [style.display]="(!isGridView && !isWizard) ? 'flex' : 'none'">
-        <div class="col-sm-12">
-            <div class="m-portlet m-portlet--mobile">
-              
-                <div class="m-portlet__body">
-                    <div class="m_datatable"  id="customerDataTable" >
-                    
-                    </div> 
-               </div>   
-    
+
+
+                        <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p>
+                        <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
+
+                        <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+
+                    </div>
+                    <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                        <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Supplier Details</h6>
+                        <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+                        <div class="clearfix"></div>
+                        <div class="row" style="position:relative;">
+                            <div class="col-sm-6">
+                                <div class="m-widget14__chart" id="m_chart_person1_chart1" style="height: 160px; margin-left: 13px;">
+
+                                    <div class="m-widget14__stat">
+                                        45
+                                    </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="10%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M108.31,101.192A49.773,49.773,0,0,0,63.273,30.227" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.07612609863281px 100.07612609863281px" stroke-dashoffset="-100.07612609863281px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-100.07612609863281px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M24.922,111.727A49.773,49.773,0,0,0,108.383,101.035" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.25057983398438px 100.25057983398438px" stroke-dashoffset="-100.25057983398438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-100.25057983398438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M63.273,30.227A49.773,49.773,0,0,0,25.033,111.86" class="ct-slice-donut" ct:value="36" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="112.75973510742188px 112.75973510742188px" stroke-dashoffset="-112.75973510742188px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-112.75973510742188px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Invoice</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="m-widget14__chart" id="m_chart_person1_chart2" style="height: 160px; margin-left: 13px;">
+
+                                    <div class="m-widget14__stat">
+                                        60
+                                    </div>
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="10%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M108.31,101.192A49.773,49.773,0,0,0,63.273,30.227" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.07612609863281px 100.07612609863281px" stroke-dashoffset="-100.07612609863281px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-100.07612609863281px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M24.922,111.727A49.773,49.773,0,0,0,108.383,101.035" class="ct-slice-donut" ct:value="32" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="100.25057983398438px 100.25057983398438px" stroke-dashoffset="-100.25057983398438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-100.25057983398438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M63.273,30.227A49.773,49.773,0,0,0,25.033,111.86" class="ct-slice-donut" ct:value="36" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 17px;" stroke-dasharray="112.75973510742188px 112.75973510742188px" stroke-dashoffset="-112.75973510742188px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-112.75973510742188px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                <h6 class="text-center">Payment</h6>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
         </div>
     </div>
+
+
+    <div class="row" style="padding: 0px 10px;" [style.display]="(!isGridView && !isWizard) ? 'flex' : 'none'">
+        <div class="col-sm-12">
+            <div class="m-portlet m-portlet--mobile">
+
+                <div class="m-portlet__body">
+                    <div class="m_datatable" id="customerDataTable">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
 
@@ -929,15 +929,15 @@
     <div class="row" *ngIf="isWizard">
         <div class="col-md-12">
             <div class="m-portlet">
-                           
-            <div class="m-portlet__body">
-                <button (click)="isWizard=false;" style="padding-left:0px;" class="btn btn-link" ><i class="fa fa-chevron-left"></i> Back</button>
-                <app-wizard-wizard-3></app-wizard-wizard-3>
-          
-            </div>
 
-    </div>
-    </div>
+                <div class="m-portlet__body">
+                    <button (click)="isWizard=false;" style="padding-left:0px;" class="btn btn-link"><i class="fa fa-chevron-left"></i> Back</button>
+                    <!-- <app-wizard-wizard-3></app-wizard-wizard-3> -->
+
+                </div>
+
+            </div>
+        </div>
     </div>
 
 </div>

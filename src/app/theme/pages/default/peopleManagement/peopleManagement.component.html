@@ -124,7 +124,7 @@
 <!-- END: Subheader -->
 
 <div class="m-content">
-    <div class="row" style="padding: 0px 30px;">
+    <div class="row" style="padding: 0px 30px;" *ngIf="isGridView">
         <div class="col-md-6">
             <div class="body organ1">
                 <div class="row" style="margin:0px;">
@@ -305,4 +305,193 @@
             </div>
         </div>
     </div>
-</div>
+
+    <!-- __________List View____________ -->
+    <div style="padding: 0px 30px;" *ngIf="!isGridView">
+        <div class="m-portlet m-portlet--mobile">
+
+            <div class="m-portlet__body">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <img class="personimage" src="assets/app/media/img/users/user1HD.jpg">
+                        <p class="personname">Big Ramy</p>
+                        <p class="persontype">Jaz Electric</p>
+                        <p class="personappartmentno">
+                            <i class="fa fa-clock-o"></i> 6:00 - 23:00</p>
+                        <p class="personaddress">
+                            <i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h6 class="text-muted pull-left">
+                                    <i class="fa fa-cog"></i> Person Details</h6>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="pull-left topdate"> 22-10-2018</p>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="m-widget14" style="padding: 0.2rem;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="m-widget14__legends">
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-accent"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                37% Earning
+                                            </span>
+                                                </div>
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-warning"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                23% Expense
+                                            </span>
+                                                </div>
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-brand"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                40% Profit
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <hr class="customhr">
+
+                            </div>
+
+
+                            <div class="col-md-12 scheduledJobsProfit">
+                                <div class="m-widget1 topAllign">
+                                    <div class="m-widget1__item">
+                                        <div class="row m-row--no-padding align-items-center">
+                                            <div class="col">
+                                                <h3 class="m-widget1__title">
+                                                    Scheduled Jobs
+                                                </h3>
+                                                <span class="m-widget1__desc">
+                                            Weekly
+                                        </span>
+                                            </div>
+                                            <div class="col m--align-right">
+                                                <span class="m-widget1__number m--font-brand">
+                                            21
+                                        </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="personimage" src="assets/app/media/img/users/300_8.jpg">
+                        <p class="personname">Rich Piana</p>
+                        <p class="persontype">Rich Security</p>
+                        <p class="personappartmentno">
+                            <i class="fa fa-clock-o"></i> 6:00 - 23:00</p>
+                        <p class="personaddress">
+                            <i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h6 class="text-muted pull-left">
+                                    <i class="fa fa-cog"></i> Person Details</h6>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="pull-left topdate"> 22-10-2018</p>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="m-widget14" style="padding: 0.2rem;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="m-widget14__legends">
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-accent"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                    37% Earning
+                                                </span>
+                                                </div>
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-warning"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                    23% Expense
+                                                </span>
+                                                </div>
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-brand"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                    40% Profit
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <hr class="customhr">
+
+
+
+
+
+                            </div>
+
+
+                            <div class="col-md-12 scheduledJobsProfit">
+                                <div class="m-widget1 topAllign">
+                                    <div class="m-widget1__item">
+                                        <div class="row m-row--no-padding align-items-center">
+                                            <div class="col">
+                                                <h3 class="m-widget1__title">
+                                                    Scheduled Jobs
+                                                </h3>
+                                                <span class="m-widget1__desc">
+                                                Weekly
+                                            </span>
+                                            </div>
+                                            <div class="col m--align-right">
+                                                <span class="m-widget1__number m--font-brand">
+                                                21
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
