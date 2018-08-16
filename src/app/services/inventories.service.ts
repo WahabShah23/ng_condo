@@ -1,6 +1,6 @@
 export class InventoriesService {
 
-    getInventories(){
+    getInventories() {
         return [
             {
                 name: "Fridge", img: 'assets/app/media/img/custom/inventories/refrigerator.jpg', inventoryCat: 'Appliances', inventorySubCat: 'Refrigerator', brand: 'PEL', desc: 'desc'

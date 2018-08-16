@@ -1,6 +1,6 @@
 export class AmenitiesService {
 
-    getAmenities(){
+    getAmenities() {
         return [
             {
                 name: "Gold's Gym", img: 'assets/app/media/img/custom/amenities/gym.jpg', amenityfor: 'Building', amenitytype: 'Gymnasium', desc: 'desc'

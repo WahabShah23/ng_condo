@@ -11,7 +11,7 @@ export class ApartmentSettingsComponent implements OnInit {
     isApartmentGridView = true;
     ApartmentViewName = 'List View';
     buildingName = "ABC Building";
-    isRental =true;
+    isRental = true;
 
     constructor() { }
 
@@ -30,9 +30,8 @@ export class ApartmentSettingsComponent implements OnInit {
     }
 
 
-    changeApartmentType()
-    {
-        this.isRental = ! this.isRental;
+    changeApartmentType() {
+        this.isRental = !this.isRental;
     }
 
 }

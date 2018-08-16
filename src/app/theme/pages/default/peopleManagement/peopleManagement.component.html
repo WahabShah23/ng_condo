@@ -1,0 +1,497 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title m-subheader__title--separator">
+                People Management
+                <small class="fa fa-gear"></small>
+                <small class="fa fa-bar-chart"></small>
+                <small class="fa fa-search"></small>
+            </h3>
+
+            <!-- <div class="form-group m-form__group" style="display:inline-block;">
+                <select class="form-control m-input form-control-sm">
+                    <option value="All">
+                        All
+                    </option>
+                    <option value="Owners">
+                        Owners
+                    </option>
+                    <option value="Tenants">
+                        Tenants
+                    </option>
+                    
+                </select>
+            </div> -->
+        </div>
+
+
+
+        <button class="btn btn-link pull-right " (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
+        <div>
+            <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+                <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+                    <i class="la la-plus m--hide"></i>
+                    <i class="la la-ellipsis-h"></i>
+                </a>
+                <div class="m-dropdown__wrapper">
+                    <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                    <div class="m-dropdown__inner">
+                        <div class="m-dropdown__body">
+                            <div class="m-dropdown__content">
+                                <ul class="m-nav">
+                                    <li class="m-nav__section m-nav__section--first m--hide">
+                                        <span class="m-nav__section-text">
+											Quick Actions
+										</span>
+                                    </li>
+                                    <li class="m-nav__item">
+                                        <a href="" class="m-nav__link">
+                                            <i class="m-nav__link-icon fa fa-plus"></i>
+                                            <span class="m-nav__link-text">
+												New Supplier
+											</span>
+                                        </a>
+                                    </li>
+                                    <li class="m-nav__item">
+                                        <a href="" class="m-nav__link">
+                                            <i class="m-nav__link-icon flaticon-chat-1"></i>
+                                            <span class="m-nav__link-text">
+												Messages
+											</span>
+                                        </a>
+                                    </li>
+                                    <li class="m-nav__item">
+                                        <a href="" class="m-nav__link">
+                                            <i class="m-nav__link-icon flaticon-info"></i>
+                                            <span class="m-nav__link-text">
+												FAQ
+											</span>
+                                        </a>
+                                    </li>
+                                    <li class="m-nav__item">
+                                        <a href="" class="m-nav__link">
+                                            <i class="m-nav__link-icon flaticon-lifebuoy"></i>
+                                            <span class="m-nav__link-text">
+												Support
+											</span>
+                                        </a>
+                                    </li>
+                                    <li class="m-nav__item">
+                                        <a routerLink='/settings/roles/invite' class="m-nav__link">
+                                            <i class="m-nav__link-icon flaticon-lifebuoy"></i>
+                                            <span class="m-nav__link-text">
+                                                    Add Person
+                                                </span>
+                                        </a>
+                                    </li>
+                                    <li class="m-nav__separator m-nav__separator--fit"></li>
+                                    <li class="m-nav__item">
+                                        <a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
+                                            Submit
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="m-subheader breadcrumb-header">
+    <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li class="m-nav__item m-nav__item--home">
+            <a class="m-nav__link m-nav__link--icon" routerLink="/dashboard" ng-reflect-href="#">
+                <i class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li class="m-nav__separator">
+            -
+        </li>
+
+
+        <li class="m-nav__item">
+            <a class="m-nav__link" href="javascript:;">
+                <span class="m-nav__link-text">
+                    People Management
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<hr class="customhr">
+<!-- END: Subheader -->
+
+<div class="m-content">
+    <div class="row" style="padding: 0px 30px;" *ngIf="isGridView">
+        <div class="col-md-6">
+            <div class="body organ1">
+                <div class="row" style="margin:0px;">
+                    <div id="" class="card-left col-lg-3">
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                      <input type="checkbox" class="chkboxes">
+                      <span></span>
+                    </label>
+
+                        <div class="row onepersonrow">
+
+                            <div class="col-md-12">
+                                <img class="personimage" src="assets/app/media/img/users/300_8.jpg">
+                                <p class="personname">Rich Piana</p>
+                                <p class="persontype">Rich Security</p>
+                            </div>
+                        </div>
+
+
+                        <!-- <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p> -->
+                        <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
+
+                        <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+
+                    </div>
+                    <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                        <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Person Detail</h6>
+                        <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+                        <div class="clearfix"></div>
+                        <div class="row">
+
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_7"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                      All Orders
+                                                  </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_8"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                      All Orders
+                                                  </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_9"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                      All Orders
+                                                  </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- _________________________-Chart 1 Start______________________________________- -->
+        <div class="col-md-6">
+            <div class="body organ1">
+                <div class="row" style="margin:0px;">
+                    <div id="" class="card-left col-lg-3">
+                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                          <input type="checkbox" class="chkboxes">
+                          <span></span>
+                        </label>
+
+                        <div class="row onepersonrow">
+
+                            <div class="col-md-12">
+                                <img class="personimage" src="assets/app/media/img/users/user1HD.jpg">
+                                <p class="personname">Big Ramy</p>
+                                <p class="persontype">Jaz Electric</p>
+                            </div>
+                        </div>
+
+
+
+                        <!-- <p class="personappartmentno"><i class="fa fa-bed"></i> 20-B</p> -->
+                        <p class="personbuildingname"><i class="fa fa-building"></i> Burj Canada</p>
+                        <p class="agreementtype"><i class="fa fa fa-handshake-o"></i> Yearly</p>
+                        <p class="personaddress"><i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+
+                    </div>
+                    <div id="" class="card-right col-lg-9" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                        <h6 class="text-muted pull-left"><i class="fa fa-cog"></i> Person Detail</h6>
+                        <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+                        <div class="clearfix"></div>
+                        <div class="row">
+
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_10"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                      All Orders
+                                                  </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_11"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                      All Orders
+                                                  </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="m-widget26">
+
+                                    <div class="m-widget26__chart" style="height:90px; width: 220px;">
+                                        <canvas id="m_chart_quick_stats_12"></canvas>
+                                    </div>
+                                    <div class="m-widget26__number">
+                                        690
+                                        <small>
+                                                      All Orders
+                                                  </small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- __________List View____________ -->
+    <div style="padding: 0px 30px;" *ngIf="!isGridView">
+        <div class="m-portlet m-portlet--mobile">
+
+            <div class="m-portlet__body">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <img class="personimage" src="assets/app/media/img/users/user1HD.jpg">
+                        <p class="personname">Big Ramy</p>
+                        <p class="persontype">Jaz Electric</p>
+                        <p class="personappartmentno">
+                            <i class="fa fa-clock-o"></i> 6:00 - 23:00</p>
+                        <p class="personaddress">
+                            <i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h6 class="text-muted pull-left">
+                                    <i class="fa fa-cog"></i> Person Details</h6>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="pull-left topdate"> 22-10-2018</p>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="m-widget14" style="padding: 0.2rem;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="m-widget14__legends">
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-accent"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                37% Earning
+                                            </span>
+                                                </div>
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-warning"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                23% Expense
+                                            </span>
+                                                </div>
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-brand"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                40% Profit
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <hr class="customhr">
+
+                            </div>
+
+
+                            <div class="col-md-12 scheduledJobsProfit">
+                                <div class="m-widget1 topAllign">
+                                    <div class="m-widget1__item">
+                                        <div class="row m-row--no-padding align-items-center">
+                                            <div class="col">
+                                                <h3 class="m-widget1__title">
+                                                    Scheduled Jobs
+                                                </h3>
+                                                <span class="m-widget1__desc">
+                                            Weekly
+                                        </span>
+                                            </div>
+                                            <div class="col m--align-right">
+                                                <span class="m-widget1__number m--font-brand">
+                                            21
+                                        </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="personimage" src="assets/app/media/img/users/300_8.jpg">
+                        <p class="personname">Rich Piana</p>
+                        <p class="persontype">Rich Security</p>
+                        <p class="personappartmentno">
+                            <i class="fa fa-clock-o"></i> 6:00 - 23:00</p>
+                        <p class="personaddress">
+                            <i class="fa fa-map-marker"></i> 1620 Orr Rd, Mississauga, ON L5J 4T2, Canada</p>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h6 class="text-muted pull-left">
+                                    <i class="fa fa-cog"></i> Person Details</h6>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="pull-left topdate"> 22-10-2018</p>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-link personMoreDetailsButton pull-right" style="padding:0px;">More Details</button>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="m-widget14" style="padding: 0.2rem;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="m-widget14__legends">
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-accent"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                    37% Earning
+                                                </span>
+                                                </div>
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-warning"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                    23% Expense
+                                                </span>
+                                                </div>
+                                                <div class="m-widget14__legend">
+                                                    <span class="m-widget14__legend-bullet m--bg-brand"></span>
+                                                    <span class="m-widget14__legend-text">
+                                                    40% Profit
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <hr class="customhr">
+
+
+
+
+
+                            </div>
+
+
+                            <div class="col-md-12 scheduledJobsProfit">
+                                <div class="m-widget1 topAllign">
+                                    <div class="m-widget1__item">
+                                        <div class="row m-row--no-padding align-items-center">
+                                            <div class="col">
+                                                <h3 class="m-widget1__title">
+                                                    Scheduled Jobs
+                                                </h3>
+                                                <span class="m-widget1__desc">
+                                                Weekly
+                                            </span>
+                                            </div>
+                                            <div class="col m--align-right">
+                                                <span class="m-widget1__number m--font-brand">
+                                                21
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

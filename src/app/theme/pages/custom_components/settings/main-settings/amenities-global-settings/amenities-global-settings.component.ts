@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import {Folder} from "../../../../../../models/Folder.model";
+import { Folder } from "../../../../../../models/Folder.model";
 import { AmenitiesService } from "../../../../../../services/amenities.service";
 
 @Component({
     selector: 'app-amenities-global-settings',
     templateUrl: './amenities-global-settings.html',
     styleUrls: ['./amenities-global-settings.css'],
-    animations:  [
+    animations: [
         trigger('slideRightLeft', [
             state('show', style({
                 transform: 'translateX(0)',
@@ -34,7 +34,7 @@ export class AmenitiesGlobalSettingsComponent implements OnInit {
     AmenityViewName = 'List View';
     default_imgUrl = 'assets/app/media/img/custom/amenities/placeholder.png';
 
-    selectedAmenities=[];
+    selectedAmenities = [];
 
     Amenities;  // amenities property for amenity service implementation
 
@@ -44,12 +44,12 @@ export class AmenitiesGlobalSettingsComponent implements OnInit {
     //variable to hold boolean value for search field
     public isSearchBoxVisible = false;
 
-    constructor( amenity_service: AmenitiesService) {
+    constructor(amenity_service: AmenitiesService) {
         // let amenity_service = new AmenitiesService();     //NOT GOOD APPROACH, IT MAKES IT TIGHTLY COUPLED TOO!
         this.Amenities = amenity_service.getAmenities();
     }
 
-    searchBox:string = 'hide';
+    searchBox: string = 'hide';
 
     toggleSearchBox() {
         // 1-line if statement that toggles the value:
@@ -71,7 +71,7 @@ export class AmenitiesGlobalSettingsComponent implements OnInit {
     }
 
     addAmenity(name: string, img: string, amenityFor: string, amenityType: string, desc?: string) {
-        this.Amenities.push({name: name, img:img, amenityfor: amenityFor, amenitytype: amenityType, desc: desc });
+        this.Amenities.push({ name: name, img: img, amenityfor: amenityFor, amenitytype: amenityType, desc: desc });
         this.isAmenityGridView = !this.isAmenityGridView;
         this.changeAmenityView();
     }
@@ -80,13 +80,13 @@ export class AmenitiesGlobalSettingsComponent implements OnInit {
     //     this.selectedAmenities.push()
     // }
 
-    deleteAmenity(id){
+    deleteAmenity(id) {
         console.log(id);
-        this.Amenities.splice(id,1);
+        this.Amenities.splice(id, 1);
     }
 
     //function to change the class from style1 to style 2 when clicked
-    toggle_class(){
+    toggle_class() {
         // if(this.display_searchBox=="showSearch"){
         //     this.display_searchBox='hideSearch';
         // }else{

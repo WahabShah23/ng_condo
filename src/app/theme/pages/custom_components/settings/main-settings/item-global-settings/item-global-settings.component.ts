@@ -1,11 +1,11 @@
-import {Component, OnInit, Renderer2, ElementRef, ViewChild} from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { InventoriesService } from "../../../../../../services/inventories.service";
 import { SelectDropDownComponent } from "ngx-select-dropdown";
 
 @Component({
-  selector: 'app-inventory-global-settings',
-  templateUrl: './item-global-settings.component.html',
-  styleUrls: ['./item-global-settings.component.css']
+    selector: 'app-inventory-global-settings',
+    templateUrl: './item-global-settings.component.html',
+    styleUrls: ['./item-global-settings.component.css']
 })
 export class ItemGlobalSettingsComponent implements OnInit {
 
@@ -15,10 +15,10 @@ export class ItemGlobalSettingsComponent implements OnInit {
     }
 
     // @ViewChild('inventoryCat')  inventoryCat: ElementRef;
-    @ViewChild('amenitiesDropdown')  itemCat: SelectDropDownComponent;
-    @ViewChild('itemSubCat')  itemSubCat: SelectDropDownComponent;
-    @ViewChild('brandDropdown')  brandDropdown: SelectDropDownComponent;
-    @ViewChild('providerDropdown')  providerDropdown: SelectDropDownComponent;
+    @ViewChild('amenitiesDropdown') itemCat: SelectDropDownComponent;
+    @ViewChild('itemSubCat') itemSubCat: SelectDropDownComponent;
+    @ViewChild('brandDropdown') brandDropdown: SelectDropDownComponent;
+    @ViewChild('providerDropdown') providerDropdown: SelectDropDownComponent;
 
 
     addInventoryForm = false;
@@ -32,10 +32,10 @@ export class ItemGlobalSettingsComponent implements OnInit {
     brands = ["Pel", "Samsung", "Orient"];  // Suppliers/manufactures
     providers = []; // providers/vendors
 
-    value :string = 'Item';
+    value: string = 'Item';
     Inventories;  // Inventories property for inventory service implementation
 
-    constructor( inventory_service: InventoriesService, private renderer: Renderer2, private el: ElementRef) {
+    constructor(inventory_service: InventoriesService, private renderer: Renderer2, private el: ElementRef) {
         // let inventory_service = new InventoriesService();     //NOT GOOD APPROACH, IT MAKES IT TIGHTLY COUPLED TOO!
         this.Inventories = inventory_service.getInventories();
     }
@@ -55,14 +55,14 @@ export class ItemGlobalSettingsComponent implements OnInit {
     }
 
     addItem(name: string, img: string, item_Cat: string, item_SubCat: string, item_brand: string, desc?: string) {
-        this.Inventories.push({name: name, img:img, inventoryCat: item_Cat, inventorySubCat: item_SubCat, brand: item_brand, desc: desc });
+        this.Inventories.push({ name: name, img: img, inventoryCat: item_Cat, inventorySubCat: item_SubCat, brand: item_brand, desc: desc });
         this.isInventoryGridView = !this.isInventoryGridView;
         this.changeInventoryView();
     }
 
-    deleteInventory(id){
+    deleteInventory(id) {
         console.log(id);
-        this.Inventories.splice(id,1);
+        this.Inventories.splice(id, 1);
     }
 
     addCat(name: string) {
@@ -78,7 +78,7 @@ export class ItemGlobalSettingsComponent implements OnInit {
 
     }
 
-    addSubCategory(name:string){
+    addSubCategory(name: string) {
         this.subCategories.push(name);
         this.itemSubCat.availableItems.push(name);
     }
@@ -93,7 +93,7 @@ export class ItemGlobalSettingsComponent implements OnInit {
         // this.renderer.appendChild(this.brandDropdown.nativeElement, option);
     }
 
-    addProvider(name:string){
+    addProvider(name: string) {
         this.providers.push(name);
         this.providerDropdown.availableItems.push(name);
     }

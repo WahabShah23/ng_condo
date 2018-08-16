@@ -37,8 +37,8 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2
         ThemeComponent,
         AppComponent,
         WizardComponent,
-        
-        
+
+
     ],
     imports: [
         LayoutModule,
@@ -64,7 +64,7 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2
         RulesService,
         RoomsService,
         SupportService,
-        SpecializedFacilityService, 
+        SpecializedFacilityService,
         RolesService
     ],
 
