@@ -16,10 +16,13 @@ export class OwnersRolesComponent implements OnInit {
   @ViewChild('setPasswordCheckbox') setPasswordCheckbox : HTMLInputElement;
   @ViewChild('firstName') firstNameInput : ElementRef;
   @ViewChild('lastName') lastNameInput : ElementRef;
+  @ViewChild('isIndividualCheckbox') isIndividualCheckbox: ElementRef;
 
   isGroupSelect = false;
   isSectionSelect = false;
   inviteType = 'Individual';
+  relationType='';
+  isIndividualSelect = false;
 
   isFloor = false;
   isCondo = false;
@@ -32,8 +35,8 @@ export class OwnersRolesComponent implements OnInit {
   config = 
    {
     displayKey: "description", //if objects array passed which key to be displayed defaults to description,
-    search: true //enables the search plugin to search in the list
-   };
+    search: true, //enables the search plugin to search in the list 
+  };
 
    companies = ["Company A", "Company B" , "Company C"];
    companiesDropdownModel;
@@ -63,6 +66,17 @@ export class OwnersRolesComponent implements OnInit {
 
   {
     name: "Building Support",
+    date: "6/10/2017"
+  }
+  ,
+  
+  {
+    name: "Condo Owners A",
+    date: "6/10/2017"
+  },
+
+  {
+    name: "Condo Tenants B",
     date: "6/10/2017"
   }
 
@@ -270,6 +284,7 @@ this.condoSelectedItems = [];
   openSectionSelectBar()
   {
     this.isSectionSelect = true;
+    this.isIndividualSelect = false;
   }
 
   backFromGroupSelect()
@@ -395,5 +410,25 @@ this.condoSelectedItems = [];
   selectionChanged(event , dropdown)
   {
     console.log(dropdown);
+  }
+
+
+  onChangeRelation(value)
+  {
+    this.relationType = value;
+  }
+
+
+  IndividualChanged()
+  {
+    if(this.isIndividualCheckbox.nativeElement.checked)
+    {
+      this.isIndividualSelect = true;
+      this.isSectionSelect = false;
+    }
+    else
+    {
+      this.isIndividualSelect = false;
+    }
   }
 }

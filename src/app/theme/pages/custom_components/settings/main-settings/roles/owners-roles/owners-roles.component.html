@@ -14,7 +14,7 @@
 
    
 
-         <div class="d-flex align-items-center" *ngIf="inviteType=='Company'">
+         <div class="d-flex align-items-center" *ngIf="inviteType=='Company' || relationType=='Employee'">
             <div class="form-group m-form__group mr-auto custom-width-100">
                     <label class="m-subheader__title">
                         Company:
@@ -29,19 +29,17 @@
 
         <div class="m-form__group form-group"  >
                 <label>Relation</label>
-                <select class="form-control m-input m-input--air" #relation>
+                <select  (change)="onChangeRelation(relation.value)" class="form-control m-input m-input--air" #relation>
                     <ng-container *ngIf="inviteType=='Company'">
-                            <option value=""></option>
-                            <option value="Owner">Owner</option>
+                            <option selected value="Owner">Owner</option>
                             <option value="Manager">Management</option>
                     </ng-container>
 
 
-                    <ng-container *ngIf="inviteType!='Company'">
-                            <option value=""></option>
-                            <option value="Owner">Owner</option>
-                            <option value="Tenant">Tenant</option>
-                            <option value="Employee">Employee</option>
+                    <ng-container #individualType *ngIf="inviteType!='Company'">
+                            <option selected value="Owner">Condo Owner</option>
+                            <option value="Tenant">Condo Tenant</option>
+                            <option value="Employee">Condo Employee</option>
                     </ng-container>
                    
                 </select>
@@ -83,6 +81,12 @@
                 <label>Last Name</label>
                 <input type="text" class="form-control m-input m-input--air" #lastName>
         </div>
+
+        <div class="m-form__group form-group" *ngIf="relationType=='Employee'">
+            <label>Designation</label>
+            <input type="input" class="form-control m-input m-input--air" >
+      </div>
+ 
 
         <div class="m-form__group form-group">
                 <label>Email</label>
@@ -227,8 +231,16 @@
                 
             </div>
 
+         
+
             <button class="btn btn-sm btn-info" *ngIf="!isAddRoleFormDisplay" (click)="isAddRoleFormDisplay=true;">Create Role</button>
             
+            <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand float-right">
+                <input  type="checkbox" #isIndividualCheckbox (change)="IndividualChanged()">
+                 Individual
+                <span ></span>
+            </label>
+
             <div *ngIf="isAddRoleFormDisplay" style="margin-top:60px;">
 
             <div class="row">
@@ -264,7 +276,7 @@
                         <label class="m-subheader__title">
                             Building:
                             </label>
-                            <ngx-select-dropdown #buildingNamesDropdown (change)="selectionChanged($event, buildingNamesDropdown)" [config]="config" [options]="buildings" [(value)]="buildingsDropdownModel"  >
+                            <ngx-select-dropdown #buildingNamesDropdown (change)="selectionChanged($event, buildingNamesDropdown)" [config]="config" [options]="buildings" [multiple]="true" [(value)]="buildingsDropdownModel"  >
                             </ngx-select-dropdown>
                 
                 </div>
@@ -449,6 +461,203 @@
                         </div>
                     </div>
         </div>
+</div>
+
+
+
+
+<div class="col-lg-4 col-md-12 whiteBackgroundFormCard"   *ngIf="isIndividualSelect">
+    <button (click)="backFromSectionSelect()"  class="btn btn-link" style="padding-left: 0px;"><i  aria-hidden="true" class="fa fa-chevron-left"></i><span  style=" text-transform: capitalize;">Back</span></button>
+    <h5>Manage Access</h5>
+      <div class="form-group m-form__group mr-auto custom-width-100">
+                    <label class="m-subheader__title">
+                        Building:
+                        </label>
+                        <ngx-select-dropdown #buildingNamesDropdown (change)="selectionChanged($event, buildingNamesDropdown)" [config]="config" [options]="['Building A']"  [(value)]="buildingsDropdownModel"  >
+                        </ngx-select-dropdown>
+            
+            </div>
+            
+
+    <div class="m-form__group form-group">
+    <label for="">Select Section:</label>
+    <angular2-multiselect [data]="itemList" 
+        [(ngModel)]="selectedItems" 
+        [settings]="settings" 
+        (onSelect)="onItemSelect($event)"
+        (onDeSelect)="OnItemDeSelect($event)" 
+        (onSelectAll)="onSelectAll($event)" 
+        (onDeSelectAll)="onDeSelectAll($event)">
+    </angular2-multiselect>
+    </div>
+
+
+    <div class="m-form__group form-group" *ngIf="isFloor">
+        <label for="">Select Floor:</label>
+        <angular2-multiselect [data]="floorItemList" 
+            [(ngModel)]="floorSelectedItems" 
+            [settings]="hierarchySettings" >
+        </angular2-multiselect>
+    </div>
+
+    <div class="m-form__group form-group" *ngIf="isParking">
+        <label for="">Select Parking Floor:</label>
+        <angular2-multiselect [data]="parkingItemList" 
+            [(ngModel)]="parkingSelectedItems" 
+            [settings]="hierarchySettings" >
+        </angular2-multiselect>
+    </div>
+
+    <div class="m-form__group form-group" *ngIf="isCondo">
+        <label for="">Select Condo:</label>
+        <angular2-multiselect [data]="condoItemList" 
+            [(ngModel)]="condoSelectedItems" 
+            [settings]="hierarchySettings" >
+        </angular2-multiselect>
+    </div>
+
+
+    <div class="m-form__group form-group" *ngIf="isGuestSuite">
+        <label for="">Select Guest Suites:</label>
+        <angular2-multiselect [data]="guestSuitesitemList" 
+            [(ngModel)]="guestSuitesSelectedItems" 
+            [settings]="hierarchySettings" >
+        </angular2-multiselect>
+    </div>
+
+    <div class="m-form__group form-group" *ngIf="isShop">
+        <label for="">Select Shops:</label>
+        <angular2-multiselect [data]="shopsItemList" 
+            [(ngModel)]="shopsItemSelectedItems" 
+            [settings]="hierarchySettings" >
+        </angular2-multiselect>
+    </div>
+
+    <div  class="m-form__group form-group">
+            <div  class="m-checkbox-inline">
+                    <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
+                        <input type="checkbox" [checked]="isEdit ? true : false">
+                        Edit
+                        <span ></span>
+                    </label>
+                    <label  class="m-checkbox m-checkbox--solid m-checkbox--brand" >
+                        <input type="checkbox" [checked]="isEdit ? true : false">
+                        View
+                        <span ></span>
+                    </label>
+                    <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand">
+                        <input  type="checkbox">
+                        Delete
+                        <span ></span>
+                    </label>
+                
+                    
+                </div>
+    </div>
+
+    <h6>Access Expiry</h6>
+    <div  class="m-form__group form-group">
+            <div  class="m-checkbox-inline">
+                <label  class="m-checkbox m-checkbox--solid  m-checkbox--brand" >
+                    <input type="checkbox" #expiryCheckbox>
+                     Yes, It Expires
+                    <span ></span>
+                </label> 
+            </div>
+   </div>
+
+   
+
+   <div *ngIf="expiryCheckbox.checked">
+        <div class="m-form__group form-group" >
+                <label>From:</label>
+                <input class="form-control m-input" type="datetime-local" value="2018-08-19T13:45:00">
+        </div>
+
+        <div class="m-form__group form-group" >
+                <label>To:</label>
+                <input class="form-control m-input" type="datetime-local" value="2018-10-08T13:45:00">
+        </div>
+   </div>
+
+        <button class="btn btn-sm btn-info" >Apply</button>
+        <div style="margin-top:40px;" *ngIf="isEdit">
+                <h6>Accesses</h6>
+        <div class="row" style="margin-top:10px;" >
+                <div class="col-sm-3">
+                    <strong>Access</strong>
+                </div>
+                <div class="col-sm-3">
+                    <strong>Permissions</strong>
+                </div>
+                <div class="col-sm-3">
+                    <strong>Expiry</strong>
+                </div>
+                <div class="col-sm-1">
+                    <strong>  Edit </strong>
+                </div>
+                
+                <div class="col-sm-1">
+                        <strong>Del</strong>
+                </div>
+            </div>
+        <div class="row" style="margin-top:10px;" >
+            <div class="col-sm-3">
+                <p>Condo</p>
+            </div>
+            <div class="col-sm-3">
+                Add, Edit, Delete
+            </div>
+            <div class="col-sm-3">
+                12-12-2018
+            </div>
+            <div class="col-sm-1">
+                    <i class="fa fa-edit"></i>
+            </div>
+            
+            <div class="col-sm-1">
+                    <i class="fa fa-trash"></i>
+            </div>
+        </div>
+
+        
+        <div class="row">
+                <div class="col-sm-3">
+                    <p>Gym</p>
+                </div>
+                <div class="col-sm-3">
+                    Add, Edit
+                </div>
+                <div class="col-sm-3">
+                    -
+                </div>
+                <div class="col-sm-1">
+                        <i class="fa fa-edit"></i>
+                </div>
+                
+                <div class="col-sm-1">
+                        <i class="fa fa-trash"></i>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-sm-3">
+                        <p>Floors</p>
+                    </div>
+                    <div class="col-sm-3">
+                        Add, Edit
+                    </div>
+                    <div class="col-sm-3">
+                        12-11-2018
+                    </div>
+                    <div class="col-sm-1">
+                            <i class="fa fa-edit"></i>
+                    </div>
+                    
+                    <div class="col-sm-1">
+                            <i class="fa fa-trash"></i>
+                    </div>
+                </div>
+    </div>
 </div>
 
 
