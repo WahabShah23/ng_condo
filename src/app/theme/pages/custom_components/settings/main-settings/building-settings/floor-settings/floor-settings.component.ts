@@ -8,16 +8,16 @@ import { SelectDropDownComponent } from 'ngx-select-dropdown/dist/components';
 })
 export class FloorSettingsComponent implements OnInit {
 
-    @ViewChild('amenitiesDropdown')  amenitiesDropdown: SelectDropDownComponent;
+    @ViewChild('amenitiesDropdown') amenitiesDropdown: SelectDropDownComponent;
     addFloorForm = false;
     isFloorGridView = true;
     FloorViewName = 'List View';
     buildingName = "ABC Building";
-    floorType="Normal";
+    floorType = "Normal";
     ownerParking;
     guestParking;
 
-    amenities = ["Swimming Pool", "Gym" , "Laundry"];
+    amenities = ["Swimming Pool", "Gym", "Laundry"];
     amneityDropdownModel;
     config = {
         displayKey: "description", //if objects array passed which key to be displayed defaults to description,
@@ -40,19 +40,15 @@ export class FloorSettingsComponent implements OnInit {
         this.addFloorForm = false;
     }
 
-    onFloorChanged(floor:string)
-    {
+    onFloorChanged(floor: string) {
         this.floorType = floor;
     }
-    checkchanged(checkbox: HTMLInputElement)
-    {
-        if(checkbox.value=="owner")
-        {
-          (checkbox.checked) ?  this.ownerParking=true:  this.ownerParking=false; 
+    checkchanged(checkbox: HTMLInputElement) {
+        if (checkbox.value == "owner") {
+            (checkbox.checked) ? this.ownerParking = true : this.ownerParking = false;
         }
-        else
-        {
-            (checkbox.checked) ?  this.guestParking=true:  this.guestParking=false; 
+        else {
+            (checkbox.checked) ? this.guestParking = true : this.guestParking = false;
         }
     }
 

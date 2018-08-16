@@ -1,5 +1,5 @@
 export class RulesService {
-    rules =  [
+    rules = [
         {
             name: "GYM", img: 'assets/app/media/img/custom/inventories/placeholder.png', desc: 'desc'
         },
@@ -7,7 +7,7 @@ export class RulesService {
             name: 'Party Room', img: 'assets/app/media/img/custom/inventories/placeholder.png', desc: 'desc'
         }
     ];
-    getRules(){
+    getRules() {
         return this.rules;
     }
 }

@@ -39,11 +39,11 @@ import { ItemGlobalSettingsComponent } from "./item-global-settings/item-global-
 import { InventoryBuildingComponent } from './building-settings/specialized-rooms/inventory-building/inventory-building.component';
 import { InventoriesService } from '../../../../../services/inventories.service';
 import { SettingsSpecializedComponent } from '../settings-specialized/settings-specialized.component';
-import {RulesGlobalSettingsComponent} from "./rules-global-settings/rules-global-settings.component";
+import { RulesGlobalSettingsComponent } from "./rules-global-settings/rules-global-settings.component";
 import { GuestSuitesComponent } from './building-settings/guest-suites/guest-suites.component';
-import {AddRulesComponent} from "./rules-global-settings/add-rules/add-rules.component";
-import {ListViewRulesComponent} from "./rules-global-settings/list-view-rules/list-view-rules.component";
-import {GridViewRulesComponent} from "./rules-global-settings/grid-view-rules/grid-view-rules.component";
+import { AddRulesComponent } from "./rules-global-settings/add-rules/add-rules.component";
+import { ListViewRulesComponent } from "./rules-global-settings/list-view-rules/list-view-rules.component";
+import { GridViewRulesComponent } from "./rules-global-settings/grid-view-rules/grid-view-rules.component";
 
 const routes: Routes = [
     {
@@ -104,8 +104,8 @@ const routes: Routes = [
             {
                 'path': 'roles',
                 'component': RolesComponent
-            },  
-            
+            },
+
         ],
     },
     {
@@ -183,15 +183,15 @@ const routes: Routes = [
         ]
     },
     {
-             'path': 'buildings/:id/specialized-facility',
-             'component': SettingsSpecializedComponent,
-             'children': [
-                 {
-                     'path': '',
-                     'component': RoomTypesComponent
- 
-                 }
-            ]
+        'path': 'buildings/:id/specialized-facility',
+        'component': SettingsSpecializedComponent,
+        'children': [
+            {
+                'path': '',
+                'component': RoomTypesComponent
+
+            }
+        ]
     },
     {
         'path': 'buildings/:id/specialized-facility/:id',
@@ -202,8 +202,8 @@ const routes: Routes = [
                 'component': RoomsComponent
 
             }
-       ]
-  },
+        ]
+    },
     {
         'path': 'buildings/:id/specialized-rooms',
         'component': SettingsSpecializedComponent,
@@ -244,17 +244,17 @@ const routes: Routes = [
                 'path': 'lounge',
                 'component': LoungeComponent
             }
-            
+
         ]
     }
 
-   
-    
+
+
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-exports: [RouterModule]
+    exports: [RouterModule]
 })
 
 export class MainSettingsRouting { }

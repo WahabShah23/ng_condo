@@ -12,7 +12,7 @@ export class BuildingSettingsComponent implements OnInit, AfterViewInit {
     addBuildingForm = false;
     isBuildingGridView = true;
     BuildingViewName = 'List View';
-    
+
     time = '08:00:50';
 
     isWalkIn = true;
@@ -42,5 +42,5 @@ export class BuildingSettingsComponent implements OnInit, AfterViewInit {
 
 
 
- 
+
 }

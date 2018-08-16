@@ -51,7 +51,7 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2
 @NgModule({
     imports: [
         CommonModule, LayoutModule,
-        FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule , MainSettingsRouting, FormsModule,
+        FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule, MainSettingsRouting, FormsModule,
         AngularMultiSelectModule
     ], exports: [
     ], declarations: [
