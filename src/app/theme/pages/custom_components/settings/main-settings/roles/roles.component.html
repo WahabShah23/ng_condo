@@ -3,6 +3,7 @@
      <div class="row" style="height: 100%;">
             
             <div class="verticals" id="vertical_1" >
+                    
                     <button routerLink="invite" class="btn btn-link pull-right" ><i class="fa fa-plus"></i> Invite</button>
                      <div class="clearfix"></div>                 
         
@@ -89,9 +90,15 @@
 
             <div class="verticals" id="vertical_3" *ngIf="accessVertical" > 
                     <div *ngFor="let access of accesses; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
+             
                     <h6 class="innerCardsTitle m-menu__link-text">{{access.name}}</h6>
+                    <a *ngIf="access.name=='Floors'" data-toggle="modal" data-target="#floorDetails"><i  class="fa fa-expand text-muted pull-right c-expand-icon"></i></a>
+                    <a *ngIf="access.name=='Condos'" data-toggle="modal" data-target="#condosDetails"><i  class="fa fa-expand text-muted pull-right c-expand-icon"></i></a>
+                    <a *ngIf="access.name=='Gym'" data-toggle="modal" data-target="#gymDetails"><i  class="fa fa-expand text-muted pull-right c-expand-icon"></i></a>
+             
                     <div class="clearfix"></div>
-                     <p *ngIf="access.name=='Floors'"> 1,2,3,6,7,8 </p>
+         
+                    <p *ngIf="access.name=='Floors'"> 1,2,3,6,7,8 </p>
                      <p *ngIf="access.name=='Condos'"> 1-A , 2-B , 3-C </p>
                     </div>
     
@@ -105,10 +112,10 @@
         
     </div>
 </div>
-
+<!-- 
 <p-sidebar [(visible)]="visibleSidebar5" [fullScreen]="true" [baseZIndex]="10000">
 
-</p-sidebar>
+</p-sidebar> -->
 
 <div  aria-labelledby="exampleModalLabel" class="modal fade" id="owndersModel" role="dialog" tabindex="-1" >
         <div  class="modal-dialog modal-sm" role="document">
@@ -153,3 +160,271 @@
             </div>
         </div>
     </div>
+
+
+
+    <div  aria-labelledby="exampleModalLabel" class="modal fade" id="floorDetails" role="dialog" tabindex="-1" >
+        <div  class="modal-dialog modal-md" role="document">
+            <div  class="modal-content">
+                <div  class="modal-header">
+                    <h5  class="modal-title" id="exampleModalLabel">
+                        Floors
+                    </h5>
+                    <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span  aria-hidden="true">
+                                ×
+                    </span>
+                    </button>
+                </div>
+                <div  class="modal-body" >
+
+                        <div class="tab-pane active" id="m_widget11_tab1_content">
+
+                                <!--begin::Widget 11-->
+                                <div class="m-widget11">
+                                    <div class="table-responsive">
+
+                                        <!--begin::Table-->
+                                        <table class="table">
+
+                                            <!--begin::Thead-->
+                                            <thead>
+                                                <tr>
+                                                    <td class="m-widget11__app">Access</td>
+                                                    <td class="m-widget11__sales">Start Time</td>
+                                                    <td class="m-widget11__price">End Tme</td>
+                                                </tr>
+                                            </thead>
+
+                                            <!--end::Thead-->
+
+                                            <!--begin::Tbody-->
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span class="m-widget11__title"><i class="fa fa-building-o" aria-hidden="true"></i> Floor 1</span>
+                                                        <span class="m-widget11__sub"><i class="fa fa-sort" aria-hidden="true"></i> Elevator North-East</span>
+                                                    </td>
+                                                    <td>17-08-2017 12:00pm</td>
+                                                    <td>20-08-2017 12:00pm</td>
+                                                </tr>
+
+                                                
+                                                <tr>
+                                                       <td>
+                                                            <span class="m-widget11__title"><i class="fa fa-building-o" aria-hidden="true"></i> Floor 4</span>
+                                                            <span class="m-widget11__sub"><i class="fa fa-sort" aria-hidden="true"></i> Elevator South-East</span>
+                                                        </td>
+                                                        <td>17-08-2017 12:00pm</td>
+                                                        <td>20-08-2017 12:00pm</td>
+                                                    </tr>
+                                                    <tr>
+                                                            <td>
+                                                                <span class="m-widget11__title"><i class="fa fa-building-o" aria-hidden="true"></i> Floor 7</span>
+                                                                <span class="m-widget11__sub"><i class="fa fa-sort" aria-hidden="true"></i> Elevator North-East</span>
+                                                            </td>
+                                                            <td>17-08-2017 12:00pm</td>
+                                                            <td>20-08-2017 12:00pm</td>
+                                                        </tr>
+                                            </tbody>
+
+                                            <!--end::Tbody-->
+                                        </table>
+
+                                        <!--end::Table-->
+                                    </div>
+                                </div>
+
+                                <!--end::Widget 11-->
+                            </div>
+                </div>
+
+                <div  class="modal-footer">
+                    <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div  aria-labelledby="exampleModalLabel" class="modal fade" id="condosDetails" role="dialog" tabindex="-1" >
+            <div  class="modal-dialog modal-md" role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="exampleModalLabel">
+                            Condos
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                        </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body" >
+    
+                            <div class="tab-pane active" >
+    
+                                    <!--begin::Widget 11-->
+                                    <div class="m-widget11">
+                                        <div class="table-responsive">
+    
+                                            <!--begin::Table-->
+                                            <table class="table">
+    
+                                                <!--begin::Thead-->
+                                                <thead>
+                                                    <tr>
+                                                        <td class="m-widget11__app">Access</td>
+                                                        <td class="m-widget11__sales">Start Time</td>
+                                                        <td class="m-widget11__price">End Tme</td>
+                                                    </tr>
+                                                </thead>
+    
+                                                <!--end::Thead-->
+    
+                                                <!--begin::Tbody-->
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="m-widget11__title"><i class="fa fa-home" aria-hidden="true"></i> 1 - A</span>
+                                                            <span class="m-widget11__sub"><i class="fa fa-building-o" aria-hidden="true"></i> Floor 1</span>
+                                                        </td>
+                                                        <td>17-08-2017 12:00pm</td>
+                                                        <td>20-08-2017 12:00pm</td>
+                                                    </tr>
+    
+                                                    
+                                                    <tr>
+                                                           <td>
+                                                                <span class="m-widget11__title"><i class="fa fa-home" aria-hidden="true"></i> 3 - C</span>
+                                                                <span class="m-widget11__sub"><i class="fa fa-building-o" aria-hidden="true"></i> Floor 3</span>
+                                                            </td>
+                                                            <td>17-08-2017 12:00pm</td>
+                                                            <td>Till Contract</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td>
+                                                                    <span class="m-widget11__title"><i class="fa fa-home" aria-hidden="true"></i> 7 - B</span>
+                                                                    <span class="m-widget11__sub"><i class="fa fa-building-o" aria-hidden="true"></i> Floor 7</span>
+                                                                </td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                </tbody>
+    
+                                                <!--end::Tbody-->
+                                            </table>
+    
+                                            <!--end::Table-->
+                                        </div>
+                                    </div>
+    
+                                    <!--end::Widget 11-->
+                                </div>
+                    </div>
+    
+                    <div  class="modal-footer">
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        
+    <div  aria-labelledby="exampleModalLabel" class="modal fade" id="gymDetails" role="dialog" tabindex="-1" >
+            <div  class="modal-dialog modal-md" role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="exampleModalLabel">
+                            Gym
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                        </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body" >
+    
+                            <div class="tab-pane active" >
+    
+                                    <!--begin::Widget 11-->
+                                    <div class="m-widget11">
+                                        <div class="table-responsive">
+    
+                                            <!--begin::Table-->
+                                            <table class="table">
+    
+                                                <!--begin::Thead-->
+                                                <thead>
+                                                    <tr>
+                                                        <td class="m-widget11__app">Access</td>
+                                                        <td class="m-widget11__sales">Start Time</td>
+                                                        <td class="m-widget11__price">End Tme</td>
+                                                    </tr>
+                                                </thead>
+    
+                                                <!--end::Thead-->
+    
+                                                <!--begin::Tbody-->
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="m-widget11__title"><i class="fa fa-futbol-o" aria-hidden="true"></i> Treadmill </span>
+                                                            <span class="m-widget11__sub"><i class="fa fa-building-o" aria-hidden="true"></i> Gym (10th Floor)</span>
+                                                        </td>
+                                                        <td>17-08-2017 12:00pm</td>
+                                                        <td>20-08-2017 12:00pm</td>
+                                                    </tr>
+    
+                                                    
+                                                    <tr>
+                                                           <td>
+                                                                <span class="m-widget11__title"><i class="fa fa-futbol-o" aria-hidden="true"></i> Stationary Bike </span>
+                                                                <span class="m-widget11__sub"><i class="fa fa-building-o" aria-hidden="true"></i> Gym (10th Floor)</span>
+                                                            </td>
+                                                            <td>17-08-2017 12:00pm</td>
+                                                            <td>20-08-2017 12:00pm</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td>
+                                                                    <span class="m-widget11__title"><i class="fa fa-futbol-o" aria-hidden="true"></i> Stair Steppers</span>
+                                                                    <span class="m-widget11__sub"><i class="fa fa-building-o" aria-hidden="true"></i> Gym (10th Floor)</span>
+                                                                </td>
+                                                                <td>17-08-2017 12:00pm</td>
+                                                                <td>20-08-2017 12:00pm</td>
+                                                            </tr>
+                                                </tbody>
+    
+                                                <!--end::Tbody-->
+                                            </table>
+    
+                                            <!--end::Table-->
+                                        </div>
+                                    </div>
+    
+                                    <!--end::Widget 11-->
+                                </div>
+                    </div>
+    
+                    <div  class="modal-footer">
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -313,7 +313,10 @@ export class OwnersRolesComponent implements OnInit {
     }
 
     onAddMember(relation, firstName, lastName) {
-        this.roleService.addRole(this.companiesDropdownModel, relation, firstName + '' + lastName);
+        if(!this.isEdit)
+        {
+          this.roleService.addRole(this.companiesDropdownModel, relation, firstName + '' + lastName);
+        }
         this.router.navigate(['/settings/roles']);
     }
 
