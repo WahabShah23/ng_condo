@@ -32,6 +32,9 @@
         </div>
         <button class="btn btn-link" (click)="changeViewService()">
 			<i class="fa fa-handshake-o"></i> {{viewNameService}}
+        </button>
+        <button class="btn btn-link" routerLink="/services/mapView">
+			<i class="fa fa-map-marker"></i> Map View
 		</button>
         <button class="btn btn-link pull-right" (click)="changeView()" [hidden]="!isDisplayForm">
 			<i class="fa" [class.hidden]="!isGridView" [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}"></i> {{viewName}} </button>

@@ -8,6 +8,157 @@
     height: 90%;
 }
 
+.custom-font-size {
+    font-size: 15px;
+}
+
+.custom-padding-right {
+    padding-right: 0px;
+}
+
+.custom-terms-main-div {
+    display: none;
+    z-index: 100003;
+}
+
+.custom-rail-x {
+    left: 0px;
+    bottom: 0px;
+}
+
+.custom-thumb-x {
+    left: 0px;
+    width: 0px;
+}
+
+.custom-rail-y {
+    top: 0px;
+    right: 4px;
+    height: 200px;
+}
+
+.custom-thumb-y {
+    top: 0px;
+    height: 0px;
+}
+
+.cutom-terms-modal-body {
+    height: 200px;
+    overflow: hidden;
+}
+
+.custom-card-owner-setting {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.custom-padding-left-top-zero {
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+.custom-margin-right-book-button {
+    margin-right: 7px;
+    float: right;
+}
+
+.custom-float-right {
+    float: right;
+}
+
+.custom_margin_bottom {
+    margin-bottom: 0px;
+}
+
+.custom_padding_left {
+    padding-left: 0px;
+    margin-left: -10px;
+}
+
+@media (max-width: 767px) {
+    .custom_padding_left {
+        margin-top: -24px;
+        padding-left: 50px;
+    }
+    .service-item a {
+        margin-top: -24px !important;
+    }
+    .card-left {
+        margin-top: 10px;
+    }
+}
+
+.custom-border-bottom:hover {
+    text-decoration: none;
+}
+
+.custom-border-map-button:hover {
+    outline: none;
+    background-color: #5867dd;
+}
+
+.custom-margin-bottom-zero {
+    margin-bottom: 0px;
+}
+
+.checked {
+    color: orange;
+}
+
+.custom-margin-right-forty {
+    margin-right: 40px;
+}
+
+.stats-icons[_ngcontent-c3] {
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+
+/* Condo */
+
+.m-subheader {
+    padding: 10px 30px 0 30px;
+}
+
+.breadcrumb-header {
+    margin-top: -15px !important;
+}
+
+.breadcrumb-header li a span {
+    font-size: 11px;
+}
+
+.stats-icons {
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.m-content {
+    padding-top: 10px;
+}
+
+.c-padding10 {
+    padding: 10px 0px 0px 10px;
+}
+
+.m-widget14 .m-widget14__header .m-widget14__desc {
+    font-size: 2rem;
+}
+
+.m-widget14 .m-widget14__header {
+    padding: 0rem 0;
+    margin-bottom: 0rem;
+}
+
+.m-widget14 {
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.breadcrumb-header[_ngcontent-c3] li[_ngcontent-c3] a[_ngcontent-c3] span[_ngcontent-c3] {
+    font-size: 11px;
+}
+
 .card-left {
     background-color: white;
     background-repeat: no-repeat;
@@ -18,10 +169,6 @@
     padding: 10px;
     border-right: 2px solid rgba(6, 138, 205, 0.3);
     box-shadow: -3px 1px 15px 1px rgba(69, 65, 78, 0.08);
-}
-
-.card-right p {
-    text-align: justify;
 }
 
 .card-left p {
@@ -116,7 +263,7 @@
 }
 
 .personMoreDetailsButton {
-    color: #068ACE;
+    color: #068ace;
     font-size: 12px;
 }
 
@@ -148,15 +295,10 @@
 }
 
 .moreDetailSection {
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
     box-shadow: 0px 4px 12px -4px rgba(120, 114, 120, 1);
     margin-right: 0px;
-    position: absolute;
     z-index: 999;
-}
-
-.amcharts-chart-div {
-    width: 100%;
 }
 
 .breadcrumb-header {
@@ -178,37 +320,8 @@
     cursor: pointer;
 }
 
-.onepersonrow {
-    text-align: center;
-    margin-top: -10px;
-    margin-bottom: 10px;
-}
-
-.gridView .chatServiceButton {
-    position: absolute;
-    bottom: 10px;
-}
-
 .service-item hr {
     margin: 5px 0px 7px 0px;
-}
-
-.service-item a {
-    margin-top: -2px;
-    margin-left: 4px;
-    float: right;
-}
-
-a.btn-primary {
-    color: white !important;
-}
-
-.services-categories .category-list {
-    margin-top: 15px;
-}
-
-.service-heading {
-    font-weight: 600;
 }
 
 agm-map {
@@ -223,21 +336,12 @@ agm-map {
     margin-bottom: 25px;
 }
 
-.checked {
-    color: orange;
-}
-
 .ReviewStars span {
     font-size: 10px;
 }
 
-.ReviewerImage img {
-    width: 40px;
-    height: 40px;
-}
-
 .TheReview {
-    border-bottom: 1px solid #F2F3F7;
+    border-bottom: 1px solid #f2f3f7;
     margin-bottom: 15px;
 }
 
@@ -254,77 +358,103 @@ agm-map {
     margin-top: 28px;
 }
 
-.btn-link {
-    color: #212529;
-}
-
-.btn-link:hover {
-    color: #212529;
-}
-
-.servicesListForm .m-widget3 .m-widget3__item .m-widget3__header .m-widget3__user-img .m-widget3__img {
-    width: 30px;
-    height: 30px;
-}
-
-.mainFilterHeading {
-    background-color: #F2F3F8;
-    border: 0px;
-    border-bottom: 1px solid darkgrey;
-    border-bottom-width: 2px;
-    border-radius: 0px;
-    padding-left: 0px !important;
-    height: 36px !important;
-}
-
-.mr-auto .m-subheader__title i {
-    margin-left: 2px;
-    font-size: 0.8rem;
-}
-
 .m-body .m-content {
-    padding: 0px;
-}
-
-.m-subheader {
-    padding-top: 5px;
-}
-
-.pac-container {
-    z-index: 100000 !important;
-}
-
-input.ng-invalid.ng-touched {
-    border: 1px solid red;
-}
-
-textarea.ng-invalid.ng-touched {
-    border: 1px solid red;
-}
-
-.m-content {
     padding: 0px 0px;
 }
 
-.gridView {
-    padding: 0px 30px;
+.m-portlet {
+    margin-bottom: 0px;
 }
 
-.leftCardEditDelete {
-    margin-top: -2px;
+.m-subheader__title small {
+    margin-left: 7px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+@media(max-width: 767px) {
+    .custom-margin-right-book-button {
+        margin-right: 0px;
+    }
+}
+
+.add-line-break {
+    display: none;
+}
+
+@media(max-width: 440px) {
+    .add-line-break {
+        display: inline;
+    }
+}
+
+.custom-p2-setting {
+    text-align: right;
+    font-weight: 500;
+    margin-top: -10px;
+}
+
+.custom-hr-style {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    width: 55%;
+}
+
+.detailBtn {
+    color: black;
+}
+
+.btnGroupMap {
     float: right;
 }
 
+.ordersNo {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.reportFontSize {
+    font-size: 1.3rem;
+}
+
+.btnSmall {
+    font-size: 0.8rem;
+}
+
+.marginBottom {
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
 .categoryStyle {
-    max-width: 35%;
-    margin-left: 15%;
+    max-width: 40%;
+    margin-left: 20%;
     position: absolute;
     margin-top: -25px;
 }
 
-@media (max-width: 991px) {
-    .gridView .chatServiceButton {
-        position: relative;
-        bottom: 0px;
-    }
+.marginOnBottom {
+    padding-bottom: 0px;
+}
+
+.btnLinkColor {
+    color: black;
 }
