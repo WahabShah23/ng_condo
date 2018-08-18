@@ -1,40 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { DragulaService } from 'ng2-dragula/ng2-dragula';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ScriptLoaderService } from '../../../../_services/script-loader.service';
+
 
 @Component({
-    selector: 'app-services',
-    templateUrl: './services.component.html',
-    styleUrls: ['./services.component.css', '../../../../../../node_modules/dragula/dist/dragula.css']
-
+    selector: "app-services",
+    templateUrl: "./services.component.html",
+    styleUrls: ["./services.component.css"]
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent implements OnInit, AfterViewInit {
 
-    constructor(private dragulaService: DragulaService) {
+    isGridView = true;
+    viewName = "List View";
+    viewNameService="Create Service"
+    isDisplayDetail = false;
+    viewDate: Date = new Date();
+    isDisplayForm = true;
+    constructor(private _script: ScriptLoaderService) {
 
-        // dragulaService.setOptions('bag-task1', {
-        //     revertOnSpill: true
-        //
-        // });
-
-        const bag: any = this.dragulaService.find('bag-task1');
-        if (bag !== undefined) this.dragulaService.destroy('bag-task1');
-        this.dragulaService.setOptions('bag-task1', {
-            revertOnSpill: true
-        });
-
-        // dragulaService.setOptions('bag-task2', {
-        //     revertOnSpill: true,
-        //     moves: function (el, source, handle, sibling) {
-        //         return true; // elements are always draggable by default
-        //     },
-        //     accepts: function (el, target, source, sibling) {
-        //         return true; // elements can be dropped in any of the `containers` by default
-        //     },
-        //
-        // });
     }
 
-    ngOnInit() {
+    ngOnInit() {}
+    ngAfterViewInit() {
+
+        this._script.loadScripts('app-services',
+            ['//www.amcharts.com/lib/3/plugins/tools/polarScatter/polarScatter.min.js',
+                '//www.amcharts.com/lib/3/plugins/export/export.min.js',
+                // 'assets/app/js/services.js'
+            ]);
     }
 
+    adjustRadiusMap() {
+    }
+
+    changeView() {
+        this.isGridView = !this.isGridView;
+        if (this.isGridView) {
+            this.viewName = "List View";
+        }
+        else {
+            this.viewName = "Grid View";
+        }
+    }
+    changeViewService() {
+        this.isDisplayForm = !this.isDisplayForm;
+        if (this.isDisplayForm) {
+            this.viewNameService = "Create Service";
+        }
+        else {
+            this.viewNameService = "Services List";
+        }
+    }
 }

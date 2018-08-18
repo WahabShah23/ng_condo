@@ -39,6 +39,10 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/default\/peopleManagement\/peopleManagement.module#PeopleManagementModule"
             },
             {
+                "path": "estimatedResponse",
+                "loadChildren": ".\/pages\/default\/estimatedResponse\/estimatedResponse.module#EstimatedResponseModule"
+            },
+            {
                 "path": "services",
                 "loadChildren": ".\/pages\/default\/services\/services.module#ServicesModule"
             },
