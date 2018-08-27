@@ -609,30 +609,7 @@
                                         
                                     </div>
 
-                            </div>
-
-                            <!-- <div class="col-md-6">
-                                    <div class="form-group">
-                                            <label for="example-time-input">
-                                                Opening Time
-                                            </label>
-                                          
-                                                <input class="form-control m-input" id="example-time-input" type="time" value="08:00:00">        
-                                    </div>
-        
-                                    <div class="form-group">
-                                            <label for="example-time-input2">
-                                                Closing Time
-                                            </label>
-                                          
-                                                <input class="form-control m-input" id="example-time-input2" type="time" value="19:00:00">        
-                                    </div>
-
-                            </div> -->
-
-                            
-                                
-                                    
+                            </div>  
                                 
                             </div>
 
@@ -967,33 +944,13 @@
                                    
                                 </div>
 
-                                <!-- <div class="col-md-6">
-                                        <div class="form-group">
-                                                <label for="example-time-input-bookable">
-                                                    Opening Time
-                                                </label>
-                                              
-                                                    <input class="form-control m-input" id="example-time-input-bookable" type="time" value="09:00:00">        
-                                        </div>
-            
-                                        <div class="form-group">
-                                                <label for="example-time-input-bookable2">
-                                                    Closing Time
-                                                </label>
-                                              
-                                                    <input class="form-control m-input" id="example-time-input-bookable2" type="time" value="20:00:00">        
-                                        </div>
-
-                                </div> -->
-                                    
-                                        
-                                    
+                            
                                 </div>
     
                                
                 </div>
 
-                <div  class="m-form__group form-group">
+                <!-- <div  class="m-form__group form-group">
                     <label >
                         Owner And Management:
                     </label>
@@ -1024,7 +981,7 @@
                        
                     </div>
                  
-                </div>
+                </div> -->
                 <br/>
             </div>
         </div>
@@ -1106,8 +1063,393 @@
                 <textarea class="form-control m-input" rows="10" ></textarea>
             </div>
         </div>
+
+        <div class="col-md-12">
+            <div  class="m-form__group form-group">
+                <label >
+                    Owner And Management:
+                </label>
+                <div  class="m-radio-inline">
+                    <label class="m-radio m-radio--solid m-radio--brand">
+                        <input  checked="" (change)="ownerManagementType = 'sameSame'" class="" name="bookType" type="radio" value="Bookable">
+                         Same Owner Same Management
+                        <span ></span>
+                    </label>
+                    <label  class="m-radio m-radio--solid m-radio--brand">
+                        <input   name="bookType" (change)="ownerManagementType = 'sameDiff'" type="radio" value="Splash Based">
+                        Same Owner Different Management
+                        <span ></span>
+                    </label>
+
+                    <label  class="m-radio m-radio--solid m-radio--brand">
+                        <input  name="bookType" (change)="ownerManagementType = 'diffSame'" type="radio" value="Both">
+                        Different Owner Same Management
+                        <span ></span>
+                    </label>
+
+                    <label  class="m-radio m-radio--solid m-radio--brand">
+                        <input  name="bookType" (change)="ownerManagementType = 'diffDiff'" type="radio" value="Both">
+                        Different Owner Different Management
+                        <span ></span>
+                    </label>
+
+                   
+                </div>
+             
+            </div>
+
+
+        </div>
+
+        <div class="col-md-12">
+            
+
+                <div class="sameOwnersameManagement" *ngIf="ownerManagementType == 'sameSame'">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                                <div  class="m-form__group form-group">
+                                <label for="">Owner</label>
+                                <input type="text" readonly class="form-control" value="ABC Owner" />
+                                </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                    <div  class="m-form__group mr-auto form-group custom-width-100">
+                                            <label for="">Management</label>
+                                            <input type="text" readonly class="form-control" value="ABC Company" />
+                                   </div>
+                                   <a data-toggle="modal" data-target="#sameManagementInfo"> <i class="fa fa-info"></i> </a> 
+                                 
+                            </div>
+
+                                
+                        </div>
+                    </div>
+                       
+                             
+                    </div>
+    
+    
+                <div class="sameOwnerDifferentManagement" *ngIf="ownerManagementType == 'sameDiff'" >
+                    <div class="row">
+                        <div class="col-sm-4">
+                                <div  class="m-form__group form-group">
+                                        <label for="">Owner</label>
+                                        <input type="text" readonly class="form-control" value="ABC Owner" /> 
+                                </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="d-flex align-items-center">
+                                    <div class="form-group m-form__group mr-auto custom-width-100">
+                                            <label class="m-subheader__title">
+                                                Management:
+                                            </label>
+                                            <ngx-select-dropdown  [config]="config" [options]="managementCompanies" [(value)]="dataModel" >
+                                            </ngx-select-dropdown>
+                                    </div>
+                                    <button class="btn btn-link" data-toggle="modal" data-target="#differentManagementInfo"> <i class="fa fa-info"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4"> 
+                                <div class="m-form__group form-group">
+                                        <label for="">Till</label>
+                                        <input class="form-control m-input" type="month" value="2011-08" id="example-month-input">
+                                    </div>
+                        </div>
+
+
+                    </div>
+                
+    
+               
+               
+
+                </div>
+    
+    
+    
+    
+                
+    
+    
+                <div class="sameManagementsdifferentOwners" *ngIf="ownerManagementType == 'diffSame'">
+                    <div class="row">
+                        <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                        <div  class="m-form__group form-group mr-auto custom-width-100">
+                                                <label for="">Owner</label>
+                                                <ngx-select-dropdown  [config]="config" [options]="owners" [(value)]="dataModel" >
+                                                </ngx-select-dropdown> 
+                                        </div>
+                                        <button class="btn btn-link" data-toggle="modal" data-target="#differentOwnerInfo"> <i class="fa fa-info"></i></button>
+                                </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            
+                        <div  class="m-form__group form-group">
+                                <label for="">Managament</label>
+                                <input type="text" readonly class="form-control" value="ABC Company" /> 
+                            </div>
+
+                        </div>
+                    </div>    
+                    
+                        
+            
+                </div>
+    
+    
+                <div class="sameManagementsdifferentOwners" *ngIf="ownerManagementType == 'diffDiff'">
+                    <div class="row">
+                        <div class="col-sm-4">
+                                <div class="d-flex align-items-center">
+                                        <div  class="m-form__group form-group mr-auto custom-width-100">
+                                                <label for="">Owner</label>
+                                                <ngx-select-dropdown  [config]="config" [options]="owners" [(value)]="dataModel" >
+                                                </ngx-select-dropdown> 
+                                        </div>
+                                        <button class="btn btn-link" data-toggle="modal" data-target="#differentOwnerInfo"> <i class="fa fa-info"></i></button>
+                                </div>
+                        </div>
+                       
+                        <div class="col-sm-4">
+                                <div class="d-flex align-items-center">
+                                        <div  class="m-form__group mr-auto custom-width-100 form-group">
+                                                <label for="">Managament</label>
+                                                <ngx-select-dropdown  [config]="config" [options]="managementCompanies" [(value)]="dataModel" >
+                                                </ngx-select-dropdown>
+                                        </div>
+                                        <button class="btn btn-link" data-toggle="modal" data-target="#differentManagementInfo"> <i class="fa fa-info"></i></button>
+                                </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                                <div class="m-form__group form-group">
+                                        <label for="">Till</label>
+                                        <input class="form-control m-input" type="month" value="2011-08" id="example-month-input">
+                                </div>
+                        </div>
+                    </div>
+                        
+            
+                        
+
+                       
+                </div>
+        </div>
     </div>
     <!-- ---------------------------Add Building Form Start---------------------------------- -->
 
 </div>
 
+
+
+
+<div  aria-labelledby="brandLabel" class="modal fade" id="sameManagementInfo" role="dialog" tabindex="-1">
+        <div  class="modal-dialog modal-sm" role="document">
+            <div  class="modal-content">
+                <div  class="modal-header">
+                    <h5  class="modal-title" id="b4randLabel">
+                        Management Info
+                    </h5>
+                    <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span  aria-hidden="true">
+                                ×
+                            </span>
+                    </button>
+                </div>
+                <div  class="modal-body">
+                 
+                    <div class="row">
+                        <div class="col-sm-7">
+                            Contract Start:
+                        </div>
+
+                        <div class="col-sm-4">
+                            12-11-2017
+                        </div>
+                    </div>
+
+                    <div class="row">
+                            <div class="col-sm-7">
+                                Contract End:
+                            </div>
+    
+                            <div class="col-sm-4">
+                                12-11-2018
+                            </div>
+                        </div>
+                </div>
+                <div  class="modal-footer">
+                    <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div  aria-labelledby="brandLabel" class="modal fade" id="differentManagementInfo" role="dialog" tabindex="-1">
+            <div  class="modal-dialog modal-sm" role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="b4randLabel">
+                            Management Info
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                                </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body">
+                     
+                        <div class="companyDiv">
+                            <h5>Previous: ABC Company</h5>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                Contract Start:
+                            </div>
+    
+                            <div class="col-sm-4">
+                                12-11-2017
+                            </div>
+                        </div>
+
+                        <div class="row">
+                                <div class="col-sm-7">
+                                    Contract End:
+                                </div>
+        
+                                <div class="col-sm-4">
+                                    12-11-2018
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="companyDiv">
+                                <h5>Current: XYZ Company</h5>
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    Contract Start:
+                                </div>
+        
+                                <div class="col-sm-4">
+                                    12-11-2017
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                    <div class="col-sm-7">
+                                        Contract End:
+                                    </div>
+            
+                                    <div class="col-sm-4">
+                                        12-11-2018
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+    
+                        
+                    </div>
+                    <div  class="modal-footer">
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    
+        <div  aria-labelledby="brandLabel" class="modal fade" id="differentOwnerInfo" role="dialog" tabindex="-1">
+                <div  class="modal-dialog modal-sm" role="document">
+                    <div  class="modal-content">
+                        <div  class="modal-header">
+                            <h5  class="modal-title" id="b4randLabel">
+                                Users Info
+                            </h5>
+                            <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                    <span  aria-hidden="true">
+                                        ×
+                                    </span>
+                            </button>
+                        </div>
+                        <div  class="modal-body">
+                         
+                            <div class="companyDiv">
+                                <h5>Previous: Jane Khan</h5>
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    From:
+                                </div>
+        
+                                <div class="col-sm-4">
+                                    12-11-2017
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                    <div class="col-sm-7">
+                                        Till:
+                                    </div>
+            
+                                    <div class="col-sm-4">
+                                        12-11-2018
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+    
+                            <div class="companyDiv">
+                                    <h5>Current: Chris Brown</h5>
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        From:
+                                    </div>
+            
+                                    <div class="col-sm-4">
+                                        12-11-2017
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                        <div class="col-sm-7">
+                                            Till:
+                                        </div>
+                
+                                        <div class="col-sm-4">
+                                            Now
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                
+        
+                            
+                        </div>
+                        <div  class="modal-footer">
+                            <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>

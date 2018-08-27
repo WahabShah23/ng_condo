@@ -26,7 +26,7 @@ export class RolesComponent implements OnInit {
             specialized: 1,
             condos: 0,
             parking: 0,
-            type: "permanent"
+            type: "contractor"
         },
         {
             name: "Bob",
@@ -42,7 +42,7 @@ export class RolesComponent implements OnInit {
             condos: 2,
 
             parking: 1,
-            type: "permanent"
+            type: "contractor"
         }];
 
     accesses = [{
@@ -57,7 +57,11 @@ export class RolesComponent implements OnInit {
     {
         name: "Inventory"
     }
-    ]
+    ];
+
+
+    employeeType = ["contractor", "permanent"];
+    employeeTypeDropdownModel;
 
     constructor(private rolesService: RolesService) { }
 

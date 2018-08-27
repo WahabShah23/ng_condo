@@ -17,6 +17,19 @@ export class BuildingSettingsComponent implements OnInit, AfterViewInit {
 
     isWalkIn = true;
 
+    config = {
+        displayKey: "description", //if objects array passed which key to be displayed defaults to description,
+        search: true //enables the search plugin to search in the list
+    }
+
+    managementCompanies = ["Company A", "Company B", "Company C"];
+    dataModel;
+
+
+    owners = ["Owner A" , "Owner B", "Owner C", "Owner D"];
+
+    ownerManagementType = "sameSame";
+
     constructor(private _script: ScriptLoaderService) { }
 
     ngOnInit() {

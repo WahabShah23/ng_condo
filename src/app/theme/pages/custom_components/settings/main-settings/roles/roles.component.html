@@ -46,14 +46,22 @@
                   
             </div>
 
-            <div class="verticals" id="vertical_2" *ngIf="employesVertical" (click)="accessVertical = true;"> 
-                <div *ngFor="let employe of employes; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2" style="height: 112px;" >
+            <div class="verticals" id="vertical_2" *ngIf="employesVertical" > 
+                <div class="form-group m-form__group mr-auto custom-width-100" style="padding: 10px;">
+                    <label class="m-subheader__title">
+                        Filter:
+                        </label>
+                        <ngx-select-dropdown #buildingNamesDropdown  [config]="config" [options]="employeeType" [multiple]="true" [(value)]="employeeTypeDropdownModel"  >
+                        </ngx-select-dropdown>
+                      </div>
+
+                <div *ngFor="let employe of employes; let i=index;" class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2" style="height: 112px;" (click)="accessVertical = true;">
                     <h6 class="innerCardsTitle m-menu__link-text">{{employe.name}}</h6>
                     <a routerLink="invite/1"><i  class="fa fa-expand text-muted pull-right c-expand-icon"></i></a>
                     <div class="clearfix"></div>
                     <span>{{employe.type}}</span>
                     <div  class="progress">
-                        <span  class="progress-bar progress-bar-success green-sharp" style="width: 100%; background-color: red;">
+                        <span  class="progress-bar" [ngStyle]="{'background-color':(employe.type=='contractor' ? 'green' : 'red')}" style="width: 100%;">
                         </span>
                     </div>
                      <div class="row">

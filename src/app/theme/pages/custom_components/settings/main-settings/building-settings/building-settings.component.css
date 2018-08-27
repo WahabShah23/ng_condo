@@ -146,3 +146,14 @@ cardtype , .cardname
 {
   font-size: 11px;
 }
+
+
+.m-accordion.m-accordion--section .m-accordion__item .m-accordion__item-head.collapsed
+{
+	background-color: white;
+}
+
+.companyDiv
+{
+	margin-bottom: 20px;
+}
