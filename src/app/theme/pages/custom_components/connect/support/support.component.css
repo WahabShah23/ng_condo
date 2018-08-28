@@ -27,3 +27,30 @@
 .m-widget14 {
 	padding: 1rem 2rem 1rem 2rem;
 }
+
+.tdfc_error {
+	color: #495057;
+	background-color: #fff;
+	border-color: rgba(220, 0, 0, 1);
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(255,0,0,.35);
+}
+
+.tdfc_success {
+	color: #495057;
+	background-color: #fff;
+	border-color: rgba(40, 167, 69, 1);
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(40,168,69,.35);
+}
+
+.customLoader {
+	position: absolute;
+	left: 50%;
+	padding-top: 26px !important;
+}
+
+.customLoader:before {
+	width: 3.4rem !important;
+	height: 3.4rem !important;
+}

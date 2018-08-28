@@ -14,6 +14,8 @@ import { SupportService } from "../../../../../services/support.service";
 export class SupportComponent implements OnInit {
 
     public issues;
+    loader: boolean = true;
+    support;
 
     // @ViewChild('f') form : any;
     issue_count: number = 0;
@@ -28,7 +30,7 @@ export class SupportComponent implements OnInit {
         this._supportService.getIssues().subscribe(
             (data: any) => { this.issues = data; console.log(data); this.issue_count = data.length; },
             err => console.error(err),
-            () => console.log('Done Fetching Data (i.e.Issues)')
+            () => { this.loader = false;  console.log('Done Fetching Data (i.e.Issues)')}
 
         );
     }
