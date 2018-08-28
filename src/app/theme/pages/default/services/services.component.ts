@@ -41,13 +41,4 @@ export class ServicesComponent implements OnInit, AfterViewInit {
             this.viewName = "Grid View";
         }
     }
-    changeViewService() {
-        this.isDisplayForm = !this.isDisplayForm;
-        if (this.isDisplayForm) {
-            this.viewNameService = "Create Service";
-        }
-        else {
-            this.viewNameService = "Services List";
-        }
-    }
 }

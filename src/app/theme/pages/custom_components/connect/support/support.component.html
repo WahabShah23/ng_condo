@@ -443,8 +443,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <div class="m-loader m-loader--brand customLoader" *ngIf="loader">
-                    </div>
                     <tr role="row" *ngFor="let issue of issues; let i = index;" [ngClass]="{'even': i%2 === 0, 'odd':i%2 !== 0 }">
                         <td class="sorting_1">
                             {{i +1}}
@@ -587,42 +585,30 @@
                             Email:
                         </label>
                         <input class="form-control form-control-md m-input m-input--air"
-                               [ngClass] = "{
-                                'tdfc_error': f_email.touched && f_email.invalid,
-                                'tdfc_success': f_email.touched && f_email.valid }"
                                type="email"
                                id="support-email"
                                name="f_email"
-                               #f_email="ngModel"
                                ngModel
-                               autocomplete="off"
                                required
                                pattern="[^ @]*@[^ @]*">
-                        <div *ngIf="f_email.touched && !f_email.valid" class="alert alert-danger m--margin-top-5">
-                            Email is required
-                        </div>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="support-name">
                             Recipient Name:
                         </label>
-                        <input class="form-control form-control-md m-input m-input--air" id="support-name" autocomplete="off" name="f_name" ngModel required type="text">
+                        <input class="form-control form-control-md m-input m-input--air" id="support-name" name="f_name" ngModel type="text">
                     </div>
                     <div class="form-group">
-                         <!--[ngClass]="{-->
-                        <!--'has-danger': f.form.controls.email?.invalid && (f.form.controls.email?.dirty || f.form.controls.email?.touched),-->
-                        <!--'has-success': f.form.controls.email?.valid && (f.form.controls.email?.dirty || f.form.controls.email?.touched) }" -->
-                    <!-- > -->
                         <label class="form-control-label" for="support-subject">
                             Subject:
                         </label>
-                        <input class="form-control form-control-md m-input m-input--air" id="support-subject" name="f_subject" autocomplete="off" ngModel required type="text">
+                        <input class="form-control form-control-md m-input m-input--air" id="support-subject" name="f_subject" ngModel type="text">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="support-priority">
                             Priority:
                         </label>
-                        <select class="form-control m-input m-input--air" type="text" name="f_priority" ngModel required id="support-priority">
+                        <select class="form-control m-input m-input--air" type="text" name="f_priority" ngModel id="support-priority">
                             <option selected value="1"> Low </option>
                             <option value="2"> Medium </option>
                             <option value="3"> High </option>
@@ -632,22 +618,22 @@
                         <label class="form-control-label" for="support-message">
                             Message:
                         </label>
-                        <textarea class="form-control form-control-md m-input m-input--air" id="support-message" name="f_message" ngModel required></textarea>
+                        <textarea class="form-control form-control-md m-input m-input--air" id="support-message" name="f_message" ngModel></textarea>
                     </div>
-                    <button class="btn btn-primary"  type="submit" [disabled]="f.invalid">
+                    <button class="btn btn-primary" [disabled]="f.invalid" type="submit">
                         Submit
                     </button>
+                </form>
 
                 <!--<div class="col-md-6 col-md-offset-3">-->
                     <!--<iframe width="600" height="850" src="http://intranet.citzen.one/crm/forms/ticket" frameborder="0" allowfullscreen></iframe>-->
                 <!--</div>-->
-                </form>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">
                     Close
                 </button>
-                <button class="btn btn-primary"  [disabled]="f.invalid" type="button">
+                <button class="btn btn-primary"  type="button">
                     Submit
                 </button>
             </div>

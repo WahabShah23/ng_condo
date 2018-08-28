@@ -328,3 +328,7 @@ textarea.ng-invalid.ng-touched {
         bottom: 0px;
     }
 }
+
+.subHeaderTopMargin {
+    margin-top: -17px;
+}

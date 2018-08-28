@@ -4,31 +4,7 @@
         <div class="mr-auto" style="width:60%;">
             <h3 class="m-subheader__title" style="display:inline-block">
                 Map View
-                <!-- <small>
-                    <a (click)="adjustRadiusMap()" id="adjustRadius" style="cursor:pointer;">
-                        <i class="fa fa-map-marker"></i>
-                    </a>
-                </small>
-                <small>
-                    <a style="cursor:pointer;">
-                        <i class="fa fa-search"></i>
-                    </a>
-                </small> -->
             </h3>
-            <div class="input-group mb-3 categoryStyle">
-                <div class="input-group-prepend">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">AUTO</a>
-                        <a class="dropdown-item" href="#">PERSONAL</a>
-                        <a class="dropdown-item" href="#">CLEANING</a>
-                    </div>
-                </div>
-                <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                <div class="input-group-append">
-                    <button class="btn btn-primary"><i class="fa fa-search"></i></button>
-                </div>
-            </div>
         </div>
         <button class="btn btn-link detailBtn" [routerLink]="['/services']">
             <i class="fa fa-th"></i> Grid View
@@ -102,7 +78,7 @@
         <!-- ____________Fiters Tab Ends________ -->
     </div>
 </div>
-<div class="m-subheader breadcrumsubheader">
+<div class="m-subheader breadcrumsubheader subHeaderTopMargin">
     <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
         <li class="m-nav__item m-nav__item--home">
             <a class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
@@ -114,7 +90,7 @@
         </li>
         <li class="m-nav__item">
             <a class="m-nav__link" href="" ng-reflect-href="" [routerLink]="['/services']">
-                <span class="m-nav__link-text">
+                <span class="m-nav__link-text" style="font-size: 11px !important;">
                     Services
                 </span>
             </a>
@@ -124,7 +100,7 @@
         </li>
         <li class="m-nav__item">
             <a class="m-nav__link" href="" ng-reflect-href="">
-                <span class="m-nav__link-text">
+                <span class="m-nav__link-text" style="font-size: 11px !important;">
                     Map View
                 </span>
             </a>
@@ -140,11 +116,11 @@
         <div class="col-md-12">
             <div class="m-portlet" style=" margin-left: -30px;
                     margin-right: -30px;">
-                <div class="m-portlet__body">
+                <div class="m-portlet__body mapGreater">
                     <div class="row">
                         <div class="col-sm-12" style="padding-right: 0px">
                             <div class="row">
-                                <div class="col-sm-3" style="padding: 0px; font-size: 0.8rem; overflow-y: scroll; height: 43rem;">
+                                <div class="col-sm-3 verticals" style="padding: 0px; font-size: 0.8rem; overflow-y: scroll; height: 71rem;">
                                     <div *ngIf="!deselectAll" style="margin-bottom: 10px;">
                                         <button class="btn btn-sm btn-primary" (click)="selectAll()"><i   class="fa fa-check">
 																 
@@ -159,16 +135,22 @@
                                     <!-- <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
 																					<input type="checkbox" (change)="selectAll($event)" > Select All
 																					<span></span>
-																				</label> -->
-                                    <form class="ng-tns-c1-0 ng-untouched ng-pristine ng-valid" novalidate="" style="padding: 13px 15px 1px 15px; background-color: #dbdbdb;">
-                                        <div class="input-group mb-3">
-                                            <input class="form-control" placeholder="Serach Service" style="border-radius: 15px;" type="text">
-                                            <div class="input-group-append custom-pointer">
+                                                                                </label> -->
 
-
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">AUTO</a>
+                                                <a class="dropdown-item" href="#">PERSONAL</a>
+                                                <a class="dropdown-item" href="#">CLEANING</a>
                                             </div>
                                         </div>
-                                    </form>
+                                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary btn-sm verticalsMargin"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
                                     <div style="margin-top: 8px;">
                                         <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
 										<input class="chkboxes" (change)="onSearchChecked($event)" type="checkbox" [checked]="t">
@@ -200,17 +182,17 @@
                                             <span> 23:00 </span>
                                         </p>
                                         </span>
-                                        <p class="text-right">
-                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('service')">
-                                                <i   class="fa fa-user">
-                                                    
-                                                </i>
-                                                Customers
-                                           </button>
-                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('history')">
-                                                <i   class="fa fa-list"></i>
-                                                Orders
-                                           </button>
+                                        <p class="text-right verticalsMargin">
+                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('history')">
+                                                        <i class="fa fa-shopping-cart">
+                                                            
+                                                        </i>
+                                                        Order
+                                                   </button>
+                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                                <i class="fa fa-cogs"></i>
+                                                                Services
+                                                           </button>
                                         </p>
                                     </div>
                                     <hr>
@@ -244,17 +226,17 @@
                                             <span>Open</span>
                                             <span> 23:00 </span>
                                         </p>
-                                        <p class="text-right">
-                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('service')">
-															 <i   class="fa fa-user">
-																 
-															 </i>
-															 Customers
-														</button>
-                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('history')">
-															 <i   class="fa fa-list"></i>
-															 Orders
-														</button>
+                                        <p class="text-right verticalsMargin">
+                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('history')">
+                                                        <i class="fa fa-shopping-cart">
+                                                            
+                                                        </i>
+                                                        Order
+                                                   </button>
+                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                                <i class="fa fa-cogs"></i>
+                                                                Services
+                                                           </button>
                                         </p>
                                     </div>
                                     <hr>
@@ -289,17 +271,19 @@
                                             <span>Open</span>
                                             <span> 23:00 </span>
                                         </p>
-                                        <p class="text-right">
-                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('service')">
-															 <i   class="fa fa-user">
-																 
-															 </i>
-															 Customers
-														</button>
-                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('history')">
-															 <i   class="fa fa-list"></i>
-															 Orders
-														</button>
+                                        <p class="text-right verticalsMargin">
+
+
+                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('history')">
+                                                        <i class="fa fa-shopping-cart">
+                                                            
+                                                        </i>
+                                                        Order
+                                                   </button>
+                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                                <i class="fa fa-cogs"></i>
+                                                                Services
+                                                           </button>
                                         </p>
                                         <hr>
                                         <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
@@ -330,17 +314,17 @@
                                             <span>Open</span>
                                             <span> 23:00 </span>
                                         </p>
-                                        <p class="text-right">
-                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('service')">
-															 <i   class="fa fa-user">
-																 
-															 </i>
-															 Customers
-														</button>
-                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('history')">
-															 <i   class="fa fa-list"></i>
-															 Orders
-														</button>
+                                        <p class="text-right verticalsMargin">
+                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('history')">
+                                                        <i class="fa fa-shopping-cart">
+                                                            
+                                                        </i>
+                                                        Order
+                                                   </button>
+                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                                <i class="fa fa-cogs"></i>
+                                                                Services
+                                                           </button>
                                         </p>
                                         <hr>
                                     </div>
@@ -348,7 +332,7 @@
 
 
 
-                                <div class="col-sm-9" style="padding-right: 0px">
+                                <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
                                     <agm-map [latitude]="43.589045" [longitude]="-79.64412" [zoom]="10" #AgmMap>
                                         <agm-marker [latitude]="43.589045" [longitude]="-79.64412">
                                             <agm-info-window>
@@ -401,7 +385,7 @@
                                             margin-top: 5px;" *ngIf="showServices">
                                     <div class="container" style="padding: 10px">
                                         <h4>
-                                            Customers Report
+                                            Services
                                             <span class="custom-float-right custom-pointer" (click)="showServices=false;">
                                                 <i class="fa fa-times"></i>
                                             </span>

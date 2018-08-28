@@ -15,24 +15,7 @@
 					</a>
 				</small>
             </h3>
-            <div class="input-group mb-3 categoryStyle">
-                <div class="input-group-prepend">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">AUTO</a>
-                        <a class="dropdown-item" href="#">PERSONAL</a>
-                        <a class="dropdown-item" href="#">CLEANING</a>
-                    </div>
-                </div>
-                <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                <div class="input-group-append">
-                    <button class="btn btn-primary"><i class="fa fa-search"></i></button>
-                </div>
-            </div>
         </div>
-        <button class="btn btn-link" (click)="changeViewService()">
-			<i class="fa fa-handshake-o"></i> {{viewNameService}}
-        </button>
         <button class="btn btn-link" routerLink="/services/mapView">
 			<i class="fa fa-map-marker"></i> Map View
 		</button>
@@ -43,8 +26,8 @@
 </div>
 
 
-<div class="m-subheader breadcrumsubheader" *ngIf="!isDisplayDetail">
-    <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+<div class="m-subheader breadcrumsubheader subHeaderTopMargin" *ngIf="!isDisplayDetail">
+    <ul class="m-subheader__breadcrumbs m-nav m-nav--inline" style="font-size: 11px;">
         <li class="m-nav__item m-nav__item--home">
             <a class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
                 <i class="m-nav__link-icon la la-home"></i>
@@ -56,7 +39,7 @@
 
         <li class="m-nav__item">
             <a class="m-nav__link" href="" ng-reflect-href="">
-                <span class="m-nav__link-text">
+                <span class="m-nav__link-text" style="font-size: 11px !important;">
 					Services
 				</span>
             </a>
@@ -1189,96 +1172,3 @@
         </div>
     </div>
 </div>
-<!-- ____________________Create Services from removed starts_____________ -->
-
-<div [hidden]="isDisplayForm" class="marginTopNegative14">
-
-    <div class="m-portlet m-portlet--mobile">
-
-        <div class="m-portlet__head">
-            <a href="javascript:;" class="btn btn-link" style="padding-left:0px;" (click)="isDisplayForm=!isDisplayForm;">
-                <i class="fa fa-chevron-left"></i> Back
-            </a>
-            <h6>
-                Create a Service
-            </h6>
-        </div>
-        <div class="m-portlet__body">
-            <form>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group m-form__group">
-                            <label class="form-control-label" for="service-recipient-name">
-								Name:
-							</label>
-                            <input class="form-control" id="service-recipient-name" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label" for="service-details-name">
-								Details:
-							</label>
-                            <input class="form-control" id="service-recipient-name" type="text">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-control-label" for="broadcast-category-name">
-								Service Category:
-							</label>
-                            <select class="form-control" id="broadcast-category-name" type="text">
-								<option>Category 1</option>
-								<option>Category 2</option>
-							</select>
-                        </div>
-
-
-
-
-                        <div class="form-group">
-                            <label class="form-control-label" for="broadcast-subcategory-name">
-								Service Sub-Category:
-							</label>
-                            <select class="form-control" id="broadcast-subcategory-name" type="text">
-                                <option>Sub Category 1</option>
-								<option>Sub Category 2</option>          
-							</select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-
-                        <div class="form-group">
-                            <label class="form-control-label" for="services-price-name">
-								Price:
-							</label>
-                            <input class="form-control" id="services-price-number" type="number">
-                        </div>
-
-
-                        <div class="form-group">
-                            <label class="form-control-label" for="service-locatoin-name">
-								Location:
-							</label>
-                            <input placeholder="search for location" id="location" class="form-control">
-                        </div>
-                        <div class="form-group form-inline" style="padding-top: 35px;">
-                            <label class="form-control-label" for="service-publish-name">
-								Publish this service online:
-							</label>
-                            <input style="margin-left: 25px;" class="form-control form-check-label" value="" id="service-publish-name" type="checkbox">
-                        </div>
-
-                    </div>
-
-
-                </div>
-                <div>
-                    <button class="btn btn-primary" type="submit">
-						Submit
-					</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-</div>
-
-<!-- ____________________Create Services from removed ends_____________ -->
