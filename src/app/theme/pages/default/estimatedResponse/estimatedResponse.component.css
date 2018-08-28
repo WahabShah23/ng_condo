@@ -10,3 +10,7 @@ m-widget4 m-widget4__item {
     cursor: grab;
     cursor: -webkit-grab;
 }
+
+.subheaderStyle {
+    padding-top: 10px;
+}
