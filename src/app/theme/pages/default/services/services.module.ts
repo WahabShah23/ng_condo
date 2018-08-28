@@ -8,6 +8,7 @@ import { DefaultComponent } from '../default.component';
 import { ServicesComponent } from "./services.component";
 import { AgmCoreModule, AgmMap } from '@agm/core';
 import { MapViewServicesComponent } from './mapview/mapview.component';
+import { CheckoutBarComponent } from './mapview/checkout-bar/checkout-bar.component';
 
 
 
@@ -38,7 +39,8 @@ const routes: Routes = [
         RouterModule,
     ], declarations: [
         ServicesComponent,
-        MapViewServicesComponent
+        MapViewServicesComponent,
+        CheckoutBarComponent
     ],
 })
 export class ServicesModule {

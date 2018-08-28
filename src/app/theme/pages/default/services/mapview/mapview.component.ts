@@ -31,6 +31,8 @@ export class MapViewServicesComponent implements AfterViewInit {
     lati: number = 51.678418;
     lng: number = 7.809007;
 
+    totalChecked = 0;
+
 
     constructor(
         private _script: ScriptLoaderService,
@@ -52,6 +54,18 @@ export class MapViewServicesComponent implements AfterViewInit {
         setTimeout(() => {
             this.agmMap.triggerResize();
         }, 2000);
+    }
+
+    onSearchChecked(event)
+    {
+       if(event.target.checked)
+       {
+           this.totalChecked++;
+       }
+       else
+       {
+           this.totalChecked--;
+       }
     }
 
     sideInfoPop(value: string) {
@@ -76,5 +90,15 @@ export class MapViewServicesComponent implements AfterViewInit {
     //    console.log(e.target.checked);
        this.t = this.deselectAll;
     //    console.log(this.t);
+
+    if(this.t)
+    {
+        this.totalChecked = 3;
+    }
+    else
+    {
+        this.totalChecked = 0;
+    }
+
     }
 }

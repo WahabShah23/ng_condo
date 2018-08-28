@@ -171,7 +171,7 @@
                                     </form>
                                     <div style="margin-top: 8px;">
                                         <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-										<input class="chkboxes" type="checkbox" [checked]="t">
+										<input class="chkboxes" (change)="onSearchChecked($event)" type="checkbox" [checked]="t">
 										<span></span>
                                     </label>
                                         <h5>
@@ -216,7 +216,7 @@
                                     <hr>
                                     <div>
                                         <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-										<input class="checkbox" type="checkbox" [checked]="t">
+										<input class="checkbox" (change)="onSearchChecked($event)" type="checkbox" [checked]="t">
 										<span></span>
                                     </label>
                                         <!-- <input type="checkbox" (change)="test($event)"> -->
@@ -261,7 +261,7 @@
 
                                     <div style="margin-top: 15px;">
                                         <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-										<input class="chkboxes" type="checkbox" [checked]="t">
+										<input (change)="onSearchChecked($event)" class="chkboxes" type="checkbox" [checked]="t">
 										<span></span>
                                     </label>
                                         <h5>
@@ -303,7 +303,7 @@
                                         </p>
                                         <hr>
                                         <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-										<input class="chkboxes" type="checkbox" [checked]="t">
+										<input (change)="onSearchChecked($event)" class="chkboxes" type="checkbox" [checked]="t">
 										<span></span>
                                     </label>
                                         <h5>
@@ -858,3 +858,5 @@
     </div>
 </div>
 <!-- ______________________map view ends________________________ -->
+
+<app-checkout-bar *ngIf="totalChecked>0"></app-checkout-bar>

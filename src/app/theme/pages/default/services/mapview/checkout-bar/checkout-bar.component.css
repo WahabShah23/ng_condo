@@ -1,0 +1,9 @@
+.m-widget11 .table tbody > tr > td , tbody > tr > td a
+{
+    font-size:12px;
+}
+.m-widget11 .table tbody > tr .m-widget11__title
+{
+    font-size: 1rem;
+}
+
