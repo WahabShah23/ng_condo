@@ -1,4 +1,4 @@
-<div *ngIf="isPaymentOpen" class="m-portlet m-portlet--full-height " style="width: 312px;height: 426px;position: fixed;bottom: 50px;margin-left: 24px; z-index:2;">
+<div *ngIf="isPaymentOpen" class="m-portlet m-portlet--full-height " style="width: 312px;height: 450px;position: fixed;bottom: 50px;margin-left: 24px; z-index:2;">
         <div class="m-portlet__head">
             <div class="m-portlet__head-caption">
                 <div class="m-portlet__head-title">
@@ -20,7 +20,7 @@
                         </a>
                     </li>
                     <li>
-                        <a (click)="isPaymentOpen= false;" style="margin-left:10px;"><i class="fa fa-times"></i></a>
+                        <a (click)="isPaymentOpen= false;" style="margin-left:0px;display: inline-block;margin-right: -20px;"><i class="fa fa-times"></i></a>
                     </li>
                 </ul>
             </div>
@@ -124,8 +124,43 @@
                     <!--end::Widget 14-->
                 </div>
                 <div class="tab-pane" id="m_widget4_tab2_content">
+                        <div class="form-group">
+                                <label  class="form-control-label">
+                                    Card Type:
+                                </label>
+                                <select  class="form-control" >
+                                        <option>VISA CARD</option>
+                                        <option>MASTER CARD</option>
+                                        <option>AMERICAN EXPRESS</option>
+                                        <option>VOUCHER</option>
+                                        <option>PAYPAL</option>
+                                </select>
+                            </div>
 
-                 
+                            <div class="form-group">
+                                    <label  class="form-control-label">
+                                        Card Number:
+                                    </label>
+                                    <input type="number" placeholder="Card Number" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                    <label  class="form-control-label">
+                                        Expiry Date:
+                                    </label>
+                                    <input type="date" placeholder="Card Number" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                    <label  class="form-control-label">
+                                        CVV:
+                                    </label>
+                                    <input type="number" placeholder="CVV" class="form-control">
+                            </div>
+
+                            <button class="btn btn-default btn-block">Submit</button>
+
+                            
                 </div>
             </div>
         </div>
@@ -140,11 +175,15 @@ box-shadow: 1px 2px 21px -2px rgba(0,0,0,0.75);margin-left: 0px;">
     <button class="btn btn-dark" (click)="isPaymentOpen=!isPaymentOpen;" style="margin-top: 25px;border-radius: 23px;padding: 10px 25px;">Payment</button>
   </div>
 
- <div class="col-sm-2  offset-sm-2">
-  <button class="btn btn-dark" style="margin-top: 25px;border-radius: 23px;padding: 10px 25px;" data-toggle="modal" data-target="#checkoutModal">Checkout</button>
+ <div class="col-sm-2">
+  <button class="btn btn-dark" style="margin-top: 25px;border-radius: 23px;padding: 10px 25px;" data-toggle="modal" data-target="#checkoutModal">Checkout <i _ngcontent-c5="" class="fa fa-fw fa-shopping-cart"></i> (3)</button>
 </div>
 
-<div class="col-sm-2  offset-sm-2">
+<div class="col-sm-2  offset-sm-1">
+        <a class="btn btn-dark" routerLink="../checkout-cart" style="margin-top: 25px;border-radius: 23px;padding: 10px 25px;">Checkout 2</a>
+</div>
+
+<div class="col-sm-2  offset-sm-1">
     <button class="btn btn-dark" style="margin-top: 25px;" disabled>Compare</button>
 </div>
 

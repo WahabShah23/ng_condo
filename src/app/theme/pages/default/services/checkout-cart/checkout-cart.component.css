@@ -1,0 +1,36 @@
+.m-widget1 p
+{
+    margin: 0px;
+}
+
+
+.m-widget1
+{
+    padding:0px;
+}
+
+.m-widget1 a
+{
+   color: blue;
+}
+
+.m-widget1 .m-widget1__item .m-widget1__title
+{
+    font-weight:400;
+}
+
+.m-subheader {
+    padding: 10px 30px 0 30px !important;
+}
+.breadcrumsubheader  {
+    margin-top: -15px !important;
+}
+
+.breadcrumb-header li a span {
+    font-size: 11px;
+}
+
+hr
+{
+    margin:0px;
+}

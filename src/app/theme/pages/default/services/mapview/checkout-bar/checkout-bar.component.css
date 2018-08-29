@@ -7,3 +7,7 @@
     font-size: 1rem;
 }
 
+.m-widget4 .m-widget4__item .m-widget4__img.m-widget4__img--pic img {
+    width: 2.5rem;
+    border-radius: 0px;
+}

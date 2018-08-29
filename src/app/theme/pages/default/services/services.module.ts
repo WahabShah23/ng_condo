@@ -9,6 +9,7 @@ import { ServicesComponent } from "./services.component";
 import { AgmCoreModule, AgmMap } from '@agm/core';
 import { MapViewServicesComponent } from './mapview/mapview.component';
 import { CheckoutBarComponent } from './mapview/checkout-bar/checkout-bar.component';
+import { CheckoutCartComponent } from './checkout-cart/checkout-cart.component';
 
 
 
@@ -25,6 +26,10 @@ const routes: Routes = [
                 'path': 'mapView',
                 'component': MapViewServicesComponent,
             },
+            {
+                'path': 'checkout-cart',
+                'component': CheckoutCartComponent,
+            },
         ],
     },
 ];
@@ -40,7 +45,8 @@ const routes: Routes = [
     ], declarations: [
         ServicesComponent,
         MapViewServicesComponent,
-        CheckoutBarComponent
+        CheckoutBarComponent,
+        CheckoutCartComponent
     ],
 })
 export class ServicesModule {
