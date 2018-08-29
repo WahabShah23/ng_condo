@@ -121,22 +121,22 @@
                         <div class="col-sm-12" style="padding-right: 0px">
                             <div class="row">
                                 <div class="col-sm-3 verticals" style="padding: 0px; font-size: 0.8rem; overflow-y: scroll; height: 71rem;">
-                                    <div *ngIf="!deselectAll" style="margin-bottom: 10px;">
-                                        <button class="btn btn-sm btn-primary" (click)="selectAll()"><i   class="fa fa-check">
-																 
-															 </i> Select All</button>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-sm-6">
+                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
+                                                    <input class="chkboxes" type="checkbox" [checked]="checkProduct" (click)="filterProducts()">
+                                                    <span></span>
+                                                </label>
+                                            <span style="font-size: 1rem;">Products</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
+                                                        <input class="chkboxes" type="checkbox" [checked]="checkServices" (click)="filterServices()">
+                                                        <span></span>
+                                                    </label>
+                                            <span style="font-size: 1rem;">Services</span>
+                                        </div>
                                     </div>
-                                    <div *ngIf="deselectAll" style="margin-bottom: 10px;">
-                                        <button class="btn btn-sm btn-primary" (click)="selectAll()">
-                                            <i   class="fa fa-check">
-																 
-															 </i> Deselect All</button>
-                                    </div>
-                                    <!-- <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
-																					<input type="checkbox" (change)="selectAll($event)" > Select All
-																					<span></span>
-                                                                                </label> -->
-
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
@@ -151,182 +151,195 @@
                                             <button class="btn btn-primary btn-sm verticalsMargin"><i class="fa fa-search"></i></button>
                                         </div>
                                     </div>
-                                    <div style="margin-top: 8px;">
-                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <div *ngIf="!deselectAll" style="margin-bottom: 10px;">
+                                        <button class="btn btn-sm btn-primary" (click)="selectAll()"><i   class="fa fa-check">
+                                                                     
+                                                                 </i> Select All</button>
+                                    </div>
+                                    <div *ngIf="deselectAll" style="margin-bottom: 10px;">
+                                        <button class="btn btn-sm btn-primary" (click)="selectAll()">
+                                                <i   class="fa fa-check">
+                                                                     
+                                                                 </i> Deselect All</button>
+                                    </div>
+                                    <div *ngIf="checkProduct">
+                                        <div style="margin-top: 8px;">
+                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
 										<input class="chkboxes" type="checkbox" [checked]="t">
 										<span></span>
                                     </label>
-                                        <h5>
-                                            Room Cleaning
-                                        </h5>
-                                        <span (click)="sideInfoPop('info')" title="Click to See the Info">
+                                            <h5>
+                                                Room Cleaning
+                                            </h5>
+                                            <span (click)="sideInfoPop('info')" title="Click to See the Info">
                                             <p class="custom-margin-bottom-zero">
                                                 <span class="checked"> 5.0 </span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span> (25) Cleaning
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            +1 416-488-5254
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            <span style="color:red">Close</span>
-                                            <span> 6:00 </span>
-                                            <span> - </span>
-                                            <span>Open</span>
-                                            <span> 23:00 </span>
-                                        </p>
-                                        </span>
-                                        <p class="text-right verticalsMargin">
-                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('history')">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span> (25) Cleaning
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                +1 416-488-5254
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                <span style="color:red">Close</span>
+                                                <span> 6:00 </span>
+                                                <span> - </span>
+                                                <span>Open</span>
+                                                <span> 23:00 </span>
+                                            </p>
+                                            </span>
+                                            <p class="text-right verticalsMargin">
+                                                <button class="btn btn-sm btn-link" title="Click to view Order History" (click)="sideInfoPop('history')">
                                                         <i class="fa fa-shopping-cart">
                                                             
                                                         </i>
                                                         Order
                                                    </button>
-                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('service')">
                                                                 <i class="fa fa-cogs"></i>
                                                                 Services
                                                            </button>
-                                        </p>
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                            </p>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
 										<input class="checkbox" type="checkbox" [checked]="t">
 										<span></span>
                                     </label>
-                                        <!-- <input type="checkbox" (change)="test($event)"> -->
-                                        <h5>
-                                            Car Detaling
-                                        </h5>
-                                        <p class="custom-margin-bottom-zero">
-                                            <span class="checked"> 3.0 </span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span> (12) AUTO
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            +1 416-488-5254
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            <span style="color:red">Close</span>
-                                            <span> 6:00 </span>
-                                            <span> - </span>
-                                            <span>Open</span>
-                                            <span> 23:00 </span>
-                                        </p>
-                                        <p class="text-right verticalsMargin">
-                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('history')">
+                                            <h5>
+                                                Car Detaling
+                                            </h5>
+                                            <p class="custom-margin-bottom-zero">
+                                                <span class="checked"> 3.0 </span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span> (12) AUTO
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                +1 416-488-5254
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                <span style="color:red">Close</span>
+                                                <span> 6:00 </span>
+                                                <span> - </span>
+                                                <span>Open</span>
+                                                <span> 23:00 </span>
+                                            </p>
+                                            <p class="text-right verticalsMargin">
+                                                <button class="btn btn-sm btn-link" title="Click to view Order History" (click)="sideInfoPop('history')">
                                                         <i class="fa fa-shopping-cart">
                                                             
                                                         </i>
                                                         Order
                                                    </button>
-                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('service')">
                                                                 <i class="fa fa-cogs"></i>
                                                                 Services
                                                            </button>
-                                        </p>
+                                            </p>
+                                        </div>
+                                        <hr>
                                     </div>
-                                    <hr>
+                                    <div *ngIf="checkServices">
+                                        <div style="margin-top: 15px;">
+                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                <input class="chkboxes" type="checkbox" [checked]="t">
+                                                <span></span>
+                                            </label>
+                                            <h5>
+                                                Hair Styling
+                                            </h5>
 
-                                    <div style="margin-top: 15px;">
-                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-										<input class="chkboxes" type="checkbox" [checked]="t">
-										<span></span>
-                                    </label>
-                                        <h5>
-                                            Hair Styling
-                                        </h5>
-
-                                        <p class="custom-margin-bottom-zero">
-                                            <span class="checked"> 4.0 </span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star"></span> (7) HAIR
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            +1 416-488-5254
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            <span style="color:red">Close</span>
-                                            <span> 6:00 </span>
-                                            <span> - </span>
-                                            <span>Open</span>
-                                            <span> 23:00 </span>
-                                        </p>
-                                        <p class="text-right verticalsMargin">
+                                            <p class="custom-margin-bottom-zero">
+                                                <span class="checked"> 4.0 </span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span> (7) HAIR
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                +1 416-488-5254
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                <span style="color:red">Close</span>
+                                                <span> 6:00 </span>
+                                                <span> - </span>
+                                                <span>Open</span>
+                                                <span> 23:00 </span>
+                                            </p>
+                                            <p class="text-right verticalsMargin">
 
 
-                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('history')">
-                                                        <i class="fa fa-shopping-cart">
-                                                            
-                                                        </i>
-                                                        Order
-                                                   </button>
-                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('service')">
-                                                                <i class="fa fa-cogs"></i>
-                                                                Services
+                                                <button class="btn btn-sm btn-link" title="Click to view Order History" (click)="sideInfoPop('history')">
+                                                                <i class="fa fa-shopping-cart">
+                                                                    
+                                                                </i>
+                                                                Order
                                                            </button>
-                                        </p>
-                                        <hr>
-                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-										<input class="chkboxes" type="checkbox" [checked]="t">
-										<span></span>
-                                    </label>
-                                        <h5>
-                                            Mont Hair
-                                        </h5>
-                                        <p class="custom-margin-bottom-zero">
-                                            <span class="checked"> 4.0 </span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star"></span> (17) Hair Cutting
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            +1 416-488-5254
-                                        </p>
-                                        <p class="custom-margin-bottom-zero">
-                                            <span style="color:red">Close</span>
-                                            <span> 6:00 </span>
-                                            <span> - </span>
-                                            <span>Open</span>
-                                            <span> 23:00 </span>
-                                        </p>
-                                        <p class="text-right verticalsMargin">
-                                            <button class="btn btn-sm btn-primary" title="Click to view Order History" (click)="sideInfoPop('history')">
-                                                        <i class="fa fa-shopping-cart">
-                                                            
-                                                        </i>
-                                                        Order
-                                                   </button>
-                                            <button class="btn btn-sm btn-primary" title="Click to view Company Services" (click)="sideInfoPop('service')">
-                                                                <i class="fa fa-cogs"></i>
-                                                                Services
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                                        <i class="fa fa-cogs"></i>
+                                                                        Services
+                                                                   </button>
+                                            </p>
+                                            <hr>
+                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                <input class="chkboxes" type="checkbox" [checked]="t">
+                                                <span></span>
+                                            </label>
+                                            <h5>
+                                                Mont Hair
+                                            </h5>
+                                            <p class="custom-margin-bottom-zero">
+                                                <span class="checked"> 4.0 </span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span> (17) Hair Cutting
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                +1 416-488-5254
+                                            </p>
+                                            <p class="custom-margin-bottom-zero">
+                                                <span style="color:red">Close</span>
+                                                <span> 6:00 </span>
+                                                <span> - </span>
+                                                <span>Open</span>
+                                                <span> 23:00 </span>
+                                            </p>
+                                            <p class="text-right verticalsMargin">
+                                                <button class="btn btn-sm btn-link" title="Click to view Order History" (click)="sideInfoPop('history')">
+                                                                <i class="fa fa-shopping-cart">
+                                                                    
+                                                                </i>
+                                                                Order
                                                            </button>
-                                        </p>
-                                        <hr>
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                                        <i class="fa fa-cogs"></i>
+                                                                        Services
+                                                                   </button>
+                                            </p>
+                                            <hr>
+                                        </div>
                                     </div>
                                 </div>
 
