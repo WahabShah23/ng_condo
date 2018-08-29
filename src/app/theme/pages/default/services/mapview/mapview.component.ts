@@ -87,7 +87,6 @@ export class MapViewServicesComponent implements AfterViewInit {
      deselectAll: boolean = false;
     selectAll() {
         this.deselectAll = !this.deselectAll;
-    //    console.log(e.target.checked);
        this.t = this.deselectAll;
     //    console.log(this.t);
 
@@ -101,4 +100,16 @@ export class MapViewServicesComponent implements AfterViewInit {
     }
 
     }
+    
+    checkProduct: boolean = true;
+    checkServices: boolean = true;
+
+
+    filterProducts() {
+    this.checkProduct = !this.checkProduct;
+    }
+
+    filterServices() {
+        this.checkServices = !this.checkServices;
+        }
 }
