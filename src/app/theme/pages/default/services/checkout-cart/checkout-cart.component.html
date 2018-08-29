@@ -1,126 +1,126 @@
-<div class="m-subheader" appunwraptag="" *ngIf="!isDisplayDetail">
-        <div class="d-flex align-items-center">
-            <div class="mr-auto" style="width:60%;">
-                <h3 class="m-subheader__title" style="display:inline-block">
-                    Checkout Cart
-                </h3>
-            </div>
+<div class="m-subheader" appunwraptag="">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto" style="width:60%;">
+            <h3 class="m-subheader__title" style="display:inline-block">
+                Checkout Cart
+            </h3>
         </div>
     </div>
-    
-    
-    <div class="m-subheader breadcrumsubheader subHeaderTopMargin" *ngIf="!isDisplayDetail">
-        <ul class="m-subheader__breadcrumbs m-nav m-nav--inline" style="font-size: 11px;">
-            <li class="m-nav__item m-nav__item--home">
-                <a class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
-                    <i class="m-nav__link-icon la la-home"></i>
-                </a>
-            </li>
-            <li class="m-nav__separator">
-                -
-            </li>
-    
-            <li class="m-nav__item">
-                <a class="m-nav__link" href="" ng-reflect-href="">
-                    <span class="m-nav__link-text" style="font-size: 11px !important;">
+</div>
+
+
+<div class="m-subheader breadcrumsubheader subHeaderTopMargin">
+    <ul class="m-subheader__breadcrumbs m-nav m-nav--inline" style="font-size: 11px;">
+        <li class="m-nav__item m-nav__item--home">
+            <a class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard" ng-reflect-router-link="/dashboard" href="/dashboard">
+                <i class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li class="m-nav__separator">
+            -
+        </li>
+
+        <li class="m-nav__item">
+            <a class="m-nav__link" href="" ng-reflect-href="">
+                <span class="m-nav__link-text" style="font-size: 11px !important;">
                         Services
                     </span>
-                </a>
-            </li>
-            <li class="m-nav__separator">
-                -
-            </li>
-    
-            <li class="m-nav__item">
-                <a class="m-nav__link" href="" ng-reflect-href="">
-                    <span class="m-nav__link-text" style="font-size: 11px !important;">
+            </a>
+        </li>
+        <li class="m-nav__separator">
+            -
+        </li>
+
+        <li class="m-nav__item">
+            <a class="m-nav__link" href="" ng-reflect-href="">
+                <span class="m-nav__link-text" style="font-size: 11px !important;">
                         Map View
                     </span>
-                </a>
-            </li>
-            <li class="m-nav__separator">
-                -
-            </li>
-    
-            <li class="m-nav__item">
-                <a class="m-nav__link" href="" ng-reflect-href="">
-                    <span class="m-nav__link-text" style="font-size: 11px !important;">
+            </a>
+        </li>
+        <li class="m-nav__separator">
+            -
+        </li>
+
+        <li class="m-nav__item">
+            <a class="m-nav__link" href="" ng-reflect-href="">
+                <span class="m-nav__link-text" style="font-size: 11px !important;">
                         Checkout Cart
                     </span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    
-    <hr class="customhr"  />
+            </a>
+        </li>
+    </ul>
+</div>
 
-    <div class="m-content">
-        <h3>Shopping List</h3>
-        <div class="row">
-            <div class="col-sm-6">
-                <h5>Services</h5>
-                
-                        <div class="m-widget1">
-                                <div class="m-widget1__item" *ngFor="let service of services; let i=index;">
-                                    <div class="row m-row--no-padding align-items-center">
-                                        <div class="col">
-                                            <h5 class="m-widget1__title">{{service.provider}}</h5>
-                                            <p>{{service.name}}</p>
-                                            <p>Price: {{service.price}} </p>
-                                            <p>Tax: {{service.tax}} </p>
-                                        </div>
-                                       
-                                    </div>
-                                    <a  class="btn btn-link" (click)="onBuyServiceLater(i)">Save For Later</a> <a class="btn btn-link">Book</a> <a class="btn btn-link">Delete</a> 
-                                </div>
+<hr class="customhr" />
 
-                            </div>
-                
-            </div>
+<div class="m-content">
+    <h3>Shopping List</h3>
+    <div class="row">
+        <div class="col-sm-6">
+            <h5>Services</h5>
 
-            <div class="col-sm-6">
-                <h5>Products</h5>
-                <div class="m-widget1">
-                        <div class="m-widget1__item" *ngFor="let product of products; let i=index;">
-                            <div class="row m-row--no-padding align-items-center">
-                                <div class="col">
-                                    <h5 class="m-widget1__title">{{product.provider}}</h5>
-                                    <p>{{product.name}}</p>
-                                    <p>Price: {{product.price}} </p>
-                                    <p>Tax: {{product.tax}} </p>
-                                </div>
-                               
-                            </div>
-                            <a  class="btn btn-link" (click)="onBuyProductLater(i)">Save For Later</a> <a class="btn btn-link">Book</a> <a class="btn btn-link">Delete</a> 
+            <div class="m-widget1">
+                <div class="m-widget1__item" *ngFor="let service of services; let i=index;">
+                    <div class="row m-row--no-padding align-items-center">
+                        <div class="col">
+                            <h5 class="m-widget1__title">{{service.provider}}</h5>
+                            <p>{{service.name}}</p>
+                            <p>Price: {{service.price}} </p>
+                            <p>Tax: {{service.tax}} </p>
                         </div>
 
                     </div>
+                    <a class="btn btn-link" (click)="onBuyServiceLater(i)">Save For Later</a> <a class="btn btn-link">Book</a> <a class="btn btn-link">Delete</a>
+                </div>
+
             </div>
 
         </div>
 
-        <hr class="customhr" style="margin-bottom:15px;"/>
-        <h3>Buy Later</h3>
-        <div class="row">
-            <div class="col-sm-12">
-                    <div class="m-widget1">
-                            <div class="m-widget1__item" *ngFor="let later of laters; let i=index;">
-                                <div class="row m-row--no-padding align-items-center">
-                                    <div class="col">
-                                        <h5 class="m-widget1__title">{{later.provider}}</h5>
-                                        <p>{{later.name}}</p>
-                                        <p>Category: {{later.category}}</p>
-                                        <p>Price: {{later.price}} </p>
-                                        <p>Tax: {{later.tax}} </p>
-                                    </div>
-                                   
-                                </div>
-                                <a  class="btn btn-link" (click)="buyNow(i)">Add To Cart</a> <a class="btn btn-link">Book</a> <a class="btn btn-link">Delete</a> 
-                            </div>
-            
+        <div class="col-sm-6">
+            <h5>Products</h5>
+            <div class="m-widget1">
+                <div class="m-widget1__item" *ngFor="let product of products; let i=index;">
+                    <div class="row m-row--no-padding align-items-center">
+                        <div class="col">
+                            <h5 class="m-widget1__title">{{product.provider}}</h5>
+                            <p>{{product.name}}</p>
+                            <p>Price: {{product.price}} </p>
+                            <p>Tax: {{product.tax}} </p>
                         </div>
+
+                    </div>
+                    <a class="btn btn-link" (click)="onBuyProductLater(i)">Save For Later</a> <a class="btn btn-link">Book</a> <a class="btn btn-link">Delete</a>
+                </div>
+
             </div>
         </div>
-      
 
     </div>
+
+    <hr class="customhr" style="margin-bottom:15px;" />
+    <h3>Buy Later</h3>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="m-widget1">
+                <div class="m-widget1__item" *ngFor="let later of laters; let i=index;">
+                    <div class="row m-row--no-padding align-items-center">
+                        <div class="col">
+                            <h5 class="m-widget1__title">{{later.provider}}</h5>
+                            <p>{{later.name}}</p>
+                            <p>Category: {{later.category}}</p>
+                            <p>Price: {{later.price}} </p>
+                            <p>Tax: {{later.tax}} </p>
+                        </div>
+
+                    </div>
+                    <a class="btn btn-link" (click)="buyNow(i)">Add To Cart</a> <a class="btn btn-link">Book</a> <a class="btn btn-link">Delete</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

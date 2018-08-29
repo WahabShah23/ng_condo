@@ -14,5 +14,5 @@ export class CheckoutBarComponent implements OnInit {
   {
     
   }
-
+  isPaymentOpen = false;
 }
