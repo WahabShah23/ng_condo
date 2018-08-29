@@ -165,16 +165,17 @@
                                     <div *ngIf="checkProduct">
                                         <div style="margin-top: 8px;">
                                             <div class="row">
-                                                <div class="col-sm-4">
-                                                    <h5>
-                                                        Paints
-                                                    </h5>
-                                                </div>
-                                                <div class="col-sm-8">
+                                                <div class="col-sm-2">
                                                     <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
                                                                 <input class="chkboxes" type="checkbox" (change)="onSearchChecked($event)" [checked]="t">
                                                                 <span></span>
                                                             </label>
+                                                </div>
+                                                <div class="col-sm-10">
+
+                                                    <h5>
+                                                        Paints
+                                                    </h5>
                                                 </div>
                                             </div>
                                             <span (click)="sideInfoPop('info')" title="Click to See the Info">
@@ -220,17 +221,17 @@
                                         <hr>
                                         <div>
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-2">
+                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                                <input class="checkbox" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
+                                                                <span></span>
+                                                            </label>
 
+                                                </div>
+                                                <div class="col-sm-10">
                                                     <h5>
                                                         Lubricants
                                                     </h5>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                <input class="checkbox" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
-                <span></span>
-            </label>
                                                 </div>
                                             </div>
                                             <p class="custom-margin-bottom-zero">
@@ -276,17 +277,18 @@
                                     <div *ngIf="checkServices">
                                         <div style="margin-top: 15px;">
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-2">
+                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                                <input class="chkboxes" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
+                                                                <span></span>
+                                                            </label>
+
+                                                </div>
+                                                <div class="col-sm-10">
 
                                                     <h5>
                                                         Hair Styling
                                                     </h5>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                                            <input class="chkboxes" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
-                                                            <span></span>
-                                                        </label>
                                                 </div>
                                             </div>
 
@@ -330,17 +332,18 @@
                                             </p>
                                             <hr>
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-2">
+                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                                <input class="chkboxes" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
+                                                                <span></span>
+                                                            </label>
+
+                                                </div>
+                                                <div class="col-sm-10">
 
                                                     <h5>
                                                         Car Detailing
                                                     </h5>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                <input class="chkboxes" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
-                <span></span>
-            </label>
                                                 </div>
                                             </div>
                                             <p class="custom-margin-bottom-zero">
