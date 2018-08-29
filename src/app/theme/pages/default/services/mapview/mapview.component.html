@@ -151,7 +151,7 @@
                                             <button class="btn btn-primary btn-sm verticalsMargin"><i class="fa fa-search"></i></button>
                                         </div>
                                     </div>
-                                    <div *ngIf="!deselectAll" style="margin-bottom: 10px;">
+                                    <div *ngIf="!deselectAll && (checkProduct || checkServices)" style="margin-bottom: 10px;">
                                         <button class="btn btn-sm btn-primary" (click)="selectAll()"><i   class="fa fa-check">
                                                                      
                                                                  </i> Select All</button>
@@ -164,13 +164,19 @@
                                     </div>
                                     <div *ngIf="checkProduct">
                                         <div style="margin-top: 8px;">
-                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-										<input class="chkboxes" type="checkbox" (change)="onSearchChecked($event)" [checked]="t">
-										<span></span>
-                                    </label>
-                                            <h5>
-                                                Room Cleaning
-                                            </h5>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <h5>
+                                                        Paints
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                                <input class="chkboxes" type="checkbox" (change)="onSearchChecked($event)" [checked]="t">
+                                                                <span></span>
+                                                            </label>
+                                                </div>
+                                            </div>
                                             <span (click)="sideInfoPop('info')" title="Click to See the Info">
                                             <p class="custom-margin-bottom-zero">
                                                 <span class="checked"> 5.0 </span>
@@ -195,27 +201,38 @@
                                             </p>
                                             </span>
                                             <p class="text-right verticalsMargin">
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                            <i class="fa fa-cogs"></i>
+                                                           Related Services
+                                                       </button>
                                                 <button class="btn btn-sm btn-link" title="Click to view Order History" (click)="sideInfoPop('history')">
                                                         <i class="fa fa-shopping-cart">
                                                             
                                                         </i>
                                                         Order
                                                    </button>
-                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('products')">
                                                                 <i class="fa fa-cogs"></i>
-                                                                Services
+                                                                Products
                                                            </button>
                                             </p>
                                         </div>
                                         <hr>
                                         <div>
-                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-										<input class="checkbox" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
-										<span></span>
-                                    </label>
-                                            <h5>
-                                                Car Detaling
-                                            </h5>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+
+                                                    <h5>
+                                                        Lubricants
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                <input class="checkbox" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
+                <span></span>
+            </label>
+                                                </div>
+                                            </div>
                                             <p class="custom-margin-bottom-zero">
                                                 <span class="checked"> 3.0 </span>
                                                 <span class="fa fa-star checked"></span>
@@ -238,29 +255,40 @@
                                                 <span> 23:00 </span>
                                             </p>
                                             <p class="text-right verticalsMargin">
-                                                <button class="btn btn-sm btn-link" title="Click to view Order History" (click)="sideInfoPop('history')">
-                                                        <i class="fa fa-shopping-cart">
-                                                            
-                                                        </i>
-                                                        Order
-                                                   </button>
                                                 <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('service')">
                                                                 <i class="fa fa-cogs"></i>
-                                                                Services
+                                                               Related Services
                                                            </button>
+                                                <button class="btn btn-sm btn-link" title="Click to view Order History" (click)="sideInfoPop('history')">
+                                                            <i class="fa fa-shopping-cart">
+                                                                
+                                                            </i>
+                                                            Order
+                                                       </button>
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('products')">
+                                                                    <i class="fa fa-cogs"></i>
+                                                                    Products
+                                                               </button>
                                             </p>
                                         </div>
                                         <hr>
                                     </div>
                                     <div *ngIf="checkServices">
                                         <div style="margin-top: 15px;">
-                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                                <input class="chkboxes" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
-                                                <span></span>
-                                            </label>
-                                            <h5>
-                                                Hair Styling
-                                            </h5>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+
+                                                    <h5>
+                                                        Hair Styling
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                            <input class="chkboxes" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
+                                                            <span></span>
+                                                        </label>
+                                                </div>
+                                            </div>
 
                                             <p class="custom-margin-bottom-zero">
                                                 <span class="checked"> 4.0 </span>
@@ -285,7 +313,10 @@
                                             </p>
                                             <p class="text-right verticalsMargin">
 
-
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('serviceInfo')">
+                                                            <i class="fa fa-cogs"></i>
+                                                           Related Products
+                                                       </button>
                                                 <button class="btn btn-sm btn-link" title="Click to view Order History" (click)="sideInfoPop('history')">
                                                                 <i class="fa fa-shopping-cart">
                                                                     
@@ -298,13 +329,20 @@
                                                                    </button>
                                             </p>
                                             <hr>
-                                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                                <input class="chkboxes" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
-                                                <span></span>
-                                            </label>
-                                            <h5>
-                                                Mont Hair
-                                            </h5>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+
+                                                    <h5>
+                                                        Car Detailing
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                <input class="chkboxes" type="checkbox" [checked]="t" (change)="onSearchChecked($event)">
+                <span></span>
+            </label>
+                                                </div>
+                                            </div>
                                             <p class="custom-margin-bottom-zero">
                                                 <span class="checked"> 4.0 </span>
                                                 <span class="fa fa-star checked"></span>
@@ -327,6 +365,10 @@
                                                 <span> 23:00 </span>
                                             </p>
                                             <p class="text-right verticalsMargin">
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('serviceInfo')">
+                                                            <i class="fa fa-cogs"></i>
+                                                            Related Products
+                                                       </button>
                                                 <button class="btn btn-sm btn-link" title="Click to view Order History" (click)="sideInfoPop('history')">
                                                                 <i class="fa fa-shopping-cart">
                                                                     
@@ -391,7 +433,7 @@
 
                                 <!-- side info popup start -->
                                 <div style=" position: absolute;
-                                            margin-left: 27%;
+                                            margin-left: 26%;
                                             background-color: white;
                                             width: 35%;
                                             height: 98%;
@@ -399,13 +441,13 @@
                                     <div class="container" style="padding: 10px">
                                         <div class="container" style="padding: 10px">
                                             <h4 class="ng-tns-c1-0">
-                                                Chris Shining
+                                                Related Services
                                                 <span class="custom-float-right custom-pointer" (click)="showServices=false;">
                                                                 <i class="fa fa-times"></i>
                                                             </span>
 
                                             </h4>
-                                            <p class="custom-margin-bottom-zero">
+                                            <!-- <p class="custom-margin-bottom-zero">
                                                 <span class="checked"> 4.0 </span>
                                                 <span class="fa fa-star checked"></span>
                                                 <span class="fa fa-star checked"></span>
@@ -432,7 +474,7 @@
                                                 <span class="ng-tns-c1-0"> - </span>
                                                 <span class="ng-tns-c1-0">Open</span>
                                                 <span class="ng-tns-c1-0"> 23:00 </span>
-                                            </p>
+                                            </p> -->
 
                                             <br class="ng-tns-c1-0">
 
@@ -536,7 +578,7 @@
 
                                 <!-- Order History info popup start -->
                                 <div style=" position: absolute;
-                                            margin-left: 27%;
+                                            margin-left: 26%;
                                             background-color: white;  
                                             width: 35%;
                                             height: 98%;
@@ -702,7 +744,7 @@
 
                                 <!-- Info popup start -->
                                 <div style=" position: absolute;
-                                            margin-left: 27%;
+                                            margin-left: 26%;
                                             background-color: white;  
                                             width: 35%;
                                             height: 98%;
@@ -905,6 +947,297 @@
                                     </div>
                                 </div>
                                 <!-- Info popup end -->
+                                <!-- ________ Product Info Popup starts__________ -->
+                                <div style=" position: absolute;
+                                            margin-left: 26%;
+                                            background-color: white;  
+                                            width: 35%;
+                                            height: 98%;
+                                            margin-top: 5px; overflow-y: scroll;" *ngIf="showProducts">
+                                    <div class="container" style="padding: 10px">
+                                        <h4>
+                                            Related Products
+                                            <span class="custom-float-right custom-pointer" (click)="showProducts=false;">
+                                                <i class="fa fa-times"></i>
+                                            </span>
+
+                                        </h4>
+                                        <h5 style="font-weight: 600;
+                                                            font-size: 15px;">
+                                            Products
+                                        </h5>
+                                        <div id="accordion">
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne" style="padding: 0px;">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                <span>
+                                                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
+                                                                                <input class="chkboxes" type="checkbox">
+                                                                                <span></span>
+                                                                            </label>
+                                                                    <i class="fa fa-chevron-down"></i>
+                                                                </span>Acids
+                                                            </button>
+                                                        <span class="custom-float-right" style="    font-size: 11px;
+                                                                          margin: 11px;
+                                                                          font-weight: 700;">
+                                                                $120.00
+                                                            </span>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                                                                    Address:
+                                                                </strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                                                                    Date:
+                                                                </strong> 07 / 11 /2017
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                                                                    Detail:
+                                                                </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti
+                                                            placeat sed deserunt debitis, harum sint repellat aliquam temporibus saepe illo ad quasi soluta quod.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="headingTwo" style="padding: 0px;">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                <span>
+                                                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
+                                                                                <input class="chkboxes" type="checkbox">
+                                                                                <span></span>
+                                                                            </label>
+                                                                    <i class="fa fa-chevron-down"></i>
+                                                                </span>Floor Cleaning Cream
+                                                            </button>
+                                                        <span class="custom-float-right" style="    font-size: 11px;
+                                                                          margin: 11px;
+                                                                          font-weight: 700;">
+                                                                $260
+                                                            </span>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                                                                    Address:
+                                                                </strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                                                                    Date:
+                                                                </strong> 07 / 11 /2017
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                                                                    Detail:
+                                                                </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti
+                                                            placeat sed deserunt debitis, harum sint repellat aliquam temporibus saepe illo ad quasi soluta quod.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="headingThree" style="padding: 0px;">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                <span>
+                                                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
+                                                                                <input class="chkboxes" type="checkbox">
+                                                                                <span></span>
+                                                                            </label>
+                                                                    <i class="fa fa-chevron-down"></i>
+                                                                </span>Paint
+                                                            </button>
+                                                        <span class="custom-float-right" style="    font-size: 11px;
+                                                                          margin: 11px;
+                                                                          font-weight: 700;">
+                                                                $500.00
+                                                            </span>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                                                                    Address:
+                                                                </strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                                                                    Date:
+                                                                </strong> 07 / 11 /2017
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                                                                    Detail:
+                                                                </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti
+                                                            placeat sed deserunt debitis, harum sint repellat aliquam temporibus saepe illo ad quasi soluta quod.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ________ Product Info Popup ends -->
+                                <!-- ________ ServicesInfo Info Popup starts __________ -->
+                                <div style=" position: absolute;
+margin-left: 26%;
+background-color: white;  
+width: 35%;
+height: 98%;
+margin-top: 5px; overflow-y: scroll;" *ngIf="showServicesInfo">
+                                    <div class="container" style="padding: 10px">
+                                        <h4>
+                                            Related Products
+                                            <span class="custom-float-right custom-pointer" (click)="showServicesInfo=false;">
+    <i class="fa fa-times"></i>
+</span>
+
+                                        </h4>
+
+                                        <h5 style="font-weight: 600;
+                font-size: 15px;">
+                                            Products
+                                        </h5>
+                                        <div id="accordion">
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne" style="padding: 0px;">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <span>
+                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
+                                    <input class="chkboxes" type="checkbox">
+                                    <span></span>
+                                </label>
+                        <i class="fa fa-chevron-down"></i>
+                    </span>Shampoo
+                </button>
+                                                        <span class="custom-float-right" style="    font-size: 11px;
+                              margin: 11px;
+                              font-weight: 700;">
+                    $120.00
+                </span>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                        Address:
+                    </strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                        Date:
+                    </strong> 07 / 11 /2017
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                        Detail:
+                    </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti placeat sed deserunt debitis, harum sint
+                                                            repellat aliquam temporibus saepe illo ad quasi soluta quod.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="headingTwo" style="padding: 0px;">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span>
+                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
+                                    <input class="chkboxes" type="checkbox">
+                                    <span></span>
+                                </label>
+                        <i class="fa fa-chevron-down"></i>
+                    </span>Gel
+                </button>
+                                                        <span class="custom-float-right" style="    font-size: 11px;
+                              margin: 11px;
+                              font-weight: 700;">
+                    $260
+                </span>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                        Address:
+                    </strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                        Date:
+                    </strong> 07 / 11 /2017
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                        Detail:
+                    </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti placeat sed deserunt debitis, harum sint
+                                                            repellat aliquam temporibus saepe illo ad quasi soluta quod.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="headingThree" style="padding: 0px;">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span>
+                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
+                                    <input class="chkboxes" type="checkbox">
+                                    <span></span>
+                                </label>
+                        <i class="fa fa-chevron-down"></i>
+                    </span>Creams
+                </button>
+                                                        <span class="custom-float-right" style="    font-size: 11px;
+                              margin: 11px;
+                              font-weight: 700;">
+                    $500.00
+                </span>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                        Address:
+                    </strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                        Date:
+                    </strong> 07 / 11 /2017
+                                                        </p>
+                                                        <p class="custom-margin-bottom-zero">
+                                                            <strong>
+                        Detail:
+                    </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti placeat sed deserunt debitis, harum sint
+                                                            repellat aliquam temporibus saepe illo ad quasi soluta quod.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ________ ServicesInfo Info Popup ends __________ -->
 
                             </div>
                         </div>

@@ -508,3 +508,8 @@ agm-map {
 agm-map {
     height: 100% !important;
 }
+
+.btn-sm,
+.btn-group-sm>.btn {
+    font-size: 0.70rem;
+}
