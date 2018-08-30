@@ -1,28 +1,24 @@
-.m-widget1 p
-{
+.m-widget1 p {
     margin: 0px;
 }
 
-
-.m-widget1
-{
-    padding:0px;
+.m-widget1 {
+    padding: 0px;
 }
 
-.m-widget1 a
-{
-   color: blue;
+.m-widget1 a {
+    color: blue;
 }
 
-.m-widget1 .m-widget1__item .m-widget1__title
-{
-    font-weight:400;
+.m-widget1 .m-widget1__item .m-widget1__title {
+    font-weight: 400;
 }
 
 .m-subheader {
     padding: 10px 30px 0 30px !important;
 }
-.breadcrumsubheader  {
+
+.breadcrumsubheader {
     margin-top: -15px !important;
 }
 
@@ -30,7 +26,48 @@
     font-size: 11px;
 }
 
-hr
-{
-    margin:0px;
+hr {
+    margin: 0px;
+}
+
+.m-wizard.m-wizard--3 .m-wizard__head .m-wizard__nav .m-wizard__steps .m-wizard__step {
+    margin-bottom: 15px;
+}
+
+.m-wizard.m-wizard--3 .m-wizard__form {
+    padding-top: 10px;
+}
+
+.step-margin-top {
+    margin-top: -15px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.m-wizard.m-wizard--3 .m-wizard__head .m-wizard__progress .progress {
+    width: 200px;
+}
+
+.m-wizard.m-wizard--3 .m-wizard__head {
+    margin-left: 15px;
+}
+
+.m-wizard.m-wizard--3 .m-wizard__head .m-wizard__nav .m-wizard__steps .m-wizard__step .m-wizard__step-info .m-wizard__step-number>span {
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.m-wizard.m-wizard--3 .m-wizard__head .m-wizard__progress .progress {
+    width: 150px;
+}
+
+.m-wizard.m-wizard--3 .m-wizard__head .m-wizard__nav .m-wizard__steps .m-wizard__step .m-wizard__step-info .m-wizard__step-line>span {
+    width: 2.0rem;
+}
+
+.card {
+    width: 100% !important;
+    box-shadow: 1px 1px 10px 3px #eee;
 }

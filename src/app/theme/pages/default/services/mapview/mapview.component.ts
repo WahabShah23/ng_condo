@@ -8,7 +8,7 @@ import {
 import { ScriptLoaderService } from "../../../../../_services/script-loader.service";
 // import { } from "googlemaps";
 import { AgmMap, MapsAPILoader } from "@agm/core";
-
+import { MapViewService } from "./mapviewService.service";
 @Component({
   templateUrl: "./mapview.component.html",
   styleUrls: ["./mapview.component.css"]
@@ -27,6 +27,9 @@ export class MapViewServicesComponent implements AfterViewInit {
   showInfo = false;
   showProducts = false;
   showServicesInfo = false;
+  categoryId: number = 0;
+  checkCount: number = 0;
+  compareItem: boolean = false;
   lang: any;
   lat: any;
   lati: number = 51.678418;
@@ -35,10 +38,9 @@ export class MapViewServicesComponent implements AfterViewInit {
   totalChecked = 0;
 
   constructor(
-    private _script: ScriptLoaderService
-  ) // private mapsAPILoader: MapsAPILoader,
-  // private ngZone: NgZone,
-  {}
+    private _script: ScriptLoaderService,
+    private mapviewService: MapViewService // private mapsAPILoader: MapsAPILoader, // private ngZone: NgZone,
+  ) {}
 
   ngOnInit() {}
 
@@ -57,10 +59,42 @@ export class MapViewServicesComponent implements AfterViewInit {
   }
 
   onSearchChecked(event) {
+    console.log();
     if (event.target.checked) {
       this.totalChecked++;
-    } else {
+
+      if (event.target.id == 5) {
+        this.categoryId++;
+      }
+      if (event.target.id == 4) {
+        this.categoryId--;
+      }
+    }
+    if (event.target.checked == false) {
       this.totalChecked--;
+      if (event.target.id == 5) {
+        this.categoryId--;
+      }
+      if (event.target.id == 4) {
+        this.categoryId++;
+      }
+    }
+    // if(event.target.id == 5) {
+    //   this.categoryId++;
+    //   console.log(this.categoryId);
+    // }
+
+    // if(event.target.id !== 5) {
+    //   this.categoryId--;
+    // }
+    if (this.totalChecked > 1 && this.categoryId > 1) {
+      this.compareItem = true;
+      this.mapviewService.compareitem(this.compareItem);
+    }
+
+    if (this.totalChecked <= 1 || this.categoryId <= 1) {
+      this.compareItem = false;
+      this.mapviewService.compareitem(this.compareItem);
     }
   }
 

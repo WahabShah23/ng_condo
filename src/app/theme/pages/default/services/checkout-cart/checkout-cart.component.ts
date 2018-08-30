@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { ScriptLoaderService } from '../../../../../_services/script-loader.service';
 @Component({
   selector: 'app-checkout-cart',
   templateUrl: "./checkout-cart.component.html",
-  styleUrls: ["./checkout-cart.component.css"]
+  styleUrls: ["./checkout-cart.component.css"],
+  encapsulation: ViewEncapsulation.None,
+
 })
-export class CheckoutCartComponent implements OnInit {
+export class CheckoutCartComponent implements OnInit, AfterViewInit {
 
 
   services = [
@@ -23,14 +25,23 @@ export class CheckoutCartComponent implements OnInit {
   laters = [
 
   ];
+  test=false;
+  onSite : boolean = false;
+  showTimeUber: boolean = false;
 
 
-
-  constructor() { }
+  constructor(private _script: ScriptLoaderService) { }
 
   ngOnInit() {
   }
 
+  ngAfterViewInit() {
+    this._script.loadScripts('app-checkout-cart',
+        ['assets/demo/default/custom/components/forms/wizard/wizard.js',
+      'assets/demo/default/custom/components/forms/widgets/bootstrap-datepicker.js',
+    'assets/demo/default/custom/components/forms/widgets/bootstrap-timepicker.js']);
+
+}
 
   onBuyProductLater(index)
   {
@@ -56,6 +67,23 @@ export class CheckoutCartComponent implements OnInit {
       this.products.push(this.laters[index]);
     }
     this.laters.splice(index , 1);
+  }
+
+  showUber(value) {
+    if(value == 1) {
+      this.onSite = true;
+    }
+    if(value == 2 ) {
+      this.onSite = false;
+    }
+  }
+
+  showTime(value) {
+    if(value == 1) {
+      this.showTimeUber = true;
+    } else {
+      this.showTimeUber = false;
+    }
   }
 
 }
