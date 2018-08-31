@@ -9,6 +9,9 @@
         <button class="btn btn-link detailBtn" [routerLink]="['/services']">
             <i class="fa fa-th"></i> Grid View
         </button>
+        <button class="btn btn-link detailBtn" (click)="comparePro=!comparePro">
+            <i class="fa fa-th"></i> Compare
+        </button>
         <!-- _________Filters Tab Starts______________ -->
         <div class="m-portlet__head-tools">
             <ul class="m-portlet__nav marginBottom">
@@ -110,7 +113,7 @@
 </div>
 <!-- ___________________map view starts_________________________ -->
 
-<div class="m-content marginOnBottom">
+<div class="m-content marginOnBottom" [hidden]="comparePro">
     <!--Begin::Section-->
     <div class="row detailSection">
         <div class="col-md-12">
@@ -1255,3 +1258,10 @@ margin-top: 5px; overflow-y: scroll;" *ngIf="showServicesInfo">
 <!-- ______________________map view ends________________________ -->
 
 <app-checkout-bar *ngIf="totalChecked>0"></app-checkout-bar>
+
+
+<!-- ________Compare Starts___________ -->
+<div [hidden]="!comparePro">
+    Compare Product
+</div>
+<!-- _________Compare Ends________ -->
