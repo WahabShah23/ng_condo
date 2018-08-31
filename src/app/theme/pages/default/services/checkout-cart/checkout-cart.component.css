@@ -71,3 +71,7 @@ input.ng-invalid.ng-touched {
     width: 100% !important;
     box-shadow: 1px 1px 10px 3px #eee;
 }
+
+.marginOrder {
+    margin-bottom: 25px;
+}
