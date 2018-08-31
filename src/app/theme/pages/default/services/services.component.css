@@ -332,3 +332,20 @@ textarea.ng-invalid.ng-touched {
 .subHeaderTopMargin {
     margin-top: -17px;
 }
+
+
+.dayitem
+{
+    margin-left:30px;
+    float:left;
+}
+
+.dayitem div
+{
+    float:left;
+}
+
+.time  .col-xl-12
+{
+    margin-top:40px;
+}

@@ -1171,4 +1171,123 @@
 
         </div>
     </div>
+
+   <div class="row">
+       <div class="col-sm-12" style="padding: 35px;">
+            <div class="m-portlet" >
+                    <div class="m-portlet__body  m-portlet__body">
+                        <div class="row m-row--no-padding m-row--col-separator-xl">
+                            <div class="col-xl-8">
+                                <div class="row">
+                                    <div class="col-xl-2 text-left">
+                                     <a (click)="moveToLeft()" class="btn btn-dark"><i class="fa fa-chevron-left"></i></a>
+                                    </div>
+                                    <div class="col-xl-8 text-center">
+                                        <h3>{{selected}}</h3>
+                                    </div>
+                                    <div class="col-xl-2 text-right">
+                                        <a (click)="moveToRight()" class="btn btn-dark"><i class="fa fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                
+                
+                                <div class="row days" style="margin-top:20px;">
+                                        <div class="col-xl-2 text-left">
+                                         <a  class="btn btn-dark"><i class="fa fa-chevron-left"></i></a>
+                                        </div>
+                                        <div class="col-xl-8">
+                                                <a href="#" class="dayitem" *ngFor="let day of days"><div class="day-item available"><p>{{day.date}}<span><br>{{day.day}}</span></p></div></a>
+                                        </div>
+                                        <div class="col-xl-2 text-right">
+                                            <a  class="btn btn-dark"><i class="fa fa-chevron-right"></i></a>
+                                        </div>
+                                </div>
+                
+                                <div class="row time">
+                                   
+                                       <div class="col-xl-12">
+                                           <h4>Morning</h4>
+                                           <div class="m-list-badge m--margin-top-15">
+                                                <a href="#" class="m-list-badge__label m--font-success">12:00AM</a>
+                                                <a href="#" class="m-list-badge__label m--font-success">2:00AM</a>
+                                                <a href="#" class="m-list-badge__label m--font-success">4:00AM</a>
+                                                <a href="#" class="m-list-badge__label m--font-success">6:00AM</a>
+                                                <a href="#" class="m-list-badge__label m--font-success">8:00AM</a>
+                                                <a href="#" class="m-list-badge__label m--font-success">10:00AM</a>
+                                                <a href="#" class="m-list-badge__label m--font-success">11:00AM</a>
+                                               
+                                            </div>
+                                       </div>
+                
+                
+                                       <div class="col-xl-12">
+                                            <h4>Afternoon</h4>
+                                            <div class="m-list-badge m--margin-top-15">
+                                                 <a href="#" class="m-list-badge__label m--font-success">12:30PM</a>
+                                                 <a href="#" class="m-list-badge__label m--font-success">1:30PM</a>
+                                                 <a href="#" class="m-list-badge__label m--font-success">3:00PM</a>
+                                                 <a href="#" class="m-list-badge__label m--font-success">4:00PM</a>
+                                                 <a href="#" class="m-list-badge__label m--font-success">5:00PM</a>
+                                                 <a href="#" class="m-list-badge__label m--font-success">6:00PM</a>
+                                                 <a href="#" class="m-list-badge__label m--font-success">7:00PM</a>
+                                             </div>
+                                        </div>
+                
+                
+                                        <div class="col-xl-12">
+                                                <h4>Evening</h4>
+                                                <div class="m-list-badge m--margin-top-15">
+                                                     <a href="#" class="m-list-badge__label m--font-success">8:30PM</a>
+                                                     <a href="#" class="m-list-badge__label m--font-success">9:30PM</a>
+                                                     <a href="#" class="m-list-badge__label m--font-success">10:00PM</a>
+                                                     <a href="#" class="m-list-badge__label m--font-success">11:00PM</a>
+                                                     <a href="#" class="m-list-badge__label m--font-success">11:30PM</a>
+                                                 </div>
+                                            </div>
+                
+                
+                                   
+                
+                                </div>
+                
+                
+                                
+                             
+                            </div>
+                
+                            <div class="col-xl-4" >
+                                    <h5 class="company" style="text-align:center; margin-top:30px;">Mirror Mirror Beauty Saloon</h5>
+                                    <h5 class="text-muted" style="text-align:center;">Currently booking For <span>Aug 2018</span></h5>
+                                    <div class="service-mini" style="padding: 30px;">
+                                            <p style="font-size: 18px;text-align: left;">Menicure and Pedicure Service</p>
+                                            <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <div class="detail" style="display:flex;">
+                                                <div class="item">
+                                                    <i class="fa fa-usd"></i>200
+                                                </div>
+                                                <div class="item" style="margin-left: 30px;">
+                                                    <i class="fa fa-clock-o"></i>60 Min
+                                                </div>
+                                                <div class="item" style="margin-left: 30px;">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="" class="btn btn-dark " style="width: 100%">Book Now</a>
+                
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+       </div>
+   </div>
+
+
 </div>
+
+
