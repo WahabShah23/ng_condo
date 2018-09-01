@@ -30,6 +30,22 @@ export class CheckoutCartComponent implements OnInit, AfterViewInit {
   showTimeUber: boolean = false;
 
 
+
+  //BillingShipping
+  billingAddress="";
+  stateAddress="";
+  cityAddress="";
+  zipAddress="";
+
+
+  shippingAddress = "";
+  shippingStateAddress="";
+  shippingCityAddress="";
+  shippingZipAddress="";
+
+
+
+
   constructor(private _script: ScriptLoaderService) { }
 
   ngOnInit() {
@@ -84,6 +100,15 @@ export class CheckoutCartComponent implements OnInit, AfterViewInit {
     } else {
       this.showTimeUber = false;
     }
+  }
+
+  sameAsBillingChanged(event , billingAddress)
+  {
+    if(event.target.checked)
+    {
+     
+    }
+    
   }
 
 }

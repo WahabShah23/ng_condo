@@ -133,6 +133,23 @@
                                             <a href="#" class="m-wizard__step-number">
                                                 <span class="step-staff">
                                                     <span class="step-staff-icon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <div class="m-wizard__step-line">
+                                                <span></span>
+                                            </div>
+                                            <div class="m-wizard__step-label">
+                                                Shipping &amp; Billing
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="m-wizard__step" data-wizard-target="#m_wizard_form_step_4">
+                                        <div class="m-wizard__step-info">
+                                            <a href="#" class="m-wizard__step-number">
+                                                <span class="step-staff">
+                                                    <span class="step-staff-icon">
                                                         <i class="fa fa-credit-card"></i>
                                                     </span>
                                                 </span>
@@ -145,7 +162,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="m-wizard__step" data-wizard-target="#m_wizard_form_step_4">
+                                    <div class="m-wizard__step" data-wizard-target="#m_wizard_form_step_5">
                                         <div class="m-wizard__step-info">
                                             <a href="#" class="m-wizard__step-number">
                                                 <span class="step-staff">
@@ -162,6 +179,23 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="m-wizard__step" data-wizard-target="#m_wizard_form_step_6">
+                                        <div class="m-wizard__step-info">
+                                            <a href="#" class="m-wizard__step-number">
+                                                <span class="step-staff">
+                                                    <span class="step-staff-icon">
+                                                        <i class="fa fa-anchor"></i>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <div class="m-wizard__step-line">
+                                                <span></span>
+                                            </div>
+                                            <div class="m-wizard__step-label">
+                                                Thank You
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!--end: Form Wizard Nav -->
@@ -170,7 +204,7 @@
                     </div>
                     <div class="col-xl-10 col-lg-12 ">
                         <!--begin: Form Wizard Form-->
-                        <div class="m-wizard__form tableWidth">
+                        <div class="m-wizard__form tableWidth" style="padding: 30px;">
                             <form class="m-form m-form--label-align-left- m-form--state-" id="m_form">
                                 <!--begin: Form Body -->
                                 <div class="m-portlet__body m-portlet__body--no-padding">
@@ -183,7 +217,7 @@
                                                 </h3>
                                             </div>
                                             <div class="row">
-                                                <div class="m-widget11">
+                                                <div class="">
 
                                                     <table class="table table-striped m-table">
                                                         <thead>
@@ -274,7 +308,7 @@
                                         <div class="m-form__section m-form__section--first">
                                             <div class="m-form__heading">
                                                 <h3 class="m-form__heading-title">
-                                                    ProductsProducts
+                                                    Products
                                                 </h3>
                                             </div>
                                         </div>
@@ -301,6 +335,118 @@
                                     <!--end: Form Wizard Step 2-->
                                     <!--begin: Form Wizard Step 3-->
                                     <div class="m-wizard__form-step" id="m_wizard_form_step_3">
+                                        <div class="m-form__section m-form__section--first">
+                                            <div class="m-form__heading">
+                                                <h3 class="m-form__heading-title">
+                                                    Shipping &amp; Billing
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div  class="row">
+                                            <div  class="col-md-6">
+                                                <div  class="m-form__section">
+                                                    <div  class="m-form__heading">
+                                                        <h3  class="m-form__heading-title">
+                                                            Billing Information
+                                                        </h3>
+                                                    </div>
+                                                    <div  class="form-group m-form__group row" style="margin-top: 46px;">
+                                                        <div  class="col-lg-12">
+                                                            <label  class="form-control-label billAddressing">
+                                                                * Address:
+                                                            </label>
+                                                            <input   class="form-control" placeholder="search for location" type="text"  [(ngModel)]="billingAddress" >
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div  class="form-group m-form__group row">
+                                                        <div  class="col-lg-12">
+                                                            <label  class="form-control-label">
+                                                                State/Province
+                                                            </label>
+                                                            
+                                                            <input [(ngModel)]="stateAddress"  class="form-control m-input" name="billing_address_2" placeholder="" type="text" aria-invalid="false">
+                                                        </div>
+                                                    </div>
+                                                    <div  class="form-group m-form__group row">
+                                                        <div  class="col-lg-12">
+                                                            <label  class="form-control-label">
+                                                                * City:
+                                                            </label>
+                                                            <input [(ngModel)]="cityAddress"  class="form-control m-input" name="billing_city" placeholder="" type="text" aria-describedby="billing_city-error" aria-invalid="false">
+                                                        </div>
+                                                    </div>
+
+                                                    <div  class="form-group m-form__group row has-danger">
+
+                                                        <div  class="col-lg-12">
+                                                            <label  class="form-control-label">
+                                                                * ZIP:
+                                                            </label>
+                                                            <input [(ngModel)]="zipAddress"  class="form-control m-input" name="billing_zip" placeholder="" type="text" value="" aria-describedby="billing_zip-error" aria-invalid="true"><div id="billing_zip-error" class="form-control-feedback">Please enter a valid number.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div  class="col-md-6">
+                                                
+                                                <div  class="m-form__section">
+                                                    <div  class="m-form__section">
+                                                        <div  class="m-form__heading">
+
+                                                            <h3  class="m-form__heading-title">
+                                                                Shipping Information
+                                                            </h3>
+
+                                                        </div>
+                                                        <div  class="row">
+                                                            <label  class="m-checkbox m-checkbox--solid m-checkbox--brand shipping_checkbox">
+                                                                <input  type="checkbox" (change)="sameAsBillingChanged($event , billingAddress.value)"> Same as Billing Info
+                                                                <span ></span>
+                                                            </label>
+                                                        </div>
+                                                        <div  class="form-group m-form__group row">
+                                                            <div  class="col-lg-12">
+                                                                <label  class="form-control-label">
+                                                                    * Address:
+                                                                </label>
+                                                                <input [(ngModel)]="shippingAddress" aria-describedby="billing_address_1-error" aria-invalid="false" class="form-control m-input" name="billing_address_1" placeholder="" type="text">
+                                                            </div>
+                                                        </div>
+                                                        <div  class="form-group m-form__group row">
+                                                            <div  class="col-lg-12">
+                                                                <label  class="form-control-label">
+                                                                    State/Province:
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div  class="form-group m-form__group row">
+                                                            <div  class="col-lg-12">
+                                                                <label  class="form-control-label">
+                                                                    * City:
+                                                                </label>
+                                                                <input [(ngModel)]="shippingCityAddress"  class="form-control m-input" name="billing_city" placeholder="" type="text" >
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div  class="form-group m-form__group row">
+
+                                                            <div  class="col-lg-12">
+                                                                <label  class="form-control-label">
+                                                                    * ZIP:
+                                                                </label>
+                                                                <input [(ngModel)]="shippingZipAddress"  class="form-control m-input" name="billing_zip" placeholder="" type="text" >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end: Form Wizard Step 3-->
+                                    <!--begin: Form Wizard Step 4-->
+                                    <div class="m-wizard__form-step" id="m_wizard_form_step_4">
                                         <div class="m-form__section m-form__section--first">
                                             <div class="m-form__heading">
                                                 <h3 class="m-form__heading-title">
@@ -438,8 +584,8 @@
                                         </div>
                                     </div>
                                     <!--end: Form Wizard Step 3-->
-                                    <!-- begin: form wizard step 4 -->
-                                    <div class="m-wizard__form-step" id="m_wizard_form_step_4">
+                                    <!-- begin: form wizard step 5 -->
+                                    <div class="m-wizard__form-step" id="m_wizard_form_step_5">
                                         <div class="m-form__section m-form__section--first">
                                             <div class="m-form__heading">
                                                 <h3 class="m-form__heading-title" style="margin-left: 15px; margin-bottom: -15px;">
@@ -454,186 +600,51 @@
                                                     <!-- _________________New Starts___________ -->
                                                     <div class="row">
                                                         <div class="col-xl-8">
+
+                                                                <div class="row" style="border: 1px solid lightgrey; height:80%;">
+                                                                        <div class="col-sm-6">
+                                                                                <p><strong>Shipping Address</strong></p>
+                                                                                <p>Niaz Khan , <br>5916 Manzanillo Cris<br> Mississauga , Ontario <br>,
+                                                                                Canada</p>
+                                                                                <p>Phone: 905-821-1968</p>
+
+                                                                                <p><strong>Payment Method:</strong></p>
+                                                                                <p>Niaz Visa Card- Ending in 2020</p>  
+                                                                                
+                                                                        </div>
+                                                                        <div class="col-sm-6">
+                                                                               
+                                                                                <p><strong>Billing Address:</strong></p>
+                                                                                <p>Same as Shipping Address</p>   
+                                                                        </div>
+                                                                    </div>
+                                                               
+                                                                
+                                                                    <!--end::Widget 11-->
                                                             <!--begin:: Widgets/Application Sales-->
-                                                            <div class="m-portlet m-portlet--full-height ">
+                                                            <!-- <div class="m-portlet m-portlet--full-height ">
                                                                 <div class="m-portlet__head">
                                                                     <div class="m-portlet__head-caption">
                                                                         <div class="m-portlet__head-title">
-                                                                            <h3 class="m-portlet__head-text">
-                                                                                Order Details
-                                                                            </h3>
+                                                                            
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="m-portlet__body">
                                                                     <div class="tab-content">
                                                                         <div class="tab-pane active" id="m_widget11_tab1_content">
-                                                                            <!--begin::Widget 11-->
-                                                                            <div class="m-widget11">
-                                                                                <div class="table-responsive">
-                                                                                    <!--begin::Table-->
-                                                                                    <table class="table">
-                                                                                        <!--begin::Thead-->
-                                                                                        <thead>
-                                                                                            <tr>
-                                                                                                <td class="m-widget11__label">
-                                                                                                    #
-                                                                                                </td>
-                                                                                                <td class="m-widget11__app">
-                                                                                                    Item Name
-                                                                                                </td>
-                                                                                                <td class="m-widget11__sales">
-                                                                                                    Date
-                                                                                                </td>
-                                                                                                <td class="m-widget11__change">
-                                                                                                    Time
-                                                                                                </td>
-                                                                                                <td class="m-widget11__price">
-                                                                                                    Location
-                                                                                                </td>
-                                                                                                <td class="m-widget11__total m--align-right">
-                                                                                                    Price
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </thead>
-                                                                                        <!--end::Thead-->
-                                                                                        <!--begin::Tbody-->
-                                                                                        <tbody>
-                                                                                            <tr>
-                                                                                                <td>
-                                                                                                    <span class="m-widget11__title">
-                                                                                                                1
-                                                                                                            </span>
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    <span class="m-widget11__title">
-                                                                                                                Vertex 2.0
-                                                                                                            </span>
-                                                                                                    <span class="m-widget11__sub">
-                                                                                                                Vertex To By Again
-                                                                                                            </span>
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    09/09/2018
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    02 : 30 PM
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    OnSite
-                                                                                                </td>
-                                                                                                <td class="m--align-right m--font-brand">
-                                                                                                    $250
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>
-                                                                                                    <span class="m-widget11__title">
-                                                                                                                2
-                                                                                                            </span>
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    <span class="m-widget11__title">
-                                                                                                                Metronic
-                                                                                                            </span>
-                                                                                                    <span class="m-widget11__sub">
-                                                                                                                Powerful Admin Theme
-                                                                                                            </span>
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    10/09/2018
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    04 : 45 PM
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    OnSite
-                                                                                                </td>
-                                                                                                <td class="m--align-right m--font-brand">
-                                                                                                    $1600
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>
-                                                                                                    <span class="m-widget11__title">
-                                                                                                                3
-                                                                                                            </span>
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    <span class="m-widget11__title">
-                                                                                                                Apex
-                                                                                                            </span>
-                                                                                                    <span class="m-widget11__sub">
-                                                                                                                The Best Selling App
-                                                                                                            </span>
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    11/09/2018
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    05 : 30 AM
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    OffSite
-                                                                                                </td>
-                                                                                                <td class="m--align-right m--font-brand">
-                                                                                                    $431
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td>
-                                                                                                    <span class="m-widget11__title">
-                                                                                                                4
-                                                                                                            </span>
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    <span class="m-widget11__title">
-                                                                                                                Cascades
-                                                                                                            </span>
-                                                                                                    <span class="m-widget11__sub">
-                                                                                                                Design Tool
-                                                                                                            </span>
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    12/12/2018
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    11 : 30 AM
-                                                                                                </td>
-                                                                                                <td>
-                                                                                                    OffSite
-                                                                                                </td>
-                                                                                                <td class="m--align-right m--font-brand">
-                                                                                                    $456
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </tbody>
-                                                                                        <!--end::Tbody-->
-                                                                                    </table>
-                                                                                    <!--end::Table-->
-                                                                                </div>
-                                                                            </div>
-                                                                            <!--end::Widget 11-->
+                                                                            
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                             <!--end:: Widgets/Application Sales-->
                                                         </div>
                                                         <div class="col-xl-4">
-                                                            <!--begin:: Widgets/Latest Updates-->
-                                                            <div class="m-portlet m-portlet--full-height m-portlet--fit ">
-                                                                <div class="m-portlet__head">
-                                                                    <div class="m-portlet__head-caption">
-                                                                        <div class="m-portlet__head-title">
-                                                                            <h3 class="m-portlet__head-text">
-                                                                                Billing Summery
-                                                                            </h3>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="m-portlet__body">
-                                                                    <div class="m-widget4 m-widget4--chart-bottom" style="min-height: 350px">
+                                                                <h3 class="m-portlet__head-text">
+                                                                        Billing Summery
+                                                                </h3>
+                                                                <div class="m-widget4 m-widget4--chart-bottom" style="min-height: 350px">
                                                                         <div class="m-widget4__item">
                                                                             <div class="m-widget4__ext">
                                                                                 <a href="#" class="m-widget4__icon m--font-brand">
@@ -725,6 +736,20 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="m-widget4__item m-widget4__item--last text-right">
+                                                                                <div class="m-widget4__info">
+                                                                                    <span class="m-widget4__text" style="margin-right: 20px;">
+                                                                                                Discount
+                                                                                                </span>
+                                                                                </div>
+                                                                                <div class="m-widget4__ext">
+                                                                                    <span class="m-widget4__stats m--font-info">
+                                                                                                    <span class="m-widget4__number m--font-accent">
+                                                                                                        $100
+                                                                                                    </span>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        <div class="m-widget4__item m-widget4__item--last text-right">
                                                                             <div class="m-widget4__info">
                                                                                 <span class="m-widget4__text">
                                                                                                 Total Price
@@ -739,9 +764,667 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                            <!--begin:: Widgets/Latest Updates-->
+                                                            <!-- <div class="m-portlet m-portlet--full-height m-portlet--fit ">
+                                                                <div class="m-portlet__head">
+                                                                    <div class="m-portlet__head-caption">
+                                                                        <div class="m-portlet__head-title">
+                                                                            
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
+                                                                <div class="m-portlet__body">
+                                                                    
+                                                                </div>
+                                                            </div> -->
                                                             <!--end:: Widgets/Latest Updates-->
+                                                        </div>
+                                                        <div class="col-xl-12">
+                                                                <h3 class="m-portlet__head-text">
+                                                                        Services
+                                                                </h3>
+
+                                                                <div class="service">
+                                                                        <h5>
+                                                                            Company ABC
+                                                                        </h5>
+                                                                        <div class="m-widget11">
+                                                                                <div class="table-responsive">
+                                                                                    <!--begin::Table-->
+                                                                                    <table class="table">
+                                                                                        <!--begin::Thead-->
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <td class="m-widget11__label">
+                                                                                                    #
+                                                                                                </td>
+                                                                                                <td class="m-widget11__app">
+                                                                                                    Item Name
+                                                                                                </td>
+                                                                                                <td class="m-widget11__sales">
+                                                                                                    Date
+                                                                                                </td>
+                                                                                                <td class="m-widget11__change">
+                                                                                                    Time
+                                                                                                </td>
+                                                                                                <td class="m-widget11__price">
+                                                                                                    Location
+                                                                                                </td>
+                                                                                                <td class="m-widget11__price">
+                                                                                                    Pickup Type
+                                                                                                </td>
+                                                                                                <td class="m-widget11__price">
+                                                                                                    Pickup Name
+                                                                                                </td>
+                                                                                                <td class="m-widget11__price">
+                                                                                                    Expected Delievery
+                                                                                                </td>
+                                                                                                <td class="m-widget11__total m--align-right">
+                                                                                                    Price
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <!--end::Thead-->
+                                                                                        <!--begin::Tbody-->
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <span class="m-widget11__title">
+                                                                                                                1
+                                                                                                            </span>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <span class="m-widget11__title">
+                                                                                                                Vertex 2.0
+                                                                                                            </span>
+                                                                                                 </td>
+                                                                                                <td>
+                                                                                                    09/09/2018
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    02 : 30 PM
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    OnSite
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    Uber
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    GO- 1234
+                                                                                                    <p class=" m--font-brand">Fare: $20</p>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    Oct. 9 2018 - Oct. 30 2018
+                                                                                                </td>
+                                                                                                <td class="m--align-right m--font-brand">
+                                                                                                    $250 
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <span class="m-widget11__title">
+                                                                                                                2
+                                                                                                            </span>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <span class="m-widget11__title">
+                                                                                                                Metronic
+                                                                                                            </span>
+                                                                                                  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    10/09/2018
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    04 : 45 PM
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    OnSite
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                        Own
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                        Mercedes- 1234
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                            Oct. 9 2018 - Oct. 30 2018
+                                                                                                    </td>
+        
+                                                                                                <td class="m--align-right m--font-brand">
+                                                                                                    $1600
+                                                                                                </td>
+                                                                                            </tr>
+                                         
+                                                                                        </tbody>
+                                                                                        <!--end::Tbody-->
+                                                                                    </table>
+                                                                                    <!--end::Table-->
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                <!--begin::Widget 11-->
+                                                                <div class="service">
+                                                                <h5>
+                                                                    Others
+                                                                </h5>
+                                                                <div class="m-widget11">
+                                                                        <div class="table-responsive">
+                                                                            <!--begin::Table-->
+                                                                            <table class="table">
+                                                                                <!--begin::Thead-->
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td class="m-widget11__label">
+                                                                                            #
+                                                                                        </td>
+                                                                                        <td class="m-widget11__app">
+                                                                                            Item Name
+                                                                                        </td>
+                                                                                        <td class="m-widget11__sales">
+                                                                                            Date
+                                                                                        </td>
+                                                                                        <td class="m-widget11__change">
+                                                                                            Time
+                                                                                        </td>
+                                                                                        <td class="m-widget11__price">
+                                                                                            Location
+                                                                                        </td>
+                                                                                        <td class="m-widget11__price">
+                                                                                            Pickup Type
+                                                                                        </td>
+                                                                                        <td class="m-widget11__price">
+                                                                                            Pickup Name
+                                                                                        </td>
+                                                                                        <td class="m-widget11__price">
+                                                                                            Expected Delievery
+                                                                                        </td>
+                                                                                        <td class="m-widget11__total m--align-right">
+                                                                                            Price
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <!--end::Thead-->
+                                                                                <!--begin::Tbody-->
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        1
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        Vertex 2.0
+                                                                                                    </span>
+                                                                                            <span class="m-widget11__sub">
+                                                                                                        Vertex To By Again
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            09/09/2018
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            02 : 30 PM
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            OnSite
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Uber
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            GO- 1234
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Oct. 9 2018 - Oct. 30 2018
+                                                                                        </td>
+                                                                                        <td class="m--align-right m--font-brand">
+                                                                                            $250
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        2
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        Metronic
+                                                                                                    </span>
+                                                                                            <span class="m-widget11__sub">
+                                                                                                        Powerful Admin Theme
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            10/09/2018
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            04 : 45 PM
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            OnSite
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                Own
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                Mercedes- 1234
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                    Oct. 9 2018 - Oct. 30 2018
+                                                                                            </td>
+
+                                                                                        <td class="m--align-right m--font-brand">
+                                                                                            $1600 
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        3
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        Apex
+                                                                                                    </span>
+                                                                                            <span class="m-widget11__sub">
+                                                                                                        The Best Selling App
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            11/09/2018
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            05 : 30 AM
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            OffSite
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                Uber
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                GO- 1234
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                    Oct. 9 2018 - Oct. 30 2018
+                                                                                            </td>
+                                                                                        <td class="m--align-right m--font-brand">
+                                                                                            $431
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        4
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        Cascades
+                                                                                                    </span>
+                                                                                            <span class="m-widget11__sub">
+                                                                                                        Design Tool
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            12/12/2018
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            11 : 30 AM
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            OffSite
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                Own
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                BMW- 8800
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                    Oct. 9 2018 - Oct. 30 2018
+                                                                                            </td>
+                                                                                        <td class="m--align-right m--font-brand">
+                                                                                            $456
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                                <!--end::Tbody-->
+                                                                            </table>
+                                                                            <!--end::Table-->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="m-separator m-separator--dashed m-separator--lg"></div>
+
+                                                                <h3 class="m-portlet__head-text">
+                                                                        Products
+                                                                </h3>
+
+                                                                <div class="service">
+                                                                        <h5>
+                                                                            Company XYZ
+                                                                        </h5>
+                                                                        <div class="m-widget11">
+                                                                                <div class="table-responsive">
+                                                                                    <!--begin::Table-->
+                                                                                    <table class="table">
+                                                                                        <!--begin::Thead-->
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <td class="m-widget11__label">
+                                                                                                    #
+                                                                                                </td>
+                                                                                                <td class="m-widget11__app">
+                                                                                                    Item Name
+                                                                                                </td>
+                                                                                                <td class="m-widget11__sales">
+                                                                                                    Date
+                                                                                                </td>
+                                                                                                <td class="m-widget11__change">
+                                                                                                    Time
+                                                                                                </td>
+                                                                                                <td class="m-widget11__price">
+                                                                                                    Location
+                                                                                                </td>
+                                                                                                <td class="m-widget11__price">
+                                                                                                    Pickup Type
+                                                                                                </td>
+                                                                                                <td class="m-widget11__price">
+                                                                                                    Pickup Name
+                                                                                                </td>
+                                                                                                <td class="m-widget11__price">
+                                                                                                    Expected Delievery
+                                                                                                </td>
+                                                                                                <td class="m-widget11__total m--align-right">
+                                                                                                    Price
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <!--end::Thead-->
+                                                                                        <!--begin::Tbody-->
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <span class="m-widget11__title">
+                                                                                                                1
+                                                                                                            </span>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <span class="m-widget11__title">
+                                                                                                                Vertex 2.0
+                                                                                                            </span>
+                                                                                                 </td>
+                                                                                                <td>
+                                                                                                    09/09/2018
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    02 : 30 PM
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    Pickup
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    Uber
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    GO- 1234
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    Oct. 9 2018 - Oct. 30 2018
+                                                                                                </td>
+                                                                                                <td class="m--align-right m--font-brand">
+                                                                                                    $250 
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <span class="m-widget11__title">
+                                                                                                                2
+                                                                                                            </span>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <span class="m-widget11__title">
+                                                                                                                Metronic
+                                                                                                            </span>
+                                                                                                  
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    10/09/2018
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    04 : 45 PM
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    Deliever
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                        Own
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                        Mercedes- 1234
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                            Oct. 9 2018 - Oct. 30 2018
+                                                                                                    </td>
+        
+                                                                                                <td class="m--align-right m--font-brand">
+                                                                                                    $1600
+                                                                                                </td>
+                                                                                            </tr>
+                                         
+                                                                                        </tbody>
+                                                                                        <!--end::Tbody-->
+                                                                                    </table>
+                                                                                    <!--end::Table-->
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                <!--begin::Widget 11-->
+                                                                <div class="service">
+                                                                <h5>
+                                                                    Others
+                                                                </h5>
+                                                                <div class="m-widget11">
+                                                                        <div class="table-responsive">
+                                                                            <!--begin::Table-->
+                                                                            <table class="table">
+                                                                                <!--begin::Thead-->
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td class="m-widget11__label">
+                                                                                            #
+                                                                                        </td>
+                                                                                        <td class="m-widget11__app">
+                                                                                            Item Name
+                                                                                        </td>
+                                                                                        <td class="m-widget11__sales">
+                                                                                            Date
+                                                                                        </td>
+                                                                                        <td class="m-widget11__change">
+                                                                                            Time
+                                                                                        </td>
+                                                                                        <td class="m-widget11__price">
+                                                                                            Location
+                                                                                        </td>
+                                                                                        <td class="m-widget11__price">
+                                                                                            Pickup Type
+                                                                                        </td>
+                                                                                        <td class="m-widget11__price">
+                                                                                            Pickup Name
+                                                                                        </td>
+                                                                                        <td class="m-widget11__price">
+                                                                                            Expected Delievery
+                                                                                        </td>
+                                                                                        <td class="m-widget11__total m--align-right">
+                                                                                            Price
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <!--end::Thead-->
+                                                                                <!--begin::Tbody-->
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        1
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        Vertex 2.0
+                                                                                                    </span>
+                                                                                            <span class="m-widget11__sub">
+                                                                                                        Vertex To By Again
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            09/09/2018
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            02 : 30 PM
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Pickup
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Uber
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            GO- 1234
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Oct. 9 2018 - Oct. 30 2018
+                                                                                        </td>
+                                                                                        <td class="m--align-right m--font-brand">
+                                                                                            $250
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        2
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        Metronic
+                                                                                                    </span>
+                                                                                            <span class="m-widget11__sub">
+                                                                                                        Powerful Admin Theme
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            10/09/2018
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            04 : 45 PM
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Deliever
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                Own
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                Mercedes- 1234
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                    Oct. 9 2018 - Oct. 30 2018
+                                                                                            </td>
+
+                                                                                        <td class="m--align-right m--font-brand">
+                                                                                            $1600 
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        3
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        Apex
+                                                                                                    </span>
+                                                                                            <span class="m-widget11__sub">
+                                                                                                        The Best Selling App
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            11/09/2018
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            05 : 30 AM
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Pickup
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                Uber
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                GO- 1234
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                    Oct. 9 2018 - Oct. 30 2018
+                                                                                            </td>
+                                                                                        <td class="m--align-right m--font-brand">
+                                                                                            $431
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        4
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="m-widget11__title">
+                                                                                                        Cascades
+                                                                                                    </span>
+                                                                                            <span class="m-widget11__sub">
+                                                                                                        Design Tool
+                                                                                                    </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            12/12/2018
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            11 : 30 AM
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            Deliever
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                Own
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                BMW- 8800
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                    Oct. 9 2018 - Oct. 30 2018
+                                                                                            </td>
+                                                                                        <td class="m--align-right m--font-brand">
+                                                                                            $456
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                                <!--end::Tbody-->
+                                                                            </table>
+                                                                            <!--end::Table-->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                         </div>
                                                     </div>
                                                     <!-- ______________New Ends______________ -->
@@ -750,7 +1433,33 @@
                                             <!--end:: Widgets/Authors Profit-->
                                         </div>
                                     </div>
-                                    <!-- end: Form wizard step 4 -->
+                                    <!-- end: Form wizard step 5 -->
+                                    <!--begin: Form Wizard Step 3-->
+                                    <div class="m-wizard__form-step" id="m_wizard_form_step_6">
+                                        <div class="m-form__section m-form__section--first">
+                                            <div class="m-form__heading">
+                                                <h3 class="m-form__heading-title">
+                                                    Thank You
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="text-success"><i class="fa fa-tick"></i> Your Order Has Been Placed Successfully!</h4>
+                                                <p>Your Order ID # TD142321</p>
+                                                <div class="form-group m-form__group row" >
+                                                        <div class="col-lg-12">
+                                                            <label class="form-control-label ">
+                                                                Order Name (Optional):
+                                                            </label>
+                                                            <input class="form-control" placeholder="Order Name" type="text">
+                                                            
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end: Form Wizard Step 3-->
                                 </div>
                                 <!--end: Form Body -->
                                 <!--begin: Form Actions -->

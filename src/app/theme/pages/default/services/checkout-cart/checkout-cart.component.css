@@ -75,3 +75,8 @@ input.ng-invalid.ng-touched {
 .marginOrder {
     margin-bottom: 25px;
 }
+
+.m-widget4.m-widget4--chart-bottom .m-widget4__item
+{
+    padding:4px;
+}
