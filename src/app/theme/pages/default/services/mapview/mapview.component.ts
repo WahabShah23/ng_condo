@@ -98,6 +98,8 @@ export class MapViewServicesComponent implements AfterViewInit {
     }
   }
 
+  comparePro: boolean = false;
+
   sideInfoPop(value: string) {
     if (value == "history") {
       this.showServices = false;
