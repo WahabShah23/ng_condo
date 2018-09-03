@@ -10,7 +10,7 @@
                         <!--</small>-->
                         <small class="text-muted custom_pointer" (click)="toggleSearchBox()"><i class="fa fa-search"></i> </small>
                         <small class="custom_searchBox">
-                            <input type="text" placeholder="search..."  [@slideRightLeft]="searchBox">
+                            <input class="searchBoxBorder" type="text" placeholder="search..." [(ngModel)]="searchText" [@slideRightLeft]="searchBox">
                         </small>
 
                     </h3>
@@ -66,8 +66,9 @@
         <!-- ---------------------------Amenities Cards Start---------------------------------- -->
 
         <div class="row" *ngIf="!addAmenityForm && isAmenityGridView">
-
-            <div  class="col-sm-12 col-md-3 col-xl-3" *ngFor='let amenity of Amenities; let i = index;'>
+           <!-- Displayed only when search returns nothing -->
+            <div class="col-sm-12" *ngIf="(Amenities | filter : searchText).length === 0"> No records found against your search...</div>
+            <div  class="col-sm-12 col-md-3 col-xl-3" *ngFor=' let i = index; let amenity of Amenities | filter : searchText; '>
                 <div  class="body organ1">
                     <div  class="row" style="margin:0px;">
                         <div  class="card-left col-lg-4">
@@ -98,7 +99,7 @@
 
                                     <div class="row">
                                         <div class="col-md-4 cardname"> Name : </div>
-                                        <div class="col-md-8"> {{amenity.name}} </div>
+                                        <div class="col-md-8"> {{amenity.name | uppercase }} </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 cardname"> Type: </div>

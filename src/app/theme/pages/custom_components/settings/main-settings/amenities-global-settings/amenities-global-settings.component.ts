@@ -28,6 +28,7 @@ import { AmenitiesService } from "../../../../../../services/amenities.service";
 })
 export class AmenitiesGlobalSettingsComponent implements OnInit {
 
+
     addAmenityForm = false;
     isWalkIn = true;
     isAmenityGridView = true;
@@ -95,4 +96,5 @@ export class AmenitiesGlobalSettingsComponent implements OnInit {
 
         this.isSearchBoxVisible = !this.isSearchBoxVisible;
     }
+
 }

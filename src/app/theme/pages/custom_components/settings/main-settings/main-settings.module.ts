@@ -46,6 +46,7 @@ import { MeetingRoomsComponent } from './building-settings/meeting-rooms/meeting
 import { RolesComponent } from './roles/roles.component';
 import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.component';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
+import { FilterPipe } from "../../../../../pipes/filter.pipe";
 
 
 @NgModule({
@@ -93,7 +94,10 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2
         MeetingRoomsComponent,
         RolesComponent,
         OwnerRolesSettings,
-        OwnersRolesComponent
+        OwnersRolesComponent,
+
+    //  Pipes
+        FilterPipe
     ],
 
 })

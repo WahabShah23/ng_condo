@@ -184,3 +184,7 @@
 .showSearch> input[type=text]:focus {
 	border: none;
 }
+
+.searchBoxBorder:focus {
+	outline: none;
+}
