@@ -28,7 +28,7 @@ import { AmenitiesService } from "../../../../../../services/amenities.service";
 })
 export class AmenitiesGlobalSettingsComponent implements OnInit {
 
-
+    searchText : string; // search text that is being searched on input field which will be using pipe filter to display results
     addAmenityForm = false;
     isWalkIn = true;
     isAmenityGridView = true;
