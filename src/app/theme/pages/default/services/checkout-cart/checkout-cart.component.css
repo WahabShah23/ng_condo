@@ -80,3 +80,37 @@ input.ng-invalid.ng-touched {
 {
     padding:4px;
 }
+
+.m-list-badge.m--margin-top-15
+{
+    display:block;
+}
+
+.m-list-badge__label.m--font-success
+{
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.m-list-badge__label.m--font-success:hover
+{
+    background-color: lightslategray;
+    color:white !important;
+}
+
+.dayitem
+{
+    margin-left:16px;
+    float:left;
+}
+
+.dayitem div
+{
+    float:left;
+}
+
+.time  .col-xl-12
+{
+    margin-top:20px;
+}

@@ -111,4 +111,75 @@ export class CheckoutCartComponent implements OnInit, AfterViewInit {
     
   }
 
+
+
+    //Calendar
+    months = ["January" , "February" , "March", "April" , "May" , "June" , "July" , "August" , "September" , "October" , "November" , "December"];
+    days = [{date:'01' , day:'Sun'},
+            {date:'02' , day:'Mon'},
+            {date:'03' , day:'Tue'},
+            {date:'04' , day:'Wed'},
+            {date:'05' , day:'Thur'},
+            {date:'06' , day:'Fri'},
+            {date:'07' , day:'Sat'}];
+    i=0;
+    selected = this.months[this.i]; 
+
+
+    employee = [{name:"Jane" , image:"https://qph.fs.quoracdn.net/main-thumb-78964180-50-uhwzqybuvzecennznkknrdbdhsdzendi.jpeg"} , {name:"Kane" , image: "https://www.gravatar.com/avatar/d07f76090ede8c7f71a946857b7ebcba?s=50&d=https://kissflow.com/wp-content/uploads/2018/05/kf.png"} , {name:"Shane" , image:"https://www.realbusinessrescue.co.uk/assets/timthumb/xtimthumb.php,qsrc=https,P3A,P2F,P2Fwww.realbusinessrescue.co.uk,P2Fassets,P2Fuploads,P2FManager+Pics,P2Fmunnery_jonathan_head+shot.jpg,ah=50,aw=50,azc=1.pagespeed.ic.z6xXOojR1r.jpg"} , {name:"Joker" , image:"https://sc01.alicdn.com/kf/HTB1so6mLFXXXXc6XpXXq6xXFXXXA/Cosplay-Batman-The-Dark-Knight-Joker-Full.jpg_50x50.jpg"}];
+    selectedEmployee = 0;
+    
+    moveToRight()
+    {
+        if(this.i==11)
+        {
+            this.i=0;
+        }
+        else
+        {
+            this.i++;
+        }
+        this.selected = this.months[this.i];
+    }  
+
+
+    moveToLeft()
+    {
+        if(this.i==0)
+        {
+            this.i=11;
+        }
+        else
+        {
+            this.i--;
+        }
+        this.selected = this.months[this.i];   
+    }
+
+
+    moveToLeftEmployee()
+    {
+      if(this.selectedEmployee==0)
+      {
+          this.selectedEmployee = this.employee.length-1;
+      }
+      else
+      {
+        this.selectedEmployee--;
+      }
+    }
+
+
+    moveToRightEmployee()
+    {
+      if(this.selectedEmployee==this.employee.length-1)
+      {
+          this.selectedEmployee = 0;
+      }
+      else
+      {
+        this.selectedEmployee++;
+      }
+    }
+
 }
