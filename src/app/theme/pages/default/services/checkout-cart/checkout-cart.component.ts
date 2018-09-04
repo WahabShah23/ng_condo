@@ -28,6 +28,7 @@ export class CheckoutCartComponent implements OnInit, AfterViewInit {
   test=false;
   onSite : boolean = false;
   showTimeUber: boolean = false;
+  showOwnCar: boolean = false;
 
 
 
@@ -97,7 +98,14 @@ export class CheckoutCartComponent implements OnInit, AfterViewInit {
   showTime(value) {
     if(value == 1) {
       this.showTimeUber = true;
-    } else {
+      this.showOwnCar = false;
+    } else if(value == 2){
+      this.showOwnCar = true;
+      this.showTimeUber = false;
+    }
+    else if(value == 3)
+    {
+      this.showOwnCar = false;
       this.showTimeUber = false;
     }
   }

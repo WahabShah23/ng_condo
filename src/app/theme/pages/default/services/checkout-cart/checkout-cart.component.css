@@ -91,6 +91,7 @@ input.ng-invalid.ng-touched {
     display: inline-block;
     font-size: 1.1rem;
     font-weight: 400;
+    padding:10px;
 }
 
 .m-list-badge__label.m--font-success:hover
