@@ -115,3 +115,34 @@ input.ng-invalid.ng-touched {
 {
     margin-top:20px;
 }
+
+.card-body .card-text , .card-body .md-checkbox label 
+{
+    font-size: 14px;
+    font-weight: 300;
+   font-family: Poppins;
+}
+
+.m-widget24
+{
+    margin-right: 7px;
+    border: 1px solid lightgray;
+    height:100%;
+}
+.m-widget24__desc
+{
+    margin-left:4px !important;
+}
+.product + hr 
+{
+    margin: 15px;
+}
+.product p
+{
+    margin-top:0px;
+    margin-bottom: 4px;
+}
+.costpara
+{
+    font-weight:500;
+}
