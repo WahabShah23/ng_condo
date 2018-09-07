@@ -116,7 +116,7 @@ input.ng-invalid.ng-touched {
     margin-top:20px;
 }
 
-.card-body .card-text , .card-body .md-checkbox label 
+.card-body .card-text , .card-body .md-checkbox label, .theservice .card-text, .theservice .md-checkbox label 
 {
     font-size: 14px;
     font-weight: 300;
@@ -145,4 +145,37 @@ input.ng-invalid.ng-touched {
 .costpara
 {
     font-weight:500;
+}
+
+.m-portlet.productsContainer .m-portlet__head
+{
+    padding: 0 1.2rem;
+    height: 3.1rem;
+}
+
+.productsContainer h5.card-subtitle.mb-2
+{
+    font-weight:  400;
+}
+.productsContainer .col-price
+{
+    border-left:1px solid gray;
+    padding-right:0px;
+}
+
+.service-takers img
+{
+   width:40px;
+   height:40px;
+   border-radius:50%;
+}
+
+.productsContainer .m-portlet__body
+{
+    padding:15px
+}
+
+.theservice
+{
+    margin-bottom: 20px;
 }

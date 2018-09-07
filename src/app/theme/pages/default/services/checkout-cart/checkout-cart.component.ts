@@ -10,6 +10,13 @@ import { ScriptLoaderService } from '../../../../../_services/script-loader.serv
 export class CheckoutCartComponent implements OnInit, AfterViewInit {
 
 
+
+  config = {
+    displayKey: "description", //if objects array passed which key to be displayed defaults to description,
+    search: true //enables the search plugin to search in the list
+}
+   PeopleDropdownModel;
+
   services = [
     {provider: 'Mirror Mirror Beauty Saloon' , name: 'Elemis White Brightening Facial' , category: 'service' , price: '$60' , tax: 'Federal'},
     {provider: 'The Next Saloon' , name: 'Hair Cutting', category: 'service' , price: '$100' , tax: 'Federal'},
