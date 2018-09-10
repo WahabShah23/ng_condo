@@ -179,3 +179,14 @@ input.ng-invalid.ng-touched {
 {
     margin-bottom: 20px;
 }
+
+
+.m-list-badge__label.m--font-success.m-time-grey
+{
+    color:lightgrey !important;
+}
+
+.m-list-badge__label.m--font-success.m-tentative
+{
+    color:#FFB822 !important;
+}

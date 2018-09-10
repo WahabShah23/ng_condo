@@ -57,6 +57,7 @@ export class CheckoutCartComponent implements OnInit, AfterViewInit {
   constructor(private _script: ScriptLoaderService) { }
 
   ngOnInit() {
+
   }
 
   ngAfterViewInit() {
@@ -64,7 +65,7 @@ export class CheckoutCartComponent implements OnInit, AfterViewInit {
         ['assets/demo/default/custom/components/forms/wizard/wizard.js',
       'assets/demo/default/custom/components/forms/widgets/bootstrap-datepicker.js',
     'assets/demo/default/custom/components/forms/widgets/bootstrap-timepicker.js']);
-
+     
 }
 
   onBuyProductLater(index)
@@ -137,11 +138,12 @@ export class CheckoutCartComponent implements OnInit, AfterViewInit {
             {date:'05' , day:'Thur'},
             {date:'06' , day:'Fri'},
             {date:'07' , day:'Sat'}];
-    i=0;
+    i=8;
     selected = this.months[this.i]; 
 
 
-    employee = [{name:"Jane" , image:"https://qph.fs.quoracdn.net/main-thumb-78964180-50-uhwzqybuvzecennznkknrdbdhsdzendi.jpeg"} , {name:"Kane" , image: "https://www.gravatar.com/avatar/d07f76090ede8c7f71a946857b7ebcba?s=50&d=https://kissflow.com/wp-content/uploads/2018/05/kf.png"} , {name:"Shane" , image:"https://www.realbusinessrescue.co.uk/assets/timthumb/xtimthumb.php,qsrc=https,P3A,P2F,P2Fwww.realbusinessrescue.co.uk,P2Fassets,P2Fuploads,P2FManager+Pics,P2Fmunnery_jonathan_head+shot.jpg,ah=50,aw=50,azc=1.pagespeed.ic.z6xXOojR1r.jpg"} , {name:"Joker" , image:"https://sc01.alicdn.com/kf/HTB1so6mLFXXXXc6XpXXq6xXFXXXA/Cosplay-Batman-The-Dark-Knight-Joker-Full.jpg_50x50.jpg"}];
+    employee = [{name:"Jane" , image:"https://qph.fs.quoracdn.net/main-thumb-78964180-50-uhwzqybuvzecennznkknrdbdhsdzendi.jpeg"} , {name:"Kane" , image: "https://www.gravatar.com/avatar/d07f76090ede8c7f71a946857b7ebcba?s=50&d=https://kissflow.com/wp-content/uploads/2018/05/kf.png"} , {name:"Shane" , image:"https://www.realbusinessrescue.co.uk/assets/timthumb/xtimthumb.php,qsrc=https,P3A,P2F,P2Fwww.realbusinessrescue.co.uk,P2Fassets,P2Fuploads,P2FManager+Pics,P2Fmunnery_jonathan_head+shot.jpg,ah=50,aw=50,azc=1.pagespeed.ic.z6xXOojR1r.jpg"} , {name:"Joker" , image:"https://sc01.alicdn.com/kf/HTB1so6mLFXXXXc6XpXXq6xXFXXXA/Cosplay-Batman-The-Dark-Knight-Joker-Full.jpg_50x50.jpg"},
+    {name:"Jack" , image:"https://qph.fs.quoracdn.net/main-thumb-78964180-50-uhwzqybuvzecennznkknrdbdhsdzendi.jpeg"} , {name:"Kore" , image: "https://www.gravatar.com/avatar/d07f76090ede8c7f71a946857b7ebcba?s=50&d=https://kissflow.com/wp-content/uploads/2018/05/kf.png"} , {name:"Shan" , image:"https://www.realbusinessrescue.co.uk/assets/timthumb/xtimthumb.php,qsrc=https,P3A,P2F,P2Fwww.realbusinessrescue.co.uk,P2Fassets,P2Fuploads,P2FManager+Pics,P2Fmunnery_jonathan_head+shot.jpg,ah=50,aw=50,azc=1.pagespeed.ic.z6xXOojR1r.jpg"} , {name:"Juie" , image:"https://sc01.alicdn.com/kf/HTB1so6mLFXXXXc6XpXXq6xXFXXXA/Cosplay-Batman-The-Dark-Knight-Joker-Full.jpg_50x50.jpg"}];
     selectedEmployee = 0;
     
     moveToRight()
@@ -195,6 +197,61 @@ export class CheckoutCartComponent implements OnInit, AfterViewInit {
       {
         this.selectedEmployee++;
       }
+    }
+
+
+
+
+    killingTabEmployees = true;
+
+    changeKillingTab(number)
+    {
+      if(number==1)
+      {
+        this.killingTabEmployees = true
+      }
+      else if(number==2)
+      {
+        this.killingTabEmployees = false;
+      }
+    }
+
+
+    jane =false;
+    niaz = false;
+    juliet = false;
+   
+    selectionChanged(selected)
+    {
+     selected = selected.value;
+     if(selected.includes("Jane"))
+     {
+      this.jane=true;
+     }
+     else
+     {
+       this.jane = false;
+     }
+
+
+     if(selected.includes("Niaz"))
+     {
+      this.niaz=true;
+     }
+     else
+     {
+       this.niaz = false;
+     }
+
+
+     if(selected.includes("Juliet"))
+     {
+      this.juliet=true;
+     }
+     else
+     {
+       this.juliet = false;
+     }
     }
 
 }

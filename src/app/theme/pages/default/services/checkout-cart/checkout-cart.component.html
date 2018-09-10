@@ -2690,7 +2690,7 @@
 
                                             <div class="col-xl-4" >
                                                     <h5 class="company" >Cleanco</h5>
-                                                    <h6 class="text-muted" >Currently booking For <span>Aug 2018</span></h6>
+                                                    <h6 class="text-muted" >Currently booking For <span>Sept 2018</span></h6>
                                                     <div class="service-mini" >
                                                             <p style="font-size: 18px;text-align: left;">Pest KIlling</p>
                                                             <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -2718,29 +2718,51 @@
                                                                 <label class="m-subheader__title" for="item_cat">
                                                                     Context:
                                                                     </label>
-                                                                    <ngx-select-dropdown [config]="config" [options]="['Niaz', 'Jane' , 'Juliet']"  [multiple]="true" >
+                                                                    <ngx-select-dropdown [config]="config" (change)="selectionChanged($event)"  [options]="['Niaz', 'Jane' , 'Juliet']"  [multiple]="true" >
                                                         
                                                                     </ngx-select-dropdown>
                                                         
                                                             </div>
+
+                                                        <div class="selectedimages">
+                                                         <img style="border-radius: 50%; width: 50px;" src="assets/app/media/img/users/user4.jpg" *ngIf="niaz">
+                                                         <img style="border-radius: 50%; width: 50px;" src="assets/app/media/img/users/user1.jpg" *ngIf="jane">
+                                                         <img style="border-radius: 50%; width: 50px;" src="assets/app/media/img/users/user2.jpg" *ngIf="juliet">
+                                                        </div>
                                                         <a href="" class="btn btn-dark " style="width: 100%">Book Now</a>
+                                                        
                                 
                                             </div>
                                         
                                         
                                         <div class="col-xl-8">
+                                                <div class="m-form__group form-group">
+                                                        <div class="m-radio-inline">
+                                                            <label class="m-radio">
+                                                                <input type="radio" checked name="example_3" value="1" (change)="changeKillingTab(1)">Select Employee
+                                                                <span></span>
+                                                            </label>
+                                                            <label class="m-radio">
+                                                                <input type="radio" name="example_3" value="2" (change)="changeKillingTab(2)">Let Company Select
+                                                                <span></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                 
+                                                 <div *ngIf="killingTabEmployees">   
                                                 <h5>Select Employee:</h5>
                                                     <div class="row">
                                                             <div class="col-xl-2 text-left">
                                                              <a (click)="moveToLeftEmployee()" class="btn btn-dark"><i class="fa fa-chevron-left text-white"></i></a>
                                                             </div>
                                                             <div class="col-xl-8 text-center">
-                                                                <img style="border-radius: 50%; width: 30px;" src="{{employee[selectedEmployee].image}}" alt="">  <span>{{employee[selectedEmployee].name}}</span>
+                                                                <img *ngFor="let employe of employee" style="border-radius: 50%; width: 30px;" src="{{employe.image}}" alt="">
                                                             </div>
                                                             <div class="col-xl-2 text-right">
                                                                 <a (click)="moveToRightEmployee()" class="btn btn-dark"><i class="fa fa-chevron-right text-white"></i></a>
                                                             </div>
                                                     </div>
+                                                 </div>
                 
                                                 <div class="row" style="margin-top:20px;">
                                                     <div class="col-xl-2 text-left">
@@ -2766,6 +2788,21 @@
                                                             <a  class="btn btn-dark"><i class="fa fa-chevron-right text-white"></i></a>
                                                         </div>
                                                 </div>
+
+                                                <h5>Slots Info:</h5>
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                            <p><i class="fa fa-circle" style="color:grey;"></i> taken</p>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                            <p><i class="fa fa-circle text-warning" ></i> tentatively taken</p>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                            <p><i class="fa fa-circle m--font-success" ></i> available</p>
+                                                    </div>
+                                                      
+                                                       
+                                                </div>
                                 
                                                 <div class="row time">
                                                    
@@ -2773,11 +2810,11 @@
                                                            <h4>Morning Shift</h4>
                                                            <div class="m-list-badge m--margin-top-15">
                                                                 <a href="#" class="m-list-badge__label m--font-success">12:00AM</a>
-                                                                <a href="#" class="m-list-badge__label m--font-success">2:00AM</a>
-                                                                <a href="#" class="m-list-badge__label m--font-success">4:00AM</a>
+                                                                <a href="#" class="m-list-badge__label m--font-success m-tentative">2:00AM</a>
+                                                                <a href="#" disabled class="m-list-badge__label m--font-success m-time-grey">4:00AM</a>
                                                                 <a href="#" class="m-list-badge__label m--font-success">6:00AM</a>
                                                                 <a href="#" class="m-list-badge__label m--font-success">8:00AM</a>
-                                                                <a href="#" class="m-list-badge__label m--font-success">10:00AM</a>
+                                                                <a href="#" disabled class="m-list-badge__label m--font-success m-time-grey">10:00AM</a>
                                                                 <a href="#" class="m-list-badge__label m--font-success">11:00AM</a>
                                                                
                                                             </div>
@@ -2789,9 +2826,9 @@
                                                             <div class="m-list-badge m--margin-top-15">
                                                                  <a href="#" class="m-list-badge__label m--font-success">12:30PM</a>
                                                                  <a href="#" class="m-list-badge__label m--font-success">1:30PM</a>
-                                                                 <a href="#" class="m-list-badge__label m--font-success">3:00PM</a>
+                                                                 <a href="#" disabled class="m-list-badge__label m--font-success m-time-grey">3:00PM</a>
                                                                  <a href="#" class="m-list-badge__label m--font-success">4:00PM</a>
-                                                                 <a href="#" class="m-list-badge__label m--font-success">5:00PM</a>
+                                                                 <a href="#" class="m-list-badge__label m--font-success m-tentative">5:00PM</a>
                                                                  <a href="#" class="m-list-badge__label m--font-success">6:00PM</a>
                                                                  <a href="#" class="m-list-badge__label m--font-success">7:00PM</a>
                                                              </div>
@@ -2801,11 +2838,11 @@
                                                         <div class="col-xl-12">
                                                                 <h4>Evening Shift</h4>
                                                                 <div class="m-list-badge m--margin-top-15">
-                                                                     <a href="#" class="m-list-badge__label m--font-success">8:30PM</a>
+                                                                     <a href="#" class="m-list-badge__label m--font-success m-tentative">8:30PM</a>
                                                                      <a href="#" class="m-list-badge__label m--font-success">9:30PM</a>
                                                                      <a href="#" class="m-list-badge__label m--font-success">10:00PM</a>
                                                                      <a href="#" class="m-list-badge__label m--font-success">11:00PM</a>
-                                                                     <a href="#" class="m-list-badge__label m--font-success">11:30PM</a>
+                                                                     <a href="#" class="m-list-badge__label m--font-success m-tentative">11:30PM</a>
                                                                  </div>
                                                             </div>
                                 
