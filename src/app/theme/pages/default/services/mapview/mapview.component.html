@@ -205,7 +205,7 @@
                                             </p>
                                             </span>
                                             <p class="text-right verticalsMargin">
-                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('service')">
+                                                <button class="btn btn-sm btn-link" title="Click to view Company Services" (click)="sideInfoPop('relatedService')">
                                                             <i class="fa fa-cogs"></i>
                                                            Related Services
                                                        </button>
@@ -1322,233 +1322,253 @@
                                                             font-size: 15px;">
                                             Products
                                         </h5>
-                                        <div id="accordion">
-                                            <div class="card">
-                                                <div class="card-header" id="headingOne" style="padding: 0px;">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                                <span>
-                                                                      
-                                                                    <i class="fa fa-chevron-down"></i>
-                                                                </span>Acids
-                                                            </button>
-                                                        <span class="custom-float-right" style="    font-size: 11px;
-                                                                          margin: 11px;
-                                                                          font-weight: 700;">
-                                                                $120.00
+                                        <ul  class="nav nav-tabs  m-tabs-line" role="tablist">
+                                                <li  class="nav-item m-tabs__item">
+                                                    <a  class="nav-link m-tabs__link active" data-toggle="tab" href="#m_tabs_1_1_product" role="tab" >All</a>
+                                                </li>
+                                                <li  class="nav-item m-tabs__item">
+                                                        <a  class="nav-link m-tabs__link " data-toggle="tab" href="#m_tabs_1_2_product" role="tab" >By Category</a>
+                                                    </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="m_tabs_1_1_product">
+                                                    <p  class="custom-margin-bottom-zero">
+                                                            <span  class="custom-width">
+                                                                    <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                    height: 12px;">
+                                                                        <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                        <span  class="ng-tns-c1-0"></span>
+                                                            </label>
                                                             </span>
-                                                    </h5>
-                                                </div>
+                                                            <span  class="custom-hover-change-color custom-pointer">
+                                                                    <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                     Brighto Paint
+                                                                    </span>
+            
+                                                            </span>
+                                                            <span  class="custom-float-right m--font-success">
+                                                                    $120.00
+                                                                </span>
+                                                        </p>
+                                                        <hr  class="ng-tns-c1-0" style="margin: 5px;">
 
-                                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                                    <div class="card-body">
-                                                            <div  style="margin-top: 8px;">
-                                                                    <div  class="row">
-                                                                        <div  class="col-sm-2">
-                                                                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                                                                        <input  class="chkboxes" id="5" type="checkbox">
-                                                                                        <span ></span>
-                                                                                    </label>
-                                                                        </div>
-                                                                        <div  class="col-sm-10">
-                        
-                                                                            <h5 >
-                                                                                Henry Liquids
-                                                                            </h5>
-                                                                        </div>
-                                                                    </div>
-                                                                    <span  title="Click to See the Info">
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        <span  class="checked"> 5.0 </span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span> (25) Cleaning
-                                                                    </p>
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                                                    </p>
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        +1 416-488-5254
-                                                                    </p>
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        <span  style="color:red">Close</span>
-                                                                        <span > 6:00 </span>
-                                                                        <span > - </span>
-                                                                        <span >Open</span>
-                                                                        <span > 23:00 </span>
-                                                                    </p>
-                                                                    </span>
-                                                                   
-                                                                </div>
-                                                                <hr>
-                                                                <div  style="margin-top: 8px;">
-                                                                        <div  class="row">
-                                                                            <div  class="col-sm-2">
-                                                                                <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                                                                            <input  class="chkboxes" id="5" type="checkbox">
-                                                                                            <span ></span>
-                                                                                        </label>
-                                                                            </div>
-                                                                            <div  class="col-sm-10">
-                            
-                                                                                <h5 >
-                                                                                    Kame Detergents
-                                                                                </h5>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span  title="Click to See the Info">
-                                                                        <p  class="custom-margin-bottom-zero">
-                                                                            <span  class="checked"> 4.0 </span>
-                                                                        <span  class="fa fa-star checked"></span>
-                                                                        <span  class="fa fa-star checked"></span>
-                                                                        <span  class="fa fa-star checked"></span>
-                                                                        <span  class="fa fa-star checked"></span>
-                                                                        <span  class="fa fa-star "></span> (14) Cleaning
-                                                                        </p>
-                                                                        <p  class="custom-margin-bottom-zero">
-                                                                            1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                                                        </p>
-                                                                        <p  class="custom-margin-bottom-zero">
-                                                                            +1 416-488-5254
-                                                                        </p>
-                                                                        <p  class="custom-margin-bottom-zero">
-                                                                            <span  style="color:red">Close</span>
-                                                                            <span > 6:00 </span>
-                                                                            <span > - </span>
-                                                                            <span >Open</span>
-                                                                            <span > 23:00 </span>
-                                                                        </p>
+                                                        <p  class="custom-margin-bottom-zero">
+                                                                <span  class="custom-width">
+                                                                        <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                        height: 12px;">
+                                                                            <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                            <span  class="ng-tns-c1-0"></span>
+                                                                </label>
+                                                                </span>
+                                                                <span  class="custom-hover-change-color custom-pointer">
+                                                                        <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                         Go Bleach
                                                                         </span>
-                                                                       
-                                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" id="headingTwo" style="padding: 0px;">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                                <span>
-                                                                       
-                                                                    <i class="fa fa-chevron-down"></i>
-                                                                </span>Floor Cleaning Cream
-                                                            </button>
-                                                        <span class="custom-float-right" style="    font-size: 11px;
-                                                                          margin: 11px;
-                                                                          font-weight: 700;">
-                                                                $260
-                                                            </span>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                                    <div class="card-body">
-                                                            <div  style="margin-top: 8px;">
-                                                                    <div  class="row">
-                                                                        <div  class="col-sm-2">
-                                                                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                                                                        <input  class="chkboxes" id="5" type="checkbox">
-                                                                                        <span ></span>
-                                                                                    </label>
-                                                                        </div>
-                                                                        <div  class="col-sm-10">
-                        
-                                                                            <h5 >
-                                                                                Cleanco.
-                                                                            </h5>
-                                                                        </div>
-                                                                    </div>
-                                                                    <span  title="Click to See the Info">
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        <span  class="checked"> 5.0 </span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span> (25) Cleaning
-                                                                    </p>
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                                                    </p>
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        +1 416-488-5254
-                                                                    </p>
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        <span  style="color:red">Close</span>
-                                                                        <span > 6:00 </span>
-                                                                        <span > - </span>
-                                                                        <span >Open</span>
-                                                                        <span > 23:00 </span>
-                                                                    </p>
+                
+                                                                </span>
+                                                                <span  class="custom-float-right m--font-success">
+                                                                        $120.00
                                                                     </span>
-                                                                   
-                                                                </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" id="headingThree" style="padding: 0px;">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                                <span>
-                                                                       
-                                                                    <i class="fa fa-chevron-down"></i>
-                                                                </span>Paint
-                                                            </button>
-                                                        <span class="custom-float-right" style="    font-size: 11px;
-                                                                          margin: 11px;
-                                                                          font-weight: 700;">
-                                                                $500.00
-                                                            </span>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                                    <div class="card-body">
-                                                            <div  style="margin-top: 8px;">
-                                                                    <div  class="row">
-                                                                        <div  class="col-sm-2">
-                                                                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
-                                                                                        <input  class="chkboxes" id="5" type="checkbox">
-                                                                                        <span ></span>
-                                                                                    </label>
-                                                                        </div>
-                                                                        <div  class="col-sm-10">
-                        
-                                                                            <h5 >
-                                                                                Magic Paints
-                                                                            </h5>
-                                                                        </div>
-                                                                    </div>
-                                                                    <span  title="Click to See the Info">
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        <span  class="checked"> 5.0 </span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span>
-                                                                    <span  class="fa fa-star checked"></span> (25) Cleaning
-                                                                    </p>
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                                                    </p>
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        +1 416-488-5254
-                                                                    </p>
-                                                                    <p  class="custom-margin-bottom-zero">
-                                                                        <span  style="color:red">Close</span>
-                                                                        <span > 6:00 </span>
-                                                                        <span > - </span>
-                                                                        <span >Open</span>
-                                                                        <span > 23:00 </span>
-                                                                    </p>
+                                                            </p>
+                                                            <hr  class="ng-tns-c1-0" style="margin: 5px;">
+
+
+                                                            <p  class="custom-margin-bottom-zero">
+                                                                    <span  class="custom-width">
+                                                                            <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                            height: 12px;">
+                                                                                <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                <span  class="ng-tns-c1-0"></span>
+                                                                    </label>
                                                                     </span>
-                                                                   
-                                                                </div>
-                                                    </div>
-                                                </div>
+                                                                    <span  class="custom-hover-change-color custom-pointer">
+                                                                            <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                    Saby Food Citric Acid
+                                                                            </span>
+                    
+                                                                    </span>
+                                                                    <span  class="custom-float-right m--font-success">
+                                                                            $60.00
+                                                                        </span>
+                                                                </p>
+                                                                <hr  class="ng-tns-c1-0" style="margin: 5px;">
+
+
+                                                                <p  class="custom-margin-bottom-zero">
+                                                                        <span  class="custom-width">
+                                                                                <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                height: 12px;">
+                                                                                    <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                    <span  class="ng-tns-c1-0"></span>
+                                                                        </label>
+                                                                        </span>
+                                                                        <span  class="custom-hover-change-color custom-pointer">
+                                                                                <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                        Urban Platter Baking Soda
+                                                                                </span>
+                        
+                                                                        </span>
+                                                                        <span  class="custom-float-right m--font-success">
+                                                                                $80.00
+                                                                            </span>
+                                                                    </p>
+                                                                    <hr  class="ng-tns-c1-0" style="margin: 5px;">
+
+
+
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                            <span  class="custom-width">
+                                                                                    <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                    height: 12px;">
+                                                                                        <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                        <span  class="ng-tns-c1-0"></span>
+                                                                            </label>
+                                                                            </span>
+                                                                            <span  class="custom-hover-change-color custom-pointer">
+                                                                                    <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                            Cleanco Floor Cleaning Cream
+                                                                                    </span>
+                            
+                                                                            </span>
+                                                                            <span  class="custom-float-right m--font-success">
+                                                                                    $100.00
+                                                                                </span>
+                                                                        </p>
+                                                                        <hr  class="ng-tns-c1-0" style="margin: 5px;">
+
                                             </div>
+                                            <div class="tab-pane" id="m_tabs_1_2_product">
+                                                    <div id="accordion">
+                                                            <div class="card">
+                                                                <div class="card-header" id="headingOne" style="padding: 0px;">
+                                                                    <h5 class="mb-0">
+                                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                                <span>
+                                                                                      
+                                                                                    <i class="fa fa-chevron-down"></i>
+                                                                                </span>Acids
+                                                                            </button>
+                                                                    </h5>
+                                                                </div>
+                
+                                                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                                                        <div class="card-body">
+                                                                                <p  class="custom-margin-bottom-zero">
+                                                                                        <span  class="custom-width">
+                                                                                                <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                                height: 12px;">
+                                                                                                    <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                    <span  class="ng-tns-c1-0"></span>
+                                                                                        </label>
+                                                                                        </span>
+                                                                                        <span  class="custom-hover-change-color custom-pointer">
+                                                                                                <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                                        Saby Food Citric Acid
+                                                                                                </span>
+                                        
+                                                                                        </span>
+                                                                                        <span  class="custom-float-right m--font-success">
+                                                                                                $60.00
+                                                                                            </span>
+                                                                                    </p>       
+                                                                                    <hr class="ng-tns-c1-0" style="margin: 5px;">
+                                                                                    <p  class="custom-margin-bottom-zero">
+                                                                                            <span  class="custom-width">
+                                                                                                    <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                                    height: 12px;">
+                                                                                                        <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                        <span  class="ng-tns-c1-0"></span>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                            <span  class="custom-hover-change-color custom-pointer">
+                                                                                                    <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                                           Go Bleach
+                                                                                                    </span>
+                                            
+                                                                                            </span>
+                                                                                            <span  class="custom-float-right m--font-success">
+                                                                                                    $90.00
+                                                                                                </span>
+                                                                                        </p>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card">
+                                                                <div class="card-header" id="headingTwo" style="padding: 0px;">
+                                                                    <h5 class="mb-0">
+                                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                                <span>
+                                                                                       
+                                                                                    <i class="fa fa-chevron-down"></i>
+                                                                                </span>Floor Cleaning Cream
+                                                                            </button>
+                                                                        
+                                                                    </h5>
+                                                                </div>
+                                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                                    <div class="card-body">
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                    <span  class="custom-width">
+                                                                                            <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                            height: 12px;">
+                                                                                                <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                <span  class="ng-tns-c1-0"></span>
+                                                                                    </label>
+                                                                                    </span>
+                                                                                    <span  class="custom-hover-change-color custom-pointer">
+                                                                                            <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                                    Cleanco Floor Cleaning Cream
+                                                                                            </span>
+                                    
+                                                                                    </span>
+                                                                                    <span  class="custom-float-right m--font-success">
+                                                                                            $120.00
+                                                                                        </span>
+                                                                                </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card">
+                                                                <div class="card-header" id="headingThree" style="padding: 0px;">
+                                                                    <h5 class="mb-0">
+                                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                                <span>
+                                                                                       
+                                                                                    <i class="fa fa-chevron-down"></i>
+                                                                                </span>Paint
+                                                                            </button>
+                                                                      
+                                                                    </h5>
+                                                                </div>
+                                                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                                    <div class="card-body">
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                    <span  class="custom-width">
+                                                                                            <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                            height: 12px;">
+                                                                                                <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                <span  class="ng-tns-c1-0"></span>
+                                                                                    </label>
+                                                                                    </span>
+                                                                                    <span  class="custom-hover-change-color custom-pointer">
+                                                                                            <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                                    Brighto Paint
+                                                                                            </span>
+                                    
+                                                                                    </span>
+                                                                                    <span  class="custom-float-right m--font-success">
+                                                                                            $100.00
+                                                                                        </span>
+                                                                                </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            </div>
+
                                         </div>
+
+                                        
                                     </div>
                                 </div>
                                 <!-- ________ Product Info Popup ends -->
@@ -1578,45 +1598,118 @@ margin-top: 5px; overflow-y: scroll;" *ngIf="showServicesInfo">
                                                     <h5 class="mb-0">
                                                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <span>
-                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
-                                    <input class="chkboxes" type="checkbox">
-                                    <span></span>
-                                </label>
                         <i class="fa fa-chevron-down"></i>
                     </span>Shampoo
                 </button>
-                                                        <span class="custom-float-right" style="    font-size: 11px;
-                              margin: 11px;
-                              font-weight: 700;">
-                    $120.00
-                </span>
+                                                     
                                                     </h5>
                                                 </div>
 
                                                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                                    <div class="card-body">
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                                Company:
-                            </strong>Mont Hair
-                                                        </p>
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                        Address:
-                    </strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                                        </p>
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                        Date:
-                    </strong> 07 / 11 /2017
-                                                        </p>
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                        Detail:
-                    </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti placeat sed deserunt debitis, harum sint
-                                                            repellat aliquam temporibus saepe illo ad quasi soluta quod.
-                                                        </p>
-                                                    </div>
+                                                        <div class="card-body">
+                                                                <div  style="margin-top: 8px;">
+                                                                        <div  class="row">
+                                                                          
+                                                                            <div  class="col-sm-12">
+                            
+                                                                                <h5 >
+                                                                                    Henry Liquids
+                                                                                </h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <span  title="Click to See the Info">
+                                                                        <p  class="custom-margin-bottom-zero">
+                                                                            <span  class="checked"> 5.0 </span>
+                                                                        <span  class="fa fa-star checked"></span>
+                                                                        <span  class="fa fa-star checked"></span>
+                                                                        <span  class="fa fa-star checked"></span>
+                                                                        <span  class="fa fa-star checked"></span>
+                                                                        <span  class="fa fa-star checked"></span> (25) Cleaning
+                                                                        </p>
+                                                                        <p  class="custom-margin-bottom-zero">
+                                                                            1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                                        </p>
+                                                                        <p  class="custom-margin-bottom-zero">
+                                                                            +1 416-488-5254
+                                                                        </p>
+                                                                        <p  class="custom-margin-bottom-zero">
+                                                                            <span  style="color:red">Close</span>
+                                                                            <span > 6:00 </span>
+                                                                            <span > - </span>
+                                                                            <span >Open</span>
+                                                                            <span > 23:00 </span>
+                                                                        </p>
+                                                                        </span>
+                                                                        <div class="relatedProducts">               
+                                                                                    <p  class="custom-margin-bottom-zero">
+                                                                                            <span  class="custom-width">
+                                                                                                    <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                                    height: 12px;">
+                                                                                                        <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                        <span  class="ng-tns-c1-0"></span>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                            <span  class="custom-hover-change-color custom-pointer">
+                                                                                                    <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                                        Egg shampoo
+                                                                                                    </span>
+                                            
+                                                                                            </span>
+                                                                                            <span  class="custom-float-right m--font-success">
+                                                                                                    $240.00
+                                                                                                </span>
+                                                                                        </p>
+                                                                                    </div>
+                                                                       
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div  style="margin-top: 8px;">
+                                                                            <div  class="row">
+                                                                               
+                                                                                <div  class="col-sm-12">
+                                
+                                                                                    <h5 >
+                                                                                            <span  class="custom-width">
+                                                                                                    <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                                    height: 12px;">
+                                                                                                        <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                        <span  class="ng-tns-c1-0"></span>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                            
+                                                                                            <span>Kerotin Shampoo</span>
+                                                                                            
+                                                                                    </h5>
+                                                                                    <h6>Kame Detergents</h6>
+                                                                                </div>
+                                                                            </div>
+                                                                            <span  title="Click to See the Info">
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                <span  class="checked"> 4.0 </span>
+                                                                            <span  class="fa fa-star checked"></span>
+                                                                            <span  class="fa fa-star checked"></span>
+                                                                            <span  class="fa fa-star checked"></span>
+                                                                            <span  class="fa fa-star checked"></span>
+                                                                            <span  class="fa fa-star "></span> (14) Cleaning
+                                                                            </p>
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                                            </p>
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                +1 416-488-5254
+                                                                            </p>
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                <span  style="color:red">Close</span>
+                                                                                <span > 6:00 </span>
+                                                                                <span > - </span>
+                                                                                <span >Open</span>
+                                                                                <span > 23:00 </span>
+                                                                            </p>
+                                                                            </span>
+                                                                           
+                                                                        </div>
+                                                        </div>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="card">
@@ -1624,43 +1717,90 @@ margin-top: 5px; overflow-y: scroll;" *ngIf="showServicesInfo">
                                                     <h5 class="mb-0">
                                                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     <span>
-                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
-                                    <input class="chkboxes" type="checkbox">
-                                    <span></span>
-                                </label>
                         <i class="fa fa-chevron-down"></i>
                     </span>Gel
                 </button>
-                                                        <span class="custom-float-right" style="    font-size: 11px;
-                              margin: 11px;
-                              font-weight: 700;">
-                    $260
-                </span>
+                                                      
                                                     </h5>
                                                 </div>
                                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                                     <div class="card-body">
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                                Company:
-                            </strong>Mont Hair
-                                                        </p>
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                        Address:
-                    </strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                                        </p>
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                        Date:
-                    </strong> 07 / 11 /2017
-                                                        </p>
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                        Detail:
-                    </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti placeat sed deserunt debitis, harum sint
-                                                            repellat aliquam temporibus saepe illo ad quasi soluta quod.
-                                                        </p>
+                                                            <div  style="margin-top: 8px;">
+                                                                    <div  class="row">
+                                                                      
+                                                                        <div  class="col-sm-12">
+                        
+                                                                            <h5 >
+                                                                                Mont Hair
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span  title="Click to See the Info">
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        <span  class="checked"> 5.0 </span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span> (15) Haircut
+                                                                    </p>
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                                    </p>
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        +1 416-488-5254
+                                                                    </p>
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        <span  style="color:red">Close</span>
+                                                                        <span > 6:00 </span>
+                                                                        <span > - </span>
+                                                                        <span >Open</span>
+                                                                        <span > 23:00 </span>
+                                                                    </p>
+                                                                    </span>
+
+                                                                    <div class="relatedProducts">
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                    <span  class="custom-width">
+                                                                                            <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                            height: 12px;">
+                                                                                                <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                <span  class="ng-tns-c1-0"></span>
+                                                                                    </label>
+                                                                                    </span>
+                                                                                    <span  class="custom-hover-change-color custom-pointer">
+                                                                                            <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                                Hard Gel
+                                                                                            </span>
+                                    
+                                                                                    </span>
+                                                                                    <span  class="custom-float-right m--font-success">
+                                                                                            $120.00
+                                                                                        </span>
+                                                                                </p>
+                                                                                <hr>
+                                                                                
+                                                                                <p  class="custom-margin-bottom-zero">
+                                                                                        <span  class="custom-width">
+                                                                                                <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                                height: 12px;">
+                                                                                                    <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                    <span  class="ng-tns-c1-0"></span>
+                                                                                        </label>
+                                                                                        </span>
+                                                                                        <span  class="custom-hover-change-color custom-pointer">
+                                                                                                <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                                    Soft Gel
+                                                                                                </span>
+                                        
+                                                                                        </span>
+                                                                                        <span  class="custom-float-right m--font-success">
+                                                                                                $240.00
+                                                                                            </span>
+                                                                                    </p>
+                                                                                </div>
+                                                                   
+                                                                </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1668,44 +1808,87 @@ margin-top: 5px; overflow-y: scroll;" *ngIf="showServicesInfo">
                                                 <div class="card-header" id="headingThree" style="padding: 0px;">
                                                     <h5 class="mb-0">
                                                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <span>
-                            <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand" style="margin-bottom: -4px;">
-                                    <input class="chkboxes" type="checkbox">
-                                    <span></span>
-                                </label>
-                        <i class="fa fa-chevron-down"></i>
-                    </span>Creams
-                </button>
-                                                        <span class="custom-float-right" style="    font-size: 11px;
-                              margin: 11px;
-                              font-weight: 700;">
-                    $500.00
-                </span>
+                                                        <span><i class="fa fa-chevron-down"></i></span> Creams</button>
                                                     </h5>
                                                 </div>
                                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                                     <div class="card-body">
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                                Company:
-                            </strong>Mont Hair
-                                                        </p>
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                        Address:
-                    </strong>1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
-                                                        </p>
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                        Date:
-                    </strong> 07 / 11 /2017
-                                                        </p>
-                                                        <p class="custom-margin-bottom-zero">
-                                                            <strong>
-                        Detail:
-                    </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cumque exercitationem inventore ea, repellendus corrupti placeat sed deserunt debitis, harum sint
-                                                            repellat aliquam temporibus saepe illo ad quasi soluta quod.
-                                                        </p>
+                                                            <div  style="margin-top: 8px;">
+                                                                    <div  class="row">
+                                                                       
+                                                                        <div  class="col-sm-12">
+                        
+                                                                            <h5 >
+                                                                                Jame Cosmetics
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span  title="Click to See the Info">
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        <span  class="checked"> 4.0 </span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star "></span> (30) Cosmetics
+                                                                    </p>
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                                    </p>
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        +1 416-488-5254
+                                                                    </p>
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        <span  style="color:red">Close</span>
+                                                                        <span > 6:00 </span>
+                                                                        <span > - </span>
+                                                                        <span >Open</span>
+                                                                        <span > 23:00 </span>
+                                                                    </p>
+                                                                    </span>
+                                                                    <div class="relatedProducts">
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                            <span  class="custom-width">
+                                                                                    <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                    height: 12px;">
+                                                                                        <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                        <span  class="ng-tns-c1-0"></span>
+                                                                            </label>
+                                                                            </span>
+                                                                            <span  class="custom-hover-change-color custom-pointer">
+                                                                                    <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                        Face Cream
+                                                                                    </span>
+                            
+                                                                            </span>
+                                                                            <span  class="custom-float-right m--font-success">
+                                                                                    $120.00
+                                                                                </span>
+                                                                        </p>
+                                                                        <hr>
+                                                                        
+                                                                        <p  class="custom-margin-bottom-zero">
+                                                                                <span  class="custom-width">
+                                                                                        <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                        height: 12px;">
+                                                                                            <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                            <span  class="ng-tns-c1-0"></span>
+                                                                                </label>
+                                                                                </span>
+                                                                                <span  class="custom-hover-change-color custom-pointer">
+                                                                                        <span  class="ng-tns-c1-0" data-target="#infoModal" data-toggle="modal">
+                                                                                            Massage Cream
+                                                                                        </span>
+                                
+                                                                                </span>
+                                                                                <span  class="custom-float-right m--font-success">
+                                                                                        $240.00
+                                                                                    </span>
+                                                                            </p>
+                                                                        </div>
+                                                                    
+                                                                   
+                                                                </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1713,6 +1896,335 @@ margin-top: 5px; overflow-y: scroll;" *ngIf="showServicesInfo">
                                     </div>
                                 </div>
                                 <!-- ________ ServicesInfo Info Popup ends __________ -->
+
+
+
+
+
+
+
+                                <!-- ________ Related Services Info Popup starts __________ -->
+                                <div style=" position: absolute;
+margin-left: 26%;
+background-color: white;  
+width: 35%;
+height: 98%;
+margin-top: 5px; overflow-y: scroll;" *ngIf="relatedServicesShow">
+                                    <div class="container" style="padding: 10px">
+                                        <h4>
+                                            Related Services
+                                            <span class="custom-float-right custom-pointer" (click)="relatedServicesShow=false;">
+    <i class="fa fa-times"></i>
+</span>
+
+                                        </h4>
+
+                                        <h5 style="font-weight: 600;
+                font-size: 15px;">
+                                            Services
+                                        </h5>
+                                        <div id="accordion-relatedService">
+                                            <div class="card">
+                                                <div class="card-header"  style="padding: 0px;">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOneRelatedService" aria-expanded="true" aria-controls="collapseOne">
+                    <span>
+                        <i class="fa fa-chevron-down"></i>
+                    </span>Painting
+                </button>
+                                                     
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseOneRelatedService" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-relatedService">
+                                                        <div class="card-body">
+                                                               
+                                                                    <div  style="margin-top: 8px;">
+                                                                            <div  class="row">
+                                                                                <div class="col-sm-1">
+                                                                                        <span  class="custom-width">
+                                                                                                <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                                height: 12px;">
+                                                                                                    <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                    <span  class="ng-tns-c1-0"></span>
+                                                                                        </label>
+                                                                                        </span>
+                                                                                  
+                                                                                </div>
+                                                                               
+                                                                                <div  class="col-sm-8">
+                                
+                                                                                    <h5 >
+                                                                                            
+                                                                                           Simple Paiting
+                                                                                            
+                                                                                    </h5>
+                                                                                    
+                                                                                </div>
+
+                                                                                <div class="col-sm-2">
+                                                                                        <span class="custom-float-right m--font-success">
+                                                                                                $200.00
+                                                                                        </span>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div  class="row">
+                                                                                    <div class="col-sm-1">
+                                                                                            <span  class="custom-width">
+                                                                                                    <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                                    height: 12px;">
+                                                                                                        <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                        <span  class="ng-tns-c1-0"></span>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                      
+                                                                                    </div>
+                                                                               
+                                                                                    <div  class="col-sm-8">
+                                    
+                                                                                        <h5 >
+                                                                                              
+                                                                                                
+                                                                                                Fancy Painting
+                                                                                                
+                                                                                        </h5>
+                                                                                        
+                                                                                    </div>
+    
+                                                                                    <div class="col-sm-2">
+                                                                                            <span class="custom-float-right m--font-success">
+                                                                                                    $400.00
+                                                                                            </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            <h6>Chris Paints</h6>
+                                                                            <span  title="Click to See the Info">
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                <span  class="checked"> 4.0 </span>
+                                                                            <span  class="fa fa-star checked"></span>
+                                                                            <span  class="fa fa-star checked"></span>
+                                                                            <span  class="fa fa-star checked"></span>
+                                                                            <span  class="fa fa-star checked"></span>
+                                                                            <span  class="fa fa-star "></span> (14) Painting
+                                                                            </p>
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                                            </p>
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                +1 416-488-5254
+                                                                            </p>
+                                                                            <p  class="custom-margin-bottom-zero">
+                                                                                <span  style="color:red">Close</span>
+                                                                                <span > 6:00 </span>
+                                                                                <span > - </span>
+                                                                                <span >Open</span>
+                                                                                <span > 23:00 </span>
+                                                                            </p>
+                                                                            </span>
+                                                                           
+                                                                        </div>
+                                                        </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header"  style="padding: 0px;">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwoRelatedService" aria-expanded="false" aria-controls="collapseTwo">
+                    <span>
+                        <i class="fa fa-chevron-down"></i>
+                    </span>Hair Cutting
+                </button>
+                                                      
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseTwoRelatedService" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-relatedService">
+                                                    <div class="card-body">
+                                                            <div  style="margin-top: 8px;">
+                                                                    <div  class="row">
+                                                                        <div class="col-sm-1">
+                                                                                <span  class="custom-width">
+                                                                                        <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                        height: 12px;">
+                                                                                            <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                            <span  class="ng-tns-c1-0"></span>
+                                                                                </label>
+                                                                                </span>
+                                                                          
+                                                                        </div>
+                                                                       
+                                                                        <div  class="col-sm-8">
+                        
+                                                                            <h5 >
+                                                                                    
+                                                                                   Simple Cutting
+                                                                                    
+                                                                            </h5>
+                                                                            
+                                                                        </div>
+
+                                                                        <div class="col-sm-2">
+                                                                                <span class="custom-float-right m--font-success">
+                                                                                        $200.00
+                                                                                </span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div  class="row">
+                                                                            <div class="col-sm-1">
+                                                                                    <span  class="custom-width">
+                                                                                            <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                            height: 12px;">
+                                                                                                <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                <span  class="ng-tns-c1-0"></span>
+                                                                                    </label>
+                                                                                    </span>
+                                                                              
+                                                                            </div>
+                                                                       
+                                                                            <div  class="col-sm-8">
+                            
+                                                                                <h5 >
+                                                                                      
+                                                                                        
+                                                                                        Trimming
+                                                                                        
+                                                                                </h5>
+                                                                                
+                                                                            </div>
+
+                                                                            <div class="col-sm-2">
+                                                                                    <span class="custom-float-right m--font-success">
+                                                                                            $150.00
+                                                                                    </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    <h6>The Barbers</h6>
+                                                                    <span  title="Click to See the Info">
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        <span  class="checked"> 4.0 </span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star checked"></span>
+                                                                    <span  class="fa fa-star "></span> (14) Haircut
+                                                                    </p>
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                                    </p>
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        +1 416-488-5254
+                                                                    </p>
+                                                                    <p  class="custom-margin-bottom-zero">
+                                                                        <span  style="color:red">Close</span>
+                                                                        <span > 6:00 </span>
+                                                                        <span > - </span>
+                                                                        <span >Open</span>
+                                                                        <span > 23:00 </span>
+                                                                    </p>
+                                                                    </span>
+                                                                   
+                                                                </div>
+
+                                                                <hr>
+
+
+                                                                <div  style="margin-top: 8px;">
+                                                                        <div  class="row">
+                                                                            <div class="col-sm-1">
+                                                                                    <span  class="custom-width">
+                                                                                            <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                            height: 12px;">
+                                                                                                <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                <span  class="ng-tns-c1-0"></span>
+                                                                                    </label>
+                                                                                    </span>
+                                                                              
+                                                                            </div>
+                                                                           
+                                                                            <div  class="col-sm-8">
+                            
+                                                                                <h5 >
+                                                                                        
+                                                                                       Army Cut
+                                                                                        
+                                                                                </h5>
+                                                                                
+                                                                            </div>
+    
+                                                                            <div class="col-sm-2">
+                                                                                    <span class="custom-float-right m--font-success">
+                                                                                            $100.00
+                                                                                    </span>
+                                                                            </div>
+                                                                        </div>
+    
+                                                                        <div  class="row">
+                                                                                <div class="col-sm-1">
+                                                                                        <span  class="custom-width">
+                                                                                                <label  class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand custom_margin_bottom" style="margin-right: -10px;
+                                                                                                height: 12px;">
+                                                                                                    <input  class="ng-tns-c1-0" type="checkbox" value="true">
+                                                                                                    <span  class="ng-tns-c1-0"></span>
+                                                                                        </label>
+                                                                                        </span>
+                                                                                  
+                                                                                </div>
+                                                                           
+                                                                                <div  class="col-sm-8">
+                                
+                                                                                    <h5 >
+                                                                                          
+                                                                                            
+                                                                                            Fancy Cut
+                                                                                            
+                                                                                    </h5>
+                                                                                    
+                                                                                </div>
+    
+                                                                                <div class="col-sm-2">
+                                                                                        <span class="custom-float-right m--font-success">
+                                                                                                $300.00
+                                                                                        </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        <h6>Hair Salloon</h6>
+                                                                        <span  title="Click to See the Info">
+                                                                        <p  class="custom-margin-bottom-zero">
+                                                                            <span  class="checked"> 4.0 </span>
+                                                                        <span  class="fa fa-star checked"></span>
+                                                                        <span  class="fa fa-star checked"></span>
+                                                                        <span  class="fa fa-star checked"></span>
+                                                                        <span  class="fa fa-star checked"></span>
+                                                                        <span  class="fa fa-star "></span> (14) Haircut
+                                                                        </p>
+                                                                        <p  class="custom-margin-bottom-zero">
+                                                                            1620 Orr Rd, Mississauga, ON L5J 4T2, Canada
+                                                                        </p>
+                                                                        <p  class="custom-margin-bottom-zero">
+                                                                            +1 416-488-5254
+                                                                        </p>
+                                                                        <p  class="custom-margin-bottom-zero">
+                                                                            <span  style="color:red">Close</span>
+                                                                            <span > 6:00 </span>
+                                                                            <span > - </span>
+                                                                            <span >Open</span>
+                                                                            <span > 23:00 </span>
+                                                                        </p>
+                                                                        </span>
+                                                                       
+                                                                    </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ________ Related Services Info Popup ends __________ -->
 
                             </div>
                         </div>

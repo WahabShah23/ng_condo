@@ -27,6 +27,7 @@ export class MapViewServicesComponent implements AfterViewInit {
   showInfo = false;
   showProducts = false;
   showServicesInfo = false;
+  relatedServicesShow = false;
   categoryId: number = 0;
   checkCount: number = 0;
   compareItem: boolean = false;
@@ -107,29 +108,44 @@ export class MapViewServicesComponent implements AfterViewInit {
       this.showInfo = false;
       this.showProducts = false;
       this.showServicesInfo = false;
+      this.relatedServicesShow = false;
     } else if (value == "service") {
       this.showServices = true;
       this.showOrderHistory = false;
       this.showInfo = false;
       this.showProducts = false;
       this.showServicesInfo = false;
+      this.relatedServicesShow = false;
     } else if (value == "products") {
       this.showServices = false;
       this.showOrderHistory = false;
       this.showInfo = false;
       this.showProducts = true;
       this.showServicesInfo = false;
+      this.relatedServicesShow = false;
     } else if (value == "serviceInfo") {
       this.showServices = false;
       this.showOrderHistory = false;
       this.showInfo = false;
       this.showProducts = false;
       this.showServicesInfo = true;
+      this.relatedServicesShow = false;
+    }
+    else if(value=="relatedService")
+    {
+      this.showServices = false;
+      this.showOrderHistory = false;
+      this.showInfo = false;
+      this.showProducts = false;
+      this.showServicesInfo = false;
+      this.relatedServicesShow = true;
+
     } else {
       this.showServices = false;
       this.showOrderHistory = false;
       this.showInfo = true;
       this.showProducts = false;
+      this.relatedServicesShow = false;
     }
   }
   t = false;
