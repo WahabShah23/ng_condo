@@ -12,15 +12,17 @@
             </div>
 
             <div class="verticals" id="vertical_2">
-                 <!-- <div class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
-                    <h6 class="innerCardsTitle m-menu__link-text">Account Settings</h6>
-                 
-                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('account'); visibleSidebar5 = true" ></i>
-                </div>  -->
+              
                 <div class="innerCards stackEffect" [ngClass]="className === 'account' ? 'active_card': 'non_active_card'" id="card2">
                     <h6 class="innerCardsTitle m-menu__link-text">Account Settings</h6>
                      
                     <a routerLink="accounts"><i class="fa fa-expand text-muted pull-right c-expand-icon" ></i></a>
+                </div>
+
+                <div class="innerCards stackEffect" id="card5" [ngClass]="className === 'amenities_global' ? 'active_card': 'non_active_card'">
+                    <h6 class="innerCardsTitle m-menu__link-text">Assets Settings</h6>
+                    <!-- <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('amenities_global'); visibleSidebar5 = true" ></i> -->
+                    <a routerLink="assets"> <i class="fa fa-expand text-muted pull-right c-expand-icon"  ></i></a>
                 </div>
 
                 <div class="innerCards stackEffect" id="card8"
@@ -29,16 +31,6 @@
                     <a routerLink="buildings"> <i class="fa fa-expand text-muted pull-right c-expand-icon"  ></i> </a>
                     <!--<button class="fa fa-expand text-muted pull-right c-expand-icon" pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></button>-->
                 </div>
-
-                <!-- <div class="innerCards stackEffect" id="card3" [ngClass]="className === 'security' ? 'active_card': 'non_active_card'">
-                    <h6 class="innerCardsTitle m-menu__link-text">Security Settings</h6>
-                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('security'); visibleSidebar5 = true" ></i>
-                </div> -->
-
-                <!-- <div class="innerCards stackEffect" id="card4" [ngClass]="className === 'system_wide' ? 'active_card': 'non_active_card'">
-                    <h6 class="innerCardsTitle m-menu__link-text">System Wide Settings</h6>
-                    <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('system_wide'); visibleSidebar5 = true" ></i>
-                </div> -->
 
                 <div class="innerCards stackEffect" id="card5" [ngClass]="className === 'amenities_global' ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Amenities Global Settings</h6>
