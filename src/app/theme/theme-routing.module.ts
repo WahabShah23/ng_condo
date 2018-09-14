@@ -35,6 +35,11 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/default\/customers\/customers.module#CustomersModule"
             },
             {
+                "path": "assetsManagement",
+                // "loadChildren": ".\/pages\/default\/assetsManagement\/AssetsManagement.module#AssetsManagementModule"
+                "loadChildren": ".\/pages\/default\/assetsManagement\/assets-management.module#AssetsManagementModule"
+            },
+            {
                 "path": "peopleManagement",
                 "loadChildren": ".\/pages\/default\/peopleManagement\/peopleManagement.module#PeopleManagementModule"
             },

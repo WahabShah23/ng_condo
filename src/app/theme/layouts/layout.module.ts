@@ -24,6 +24,7 @@ import { AsideNavSettingsComponent } from './aside-nav-settings/aside-nav-settin
 import { SettingsComponent } from "../pages/custom_components/settings/settings/settings.component";
 import { AsideNavBuildingComponent } from './aside-nav-building/aside-nav-building.component';
 import { AsideNavOwndersRolesSettingsComponent } from './aside-nav-owners-roles-settings/aside-nav-owners-roles-settings.component';
+import { AsideNavAssetsManagementComponent } from "./aside-nav-assets-management/aside-nav-assets-managment.component";
 
 @NgModule({
     declarations: [
@@ -50,7 +51,8 @@ import { AsideNavOwndersRolesSettingsComponent } from './aside-nav-owners-roles-
         AsideNavBuildingComponent,
         AsideNavApartmentComponent,
         AsideNavSpecializedComponent,
-        AsideNavOwndersRolesSettingsComponent
+        AsideNavOwndersRolesSettingsComponent,
+        AsideNavAssetsManagementComponent
     ],
     exports: [
         LayoutComponent,
@@ -73,7 +75,8 @@ import { AsideNavOwndersRolesSettingsComponent } from './aside-nav-owners-roles-
         AsideNavApartmentComponent,
         AsideNavSpecializedComponent,
 
-        AsideNavOwndersRolesSettingsComponent
+        AsideNavOwndersRolesSettingsComponent,
+        AsideNavAssetsManagementComponent
     ],
     imports: [
         CommonModule,

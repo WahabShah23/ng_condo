@@ -36,8 +36,7 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2
     declarations: [
         ThemeComponent,
         AppComponent,
-        WizardComponent,
-
+        WizardComponent
     ],
     imports: [
         LayoutModule,
