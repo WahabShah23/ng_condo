@@ -1,4 +1,13 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, NgZone } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    ViewEncapsulation,
+    ViewChild,
+    ElementRef,
+    NgZone,
+    Renderer2,
+    AfterContentInit
+} from '@angular/core';
 import { DemoService } from "../../../../services/demo.service";
 import { MenuItem } from "primeng/components/common/api";
 import { MapsAPILoader } from '@agm/core';
@@ -13,7 +22,10 @@ import { SelectItem } from "primeng/primeng";
     styleUrls: ['./blank.component.css'],
     encapsulation: ViewEncapsulation.None,
 })
-export class BlankComponent implements OnInit {
+export class BlankComponent implements OnInit, AfterContentInit {
+
+    @ViewChild('abcd') private abcd: ElementRef;
+    @ViewChild('hover') private hover: ElementRef;
 
     locationExist = false;
     public theData;
@@ -38,7 +50,7 @@ export class BlankComponent implements OnInit {
 
     selectedCars2: string[] = [];
 
-    constructor(private _demoService: DemoService, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {
+    constructor(private _demoService: DemoService, private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private renderer: Renderer2) {
     }
 
     ngOnInit() {
@@ -55,6 +67,7 @@ export class BlankComponent implements OnInit {
             { label: 'VW', value: 'VW' },
             { label: 'Volvo', value: 'Volvo' }
         ];
+
 
 
         this.searchControl = new FormControl();
@@ -111,11 +124,55 @@ export class BlankComponent implements OnInit {
             }
         ];
 
+    }
 
+    div = this.renderer.createElement('div');
+    text = this.renderer.createText('This is div');
 
+    onClick() {
+        this.renderer.appendChild(this.div, this.text);
+        this.renderer.appendChild(this.abcd.nativeElement, this.div);
+        this.renderer.addClass(this.div, 'test');
+    }
 
+    onHover() {
+        this.renderer.addClass(this.div, 'test');
+        this.renderer.setStyle(this.hover.nativeElement, 'color', 'white');
+        this.renderer.setStyle(this.hover.nativeElement, 'backgroundColor', 'green');
+    }
 
+    onLeave() {
+        this.renderer.removeClass(this.div,'test');
+        this.renderer.removeStyle(this.hover.nativeElement, 'color');
+        this.renderer.removeStyle(this.hover.nativeElement, 'backgroundColor');
+    }
 
+    ngAfterContentInit () {
+        // const startingStyles : AnimationStyles = {
+        //     styles: [{}]
+        // }
+        //
+        // const keyframes : AnimationKeyframe[] = [
+        //     {
+        //         offset: 0,
+        //         styles: {
+        //             styles: [{
+        //                 transform: 'translateX(0px)',
+        //             }]
+        //         }
+        //     },
+        //     {
+        //         offset: 1,
+        //         styles: {
+        //             styles: [{
+        //                 transform: 'translateX(100px)',
+        //             }]
+        //         }
+        //     }]
+        //
+        // const animation: AnimationPlayer = this.renderer.animate(this.div, startingStyles, keyframes, 3000, 1000, "ease");
+        // animation.play();
+        // animation.onDone(() => console.log('Animation complete'));
     }
 
 }

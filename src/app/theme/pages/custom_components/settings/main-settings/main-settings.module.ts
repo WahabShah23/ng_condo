@@ -47,6 +47,7 @@ import { RolesComponent } from './roles/roles.component';
 import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.component';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
 import { FilterPipe } from "../../../../../pipes/filter.pipe";
+import { TestDirective } from "../../../../../directives/test.directive";
 
 
 @NgModule({
@@ -95,6 +96,7 @@ import { FilterPipe } from "../../../../../pipes/filter.pipe";
         RolesComponent,
         OwnerRolesSettings,
         OwnersRolesComponent,
+        TestDirective,
 
     //  Pipes
         FilterPipe

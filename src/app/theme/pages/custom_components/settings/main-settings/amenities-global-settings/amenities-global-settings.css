@@ -188,3 +188,7 @@
 .searchBoxBorder:focus {
 	outline: none;
 }
+
+.test{
+	color: #0d8a3a;
+}

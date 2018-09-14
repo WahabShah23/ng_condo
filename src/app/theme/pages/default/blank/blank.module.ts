@@ -29,6 +29,7 @@ import {
     SidebarModule
 
 } from 'primeng/primeng';
+import { AlphaDirective } from "../../../../directives/alpha.directive";
 
 
 const routes: Routes = [
@@ -79,6 +80,7 @@ const routes: Routes = [
         RouterModule,
     ], declarations: [
         BlankComponent,
+        AlphaDirective
     ],
 })
 export class BlankModule {

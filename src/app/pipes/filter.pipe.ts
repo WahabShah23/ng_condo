@@ -10,7 +10,7 @@ export class FilterPipe implements PipeTransform {
         return items.filter( item => {
             /*
                 field on which we have add filter here we have use name from array
-                I have used filter for name any amenity type fields
+                I have used filter for name and amenity type fields
             */
                 return (item.name.toLowerCase().includes(searchText)) || (item.amenitytype.toLowerCase().includes(searchText));
 
