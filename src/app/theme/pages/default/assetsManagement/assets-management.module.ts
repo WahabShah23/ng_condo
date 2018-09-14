@@ -6,7 +6,6 @@ import { SelectDropDownModule } from 'ngx-select-dropdown'
 import { LayoutModule } from '../../../layouts/layout.module';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
 import { FilterPipe } from "../../../../pipes/filter.pipe";
-import { TestDirective } from "../../../../directives/test.directive";
 import { AssetsManagementDashboardComponent } from "./assets-management-dashboard/assets-management-dashboard.component";
 import { AssetsManagementEquipmentComponent } from "./assets-management-equipment/assets-management-equipment.component";
 import { AssetsManagementFacilitiesComponent } from "./assets-management-facilities/assets-management-facilities.component";
@@ -26,11 +25,10 @@ import { AssetsManagementRoutingModule } from "./assets-management.routing.modul
         AssetsManagementDashboardComponent,
         AssetsManagementEquipmentComponent,
         AssetsManagementFacilitiesComponent,
-        AssetsManagementToolsComponent,
-        TestDirective,
+        AssetsManagementToolsComponent
 
         //  Pipes
-        FilterPipe
+        // FilterPipe
     ],
 
 })

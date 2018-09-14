@@ -53,7 +53,7 @@ import { AsideNavAssetsManagementComponent } from "./aside-nav-assets-management
         AsideNavApartmentComponent,
         AsideNavSpecializedComponent,
         AsideNavOwndersRolesSettingsComponent,
-        AsideNavAssetsManagementComponent
+        AsideNavAssetsManagementComponent,
         AsideNavAssetsComponent
     ],
     exports: [
@@ -77,7 +77,8 @@ import { AsideNavAssetsManagementComponent } from "./aside-nav-assets-management
         AsideNavApartmentComponent,
         AsideNavSpecializedComponent,
         AsideNavOwndersRolesSettingsComponent,
-        AsideNavAssetsManagementComponentAsideNavAssetsComponent
+        AsideNavAssetsManagementComponent,
+        AsideNavAssetsComponent
     ],
     imports: [
         CommonModule,
