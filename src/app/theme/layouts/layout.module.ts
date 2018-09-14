@@ -1,3 +1,4 @@
+import { AsideNavAssetsComponent } from './aside-nav-assets/aside-nav-assets.component';
 import { AsideNavSpecializedComponent } from './aside-nav-specialized/aside-nav-specialized.component';
 import { AsideNavApartmentComponent } from './aside-nav-apartment/aside-nav-apartment.component';
 import { NgModule } from '@angular/core';
@@ -50,7 +51,8 @@ import { AsideNavOwndersRolesSettingsComponent } from './aside-nav-owners-roles-
         AsideNavBuildingComponent,
         AsideNavApartmentComponent,
         AsideNavSpecializedComponent,
-        AsideNavOwndersRolesSettingsComponent
+        AsideNavOwndersRolesSettingsComponent,
+        AsideNavAssetsComponent
     ],
     exports: [
         LayoutComponent,
@@ -73,7 +75,8 @@ import { AsideNavOwndersRolesSettingsComponent } from './aside-nav-owners-roles-
         AsideNavApartmentComponent,
         AsideNavSpecializedComponent,
 
-        AsideNavOwndersRolesSettingsComponent
+        AsideNavOwndersRolesSettingsComponent,
+        AsideNavAssetsComponent
     ],
     imports: [
         CommonModule,

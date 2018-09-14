@@ -1,3 +1,7 @@
+import { AssetsToolsComponent } from './assets-settings/assets-tools/assets-tools.component';
+import { AssetsFacilitiesComponent } from './assets-settings/assets-facilities/assets-facilities.component';
+import { SettingsAssetsComponent } from './../settings-assets/settings-assets.component';
+import { AssetsSettingsComponent } from './assets-settings/assets-settings.component';
 import { OwnerRolesSettings } from './../owners-roles-settings/owners-roles-settings.component';
 import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.component';
 import { RolesComponent } from './roles/roles.component';
@@ -44,6 +48,7 @@ import { GuestSuitesComponent } from './building-settings/guest-suites/guest-sui
 import { AddRulesComponent } from "./rules-global-settings/add-rules/add-rules.component";
 import { ListViewRulesComponent } from "./rules-global-settings/list-view-rules/list-view-rules.component";
 import { GridViewRulesComponent } from "./rules-global-settings/grid-view-rules/grid-view-rules.component";
+import { AssetsEquipmentsComponent } from './assets-settings/assets-equipments/assets-equipments.component';
 
 const routes: Routes = [
     {
@@ -107,6 +112,33 @@ const routes: Routes = [
             },
 
         ],
+    },
+    {
+        'path': 'assets',
+        'component': SettingsAssetsComponent,
+        'children': [
+            {
+                'path': '',
+                'redirectTo': 'dashboard'
+            },
+            {
+                'path': 'dashboard',
+                'component': AssetsSettingsComponent
+            },
+            {
+                'path': 'facilities',
+                'component': AssetsFacilitiesComponent
+            },
+            {
+                'path': 'equipments',
+                'component': AssetsEquipmentsComponent
+            },
+            {
+                'path': 'tools',
+                'component': AssetsToolsComponent
+            }
+
+        ]
     },
     {
         'path': 'roles/invite',

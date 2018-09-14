@@ -48,6 +48,11 @@ import { OwnersRolesComponent } from './roles/owners-roles/owners-roles.componen
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
 import { FilterPipe } from "../../../../../pipes/filter.pipe";
 import { TestDirective } from "../../../../../directives/test.directive";
+import { AssetsSettingsComponent } from './assets-settings/assets-settings.component';
+import { SettingsAssetsComponent } from '../settings-assets/settings-assets.component';
+import { AssetsFacilitiesComponent } from './assets-settings/assets-facilities/assets-facilities.component';
+import { AssetsEquipmentsComponent } from './assets-settings/assets-equipments/assets-equipments.component';
+import { AssetsToolsComponent } from './assets-settings/assets-tools/assets-tools.component';
 
 
 @NgModule({
@@ -97,9 +102,18 @@ import { TestDirective } from "../../../../../directives/test.directive";
         OwnerRolesSettings,
         OwnersRolesComponent,
         TestDirective,
+        SettingsAssetsComponent,
 
     //  Pipes
-        FilterPipe
+        FilterPipe,
+
+    AssetsSettingsComponent,
+
+    AssetsFacilitiesComponent,
+
+    AssetsEquipmentsComponent,
+
+    AssetsToolsComponent
     ],
 
 })
