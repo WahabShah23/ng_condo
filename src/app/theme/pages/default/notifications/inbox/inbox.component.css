@@ -1,0 +1,62 @@
+.body>.row{
+	width: 100%;
+}
+
+.m-subheader {
+	padding: 0px 30px 0 30px;
+}
+.m-subheader:not(.breadcrumb-header)
+{
+	margin-top: 15px;
+}
+.customhr
+{
+	margin-top: 0.0rem;
+	margin-bottom: -1.4rem;
+}
+.breadcrumb-header li:not(.m-nav__item--home) a span
+{
+	font-size: 11px;
+}
+
+.custom_searchBox > input {
+	margin-bottom: -1px;
+	position: relative;
+	top: -3px;
+}
+
+.breadcrumb-header li a span {
+	font-size: 11px;
+}
+.stats-icons {
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+.custom-css {
+	cursor: pointer;
+	font-size: 11px;
+}
+
+.custom_pointer {
+	cursor: pointer;
+}
+
+
+.searchBoxBorder:focus {
+	outline: none;
+}
+
+
+/*  Inbox Table Messages Start */
+
+.table-inbox tr td .fa-star.inbox-started, .table-inbox tr td .fa-star:hover {
+	color: #f78a09;
+}
+.table-inbox tr td .fa-star {
+	color: #d5d5d5;
+}
+.table-inbox tr.unread td {
+	background: none repeat scroll 0 0 #f9e9bcad;
+	font-weight: 600;
+}

@@ -5,7 +5,7 @@ import { AssetsManagementDashboardComponent } from "./assets-management-dashboar
 import { AssetsManagementFacilitiesComponent } from "./assets-management-facilities/assets-management-facilities.component";
 import { AssetsManagementEquipmentComponent } from "./assets-management-equipment/assets-management-equipment.component";
 import { AssetsManagementToolsComponent } from "./assets-management-tools/assets-management-tools.component";
-import {AssignedAssetsComponent} from "./assigned-assets/assigned-assets.component";
+import { AssignedAssetsComponent } from "./assigned-assets/assigned-assets.component";
 
 const routes: Routes = [
     {
