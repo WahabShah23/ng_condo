@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssetsManagementDashboardComponent implements OnInit {
 
+  showWorkOrders = true;
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

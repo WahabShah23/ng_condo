@@ -1,3 +1,319 @@
-<p>
-    assets mngmt facilities works!
-</p>
+<div class="m-subheader">
+    <div  class="d-flex align-items-center">
+        <div  class="mr-auto">
+            <h3  class="m-subheader__title">
+                Facilities
+                <small class="text-muted custom_pointer stats-icons" (click)="toggleSearchBox()"><i class="fa fa-search"></i> </small>
+                <small class="custom_searchBox stats-icons">
+                    <input class="searchBoxBorder" type="text" placeholder="search..." [(ngModel)]="searchText" [@slideRightLeft]="searchBox">
+                </small>
+
+            </h3>
+        </div>
+        <!--<button class="btn btn-link">-->
+            <!--<i class="fa fa-plus" appTest (click)="addAmenityForm = true"> Add Amenities</i>-->
+        <!--</button>-->
+        <button class="btn btn-link" (click)="changeFacilityView()">
+            <i class="fa" [ngClass]="{'fa-list': isFacilityGridView, 'fa-th' : !isFacilityGridView}"> {{FacilityViewName}} </i>
+        </button>
+
+    </div>
+</div>
+<div  class="m-subheader breadcrumb-header">
+    <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li  class="m-nav__item m-nav__item--home">
+            <a  class="m-nav__link m-nav__link--icon" routerLink="/dashboard" ng-reflect-href="/dashboard" ng-reflect-router-link="/dashboard" routerlink="/dashboard">
+                <i  class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+        <li  class="m-nav__item">
+            <a  class="m-nav__link" routerLink="/assetsManagement/dashboard"  routerlink="/assetsManagement/dashboard">
+                    <span  class="m-nav__link-text">
+                        Assets Management
+                    </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+        <li  class="m-nav__item">
+            <a  class="m-nav__link" routerLink="/assetsManagement/facilities" routerLinkActive="/assetsManagement/facilities">
+                        <span  class="m-nav__link-text">
+                            Facilities
+                        </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<hr class="customhr">
+
+<div class="m-content">
+    <div class="m-form__section m-form__section--first">
+
+        <!-- ---------------------------Facilities Cards Start---------------------------------- -->
+        <div class="row" *ngIf="isFacilityGridView">
+            <!-- Displayed only when search returns nothing -->
+            <!--<div class="col-sm-12" *ngIf="(Amenities | filter : searchText).length === 0"> No records found against your search...</div>-->
+
+            <!-- *ngFor=' let i = index; let amenity of Amenities | filter : searchText; ' -->
+
+            <div  class="col-md-4">
+                <div  class="body organ1">
+                    <div  class="row" style="margin:0px;">
+                        <div  class="card-left col-lg-3" id="">
+                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                <input  class="chkboxes" type="checkbox">
+                                <span ></span>
+                            </label>
+                            <div  class="row onepersonrow">
+                                <div  class="col-md-12">
+                                    <img  class="personimage" src="http://www.condominiums.ca/web/the-bennett-condos.jpg">
+                                    <p  class="personname">Condo ABC</p>
+                                    <p  class="persontype">Building & Locations</p>
+                                    <p  class="providername">The Bennett Condominiums</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div  class="card-right col-lg-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                            <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Facility Details</h6>
+                            <div  class="clearfix"></div>
+                            <div  class="row">
+                                <div  class="col-sm-6">
+                                    <div class="m-widget14__chart" id="customerPieChart7" style="height: 100px">
+                                        <div  class="m-widget14__stat">
+                                            10
+                                        </div>
+                                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                    <h6  class="text-center">Charges</h6>
+                                </div>
+                                <div  class="col-sm-6">
+                                    <div  class="m-widget14__chart" id="customerPieChart7" style="height: 100px">
+                                        <div  class="m-widget14__stat">
+                                            100
+                                        </div>
+                                        <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series custom"><path d="M21.178,76.986A38.164,38.164,0,1,0,48.164,11.836" class="ct-slice-donut" ct:value="100" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#716aca&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="149.87692260742188px 149.87692260742188px" stroke-dashoffset="-149.87692260742188px" stroke="#716aca"><animate attributeName="stroke-dashoffset" id="anim0" dur="1000ms" from="-149.87692260742188px" to="0px" fill="freeze" stroke="#716aca" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M10,50A38.164,38.164,0,0,0,21.272,77.08" class="ct-slice-donut" ct:value="20" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#00c5dc&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="30.107040405273438px 30.107040405273438px" stroke-dashoffset="-30.107040405273438px" stroke="#00c5dc"><animate attributeName="stroke-dashoffset" id="anim1" dur="1000ms" from="-30.107040405273438px" to="0px" fill="freeze" stroke="#00c5dc" begin="anim0.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g><g class="ct-series custom"><path d="M48.164,11.836A38.164,38.164,0,0,0,10,50.133" class="ct-slice-donut" ct:value="40" ct:meta="{&amp;quot;data&amp;quot;:{&amp;quot;color&amp;quot;:&amp;quot;#ffb822&amp;quot;}}" style="stroke-width: 10px;" stroke-dasharray="60.08124542236328px 60.08124542236328px" stroke-dashoffset="-60.08124542236328px" stroke="#ffb822"><animate attributeName="stroke-dashoffset" id="anim2" dur="1000ms" from="-60.08124542236328px" to="0px" fill="freeze" stroke="#ffb822" begin="anim1.end" calcMode="spline" keySplines="0.23 1 0.32 1" keyTimes="0;1"></animate></path></g></svg></div>
+                                    <h6  class="text-center">Others</h6>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ---------------------------Facilities Cards End---------------------------------- -->
+
+        <!-- ---------------------------Facilities List Start---------------------------------- -->
+
+        <div *ngIf="!isFacilityGridView">
+            <!--<div class="row">-->
+                <!--<div class="col-md-12">-->
+                    <!--List View-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<br>-->
+
+            <div class="m-portlet m-portlet--mobile">
+                <div class="m-portlet__head">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text">
+                                All Facilities
+                            </h3>
+                        </div>
+                    </div>
+                    <!--<div class="m-portlet__head-tools"> </div>-->
+                </div>
+                <div class="m-portlet__body  ">  <!-- m-portlet__body--no-padding -->
+                    <div class="row m-row--no-padding m-row--col-separator-xl">
+                        <table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer m--padding-bottom-15" id="c_table_support" role="grid" aria-describedby="c_table_support_info">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tags</th>
+                                <th>Name</th>
+                                <th> Email </th>
+                                <th>Subject </th>
+                                <th>Department</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Priority</th>
+                                <th>Options</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr role="row" class="odd">  <!-- [ngClass]="{'even': i%2 === 0, 'odd':i%2 !== 0 } -->
+                                <td class="sorting_1">
+                                    1
+                                </td>
+                                <td>
+                                    61715-075
+                                </td>
+                                <td>
+                                    name
+                                </td>
+                                <td>
+                                    email
+                                </td>
+                                <td>
+                                    subject
+                                </td>
+                                <td>
+                                    Support
+                                </td>
+                                <td>
+                                    Gleichner, Ziemann and Gutkowski
+                                </td>
+                                <td>
+                                    2/12/2018
+                                </td>
+                                <td><span class="m-badge m-badge--accent m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-accent">Open</span></td>
+
+
+                                <td><span class="m-badge  m-badge--wide m-badge--primary" > Low </span></td>
+
+                                <td nowrap="">
+                                            <span class="dropdown">
+                                                <a href="#" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" aria-expanded="true">
+                                                  <i class="la la-ellipsis-h"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="#"><i class="la la-edit"></i> Edit Details</a>
+                                                    <a class="dropdown-item" href="#"><i class="la la-leaf"></i> Update Status</a>
+                                                    <a class="dropdown-item" href="#"><i class="la la-print"></i> Generate Report</a>
+                                                </div>
+                                            </span>
+                                    <a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
+                                        <i class="la la-edit"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr role="row" class="even">  <!-- [ngClass]="{'even': i%2 === 0, 'odd':i%2 !== 0 } -->
+                                <td class="sorting_1">
+                                    2
+                                </td>
+                                <td>
+                                    56785-075
+                                </td>
+                                <td>
+                                    name
+                                </td>
+                                <td>
+                                    email
+                                </td>
+                                <td>
+                                    subject
+                                </td>
+                                <td>
+                                    Support
+                                </td>
+                                <td>
+                                    Gleichner, Ziemann and Gutkowski
+                                </td>
+                                <td>
+                                    12/09/2018
+                                </td>
+                                <td><span class="m-badge m-badge--warning m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-warning">Pending</span></td>
+
+
+                                <td><span class="m-badge  m-badge--wide m-badge--warning" > Low </span></td>
+
+                                <td nowrap="">
+                                            <span class="dropdown">
+                                                <a href="#" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" aria-expanded="true">
+                                                  <i class="la la-ellipsis-h"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="#"><i class="la la-edit"></i> Edit Details</a>
+                                                    <a class="dropdown-item" href="#"><i class="la la-leaf"></i> Update Status</a>
+                                                    <a class="dropdown-item" href="#"><i class="la la-print"></i> Generate Report</a>
+                                                </div>
+                                            </span>
+                                    <a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
+                                        <i class="la la-edit"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr role="row" class="odd">  <!-- [ngClass]="{'even': i%2 === 0, 'odd':i%2 !== 0 } -->
+                                <td class="sorting_1">
+                                    3
+                                </td>
+                                <td>
+                                    98565-077
+                                </td>
+                                <td>
+                                    name
+                                </td>
+                                <td>
+                                    email
+                                </td>
+                                <td>
+                                    subject
+                                </td>
+                                <td>
+                                    Support
+                                </td>
+                                <td>
+                                    Gleichner, Ziemann and Gutkowski
+                                </td>
+                                <td>
+                                    18/09/2018
+                                </td>
+                                <td><span class="m-badge m-badge--accent m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-accent">Open</span></td>
+
+
+                                <td><span class="m-badge  m-badge--wide m-badge--primary" > Low </span></td>
+
+                                <td nowrap="">
+                                            <span class="dropdown">
+                                                <a href="#" class="btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" aria-expanded="true">
+                                                  <i class="la la-ellipsis-h"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="#"><i class="la la-edit"></i> Edit Details</a>
+                                                    <a class="dropdown-item" href="#"><i class="la la-leaf"></i> Update Status</a>
+                                                    <a class="dropdown-item" href="#"><i class="la la-print"></i> Generate Report</a>
+                                                </div>
+                                            </span>
+                                    <a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
+                                        <i class="la la-edit"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <!--<hr>-->
+
+                        <!--<ul >-->
+                        <!--<ng-container *ngFor="let issue of issues">-->
+                        <!--<li> {{issue.name}} </li>-->
+                        <!--<li> {{issue.email}} </li>-->
+                        <!--<li *ngIf="issue.priority == 1"> Low </li>-->
+                        <!--<li *ngIf="issue.priority == 2"> Medium </li>-->
+                        <!--<li *ngIf="issue.priority == 3"> High </li>-->
+                        <!--</ng-container>-->
+                        <!--</ul>-->
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <!-- ---------------------------Facilities List End---------------------------------- -->
+    </div>
+</div>

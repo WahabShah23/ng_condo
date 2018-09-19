@@ -1,0 +1,48 @@
+.m-subheader {
+	padding: 10px 30px 0 30px;
+}
+.breadcrumb-header {
+	margin-top: -15px !important;
+}
+.breadcrumb-header li a span {
+	font-size: 11px;
+}
+.stats-icons {
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+.m-content {
+	padding-top: 10px !important;
+}
+
+
+/* Tabs Styling (spacing and font) */
+
+.m-portlet__head-tools ul li a {
+	font-size: 9pt;
+}
+
+.m-portlet.m-portlet--tabs .m-portlet__head {
+	padding: 0 1rem;
+	height: 65px;
+}
+
+.m-tabs-line .m-tabs__item {
+	margin-right: 10px;
+}
+
+.m-portlet .m-portlet__head .m-portlet__head-caption .m-portlet__head-title .m-portlet__head-text {
+	font-size: 1.2rem !important;
+}
+
+.m-portlet .m-portlet__body {
+	padding: 1rem 0.5rem;
+}
+
+/*Work order vertical before strips*/
+
+.m-widget2 .m-widget2__item .m-widget2__desc {
+	padding-left: 2.3rem;
+
+}
+

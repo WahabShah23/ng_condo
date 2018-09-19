@@ -12,6 +12,7 @@ import { AssetsManagementFacilitiesComponent } from "./assets-management-facilit
 import { AssetsManagementToolsComponent } from "./assets-management-tools/assets-management-tools.component";
 import { AssetsManagementComponent } from "./assets-management.component";
 import { AssetsManagementRoutingModule } from "./assets-management.routing.module";
+import { AssignedAssetsComponent } from "./assigned-assets/assigned-assets.component";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AssetsManagementRoutingModule } from "./assets-management.routing.modul
         AssetsManagementDashboardComponent,
         AssetsManagementEquipmentComponent,
         AssetsManagementFacilitiesComponent,
-        AssetsManagementToolsComponent
+        AssetsManagementToolsComponent,
+        AssignedAssetsComponent
 
         //  Pipes
         // FilterPipe
