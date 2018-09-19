@@ -1,3 +1,4 @@
+import { AgmCoreModule } from '@agm/core';
 import { OwnerRolesSettings } from './../owners-roles-settings/owners-roles-settings.component';
 import { HotelsComponent } from './building-settings/hotels/hotels.component';
 import { ShopsComponent } from './building-settings/shops/shops.component';
@@ -59,7 +60,10 @@ import { AssetsToolsComponent } from './assets-settings/assets-tools/assets-tool
     imports: [
         CommonModule, LayoutModule,
         FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule, MainSettingsRouting, FormsModule,
-        AngularMultiSelectModule
+        AngularMultiSelectModule ,  AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyB95P4UOlcThWmtfkx7g4rGmzmKtomZoAc',
+            libraries: ['places']
+        })
     ], exports: [
     ], declarations: [
         MainSettingsComponent,

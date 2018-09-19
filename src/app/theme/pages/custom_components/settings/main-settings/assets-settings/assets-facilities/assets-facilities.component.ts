@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { SelectDropDownComponent } from "ngx-select-dropdown";
 
 @Component({
   selector: 'app-assets-facilities',
@@ -7,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssetsFacilitiesComponent implements OnInit {
 
+  facilitiesList = [{name: "ABC Building" , code: "Facility A(1)" , image: "assets/app/media/img/logos/logo-3.png" , category:"Building", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
+  {name: "Xyz Building" , code: "Facility B(2)" , image: "assets/app/media/img/logos/logo-1.png" , category:"Building", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."}];
+  
   constructor() { }
 
   ngOnInit() {
   }
 
   
-  addBuildingForm = false;
-  isBuildingGridView = true;
-  BuildingViewName = 'List View';
+  addFacilityForm = false;
+  isFacilityGridView = true;
+  FacilityViewName = 'List View';
 
   time = '08:00:50';
 
@@ -26,28 +30,25 @@ export class AssetsFacilitiesComponent implements OnInit {
       search: true //enables the search plugin to search in the list
   }
 
-  managementCompanies = ["Company A", "Company B", "Company C"];
-  dataModel;
 
-
-  owners = ["Owner A" , "Owner B", "Owner C", "Owner D"];
-
-  ownerManagementType = "sameSame";
-
-  changeBuildingView() {
-    this.isBuildingGridView = !this.isBuildingGridView;
-    if (this.isBuildingGridView) {
-        this.BuildingViewName = 'List View';
+  changeFacilityView() {
+    this.isFacilityGridView = !this.isFacilityGridView;
+    if (this.isFacilityGridView) {
+        this.FacilityViewName = 'List View';
     }
     else {
-        this.BuildingViewName = 'Grid View';
+        this.FacilityViewName = 'Grid View';
     }
-    this.addBuildingForm = false;
+    this.addFacilityForm = false;
 }
+
+
 
 
 isFacilityOnline = true;
 BOMForm = false;
+@ViewChild('partSupplyDropdown') partSupplyDropdown: SelectDropDownComponent;
+partSupplies = ["Drum Lid" , "A-10 New Part" , "Part 1" , "The Chair"];
 
 changeFacilityStatus()
 {
@@ -65,6 +66,18 @@ changeAssetsPartsBOM(num)
   {
     this.BOMForm = true;
   }
+}
+
+addAsset(assetName)
+{
+  this.partSupplies.push(assetName);
+  this.partSupplyDropdown.availableItems.push(assetName);
+}
+
+addFacility(facilityName , facilityCode , facilityCategory , facilityDescription)
+{
+  this.facilitiesList.push({name: facilityName , code: facilityCode , image:"assets/app/media/img/logos/logo-1.png" , category: facilityCategory, description: facilityDescription });
+  this.addFacilityForm = false;
 }
 
 }

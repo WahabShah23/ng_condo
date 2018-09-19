@@ -157,3 +157,9 @@ cardtype , .cardname
 {
 	margin-bottom: 20px;
 }
+
+
+.col-md-4 .body
+{
+	margin-top:15px;
+}
