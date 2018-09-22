@@ -1,3 +1,4 @@
+import { AsideNavMaintenanceComponent } from './aside-nav-maintenance/aside-nav-maintenance.component';
 import { AsideNavAssetsComponent } from './aside-nav-assets/aside-nav-assets.component';
 import { AsideNavSpecializedComponent } from './aside-nav-specialized/aside-nav-specialized.component';
 import { AsideNavApartmentComponent } from './aside-nav-apartment/aside-nav-apartment.component';
@@ -56,7 +57,8 @@ import { AsideNavNotificationsComponent } from './aside-nav-notifications/aside-
         AsideNavOwndersRolesSettingsComponent,
         AsideNavAssetsManagementComponent,
         AsideNavAssetsComponent,
-        AsideNavNotificationsComponent
+        AsideNavNotificationsComponent,
+        AsideNavMaintenanceComponent
     ],
     exports: [
         LayoutComponent,
@@ -81,11 +83,12 @@ import { AsideNavNotificationsComponent } from './aside-nav-notifications/aside-
         AsideNavOwndersRolesSettingsComponent,
         AsideNavAssetsManagementComponent,
         AsideNavAssetsComponent,
-        AsideNavNotificationsComponent
+        AsideNavNotificationsComponent,
+        AsideNavMaintenanceComponent
     ],
     imports: [
         CommonModule,
-        RouterModule,
+        RouterModule
     ]
 })
 export class LayoutModule {

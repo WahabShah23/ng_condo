@@ -95,6 +95,13 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/custom_components\/settings\/main-settings\/main-settings.module#MainSettingsModule"
             },
             // Settings Ends---------------------------------------
+            
+            // Maintenance Starts---------------------------------------
+            {
+                "path": "maintenance",
+                "loadChildren": ".\/pages\/default\/maintenance\/maintenance.module#MaintenanceModule"
+            },
+            // Settings Ends---------------------------------------
             {
                 "path": "404",
                 "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"

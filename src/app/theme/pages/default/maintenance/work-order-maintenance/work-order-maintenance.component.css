@@ -1,0 +1,27 @@
+.canbans .col-xl-2 .m-portlet__head 
+{
+   padding:2px;
+}
+
+
+.canbans .col-xl-2 .m-portlet__body 
+{
+    padding:0px;
+}
+
+
+.canbans .m-widget4__img.m-widget4__img--logo
+{
+    display:none;
+}
+
+.canbans .m-widget4__number.m--font-brand
+{
+    margin-left:-5px;
+}
+
+
+.canbans .m-widget4__info
+{
+    padding:6px;
+}

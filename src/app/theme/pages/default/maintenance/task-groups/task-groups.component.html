@@ -1,0 +1,340 @@
+<div class="m-subheader">
+        <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <!--<h3 class="m-form__heading-title">-->
+                    <!--Amenities-->
+                    <!--</h3>-->
+                    <h3 class="m-subheader__title">
+                         Task Groups
+                    </h3>
+                </div>
+                <button class="btn btn-link">
+                    <i class="fa fa-plus" (click)="addFacilityForm = true;"> Add Task Group</i>
+                </button>
+                <button class="btn btn-link" (click)="changeFacilityView()">
+                    <i class="fa" [ngClass]="{'fa-list': isFacilityGridView, 'fa-th' : !isFacilityGridView}"> {{FacilityViewName}} </i>
+                </button>
+            </div>
+    </div>
+    <div class="m-subheader breadcrumb-header">
+        <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+            <li  class="m-nav__item m-nav__item--home">
+                <a  class="m-nav__link m-nav__link--icon"  routerlink="/dashboard">
+                    <i  class="m-nav__link-icon la la-home"></i>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                -
+            </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Settings
+                    </span>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                    -
+            </li>
+               
+               
+                <li  class="m-nav__item">
+                    <a  routerLink="/settings/assets" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text">
+                            Maintenance     
+                        </span>
+                    </a>
+                </li>
+    
+    
+                <li  class="m-nav__separator">
+                    -
+            </li>
+               
+               
+                <li  class="m-nav__item">
+                    <a  routerLink="/settings/assets/facilities" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                        <span  class="m-nav__link-text">
+                            Task Groups     
+                        </span>
+                    </a>
+                </li>
+             
+        </ul>
+    </div>
+    <hr  class="customhr">
+    
+    <div class="m-content">
+    
+    
+    <!-- ---------------------------Buildings Cards Start---------------------------------- -->
+    
+    <div class="row" *ngIf="!addFacilityForm && isFacilityGridView ">
+    
+    
+        <div  class="col-md-4" *ngFor="let facility of facilitiesList">
+            <div  class="body organ1" >
+                <div  class="row" style="margin:0px;">
+                    <div  class="card-left col-lg-3" >
+                        <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                            <input  class="chkboxes" type="checkbox">
+                            <span ></span>
+                        </label>
+                        <div  class="row onepersonrow">
+    
+                            <div  class="col-md-12">
+                                <img  class="cardimage" [src]="facility.image">
+                                <p  class="cardname">{{facility.name}}</p>
+                                <p  class="cardtype">{{facility.name}}</p>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                    <div  class="card-right col-lg-9"  style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                        <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Task Group Details</h6>
+                        <a class="pull-right" href="javascript:;">Details</a>
+                        <div  class="clearfix"></div>
+                        
+                        <div  class="row">
+                            <div class="col-sm-5">
+                                <strong>No.of Tasks:</strong>
+                            </div>
+                            <div  class="col-sm-7">
+                                    {{facility.tasks}}
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ---------------------------Buildings Cards End---------------------------------- -->
+    
+    <!-- ---------------------------Buildings List Start---------------------------------- -->
+    <div *ngIf="!addFacilityForm && !isFacilityGridView">
+        <div class="cold-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr style="background: #555;color: #fff" role="row"><th>
+                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline f">
+                            <input type="checkbox" class="group-checkable">
+                            <span style="border-color: #fff !important;"></span>
+                        </label>
+                    </th>
+                      
+                        <th> Name </th>
+                        <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> No. Of Tasks </th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                    </tfoot>
+                    <tbody>
+                    <tr role="row" *ngFor="let facility of facilitiesList">
+                        <td >
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="chkboxes1">
+                                <span></span>
+                            </label>
+                        </td>
+                        <td class="center">
+                                {{facility.name}}
+                        </td>
+                        <td class="center"> {{facility.tasks}} </td>
+                    </tr>
+                    </tbody>
+    
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------Buildings List End---------------------------------- -->
+    
+    <!-- ----------------------------- Add Form Start------------------------------- -->
+    <div class="row" *ngIf="addFacilityForm">
+        <div class="col-sm-5">
+                <div class="form-group m-form__group">
+                        <label for="input1">
+                            Task Group Name:
+                        </label>
+                        <input #taskGroupNameField   class="form-control form-control-sm m-input m-input--air"
+                                placeholder="Task Group 1" type="text" >
+                    </div>
+        </div>
+    
+        <div class="col-sm-12">
+            <ul class="nav nav-tabs nav-justified m-tabs-line" role="tablist">
+                <li class="nav-item m-tabs__item">
+                    <a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_tabs_1_1" role="tab">Task List</a>
+                </li>
+                
+                <li class="nav-item m-tabs__item">
+                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_2" role="tab">Scheduled Maintenance</a>
+                </li>
+    
+                <li class="nav-item m-tabs__item">
+                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_3" role="tab">Asset Category</a>
+                </li>
+    
+                <li class="nav-item m-tabs__item">
+                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_4" role="tab">Files</a>
+                </li>
+            </ul>
+    
+            <div class="tab-content">
+                <div class="tab-pane active" id="m_tabs_1_1">
+                    <div class="row">
+                        <div class="col-sm-12">
+                                <button class="btn btn-link" data-toggle="modal" data-target="#addTaskModal"> <i class="fa fa-plus"></i> Add</button>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+    
+    
+                <div class="tab-pane" id="m_tabs_1_2">
+                    <button class="btn btn-link" data-toggle="modal" data-target="#addBomModal"> <i class="fa fa-plus"></i> Add</button>
+                </div>
+    
+    
+                <div class="tab-pane" id="m_tabs_1_3">
+                        <button class="btn btn-link" data-toggle="modal" data-target="#addAssetCategoryModal"> <i class="fa fa-plus"></i> Add</button>
+              </div>
+    
+              
+              <div class="tab-pane" id="m_tabs_1_4">
+                    <button class="btn btn-link" data-toggle="modal" data-target="#addPartSupplyModal"> <i class="fa fa-plus"></i> Add</button>
+                </div>
+    
+    
+    
+            </div>
+        </div>
+    
+     
+        <button  class="btn btn-primary" style="margin-bottom: 50px;" (click)="addTaskCategory(taskGroupNameField.value)" type="button">
+                Add Task Group
+        </button>
+        
+    </div>
+    <!-- ---------------------------Add Building Form Start---------------------------------- -->
+    
+    </div>
+    
+    
+    
+    
+    
+        <div  aria-labelledby="brandLabel" class="modal " id="addTaskModal" role="dialog" tabindex="-1">
+                <div  class="modal-dialog modal-sm" role="document">
+                    <div  class="modal-content">
+                        <div  class="modal-header">
+                            <h5  class="modal-title" id="b4randLabel">
+                                Add Task
+                            </h5>
+                            <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                    <span  aria-hidden="true">
+                                        ×
+                                    </span>
+                            </button>
+                        </div>
+                        <div  class="modal-body">
+    
+                            <div class="form-group">
+                                    <label >Task Type:</label>                      
+                                    <select class="form-control">
+                                        <option value="General">General</option>
+                                        <option value="Text">Text</option>
+                                        <option value="Meter Reading">Meter Reading</option>
+                                    </select>       
+                            </div>
+
+                            <div class="form-group">
+                                    <label for="example-datetime-local-input" >Description:</label>                      
+                                    <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                                           
+                                </div>
+
+                            
+                            <div class="form-group">
+                                    <label for="example-datetime-local-input" >Time Estimate Hours:</label>                      
+                                    <input class="form-control m-input" type="number"  >
+                                           
+                                </div>
+    
+                        </div>
+                        <div  class="modal-footer">
+                            <button  class="btn btn-primary" data-dismiss="modal" type="button">
+                                Add
+                            </button>
+                            <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+            
+    <div  aria-labelledby="brandLabel" class="modal " id="addAssetCategoryModal" role="dialog" tabindex="-1">
+            <div  class="modal-dialog " role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="b4randLabel">
+                            Add Asset Category
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                                </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body">
+    
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group m-form__group">
+                                        <label>
+                                                Choose Asset Category:
+                                        </label>
+                                        <select  class="form-control form-control-sm m-input m-input--air" type="text"  >
+                                            <option value="Assets">Assets</option>
+                                            <option value="Equipment">Equipment</option>
+                                            <option value="Rotating Spares">Rotating Spares</option>
+                                            <option value="Locations And Facilities">Locations And Facilities</option>
+                                            <option value="Buildings">Buildings</option>
+                                            <option value="Tools">Tools</option>
+                                        </select>
+                                    </div> 
+    
+                            </div>
+    
+                          
+                        </div>
+                        
+    
+    
+                    </div>
+                    <div  class="modal-footer">
+                        <button  class="btn btn-primary"   data-dismiss="modal" type="button">
+                            Add
+                        </button>
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    

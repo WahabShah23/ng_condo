@@ -1,0 +1,806 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <!--<h3 class="m-form__heading-title">-->
+                <!--Amenities-->
+                <!--</h3>-->
+                <h3 class="m-subheader__title">
+                     Schedule Maintenance
+                </h3>
+            </div>
+            <button class="btn btn-link">
+                <i class="fa fa-plus" (click)="addFacilityForm = true;"> Add Schedule</i>
+            </button>
+            <button class="btn btn-link" (click)="changeFacilityView()">
+                <i class="fa" [ngClass]="{'fa-list': isFacilityGridView, 'fa-th' : !isFacilityGridView}"> {{FacilityViewName}} </i>
+            </button>
+        </div>
+</div>
+<div class="m-subheader breadcrumb-header">
+    <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li  class="m-nav__item m-nav__item--home">
+            <a  class="m-nav__link m-nav__link--icon" ng-reflect-href="#" routerlink="/dashboard">
+                <i  class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+       
+       
+        <li  class="m-nav__item">
+            <a  routerLink="/settings" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                <span  class="m-nav__link-text">
+                    Settings
+                </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+                -
+        </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings/assets" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Maintenance     
+                    </span>
+                </a>
+            </li>
+
+
+            <li  class="m-nav__separator">
+                -
+        </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/settings/assets/facilities" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Schedule Maintenance     
+                    </span>
+                </a>
+            </li>
+         
+    </ul>
+</div>
+<hr  class="customhr">
+
+<div class="m-content">
+
+
+<!-- ---------------------------Buildings Cards Start---------------------------------- -->
+
+<div class="row" *ngIf="!addFacilityForm && isFacilityGridView ">
+
+
+    <div  class="col-md-4" *ngFor="let facility of facilitiesList">
+        <div  class="body organ1" >
+            <div  class="row" style="margin:0px;">
+                <div  class="card-left col-lg-3" >
+                    <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                        <input  class="chkboxes" type="checkbox">
+                        <span ></span>
+                    </label>
+                    <div  class="row onepersonrow">
+
+                        <div  class="col-md-12">
+                            <img  class="cardimage" [src]="facility.image">
+                            <p  class="cardname">{{facility.code}}</p>
+                            <p  class="cardtype">{{facility.code}}</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div  class="card-right col-lg-9"  style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                    <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Schedule Details</h6>
+                    <a class="pull-right" href="javascript:;">Details</a>
+                    <div  class="clearfix"></div>
+                    
+                    <div  class="row">
+                        <div class="col-sm-5">
+                            <strong>Maintenance Type:</strong>
+                        </div>
+                        <div  class="col-sm-7">
+                                {{facility.maintenanceType}}
+                        </div>
+
+                    </div>
+
+                    <div  class="row">
+                        <div class="col-sm-5">
+                            <strong>Project:</strong>
+                        </div>
+                        <div  class="col-sm-7">
+                                {{facility.project}}
+                        </div>
+
+                    </div>
+
+                    <div  class="row">
+                        <div class="col-sm-5">
+                            <strong>Asset:</strong>
+                        </div>
+                        <div  class="col-sm-7">
+                                {{facility.asset}}
+                        </div>
+
+                    </div>
+                    
+                    
+                    <div  class="row">
+                            <div class="col-sm-5">
+                                <strong>Priority:</strong>
+                            </div>
+                            <div  class="col-sm-7">
+                                    {{facility.priority}}
+                            </div>
+    
+                        </div>
+                        <div  class="row">
+                                <div class="col-sm-5">
+                                    <strong>Status:</strong>
+                                </div>
+                                <div  class="col-sm-7">
+                                        {{facility.status}}
+                                </div>
+        
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ---------------------------Buildings Cards End---------------------------------- -->
+
+<!-- ---------------------------Buildings List Start---------------------------------- -->
+<div *ngIf="!addFacilityForm && !isFacilityGridView">
+    <div class="cold-md-12">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr style="background: #555;color: #fff" role="row"><th>
+                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline f">
+                        <input type="checkbox" class="group-checkable">
+                        <span style="border-color: #fff !important;"></span>
+                    </label>
+                </th>
+                  
+                    <th> Schedule Code </th>
+                    <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Type : activate to sort column ascending" style="width: 0px;"> Maintenance Type </th>
+                    <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Invoice Date : activate to sort column ascending" style="width: 0px;"> Project </th>
+                    <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Due Date : activate to sort column ascending" style="width: 0px;"> Asset </th>
+                    <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Due Date : activate to sort column ascending" style="width: 0px;"> Priority </th>
+                    <th class="sorting" tabindex="0" aria-controls="InvoicesTable" rowspan="1" colspan="1" aria-label=" Due Date : activate to sort column ascending" style="width: 0px;"> Status </th>
+                </tr>
+                </thead>
+                <tfoot>
+                </tfoot>
+                <tbody>
+                <tr role="row" *ngFor="let facility of facilitiesList">
+                    <td >
+                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                            <input type="checkbox" class="chkboxes1">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td class="center">
+                            {{facility.code}}
+                    </td>
+                    <td class="center"> {{facility.maintenanceType}} </td>
+                    <td class="center"> {{facility.project}} </td>
+                    <td class="center"> {{facility.asset}} </td>
+                    <td class="center"> {{facility.priority}} </td>
+                    <td class="center"> {{facility.status}} </td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+<!-- ---------------------------Buildings List End---------------------------------- -->
+
+<!-- ----------------------------- Add Form Start------------------------------- -->
+<div class="row" *ngIf="addFacilityForm">
+    <div class="col-md-2 text-center" style="padding:30px">
+        <img src="assets\app\media\img\assets-settings\facility.jpg" alt="" style="width:100%;">
+        <p *ngIf="isFacilityOnline" class="bg-success text-white ">Online</p>
+        <p *ngIf="!isFacilityOnline"class="bg-dark text-white ">Offline</p>
+        <a href="#" data-toggle="modal" data-target="#changeFacilityStatusModal"> Set It {{(isFacilityOnline) ? 'Offline' : 'Online'}}</a>
+    </div>
+    <div class="col-md-5">
+        <div class="form-group m-form__group">
+            <label for="input1">
+                Code:
+            </label>
+            <input #scheduleCode  aria-describedby="input1" class="form-control form-control-sm m-input m-input--air"
+                    placeholder="SM9" type="text" >
+        </div>
+
+        <div class="form-group m-form__group">
+            <label >
+                Work Order Status:
+            </label>
+            <select #workOrderStatus  class="form-control form-control-sm m-input m-input--air" type="text">
+                <option  value="Requested (Pending)" >Requested (Pending) </option>
+                <option  value="On Hold (Pending)" >On Hold (Pending) </option>
+                <option  value="Open (Active)">Open (Active)</option>
+                <option  value="Assigned (Active)" >Assigned (Active)</option>
+                <option  value="Closed (Completed)" >Closed (Completed)</option>
+                <option  value="Closed (Incompleted)" >Closed (Incompleted)</option>
+            </select>
+        </div>
+
+
+        <div  class="form-group m-form__group">
+            <label >
+                    Project:
+            </label>
+            <select #scheduleProject  class="form-control form-control-sm m-input m-input--air" type="text">
+                <option  value="Project A" >Project A</option>
+                <option  value="Project ABC" >Project ABC</option>
+            </select>
+        </div>
+
+
+        
+
+
+    </div>
+    
+    <div class="col-md-5">
+        <div  class="form-group m-form__group">
+            <label >
+                    Asset:
+            </label>
+            <select #scheduleAsset  class="form-control form-control-sm m-input m-input--air" type="text">
+                <option  value="Asset A(1)" >Asset A(1)</option>
+                <option  value="Asset B(2)" >Asset B(2)</option>
+                <option  value="Asset C(3)" >Asset C(3)</option>
+            </select>
+        </div>
+
+        <div  class="form-group m-form__group">
+            <label >
+                Maintenance Type:
+            </label>
+            <select #scheduleMaintenanceType  class="form-control form-control-sm m-input m-input--air" type="text">
+                <option  value="Preventive" >Preventive</option>
+                <option  value="Damage" >Damage</option>
+                <option  value="Safety" >Safety</option>
+                <option  value="Upgrade">Upgrade</option>
+            </select>
+        </div>
+
+
+        <div  class="form-group m-form__group">
+            <label >
+                    Priority:
+            </label>
+            <select #schedulePriority  class="form-control form-control-sm m-input m-input--air" type="text">
+                <option  value="High" >High</option>
+                <option  value="Moderate" >Moderate</option>
+                <option  value="Low" >Low</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <ul class="nav nav-tabs nav-justified m-tabs-line" role="tablist">
+            <li class="nav-item m-tabs__item">
+                <a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_tabs_1_1" role="tab">General</a>
+            </li>
+            
+            <li class="nav-item m-tabs__item">
+                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_2" role="tab">Scheduling</a>
+            </li>
+
+            <li class="nav-item m-tabs__item">
+                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_3" role="tab">Labor Tasks</a>
+            </li>
+
+            <li class="nav-item m-tabs__item">
+                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_4" role="tab">Parts</a>
+            </li>
+
+            <li class="nav-item m-tabs__item">
+                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_5" role="tab">Notifications</a>
+            </li>
+
+            <li class="nav-item m-tabs__item">
+                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_6" role="tab">Notes</a>
+            </li>
+
+            <li class="nav-item m-tabs__item">
+                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_7" role="tab">Files</a>
+            </li>
+
+            <li class="nav-item m-tabs__item">
+                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_8" role="tab">Log</a>
+                </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="m_tabs_1_1">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div  class="form-group m-form__group">
+                            <label >
+                                Account:
+                            </label>
+                            <select  class="form-control form-control-sm m-input m-input--air" type="text">
+                                <option  value="Account A(1)" >Account A(1)</option>
+                                <option  value="Account A(2)" >Account A(2)</option>
+                            </select>
+                        </div> 
+
+
+                        <div  class="form-group m-form__group">
+                            <label >
+                                    Charge Department:
+                            </label>
+                            <select  class="form-control form-control-sm m-input m-input--air" type="text">
+                                <option  value="Dept 1">Dept 1</option>
+                                <option  value="Dept ABC">Dept ABC</option>
+                            </select>
+                        </div>
+
+                        <div  class="form-group m-form__group">
+                            <label >
+                                Assigned To User:
+                            </label>
+                            <select  class="form-control form-control-sm m-input m-input--air" type="text">
+                                <option  value="User A(1)">User A(1)</option>
+                                <option  value="Niaz Khan">Niaz Khan</option>
+                                <option  value="Jane Khan">Jane Khan</option>
+                            </select>
+                        </div>
+
+
+                        <div  class="m-form__group form-group">
+                            <label  for="">Estimated Labor Hours:</label>
+                            <input  class="form-control form-control-sm m-input m-input--air" type="number">
+                    </div>
+                        
+                    </div>
+
+                    <div class="col-sm-6">
+                            <div  class="form-group m-form__group">
+                                    <label >
+                                            Summary of Issue:
+                                    </label>
+                                   <textarea  class="form-control m-input" cols="30" rows="5"></textarea>
+                                </div>
+
+                                <div  class="form-group m-form__group">
+                                        <label >
+                                                Work Instructions:
+                                        </label>
+                                       <textarea  class="form-control m-input" cols="30" rows="6"></textarea>
+                                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tab-pane" id="m_tabs_1_2">
+                <button class="btn btn-link" data-toggle="modal" data-target="#addBomModal"> <i class="fa fa-plus"></i> Add</button>
+            </div>
+
+
+            <div class="tab-pane" id="m_tabs_1_3">
+                    <button class="btn btn-link" data-toggle="modal" data-target="#addLabourTaskModal"> <i class="fa fa-plus"></i> Add</button>
+                    <button class="btn btn-link" data-toggle="modal" data-target="#addTaskGroupModal"> <i class="fa fa-plus"></i> Add Task Group</button>
+          </div>
+
+          
+          <div class="tab-pane" id="m_tabs_1_4">
+                <button class="btn btn-link" data-toggle="modal" data-target="#addPartSupplyModal"> <i class="fa fa-plus"></i> Add</button>
+            </div>
+
+
+            <div class="tab-pane" id="m_tabs_1_5">
+                
+                    <button class="btn btn-link" data-toggle="modal" data-target="#notificationsModal"> <i class="fa fa-plus"></i> Add</button>
+
+            </div>
+
+            <div class="tab-pane" id="m_tabs_1_6">
+                
+            </div>
+
+            <div class="tab-pane" id="m_tabs_1_7">
+                
+            </div>
+
+
+        </div>
+    </div>
+
+ 
+    <button  class="btn btn-primary" style="margin-bottom: 50px;" (click)="addSchedule(scheduleCode.value , workOrderStatus.value , scheduleProject.value , scheduleAsset.value, schedulePriority.value , scheduleMaintenanceType.value)" data-dismiss="modal" type="button">
+            Add Schedule
+    </button>
+    
+</div>
+<!-- ---------------------------Add Building Form Start---------------------------------- -->
+
+</div>
+
+
+
+
+
+    <div  aria-labelledby="brandLabel" class="modal " id="changeFacilityStatusModal" role="dialog" tabindex="-1">
+            <div  class="modal-dialog modal-sm" role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="b4randLabel">
+                            Change Schedule Status
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                                </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body">
+                        <div class="form-group">
+                            <label for="example-datetime-local-input" >{{(isFacilityOnline) ? 'Offline' : 'Online'}} From</label>                      
+                            <input class="form-control m-input" type="datetime-local" value="2018-08-19T13:45:00" >
+                                   
+                        </div>
+
+                        <div class="form-group">
+                                <label >Set {{(isFacilityOnline) ? 'Offline' : 'Online'}} By User</label>                      
+                                <select class="form-control">
+                                    <option value=""></option>
+                                    <option value="Niaz Khan">Niaz Khan</option>
+                                    <option value="Jane Khan">Jane Khan</option>
+                                </select>       
+                        </div>
+
+                        <div class="form-group">
+                                <label >Status</label>                      
+                                <select class="form-control">
+                                    <option value=""></option>
+                                    <option value="Broken">Broken</option>
+                                    <option value="In storage">In storage</option>
+                                    <option value="Idle">Idle</option>
+                                    <option value="Retired">Retired</option>
+                                    <option value="Under repair">Under repair</option>
+                                </select>       
+                        </div>
+
+                        <div class="form-group">
+                                <label >Associated Work Order</label>                      
+                                <select class="form-control">
+                                    <option value=""></option>
+                                    <option value="Order 1">Order 1</option>
+                                    <option value="Order 2">Order 2</option>
+                                </select>       
+                        </div>
+
+                        <div class="form-group">
+                                <label >Additional Info</label>                      
+                                <textarea class="form-control" cols="30" rows="5"></textarea>   
+                        </div>
+
+
+                    </div>
+                    <div  class="modal-footer">
+                        <button  class="btn btn-primary" (click)="changeFacilityStatus()" data-dismiss="modal" type="button">
+                            Update
+                        </button>
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+<div  aria-labelledby="brandLabel" class="modal " id="addLabourTaskModal" role="dialog" tabindex="-1">
+        <div  class="modal-dialog " role="document">
+            <div  class="modal-content">
+                <div  class="modal-header">
+                    <h5  class="modal-title" id="b4randLabel">
+                        Add Task
+                    </h5>
+                    <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span  aria-hidden="true">
+                                ×
+                            </span>
+                    </button>
+                </div>
+                <div  class="modal-body">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h5>Task Details</h5>
+                            <div class="form-group m-form__group">
+                                    <label>
+                                            Choose Task Type:
+                                    </label>
+                                    <select  class="form-control form-control-sm m-input m-input--air" type="text"  >
+                                        <option value="General">General</option>
+                                        <option value="Text">Text</option>
+                                        <option value="Meter Reading">Meter Reading</option>
+                                    </select>
+                                </div> 
+
+                                <div class="form-group m-form__group">
+                                        <label>
+                                                Description:
+                                        </label>
+                                       <textarea class="form-control m-input"cols="30" rows="5"></textarea>
+                                    </div>
+
+                                    <div class="form-group m-form__group">
+                                            <label>
+                                                Assigned To User:
+                                            </label>
+                                            <select  class="form-control form-control-sm m-input m-input--air" type="text"  >
+                                                <option value="User A(1)">User A(1)</option>
+                                                <option value="Niaz Khan">Niaz Khan</option>
+                                                <option value="Jane Khan">Jane Khan</option>
+                                            </select>
+                                        </div>
+                                        
+                                        
+                                        <div class="form-group m-form__group">
+                                                <label>
+                                                        Start Date:
+                                                </label>
+                                                <input class="form-control m-input" >
+                                            </div>
+
+                                            <div class="form-group m-form__group">
+                                                    <label>
+                                                            Time Estimate Hours:
+                                                    </label>
+                                                    <input class="form-control m-input" type="text">
+                                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                                <h5>Task Completion Detail</h5>
+                                <div class="form-group m-form__group">
+                                        <label>
+                                            Completed By User:
+                                        </label>
+                                        <select  class="form-control form-control-sm m-input m-input--air" type="text"  >
+                                            <option value="User A(1)">User A(1)</option>
+                                            <option value="Niaz Khan">Niaz Khan</option>
+                                            <option value="Jane Khan">Jane Khan</option>
+                                        </select>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group m-form__group">
+                                            <label>
+                                                     Date Completed:
+                                            </label>
+                                            <input class="form-control m-input" >
+                                        </div>
+
+                                        <div class="form-group m-form__group">
+                                                <label>
+                                                        Time Spent Hours:
+                                                </label>
+                                                <input class="form-control m-input" type="text">
+                                        </div>
+                            
+                            </div>
+                    </div>
+                    
+
+
+                </div>
+                <div  class="modal-footer">
+                    <button  class="btn btn-primary"   data-dismiss="modal" type="button">
+                        Add
+                    </button>
+                    <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div  aria-labelledby="brandLabel" class="modal " id="addTaskGroupModal" role="dialog" tabindex="-1">
+            <div  class="modal-dialog " role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="b4randLabel">
+                            Add Task Group Modal
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                                </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body">
+    
+                        <div class="row">
+                         <div class="col-sm-12">
+                                <div class="form-group m-form__group">
+                                        <label>
+                                            Task Group:
+                                        </label>
+                                        <select  class="form-control form-control-sm m-input m-input--air" type="text"  >
+                                            <option value="Group A(1)">Group A(1)</option>
+                                            <option value="Group A(2)">Group A(2)</option>
+                                            <option value="Group A(3)">Group A(3)</option>
+                                        </select>
+                                    </div>
+                         </div>   
+                         
+                        </div>
+                        
+    
+    
+                    </div>
+                    <div  class="modal-footer">
+                        <button  class="btn btn-primary"   data-dismiss="modal" type="button">
+                            Add
+                        </button>
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+             
+    <div  aria-labelledby="brandLabel" class="modal " id="addPartSupplyModal" role="dialog" tabindex="-1">
+            <div  class="modal-dialog " role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="b4randLabel">
+                            Add Part
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                                </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body">
+    
+                        <div class="row">
+                         <div class="col-sm-12">
+                                <div class="form-group m-form__group">
+                                        <label>
+                                            Current Stock:
+                                        </label>
+                                        <select  class="form-control form-control-sm m-input m-input--air" type="text"  >
+                                            <option value="Part A(11)">Part A(11)</option>
+                                            <option value="Part A(13)">Part A(13)</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="m-form__group form-group">
+                                            <label for="">Planned Quantity:</label>
+                                            <input type="number" class="form-control form-control-sm m-input m-input--air" >
+                                    </div>
+
+
+                                    <div class="m-form__group form-group">
+                                            <label for="">Actual Quantity Used:</label>
+                                            <input type="number" class="form-control form-control-sm m-input m-input--air" >
+                                    </div>
+                         </div>   
+                         
+                        </div>
+                        
+    
+    
+                    </div>
+                    <div  class="modal-footer">
+                        <button  class="btn btn-primary"   data-dismiss="modal" type="button">
+                            Add
+                        </button>
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+           
+        <div  aria-labelledby="brandLabel" class="modal " id="notificationsModal" role="dialog" tabindex="-1">
+                <div  class="modal-dialog " role="document">
+                    <div  class="modal-content">
+                        <div  class="modal-header">
+                            <h5  class="modal-title" id="b4randLabel">
+                                Work Order User
+                            </h5>
+                            <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                    <span  aria-hidden="true">
+                                        ×
+                                    </span>
+                            </button>
+                        </div>
+                        <div  class="modal-body">
+        
+                            <div class="row">
+                             <div class="col-sm-12">
+                                        <div class="form-group m-form__group">
+                                                <label>
+                                                    User:
+                                                </label>
+                                                <select  class="form-control form-control-sm m-input m-input--air" type="text"  >
+                                                    <option value="User A(1)">User A(1)</option>
+                                                    <option value="Niaz Khan">Niaz Khan</option>
+                                                    <option value="Jane Khan">Jane Khan</option>
+                                                </select>
+                                            </div>
+    
+    
+                                            <div class="m-form__group form-group">
+                                                    <div class="m-checkbox-list">
+                                                        <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                                                            <input type="checkbox"> Notify On Assignment
+                                                            <span></span>
+                                                        </label>
+
+                                                        <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                                                                <input type="checkbox"> Notify On Status Change
+                                                                <span></span>
+                                                            </label>
+
+
+                                                            <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                                                                    <input type="checkbox"> Notify On Completion
+                                                                    <span></span>
+                                                                </label>
+                                                    </div>
+                                                   
+                                                </div>
+    
+                             </div>   
+                             
+                            </div>
+    
+                            
+                            
+        
+        
+                        </div>
+                        <div  class="modal-footer">
+                            <button  class="btn btn-primary"   data-dismiss="modal" type="button">
+                                Add
+                            </button>
+                            <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
