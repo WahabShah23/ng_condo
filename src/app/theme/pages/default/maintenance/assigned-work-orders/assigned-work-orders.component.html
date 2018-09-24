@@ -6,6 +6,7 @@
                     <!--</h3>-->
                     <h3 class="m-subheader__title">
                          Assigned Work Orders
+                         <small  class="text-muted custom_pointer stats-icons"><i  class="fa fa-search"></i> </small>
                     </h3>
                 </div>
                 <button class="btn btn-link">
@@ -236,17 +237,17 @@
         <!-- ---------------------------Buildings List End---------------------------------- -->
         <!-- ____________________Create Services from removed starts_____________ -->
     
-        <div [hidden]="!addFacilityForm" class="row" style="margin-bottom: 50px;">
+        <div [hidden]="!addFacilityForm" class="row" style="margin-bottom: 50px;margin-top: 10px;">
                
-                <div class="col-md-2 text-center" style="padding:30px">
-                        <img src="assets\app\media\img\assets-settings\facility.jpg" alt="" style="width:100%;">
-                        <p *ngIf="isFacilityOnline" class="bg-success text-white ">Online</p>
-                        <p *ngIf="!isFacilityOnline"class="bg-dark text-white ">Offline</p>
+                <div class="col-md-2" >
+                        <img src="assets\app\media\img\assets-settings\facility.jpg" alt="" style="width:70%;">
+                        <p *ngIf="isFacilityOnline" class="bg-success text-white text-center" style="width:70%;">Online</p>
+                        <p *ngIf="!isFacilityOnline"class="bg-dark text-white text-center" style="width:70%;">Offline</p>
                         <a href="#" data-toggle="modal" data-target="#changeFacilityStatusModal"> Set Asset {{(isFacilityOnline) ? 'Offline' : 'Online'}}</a>
                     </div>
     
                     <div class="col-md-2">
-                        <img src="assets\app\media\img\logos\QR.PNG" alt="" style="margin-top:25px;">
+                        <img src="assets\app\media\img\logos\QR.PNG" alt="" >
                     </div>
                     <div class="col-md-4">
                             <div class="form-group m-form__group">
