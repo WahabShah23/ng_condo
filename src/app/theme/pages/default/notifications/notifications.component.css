@@ -1,9 +1,30 @@
+.body>.row{
+	width: 100%;
+}
+
 .m-subheader {
-	padding: 10px 30px 0 30px;
+	padding: 0px 30px 0 30px;
 }
-.breadcrumb-header {
-	margin-top: -15px !important;
+.m-subheader:not(.breadcrumb-header)
+{
+	margin-top: 15px;
 }
+.customhr
+{
+	margin-top: 0.0rem;
+	margin-bottom: -1.4rem;
+}
+.breadcrumb-header li:not(.m-nav__item--home) a span
+{
+	font-size: 11px !important;
+}
+
+.custom_searchBox > input {
+	margin-bottom: -1px;
+	position: relative;
+	top: -3px;
+}
+
 .breadcrumb-header li a span {
 	font-size: 11px;
 }
@@ -11,6 +32,21 @@
 	font-size: 0.9rem;
 	cursor: pointer;
 }
-.m-content {
-	padding-top: 10px !important;
+
+.custom-css {
+	cursor: pointer;
+	font-size: 11px;
+}
+
+.custom_pointer {
+	cursor: pointer;
+}
+
+
+.searchBoxBorder:focus {
+	outline: none;
+}
+
+#m_select2_email + span input {
+	width: 100% !important;
 }

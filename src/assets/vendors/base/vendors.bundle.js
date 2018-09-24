@@ -22887,7 +22887,7 @@ $.fn.timepicker.defaults = $.extend(true, {}, $.fn.timepicker.defaults, {
 }));
 
 /*!
- * Select2 4.0.6-rc.1
+ * Select2_custom 4.0.6-rc.1
  * https://select2.github.io
  *
  * Released under the MIT license
@@ -22924,7 +22924,7 @@ $.fn.timepicker.defaults = $.extend(true, {}, $.fn.timepicker.defaults, {
   // The inner file should be wrapped (by `banner.start.js`) in a function that
   // returns the AMD loader references.
   var S2 =(function () {
-  // Restore the Select2 AMD loader so it can be used
+  // Restore the Select2_custom AMD loader so it can be used
   // Needed mostly in the language files, where the loader is not inserted
   if (jQuery && jQuery.fn && jQuery.fn.select2 && jQuery.fn.select2.amd) {
     var S2 = jQuery.fn.select2.amd;
@@ -23377,8 +23377,8 @@ S2.define('jquery',[],function () {
 
   if (_$ == null && console && console.error) {
     console.error(
-      'Select2: An instance of jQuery or a jQuery-compatible library was not ' +
-      'found. Make sure that you are including jQuery before Select2 on your ' +
+      'Select2_custom: An instance of jQuery or a jQuery-compatible library was not ' +
+      'found. Make sure that you are including jQuery before Select2_custom on your ' +
       'web page.'
     );
   }
@@ -24715,7 +24715,7 @@ S2.define('select2/selection/allowClear',[
     if (this.placeholder == null) {
       if (this.options.get('debug') && window.console && console.error) {
         console.error(
-          'Select2: The `allowClear` option should be used in combination ' +
+          'Select2_custom: The `allowClear` option should be used in combination ' +
           'with the `placeholder` option.'
         );
       }
@@ -25071,7 +25071,7 @@ S2.define('select2/selection/eventRelay',[
       // The parameters should always be an object
       params = params || {};
 
-      // Generate the jQuery event for the Select2 event
+      // Generate the jQuery event for the Select2_custom event
       var evt = $.Event('select2:' + name, {
         params: params
       });
@@ -26136,7 +26136,7 @@ S2.define('select2/data/select',[
   SelectAdapter.prototype.destroy = function () {
     // Remove anything added to child elements
     this.$element.find('*').each(function () {
-      // Remove any custom data set by Select2
+      // Remove any custom data set by Select2_custom
       Utils.RemoveData(this);
     });
   };
@@ -26456,7 +26456,7 @@ S2.define('select2/data/ajax',[
           // Check to make sure that the response included a `results` key.
           if (!results || !results.results || !$.isArray(results.results)) {
             console.error(
-              'Select2: The AJAX results did not return an array in the ' +
+              'Select2_custom: The AJAX results did not return an array in the ' +
               '`results` key of the response.'
             );
           }
@@ -27776,10 +27776,10 @@ S2.define('select2/defaults',[
           } catch (ex) {
             // The translation could not be loaded at all. Sometimes this is
             // because of a configuration problem, other times this can be
-            // because of how Select2 helps load all possible translation files.
+            // because of how Select2_custom helps load all possible translation files.
             if (options.debug && window.console && console.warn) {
               console.warn(
-                'Select2: The language file for "' + name + '" could not be ' +
+                'Select2_custom: The language file for "' + name + '" could not be ' +
                 'automatically loaded. A fallback will be used instead.'
               );
             }
@@ -27965,9 +27965,9 @@ S2.define('select2/options',[
     if (Utils.GetData($e[0], 'select2Tags')) {
       if (this.options.debug && window.console && console.warn) {
         console.warn(
-          'Select2: The `data-select2-tags` attribute has been changed to ' +
+          'Select2_custom: The `data-select2-tags` attribute has been changed to ' +
           'use the `data-data` and `data-tags="true"` attributes and will be ' +
-          'removed in future versions of Select2.'
+          'removed in future versions of Select2_custom.'
         );
       }
 
@@ -27978,9 +27978,9 @@ S2.define('select2/options',[
     if (Utils.GetData($e[0], 'ajaxUrl')) {
       if (this.options.debug && window.console && console.warn) {
         console.warn(
-          'Select2: The `data-ajax-url` attribute has been changed to ' +
+          'Select2_custom: The `data-ajax-url` attribute has been changed to ' +
           '`data-ajax--url` and support for the old attribute will be removed' +
-          ' in future versions of Select2.'
+          ' in future versions of Select2_custom.'
         );
       }
 
@@ -28528,8 +28528,8 @@ S2.define('select2/core',[
   Select2.prototype.enable = function (args) {
     if (this.options.get('debug') && window.console && console.warn) {
       console.warn(
-        'Select2: The `select2("enable")` method has been deprecated and will' +
-        ' be removed in later Select2 versions. Use $element.prop("disabled")' +
+        'Select2_custom: The `select2("enable")` method has been deprecated and will' +
+        ' be removed in later Select2_custom versions. Use $element.prop("disabled")' +
         ' instead.'
       );
     }
@@ -28547,7 +28547,7 @@ S2.define('select2/core',[
     if (this.options.get('debug') &&
         arguments.length > 0 && window.console && console.warn) {
       console.warn(
-        'Select2: Data can no longer be set using `select2("data")`. You ' +
+        'Select2_custom: Data can no longer be set using `select2("data")`. You ' +
         'should consider setting the value instead using `$element.val()`.'
       );
     }
@@ -28564,8 +28564,8 @@ S2.define('select2/core',[
   Select2.prototype.val = function (args) {
     if (this.options.get('debug') && window.console && console.warn) {
       console.warn(
-        'Select2: The `select2("val")` method has been deprecated and will be' +
-        ' removed in later Select2 versions. Use $element.val() instead.'
+        'Select2_custom: The `select2("val")` method has been deprecated and will be' +
+        ' removed in later Select2_custom versions. Use $element.val() instead.'
       );
     }
 
@@ -28688,7 +28688,7 @@ S2.define('jquery.select2',[
           if (instance == null && window.console && console.error) {
             console.error(
               'The select2(\'' + options + '\') method was called on an ' +
-              'element that is not using Select2.'
+              'element that is not using Select2_custom.'
             );
           }
 
@@ -28702,7 +28702,7 @@ S2.define('jquery.select2',[
 
         return ret;
       } else {
-        throw new Error('Invalid arguments for Select2: ' + options);
+        throw new Error('Invalid arguments for Select2_custom: ' + options);
       }
     };
   }
@@ -28726,11 +28726,11 @@ S2.define('jquery.select2',[
   var select2 = S2.require('jquery.select2');
 
   // Hold the AMD module references on the jQuery function that was just loaded
-  // This allows Select2 to use the internal loader outside of this file, such
+  // This allows Select2_custom to use the internal loader outside of this file, such
   // as in the language files.
   jQuery.fn.select2.amd = S2;
 
-  // Return the Select2 instance for anyone who is importing it.
+  // Return the Select2_custom instance for anyone who is importing it.
   return select2;
 }));
 

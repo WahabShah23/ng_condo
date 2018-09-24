@@ -1,3 +1,52 @@
+<!-- BEGIN: Subheader -->
+<div class="m-subheader">
+    <div  class="d-flex align-items-center">
+        <div  class="mr-auto">
+            <h3  class="m-subheader__title">
+                Sent
+                <small class="text-muted custom_pointer stats-icons" (click)="toggleSearchBox()"><i class="fa fa-search"></i> </small>
+                <small class="custom_searchBox stats-icons">
+                    <input class="searchBoxBorder" type="text" placeholder="search..." [(ngModel)]="searchText" [@slideRightLeft]="searchBox">
+                </small>
+
+            </h3>
+        </div>
+        <button class="btn btn-link" data-toggle="modal" data-target="#m_modal_6">
+            <i class="fa fa-envelope-o"> New Message </i>
+        </button>
+    </div>
+</div>
+<div  class="m-subheader breadcrumb-header">
+    <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li  class="m-nav__item m-nav__item--home">
+            <a  class="m-nav__link m-nav__link--icon" routerLink="/dashboard" ng-reflect-href="/dashboard" ng-reflect-router-link="/dashboard" routerlink="/dashboard">
+                <i  class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+        <li  class="m-nav__item">
+            <a  class="m-nav__link" routerLink="/assetsManagement/dashboard"  routerlink="/assetsManagement/dashboard">
+                <span  class="m-nav__link-text">
+                    Notifications
+                </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+        <li  class="m-nav__item">
+            <a  class="m-nav__link" routerLink="/notifications/sent" routerLinkActive="/notifications/sent">
+                <span  class="m-nav__link-text">
+                    Sent
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<hr class="customhr">
+
 <div class="m-content">
     Sent Works!
 </div>

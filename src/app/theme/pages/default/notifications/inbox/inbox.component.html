@@ -11,7 +11,7 @@
 
             </h3>
         </div>
-        <button class="btn btn-link">
+        <button class="btn btn-link" data-toggle="modal" data-target="#m_modal_6">
             <i class="fa fa-envelope"> New Message </i>
         </button>
     </div>
@@ -52,6 +52,62 @@
     <div class="row">
         <div class="col-md-12">
 
+            <div class="mail-option">
+                <div class="chk-all">
+                    <input type="checkbox" class="mail-checkbox mail-group-checkbox">
+                    <div class="btn-group">
+                        <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
+                            All
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> None</a></li>
+                            <li><a href="#"> Read</a></li>
+                            <li><a href="#"> Unread</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <a data-original-title="Refresh" data-placement="top" data-toggle="dropdown" href="#" class="btn mini tooltips">
+                        <i class=" fa fa-refresh"></i>
+                    </a>
+                </div>
+                <div class="btn-group hidden-phone">
+                    <a data-toggle="dropdown" href="#" class="btn mini blue" aria-expanded="false">
+                        More
+                        <i class="fa fa-angle-down "></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                        <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <a data-toggle="dropdown" href="#" class="btn mini blue">
+                        Move to
+                        <i class="fa fa-angle-down "></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                        <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                    </ul>
+                </div>
+
+                <ul class="unstyled inbox-pagination">
+                    <li><span>1-50 of 234</span></li>
+                    <li>
+                        <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
+                    </li>
+                    <li>
+                        <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
+                    </li>
+                </ul>
+            </div>
             <table class="table table-inbox table-hover">
                 <tbody>
                 <tr class="unread">
@@ -99,7 +155,7 @@
                         <input type="checkbox" class="mail-checkbox">
                     </td>
                     <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
-                    <td class="view-message dont-show">Freelancer.com <span class="label label-danger pull-right">urgent</span></td>
+                    <td class="view-message dont-show">Freelancer.com <span class="m-badge m-badge--danger m-badge--wide pull-right">urgent</span></td>
                     <td class="view-message">Stop wasting your visitors </td>
                     <td class="view-message inbox-small-cells"></td>
                     <td class="view-message text-right">May 23</td>
@@ -129,7 +185,7 @@
                         <input type="checkbox" class="mail-checkbox">
                     </td>
                     <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                    <td class="view-message dont-show">Drupal Community<span class="label label-success pull-right">megazine</span></td>
+                    <td class="view-message dont-show">Drupal Community<span class="m-badge m-badge--primary m-badge--wide pull-right">megazine</span></td>
                     <td class="view-message view-message">Welcome to the Drupal Community</td>
                     <td class="view-message inbox-small-cells"></td>
                     <td class="view-message text-right">March 04</td>
@@ -149,7 +205,7 @@
                         <input type="checkbox" class="mail-checkbox">
                     </td>
                     <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                    <td class="view-message dont-show">Skype <span class="label label-info pull-right">family</span></td>
+                    <td class="view-message dont-show">Skype <span class="m-badge m-badge--warning m-badge--wide pull-right">family</span></td>
                     <td class="view-message view-message">Password successfully changed</td>
                     <td class="view-message inbox-small-cells"></td>
                     <td class="view-message text-right">March 24</td>

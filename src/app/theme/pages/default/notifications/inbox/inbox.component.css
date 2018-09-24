@@ -1,51 +1,53 @@
-.body>.row{
-	width: 100%;
-}
+/*  Sub Header Code, Commented here. Now being used in Notification.css  */
 
-.m-subheader {
-	padding: 0px 30px 0 30px;
-}
-.m-subheader:not(.breadcrumb-header)
-{
-	margin-top: 15px;
-}
-.customhr
-{
-	margin-top: 0.0rem;
-	margin-bottom: -1.4rem;
-}
-.breadcrumb-header li:not(.m-nav__item--home) a span
-{
-	font-size: 11px;
-}
+/*.body>.row{*/
+	/*width: 100%;*/
+/*}*/
 
-.custom_searchBox > input {
-	margin-bottom: -1px;
-	position: relative;
-	top: -3px;
-}
+/*.m-subheader {*/
+	/*padding: 0px 30px 0 30px;*/
+/*}*/
+/*.m-subheader:not(.breadcrumb-header)*/
+/*{*/
+	/*margin-top: 15px;*/
+/*}*/
+/*.customhr*/
+/*{*/
+	/*margin-top: 0.0rem;*/
+	/*margin-bottom: -1.4rem;*/
+/*}*/
+/*.breadcrumb-header li:not(.m-nav__item--home) a span*/
+/*{*/
+	/*font-size: 11px;*/
+/*}*/
 
-.breadcrumb-header li a span {
-	font-size: 11px;
-}
-.stats-icons {
-	font-size: 0.9rem;
-	cursor: pointer;
-}
+/*.custom_searchBox > input {*/
+	/*margin-bottom: -1px;*/
+	/*position: relative;*/
+	/*top: -3px;*/
+/*}*/
 
-.custom-css {
-	cursor: pointer;
-	font-size: 11px;
-}
+/*.breadcrumb-header li a span {*/
+	/*font-size: 11px;*/
+/*}*/
+/*.stats-icons {*/
+	/*font-size: 0.9rem;*/
+	/*cursor: pointer;*/
+/*}*/
 
-.custom_pointer {
-	cursor: pointer;
-}
+/*.custom-css {*/
+	/*cursor: pointer;*/
+	/*font-size: 11px;*/
+/*}*/
+
+/*.custom_pointer {*/
+	/*cursor: pointer;*/
+/*}*/
 
 
-.searchBoxBorder:focus {
-	outline: none;
-}
+/*.searchBoxBorder:focus {*/
+	/*outline: none;*/
+/*}*/
 
 
 /*  Inbox Table Messages Start */
@@ -59,4 +61,60 @@
 .table-inbox tr.unread td {
 	background: none repeat scroll 0 0 #f9e9bcad;
 	font-weight: 600;
+}
+
+
+ul.inbox-pagination {
+	float: right;
+}
+ul.inbox-pagination li {
+	float: left;
+}
+
+
+.mail-option {
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 100%;
+}
+.mail-option .chk-all, .mail-option .btn-group {
+	margin-right: 5px;
+}
+.mail-option .chk-all, .mail-option .btn-group a.btn {
+	background: none repeat scroll 0 0 #fcfcfc;
+	border: 1px solid #e7e7e7;
+	border-radius: 3px !important;
+	color: #afafaf;
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+.inbox-pagination a.np-btn {
+	background: none repeat scroll 0 0 #fcfcfc;
+	border: 1px solid #e7e7e7;
+	border-radius: 3px !important;
+	color: #afafaf;
+	display: inline-block;
+	padding: 5px 15px;
+}
+.mail-option .chk-all input[type="checkbox"] {
+	margin-top: 0;
+}
+.mail-option .btn-group a.all {
+	border: medium none;
+	padding: 0;
+}
+.inbox-pagination a.np-btn {
+	margin-left: 5px;
+}
+.inbox-pagination li span {
+	display: inline-block;
+	margin-right: 5px;
+	margin-top: 7px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
 }

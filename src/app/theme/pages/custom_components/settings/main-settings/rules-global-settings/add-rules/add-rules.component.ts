@@ -30,7 +30,7 @@ export class AddRulesComponent implements OnInit, AfterViewInit {
     ngAfterViewInit() {
         this._script.loadScripts('app-rules-global',
             ['assets/demo/default/custom/components/forms/widgets/summernote.js',
-                'assets/demo/default/custom/components/forms/widgets/select2.js']);
+                'assets/demo/default/custom/components/forms/widgets/select2_custom.js']);
     }
 
     addRule(rule_name: string, rule_img: string, rule_desc?: string) {
