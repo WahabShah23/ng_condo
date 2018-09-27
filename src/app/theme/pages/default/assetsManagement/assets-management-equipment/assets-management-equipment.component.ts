@@ -32,6 +32,7 @@ export class AssetsManagementEquipmentComponent implements OnInit {
   constructor() { }
 
     searchBox: string = 'hide';
+    searchText;
 
     toggleSearchBox() {
         // 1-line if statement that toggles the value:

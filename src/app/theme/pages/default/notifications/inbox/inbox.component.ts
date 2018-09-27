@@ -16,6 +16,7 @@ export class InboxComponent implements OnInit {
     // flyin: string = 'void';
     // flyFromBottom: string = 'void';
      flyItems: string = 'void';
+     searchText;
 
     toggleSearchBox() {
         // 1-line if statement that toggles the value:

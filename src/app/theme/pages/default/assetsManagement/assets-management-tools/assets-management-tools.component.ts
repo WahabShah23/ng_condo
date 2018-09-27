@@ -28,6 +28,7 @@ export class AssetsManagementToolsComponent implements OnInit {
 
     isToolsGridView = true;
     ToolsViewName = 'List View';
+    searchText;
 
     constructor() { }
 

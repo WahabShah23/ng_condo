@@ -9,8 +9,15 @@ import {Component, OnInit } from '@angular/core';
 export class SentComponent implements OnInit {
 
   constructor() { }
+  searchText;
+
 
   ngOnInit() {
+  }
+
+  toggleSearchBox()
+  {
+    
   }
 
 }

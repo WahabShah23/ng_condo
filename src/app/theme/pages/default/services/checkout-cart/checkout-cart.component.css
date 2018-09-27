@@ -190,3 +190,29 @@ input.ng-invalid.ng-touched {
 {
     color:#FFB822 !important;
 }
+
+.customContainer .card-subtitle.mb-2 
+{
+   font-size:14px;
+}
+
+.customContainer .card-text
+{
+    margin-bottom: 0px;
+    font-size:12px;
+}
+
+.customContainer .m-widget4 .m-widget4__item .m-widget4__info .m-widget4__text
+{
+    font-size:12px;
+}
+
+.customContainer .m-widget4 .m-widget4__item .m-widget4__ext .m-widget4__icon > i
+{
+    font-size:12px;
+}
+
+.customContainer .m-widget4 .m-widget4__item .m-widget4__ext .m-widget4__number
+{
+    font-size:12px;
+}

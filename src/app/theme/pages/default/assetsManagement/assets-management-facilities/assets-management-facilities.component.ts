@@ -28,6 +28,7 @@ export class AssetsManagementFacilitiesComponent implements OnInit {
 
   isFacilityGridView = true;
   FacilityViewName = 'List View';
+  searchText;
 
   constructor() { }
 
