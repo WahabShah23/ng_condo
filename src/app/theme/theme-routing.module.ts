@@ -44,6 +44,10 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/default\/notifications\/notifications.module#NotificationsModule"
             },
             {
+                "path": "financialManagement",
+                "loadChildren": ".\/pages\/custom_components\/financial-management\/financial-management.module#FinancialManagementModule"
+            },
+            {
                 "path": "peopleManagement",
                 "loadChildren": ".\/pages\/default\/peopleManagement\/peopleManagement.module#PeopleManagementModule"
             },
