@@ -20,6 +20,7 @@ const routes: Routes = [
                 'path': 'dashboard',
                 'component': FinancialManagementDashboardComponent
             },
+            {
                 'path': 'Budgets',
                 'component': FinancialManagementBudgetComponent
             },
