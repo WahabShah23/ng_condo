@@ -11,11 +11,11 @@ const routes: Routes = [
             {
                 'path': '',
                 'component': FinancialManagementDashboardComponent
-            }
-            // {
-            //     'path': 'dashboard',
-            //     'component': AssetsManagementDashboardComponent
-            // },
+            },
+            {
+                'path': 'dashboard',
+                'component': FinancialManagementDashboardComponent
+            },
             // {
             //     'path': 'facilities',
             //     'component': AssetsManagementFacilitiesComponent

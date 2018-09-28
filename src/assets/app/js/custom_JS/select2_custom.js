@@ -9,6 +9,12 @@ var Select2_custom = function() {
             width : '100%'
         });
 
+        $('#m_select2_tags').select2({
+            placeholder: "Tags",
+            tags: true,
+            width : '100%'
+        });
+
     }
     //== Public functions
     return {

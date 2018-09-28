@@ -3,3 +3,152 @@
     <router-outlet></router-outlet>
 </div>
 
+<!-- Modals Begin-->
+
+<div class="modal fade show" id="edit_entry_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Transaction</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="m-form__group form-group">
+                    <label for="">Type</label>
+                    <div class="m-radio-inline">
+                        <label class="m-radio m-radio--solid m-radio--brand">
+                            <input type="radio" name="example_3" checked value="1"> Expense
+                            <span></span>
+                        </label>
+                        <label class="m-radio m-radio--solid m-radio--brand">
+                            <input type="radio" name="example_3" value="2"> Income
+                            <span></span>
+                        </label>
+                        <label class="m-radio m-radio--solid m-radio--brand">
+                            <input type="radio" name="example_3" value="3"> Transfer
+                            <span></span>
+                        </label>
+                        <label class="m-radio m-radio--solid m-radio--brand">
+                            <input type="radio" name="example_3" value="3"> Refund
+                            <span></span>
+                        </label>
+                        <label class="m-radio m-radio--solid m-radio--brand">
+                            <input type="radio" name="example_3" value="3"> IOU
+                            <span></span>
+                        </label>
+                    </div>
+                    <!--<span class="m-form__help">Some help text goes here</span>-->
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-control-label">Description:</label>
+                    <input type="text" class="form-control" id="description">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Amount" class="form-control-label">Amount</label>
+                            <input type="text" class="form-control" id="Amount">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group m-form__group">
+                            <label for="m_datepicker_1">Date Picker</label>
+                            <input type="date" class="form-control" id="m_datepicker_1" placeholder="Select date">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group m-form__group">
+                    <label for="accountSelect">Account</label>
+                    <select class="form-control m-input m-input--square" id="accountSelect">
+                        <option selected>No Account</option>
+                        <option>CWIC</option>
+                        <option>Meezan</option>
+                        <option>Bitcoin</option>
+                        <option>Ripple</option>
+                    </select>
+                </div>
+
+                <div class="form-group m-form__group">
+                    <label>Tagging Support</label>
+                    <div class="form-group" data-select2-id="356">
+                        <select class="form-control m-select2 select2-hidden-accessible" #tags_input id="m_select2_tags" multiple="" name="param" data-select2-id="m_select2_11" tabindex="-1" aria-hidden="true">
+                            <option data-select2-id="357"></option>
+                            <optgroup label="Alaskan/Hawaiian Time Zone" data-select2-id="358">
+                                <option value="AK" data-select2-id="359" selected>Home</option>
+                                <option value="HI" data-select2-id="360" selected>Rent</option>
+                            </optgroup>
+                            <optgroup label="Pacific Time Zone" data-select2-id="361">
+                                <option value="CA" data-select2-id="362">California</option>
+                                <option value="NV" data-select2-id="363">Nevada</option>
+                                <option value="OR" data-select2-id="364">Oregon</option>
+                                <option value="WA" data-select2-id="365">Washington</option>
+                            </optgroup>
+                            <optgroup label="Mountain Time Zone" data-select2-id="366">
+                                <option value="AZ" data-select2-id="367">Arizona</option>
+                                <option value="CO" data-select2-id="368">Colorado</option>
+                                <option value="ID" data-select2-id="369">Idaho</option>
+                                <option value="MT" data-select2-id="370">Montana</option>
+                                <option value="NE" data-select2-id="371">Nebraska</option>
+                                <option value="NM" data-select2-id="372">New Mexico</option>
+                                <option value="ND" data-select2-id="373">North Dakota</option>
+                                <option value="UT" data-select2-id="374">Utah</option>
+                                <option value="WY" data-select2-id="375">Wyoming</option>
+                            </optgroup>
+                            <optgroup label="Central Time Zone" data-select2-id="376">
+                                <option value="AL" data-select2-id="377">Alabama</option>
+                                <option value="AR" data-select2-id="378">Arkansas</option>
+                                <option value="IL" data-select2-id="379">Illinois</option>
+                                <option value="IA" data-select2-id="380">Iowa</option>
+                                <option value="KS" data-select2-id="381">Kansas</option>
+                                <option value="KY" data-select2-id="382">Kentucky</option>
+                                <option value="LA" data-select2-id="383">Louisiana</option>
+                                <option value="MN" data-select2-id="384">Minnesota</option>
+                                <option value="MS" data-select2-id="385">Mississippi</option>
+                                <option value="MO" data-select2-id="386">Missouri</option>
+                                <option value="OK" data-select2-id="387">Oklahoma</option>
+                                <option value="SD" data-select2-id="388">South Dakota</option>
+                                <option value="TX" data-select2-id="389">Texas</option>
+                                <option value="TN" data-select2-id="390">Tennessee</option>
+                                <option value="WI" data-select2-id="391">Wisconsin</option>
+                            </optgroup>
+                            <optgroup label="Eastern Time Zone" data-select2-id="392">
+                                <option value="CT" data-select2-id="393">Connecticut</option>
+                                <option value="DE" data-select2-id="394">Delaware</option>
+                                <option value="FL" data-select2-id="395">Florida</option>
+                                <option value="GA" data-select2-id="396">Georgia</option>
+                                <option value="IN" data-select2-id="397">Indiana</option>
+                                <option value="ME" data-select2-id="398">Maine</option>
+                                <option value="MD" data-select2-id="399">Maryland</option>
+                                <option value="MA" data-select2-id="400">Massachusetts</option>
+                                <option value="MI" data-select2-id="401">Michigan</option>
+                                <option value="NH" data-select2-id="402">New Hampshire</option>
+                                <option value="NJ" data-select2-id="403">New Jersey</option>
+                                <option value="NY" data-select2-id="404">New York</option>
+                                <option value="NC" data-select2-id="405">North Carolina</option>
+                                <option value="OH" data-select2-id="406">Ohio</option>
+                                <option value="PA" data-select2-id="407">Pennsylvania</option>
+                                <option value="RI" data-select2-id="408">Rhode Island</option>
+                                <option value="SC" data-select2-id="409">South Carolina</option>
+                                <option value="VT" data-select2-id="410">Vermont</option>
+                                <option value="VA" data-select2-id="411">Virginia</option>
+                                <option value="WV" data-select2-id="412">West Virginia</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals End -->
