@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-financial-management-dashboard',
   templateUrl: './financial-management-dashboard.component.html' ,
-  styleUrls: ['./financial-management-dashboard.component.css']
+  styleUrls: ['./financial-management-dashboard.component.css' , "../financial-management.component.css"]
 })
 export class FinancialManagementDashboardComponent implements OnInit {
 
