@@ -1,3 +1,5 @@
+import { FinancialManagementAccountsComponent } from './financial-management-accounts/financial-management-accounts.component';
+import { FinancialManagementTagsComponent } from './financial-management-tags/financial-management-tags.component';
 import { FinancialManagementBillingSubscriptionComponent } from './financial-management-billing-subscription/financial-management-billing-subscription.component';
 import { FinancialManagementReminderComponent } from './financial-management-reminder/financial-management-reminder.component';
 import { FinancialManagementForecastComponent } from './financial-management-forecast/financial-management-forecast.component';
@@ -36,6 +38,16 @@ const routes: Routes = [
             {
                 'path': 'Billing-Subscription',
                 'component': FinancialManagementBillingSubscriptionComponent
+            },
+
+            {
+                'path': 'Tags/:name',
+                'component': FinancialManagementTagsComponent
+            },
+
+            {
+                'path': 'Accounts/:name',
+                'component': FinancialManagementAccountsComponent
             }
             // {
             //     'path': 'dashboard',

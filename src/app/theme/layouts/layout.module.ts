@@ -1,3 +1,4 @@
+
 import { AsideNavMaintenanceComponent } from './aside-nav-maintenance/aside-nav-maintenance.component';
 import { AsideNavAssetsComponent } from './aside-nav-assets/aside-nav-assets.component';
 import { AsideNavSpecializedComponent } from './aside-nav-specialized/aside-nav-specialized.component';
@@ -60,7 +61,7 @@ import { AsideNavFinancialComponent } from './aside-nav-financial/aside-nav-fina
         AsideNavAssetsComponent,
         AsideNavNotificationsComponent,
         AsideNavMaintenanceComponent,
-        AsideNavFinancialComponent
+        AsideNavFinancialComponent 
     ],
     exports: [
         LayoutComponent,
@@ -94,5 +95,8 @@ import { AsideNavFinancialComponent } from './aside-nav-financial/aside-nav-fina
         RouterModule
     ]
 })
-export class LayoutModule {
+
+export class LayoutModule 
+{
+
 }
