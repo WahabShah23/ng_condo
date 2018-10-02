@@ -1,3 +1,21 @@
+.m-subheader {
+	padding: 10px 30px 0 30px;
+}
+.breadcrumb-header {
+	margin-top: -15px !important;
+}
+.breadcrumb-header li a span {
+	font-size: 11px;
+}
+.stats-icons {
+	font-size: 1rem !important;
+	cursor: pointer;
+}
+
+ .customhr {
+	 margin-top: 0px !important;
+ }
+
 /* Table Styles */
 
 .m-widget11 .table tbody > tr > td {

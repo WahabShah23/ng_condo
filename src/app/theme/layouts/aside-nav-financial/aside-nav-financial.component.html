@@ -5,7 +5,7 @@
 <div id="m_aside_left" class="m-grid__item	m-aside-left  m-aside-left--skin-dark">
     <!-- BEGIN: Aside Menu -->
     <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark" data-menu-vertical="true" data-menu-scrollable="false" data-menu-dropdown-timeout="500">
-        <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow">
+        <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow" [hidden]="isTags || isAccounts">
             <li class="m-menu__item  " routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
                 <a routerLink="/dashboard" class="m-menu__link">
                     <i class="m-menu__link-icon fa fa-home"></i>  <!-- flaticon-line-graph -->
@@ -70,7 +70,7 @@
                 </a>
             </li>
             <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
-                <a routerLink="Accounts" class="m-menu__link">
+                <a (click)="toggleAccounts()" class="m-menu__link">
                     <i class="m-menu__link-icon fa fa-bank"></i>
                     <span class="m-menu__link-text">
 						Accounts
@@ -94,7 +94,7 @@
                 </a>
             </li>
             <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
-                <a routerLink="Assigned-Assets" class="m-menu__link">
+                <a (click)="toggleTags()" class="m-menu__link">
                     <i class="m-menu__link-icon fa fa-tags"></i>
                     <span class="m-menu__link-text">
 						Tags
@@ -102,9 +102,430 @@
                 </a>
             </li>
         </ul>
-    </div>
+
+
+        <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow tags-ul" [hidden]="!isTags">
+                <li class="m-menu__item " routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
+                        <a  class="m-menu__link" (click)="toggleTags()">
+                            <i class="m-menu__link-icon fa fa-home"></i>  <!-- flaticon-line-graph -->
+                            <span class="m-menu__link-title">
+                                <span class="m-menu__link-wrap">
+                                    <span class="m-menu__link-text">
+                                        Back
+                                    </span>
+                                   
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                        <li *ngFor="let tag of Tags" class="m-menu__item" [class.m-menu__item--submenu]="tag.children.length > 0" routerLinkActive="m-menu__item--open" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true"  data-menu-submenu-toggle="hover">
+                                <a  [routerLink]="['/financialManagement/Tags' , tag.name]" class="m-menu__link">
+                                    <i class="m-menu__link-icon flaticon-settings"></i>
+                                    <span class="m-menu__link-text submenu-text">
+                                      {{tag.name}}
+                                    </span>
+                                    
+                                </a>
+                                <a href="#" class="m-menu__link m-menu__toggle" *ngIf="tag.children.length>0">
+                                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                                <div class="m-menu__submenu" *ngIf="tag.children.length>0">
+                                    <span class="m-menu__arrow"></span>
+                                    <ul class="m-menu__subnav">
+                                       
+                                        <li class="m-menu__item" *ngFor="let childtag of tag.children" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
+                                            <a  [routerLink]="['/financialManagement/Tags' , childtag]" class="m-menu__link">
+                                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="m-menu__link-text">
+                                                        {{childtag}}
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            
     <!-- END: Aside Menu -->
+    <button style="margin-left: 30%;" class="btn btn-primary" data-toggle="modal" data-target="#addTagModal">
+        <i class="fa fa-plus"></i> Add Tag
+    </button>
+                    
+        </ul>
+
+
+
+
+        <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow tags-ul" [hidden]="!isAccounts">
+            <li class="m-menu__item " routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
+                    <a  class="m-menu__link" (click)="toggleAccounts()">
+                        <i class="m-menu__link-icon fa fa-home"></i>  <!-- flaticon-line-graph -->
+                        <span class="m-menu__link-title">
+                            <span class="m-menu__link-wrap">
+                                <span class="m-menu__link-text">
+                                    Back
+                                </span>
+                               
+                            </span>
+                        </span>
+                    </a>
+                </li>
+
+                <li class="m-menu__item " style=" padding: 0px 30px;">
+                        <div  class="form-group">
+                                <label style="color:white;">Currency Type:</label>                      
+                                <select  class="form-control" style="background-color: #2C2E3E;color: white;border: none;border-bottom: 1px solid white;" (change)="changeCurrencyType($event)">
+                                    <option  value="Fiat">Fiat</option>
+                                     <option value="Digital">Digital</option>
+                                </select>       
+                        </div>
+                </li>
+                
+
+                <ng-container *ngIf="currencyType=='Fiat'">
+                        <li *ngFor="let account of fiatCurrencyAccounts" class="m-menu__item" [class.m-menu__item--submenu]="account.children.length > 0" routerLinkActive="m-menu__item--open" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true"  data-menu-submenu-toggle="hover">
+                                <a  [routerLink]="['/financialManagement/Accounts' , account.name]" class="m-menu__link">
+                                    <i class="m-menu__link-icon flaticon-settings"></i>
+                                    <span class="m-menu__link-text submenu-text">
+                                      {{account.name}}
+                                    </span>
+                                    
+                                </a>
+                                <a href="#" class="m-menu__link m-menu__toggle" *ngIf="account.children.length>0">
+                                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                                <div class="m-menu__submenu" *ngIf="account.children.length>0">
+                                    <span class="m-menu__arrow"></span>
+                                    <ul class="m-menu__subnav">
+                                       
+                                        <li class="m-menu__item" *ngFor="let childaccount of account.children" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
+                                            <a  [routerLink]="['/financialManagement/Accounts' , childaccount]" class="m-menu__link">
+                                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="m-menu__link-text">
+                                                        {{childaccount}}
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+    
+
+
+                </ng-container>
+
+
+
+                <ng-container *ngIf="currencyType=='Digital'">
+                        <li *ngFor="let account of digitalCurrencyAccounts" class="m-menu__item" [class.m-menu__item--submenu]="account.children.length > 0" routerLinkActive="m-menu__item--open" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true"  data-menu-submenu-toggle="hover">
+                                <a  [routerLink]="['/financialManagement/Accounts' , account.name]" class="m-menu__link">
+                                    <i class="m-menu__link-icon flaticon-settings"></i>
+                                    <span class="m-menu__link-text submenu-text">
+                                      {{account.name}}
+                                    </span>
+                                    
+                                </a>
+                                <a href="#" class="m-menu__link m-menu__toggle" *ngIf="account.children.length>0">
+                                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                                <div class="m-menu__submenu" *ngIf="account.children.length>0">
+                                    <span class="m-menu__arrow"></span>
+                                    <ul class="m-menu__subnav">
+                                       
+                                        <li class="m-menu__item" *ngFor="let childaccount of account.children" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
+                                            <a  [routerLink]="['/financialManagement/Accounts' , childaccount]" class="m-menu__link">
+                                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="m-menu__link-text">
+                                                        {{childaccount}}
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+    
+
+
+                </ng-container>
+                    
+                        
+<!-- END: Aside Menu -->
+<button style="margin-left: 30%;" class="btn btn-primary" data-toggle="modal" data-target="#addAccountModal">
+    <i class="fa fa-plus"></i> Add Account
+</button>
+                
+    </ul>
+    </div>
 </div>
 <!-- END: Left Aside -->
 
 
+<div  aria-labelledby="brandLabel" class="modal " id="addTagModal" role="dialog" tabindex="-1">
+    <div  class="modal-dialog modal-md" role="document">
+        <div  class="modal-content">
+            <div  class="modal-header">
+                <h5  class="modal-title" id="b4randLabel">
+                    Add Tag
+                </h5>
+                <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span  aria-hidden="true">
+                            ×
+                        </span>
+                </button>
+            </div>
+            <div  class="modal-body">
+                
+
+                <div class="form-group">
+                        <label >Tag Parent:</label>                      
+                        <select #tagParent class="form-control">
+                            <option value=""></option>
+                            <option *ngFor="let tag of Tags" value="{{tag.id}}">{{tag.name}}</option>
+                        </select>       
+                </div>
+
+                <div class="form-group">
+                    <label for="example-datetime-local-input" >Tag Name:</label>                      
+                    <input #tagName class="form-control m-input" type="text" >
+                           
+                </div>
+
+
+
+            </div>
+            <div  class="modal-footer">
+                <button  class="btn btn-primary" (click)="addTag(tagParent.value , tagName.value)" data-dismiss="modal" type="button">
+                    Add Tag
+                </button>
+                <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div  aria-labelledby="brandLabel" class="modal " id="addAccountModal" role="dialog" tabindex="-1">
+    <div  class="modal-dialog modal-md" role="document">
+        <div  class="modal-content">
+            <div  class="modal-header">
+                <h5  class="modal-title" id="b4randLabel">
+                    Add Account
+                </h5>
+                <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span  aria-hidden="true">
+                            ×
+                        </span>
+                </button>
+            </div>
+            <div  class="modal-body">
+                <div class="form-group m-form__group">
+                    <label for="exampleInputEmail1">
+                        Select A Financial Institution
+                    </label>
+                    <div class="input-group m-input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                        <select  class="form-control">
+                            <option value="HBL">HBL</option>
+                            <option value="Habib">Habib</option>
+                            <option value="Meezan">Meezan</option>
+                            <option value="Allied">Allied</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="#" data-toggle="modal" data-target="#manualAccountModal"class="banklink">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                    <img class="bank-image" src="http://paydayloansnsd.com/wp-content/uploads/2014/10/Multi-Channel-Banking-An-Overview.png" alt="">
+                            </div>
+                            <div class="col-sm-6">
+                                <p><strong> Meezan Bank</strong></p>
+                            </div>
+                        </div>
+                      </a>
+                    </div>
+
+
+
+                    <div class="col-sm-6">
+                            <a href="#" data-toggle="modal" data-target="#manualAccountModal" class="banklink">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                        <img class="bank-image" src="http://paydayloansnsd.com/wp-content/uploads/2014/10/Multi-Channel-Banking-An-Overview.png" alt="">
+                                </div>
+                                <div class="col-sm-6">
+                                    <p><strong> HBL Bank</strong></p>
+                                </div>
+                            </div>
+                          </a>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                                <a href="#" data-toggle="modal" data-target="#manualAccountModal" class="banklink">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                            <img class="bank-image" src="http://paydayloansnsd.com/wp-content/uploads/2014/10/Multi-Channel-Banking-An-Overview.png" alt="">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p><strong> Allied Bank</strong></p>
+                                    </div>
+                                </div>
+                              </a>
+                        </div>
+
+
+
+                        <div class="col-sm-6">
+                                <a href="#" data-toggle="modal" data-target="#manualAccountModal" class="banklink">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                            <img class="bank-image" src="http://paydayloansnsd.com/wp-content/uploads/2014/10/Multi-Channel-Banking-An-Overview.png" alt="">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p><strong> Habib Bank</strong></p>
+                                    </div>
+                                </div>
+                              </a>
+                            </div>
+                </div>
+
+                
+
+
+            </div>
+            <div  class="modal-footer">
+                <button  class="btn btn-primary"  data-toggle="modal" data-target="#manualAccountModal" type="button">
+                    Add Manual Account
+                </button>
+                <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div  aria-labelledby="brandLabel" class="modal " id="manualAccountModal" role="dialog" tabindex="-1" >
+        <div  class="modal-dialog modal-md" role="document">
+            <div  class="modal-content">
+                <div  class="modal-header">
+                    <h5  class="modal-title" id="b4randLabel">
+                        Add Account Manual
+                    </h5>
+                    <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span  aria-hidden="true">
+                                ×
+                            </span>
+                    </button>
+                </div>
+                <div  class="modal-body">
+                   
+                        <div class="form-group">
+                                <label for="example-datetime-local-input" >Account Name:</label>                      
+                                <input #accountName class="form-control m-input" type="text" >   
+                        </div>
+
+                        <div class="row">
+                           <div class="col-sm-6">
+                                <div class="form-group">
+                                        <label for="">Type:</label>
+                                        <select class="form-control m-input" #typeAccount>
+                                            <option *ngFor="let account of fiatCurrencyAccounts" value="{{account.id}}">{{account.name}}</option>
+                                        </select>
+                                    </div>
+                           </div> 
+
+                           <div class="col-sm-6">
+                                <div class="form-group">
+                                        <label for="">Currency:</label>
+                                        <select class="form-control m-input" id="">
+                                            <option value="Australia">Australia , AUD</option>
+                                            <option value="Australia">India , INR</option>
+                                            <option value="Australia">Brazil , BRL</option>
+                                            <option value="Australia">Canada , CAD</option>
+                                        </select>
+                                    </div>
+                           </div> 
+                        </div>
+                        
+    
+                </div>
+                <div  class="modal-footer">
+                    <button  class="btn btn-primary" data-dismiss="modal" (click)="onAddManualAccount(accountName.value , typeAccount.value)"   type="button">
+                        Add Manual Account
+                    </button>
+                    <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                        Sync With The Bank
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div  aria-labelledby="brandLabel" class="modal " id="manualAccountModal" role="dialog" tabindex="-1" >
+            <div  class="modal-dialog modal-md" role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="b4randLabel">
+                            Add Account Manual
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                                </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body">
+                       
+                            <div class="form-group">
+                                    <label for="example-datetime-local-input" >User ID:</label>                      
+                                    <input class="form-control m-input" type="text" >   
+                            </div>
+
+
+                            <div class="form-group">
+                                    <label for="example-datetime-local-input" >Password:</label>                      
+                                    <input class="form-control m-input" type="password" >   
+                            </div>
+                            
+        
+                    </div>
+                    <div  class="modal-footer">
+                        <button  class="btn btn-primary" data-dismiss="modal"  type="button">
+                            Sync
+                        </button>
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Select Different Bank
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>

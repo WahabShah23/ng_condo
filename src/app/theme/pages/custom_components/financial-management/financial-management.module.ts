@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FinancialManagementBillingSubscriptionComponent } from './financial-management-billing-subscription/financial-management-billing-subscription.component';
 import { FinancialManagementReminderComponent } from './financial-management-reminder/financial-management-reminder.component';
 import { FinancialManagementBudgetComponent } from './financial-management-budget/financial-management-budget.component';
@@ -13,13 +14,15 @@ import { FinancialManagementRoutingModule } from "./financial-management.routing
 import { FinancialManagementDashboardComponent } from "./financial-management-dashboard/financial-management-dashboard.component";
 import { FinancialManagementComponent } from "./financial-management.component";
 import { FinancialManagementForecastComponent } from './financial-management-forecast/financial-management-forecast.component';
+import { FinancialManagementTagsComponent } from './financial-management-tags/financial-management-tags.component';
+import { FinancialManagementAccountsComponent } from './financial-management-accounts/financial-management-accounts.component';
 
 
 @NgModule({
     imports: [
         CommonModule, LayoutModule,
         FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule, FormsModule,
-        AngularMultiSelectModule, FinancialManagementRoutingModule
+        AngularMultiSelectModule, FinancialManagementRoutingModule , RouterModule
     ], exports: [
     ], declarations: [
         FinancialManagementComponent,
@@ -27,10 +30,9 @@ import { FinancialManagementForecastComponent } from './financial-management-for
         FinancialManagementBudgetComponent,
         FinancialManagementForecastComponent,
         FinancialManagementReminderComponent,
-        FinancialManagementBillingSubscriptionComponent
-
-        //  Pipes
-        // FilterPipe
+        FinancialManagementBillingSubscriptionComponent,
+        FinancialManagementTagsComponent,
+        FinancialManagementAccountsComponent
     ],
 
 })
