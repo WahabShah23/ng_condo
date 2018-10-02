@@ -258,7 +258,7 @@
                     
                         
 <!-- END: Aside Menu -->
-<button style="margin-left: 30%;" class="btn btn-primary" data-toggle="modal">
+<button style="margin-left: 30%;" class="btn btn-primary" data-toggle="modal" data-target="#addAccountModal">
     <i class="fa fa-plus"></i> Add Account
 </button>
                 
@@ -319,7 +319,7 @@
 
 
 
-<div  aria-labelledby="brandLabel" class="modal " id="addAccountModal" role="dialog" tabindex="-1" style="display:block">
+<div  aria-labelledby="brandLabel" class="modal " id="addAccountModal" role="dialog" tabindex="-1">
     <div  class="modal-dialog modal-md" role="document">
         <div  class="modal-content">
             <div  class="modal-header">
@@ -335,7 +335,7 @@
             <div  class="modal-body">
                 <div class="form-group m-form__group">
                     <label for="exampleInputEmail1">
-                        Left Addon
+                        Select A Financial Institution
                     </label>
                     <div class="input-group m-input-group">
                         <div class="input-group-prepend">
@@ -344,14 +344,71 @@
                             </span>
                         </div>
                         <select  class="form-control">
-                            <option value="1">1</option>
-                            <option value="1">1</option>
-                            <option value="1">1</option>
+                            <option value="HBL">HBL</option>
+                            <option value="Habib">Habib</option>
+                            <option value="Meezan">Meezan</option>
+                            <option value="Allied">Allied</option>
                         </select>
                     </div>
-                    <span class="m-form__help">
-                        Some help content goes here
-                    </span>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="#" data-toggle="modal" data-target="#manualAccountModal"class="banklink">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                    <img class="bank-image" src="http://paydayloansnsd.com/wp-content/uploads/2014/10/Multi-Channel-Banking-An-Overview.png" alt="">
+                            </div>
+                            <div class="col-sm-6">
+                                <p><strong> Meezan Bank</strong></p>
+                            </div>
+                        </div>
+                      </a>
+                    </div>
+
+
+
+                    <div class="col-sm-6">
+                            <a href="#" data-toggle="modal" data-target="#manualAccountModal" class="banklink">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                        <img class="bank-image" src="http://paydayloansnsd.com/wp-content/uploads/2014/10/Multi-Channel-Banking-An-Overview.png" alt="">
+                                </div>
+                                <div class="col-sm-6">
+                                    <p><strong> HBL Bank</strong></p>
+                                </div>
+                            </div>
+                          </a>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                                <a href="#" data-toggle="modal" data-target="#manualAccountModal" class="banklink">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                            <img class="bank-image" src="http://paydayloansnsd.com/wp-content/uploads/2014/10/Multi-Channel-Banking-An-Overview.png" alt="">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p><strong> Allied Bank</strong></p>
+                                    </div>
+                                </div>
+                              </a>
+                        </div>
+
+
+
+                        <div class="col-sm-6">
+                                <a href="#" data-toggle="modal" data-target="#manualAccountModal" class="banklink">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                            <img class="bank-image" src="http://paydayloansnsd.com/wp-content/uploads/2014/10/Multi-Channel-Banking-An-Overview.png" alt="">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p><strong> Habib Bank</strong></p>
+                                    </div>
+                                </div>
+                              </a>
+                            </div>
                 </div>
 
                 
@@ -359,8 +416,8 @@
 
             </div>
             <div  class="modal-footer">
-                <button  class="btn btn-primary" (click)="addTag(tagParent.value , tagName.value)" data-dismiss="modal" type="button">
-                    Add Tag
+                <button  class="btn btn-primary"  data-toggle="modal" data-target="#manualAccountModal" type="button">
+                    Add Manual Account
                 </button>
                 <button  class="btn btn-secondary" data-dismiss="modal" type="button">
                     Close
@@ -369,3 +426,106 @@
         </div>
     </div>
 </div>
+
+
+
+
+<div  aria-labelledby="brandLabel" class="modal " id="manualAccountModal" role="dialog" tabindex="-1" >
+        <div  class="modal-dialog modal-md" role="document">
+            <div  class="modal-content">
+                <div  class="modal-header">
+                    <h5  class="modal-title" id="b4randLabel">
+                        Add Account Manual
+                    </h5>
+                    <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span  aria-hidden="true">
+                                ×
+                            </span>
+                    </button>
+                </div>
+                <div  class="modal-body">
+                   
+                        <div class="form-group">
+                                <label for="example-datetime-local-input" >Account Name:</label>                      
+                                <input #accountName class="form-control m-input" type="text" >   
+                        </div>
+
+                        <div class="row">
+                           <div class="col-sm-6">
+                                <div class="form-group">
+                                        <label for="">Type:</label>
+                                        <select class="form-control m-input" #typeAccount>
+                                            <option *ngFor="let account of fiatCurrencyAccounts" value="{{account.id}}">{{account.name}}</option>
+                                        </select>
+                                    </div>
+                           </div> 
+
+                           <div class="col-sm-6">
+                                <div class="form-group">
+                                        <label for="">Currency:</label>
+                                        <select class="form-control m-input" id="">
+                                            <option value="Australia">Australia , AUD</option>
+                                            <option value="Australia">India , INR</option>
+                                            <option value="Australia">Brazil , BRL</option>
+                                            <option value="Australia">Canada , CAD</option>
+                                        </select>
+                                    </div>
+                           </div> 
+                        </div>
+                        
+    
+                </div>
+                <div  class="modal-footer">
+                    <button  class="btn btn-primary" data-dismiss="modal" (click)="onAddManualAccount(accountName.value , typeAccount.value)"   type="button">
+                        Add Manual Account
+                    </button>
+                    <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                        Sync With The Bank
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div  aria-labelledby="brandLabel" class="modal " id="manualAccountModal" role="dialog" tabindex="-1" >
+            <div  class="modal-dialog modal-md" role="document">
+                <div  class="modal-content">
+                    <div  class="modal-header">
+                        <h5  class="modal-title" id="b4randLabel">
+                            Add Account Manual
+                        </h5>
+                        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span  aria-hidden="true">
+                                    ×
+                                </span>
+                        </button>
+                    </div>
+                    <div  class="modal-body">
+                       
+                            <div class="form-group">
+                                    <label for="example-datetime-local-input" >User ID:</label>                      
+                                    <input class="form-control m-input" type="text" >   
+                            </div>
+
+
+                            <div class="form-group">
+                                    <label for="example-datetime-local-input" >Password:</label>                      
+                                    <input class="form-control m-input" type="password" >   
+                            </div>
+                            
+        
+                    </div>
+                    <div  class="modal-footer">
+                        <button  class="btn btn-primary" data-dismiss="modal"  type="button">
+                            Sync
+                        </button>
+                        <button  class="btn btn-secondary" data-dismiss="modal" type="button">
+                            Select Different Bank
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>

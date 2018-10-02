@@ -30,6 +30,22 @@ declare let mLayout: any;
   {
     width:20%;
   }
+  .bank-image
+  {
+    width:100px;
+  }
+  .banklink .row
+  {
+    border: 1px solid #CACACA;
+  }
+  .banklink p
+  {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   `]
 })
 
@@ -98,5 +114,11 @@ export class AsideNavFinancialComponent implements OnInit, AfterViewInit {
   changeCurrencyType(event)
   {
     this.currencyType = event.target.value;
+  }
+
+  onAddManualAccount(accountName , parentID)
+  {
+    var parent = this.fiatCurrencyAccounts.find(x=>x.id==parentID)
+    parent.children.push(accountName);
   }
 }
