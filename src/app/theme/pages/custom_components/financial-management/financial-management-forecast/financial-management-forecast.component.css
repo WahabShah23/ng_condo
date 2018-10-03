@@ -2,3 +2,32 @@
 {
     margin-bottom: 50px;
 }
+
+
+/* Table Styles */
+
+.m-widget11 .table tbody > tr > td {
+	border: 0;
+	padding-left: 0;
+	padding-right: 0.5rem;
+	padding-top: 10px;
+	vertical-align: bottom;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.c-margin-top--10 {
+	margin-top: -10px;
+}
+
+.detail_table_row {
+	background-color: #eeeeee;
+}
+
+.detail_table_row > td > div {
+	padding: 5px 15px;
+}
+
+.detail_table_row > td > div a {
+	color: #fff;
+}

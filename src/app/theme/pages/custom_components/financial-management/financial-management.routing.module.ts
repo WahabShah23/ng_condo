@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FinancialManagementComponent } from "./financial-management.component";
 import { FinancialManagementDashboardComponent } from "./financial-management-dashboard/financial-management-dashboard.component";
+import { FinancialManagementReportsComponent } from './financial-management-reports/financial-management-reports.component';
 
 const routes: Routes = [
     {
@@ -25,6 +26,10 @@ const routes: Routes = [
             {
                 'path': 'Budgets',
                 'component': FinancialManagementBudgetComponent
+            },
+            {
+                'path': 'Reports',
+                'component': FinancialManagementReportsComponent
             },
             {
                 'path': 'Forecasts',

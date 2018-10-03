@@ -1,3 +1,4 @@
+
 /* Table Styles */
 
 .m-widget11 .table tbody > tr > td {
@@ -24,4 +25,10 @@
 
 .detail_table_row > td > div a {
 	color: #fff;
+}
+
+
+.m-content
+{
+    margin-bottom:30px;
 }

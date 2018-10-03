@@ -1,0 +1,704 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <!--<h3 class="m-form__heading-title">-->
+                <!--Amenities-->
+                <!--</h3>-->
+                <h3 class="m-subheader__title">
+                     Reports
+                     <small  class="text-muted custom_pointer stats-icons"><i  class="fa fa-search"></i> </small>
+                </h3>
+            </div>
+            <span class="m-subheader__daterange" id="m_financial_daterangepicker" style="margin-right:8px;">
+                    <span class="m-subheader__daterange-label">
+                        <span class="m-subheader__daterange-title"></span>
+                        <span class="m-subheader__daterange-date m--font-brand"></span>
+                    </span>
+                    <a href="#" class="btn btn-sm btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
+                        <i class="la la-angle-down"></i>
+                    </a>
+            </span>
+
+            <div class="form-group1 m-form__group">
+                    <select class="custom-select form-control">
+                        <option selected="No Account">No Account</option>
+                        <option value="All Accounts">All Accounts</option>
+                        <option value="CWIC Account" selected>CWIC Account</option>
+                        <option value="Meezan Checking">Meezan Checking</option>
+                        <option value="Standard Chartered">Standard Chartered</option>
+                    </select>
+                </div>
+           
+        </div>
+</div>
+<div class="m-subheader breadcrumb-header">
+    <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li  class="m-nav__item m-nav__item--home">
+            <a  class="m-nav__link m-nav__link--icon"  routerlink="/dashboard">
+                <i  class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+       
+       
+        <li  class="m-nav__item">
+            <a  routerLink="/financialManagement" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                <span  class="m-nav__link-text">
+                    Financial Management
+                </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+                -
+        </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/financialManagement/Reports" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Reports     
+                    </span>
+                </a>
+            </li>
+
+
+         
+    </ul>
+</div>
+<hr  class="customhr">
+
+<div class="m-content">
+        <div  class="m-portlet headFinancialChartsPortlet">
+                <div  class="m-portlet__body  m-portlet__body--no-padding">
+                    <div  class="row m-row--col-separator-xl">
+                        <div  class="col-sm-12 col-lg-4">
+                                <div class="m-widget15__chart" style="height:150px;">
+                                        <canvas  id="m_chart_sales_stats"></canvas>
+                                </div>
+                                <h5 class="text-center">Network <i class="fa fa-chevron-circle-right"></i></h5>
+                            
+                        </div>
+
+                        <div  class="col-sm-12 col-lg-4">
+                                <div class="m-widget4__chart" style="height:150px;">
+                                        <canvas id="m_chart_trends_stats"></canvas>
+                                    </div>
+                                    <h5 class="text-center">Network <i class="fa fa-chevron-circle-right"></i></h5>
+                            
+                        </div>
+
+                        <div  class="col-sm-12 col-lg-4">
+                                <div class="m-widget14__chart" style="height:150px;">
+                                        <canvas  id="m_chart_daily_sales"></canvas>
+                                    </div>
+                                    <h5 class="text-center">Network <i class="fa fa-chevron-circle-right"></i></h5>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="m-portlet ">
+                    <div class="m-portlet__body  m-portlet__body--no-padding">
+                        <div class="row m-row--no-padding m-row--col-separator-xl">
+                            <div class="col-md-12 col-lg-6 col-xl-3">
+            
+                                <!--begin::Total Profit-->
+                                <div class="m-widget24">
+                                    <div class="m-widget24__item">
+                                        <h4 class="m-widget24__title m--font-brand">
+                                            $7800
+                                        </h4>
+                                        <br>
+                                        <span class="m-widget24__desc">
+                                            Income
+                                        </span>
+                                        <span class="m-widget24__stats ">
+                                            <i class="fa fa-pie-chart"></i>
+                                        </span>
+                                        <div class="m--space-10"></div>
+                                        <div class="progress m-progress--sm">
+                                            <div class="progress-bar m--bg-brand" role="progressbar" style="width: 78%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="m-widget24__change">
+                                            Progress
+                                        </span>
+                                        <span class="m-widget24__number">
+                                            78%
+                                        </span>
+                                    </div>
+                                </div>
+            
+                                <!--end::Total Profit-->
+                            </div>
+                            <div class="col-md-12 col-lg-6 col-xl-3">
+            
+                                <!--begin::New Feedbacks-->
+                                <div class="m-widget24">
+                                    <div class="m-widget24__item">
+                                        <h4 class="m-widget24__title m--font-info">
+                                            $2349 
+                                        </h4>
+                                        <br>
+                                        <span class="m-widget24__desc">
+                                            Expense
+                                        </span>
+                                        <span class="m-widget24__stats">
+                                            <i class="fa fa-money"></i>
+                                        </span>
+                                        <div class="m--space-10"></div>
+                                        <div class="progress m-progress--sm">
+                                            <div class="progress-bar m--bg-info" role="progressbar" style="width: 84%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="m-widget24__change">
+                                            Change
+                                        </span>
+                                        <span class="m-widget24__number">
+                                            84%
+                                        </span>
+                                    </div>
+                                </div>
+            
+                                <!--end::New Feedbacks-->
+                            </div>
+                            <div class="col-md-12 col-lg-6 col-xl-3">
+            
+                                <!--begin::New Orders-->
+                                <div class="m-widget24">
+                                    <div class="m-widget24__item">
+                                        <h4 class="m-widget24__title m--font-danger">
+                                            $5767
+                                        </h4>
+                                        <br>
+                                        <span class="m-widget24__desc">
+                                            Saved
+                                        </span>
+                                        <span class="m-widget24__stats">
+                                            <i class="fa fa-pie-chart"></i>
+                                        </span>
+                                        <div class="m--space-10"></div>
+                                        <div class="progress m-progress--sm">
+                                            <div class="progress-bar m--bg-danger" role="progressbar" style="width: 69%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="m-widget24__change">
+                                            Grow
+                                        </span>
+                                        <span class="m-widget24__number">
+                                            69%
+                                        </span>
+                                    </div>
+                                </div>
+            
+                                <!--end::New Orders-->
+                            </div>
+                            <div class="col-md-12 col-lg-6 col-xl-3">
+            
+                                <!--begin::New Users-->
+                                <div class="m-widget24">
+                                    <div class="m-widget24__item">
+                                        <h4 class="m-widget24__title  m--font-success" >
+                                            $2076
+                                        </h4>
+                                        <br>
+                                        <span class="m-widget24__desc">
+                                            Expense this Month
+                                        </span>
+                                        <span class="m-widget24__stats">
+                                            <i class="fa fa-money"></i>
+                                        </span>
+                                        <div class="m--space-10"></div>
+                                        <div class="progress m-progress--sm">
+                                            <div class="progress-bar m--bg-success" role="progressbar" style="width: 90%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="m-widget24__change">
+                                            Change
+                                        </span>
+                                        <span class="m-widget24__number">
+                                            90%
+                                        </span>
+                                    </div>
+                                </div>
+            
+                                <!--end::New Users-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="m-portlet m-portlet--full-height">
+                            <div  class="m-portlet__head">
+                                    <div  class="m-portlet__head-caption">
+                                        <div  class="m-portlet__head-title">
+                                            <h3  class="m-portlet__head-text">
+                                                Charts
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div  class="m-portlet__head-tools">
+                                            <ul  class="nav nav-pills nav-pills--brand m-nav-pills--align-right m-nav-pills--btn-pill m-nav-pills--btn-sm" role="tablist">
+                                                <li  class="nav-item m-tabs__item">
+                                                    <a  class="nav-link m-tabs__link active" data-toggle="tab" href="#netWorthTab" role="tab" >
+                                                        Net Worth
+                                                    </a>
+                                                </li>
+                                                <li  class="nav-item m-tabs__item">
+                                                    <a  class="nav-link m-tabs__link" data-toggle="tab" href="#incomeTab" role="tab">
+                                                        Income
+                                                    </a>
+                                                </li>
+                                                <li  class="nav-item m-tabs__item">
+                                                    <a  class="nav-link m-tabs__link" data-toggle="tab" href="#expenseTab" role="tab" >
+                                                        Expense
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                            </div>
+
+                            <div class="m-portlet__body">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="netWorthTab" >
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="m-portlet">
+                                                        <div class="m-portlet__head">
+                                                                <div class="m-portlet__head-caption">
+                                                                    <div class="m-portlet__head-title">
+                                                                        <h3 class="m-portlet__head-text">
+                                                                           <i class="fa fa-bar-chart"></i> Net Worth <small>Pie Chart</small>
+                                                                        </h3>
+                                                                    </div>
+                                                                </div>
+                                                         </div>
+                                                         <div class="m-portlet__body">
+                                                                <div id="chartDivNetWorth" style="height:720px;"></div>
+                                                         </div>
+                                                </div>
+                                               
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                            <div class="m-portlet">
+                                                                    <div class="m-portlet__head">
+                                                                            <div class="m-portlet__head-caption">
+                                                                                <div class="m-portlet__head-title">
+                                                                                    <h3 class="m-portlet__head-text">
+                                                                                       <i class="fa fa-bar-chart"></i> Timeline  <small>Sept 2018 - Nov 2018</small>
+                                                                                    </h3>
+                                                                                </div>
+                                                                            </div>
+                                                                     </div>
+                                                                     <div class="m-portlet__body">
+                                                                            <div id="m_amcharts_2" style="height:278px;"></div>
+                                                                     </div>
+                                                            </div>
+
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                            <div class="m-portlet">
+                                                                    <div class="m-portlet__head">
+                                                                            <div class="m-portlet__head-caption">
+                                                                                <div class="m-portlet__head-title">
+                                                                                    <h3 class="m-portlet__head-text">
+                                                                                       <i class="fa fa-bar-chart"></i> Income &amp; Expense  <small>bar and line chart mix</small>
+                                                                                    </h3>
+                                                                                </div>
+                                                                            </div>
+                                                                     </div>
+                                                                     <div class="m-portlet__body">
+                                                                            <div id="barAndLineChartMixDiv" style="height:278px;"></div>
+                                                                     </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="tab-pane" id="incomeTab" >
+                                            <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="m-portlet">
+                                                                <div class="m-portlet__head">
+                                                                        <div class="m-portlet__head-caption">
+                                                                            <div class="m-portlet__head-title">
+                                                                                <h3 class="m-portlet__head-text">
+                                                                                   <i class="fa fa-bar-chart"></i> Income <small>Pie Chart</small>
+                                                                                </h3>
+                                                                            </div>
+                                                                        </div>
+                                                                 </div>
+                                                                 <div class="m-portlet__body">
+                                                                        <div id="chartDivNetWorth2" style="height:720px;"></div>
+                                                                 </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                    <div class="m-portlet">
+                                                                            <div class="m-portlet__head">
+                                                                                    <div class="m-portlet__head-caption">
+                                                                                        <div class="m-portlet__head-title">
+                                                                                            <h3 class="m-portlet__head-text">
+                                                                                               <i class="fa fa-bar-chart"></i> Timeline  <small>Sept 2018 - Nov 2018</small>
+                                                                                            </h3>
+                                                                                        </div>
+                                                                                    </div>
+                                                                             </div>
+                                                                             <div class="m-portlet__body">
+                                                                                    <div id="amchart2_Income" style="height:278px;"></div>
+                                                                             </div>
+                                                                    </div>
+        
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                    <div class="m-portlet">
+                                                                            <div class="m-portlet__head">
+                                                                                    <div class="m-portlet__head-caption">
+                                                                                        <div class="m-portlet__head-title">
+                                                                                            <h3 class="m-portlet__head-text">
+                                                                                               <i class="fa fa-bar-chart"></i> Income &amp; Expense  <small>bar and line chart mix</small>
+                                                                                            </h3>
+                                                                                        </div>
+                                                                                    </div>
+                                                                             </div>
+                                                                             <div class="m-portlet__body">
+                                                                                    <div id="barAndLineChartMixDiv2" style="height:278px;"></div>
+                                                                             </div>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                    </div>
+
+                                    <div class="tab-pane" id="expenseTab" >
+                                            <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="m-portlet">
+                                                                <div class="m-portlet__head">
+                                                                        <div class="m-portlet__head-caption">
+                                                                            <div class="m-portlet__head-title">
+                                                                                <h3 class="m-portlet__head-text">
+                                                                                   <i class="fa fa-bar-chart"></i> Expense <small>Pie Chart</small>
+                                                                                </h3>
+                                                                            </div>
+                                                                        </div>
+                                                                 </div>
+                                                                 <div class="m-portlet__body">
+                                                                        <div id="chartDivNetWorth3" style="height:720px;"></div>
+                                                                 </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                    <div class="m-portlet">
+                                                                            <div class="m-portlet__head">
+                                                                                    <div class="m-portlet__head-caption">
+                                                                                        <div class="m-portlet__head-title">
+                                                                                            <h3 class="m-portlet__head-text">
+                                                                                               <i class="fa fa-bar-chart"></i> Timeline  <small>Sept 2018 - Nov 2018</small>
+                                                                                            </h3>
+                                                                                        </div>
+                                                                                    </div>
+                                                                             </div>
+                                                                             <div class="m-portlet__body">
+                                                                                    <div id="amchart3_Income" style="height:278px;"></div>
+                                                                             </div>
+                                                                    </div>
+        
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                    <div class="m-portlet">
+                                                                            <div class="m-portlet__head">
+                                                                                    <div class="m-portlet__head-caption">
+                                                                                        <div class="m-portlet__head-title">
+                                                                                            <h3 class="m-portlet__head-text">
+                                                                                               <i class="fa fa-bar-chart"></i> Income &amp; Expense  <small>bar and line chart mix</small>
+                                                                                            </h3>
+                                                                                        </div>
+                                                                                    </div>
+                                                                             </div>
+                                                                             <div class="m-portlet__body">
+                                                                                    <div id="barAndLineChartMixDiv3" style="height:278px;"></div>
+                                                                             </div>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                    </div> 
+                </div>
+
+            </div>
+
+
+
+
+            <div class="row">
+                    <div class="col-xl-12">
+            
+                        <!--begin:: Widgets/Sale Reports-->
+                        <div class="m-portlet m-portlet--full-height ">
+                            <div class="m-portlet__head">
+                                <div class="m-portlet__head-caption">
+                                    <div class="m-portlet__head-title">
+                                        <h3 class="m-portlet__head-text">
+                                            Transactions
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="m-portlet__head-tools">
+                         
+                                    <button class="btn btn-link" data-toggle="modal" data-target="#add_entry_modal"> <i class="fa fa-plus"></i> Add Transaction </button>
+                                </div>
+                            </div>
+                            <div class="m-portlet__body">
+    
+                                  <!--begin::Widget 11-->
+                                  <div class="m-widget11">
+                                        <div class="table-responsive">
+        
+                                            <!--begin::Table-->
+                                            <table class="table">
+        
+                                                <!--begin::Thead-->
+                                                <thead>
+                                                <tr>
+                                                    <td class="m-widget11__label">#</td>
+                                                    <td class="m-widget11__app">Date</td>
+                                                    <td class="m-widget11__sales">Description</td>
+                                                    <td class="m-widget11__change">Amount</td>
+                                                    <td class="m-widget11__price">Tags</td>
+                                                    <td class="m-widget11__total">Account</td>
+                                                    <td class="m-widget11__total m--align-right">Details</td>
+                                                </tr>
+                                                </thead>
+        
+                                                <!--end::Thead-->
+        
+                                                <!--begin::Tbody-->
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                            <input type="checkbox">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <span class="m-widget11__title">January</span>
+                                                        <span class="m-widget11__sub">12th</span>
+                                                    </td>
+                                                    <td>Lorem Ipsum</td>
+                                                    <td class="m--font-brand">$63</td>
+                                                    <td>
+                                                        <span class="m-badge m-badge--primary m-badge--wide">Rent</span>
+                                                        <span class="m-badge m-badge--warning m-badge--wide">Home</span>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control c-margin-top--10">
+                                                            <optgroup label="CIWC">
+                                                                <option value="Savings Account">Savings Account</option>
+                                                                <option value="Checking Account">Checking Account</option>
+                                                                <option value="Old Age Account">Old Age Account</option>
+                                                            </optgroup>
+                                                            <optgroup label="Meezan">
+                                                                <option value="Current">Wahab Current Account</option>
+                                                                <option value="Savings">Niaz Savings Account</option>
+                                                            </optgroup>
+                                                            <optgroup label="Digital Wallet">
+                                                                <option value="Bitcoin" selected>Bitcoin Wallet</option>
+                                                                <option value="Ripple">Ripple</option>
+                                                                <option value="Ethereum">Ethereum</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </td>
+                                                    <td class="m--align-right m--font-brand"><i class="fa fa-chevron-down"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                            <input type="checkbox">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <span class="m-widget11__title">September</span>
+                                                        <span class="m-widget11__sub">26th</span>
+                                                    </td>
+                                                    <td>Western Exterminator</td>
+                                                    <td class="m--font-brand">$1,000.00</td>
+                                                    <td>
+                                                        <span class="m-badge m-badge--primary m-badge--wide">Rent</span>
+                                                        <span class="m-badge m-badge--warning m-badge--wide">Home</span>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control c-margin-top--10">
+                                                            <optgroup label="CIWC">
+                                                                <option value="Savings Account">Savings Account</option>
+                                                                <option value="Checking Account">Checking Account</option>
+                                                                <option value="Old Age Account">Old Age Account</option>
+                                                            </optgroup>
+                                                            <optgroup label="Meezan">
+                                                                <option value="Current">Wahab Current Account</option>
+                                                                <option value="Savings">Niaz Savings Account</option>
+                                                            </optgroup>
+                                                            <optgroup label="Digital Wallet">
+                                                                <option value="Bitcoin">Bitcoin Wallet</option>
+                                                                <option value="Ripple" selected>Ripple</option>
+                                                                <option value="Ethereum">Ethereum</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </td>
+                                                    <td class="m--align-right m--font-brand"><i class="fa fa-chevron-down"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                            <input type="checkbox">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <span class="m-widget11__title">April</span>
+                                                        <span class="m-widget11__sub">28th</span>
+                                                    </td>
+                                                    <td class="description" #description>Microsoft</td>
+                                                    <td class="m--font-brand">$266.00</td>
+                                                    <td>
+                                                        <span class="m-badge m-badge--accent m-badge--wide">Shopping</span>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control c-margin-top--10">
+                                                            <optgroup label="CIWC">
+                                                                <option value="Savings Account" selected>Savings Account</option>
+                                                                <option value="Checking Account">Checking Account</option>
+                                                                <option value="Old Age Account">Old Age Account</option>
+                                                            </optgroup>
+                                                            <optgroup label="Meezan">
+                                                                <option value="Current">Wahab Current Account</option>
+                                                                <option value="Savings">Niaz Savings Account</option>
+                                                            </optgroup>
+                                                            <optgroup label="Digital Wallet">
+                                                                <option value="Bitcoin">Bitcoin Wallet</option>
+                                                                <option value="Ripple">Ripple Wallet</option>
+                                                                <option value="Ethereum">Ethereum Wallet</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </td>
+                                                    <td class="m--align-right m--font-brand detail-chevron" (click)="hideRow = !hideRow">
+                                                        <i class="fa" [ngClass]="{'fa-chevron-down' : !hideRow , 'fa-chevron-up' : hideRow}"></i>
+                                                </tr>
+                                                <tr class="detail_table_row" *ngIf="hideRow">
+                                                    <td colspan="7">
+                                                        <div>
+                                                            <a href="javascript:;" class="btn btn-link btn-accent btn-sm fileDispute_btn">
+                                                                <i class="fa fa-gavel"> File Dispute</i>
+                                                            </a>
+                                                            <a class="btn btn-link btn-sm btn-accent edit_btn" data-toggle="modal" (click)="edit_transaction()" data-target="#edit_entry_modal">
+                                                                <i class="fa fa-edit "> Edit</i>
+                                                            </a>
+                                                            <a href="javascript:;" class="btn btn-link btn-sm btn-accent copy_btn">
+                                                                <i class="fa fa-file-o"> Copy</i>
+                                                            </a>
+                                                            <a data-toggle="modal" class="btn btn-link btn-sm btn-accent split_btn" data-target="#split_entry_modal">
+                                                                <i class="fa fa-list"> Split</i>
+                                                            </a>
+                                                            <a href="javascript:;" class="btn btn-link btn-accent btn-sm attach_btn">
+                                                                <i class="fa fa-paperclip"> Attach </i>
+                                                            </a>
+                                                            <a data-toggle="modal" class="btn btn-link btn-accent btn-sm reminder_btn" data-target="#reminder_entry_modal">
+                                                                <i class="fa fa-calendar">  Add Reminder</i>
+                                                            </a>
+                                                            <a data-toggle="modal" class="btn btn-link btn-accent btn-sm transfer_btn" data-target="#transfer_entry_modal">
+                                                                <i class="fa fa-exchange "> Add Transfer Rule </i>
+                                                            </a>
+                                                            <a href="#delete_entry_modal" data-toggle="modal" class="btn btn-link btn-danger btn-sm delete_btn">
+                                                                <i class="fa fa-trash ">  Delete </i>
+                                                            </a>
+        
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                                            <input type="checkbox">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <span class="m-widget11__title">December</span>
+                                                        <span class="m-widget11__sub">12th</span>
+                                                    </td>
+                                                    <td>Google Inc</td>
+                                                    <td class="m--font-brand">$100.00</td>
+                                                    <td>
+                                                        <span class="m-badge m-badge--info m-badge--wide">Service</span>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control c-margin-top--10">
+                                                            <optgroup label="CIWC">
+                                                                <option value="Savings Account">Savings Account</option>
+                                                                <option value="Checking Account">Checking Account</option>
+                                                                <option value="Old Age Account">Old Age Account</option>
+                                                            </optgroup>
+                                                            <optgroup label="Meezan">
+                                                                <option value="Current">Wahab Current Account</option>
+                                                                <option value="Savings">Niaz Savings Account</option>
+                                                            </optgroup>
+                                                            <optgroup label="Digital Wallet">
+                                                                <option value="Bitcoin" selected>Bitcoin Wallet</option>
+                                                                <option value="Ripple">Ripple</option>
+                                                                <option value="Ethereum">Ethereum</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </td>
+                                                    <td class="m--align-right m--font-brand"><i class="fa fa-chevron-down"></i></td>
+                                                </tr>
+                                                </tbody>
+        
+                                                <!--end::Tbody-->
+                                            </table>
+        
+                                            <!--end::Table-->
+                                        </div>
+                                     
+                                    </div>
+        
+                                    <!--end::Widget 11-->
+            
+                      
+                            </div>
+                        </div>
+            
+                        <!--end:: Widgets/Sale Reports-->
+                    </div>
+                </div>
+                <!-- ---------------------------End Section--------------------------- -->
+
+
+
+
+            
+
+</div>

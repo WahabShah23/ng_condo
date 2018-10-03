@@ -1284,6 +1284,514 @@ var basicCalendar_reminder = function () {
         }
 
 
+        var netWorthPieChart = function(){
+            var chart = AmCharts.makeChart( "chartDivNetWorth", {
+                "type": "pie",
+                "theme": "light",
+                "legend":{
+                    "position":"bottom",
+                     "autoMargins":false
+               },
+                "dataProvider": [{
+                  "country": "Cash",
+                  "visits": 1122
+                }, {
+                  "country": "Savings",
+                  "visits": 414
+                }, {
+                  "country": "Checkings",
+                  "visits": 384
+                }],
+                "valueField": "visits",
+                "titleField": "country",
+                "startEffect": "elastic",
+                "startDuration": 2,
+                "labelRadius": 15,
+                "innerRadius": "50%",
+                "depth3D": 10,
+                "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+                "angle": 15,
+                "export": {
+                  "enabled": true
+                }
+              } );
+        }
+
+
+        var barAndLineChartMix = function(){
+            var chart = AmCharts.makeChart("barAndLineChartMixDiv", {
+                "type": "serial",
+                "theme": "light",
+                "handDrawn":true,
+                "handDrawScatter":3,
+                "legend": {
+                    "useGraphSettings": true,
+                    "markerSize":12,
+                    "valueWidth":0,
+                    "verticalGap":0
+                },
+                "dataProvider": [{
+                    "year": 2005,
+                    "income": 23.5,
+                    "expenses": 18.1
+                }, {
+                    "year": 2006,
+                    "income": 26.2,
+                    "expenses": 22.8
+                }, {
+                    "year": 2007,
+                    "income": 30.1,
+                    "expenses": 23.9
+                }, {
+                    "year": 2008,
+                    "income": 29.5,
+                    "expenses": 25.1
+                }, {
+                    "year": 2009,
+                    "income": 24.6,
+                    "expenses": 25
+                }],
+                "valueAxes": [{
+                    "minorGridAlpha": 0.08,
+                    "minorGridEnabled": true,
+                    "position": "top",
+                    "axisAlpha":0
+                }],
+                "startDuration": 1,
+                "graphs": [{
+                    "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>",
+                    "title": "Income",
+                    "type": "column",
+                    "fillAlphas": 0.8,
+            
+                    "valueField": "income"
+                }, {
+                    "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletColor": "#FFFFFF",
+                    "useLineColorForBulletBorder": true,
+                    "fillAlphas": 0,
+                    "lineThickness": 2,
+                    "lineAlpha": 1,
+                    "bulletSize": 7,
+                    "title": "Expenses",
+                    "valueField": "expenses"
+                }],
+                "rotate": true,
+                "categoryField": "year",
+                "categoryAxis": {
+                    "gridPosition": "start"
+                },
+                "export": {
+                    "enabled": true
+                 }
+            
+            });
+        }
+
+
+
+        
+var amchart2_Income = function() {
+    var chart = AmCharts.makeChart("amchart2_Income", {
+        "type": "serial",
+        "addClassNames": true,
+        "theme": "light",
+        "autoMargins": false,
+        "marginLeft": 30,
+        "marginRight": 8,
+        "marginTop": 10,
+        "marginBottom": 26,
+        "balloon": {
+            "adjustBorderColor": false,
+            "horizontalPadding": 10,
+            "verticalPadding": 8,
+            "color": "#ffffff"
+        },
+
+        "dataProvider": [{
+            "year": 2009,
+            "income": 23.5,
+            "expenses": 21.1
+        }, {
+            "year": 2010,
+            "income": 26.2,
+            "expenses": 30.5
+        }, {
+            "year": 2011,
+            "income": 30.1,
+            "expenses": 34.9
+        }, {
+            "year": 2012,
+            "income": 29.5,
+            "expenses": 31.1
+        }, {
+            "year": 2013,
+            "income": 30.6,
+            "expenses": 28.2,
+            "dashLengthLine": 5
+        }, {
+            "year": 2014,
+            "income": 34.1,
+            "expenses": 32.9,
+            "dashLengthColumn": 5,
+            "alpha": 0.2,
+            "additional": "(projection)"
+        }],
+        "valueAxes": [{
+            "axisAlpha": 0,
+            "position": "left"
+        }],
+        "startDuration": 1,
+        "graphs": [{
+            "alphaField": "alpha",
+            "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
+            "fillAlphas": 1,
+            "title": "Income",
+            "type": "column",
+            "valueField": "income",
+            "dashLengthField": "dashLengthColumn"
+        }, {
+            "id": "graph2",
+            "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
+            "bullet": "round",
+            "lineThickness": 3,
+            "bulletSize": 7,
+            "bulletBorderAlpha": 1,
+            "bulletColor": "#FFFFFF",
+            "useLineColorForBulletBorder": true,
+            "bulletBorderThickness": 3,
+            "fillAlphas": 0,
+            "lineAlpha": 1,
+            "title": "Expenses",
+            "valueField": "expenses",
+            "dashLengthField": "dashLengthLine"
+        }],
+        "categoryField": "year",
+        "categoryAxis": {
+            "gridPosition": "start",
+            "axisAlpha": 0,
+            "tickLength": 0
+        },
+        "export": {
+            "enabled": true
+        }
+    });
+}
+
+
+
+        var netWorthPieChart2 = function(){
+            var chart = AmCharts.makeChart( "chartDivNetWorth2", {
+                "type": "pie",
+                "theme": "light",
+                "legend":{
+                    "position":"bottom",
+                     "autoMargins":false
+               },
+                "dataProvider": [{
+                  "country": "Income",
+                  "visits": 1122
+                }],
+                "valueField": "visits",
+                "titleField": "country",
+                "startEffect": "elastic",
+                "startDuration": 2,
+                "labelRadius": 15,
+                "innerRadius": "50%",
+                "depth3D": 10,
+                "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+                "angle": 15,
+                "export": {
+                  "enabled": true
+                }
+              } );
+        }
+
+
+        var barAndLineChartMix2 = function(){
+            var chart = AmCharts.makeChart("barAndLineChartMixDiv2", {
+                "type": "serial",
+                "theme": "light",
+                "handDrawn":true,
+                "handDrawScatter":3,
+                "legend": {
+                    "useGraphSettings": true,
+                    "markerSize":12,
+                    "valueWidth":0,
+                    "verticalGap":0
+                },
+                "dataProvider": [{
+                    "year": 2005,
+                    "income": 23.5,
+                    "expenses": 18.1
+                }, {
+                    "year": 2006,
+                    "income": 26.2,
+                    "expenses": 22.8
+                }, {
+                    "year": 2007,
+                    "income": 30.1,
+                    "expenses": 23.9
+                }, {
+                    "year": 2008,
+                    "income": 29.5,
+                    "expenses": 25.1
+                }, {
+                    "year": 2009,
+                    "income": 24.6,
+                    "expenses": 25
+                }],
+                "valueAxes": [{
+                    "minorGridAlpha": 0.08,
+                    "minorGridEnabled": true,
+                    "position": "top",
+                    "axisAlpha":0
+                }],
+                "startDuration": 1,
+                "graphs": [{
+                    "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>",
+                    "title": "Income",
+                    "type": "column",
+                    "fillAlphas": 0.8,
+            
+                    "valueField": "income"
+                }, {
+                    "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletColor": "#FFFFFF",
+                    "useLineColorForBulletBorder": true,
+                    "fillAlphas": 0,
+                    "lineThickness": 2,
+                    "lineAlpha": 1,
+                    "bulletSize": 7,
+                    "title": "Expenses",
+                    "valueField": "expenses"
+                }],
+                "rotate": true,
+                "categoryField": "year",
+                "categoryAxis": {
+                    "gridPosition": "start"
+                },
+                "export": {
+                    "enabled": true
+                 }
+            
+            });
+        }
+
+
+
+    //Expense
+
+
+    
+        
+var amchart3_Income = function() {
+    var chart = AmCharts.makeChart("amchart3_Income", {
+        "type": "serial",
+        "addClassNames": true,
+        "theme": "light",
+        "autoMargins": false,
+        "marginLeft": 30,
+        "marginRight": 8,
+        "marginTop": 10,
+        "marginBottom": 26,
+        "balloon": {
+            "adjustBorderColor": false,
+            "horizontalPadding": 10,
+            "verticalPadding": 8,
+            "color": "#ffffff"
+        },
+
+        "dataProvider": [{
+            "year": 2009,
+            "income": 23.5,
+            "expenses": 21.1
+        }, {
+            "year": 2010,
+            "income": 26.2,
+            "expenses": 30.5
+        }, {
+            "year": 2011,
+            "income": 30.1,
+            "expenses": 34.9
+        }, {
+            "year": 2012,
+            "income": 29.5,
+            "expenses": 31.1
+        }, {
+            "year": 2013,
+            "income": 30.6,
+            "expenses": 28.2,
+            "dashLengthLine": 5
+        }, {
+            "year": 2014,
+            "income": 34.1,
+            "expenses": 32.9,
+            "dashLengthColumn": 5,
+            "alpha": 0.2,
+            "additional": "(projection)"
+        }],
+        "valueAxes": [{
+            "axisAlpha": 0,
+            "position": "left"
+        }],
+        "startDuration": 1,
+        "graphs": [{
+            "alphaField": "alpha",
+            "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
+            "fillAlphas": 1,
+            "title": "Income",
+            "type": "column",
+            "valueField": "income",
+            "dashLengthField": "dashLengthColumn"
+        }, {
+            "id": "graph2",
+            "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
+            "bullet": "round",
+            "lineThickness": 3,
+            "bulletSize": 7,
+            "bulletBorderAlpha": 1,
+            "bulletColor": "#FFFFFF",
+            "useLineColorForBulletBorder": true,
+            "bulletBorderThickness": 3,
+            "fillAlphas": 0,
+            "lineAlpha": 1,
+            "title": "Expenses",
+            "valueField": "expenses",
+            "dashLengthField": "dashLengthLine"
+        }],
+        "categoryField": "year",
+        "categoryAxis": {
+            "gridPosition": "start",
+            "axisAlpha": 0,
+            "tickLength": 0
+        },
+        "export": {
+            "enabled": true
+        }
+    });
+}
+
+
+
+        var netWorthPieChart3 = function(){
+            var chart = AmCharts.makeChart( "chartDivNetWorth3", {
+                "type": "pie",
+                "theme": "light",
+                "legend":{
+                    "position":"bottom",
+                     "autoMargins":false
+               },
+               "dataProvider": [{
+                "country": "Shopping",
+                "visits": 900
+              }, {
+                "country": "Home",
+                "visits": 414
+              }, {
+                "country": "Rent",
+                "visits": 384
+              },
+              {
+                "country": "Food",
+                "visits": 400
+              }],
+                "valueField": "visits",
+                "titleField": "country",
+                "startEffect": "elastic",
+                "startDuration": 2,
+                "labelRadius": 15,
+                "innerRadius": "50%",
+                "depth3D": 10,
+                "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+                "angle": 15,
+                "export": {
+                  "enabled": true
+                }
+              } );
+        }
+
+
+        var barAndLineChartMix3 = function(){
+            var chart = AmCharts.makeChart("barAndLineChartMixDiv3", {
+                "type": "serial",
+                "theme": "light",
+                "handDrawn":true,
+                "handDrawScatter":3,
+                "legend": {
+                    "useGraphSettings": true,
+                    "markerSize":12,
+                    "valueWidth":0,
+                    "verticalGap":0
+                },
+                "dataProvider": [{
+                    "year": 2005,
+                    "income": 23.5,
+                    "expenses": 18.1
+                }, {
+                    "year": 2006,
+                    "income": 26.2,
+                    "expenses": 22.8
+                }, {
+                    "year": 2007,
+                    "income": 30.1,
+                    "expenses": 23.9
+                }, {
+                    "year": 2008,
+                    "income": 29.5,
+                    "expenses": 25.1
+                }, {
+                    "year": 2009,
+                    "income": 24.6,
+                    "expenses": 25
+                }],
+                "valueAxes": [{
+                    "minorGridAlpha": 0.08,
+                    "minorGridEnabled": true,
+                    "position": "top",
+                    "axisAlpha":0
+                }],
+                "startDuration": 1,
+                "graphs": [{
+                    "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>",
+                    "title": "Income",
+                    "type": "column",
+                    "fillAlphas": 0.8,
+            
+                    "valueField": "income"
+                }, {
+                    "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>",
+                    "bullet": "round",
+                    "bulletBorderAlpha": 1,
+                    "bulletColor": "#FFFFFF",
+                    "useLineColorForBulletBorder": true,
+                    "fillAlphas": 0,
+                    "lineThickness": 2,
+                    "lineAlpha": 1,
+                    "bulletSize": 7,
+                    "title": "Expenses",
+                    "valueField": "expenses"
+                }],
+                "rotate": true,
+                "categoryField": "year",
+                "categoryAxis": {
+                    "gridPosition": "start"
+                },
+                "export": {
+                    "enabled": true
+                 }
+            
+            });
+        }
+
+
+        
+
+
 
 
 jQuery(document).ready(function() {
@@ -1295,4 +1803,16 @@ amchart3();
 daterangepickerInit();
 amchart4_forecast();
 basicCalendar_reminder();
+netWorthPieChart();
+barAndLineChartMix();
+netWorthPieChart2();
+barAndLineChartMix2();
+amchart2_Income();
+amchart3_Income();
+netWorthPieChart3();
+barAndLineChartMix3();
+
+
 });
+
+

@@ -1,0 +1,134 @@
+
+
+
+.m-widget1.bills-widgets .m-widget1__item .m-widget1__title
+{
+   font-size: 1rem;
+}
+
+.m-widget1.bills-widgets .m-widget1__item .m-widget1__number
+{
+    font-size: 1.2rem;
+}
+
+.m-widget1.bills-widgets .m-widget1__item
+{
+    border: 1px solid #CACACA;
+    padding:10px;
+    height:100%;
+} 
+
+.m-widget1.bills-widgets .m-widget1__item .m-widget1__desc
+{
+    font-size: 0.7rem;
+}
+
+
+.m-widget1.bills-widgets .col-sm-4
+{
+    margin-bottom: 15px;
+}
+
+.m-widget1.bills-widgets .m-widget1__item i:not(.fa-chevron-right)
+{
+    background-color:red;
+    color:white;
+    padding:10px;
+}
+
+.moreLink
+{
+    padding:0px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+
+
+.m-pricing-table-4.m-pricing-table-4__top
+{
+    background-color: transparent;
+
+}
+
+.m-pricing-table-4 .m-pricing-table-4__top .m-pricing-table-4__top-container.m-pricing-table-4__top-container--fixed
+{
+    width:100%;
+}
+
+.m-pricing-table-4__top-body
+{
+    margin-left: 0px;
+}
+
+.m-pricing-table-4 .m-pricing-table-4__top .m-pricing-table-4__top-container.m-pricing-table-4__top-container--fixed .m-pricing-table-4__top-body .m-pricing-table-4__top-items
+{
+    box-shadow: none;
+}
+
+.m-pricing-table-1 .m-pricing-table-1__items .m-pricing-table-1__item .m-pricing-table-1__visual .m-pricing-table-1__icon
+{
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.m-pricing-table-1 .m-pricing-table-1__items .m-pricing-table-1__item .m-pricing-table-1__visual
+{
+    margin-top: 3rem;
+}
+
+
+.m-pricing-table-1 .m-pricing-table-1__items .m-pricing-table-1__item .m-pricing-table-1__price
+{
+    margin-top: 9rem;
+}
+
+.m-pricing-table-1 .m-widget4
+{
+    padding:4px;
+}
+.m-pricing-table-1 .m-widget4 .m-widget4__item
+{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+.m-pricing-table-1 .m-widget4 .m-widget4__item .m-widget4__info
+{
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
+
+
+.m-pricing-table-1 .m-widget4 .m-widget4__item .m-widget4__ext .m-widget4__number
+{
+    font-size: 1rem;
+}
+
+
+.m-pricing-table-1 .m-widget4 .m-widget4__item .m-widget4__info .m-widget4__text
+{
+    font-size: 0.8rem;
+}
+
+.m-pricing-table-1 .m-pricing-table-1__items .m-pricing-table-1__item
+{
+    padding: 20px;
+}
+
+.m-pricing-table-1 .m-pricing-table-1__items .m-pricing-table-1__item:nth-child(1) .m-pricing-table-1__price
+{
+    font-size: 2.7rem;
+}
+
+.carousel-indicators li
+{
+    background-color: black;
+}
+
+
+.carousel-indicators .active {
+    background-color: black;
+    transform: scale(1.2);
+}

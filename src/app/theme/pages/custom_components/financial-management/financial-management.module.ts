@@ -16,6 +16,7 @@ import { FinancialManagementComponent } from "./financial-management.component";
 import { FinancialManagementForecastComponent } from './financial-management-forecast/financial-management-forecast.component';
 import { FinancialManagementTagsComponent } from './financial-management-tags/financial-management-tags.component';
 import { FinancialManagementAccountsComponent } from './financial-management-accounts/financial-management-accounts.component';
+import { FinancialManagementReportsComponent } from './financial-management-reports/financial-management-reports.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FinancialManagementAccountsComponent } from './financial-management-acc
         FinancialManagementReminderComponent,
         FinancialManagementBillingSubscriptionComponent,
         FinancialManagementTagsComponent,
-        FinancialManagementAccountsComponent
+        FinancialManagementAccountsComponent,
+        FinancialManagementReportsComponent
     ],
 
 })

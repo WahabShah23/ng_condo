@@ -89,7 +89,6 @@ export class AsideNavFinancialComponent implements OnInit, AfterViewInit {
   toggleTags()
   {
     this.isTags = !this.isTags;
-    alert('tags shown');
   }
 
   toggleAccounts()
