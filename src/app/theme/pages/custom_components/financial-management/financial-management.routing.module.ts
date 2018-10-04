@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FinancialManagementComponent } from "./financial-management.component";
 import { FinancialManagementDashboardComponent } from "./financial-management-dashboard/financial-management-dashboard.component";
 import { FinancialManagementReportsComponent } from './financial-management-reports/financial-management-reports.component';
+import { FinancialPlanningComponent } from "./financial-planning/financial-planning.component";
 
 const routes: Routes = [
     {
@@ -22,6 +23,10 @@ const routes: Routes = [
             {
                 'path': 'dashboard',
                 'component': FinancialManagementDashboardComponent
+            },
+            {
+                'path': 'FinancialPlanning',
+                'component': FinancialPlanningComponent
             },
             {
                 'path': 'Budgets',
