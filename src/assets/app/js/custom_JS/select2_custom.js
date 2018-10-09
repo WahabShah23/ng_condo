@@ -19,21 +19,26 @@ var Select2_custom = function() {
             tags: true,
             width : '100%'
         });
+
         $('#add_transaction_m_select2_tags').select2({
             placeholder: "Tags",
             tags: true,
             width : '100%'
         });
+
         $('#m_select2_tags_reminder').select2({
             placeholder: "Tags",
             tags: true,
             width : '100%'
         });
+        
         $('#edit_m_select2_tags').select2({
             placeholder: "Tags",
             tags: true,
             width : '100%'
         });
+
+        
 
 
 

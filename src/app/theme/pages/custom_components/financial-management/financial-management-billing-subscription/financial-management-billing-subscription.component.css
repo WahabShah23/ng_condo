@@ -1,5 +1,9 @@
 
 
+.m-content
+{
+    margin-bottom: 30px;
+}
 
 .m-widget1.bills-widgets .m-widget1__item .m-widget1__title
 {
@@ -11,12 +15,35 @@
     font-size: 1.2rem;
 }
 
-.m-widget1.bills-widgets .m-widget1__item
+.m-widget1.bills-widgets .m-widget1__item 
 {
     border: 1px solid #CACACA;
     padding:10px;
     height:100%;
 } 
+.m-widget1.bills-widgets .m-widget1__item a
+{
+    text-align: right ;
+    position: absolute;
+    bottom: 0px;
+    right: 25px;
+}
+
+
+.m-widget1.bills-widgets .card 
+{
+    height:100%;
+}
+.m-widget1.bills-widgets .card-body
+{
+    padding: 0.7rem;
+}
+
+
+.m-widget1.bills-widgets .card-body .card-title
+{
+    font-size:12px;
+}
 
 .m-widget1.bills-widgets .m-widget1__item .m-widget1__desc
 {
@@ -24,7 +51,7 @@
 }
 
 
-.m-widget1.bills-widgets .col-sm-4
+.m-widget1.bills-widgets .col-sm-4 , .m-widget1.bills-widgets .col-sm-6
 {
     margin-bottom: 15px;
 }
@@ -74,13 +101,13 @@
 
 .m-pricing-table-1 .m-pricing-table-1__items .m-pricing-table-1__item .m-pricing-table-1__visual
 {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 
 .m-pricing-table-1 .m-pricing-table-1__items .m-pricing-table-1__item .m-pricing-table-1__price
 {
-    margin-top: 9rem;
+    margin-top: 5rem;
 }
 
 .m-pricing-table-1 .m-widget4

@@ -1,3 +1,4 @@
+import { OpenDetailsService } from './financial-planning/openDetailsService.service';
 import { RouterModule } from '@angular/router';
 import { FinancialManagementBillingSubscriptionComponent } from './financial-management-billing-subscription/financial-management-billing-subscription.component';
 import { FinancialManagementReminderComponent } from './financial-management-reminder/financial-management-reminder.component';
@@ -18,6 +19,14 @@ import { FinancialManagementTagsComponent } from './financial-management-tags/fi
 import { FinancialManagementAccountsComponent } from './financial-management-accounts/financial-management-accounts.component';
 import { FinancialManagementReportsComponent } from './financial-management-reports/financial-management-reports.component';
 import {FinancialPlanningComponent} from "./financial-planning/financial-planning.component";
+import { BillingAndSubscriptionFinancialPlanningComponent } from './financial-planning/billing-and-subscription-financial-planning/billing-and-subscription-financial-planning.component';
+import { BillingFinancialPlanningComponent } from './financial-planning/billing-and-subscription-financial-planning/billing-financial-planning/billing-financial-planning.component';
+import { SubscriptionsFinancialPlanningComponent } from './financial-planning/billing-and-subscription-financial-planning/subscriptions-financial-planning/subscriptions-financial-planning.component';
+import { OpenDetailsDirective } from './financial-planning/open-details.directive';
+import { FilterBillingAndSubscriptionPipe } from './financial-planning/billing-and-subscription-financial-planning/filter-billing-and-subscription.pipe';
+import { DisplayPaymentMethodDirective } from './financial-planning/display-payment-method.directive';
+import { BudgetFinancialPlanningComponent } from './financial-planning/budget-financial-planning/budget-financial-planning.component';
+import { IncomeBudgetFinancialPlanningComponent } from './financial-planning/budget-financial-planning/income-budget-financial-planning/income-budget-financial-planning.component';
 
 
 @NgModule({
@@ -36,8 +45,19 @@ import {FinancialPlanningComponent} from "./financial-planning/financial-plannin
         FinancialManagementTagsComponent,
         FinancialManagementAccountsComponent,
         FinancialManagementReportsComponent,
-        FinancialPlanningComponent
+        FinancialPlanningComponent,
+        BillingAndSubscriptionFinancialPlanningComponent,
+        BillingFinancialPlanningComponent,
+        SubscriptionsFinancialPlanningComponent,
+        OpenDetailsDirective,
+        FilterBillingAndSubscriptionPipe,
+        DisplayPaymentMethodDirective,
+
+        BudgetFinancialPlanningComponent,
+        IncomeBudgetFinancialPlanningComponent
+
     ],
+    providers: [OpenDetailsService]
 
 })
 export class FinancialManagementModule {

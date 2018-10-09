@@ -22,7 +22,7 @@ export class FinancialManagementDashboardComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this._script.loadScripts('.m-grid__item.m-grid__item--fluid.m-grid.m-grid--ver-desktop.m-grid--desktop.m-body',
+    this._script.loadScripts('app-financial-management-dashboard',
         ['assets/demo/default/custom/components/forms/widgets/select2.js',
               'assets/app/js/custom_JS/select2_custom.js']);
   }

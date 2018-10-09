@@ -1,0 +1,169 @@
+.m-content
+{
+    padding: 0px;
+    height: 100%;
+}
+.verticals {
+    width:265px !important; 
+    background-color:#eeeeee; 
+    box-shadow: 0px 0px 15px 1px rgba(69, 65, 78, 0.2);
+	overflow-y: auto !important;
+}
+
+#vertical_1 {
+    height: 100%;
+    z-index: 99;
+    margin-left: 10px;
+}
+#vertical_2 {
+    z-index: 98;
+    height: 100%;
+}
+#vertical_3 {
+    z-index: 97;
+    height: 100%;
+}
+#vertical_4 {
+    z-index: 96;
+    height: 100%;
+}
+
+
+#card1 {
+    top: 43%;
+}
+        /*#card2 {*/
+            /*top: 4%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card3 {*/
+            /*top: 8%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card4 {*/
+            /*top: 12%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card5 {*/
+            /*top: 16%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card6 {*/
+            /*top: 20%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card7 {*/
+            /*top: 24%;*/
+            /*padding: 10px;*/
+        /*}*/
+
+        /*#card8 {*/
+            /*top: 28%;*/
+            /*padding: 10px;*/
+        /*}*/
+
+/*Vertical 3 Cards*/
+        /*#card11 {*/
+            /*top: 4%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card12 {*/
+            /*top: 8%;*/
+            /*padding: 10px;*/
+        /*}*/
+        /*#card13 {*/
+            /*top: 12%;*/
+            /*padding: 10px;*/
+        /*}*/
+
+.stackEffect {
+    box-shadow: 5px 6px 4px -5px #999;
+}
+
+.active_card {
+    background-color: lightyellow !important;
+    opacity: 1;
+}
+
+.non_active_card {
+    opacity: 0.5;
+    background-color: #fff !important;
+}
+
+/*-------------- Smaller Cards Inside Verticals BEGIN--------------*/
+/*Card Design*/
+.innerCards {
+    width: 90%;
+    z-index: 1000;
+    height: 100px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: #f5f5f5;
+    background-color: #fff;
+    margin: 15px 5px;
+    padding: 10px;
+    font-size: 12px;
+    position: relative !important;
+    left: 3.4%;
+    top: 2%;
+}
+.innerCards:hover{
+    background-color: lightyellow !important;
+    opacity: 1;
+}
+
+/*Card Title*/
+.innerCardsTitle {
+    float: left;
+}
+/*Expand card icon*/
+.c-expand-icon {
+    cursor: pointer;
+}
+
+/* After & Before Lines */
+.innerCards::after {
+    content: " " !important;
+    display: block !important;
+    position: absolute !important;
+    height: 3px !important;
+    background: grey !important;
+    width: 13px !important;
+    left: 100% !important;
+    top: calc(50% - 2px) !important;
+    opacity: 0.3;
+}
+.innerCards::before {
+    content: " " !important;
+    display: block !important;
+    position: absolute !important;
+    height: 3px !important;
+    background: grey !important;
+    width: 13px !important;
+    right: 100% !important;
+    top: calc(50% - 2px) !important;
+    opacity: 0.4;
+}
+/*-------------- Smaller Cards Inside Verticals END--------------*/
+
+/*------------------Custom Scroll Bar Start------------------------*/
+/* width */
+.verticals::-webkit-scrollbar {
+	width: 3px;
+}
+
+/* Track */
+.verticals::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+.verticals::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+.verticals::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+/*------------------Custom Scroll Bar END------------------------*/

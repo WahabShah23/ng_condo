@@ -1,0 +1,16 @@
+.iconsDropdown a i , .dropdown-toggle i
+{
+    font-size:25px;
+}
+
+.iconsDropdown.show
+{
+    min-width:5rem;
+    width:5rem;
+}
+
+input[type="color"].form-control
+{
+    height: 40px;
+    padding: 3px;
+}

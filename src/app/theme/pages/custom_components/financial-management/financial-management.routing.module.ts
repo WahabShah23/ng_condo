@@ -1,3 +1,6 @@
+import { BudgetFinancialPlanningComponent } from './financial-planning/budget-financial-planning/budget-financial-planning.component';
+import { IncomeBudgetFinancialPlanningComponent } from './financial-planning/budget-financial-planning/income-budget-financial-planning/income-budget-financial-planning.component';
+import { SubscriptionsFinancialPlanningComponent } from './financial-planning/billing-and-subscription-financial-planning/subscriptions-financial-planning/subscriptions-financial-planning.component';
 import { FinancialManagementAccountsComponent } from './financial-management-accounts/financial-management-accounts.component';
 import { FinancialManagementTagsComponent } from './financial-management-tags/financial-management-tags.component';
 import { FinancialManagementBillingSubscriptionComponent } from './financial-management-billing-subscription/financial-management-billing-subscription.component';
@@ -10,6 +13,8 @@ import { FinancialManagementComponent } from "./financial-management.component";
 import { FinancialManagementDashboardComponent } from "./financial-management-dashboard/financial-management-dashboard.component";
 import { FinancialManagementReportsComponent } from './financial-management-reports/financial-management-reports.component';
 import { FinancialPlanningComponent } from "./financial-planning/financial-planning.component";
+import { BillingAndSubscriptionFinancialPlanningComponent } from './financial-planning/billing-and-subscription-financial-planning/billing-and-subscription-financial-planning.component';
+import { BillingFinancialPlanningComponent } from './financial-planning/billing-and-subscription-financial-planning/billing-financial-planning/billing-financial-planning.component';
 
 const routes: Routes = [
     {
@@ -44,41 +49,52 @@ const routes: Routes = [
                 'path': 'Reminders',
                 'component': FinancialManagementReminderComponent
             },
-            
             {
                 'path': 'Billing-Subscription',
                 'component': FinancialManagementBillingSubscriptionComponent
             },
-
             {
                 'path': 'Tags/:name',
                 'component': FinancialManagementTagsComponent
             },
-
             {
                 'path': 'Accounts/:name',
                 'component': FinancialManagementAccountsComponent
             }
-            // {
-            //     'path': 'dashboard',
-            //     'component': AssetsManagementDashboardComponent
-            // },
-            // {
-            //     'path': 'facilities',
-            //     'component': AssetsManagementFacilitiesComponent
-            // },
-            // {
-            //     'path': 'equipment',
-            //     'component': AssetsManagementEquipmentComponent
-            // },
-            // {
-            //     'path': 'tools',
-            //     'component': AssetsManagementToolsComponent
-            // },
-            // {
-            //     'path': 'Assigned-Assets',
-            //     'component': AssignedAssetsComponent
-            // }
+        ]
+    },
+    {
+        'path': 'FinancialPlanning/Billing-and-Subscription',
+        'component': BillingAndSubscriptionFinancialPlanningComponent,
+        'children': 
+        [
+            {
+                'path': '',
+                'redirectTo': 'billing'
+            },
+            {
+                'path': 'billing',
+                'component': BillingFinancialPlanningComponent
+            },
+            
+            {
+                'path': 'subscriptions',
+                'component': SubscriptionsFinancialPlanningComponent
+            }
+        ]
+    },
+    {
+    'path': 'FinancialPlanning/Budget',
+    'component': BudgetFinancialPlanningComponent,
+    'children': [
+        {
+            'path': '',
+            'redirectTo':'income'
+        },
+        {
+            'path': ':budgetcategory',
+            'component': IncomeBudgetFinancialPlanningComponent
+        }
         ]
     }
 
@@ -89,4 +105,7 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class FinancialManagementRoutingModule { }
+export class FinancialManagementRoutingModule 
+{ 
+    
+}

@@ -1,0 +1,113 @@
+<div *ngIf="currentBudget">
+    <div class="m-subheader">
+    <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <!--<h3 class="m-form__heading-title">-->
+                <!--Amenities-->
+                <!--</h3>-->
+                <h3 class="m-subheader__title">
+                     {{currentBudget.displayName}}
+                     <small  class="text-muted custom_pointer stats-icons"><i  class="fa fa-search"></i> </small>
+                </h3>
+            </div>
+        </div>
+</div>
+<div class="m-subheader breadcrumb-header">
+    <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+        <li  class="m-nav__item m-nav__item--home">
+            <a  class="m-nav__link m-nav__link--icon"  routerlink="/dashboard">
+                <i  class="m-nav__link-icon la la-home"></i>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+            -
+        </li>
+       
+       
+        <li  class="m-nav__item">
+            <a  routerLink="/financialManagement" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                <span  class="m-nav__link-text">
+                    Financial Management
+                </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+                -
+        </li>
+
+        <li  class="m-nav__item">
+            <a  routerLink="/financialManagement/FinancialPlanning" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                <span  class="m-nav__link-text">
+                    Financial Planning
+                </span>
+            </a>
+        </li>
+        <li  class="m-nav__separator">
+                -
+        </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  class="m-nav__link" href="javascript:;" >
+                    <span  class="m-nav__link-text">
+                        {{currentBudget.displayName}}     
+                    </span>
+                </a>
+            </li>
+
+
+         
+    </ul>
+</div>
+<hr  class="customhr">
+  <div class="m-content">
+    <div class="row">
+        <div class="col-sm-1">
+                <div class="dropdown">
+                        <label for="" style="display:block"> Icon:</label>
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownIcons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="{{currentIcon}}"></i>
+                        </button>
+                        <div class="dropdown-menu iconsDropdown" aria-labelledby="dropdownIcons">
+                            <a class="dropdown-item text-center" (click)="onSelectIcon(icon)" *ngFor="let icon of icons" href="#">
+                                <i class="{{icon}} "></i> </a>
+                        </div>
+                    </div>
+        </div>
+        <div class="col-sm-2">
+                <div class="form-group">
+                        <label for="">Color:</label>
+                        <input  class="form-control" type="color" value="#e66465" />
+                </div>
+
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="">Category Name:</label>
+                <select  class="form-control">
+                    <option *ngFor="let category of currentBudget.categories" value="{{category.catID}}">{{category.catName}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+                <div class="form-group">
+                        <label for="">Enter Custom Category:</label>
+                        <input type="text" class="form-control" />
+                </div>
+        </div>
+        <div class="col-sm-2">
+            <button style="margin-top:28px;" type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="!currentBudget">
+    <div class="m-content">
+            <h3 class="text-danger">Error 404. Category Not Found</h3>
+    </div>
+    
+</div>
+

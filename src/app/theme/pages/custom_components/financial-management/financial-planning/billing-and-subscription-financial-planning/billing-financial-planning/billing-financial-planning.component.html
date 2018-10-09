@@ -1,0 +1,464 @@
+<div class="m-subheader">
+        <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <!--<h3 class="m-form__heading-title">-->
+                    <!--Amenities-->
+                    <!--</h3>-->
+                    <h3 class="m-subheader__title">
+                         Billing
+                         <small  class="text-muted custom_pointer stats-icons"><i  class="fa fa-search"></i> </small>
+                    </h3>
+
+                    <div class="form-group m-form__group" style="display:inline-block; margin-bottom:0px;">
+                        <div class="input-group m-input-group">
+                            <div class="input-group-prepend">
+                                <i style="line-height: 35px; font-size:1.4rem" class="fa fa-user"></i>
+                            </div>
+                            <select #currentPersonSelect (change)="changePerson(currentPersonSelect.value)" class="form-control" style="margin-left: 6px;">
+                                <option value="1">Niaz Khan</option>
+                                <option value="2">Sharjeel Khan</option>
+                                <option value="split">Split Bills</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-link pull-right " (click)="changeView()"><i class="fa"  [class.hidden]="!isGridView"  [ngClass]="{'fa-list' : isGridView , 'fa-th' : !isGridView}" ></i> {{viewName}} </button>
+
+                
+                
+            </div>
+    </div>
+    <div class="m-subheader breadcrumb-header">
+        <ul  class="m-subheader__breadcrumbs m-nav m-nav--inline">
+            <li  class="m-nav__item m-nav__item--home">
+                <a  class="m-nav__link m-nav__link--icon"  routerlink="/dashboard">
+                    <i  class="m-nav__link-icon la la-home"></i>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                -
+            </li>
+           
+           
+            <li  class="m-nav__item">
+                <a  routerLink="/financialManagement" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Financial Management
+                    </span>
+                </a>
+            </li>
+            <li  class="m-nav__separator">
+                    -
+            </li>
+            <li  class="m-nav__item">
+                <a  routerLink="/financialManagement" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                    <span  class="m-nav__link-text">
+                        Billing &amp; Subscriptions
+                    </span>
+                </a>
+            </li>
+            
+            <li  class="m-nav__separator">
+                -
+           </li>
+           <li  class="m-nav__item">
+            <a  routerLink="/financialManagement" class="m-nav__link" href="javascript:;" ng-reflect-href="javascript:;">
+                <span  class="m-nav__link-text">
+                    Billing
+                </span>
+            </a>
+          </li>
+    
+    
+             
+        </ul>
+    </div>
+    <hr  class="customhr">
+<div class="m-content">
+<div class="row gridView" *ngIf="isGridView">
+    <div  class="col-xl-6" *ngFor="let billing of billings | filterBillingAndSubscription:currentPerson:billType ; let i=index;">
+        <div  class="body organ1" >
+            <div  class="row" style="margin:0px;">
+                <div  class="card-left col-sm-3" id="">
+                    <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                    <input  class="chkboxes" type="checkbox">
+                    <span ></span>
+                  </label>
+                    <div class="row sideDetails">
+                        <div  class="col-md-12">
+                            <img  class="personimage" [src]="billing.img">
+                            <p  class="personname">{{billing.billingName}}</p>
+                            <p  class="persontype">{{billing.billingName}}</p>
+                        </div>
+                        <div  class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <i class="fa fa-list"></i>
+                                </div>
+                                <div class="col-md-8">
+                                    <span>
+                                            {{billing.category}}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                    <div class="col-md-4">
+                                        <i class="fa fa-industry"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span>
+                                                {{billing.provider}}
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                        <div class="col-md-4">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <span>
+                                                 {{billing.phone}}
+                                            </span>
+                                        </div>
+                                </div>
+
+
+                                <div class="row">
+                                        <div class="col-md-4">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <span> 
+                                                {{billing.location}}
+                                            </span>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-md-4">
+                                            <i class="fa fa-flag"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <span> 
+                                                    {{billing.country}}
+                                            </span>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-md-12">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div  class="card-right col-sm-9" id="" style="background-color: rgb(255, 255, 255); padding: 10px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                    <h6  class="text-muted pull-left"><i  class="fa fa-cog"></i> Billing Details</h6>
+                    <div  class="clearfix"></div>
+                    <div class="left" style="font-size: 14px; margin-left: 1px;">
+                            <h5 style="margin-bottom: 10px;text-align: left;color: #555;font-weight: 400">Bill Info.</h5>
+                            <div class="row">
+                            <div class="col-sm-4 sbold">
+                            Bill Name:
+                            </div>
+                            <div class="col-sm-8">
+                            {{billing.billName}}
+                            </div>
+                             </div>
+                             
+                             <div class="row">
+                            <div class="col-sm-4 sbold">
+                            Amount:
+                            </div>
+                            <div class="col-sm-8">
+                                {{billing.amount}}
+                            </div>
+                            
+                         </div>
+                        
+                         <div class="row">
+                            <div class="col-sm-4 sbold">
+                            Account:
+                            </div>
+                            <div class="col-sm-8">
+                               {{billing.account}}
+                            </div>
+                    
+                         </div>
+                   
+                         <div class="row">
+                            <div class="col-sm-4 sbold">
+                            Bill Cycle:
+                            </div>
+                            <div class="col-sm-8">
+                             {{billing.billCycle}}
+                            </div>
+                            
+                         </div>
+                         
+                         </div>
+                         <button  class="btn btn-link btn-danger pull-right" style="padding:0px;" (click)="OpenDetails(i)">More Details</button>
+                </div>
+            </div>
+
+            <div appOpenDetails [id]="i"  class="row downDetails" style="margin:0px;">
+                <div class="col-sm-12">
+                        <h6  class="text-muted text-lefts"><i  class="fa fa-cog"></i> Billing Details</h6>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row" >
+                        
+                        <div class="col-sm-12" style="font-size:14px;">
+                                <div class="row">
+                                   <div class="col-sm-5 col-sm-1 sbold">
+                                   Biller Name:
+                                   </div>
+                                   <div class="col-sm-6">
+                                    {{billing.billerName}}
+                                   </div>
+                                   
+                                </div>
+                                
+                                <div class="row">
+                                   <div class="col-sm-5 col-sm-1 sbold">
+                                   First Bill:
+                                   </div>
+                                   <div class="col-sm-6">
+                                        {{billing.firstBill}}
+                                   </div>
+                                </div>
+                                
+                                
+                                <div class="row">
+                                   <div class="col-sm-5 col-sm-1 sbold">
+                                   Bill Duration:
+                                   </div>
+                                   <div class="col-sm-5">
+                                        {{billing.billDuration}}
+                                   </div>
+                                </div>
+                                
+                                <div class="row">
+                                   <div class="col-sm-5 col-sm-1 sbold">
+                                   Reminder:
+                                   </div>
+                                   <div class="col-sm-5">
+                                        {{billing.reminder}}
+                                   </div>
+                                </div>
+                                
+                                <div *ngIf="billing.persons.length<2">
+                                <div class="row">
+                                   <div class="col-sm-5 col-sm-1 sbold">
+                                   Payment Method:
+                                   </div>
+                                   <div class="col-sm-5">
+                                        {{billing.persons[0].paymentMethod}}
+                                   </div>
+                                </div>
+                                
+                                <div class="row">
+                                   <div class="col-sm-5 col-sm-1 sbold">
+                                   Payment Sub-Type:
+                                   </div>
+                                   <div class="col-sm-5">
+                                        {{billing.persons[0].paymentSubtype}}
+                                   </div>
+                                </div>
+                                </div>
+
+
+                            <div *ngIf="billing.persons.length>1">
+
+                                        <div class="row">
+                                                <div class="col-sm-5 col-sm-1 sbold">
+                                                Select Payer:
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <div class="form-group">
+                                                        <select #payerSelect class="form-control" (change)="onPayerChange(billing.billingID , payerSelect.value)">
+                                                            <option *ngFor="let person of billing.persons" value="{{person.personID}}">{{getPersonName(person.personID)}}</option>                                                     
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                             </div>
+
+
+                                        <ng-container *ngFor="let payment of billing.persons ; let personIndex = index;">
+                                        <div class="paymentMethodParent" appDisplayPaymentMethod [display]="(personIndex==0) ? 'block' : 'none'" [billingID]="billing.billingID" [personID]="payment.personID">
+                                        <div class="row">
+                                           <div class="col-sm-5 col-sm-1 sbold">
+                                           Payment Method:
+                                           </div>
+                                           <div class="col-sm-5">
+                                                {{payment.paymentMethod}}
+                                           </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                           <div class="col-sm-5 col-sm-1 sbold">
+                                           Payment Sub-Type:
+                                           </div>
+                                           <div class="col-sm-5">
+                                                {{payment.paymentSubtype}}
+                                           </div>
+                                        </div>
+                                        </div>
+                                      </ng-container>
+                                </div>
+                                
+                                <div class="row">
+                                   <div class="col-sm-5 col-sm-1 sbold">
+                                   Billing Goal:
+                                   </div>
+                                   <div class="col-sm-5">
+                                        {{billing.billingGoal}}
+                                   </div>
+                                </div>
+                                
+                                <div class="row">
+                                   <div class="col-sm-5 col-sm-1 sbold">
+                                   Bill Description:
+                                   </div>
+                                   <div class="col-sm-5" style="word-wrap: break-word;">
+                                        {{billing.billDescription}}
+                                   </div>
+                                   
+                                </div>
+                                
+                                
+                                </div>
+                                
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+<div *ngIf="!isGridView">
+        <div class="m-portlet m-portlet--mobile">
+                <div class="m-portlet__head">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text">
+                                Bills List
+                            </h3>
+                        </div>
+                    </div>
+                    <!--<div class="m-portlet__head-tools"> </div>-->
+                </div>
+                <div class="m-portlet__body  ">  <!-- m-portlet__body--no-padding -->
+                    <div class="row m-row--no-padding m-row--col-separator-xl">
+                        <table class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer m--padding-bottom-15" id="c_table_support" role="grid" aria-describedby="c_table_support_info">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Bill</th>
+                                <th>Category</th>
+                                <th> Provider</th>
+                                <th>Bill Name</th>
+                                <th>Amount</th>
+                                <th>Account</th>
+                                <th>Bill Cycle</th>
+                                <th>Bill Duration</th>
+                                <th>Payer</th>
+                                <th>Payment Method</th>
+                                <th>Payment Sub-Type</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let billing of billings | filterBillingAndSubscription:currentPerson:billType ; let i=index;">  <!-- [ngClass]="{'even': i%2 === 0, 'odd':i%2 !== 0 } -->
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    {{billing.billingName}}
+                                </td>
+                                <td>
+                                    {{billing.category}}
+                                </td>
+                                <td>
+                                     {{billing.provider}}
+                                </td>
+                                <td>
+                                    {{billing.billName}}
+                                </td>
+                                <td>
+                                    {{billing.amount}}
+                                </td>
+                                <td>
+                                    {{billing.account}}
+                                </td>
+                                <td>
+                                    {{billing.billCycle}}
+                                </td>
+                                <td>
+                                    {{billing.billDuration}}
+                                </td>
+                                <ng-container *ngIf="billing.persons.length<2">
+                                  <td>
+                                      {{getPersonName(billing.persons[0].personID)}}                                   
+                                  </td>
+                                            
+                                  <td>
+                                        {{billing.persons[0].paymentMethod}}
+                                 </td>
+                        
+                                 <td>
+                                        {{billing.persons[0].paymentSubtype}}
+                                </td>
+                                </ng-container>
+
+
+                                <ng-container *ngIf="billing.persons.length>1">
+                                    <td>
+                                            <div class="form-group">
+                                                    <select #payerSelectTable class="form-control" (change)="onPayerChangeTable(billing.billingID , payerSelectTable.value)">
+                                                        <option *ngFor="let person of billing.persons" value="{{person.personID}}">{{getPersonName(person.personID)}}</option>                                                     
+                                                    </select>
+                                                </div>                                   
+                                    </td>
+                                                  
+                                    <td>
+                                             <ng-container *ngFor="let person of billing.persons ; let personIndex=index">
+                                                 <span appDisplayPaymentMethod [display]="(personIndex==0) ? 'block' : 'none'" [billingID]="billing.billingID" [personID]="person.personID">{{person.paymentMethod}}</span>
+                                             </ng-container>
+                                    </td>
+                              
+                                    <td>
+                                            <ng-container *ngFor="let person of billing.persons ; let personIndex=index">
+                                              <span appDisplayPaymentMethod [display]="(personIndex==0) ? 'block' : 'none'" [billingID]="billing.billingID" [personID]="person.personID">{{person.paymentSubtype}}</span>
+                                            </ng-container>
+                                    </td>
+                                </ng-container>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+
+                     
+                    </div>
+                </div>
+            </div>
+
+</div>
+
+
+
+
+
+</div>

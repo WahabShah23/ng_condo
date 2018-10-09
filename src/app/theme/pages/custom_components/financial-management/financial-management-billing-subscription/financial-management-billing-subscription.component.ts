@@ -1,3 +1,4 @@
+import { ScriptLoaderService } from './../../../../../_services/script-loader.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinancialManagementBillingSubscriptionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _script: ScriptLoaderService) { }
 
-  ngOnInit() {
+
+  
+
+  ngOnInit() 
+  {
+    this._script.loadScripts('app-financial-management-billing-subscription',
+    ['assets/app/js/financial-management.js']); 
   }
 
 }
