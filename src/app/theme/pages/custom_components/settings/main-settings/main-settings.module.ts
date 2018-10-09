@@ -54,6 +54,9 @@ import { SettingsAssetsComponent } from '../settings-assets/settings-assets.comp
 import { AssetsFacilitiesComponent } from './assets-settings/assets-facilities/assets-facilities.component';
 import { AssetsEquipmentsComponent } from './assets-settings/assets-equipments/assets-equipments.component';
 import { AssetsToolsComponent } from './assets-settings/assets-tools/assets-tools.component';
+import { FinancialSettingsGlobalComponent } from './financial-settings-global/financial-settings-global.component';
+import { FinancialFiatWalletComponent } from './financial-settings-global/financial-fiat-wallet/financial-fiat-wallet.component';
+import { FinancialDigitalWalletComponent } from './financial-settings-global/financial-digital-wallet/financial-digital-wallet.component';
 
 
 @NgModule({
@@ -117,7 +120,13 @@ import { AssetsToolsComponent } from './assets-settings/assets-tools/assets-tool
 
     AssetsEquipmentsComponent,
 
-    AssetsToolsComponent
+    AssetsToolsComponent,
+
+    FinancialSettingsGlobalComponent,
+
+    FinancialFiatWalletComponent,
+
+    FinancialDigitalWalletComponent
     ],
 
 })

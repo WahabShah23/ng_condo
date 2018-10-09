@@ -30,6 +30,7 @@ import { AsideNavOwndersRolesSettingsComponent } from './aside-nav-owners-roles-
 import { AsideNavAssetsManagementComponent } from "./aside-nav-assets-management/aside-nav-assets-managment.component";
 import { AsideNavNotificationsComponent } from './aside-nav-notifications/aside-nav-notifications.component';
 import { AsideNavFinancialComponent } from './aside-nav-financial/aside-nav-financial.component';
+import { AsideNavFinancialSettingsComponent } from './aside-nav-financial-settings/aside-nav-financial-settings.component';
 
 @NgModule({
     declarations: [
@@ -61,7 +62,8 @@ import { AsideNavFinancialComponent } from './aside-nav-financial/aside-nav-fina
         AsideNavAssetsComponent,
         AsideNavNotificationsComponent,
         AsideNavMaintenanceComponent,
-        AsideNavFinancialComponent 
+        AsideNavFinancialComponent,
+        AsideNavFinancialSettingsComponent 
     ],
     exports: [
         LayoutComponent,
@@ -88,7 +90,8 @@ import { AsideNavFinancialComponent } from './aside-nav-financial/aside-nav-fina
         AsideNavAssetsComponent,
         AsideNavNotificationsComponent,
         AsideNavMaintenanceComponent,
-        AsideNavFinancialComponent
+        AsideNavFinancialComponent,
+        AsideNavFinancialSettingsComponent
     ],
     imports: [
         CommonModule,
