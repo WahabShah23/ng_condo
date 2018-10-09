@@ -51,6 +51,12 @@
                         <a routerLink="common-services-global"><i class="fa fa-expand text-muted pull-right c-expand-icon"  ></i></a>
                 </div>
 
+                <div class="innerCards stackEffect" id="financialSettings" [ngClass]="className === 'financial-settings_global' ? 'active_card': 'non_active_card'">
+                    <h6 class="innerCardsTitle m-menu__link-text">Financial Settings</h6>
+                    <!-- <a routerLink="common-services-global"><i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('common-services_global'); visibleSidebar5 = true" ></i></a> -->
+                    <a routerLink="financial-settings-global"><i class="fa fa-expand text-muted pull-right c-expand-icon"  ></i></a>
+                </div>
+
                 <div class="innerCards stackEffect" id="card6" [ngClass]="className === 'item_global' ? 'active_card': 'non_active_card'">
                     <h6 class="innerCardsTitle m-menu__link-text">Item Global Settings</h6>
                     <!-- <i class="fa fa-expand text-muted pull-right c-expand-icon" (click)="expandCard('amenities_global'); visibleSidebar5 = true" ></i> -->
