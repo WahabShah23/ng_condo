@@ -27,6 +27,7 @@ export class BlankComponent implements OnInit, AfterContentInit {
     @ViewChild('abcd') private abcd: ElementRef;
     @ViewChild('hover') private hover: ElementRef;
 
+    color: string;
     locationExist = false;
     public theData;
     title: string = 'Blank Page';

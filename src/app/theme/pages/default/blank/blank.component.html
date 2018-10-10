@@ -302,6 +302,12 @@
     <div>
         <h2>Prime NG</h2>
 
+        <p-colorPicker [(ngModel)]="color"></p-colorPicker>
+
+        <br>
+
+        <p> Selected Color: <span [style.backgroundColor]="color"></span> {{color}}</p>
+
         <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
             <h1 style="font-weight:normal">Left Sidebar</h1>
             <button pButton type="button" (click)="visibleSidebar1 = false" label="Save" class="ui-button-success"></button>
