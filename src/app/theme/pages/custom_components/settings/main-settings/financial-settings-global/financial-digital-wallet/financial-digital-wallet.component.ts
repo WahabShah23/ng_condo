@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinancialDigitalWalletComponent implements OnInit {
 
-  cosigners : boolean = true;
   constructor() { }
 
   ngOnInit() {
