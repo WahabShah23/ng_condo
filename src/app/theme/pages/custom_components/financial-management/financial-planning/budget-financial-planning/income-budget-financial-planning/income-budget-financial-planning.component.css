@@ -14,3 +14,27 @@ input[type="color"].form-control
     height: 40px;
     padding: 3px;
 }
+
+input.ng-invalid.ng-touched , select.ng-invalid.ng-touched
+{
+    border:1px solid red;
+}
+.iconshadow
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: -4px 4px 17px 0px rgba(0, 0, 0, 0.6);
+}
+.iconshadow i
+{
+    color: white;
+    margin-top: 12px;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+.m-btn-group.m-btn-group--pill.btn-group button i
+{
+    font-size: 1.3rem;
+}

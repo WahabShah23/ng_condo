@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class AsideBudgetFinancialPlanning implements OnInit {
   navList = [
     {name: "Income" , url: "income"},
-    {name: "Home & Utilities" , url: "home-and-utilities"},
+    {name: "Condo Utilities" , url: "utilities"},
     {name: "Insurance" , url: "insurance"},
     {name: "Groceries" , url: "groceries"},
     {name: "Personal Care" , url: "personal-care"},

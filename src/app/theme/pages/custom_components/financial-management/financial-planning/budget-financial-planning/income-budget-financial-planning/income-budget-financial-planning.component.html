@@ -10,6 +10,7 @@
                      <small  class="text-muted custom_pointer stats-icons"><i  class="fa fa-search"></i> </small>
                 </h3>
             </div>
+            <button  class="btn btn-link pull-right" (click)="onAddClicked()"><i class="fa fa-plus"></i> Add </button>
         </div>
 </div>
 <div class="m-subheader breadcrumb-header">
@@ -61,15 +62,16 @@
 </div>
 <hr  class="customhr">
   <div class="m-content">
-    <div class="row">
+    <form #f="ngForm" (ngSubmit)="onFormSubmit(f)" *ngIf="isForm">
+    <div class="row" >
         <div class="col-sm-1">
                 <div class="dropdown">
                         <label for="" style="display:block"> Icon:</label>
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownIcons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="{{currentIcon}}"></i>
+                            <i class="{{getIcon(currentIcon)}}"></i>
                         </button>
                         <div class="dropdown-menu iconsDropdown" aria-labelledby="dropdownIcons">
-                            <a class="dropdown-item text-center" (click)="onSelectIcon(icon)" *ngFor="let icon of icons" href="#">
+                            <a class="dropdown-item text-center" (click)="onSelectIcon(i)" *ngFor="let icon of icons;let i=index" href="#">
                                 <i class="{{icon}} "></i> </a>
                         </div>
                     </div>
@@ -77,29 +79,116 @@
         <div class="col-sm-2">
                 <div class="form-group">
                         <label for="">Color:</label>
-                        <input  class="form-control" type="color" value="#e66465" />
+                        <input [ngModel]="'#ff0000'" name="color" class="form-control" type="color"/>
                 </div>
-
         </div>
+
         <div class="col-sm-3">
             <div class="form-group">
                 <label for="">Category Name:</label>
-                <select  class="form-control">
-                    <option *ngFor="let category of currentBudget.categories" value="{{category.catID}}">{{category.catName}}</option>
+                <select #changeCategorySelect class="form-control m-input m-input--air" required ngModel name="category" (change)="onChangeCategory(changeCategorySelect.value)">
+                    <option *ngFor="let category of currentBudget.categories"  value="{{category.catID}}">{{category.catName}}</option>
                 </select>
             </div>
         </div>
 
         <div class="col-sm-3">
-                <div class="form-group">
+                <div class="form-group" *ngIf="isCustom" >
                         <label for="">Enter Custom Category:</label>
-                        <input type="text" class="form-control" />
+                        <input type="text" class="form-control m-input m-input--air"  ngModel required name="customCategory" />
                 </div>
         </div>
-        <div class="col-sm-2">
-            <button style="margin-top:28px;" type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+
+        <div class="col-sm-3">
+            <button style="margin-top:28px; float:right" [disabled]="!f.valid" type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
         </div>
     </div>
+   </form>
+
+   <div class="m-portlet m-portlet--mobile">
+        <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text">
+                                 {{currentBudget.displayName}} Categories
+                            </h3>
+                        </div>
+                </div>
+              
+               
+                <h3 class="totalheading" style="float: right;margin-top: 22px;">$<span>0</span></h3>
+         </div>
+
+        <div class="m-portlet__body" >
+        <div class="row" *ngIf="currentBudget.entries.length>0">
+           <table class="table table-hover table-light">
+              <thead>
+                 <tr class="uppercase">
+                    <th>
+                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input class="chkboxes" type="checkbox">
+                                    <span ></span>
+                            </label>
+                    </th>
+                    <th> Icon </th>
+                    <th> Category Name </th>
+                    <th style="width:180px;"> Amount </th>
+                    <th> Time Period </th>
+                    <th> Total </th>
+                     <th> Actions </th>
+     
+                 </tr>
+              </thead>
+              <tbody>
+                 <tr *ngFor="let entry of currentBudget.entries ;let entryIndex = index">
+                    <td>
+                            <label  class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand">
+                                    <input class="chkboxes" type="checkbox">
+                                    <span ></span>
+                            </label>
+                    </td>
+                    <td ><div class="iconshadow" [style.background-color]="entry.color"><i class="fa {{ getIcon(entry.iconID) }} fa-2x"></i></div></td>
+                    <td> {{ (entry.categoryType=='fixed') ? getCategoryName(entry.catID) : entry.customCatName }}   </td>
+     
+                     <td> <div class="form-group m-form__group" style="width: 180px;  padding-right: 10px;">
+                                                         <input type="number" class="form-control m-input m-input--air">
+     
+                                                     </div>
+                  </td>
+                    <td> <div class="form-group m-form__group">
+                                                         <select class="form-control m-input m-input--air thetimeperiod">
+                                                             <option value=""></option>
+                                                             <option value="weekly">Weekly</option>
+                                                             <option value="monthly">Monthly</option>
+                                                             <option value="annually">Anually</option>
+                                                             <option value="quarterly">Quarterly</option>
+                                                             <option value="fortnightly">Fortnightly</option>
+                                                         </select>
+     
+                                                     </div>
+                      </td>
+                      <td><span class="bold theme-font">0</span></td>
+                       <td>
+                            <div class="m-btn-group m-btn-group--pill btn-group" role="group" aria-label="First group">
+                                    <button type="button" class="m-btn btn btn-success">
+                                        <i class="fa fa-cog"></i>
+                                    </button>
+                                    <button type="button" class="m-btn btn btn-warning" (click)="onDelete(entryIndex)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                            </div>
+                      </td>
+                 </tr>
+              </tbody>
+           </table>
+           </div>
+
+           <div class="row" *ngIf="currentBudget.entries.length==0">
+                <h4 class="text-danger"> <strong><i class="fa fa-close fa-2x text-danger"></i></strong> No Entries Found For This Category.</h4>
+           </div>
+
+           </div>
+           </div>
   </div>
 </div>
 
@@ -108,6 +197,5 @@
     <div class="m-content">
             <h3 class="text-danger">Error 404. Category Not Found</h3>
     </div>
-    
 </div>
 
