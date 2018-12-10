@@ -30,8 +30,11 @@ input.ng-invalid.ng-touched , select.ng-invalid.ng-touched
 {
     color: white;
     margin-top: 12px;
-    font-size: 2rem;
-    margin-left: 10px;
+    /* font-size: 2rem;
+    margin-left: 10px; */
+    font-size: 1.7rem;
+    margin-left: 13px;
+    line-height: 29px;
 }
 
 .m-btn-group.m-btn-group--pill.btn-group button i

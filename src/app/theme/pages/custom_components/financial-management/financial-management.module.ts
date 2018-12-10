@@ -27,6 +27,8 @@ import { FilterBillingAndSubscriptionPipe } from './financial-planning/billing-a
 import { DisplayPaymentMethodDirective } from './financial-planning/display-payment-method.directive';
 import { BudgetFinancialPlanningComponent } from './financial-planning/budget-financial-planning/budget-financial-planning.component';
 import { IncomeBudgetFinancialPlanningComponent } from './financial-planning/budget-financial-planning/income-budget-financial-planning/income-budget-financial-planning.component';
+import { TotalDirective } from './financial-planning/budget-financial-planning/income-budget-financial-planning/directives/total.directive';
+import { BudgetCategoriesDomManipulationService } from './financial-planning/budget-financial-planning/income-budget-financial-planning/budget-categories-dom-manipulation.service';
 
 
 @NgModule({
@@ -52,12 +54,12 @@ import { IncomeBudgetFinancialPlanningComponent } from './financial-planning/bud
         OpenDetailsDirective,
         FilterBillingAndSubscriptionPipe,
         DisplayPaymentMethodDirective,
-
         BudgetFinancialPlanningComponent,
-        IncomeBudgetFinancialPlanningComponent
+        IncomeBudgetFinancialPlanningComponent,
+        TotalDirective
 
     ],
-    providers: [OpenDetailsService]
+    providers: [OpenDetailsService, BudgetCategoriesDomManipulationService]
 
 })
 export class FinancialManagementModule {

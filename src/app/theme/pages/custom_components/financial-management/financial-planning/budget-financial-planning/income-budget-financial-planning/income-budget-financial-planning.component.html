@@ -150,13 +150,13 @@
                     <td ><div class="iconshadow" [style.background-color]="entry.color"><i class="fa {{ getIcon(entry.iconID) }} fa-2x"></i></div></td>
                     <td> {{ (entry.categoryType=='fixed') ? getCategoryName(entry.catID) : entry.customCatName }}   </td>
      
-                     <td> <div class="form-group m-form__group" style="width: 180px;  padding-right: 10px;">
-                                                         <input type="number" class="form-control m-input m-input--air">
-     
-                                                     </div>
-                  </td>
+                     <td> 
+                         <div class="form-group m-form__group" style="width: 180px;  padding-right: 10px;">
+                                <input type="number" min="0" max="1000"  class="form-control m-input m-input--air" (input)="onChangeAmount($event , entryIndex)">
+                          </div>
+                    </td>
                     <td> <div class="form-group m-form__group">
-                                                         <select class="form-control m-input m-input--air thetimeperiod">
+                                                         <select class="form-control m-input m-input--air thetimeperiod" (change)="onChangeTimePeriod($event , entryIndex)">
                                                              <option value=""></option>
                                                              <option value="weekly">Weekly</option>
                                                              <option value="monthly">Monthly</option>
@@ -167,7 +167,7 @@
      
                                                      </div>
                       </td>
-                      <td><span class="bold theme-font">0</span></td>
+                      <td><span class="bold theme-font" appTotal [id]="entryIndex">0</span></td>
                        <td>
                             <div class="m-btn-group m-btn-group--pill btn-group" role="group" aria-label="First group">
                                     <button type="button" class="m-btn btn btn-success">
