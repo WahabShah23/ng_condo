@@ -13,8 +13,7 @@ export class MaintenanceComponent implements OnInit {
     constructor(private _script: ScriptLoaderService) {
 
     }
-    ngOnInit() 
-    {
+    ngOnInit() {
 
     }
 

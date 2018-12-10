@@ -64,10 +64,10 @@ import { AsideNavFinancialSettingsComponent } from './aside-nav-financial-settin
         AsideNavAssetsComponent,
         AsideNavNotificationsComponent,
         AsideNavMaintenanceComponent,
-        AsideNavFinancialComponent ,
+        AsideNavFinancialComponent,
         AsideBillingAndSubscriptionsFinancialPlanning,
         AsideBudgetFinancialPlanning,
-        AsideNavFinancialSettingsComponent 
+        AsideNavFinancialSettingsComponent
     ],
     exports: [
         LayoutComponent,
@@ -105,7 +105,6 @@ import { AsideNavFinancialSettingsComponent } from './aside-nav-financial-settin
     ]
 })
 
-export class LayoutModule 
-{
+export class LayoutModule {
 
 }

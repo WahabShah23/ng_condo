@@ -1,0 +1,34 @@
+.m-radio {
+	padding-left: 23px !important;
+}
+.m-subheader {
+	padding: 10px 30px 0 30px;
+}
+.breadcrumb-header {
+	margin-top: -15px !important;
+}
+.breadcrumb-header li a span {
+	font-size: 11px;
+}
+.stats-icons {
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+.customhr {
+	margin-top: 0.0rem;
+	margin-bottom: -1.4rem;
+}
+
+.boxshadow_padding {
+	box-shadow: 1px 2px 6px 2px #eee;
+	background-color: #f4f5f8;
+}
+
+.padding_custom {
+	padding: 0px 8px;
+}
+
+.m-widget24 .m-widget24__item .m-widget24__title {
+	margin-left: 1rem;
+	margin-top: 1rem;
+}

@@ -43,21 +43,20 @@ const routes: Routes = [
 ];
 
 @NgModule(
-{
-    
-    declarations: [
-        MaintenanceComponent,
-        WorkOrderMaintenanceComponent,
-        AssignedWorkOrdersComponent,
-        ScheduledMaintenanceComponent,
-        TaskGroupsComponent,
-        ProjectsMaintenanceComponent
-    ],
-    imports: [RouterModule.forChild(routes) , CommonModule, LayoutModule,
-      ReactiveFormsModule, FormsModule , DragulaModule]
-})
+    {
 
-export class MaintenanceModule 
-{
+        declarations: [
+            MaintenanceComponent,
+            WorkOrderMaintenanceComponent,
+            AssignedWorkOrdersComponent,
+            ScheduledMaintenanceComponent,
+            TaskGroupsComponent,
+            ProjectsMaintenanceComponent
+        ],
+        imports: [RouterModule.forChild(routes), CommonModule, LayoutModule,
+            ReactiveFormsModule, FormsModule, DragulaModule]
+    })
+
+export class MaintenanceModule {
 
 }

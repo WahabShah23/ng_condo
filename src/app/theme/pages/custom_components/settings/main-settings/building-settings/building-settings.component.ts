@@ -26,7 +26,7 @@ export class BuildingSettingsComponent implements OnInit, AfterViewInit {
     dataModel;
 
 
-    owners = ["Owner A" , "Owner B", "Owner C", "Owner D"];
+    owners = ["Owner A", "Owner B", "Owner C", "Owner D"];
 
     ownerManagementType = "sameSame";
 

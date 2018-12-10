@@ -10,7 +10,7 @@ import { DragulaService } from 'ng2-dragula/ng2-dragula';
 export class EstimatedResponseComponent implements OnInit {
 
     isDisplayForm = true;
-    viewNameService="Create Service"
+    viewNameService = "Create Service"
     constructor(private dragulaService: DragulaService) {
 
         // dragulaService.setOptions('bag-task1', {
@@ -38,7 +38,7 @@ export class EstimatedResponseComponent implements OnInit {
 
     ngOnInit() {
     }
- changeViewService() {
+    changeViewService() {
         this.isDisplayForm = !this.isDisplayForm;
         if (this.isDisplayForm) {
             this.viewNameService = "Create Service";

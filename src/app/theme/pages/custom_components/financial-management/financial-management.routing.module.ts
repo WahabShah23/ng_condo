@@ -66,35 +66,35 @@ const routes: Routes = [
     {
         'path': 'FinancialPlanning/Billing-and-Subscription',
         'component': BillingAndSubscriptionFinancialPlanningComponent,
-        'children': 
-        [
-            {
-                'path': '',
-                'redirectTo': 'billing'
-            },
-            {
-                'path': 'billing',
-                'component': BillingFinancialPlanningComponent
-            },
-            
-            {
-                'path': 'subscriptions',
-                'component': SubscriptionsFinancialPlanningComponent
-            }
-        ]
+        'children':
+            [
+                {
+                    'path': '',
+                    'redirectTo': 'billing'
+                },
+                {
+                    'path': 'billing',
+                    'component': BillingFinancialPlanningComponent
+                },
+
+                {
+                    'path': 'subscriptions',
+                    'component': SubscriptionsFinancialPlanningComponent
+                }
+            ]
     },
     {
-    'path': 'FinancialPlanning/Budget',
-    'component': BudgetFinancialPlanningComponent,
-    'children': [
-        {
-            'path': '',
-            'redirectTo':'income'
-        },
-        {
-            'path': ':budgetcategory',
-            'component': IncomeBudgetFinancialPlanningComponent
-        }
+        'path': 'FinancialPlanning/Budget',
+        'component': BudgetFinancialPlanningComponent,
+        'children': [
+            {
+                'path': '',
+                'redirectTo': 'income'
+            },
+            {
+                'path': ':budgetcategory',
+                'component': IncomeBudgetFinancialPlanningComponent
+            }
         ]
     }
 
@@ -105,7 +105,6 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class FinancialManagementRoutingModule 
-{ 
-    
+export class FinancialManagementRoutingModule {
+
 }

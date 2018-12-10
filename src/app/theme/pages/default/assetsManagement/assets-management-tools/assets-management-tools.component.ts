@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {animate, state, style, transition, trigger} from "@angular/animations";
+import { animate, state, style, transition, trigger } from "@angular/animations";
 
 @Component({
-  selector: 'app-assets-management-tools',
-  templateUrl: './assets-management-tools.component.html',
-  styleUrls: ['./assets-management-tools.component.css'],
+    selector: 'app-assets-management-tools',
+    templateUrl: './assets-management-tools.component.html',
+    styleUrls: ['./assets-management-tools.component.css'],
     animations: [
         trigger('slideRightLeft', [
             state('show', style({

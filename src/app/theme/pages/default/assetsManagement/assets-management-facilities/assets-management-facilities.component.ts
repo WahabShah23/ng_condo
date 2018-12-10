@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from "@angular/animations";
 
 @Component({
-  selector: 'app-assets-management-facilities',
-  templateUrl: './assets-management-facilities.component.html',
-  styleUrls: ['./assets-management-facilities.component.css'],
+    selector: 'app-assets-management-facilities',
+    templateUrl: './assets-management-facilities.component.html',
+    styleUrls: ['./assets-management-facilities.component.css'],
     animations: [
         trigger('slideRightLeft', [
             state('show', style({
@@ -26,11 +26,11 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 })
 export class AssetsManagementFacilitiesComponent implements OnInit {
 
-  isFacilityGridView = true;
-  FacilityViewName = 'List View';
-  searchText;
+    isFacilityGridView = true;
+    FacilityViewName = 'List View';
+    searchText;
 
-  constructor() { }
+    constructor() { }
 
     searchBox: string = 'hide';
 
@@ -39,17 +39,17 @@ export class AssetsManagementFacilitiesComponent implements OnInit {
         this.searchBox = this.searchBox === 'hide' ? 'show' : 'hide';
     }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  changeFacilityView() {
-      this.isFacilityGridView = !this.isFacilityGridView;
-      if (this.isFacilityGridView) {
-          this.FacilityViewName = 'List View';
-      }
-      else {
-          this.FacilityViewName = 'Grid View';
-      }
+    changeFacilityView() {
+        this.isFacilityGridView = !this.isFacilityGridView;
+        if (this.isFacilityGridView) {
+            this.FacilityViewName = 'List View';
+        }
+        else {
+            this.FacilityViewName = 'Grid View';
+        }
     }
 
 }

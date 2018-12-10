@@ -1,4 +1,4 @@
-import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
+import { animate, keyframes, state, style, transition, trigger } from "@angular/animations";
 
 export const toggleSearchAnimation = [
     trigger('slideRightLeft', [
@@ -21,9 +21,9 @@ export const toggleSearchAnimation = [
 
 export const flyin = [
     trigger('flyin', [
-        state('in', style({transform: 'translateX(0)'})),
+        state('in', style({ transform: 'translateX(0)' })),
         transition('void => *', [
-            style({transform: 'translateX(-100%)'}),
+            style({ transform: 'translateX(-100%)' }),
             animate('700ms ease-in')
         ])
     ])
@@ -31,9 +31,9 @@ export const flyin = [
 
 export const rotateIn = [
     trigger('rotateIn', [
-        state('in', style({transform: 'translateX(0)'})),
+        state('in', style({ transform: 'translateX(0)' })),
         transition('void => *', [
-            style({transform: 'rotate(-180deg)'}),
+            style({ transform: 'rotate(-180deg)' }),
             animate('700ms ease-out')
         ])
     ])
@@ -41,9 +41,9 @@ export const rotateIn = [
 
 export const flyFromBottom = [
     trigger('flyFromBottom', [
-        state('in', style({transform: 'translateY(0)'})),
+        state('in', style({ transform: 'translateY(0)' })),
         transition('void => *', [
-            style({transform: 'translateY(100%)'}),
+            style({ transform: 'translateY(100%)' }),
             animate('700ms ease-in')
         ])
     ])
@@ -51,17 +51,17 @@ export const flyFromBottom = [
 
 export const flyItems = [
     trigger('flyItems', [
-        state('in', style({transform: 'translateX(0)'})),
+        state('in', style({ transform: 'translateX(0)' })),
         transition('void => *', [
             animate(700, keyframes([
-                style({opacity: 0, transform: 'translateX(-100%)', offset: 0}),
-                style({opacity: 1, transform: 'translateX(0)',     offset: 1.0})
+                style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
+                style({ opacity: 1, transform: 'translateX(0)', offset: 1.0 })
             ]))
         ]),
         transition('* => void', [
             animate(500, keyframes([
-                style({opacity: 1, transform: 'translateX(0)',     offset: 0}),
-                style({opacity: 0, transform: 'translateX(100%)',  offset: 1.0})
+                style({ opacity: 1, transform: 'translateX(0)', offset: 0 }),
+                style({ opacity: 0, transform: 'translateX(100%)', offset: 1.0 })
             ]))
         ])
     ])

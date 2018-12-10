@@ -11,18 +11,18 @@ import { SelectDropDownComponent } from 'ngx-select-dropdown/dist/components';
 })
 export class OwnersRolesComponent implements OnInit {
 
-  @ViewChild('companyNamesDropdown')  companyNamesDropdown: SelectDropDownComponent;
-  @ViewChild('buildingNamesDropdown')  buildingNamesDropdown: SelectDropDownComponent;
-  @ViewChild('setPasswordCheckbox') setPasswordCheckbox : HTMLInputElement;
-  @ViewChild('firstName') firstNameInput : ElementRef;
-  @ViewChild('lastName') lastNameInput : ElementRef;
-  @ViewChild('isIndividualCheckbox') isIndividualCheckbox: ElementRef;
+    @ViewChild('companyNamesDropdown') companyNamesDropdown: SelectDropDownComponent;
+    @ViewChild('buildingNamesDropdown') buildingNamesDropdown: SelectDropDownComponent;
+    @ViewChild('setPasswordCheckbox') setPasswordCheckbox: HTMLInputElement;
+    @ViewChild('firstName') firstNameInput: ElementRef;
+    @ViewChild('lastName') lastNameInput: ElementRef;
+    @ViewChild('isIndividualCheckbox') isIndividualCheckbox: ElementRef;
 
-  isGroupSelect = false;
-  isSectionSelect = false;
-  inviteType = 'Individual';
-  relationType='';
-  isIndividualSelect = false;
+    isGroupSelect = false;
+    isSectionSelect = false;
+    inviteType = 'Individual';
+    relationType = '';
+    isIndividualSelect = false;
 
     isFloor = false;
     isCondo = false;
@@ -32,11 +32,11 @@ export class OwnersRolesComponent implements OnInit {
     isEdit = false;
 
 
-  config = 
-   {
-    displayKey: "description", //if objects array passed which key to be displayed defaults to description,
-    search: true, //enables the search plugin to search in the list 
-  };
+    config =
+        {
+            displayKey: "description", //if objects array passed which key to be displayed defaults to description,
+            search: true, //enables the search plugin to search in the list 
+        };
 
     companies = ["Company A", "Company B", "Company C"];
     companiesDropdownModel;
@@ -59,29 +59,29 @@ export class OwnersRolesComponent implements OnInit {
         date: "6/10/2017"
     },
 
-  {
-    name: "Building Support",
-    date: "6/10/2017"
-  }
-  ,
-  
-  {
-    name: "Condo Owners A",
-    date: "6/10/2017"
-  },
+    {
+        name: "Building Support",
+        date: "6/10/2017"
+    }
+        ,
 
-  {
-    name: "Condo Tenants B",
-    date: "6/10/2017"
-  },
-  {
-    name: "Building Maintenance",
-    date: "6/10/2017"
-  },
-  {
-    name: "Building Support",
-    date: "6/10/2017"
-  }
+    {
+        name: "Condo Owners A",
+        date: "6/10/2017"
+    },
+
+    {
+        name: "Condo Tenants B",
+        date: "6/10/2017"
+    },
+    {
+        name: "Building Maintenance",
+        date: "6/10/2017"
+    },
+    {
+        name: "Building Support",
+        date: "6/10/2017"
+    }
 
     ];
 
@@ -181,7 +181,7 @@ export class OwnersRolesComponent implements OnInit {
 
 
 
- 
+
 
 
 
@@ -313,9 +313,8 @@ export class OwnersRolesComponent implements OnInit {
     }
 
     onAddMember(relation, firstName, lastName) {
-        if(!this.isEdit)
-        {
-          this.roleService.addRole(this.companiesDropdownModel, relation, firstName + '' + lastName);
+        if (!this.isEdit) {
+            this.roleService.addRole(this.companiesDropdownModel, relation, firstName + '' + lastName);
         }
         this.router.navigate(['/settings/roles']);
     }
@@ -375,34 +374,29 @@ export class OwnersRolesComponent implements OnInit {
         this.isShop = false;
     }
 
- 
-
-  onChangeRelation(value)
-  {
-    this.relationType = value;
-  }
 
 
-  IndividualChanged()
-  {
-    if(this.isIndividualCheckbox.nativeElement.checked)
-    {
-      this.isIndividualSelect = true;
-      this.isSectionSelect = false;
+    onChangeRelation(value) {
+        this.relationType = value;
     }
-    else
-    {
-      this.isIndividualSelect = false;
+
+
+    IndividualChanged() {
+        if (this.isIndividualCheckbox.nativeElement.checked) {
+            this.isIndividualSelect = true;
+            this.isSectionSelect = false;
+        }
+        else {
+            this.isIndividualSelect = false;
+        }
     }
-  }
 
     selectionChanged(event, dropdown) {
         console.log(dropdown);
     }
 
-    openSectionSelectBar()
-    {
-      this.isSectionSelect = true;
-      this.isIndividualSelect = false;
+    openSectionSelectBar() {
+        this.isSectionSelect = true;
+        this.isIndividualSelect = false;
     }
 }

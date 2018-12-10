@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import {flyFromBottom, flyin, rotateIn, toggleSearchAnimation} from "../../../../../animations/toggle-search-animation";
+import { flyFromBottom, flyin, rotateIn, toggleSearchAnimation } from "../../../../../animations/toggle-search-animation";
 
 @Component({
-  selector: 'app-inbox',
-  templateUrl: './inbox.component.html',
-  styleUrls: ['./inbox.component.css'],
-    animations : [ toggleSearchAnimation ]
+    selector: 'app-inbox',
+    templateUrl: './inbox.component.html',
+    styleUrls: ['./inbox.component.css'],
+    animations: [toggleSearchAnimation]
 })
 export class InboxComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
     searchBox: string = 'hide';
     // rotateIn: string = 'void';
     // flyin: string = 'void';
     // flyFromBottom: string = 'void';
-     flyItems: string = 'void';
-     searchText;
+    flyItems: string = 'void';
+    searchText;
 
     toggleSearchBox() {
         // 1-line if statement that toggles the value:
@@ -27,7 +27,7 @@ export class InboxComponent implements OnInit {
         // this.flyItems = this.flyItems === 'void' ? '*' : 'void';
     }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }

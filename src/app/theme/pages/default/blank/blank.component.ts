@@ -15,6 +15,7 @@ import { } from 'googlemaps';
 import { Observable } from 'rxjs/Rx';
 import { FormControl } from "@angular/forms";
 import { SelectItem } from "primeng/primeng";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
     selector: 'app-blank',
@@ -43,6 +44,8 @@ export class BlankComponent implements OnInit, AfterContentInit {
     visibleSidebar4;
     visibleSidebar5;
 
+    selectedFile: File = null;
+
     items: MenuItem[];
 
     cars: SelectItem[];
@@ -68,8 +71,6 @@ export class BlankComponent implements OnInit, AfterContentInit {
             { label: 'VW', value: 'VW' },
             { label: 'Volvo', value: 'Volvo' }
         ];
-
-
 
         this.searchControl = new FormControl();
         this.mapsAPILoader.load().then(
@@ -127,6 +128,17 @@ export class BlankComponent implements OnInit, AfterContentInit {
 
     }
 
+    onFileSelected(event) {
+        console.log(event);
+        this.selectedFile = <File>event.target.files[0];
+    }
+
+    onUpload() {
+        this._demoService.uploadFile(this.selectedFile, this.selectedFile.name).subscribe(data => {
+            console.log(data);
+        })
+    }
+
     div = this.renderer.createElement('div');
     text = this.renderer.createText('This is div');
 
@@ -143,12 +155,12 @@ export class BlankComponent implements OnInit, AfterContentInit {
     }
 
     onLeave() {
-        this.renderer.removeClass(this.div,'test');
+        this.renderer.removeClass(this.div, 'test');
         this.renderer.removeStyle(this.hover.nativeElement, 'color');
         this.renderer.removeStyle(this.hover.nativeElement, 'backgroundColor');
     }
 
-    ngAfterContentInit () {
+    ngAfterContentInit() {
         // const startingStyles : AnimationStyles = {
         //     styles: [{}]
         // }

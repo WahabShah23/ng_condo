@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {animate, state, style, transition, trigger} from "@angular/animations";
+import { animate, state, style, transition, trigger } from "@angular/animations";
 
 @Component({
-  selector: 'app-assets-management-equipment',
-  templateUrl: './assets-management-equipment.component.html',
-  styleUrls: ['./assets-management-equipment.component.css'],
+    selector: 'app-assets-management-equipment',
+    templateUrl: './assets-management-equipment.component.html',
+    styleUrls: ['./assets-management-equipment.component.css'],
     animations: [
         trigger('slideRightLeft', [
             state('show', style({
@@ -26,10 +26,10 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 })
 export class AssetsManagementEquipmentComponent implements OnInit {
 
-  isEquipmentGridView = true;
-  EquipmentViewName = 'List View';
+    isEquipmentGridView = true;
+    EquipmentViewName = 'List View';
 
-  constructor() { }
+    constructor() { }
 
     searchBox: string = 'hide';
     searchText;
@@ -39,8 +39,8 @@ export class AssetsManagementEquipmentComponent implements OnInit {
         this.searchBox = this.searchBox === 'hide' ? 'show' : 'hide';
     }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
     changeEquipmentView() {
         this.isEquipmentGridView = !this.isEquipmentGridView;

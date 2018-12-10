@@ -91,7 +91,7 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/custom_components\/settings\/main-settings\/main-settings.module#MainSettingsModule"
             },
             // Settings Ends---------------------------------------
-            
+
             // Maintenance Starts---------------------------------------
             {
                 "path": "maintenance",

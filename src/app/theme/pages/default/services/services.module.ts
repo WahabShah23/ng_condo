@@ -38,7 +38,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule, FormsModule, RouterModule.forChild(routes), SelectDropDownModule, LayoutModule, DragulaModule, 
+        CommonModule, FormsModule, RouterModule.forChild(routes), SelectDropDownModule, LayoutModule, DragulaModule,
         AgmCoreModule.forRoot({
             apiKey: "AIzaSyCQlMMVsJXt25cmmii1rx_Ghn0bjRRNdtc"
         }),

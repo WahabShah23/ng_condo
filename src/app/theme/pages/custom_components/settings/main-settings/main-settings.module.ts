@@ -63,7 +63,7 @@ import { FinancialDigitalWalletComponent } from './financial-settings-global/fin
     imports: [
         CommonModule, LayoutModule,
         FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule, MainSettingsRouting, FormsModule,
-        AngularMultiSelectModule ,  AgmCoreModule.forRoot({
+        AngularMultiSelectModule, AgmCoreModule.forRoot({
             apiKey: 'AIzaSyB95P4UOlcThWmtfkx7g4rGmzmKtomZoAc',
             libraries: ['places']
         })
@@ -111,22 +111,22 @@ import { FinancialDigitalWalletComponent } from './financial-settings-global/fin
         TestDirective,
         SettingsAssetsComponent,
 
-    //  Pipes
+        //  Pipes
         FilterPipe,
 
-    AssetsSettingsComponent,
+        AssetsSettingsComponent,
 
-    AssetsFacilitiesComponent,
+        AssetsFacilitiesComponent,
 
-    AssetsEquipmentsComponent,
+        AssetsEquipmentsComponent,
 
-    AssetsToolsComponent,
+        AssetsToolsComponent,
 
-    FinancialSettingsGlobalComponent,
+        FinancialSettingsGlobalComponent,
 
-    FinancialFiatWalletComponent,
+        FinancialFiatWalletComponent,
 
-    FinancialDigitalWalletComponent
+        FinancialDigitalWalletComponent
     ],
 
 })

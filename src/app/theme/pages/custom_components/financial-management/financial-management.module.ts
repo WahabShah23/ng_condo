@@ -18,7 +18,7 @@ import { FinancialManagementForecastComponent } from './financial-management-for
 import { FinancialManagementTagsComponent } from './financial-management-tags/financial-management-tags.component';
 import { FinancialManagementAccountsComponent } from './financial-management-accounts/financial-management-accounts.component';
 import { FinancialManagementReportsComponent } from './financial-management-reports/financial-management-reports.component';
-import {FinancialPlanningComponent} from "./financial-planning/financial-planning.component";
+import { FinancialPlanningComponent } from "./financial-planning/financial-planning.component";
 import { BillingAndSubscriptionFinancialPlanningComponent } from './financial-planning/billing-and-subscription-financial-planning/billing-and-subscription-financial-planning.component';
 import { BillingFinancialPlanningComponent } from './financial-planning/billing-and-subscription-financial-planning/billing-financial-planning/billing-financial-planning.component';
 import { SubscriptionsFinancialPlanningComponent } from './financial-planning/billing-and-subscription-financial-planning/subscriptions-financial-planning/subscriptions-financial-planning.component';
@@ -33,7 +33,7 @@ import { IncomeBudgetFinancialPlanningComponent } from './financial-planning/bud
     imports: [
         CommonModule, LayoutModule,
         FileUploadModule, SidebarModule, ReactiveFormsModule, SelectDropDownModule, FormsModule,
-        AngularMultiSelectModule, FinancialManagementRoutingModule , RouterModule
+        AngularMultiSelectModule, FinancialManagementRoutingModule, RouterModule
     ], exports: [
     ], declarations: [
         FinancialManagementComponent,
